@@ -6,7 +6,7 @@ Documentazione della risoluzione dei conflitti Git nel modulo Geo che bloccavano
 ## File Interessati
 
 ### 1. app/Filament/Widgets/LocationMapTableWidget.php
-**Problema**: Marker di conflitto `<<<<<<< HEAD` causavano ParseError
+**Problema**: Marker di conflitto  causavano ParseError
 **Risoluzione**: Selezione della "current change" per tutti i conflitti
 
 **Conflitti risolti**:
@@ -17,15 +17,12 @@ Documentazione della risoluzione dei conflitti Git nel modulo Geo che bloccavano
 **Esempi di risoluzione**:
 ```php
 // PRIMA (conflitto)
-<<<<<<< HEAD
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-=======
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
->>>>>>> b73e3f4 (.)
 
 // DOPO (risolto)
 use Filament\Forms;
@@ -36,7 +33,7 @@ use Filament\Tables\Table;
 ```
 
 ## Metodologia di Risoluzione
-1. **Identificazione**: Script automatico per trovare tutti i marker `<<<<<<< HEAD`
+1. **Identificazione**: Script automatico per trovare tutti i marker 
 2. **Selezione**: Sempre "current change" (contenuto tra `=======` e `>>>>>>>`)
 3. **Backup**: Backup automatico prima delle modifiche
 4. **Verifica**: Controllo che non rimangano marker di conflitto
