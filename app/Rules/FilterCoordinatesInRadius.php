@@ -19,14 +19,23 @@ class FilterCoordinatesInRadius implements Rule
         private readonly float $centerLatitude,
         private readonly float $centerLongitude,
         private readonly int $radius,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Determina se le coordinate passate sono all'interno del raggio specificato.
      *
+<<<<<<< HEAD
      * @param mixed $_attribute Nome dell'attributo
      * @param mixed $value      Valore da validare
+=======
+     * @param  mixed  $_attribute  Nome dell'attributo
+     * @param  mixed  $value  Valore da validare
+>>>>>>> 1bb689f (.)
      */
     public function passes(mixed $_attribute, mixed $value): bool
     {

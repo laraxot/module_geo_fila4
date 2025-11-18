@@ -16,7 +16,11 @@ use function Safe\json_decode;
 abstract class GeoJsonModel
 {
     /**
+<<<<<<< HEAD
      * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario).
+=======
+     * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario)
+>>>>>>> 1bb689f (.)
      */
     protected static string $jsonFile = 'resources/json/comuni.json';
 
@@ -35,7 +39,11 @@ abstract class GeoJsonModel
      */
     public static function where(string $key, $value): Collection
     {
+<<<<<<< HEAD
         /*
+=======
+        /**
+>>>>>>> 1bb689f (.)
          * @phpstan-ignore-next-line
          */
         return static::all()->where($key, $value);
@@ -50,7 +58,11 @@ abstract class GeoJsonModel
         $cacheKey = 'geo_comuni_json_'.md5($path);
         $data = cache()->rememberForever($cacheKey, fn () => json_decode(file_get_contents($path), true));
 
+<<<<<<< HEAD
         /*
+=======
+        /**
+>>>>>>> 1bb689f (.)
          * @phpstan-ignore argument.type, argument.templateType, argument.templateType
          */
         return collect($data);

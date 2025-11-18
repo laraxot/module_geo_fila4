@@ -8,12 +8,17 @@ use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Modules\Geo\Filament\Resources\AddressResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 class ListAddresses extends XotBaseListRecords
 {
     protected static string $resource = AddressResource::class;
 
     /**
+<<<<<<< HEAD
      * @return array<string, Action>
      */
     #[\Override]
@@ -21,6 +26,15 @@ class ListAddresses extends XotBaseListRecords
     {
         return [
             'create' => CreateAction::make(),
+=======
+     * @return array<Action>
+     */
+    #[Override]
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+>>>>>>> 1bb689f (.)
         ];
     }
 }

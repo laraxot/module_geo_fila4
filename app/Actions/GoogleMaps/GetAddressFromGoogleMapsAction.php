@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
+=======
+>>>>>>> 1bb689f (.)
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
@@ -53,12 +56,15 @@ final class GetAddressFromGoogleMapsAction
             'key' => $apiKey,
         ]);
 
+<<<<<<< HEAD
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+=======
+>>>>>>> 1bb689f (.)
         if (! $response->successful()) {
             throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
@@ -71,7 +77,11 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapResponseData $responseData */
         $responseData = GoogleMapResponseData::from($response->json());
 
+<<<<<<< HEAD
         if (0 === $responseData->results->count()) {
+=======
+        if ($responseData->results->count() === 0) {
+>>>>>>> 1bb689f (.)
             throw GoogleMapsApiException::noResultsFound();
         }
 
@@ -111,8 +121,13 @@ final class GetAddressFromGoogleMapsAction
     }
 
     /**
+<<<<<<< HEAD
      * @param DataCollection<GoogleMapAddressComponentData> $components
      * @param array<string>                                 $types
+=======
+     * @param  DataCollection<GoogleMapAddressComponentData>  $components
+     * @param  array<string>  $types
+>>>>>>> 1bb689f (.)
      */
     private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
     {

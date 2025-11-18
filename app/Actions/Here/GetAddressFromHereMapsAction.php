@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Here;
 
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
+=======
+use Exception;
+>>>>>>> 1bb689f (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\HereMap\HereMapResponseData;
@@ -19,7 +23,11 @@ class GetAddressFromHereMapsAction
         $apiKey = config('services.here.key');
 
         if (empty($apiKey)) {
+<<<<<<< HEAD
             throw new \Exception('Here Maps API key not configured');
+=======
+            throw new Exception('Here Maps API key not configured');
+>>>>>>> 1bb689f (.)
         }
 
         $response = Http::get(self::BASE_URL, [
@@ -28,12 +36,15 @@ class GetAddressFromHereMapsAction
             'limit' => 1,
         ]);
 
+<<<<<<< HEAD
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+=======
+>>>>>>> 1bb689f (.)
         if (! $response->successful()) {
             return null;
         }

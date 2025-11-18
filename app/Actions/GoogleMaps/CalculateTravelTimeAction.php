@@ -9,11 +9,19 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Datas\TravelTimeData;
+<<<<<<< HEAD
 
 use function Safe\json_decode;
 
 use Webmozart\Assert\Assert;
 
+=======
+use RuntimeException;
+use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
+
+>>>>>>> 1bb689f (.)
 /**
  * Action per calcolare il tempo di percorrenza tra due punti tramite Google Maps.
  *
@@ -26,13 +34,21 @@ readonly class CalculateTravelTimeAction
 
     public function __construct(
         private Client $client,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Calcola il tempo di percorrenza tra due punti.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+>>>>>>> 1bb689f (.)
      */
     public function execute(LocationData $origin, LocationData $destination): TravelTimeData
     {
@@ -56,7 +72,11 @@ readonly class CalculateTravelTimeAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o i dati non sono validi
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o i dati non sono validi
+>>>>>>> 1bb689f (.)
      */
     private function validateInput(LocationData $origin, LocationData $destination): void
     {
@@ -93,7 +113,11 @@ readonly class CalculateTravelTimeAction
     /**
      * Elabora la risposta dell'API.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è valida
+=======
+     * @throws RuntimeException Se la risposta non è valida
+>>>>>>> 1bb689f (.)
      */
     private function parseResponse(string $response): TravelTimeData
     {

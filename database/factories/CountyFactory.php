@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\County;
 
 /**
+<<<<<<< HEAD
  * County Factory.
+=======
+ * County Factory
+>>>>>>> 1bb689f (.)
  *
  * @extends Factory<County>
  */

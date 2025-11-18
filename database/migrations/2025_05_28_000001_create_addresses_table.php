@@ -6,7 +6,12 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\Geo\Models\Address;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
+<<<<<<< HEAD
 return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> 1bb689f (.)
     protected ?string $model_class = Address::class;
 
     public function up(): void
@@ -19,15 +24,25 @@ return new class extends XotBaseMigration {
             // Campi informativi
             $table->string('name')->nullable()->comment('Nome identificativo dell\'indirizzo');
             $table->text('description')->nullable()->comment('Descrizione opzionale');
+<<<<<<< HEAD
             $table->string('phone')->nullable()->comment('Numero di telefono associato all\'indirizzo');
+=======
+>>>>>>> 1bb689f (.)
 
             // Campi indirizzo (evitando prefissi ridondanti)
             $table->string('route')->nullable()->comment('Via/Piazza');
             $table->string('street_number')->nullable()->comment('Numero civico');
+<<<<<<< HEAD
             $table->string('locality')->nullable()->comment('Località/Frazione');
             $table->string('administrative_area_level_3')->nullable()->comment('Comune/Città');
             $table->string('administrative_area_level_2')->nullable()->comment('Provincia');
             $table->string('administrative_area_level_1')->nullable()->comment('Regione');
+=======
+            $table->string('locality')->nullable()->comment('Comune/Città');
+            $table->string('administrative_area_level_3')->nullable()->comment('Provincia');
+            $table->string('administrative_area_level_2')->nullable()->comment('Regione');
+            $table->string('administrative_area_level_1')->nullable()->comment('Stato/Paese');
+>>>>>>> 1bb689f (.)
             $table->string('country', 2)->nullable()->comment('Codice paese ISO');
             $table->string('postal_code', 20)->nullable()->comment('CAP');
 

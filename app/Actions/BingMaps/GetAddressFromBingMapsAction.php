@@ -8,6 +8,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
+<<<<<<< HEAD
+=======
+use RuntimeException;
+use Webmozart\Assert\Assert;
+>>>>>>> 1bb689f (.)
 
 use function Safe\json_decode;
 
@@ -23,13 +28,21 @@ readonly class GetAddressFromBingMapsAction
 
     public function __construct(
         private Client $client,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Bing Maps.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+>>>>>>> 1bb689f (.)
      */
     public function execute(string $address): ?AddressData
     {
@@ -52,11 +65,16 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata
+=======
+     * @throws RuntimeException Se la chiave API non è configurata
+>>>>>>> 1bb689f (.)
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.bing.maps_api_key');
+<<<<<<< HEAD
         if (empty($apiKey)) {
             throw new \RuntimeException('Bing Maps API key not configured');
         }
@@ -66,6 +84,11 @@ readonly class GetAddressFromBingMapsAction
         if (strlen($address) > 1000) {
             throw new \RuntimeException('Address is too long');
         }
+=======
+        Assert::notEmpty($apiKey, 'Bing Maps API key not configured');
+        Assert::notEmpty($address, 'Address cannot be empty');
+        Assert::maxLength($address, 1000, 'Address is too long');
+>>>>>>> 1bb689f (.)
     }
 
     /**
@@ -89,7 +112,11 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Elabora la risposta dell'API.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è valida
+=======
+     * @throws RuntimeException Se la risposta non è valida
+>>>>>>> 1bb689f (.)
      */
     private function parseResponse(string $response): ?AddressData
     {
@@ -112,7 +139,11 @@ readonly class GetAddressFromBingMapsAction
          * } $data */
         $data = json_decode($response, true);
 
+<<<<<<< HEAD
         if (200 !== $data['statusCode'] || empty($data['resourceSets'][0]['resources'])) {
+=======
+        if ($data['statusCode'] !== 200 || empty($data['resourceSets'][0]['resources'])) {
+>>>>>>> 1bb689f (.)
             return null;
         }
 

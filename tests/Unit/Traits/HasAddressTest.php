@@ -6,6 +6,12 @@ namespace Modules\Geo\Tests\Unit\Traits;
 
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Traits\HasAddress;
+<<<<<<< HEAD
+=======
+use Tests\TestCase;
+
+uses(TestCase::class);
+>>>>>>> 1bb689f (.)
 
 /**
  * Modello di test per il trait HasAddress.
@@ -28,7 +34,11 @@ class HasAddressTest extends BaseModel
     /**
      * Bootstrap this model.
      */
+<<<<<<< HEAD
     protected static function boot(): void
+=======
+    public static function boot()
+>>>>>>> 1bb689f (.)
     {
         parent::boot();
 
@@ -164,7 +174,11 @@ it('can filter models by city', static function () {
     $model1 = new HasAddressTest();
     $model1->name = 'Model 1';
     $model1->save();
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1bb689f (.)
     $model1
         ->addresses()
         ->create([
@@ -177,7 +191,11 @@ it('can filter models by city', static function () {
     $model2 = new HasAddressTest();
     $model2->name = 'Model 2';
     $model2->save();
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1bb689f (.)
     $model2
         ->addresses()
         ->create([

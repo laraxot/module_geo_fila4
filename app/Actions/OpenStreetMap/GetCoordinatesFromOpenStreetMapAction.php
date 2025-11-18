@@ -14,14 +14,22 @@ readonly class GetCoordinatesFromOpenStreetMapAction
 {
     public function __construct(
         private FetchCoordinatesAction $fetchCoordinatesAction,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Ottiene le coordinate geografiche da un indirizzo usando OpenStreetMap.
      *
+<<<<<<< HEAD
      * @param string $address Indirizzo da geocodificare
      *
+=======
+     * @param  string  $address  Indirizzo da geocodificare
+>>>>>>> 1bb689f (.)
      * @return LocationData|null Dati della posizione o null se non trovata
      */
     public function execute(string $address): ?LocationData

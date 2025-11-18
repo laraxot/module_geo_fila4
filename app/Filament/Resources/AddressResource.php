@@ -15,6 +15,10 @@ use Modules\Geo\Models\Locality;
 use Modules\Geo\Models\Province;
 use Modules\Geo\Models\Region;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 /**
  * Resource per la gestione degli indirizzi geografici.
@@ -38,7 +42,11 @@ class AddressResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public static function getFormSchema(): array
     {
         return [

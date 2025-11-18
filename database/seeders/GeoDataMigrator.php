@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Database\Seeders;
 
+<<<<<<< HEAD
+=======
+use Exception;
+>>>>>>> 1bb689f (.)
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -36,7 +40,11 @@ class GeoDataMigrator extends Seeder
 
             DB::commit();
             $this->command->info('Successfully migrated all geographical data to Geo module.');
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch (Exception $e) {
+>>>>>>> 1bb689f (.)
             DB::rollBack();
             Log::error('Failed to migrate geographical data: '.$e->getMessage());
             $this->command->error('Failed to migrate geographical data: '.$e->getMessage());
@@ -44,7 +52,11 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
+<<<<<<< HEAD
      * Migrate regions from <nome progetto> to Geo module.
+=======
+     * Migrate regions from <nome progetto> to Geo module
+>>>>>>> 1bb689f (.)
      */
     protected function migrateRegions(): void
     {
@@ -75,7 +87,11 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
+<<<<<<< HEAD
      * Migrate provinces from <nome progetto> to Geo module.
+=======
+     * Migrate provinces from <nome progetto> to Geo module
+>>>>>>> 1bb689f (.)
      */
     protected function migrateProvinces(): void
     {
@@ -107,7 +123,11 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
+<<<<<<< HEAD
      * Migrate cities from <nome progetto> to Geo module.
+=======
+     * Migrate cities from <nome progetto> to Geo module
+>>>>>>> 1bb689f (.)
      */
     protected function migrateCities(): void
     {
@@ -139,7 +159,11 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
+<<<<<<< HEAD
      * Migrate CAPs from <nome progetto> to Geo module.
+=======
+     * Migrate CAPs from <nome progetto> to Geo module
+>>>>>>> 1bb689f (.)
      */
     protected function migrateCaps(): void
     {

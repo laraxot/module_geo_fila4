@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
+=======
+>>>>>>> 1bb689f (.)
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
@@ -21,16 +24,26 @@ class CalculateDistanceMatrixAction
     /**
      * Calcola la matrice delle distanze tra origini e destinazioni.
      *
+<<<<<<< HEAD
      * @param Collection<int, LocationData> $origins      Punti di origine
      * @param Collection<int, LocationData> $destinations Punti di destinazione
      *
      * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
      *
+=======
+     * @param  Collection<int, LocationData>  $origins  Punti di origine
+     * @param  Collection<int, LocationData>  $destinations  Punti di destinazione
+>>>>>>> 1bb689f (.)
      * @return array<array<array{
      *     distance: array{text: string, value: int},
      *     duration: array{text: string, value: int},
      *     status: string
      * }>>
+<<<<<<< HEAD
+=======
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
+>>>>>>> 1bb689f (.)
      */
     public function execute(Collection $origins, Collection $destinations): array
     {
@@ -46,12 +59,15 @@ class CalculateDistanceMatrixAction
             'key' => $apiKey,
         ]);
 
+<<<<<<< HEAD
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+=======
+>>>>>>> 1bb689f (.)
         if (! $response->successful()) {
             throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
@@ -60,7 +76,13 @@ class CalculateDistanceMatrixAction
         $data = $response->json();
 
         if (! is_array($data) || ($data['status'] ?? null) !== 'OK') {
+<<<<<<< HEAD
             throw GoogleMapsApiException::requestFailed('Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'));
+=======
+            throw GoogleMapsApiException::requestFailed(
+                'Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'),
+            );
+>>>>>>> 1bb689f (.)
         }
 
         if (empty($data['rows'])) {

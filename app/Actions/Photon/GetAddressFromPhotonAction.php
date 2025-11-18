@@ -4,16 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Photon;
 
+<<<<<<< HEAD
+=======
+use Exception;
+>>>>>>> 1bb689f (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\Photon\PhotonAddressData;
+<<<<<<< HEAD
 
 use function Safe\json_decode;
 
 use Webmozart\Assert\Assert;
 
+=======
+use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
+
+>>>>>>> 1bb689f (.)
 /**
  * Action per ottenere l'indirizzo e le coordinate tramite Photon.
  *
@@ -26,8 +37,12 @@ readonly class GetAddressFromPhotonAction
 
     public function __construct(
         private Client $client,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Photon.
@@ -59,7 +74,11 @@ readonly class GetAddressFromPhotonAction
                 street: $photonData->street,
                 street_number: $photonData->housenumber,
             );
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch (Exception $e) {
+>>>>>>> 1bb689f (.)
             Log::error('Exception during Photon API request', [
                 'exception' => $e->getMessage(),
                 'address' => $address,

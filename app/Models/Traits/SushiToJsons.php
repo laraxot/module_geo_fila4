@@ -4,8 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
+=======
+use Exception;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
+use RuntimeException;
+>>>>>>> 1bb689f (.)
 use Sushi\Sushi;
 
 trait SushiToJsons
@@ -13,7 +20,11 @@ trait SushiToJsons
     use Sushi;
 
     /**
+<<<<<<< HEAD
      * Carica i dati dal file JSON.
+=======
+     * Carica i dati dal file JSON
+>>>>>>> 1bb689f (.)
      */
     public function getSushiRows(): array
     {
@@ -21,7 +32,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene il percorso del file JSON.
+=======
+     * Ottiene il percorso del file JSON
+>>>>>>> 1bb689f (.)
      */
     public function getJsonFile(): string
     {
@@ -29,7 +44,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Salva i dati nel file JSON.
+=======
+     * Salva i dati nel file JSON
+>>>>>>> 1bb689f (.)
      */
     public function saveToJson(array $data): bool
     {
@@ -40,7 +59,11 @@ trait SushiToJsons
             Cache::forget($this->getCacheKey());
 
             return true;
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch (Exception $e) {
+>>>>>>> 1bb689f (.)
             report($e);
 
             return false;
@@ -48,7 +71,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Crea un nuovo record.
+=======
+     * Crea un nuovo record
+>>>>>>> 1bb689f (.)
      */
     public function create(array $attributes = []): static
     {
@@ -63,18 +90,30 @@ trait SushiToJsons
             return $this->newInstance($attributes);
         }
 
+<<<<<<< HEAD
         throw new \RuntimeException('Impossibile salvare il record');
     }
 
     /**
      * Aggiorna un record esistente.
+=======
+        throw new RuntimeException('Impossibile salvare il record');
+    }
+
+    /**
+     * Aggiorna un record esistente
+>>>>>>> 1bb689f (.)
      */
     public function update(array $attributes = []): bool
     {
         $data = $this->loadFromJson();
         $index = $this->findIndex($this->getKey());
 
+<<<<<<< HEAD
         if (null === $index) {
+=======
+        if ($index === null) {
+>>>>>>> 1bb689f (.)
             return false;
         }
 
@@ -85,14 +124,22 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Elimina un record.
+=======
+     * Elimina un record
+>>>>>>> 1bb689f (.)
      */
     public function delete(): bool
     {
         $data = $this->loadFromJson();
         $index = $this->findIndex($this->getKey());
 
+<<<<<<< HEAD
         if (null === $index) {
+=======
+        if ($index === null) {
+>>>>>>> 1bb689f (.)
             return false;
         }
 
@@ -102,7 +149,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Carica i dati dal file JSON.
+=======
+     * Carica i dati dal file JSON
+>>>>>>> 1bb689f (.)
      */
     protected function loadFromJson(): array
     {
@@ -114,15 +165,24 @@ trait SushiToJsons
 
         $data = json_decode(File::get($path), true);
 
+<<<<<<< HEAD
         if (JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
+=======
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
+>>>>>>> 1bb689f (.)
         }
 
         return $data;
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene la chiave di cache.
+=======
+     * Ottiene la chiave di cache
+>>>>>>> 1bb689f (.)
      */
     protected function getCacheKey(): string
     {
@@ -130,7 +190,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Ottiene la durata della cache in secondi.
+=======
+     * Ottiene la durata della cache in secondi
+>>>>>>> 1bb689f (.)
      */
     protected function getCacheDuration(): int
     {
@@ -138,7 +202,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Trova l'indice di un record.
+=======
+     * Trova l'indice di un record
+>>>>>>> 1bb689f (.)
      */
     protected function findIndex($id): ?int
     {
@@ -154,7 +222,11 @@ trait SushiToJsons
     }
 
     /**
+<<<<<<< HEAD
      * Genera un nuovo ID.
+=======
+     * Genera un nuovo ID
+>>>>>>> 1bb689f (.)
      */
     protected function generateId(): string
     {

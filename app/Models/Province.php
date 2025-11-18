@@ -7,11 +7,16 @@ namespace Modules\Geo\Models;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+<<<<<<< HEAD
+=======
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+>>>>>>> 1bb689f (.)
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sushi\Sushi;
 
 /**
+<<<<<<< HEAD
  * @property int|null                                    $region_id
  * @property int                                         $id
  * @property string|null                                 $name
@@ -20,6 +25,16 @@ use Sushi\Sushi;
  * @property int|null                                    $localities_count
  * @property Region|null                                 $region
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+=======
+ * @property int|null $region_id
+ * @property int $id
+ * @property string|null $name
+ * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read Collection<int, \Modules\Geo\Models\Locality> $localities
+ * @property-read int|null $localities_count
+ * @property-read \Modules\Geo\Models\Region|null $region
+ * @property-read \Modules\Quaeris\Models\Profile|null $updater
+>>>>>>> 1bb689f (.)
  *
  * @method static Builder<static>|Province newModelQuery()
  * @method static Builder<static>|Province newQuery()
@@ -28,10 +43,13 @@ use Sushi\Sushi;
  * @method static Builder<static>|Province whereName($value)
  * @method static Builder<static>|Province whereRegionId($value)
  *
+<<<<<<< HEAD
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ProvinceFactory factory($count = null, $state = [])
  *
+=======
+>>>>>>> 1bb689f (.)
  * @mixin \Eloquent
  */
 class Province extends BaseModel

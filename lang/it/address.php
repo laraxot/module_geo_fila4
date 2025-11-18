@@ -208,6 +208,7 @@ return [
             'description' => 'Provincia di appartenenza',
             'helper_text' => '',
         ],
+<<<<<<< HEAD
         'fax' => [
             'label' => 'Fax',
             'placeholder' => 'Inserisci il numero di fax',
@@ -250,6 +251,8 @@ return [
             'description' => 'Note aggiuntive',
             'helper_text' => '',
         ],
+=======
+>>>>>>> 1bb689f (.)
     ],
     'columns' => [
         'name' => 'Nome',

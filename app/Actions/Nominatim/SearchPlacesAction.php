@@ -8,6 +8,10 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
 use Modules\Geo\Datas\LocationData;
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> 1bb689f (.)
 
 use function Safe\json_decode;
 
@@ -24,16 +28,26 @@ class SearchPlacesAction
 
     public function __construct(string $userAgent)
     {
+<<<<<<< HEAD
         $this->client = new Client();
+=======
+        $this->client = new Client;
+>>>>>>> 1bb689f (.)
         $this->userAgent = $userAgent.' Application';
     }
 
     /**
      * Cerca luoghi usando una query di ricerca.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la richiesta fallisce
      *
      * @return Collection<int, LocationData>
+=======
+     * @return Collection<int, LocationData>
+     *
+     * @throws RuntimeException Se la richiesta fallisce
+>>>>>>> 1bb689f (.)
      */
     public function execute(string $query, ?string $country = null, int $limit = 10): Collection
     {
@@ -42,7 +56,11 @@ class SearchPlacesAction
 
             return $this->parseResponse($response);
         } catch (GuzzleException $e) {
+<<<<<<< HEAD
             throw new \RuntimeException('Failed to search places: '.$e->getMessage());
+=======
+            throw new RuntimeException('Failed to search places: '.$e->getMessage());
+>>>>>>> 1bb689f (.)
         }
     }
 
@@ -74,9 +92,15 @@ class SearchPlacesAction
     }
 
     /**
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è nel formato atteso
      *
      * @return Collection<int, LocationData>
+=======
+     * @return Collection<int, LocationData>
+     *
+     * @throws RuntimeException Se la risposta non è nel formato atteso
+>>>>>>> 1bb689f (.)
      */
     private function parseResponse(string $response): Collection
     {
@@ -91,7 +115,11 @@ class SearchPlacesAction
         $data = json_decode($response, true);
 
         if (empty($data)) {
+<<<<<<< HEAD
             throw new \RuntimeException('No results found for query');
+=======
+            throw new RuntimeException('No results found for query');
+>>>>>>> 1bb689f (.)
         }
 
         return collect($data)->map(fn (array $place): LocationData => new LocationData(

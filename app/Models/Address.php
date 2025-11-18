@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Geo\Enums\AddressTypeEnum;
+<<<<<<< HEAD
 
 /**
  * Class Address.
@@ -47,6 +48,47 @@ use Modules\Geo\Enums\AddressTypeEnum;
  * @property string                                      $street_address
  * @property Model|\Eloquent|null                        $model
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+=======
+use Override;
+
+/**
+ * Class Address
+ *
+ * Implementazione di Schema.org PostalAddress
+ *
+ * @property int $id
+ * @property string|null $model_type
+ * @property string|null $model_id
+ * @property string|null $name Nome identificativo dell'indirizzo
+ * @property string|null $description Descrizione opzionale
+ * @property string|null $route Via/Piazza
+ * @property string|null $street_number Numero civico
+ * @property string|null $locality Comune/Città
+ * @property string|null $administrative_area_level_3 Provincia
+ * @property string|null $administrative_area_level_2 Regione
+ * @property string|null $administrative_area_level_1 Stato/Paese
+ * @property string|null $country Codice paese ISO
+ * @property string|null $postal_code CAP
+ * @property string|null $formatted_address
+ * @property string|null $place_id ID Google Places
+ * @property float|null $latitude
+ * @property float|null $longitude
+ * @property AddressTypeEnum|null $type Tipo indirizzo (home, work, etc.)
+ * @property bool $is_primary
+ * @property array<array-key, mixed>|null $extra_data
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
+ * @property string|null $deleted_at
+ * @property string|null $deleted_by
+ * @property-read Model|\Eloquent|null $addressable
+ * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read string $full_address
+ * @property-read string $street_address
+ * @property-read Model|\Eloquent|null $model
+ * @property-read \Modules\Quaeris\Models\Profile|null $updater
+>>>>>>> 1bb689f (.)
  *
  * @method static Builder<static>|Address nearby(float $latitude, float $longitude, float $radiusKm = 10)
  * @method static Builder<static>|Address newModelQuery()
@@ -81,10 +123,13 @@ use Modules\Geo\Enums\AddressTypeEnum;
  * @method static Builder<static>|Address whereUpdatedAt($value)
  * @method static Builder<static>|Address whereUpdatedBy($value)
  *
+<<<<<<< HEAD
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\AddressFactory factory($count = null, $state = [])
  *
+=======
+>>>>>>> 1bb689f (.)
  * @mixin \Eloquent
  */
 class Address extends BaseModel
@@ -121,7 +166,11 @@ class Address extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Relazione polimorfica (alternativa con nome più descrittivo).
+=======
+     * Relazione polimorfica (alternativa con nome più descrittivo)
+>>>>>>> 1bb689f (.)
      */
     public function addressable(): MorphTo
     {
@@ -166,11 +215,19 @@ class Address extends BaseModel
             ->orderBy('regione->nome')
             ->where('regione->codice', $this->administrative_area_level_1)
             ->get()
+<<<<<<< HEAD
             /* @phpstan-ignore argument.unresolvableType */
             ->map(function ($item) {
                 $regione = $item->regione;
                 if (! is_array($regione) || ! isset($regione['codice'], $regione['nome'])) {
                     return;
+=======
+            /** @phpstan-ignore argument.unresolvableType */
+            ->map(function ($item) {
+                $regione = $item->regione;
+                if (! is_array($regione) || ! isset($regione['codice'], $regione['nome'])) {
+                    return null;
+>>>>>>> 1bb689f (.)
                 }
 
                 return ['codice' => $regione['codice'], 'nome' => $regione['nome']];
@@ -188,11 +245,19 @@ class Address extends BaseModel
             ->orderBy('provincia->nome')
             ->where('provincia->codice', $this->administrative_area_level_2)
             ->get()
+<<<<<<< HEAD
             /* @phpstan-ignore argument.unresolvableType */
             ->map(fn ($item) => [
                 /* @phpstan-ignore offsetAccess.notFound */
                 'codice' => $item->provincia['codice'],
                 /* @phpstan-ignore offsetAccess.notFound */
+=======
+            /** @phpstan-ignore argument.unresolvableType */
+            ->map(fn ($item) => [
+                /** @phpstan-ignore offsetAccess.notFound */
+                'codice' => $item->provincia['codice'],
+                /** @phpstan-ignore offsetAccess.notFound */
+>>>>>>> 1bb689f (.)
                 'nome' => $item->provincia['nome'],
             ]);
 
@@ -201,7 +266,11 @@ class Address extends BaseModel
 
     public function getLocality(): ?array
     {
+<<<<<<< HEAD
         /* @phpstan-ignore-next-line */
+=======
+        /** @phpstan-ignore-next-line */
+>>>>>>> 1bb689f (.)
         return Comune::where('codice', $this->locality)
             ->distinct()
             ->first()
@@ -209,18 +278,30 @@ class Address extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Getter per l'indirizzo completo in formato italiano.
+=======
+     * Getter per l'indirizzo completo in formato italiano
+>>>>>>> 1bb689f (.)
      */
     public function getFullAddressAttribute(): string
     {
         $parts = array_filter([
+<<<<<<< HEAD
             is_string($this->route) && is_string($this->street_number) ? $this->route.('' !== $this->street_number ? ' '.$this->street_number : '') : null,
+=======
+            $this->route.($this->street_number ? ' '.$this->street_number : ''),
+>>>>>>> 1bb689f (.)
             $this->locality,
             $this->administrative_area_level_3, // Provincia
             $this->administrative_area_level_2, // Regione
             $this->postal_code,
             $this->country,
+<<<<<<< HEAD
         ], fn ($part) => null !== $part && '' !== $part);
+=======
+        ]);
+>>>>>>> 1bb689f (.)
 
         return implode(', ', $parts);
     }
@@ -240,6 +321,7 @@ class Address extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Getter per l'indirizzo strada completo.
      */
     public function getStreetAddressAttribute(): string
@@ -248,6 +330,13 @@ class Address extends BaseModel
         $streetNumber = $this->street_number ?? '';
 
         return trim($route.' '.$streetNumber);
+=======
+     * Getter per l'indirizzo strada completo
+     */
+    public function getStreetAddressAttribute(): string
+    {
+        return trim(($this->route ?? '').' '.($this->street_number ?? ''));
+>>>>>>> 1bb689f (.)
     }
 
     /**
@@ -255,7 +344,11 @@ class Address extends BaseModel
      */
     public function getFormattedAddressAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
         if (null !== $value) {
+=======
+        if ($value) {
+>>>>>>> 1bb689f (.)
             return $value;
         }
 
@@ -263,16 +356,21 @@ class Address extends BaseModel
 
         // Indirizzo stradale
         if ($this->route) {
+<<<<<<< HEAD
             $route = $this->route;
             $streetNumber = $this->street_number;
             $streetAddress = is_string($route) && is_string($streetNumber) ? trim($route.' '.$streetNumber) : '';
             if ('' !== $streetAddress) {
                 $parts[] = $streetAddress;
             }
+=======
+            $parts[] = $this->getStreetAddressAttribute();
+>>>>>>> 1bb689f (.)
         }
 
         // Località e provincia (formato italiano)
         $localityParts = [];
+<<<<<<< HEAD
         if ($this->postal_code && is_string($this->postal_code)) {
             $localityParts[] = $this->postal_code;
         }
@@ -282,6 +380,17 @@ class Address extends BaseModel
 
             // Per indirizzi italiani, aggiungiamo la sigla provincia
             if ('IT' === ($this->country ?? '') && $this->administrative_area_level_3 && is_string($this->administrative_area_level_3)) {
+=======
+        if ($this->postal_code) {
+            $localityParts[] = $this->postal_code;
+        }
+
+        if ($this->locality) {
+            $localityParts[] = $this->locality;
+
+            // Per indirizzi italiani, aggiungiamo la sigla provincia
+            if ($this->country === 'IT' && $this->administrative_area_level_3) {
+>>>>>>> 1bb689f (.)
                 // Se è un'implementazione reale, potremmo derivare la sigla dalla provincia
                 $provinciaSigla = $this->extra_data['provincia_sigla'] ?? null;
                 if ($provinciaSigla && is_string($provinciaSigla)) {
@@ -295,14 +404,24 @@ class Address extends BaseModel
         }
 
         // Regione
+<<<<<<< HEAD
         if ($this->administrative_area_level_2 && is_string($this->administrative_area_level_2)) {
+=======
+        if ($this->administrative_area_level_2) {
+>>>>>>> 1bb689f (.)
             $parts[] = $this->administrative_area_level_2;
         }
 
         // Paese
+<<<<<<< HEAD
         if ($this->country && is_string($this->country)) {
             $countryName = ($this->administrative_area_level_1 ?? $this->country) ?? '';
             $parts[] = strtoupper(is_string($countryName) ? $countryName : '');
+=======
+        if ($this->country) {
+            $countryName = $this->administrative_area_level_1 ?? $this->country;
+            $parts[] = strtoupper($countryName);
+>>>>>>> 1bb689f (.)
         }
 
         return implode("\n", $parts);
@@ -333,7 +452,11 @@ class Address extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Restituisce i dati in formato Schema.org PostalAddress.
+=======
+     * Restituisce i dati in formato Schema.org PostalAddress
+>>>>>>> 1bb689f (.)
      *
      * @return array<string, mixed>
      */
@@ -354,7 +477,11 @@ class Address extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Scope per cercare indirizzi nelle vicinanze.
+=======
+     * Scope per cercare indirizzi nelle vicinanze
+>>>>>>> 1bb689f (.)
      */
     public function scopeNearby(Builder $query, float $latitude, float $longitude, float $radiusKm = 10): Builder
     {
@@ -388,7 +515,11 @@ class Address extends BaseModel
      *
      * @return array<string, string>
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     protected function casts(): array
     {
         return [

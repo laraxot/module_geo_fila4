@@ -5,9 +5,19 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+<<<<<<< HEAD
 use Modules\Geo\Models\Address;
 use Modules\Geo\Models\Comune;
 use Modules\Geo\Models\Province;
+=======
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Geo\Models\Address;
+use Modules\Geo\Models\Comune;
+use Modules\Geo\Models\Province;
+use Tests\TestCase;
+
+uses(TestCase::class, RefreshDatabase::class);
+>>>>>>> 1bb689f (.)
 
 beforeEach(function () {
     $this->address = Address::factory()->create();

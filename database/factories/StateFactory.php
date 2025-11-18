@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\State;
 
 /**
+<<<<<<< HEAD
  * State Factory.
+=======
+ * State Factory
+>>>>>>> 1bb689f (.)
  *
  * @extends Factory<State>
  */

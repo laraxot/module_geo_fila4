@@ -98,6 +98,7 @@ Quando un altro modulo (es. StudioResource) deve gestire indirizzi, è best prac
 - Coerenza UI tra tutti i moduli
 - Manutenzione centralizzata
 
+<<<<<<< HEAD
 ## AddressColumn come colonna Filament riusabile
 
 Oltre allo schema di form, il modulo Geo espone anche una colonna tabellare riusabile per gli indirizzi:
@@ -143,6 +144,8 @@ Per ognuno di questi casi:
   - Aggiornare **tutte** le lingue in `lang/*/address_item_enum.php` con `label`, `description`, `icon`, `color`.
   - Documentare la scelta delle icone in questo file o in una doc dedicata agli enum Geo.
 
+=======
+>>>>>>> 1bb689f (.)
 ## Riferimenti
 
 - [../app/Models/Address.php](../app/Models/Address.php)

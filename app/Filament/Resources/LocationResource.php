@@ -11,6 +11,10 @@ use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
 use Modules\Geo\Models\Location;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 /**
  * Resource per la gestione dei luoghi geografici.
@@ -35,7 +39,11 @@ class LocationResource extends XotBaseResource
     /**
      * @return array<string, \Filament\Support\Components\Component>
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public static function getFormSchema(): array
     {
         return [
@@ -81,7 +89,11 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le relazioni configurate
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public static function getRelations(): array
     {
         return [];
@@ -97,7 +109,11 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le pagine configurate
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public static function getPages(): array
     {
         return [
@@ -108,6 +124,7 @@ class LocationResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
     /*
      * Converte le coordinate in formato float.
      *
@@ -115,6 +132,14 @@ class LocationResource extends XotBaseResource
      *
      * @return array{lat: float, lng: float} Le coordinate convertite in float
 
+=======
+    /**
+     * Converte le coordinate in formato float.
+     *
+     * @param  array{lat?: string|float|null, lng?: string|float|null}  $coordinates  Le coordinate da convertire
+     * @return array{lat: float, lng: float} Le coordinate convertite in float
+     */
+>>>>>>> 1bb689f (.)
     private static function formatCoordinates(array $coordinates): array
     {
         return [
@@ -122,5 +147,8 @@ class LocationResource extends XotBaseResource
             'lng' => (float) ($coordinates['lng'] ?? 0),
         ];
     }
+<<<<<<< HEAD
         */
+=======
+>>>>>>> 1bb689f (.)
 }

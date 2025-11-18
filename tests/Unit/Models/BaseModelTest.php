@@ -5,10 +5,22 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Modules\Geo\Models\BaseModel;
 
 beforeEach(function () {
     $this->baseModel = new class extends BaseModel {
+=======
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Geo\Models\BaseModel;
+use Tests\TestCase;
+
+uses(TestCase::class, RefreshDatabase::class);
+
+beforeEach(function () {
+    $this->baseModel = new class extends BaseModel
+    {
+>>>>>>> 1bb689f (.)
         protected $table = 'test_geo_table';
     };
 });

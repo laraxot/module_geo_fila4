@@ -7,6 +7,10 @@ namespace Modules\Geo\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Modules\Tenant\Models\Traits\SushiToJson;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 /**
  * Modello per i comuni italiani con Sushi.
@@ -15,6 +19,7 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * regioni, province, città, CAP, codici ISTAT, ecc.
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
  *
+<<<<<<< HEAD
  * @property string|null                                 $nome
  * @property float|null                                  $codice
  * @property array<array-key, mixed>|null                $zona
@@ -34,6 +39,27 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @property string|null                                 $updated_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+=======
+ * @property string|null $nome
+ * @property float|null $codice
+ * @property array<array-key, mixed>|null $zona
+ * @property array<array-key, mixed>|null $regione
+ * @property array<array-key, mixed>|null $provincia
+ * @property string|null $sigla
+ * @property string|null $codiceCatastale
+ * @property array<array-key, mixed>|null $cap
+ * @property int|null $popolazione
+ * @property int|null $id
+ * @property string|null $title
+ * @property string|null $slug
+ * @property string|null $content
+ * @property string|null $created_at
+ * @property string|null $updated_at
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read \Modules\Quaeris\Models\Profile|null $updater
+>>>>>>> 1bb689f (.)
  *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
@@ -56,10 +82,13 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @method static Builder<static>|Comune whereUpdatedBy($value)
  * @method static Builder<static>|Comune whereZona($value)
  *
+<<<<<<< HEAD
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
  *
+=======
+>>>>>>> 1bb689f (.)
  * @mixin \Eloquent
  */
 class Comune extends BaseModel
@@ -115,13 +144,21 @@ class Comune extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Get all regions.
+=======
+     * Get all regions
+>>>>>>> 1bb689f (.)
      *
      * @return Collection<string>
      */
     public static function getRegioni(): Collection
     {
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return static::all()
             ->pluck('regione')
             ->unique()
@@ -130,13 +167,21 @@ class Comune extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Get all provinces for a region.
+=======
+     * Get all provinces for a region
+>>>>>>> 1bb689f (.)
      *
      * @return Collection<string>
      */
     public static function getProvinceByRegione(string $regione): Collection
     {
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return static::where('regione', $regione)
             ->pluck('provincia')
             ->unique()
@@ -145,45 +190,77 @@ class Comune extends BaseModel
     }
 
     /**
+<<<<<<< HEAD
      * Get all comuni for a province.
+=======
+     * Get all comuni for a province
+>>>>>>> 1bb689f (.)
      *
      * @return Collection<static>
      */
     public static function getComuniByProvincia(string $provincia): Collection
     {
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return static::where('provincia', $provincia)->orderBy('nome')->get();
     }
 
     /**
+<<<<<<< HEAD
      * Find a comune by name (case insensitive).
      *
      * @param string $nome The name of the comune to find (case insensitive)
      *
+=======
+     * Find a comune by name (case insensitive)
+     *
+     * @param  string  $nome  The name of the comune to find (case insensitive)
+>>>>>>> 1bb689f (.)
      * @return static|null The found comune or null if not found
      */
     public static function findByNome(string $nome): ?self
     {
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return static::all()
             ->first(fn ($comune) => strtolower($comune->nome ?? '') === strtolower($nome));
     }
 
     /**
+<<<<<<< HEAD
      * Find comuni by CAP code (partial match supported).
      *
      * @param string $cap The CAP code to search for
      *
+=======
+     * Find comuni by CAP code (partial match supported)
+     *
+     * @param  string  $cap  The CAP code to search for
+>>>>>>> 1bb689f (.)
      * @return Collection<static> Collection of matching comuni
      */
     public static function findByCap(string $cap): Collection
     {
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return static::where('cap', 'like', "%{$cap}%")->get();
     }
 
     /**
+<<<<<<< HEAD
      * Find a city by ID.
+=======
+     * Find a city by ID
+>>>>>>> 1bb689f (.)
      *
      * @return array{id: int, nome: string, provincia: string, regione: string, cap: string, codice_catastale: string, popolazione: int, altitudine: int, superficie: float, lat: float, lng: float, zona_altimetrica: string}|null
      */
@@ -191,7 +268,11 @@ class Comune extends BaseModel
     {
         $comune = static::query()->where('id', $id)->first();
 
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
+=======
+        /** @phpstan-ignore return.type */
+>>>>>>> 1bb689f (.)
         return $comune ? $comune->toArray() : null;
     }
 
@@ -212,7 +293,11 @@ class Comune extends BaseModel
     }
 
     /** @return array<string, string>     */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     protected function casts(): array
     {
         return [

@@ -27,13 +27,21 @@ describe('Region Business Logic', function () {
     });
 
     test('region has correct key type configured', function () {
+<<<<<<< HEAD
         $region = new Region();
+=======
+        $region = new Region;
+>>>>>>> 1bb689f (.)
 
         expect($region->getKeyType())->toBe('integer');
     });
 
     test('region has schema definition for geographic data', function () {
+<<<<<<< HEAD
         $region = new Region();
+=======
+        $region = new Region;
+>>>>>>> 1bb689f (.)
 
         expect($region)->toHaveProperty('schema');
         expect($region->schema['id'])->toBe('integer');
@@ -45,7 +53,11 @@ describe('Region Business Logic', function () {
     });
 
     test('region model can be instantiated without errors', function () {
+<<<<<<< HEAD
         $region = new Region();
+=======
+        $region = new Region;
+>>>>>>> 1bb689f (.)
 
         expect($region)->toBeInstanceOf(Region::class);
         expect($region)->toBeInstanceOf(BaseModel::class);

@@ -12,18 +12,30 @@ use Tests\TestCase;
 uses(TestCase::class);
 
 beforeEach(function (): void {
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line method.nonObject */
     $this->mockClient = $this->mock(Client::class);
     $this->action = new LookupPlaceAction();
+=======
+    /** @phpstan-ignore-next-line method.nonObject */
+    $this->mockClient = $this->mock(Client::class);
+    $this->action = new LookupPlaceAction;
+>>>>>>> 1bb689f (.)
 
     // Replace the client instance with our mock
     /** @phpstan-ignore-next-line property.notFound */
     $reflection = new ReflectionClass($this->action);
     /** @phpstan-ignore-next-line method.nonObject */
     $property = $reflection->getProperty('client');
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line method.nonObject */
     $property->setAccessible(true);
     /* @phpstan-ignore-next-line property.notFound, method.nonObject */
+=======
+    /** @phpstan-ignore-next-line method.nonObject */
+    $property->setAccessible(true);
+    /** @phpstan-ignore-next-line property.notFound, method.nonObject */
+>>>>>>> 1bb689f (.)
     $property->setValue($this->action, $this->mockClient);
 });
 
@@ -36,7 +48,11 @@ test('lookup place action returns location data for valid osm id', function (): 
         ],
     ]));
 
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
@@ -63,25 +79,41 @@ test('lookup place action returns location data for valid osm id', function (): 
 test('lookup place action throws exception for empty results', function (): void {
     $mockResponse = new Response(200, [], json_encode([]));
 
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->andReturn($mockResponse);
 
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     expect(fn () => $this->action->execute('R999999'))
         ->toThrow(RuntimeException::class, 'No results found for OSM ID: R999999');
 });
 
 test('lookup place action handles guzzle exceptions', function (): void {
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->andThrow(new GuzzleException('API unavailable'));
 
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     expect(fn () => $this->action->execute('R123456'))
         ->toThrow(GuzzleException::class, 'API unavailable');
 });
@@ -91,15 +123,26 @@ test('lookup place action uses correct user agent header', function (): void {
         ['lat' => '0', 'lon' => '0', 'display_name' => 'Test'],
     ]));
 
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
+=======
+    /** @phpstan-ignore-next-line property.notFound */
+>>>>>>> 1bb689f (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->withArgs(function ($url, $options) {
+<<<<<<< HEAD
             /* @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
             return isset($options['headers']['User-Agent'])
                    /* @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
                    && '<main module>/1.0' === $options['headers']['User-Agent'];
+=======
+            /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
+            return isset($options['headers']['User-Agent']) &&
+                   /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
+                   $options['headers']['User-Agent'] === '<main module>/1.0';
+>>>>>>> 1bb689f (.)
         })
         ->andReturn($mockResponse);
 

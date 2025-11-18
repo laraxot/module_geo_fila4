@@ -6,12 +6,20 @@ namespace Modules\Geo\Filament\Resources\AddressResource\Pages;
 
 use Modules\Geo\Filament\Resources\AddressResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 class ViewAddress extends XotBaseViewRecord
 {
     protected static string $resource = AddressResource::class;
 
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getInfolistSchema(): array
     {
         return [];

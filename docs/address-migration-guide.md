@@ -7,6 +7,7 @@ Quando progettiamo la tabella per il modello `Address`, è importante considerar
 ### Migrazione Proposta
 
 ```php
+<<<<<<< HEAD
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Modules\Geo\Enums\AddressItemEnum;
@@ -14,12 +15,18 @@ use Modules\Geo\Enums\AddressItemEnum;
 public function up(): void
 {
     Schema::create('addresses', function (Blueprint $table): void {
+=======
+public function up(): void
+{
+    Schema::create('addresses', function (Blueprint $table) {
+>>>>>>> 1bb689f (.)
         $table->id();
         $table->nullableMorphs('addressable'); // Relazione polimorfica
         $table->string('name')->nullable()->comment('Nome identificativo dell\'indirizzo');
         $table->text('description')->nullable()->comment('Descrizione dell\'indirizzo');
         $table->string('type', 20)->nullable()->comment('Tipo di indirizzo (casa, lavoro, ecc.)');
         $table->boolean('is_primary')->default(false)->comment('Indica se è l\'indirizzo principale');
+<<<<<<< HEAD
 
         // Tutti i componenti dell'indirizzo definiti da AddressItemEnum (route, locality, ...)
         AddressItemEnum::columns($table);
@@ -27,12 +34,35 @@ public function up(): void
         // Dati aggiuntivi
         $table->json('extra_data')->nullable()->comment('Dati aggiuntivi in formato JSON');
 
+=======
+        
+        // Componenti dell'indirizzo
+        $table->string('street_number', 20)->nullable()->comment('Numero civico');
+        $table->string('route', 100)->nullable()->comment('Via/Strada');
+        $table->string('locality', 100)->nullable()->comment('Località/Città');
+        $table->string('administrative_area_level_3', 50)->nullable()->comment('Provincia');
+        $table->string('administrative_area_level_2', 50)->nullable()->comment('Regione');
+        $table->string('administrative_area_level_1', 50)->nullable()->comment('Paese/Stato');
+        $table->string('country', 2)->nullable()->comment('Codice paese ISO 3166-1 alpha-2');
+        $table->string('postal_code', 20)->nullable()->comment('Codice postale');
+        
+        // Dati di geolocalizzazione
+        $table->string('formatted_address')->nullable()->comment('Indirizzo formattato completo');
+        $table->string('place_id')->nullable()->comment('ID del luogo (es. Google Place ID)');
+        $table->decimal('latitude', 10, 8)->nullable()->comment('Latitudine');
+        $table->decimal('longitude', 11, 8)->nullable()->comment('Longitudine');
+        
+        // Dati aggiuntivi
+        $table->json('extra_data')->nullable()->comment('Dati aggiuntivi in formato JSON');
+        
+>>>>>>> 1bb689f (.)
         // Timestamp standard
         $table->timestamps();
     });
 }
 ```
 
+<<<<<<< HEAD
 Per rollback o refactor, è possibile usare:
 
 ```php
@@ -47,6 +77,8 @@ e ottenere la lista delle colonne standard (utile per select dinamiche, validazi
 $columns = AddressItemEnum::getColumnNames();
 ```
 
+=======
+>>>>>>> 1bb689f (.)
 ## Convenzioni di Naming
 
 ### Perché Evitare il Prefisso "address_" nei Campi?

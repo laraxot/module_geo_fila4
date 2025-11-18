@@ -9,10 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Geo\Contracts\HasGeolocation;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> 1bb689f (.)
 
 use function Safe\json_encode;
 
 /**
+<<<<<<< HEAD
  * @property Address|null                                $address
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property string                                      $formatted_address
@@ -21,11 +26,22 @@ use function Safe\json_encode;
  * @property Model|\Eloquent                             $linked
  * @property PlaceType|null                              $placeType
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+=======
+ * @property-read \Modules\Geo\Models\Address|null $address
+ * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read string $formatted_address
+ * @property-read float|null $latitude
+ * @property-read float|null $longitude
+ * @property-read Model|\Eloquent $linked
+ * @property-read \Modules\Geo\Models\PlaceType|null $placeType
+ * @property-read \Modules\Quaeris\Models\Profile|null $updater
+>>>>>>> 1bb689f (.)
  *
  * @method static Builder<static>|Place newModelQuery()
  * @method static Builder<static>|Place newQuery()
  * @method static Builder<static>|Place query()
  *
+<<<<<<< HEAD
  * @property int                                         $id
  * @property string|null                                 $model_type
  * @property int|null                                    $model_id
@@ -110,6 +126,8 @@ use function Safe\json_encode;
  * @method static Builder<static>|Place                        whereUpdatedAt($value)
  * @method static Builder<static>|Place                        whereUpdatedBy($value)
  *
+=======
+>>>>>>> 1bb689f (.)
  * @mixin \Eloquent
  */
 class Place extends BaseModel implements HasGeolocation
@@ -190,19 +208,31 @@ class Place extends BaseModel implements HasGeolocation
         return $this->belongsTo(Address::class);
     }
 
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getFormattedAddress(): string
     {
         return (string) ($this->formatted_address ?? $this->address->formatted_address ?? '');
@@ -242,6 +272,7 @@ class Place extends BaseModel implements HasGeolocation
 
     public function getFormattedAddressAttribute(): string
     {
+<<<<<<< HEAD
         $address = $this->attributes['formatted_address'] ?? null;
 
         return \Modules\Xot\Actions\Cast\SafeStringCastAction::cast($address);
@@ -259,6 +290,25 @@ class Place extends BaseModel implements HasGeolocation
     }
 
     #[\Override]
+=======
+        $address = $this->attributes['formatted_address'] ?? '';
+
+        return is_string($address) ? $address : '';
+    }
+
+    #[Override]
+    public function hasValidCoordinates(): bool
+    {
+        return $this->latitude !== null &&
+            $this->longitude !== null &&
+            $this->latitude >= -90 &&
+            $this->latitude <= 90 &&
+            $this->longitude >= -180 &&
+            $this->longitude <= 180;
+    }
+
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getMapIcon(): ?string
     {
         $slug = $this->placeType->slug ?? null;
@@ -282,7 +332,11 @@ class Place extends BaseModel implements HasGeolocation
         return is_string($icon) ? $icon : null;
     }
 
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     public function getLocationType(): ?string
     {
         $name = $this->placeType->name ?? null;
@@ -295,7 +349,11 @@ class Place extends BaseModel implements HasGeolocation
      *
      * @return array<string, string>
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> 1bb689f (.)
     protected function casts(): array
     {
         return [

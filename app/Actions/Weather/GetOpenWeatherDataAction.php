@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Weather;
 
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
+=======
+use Exception;
+>>>>>>> 1bb689f (.)
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -25,12 +29,15 @@ class GetOpenWeatherDataAction
                 'lang' => 'it',
             ]);
 
+<<<<<<< HEAD
             // Handle PromiseInterface|Response union type
             if ($response instanceof PromiseInterface) {
                 $response = $response->wait();
             }
 
             /** @var Response $response */
+=======
+>>>>>>> 1bb689f (.)
             if (! $response->successful()) {
                 return null;
             }
@@ -58,7 +65,11 @@ class GetOpenWeatherDataAction
                 'clouds' => Arr::get($data, 'clouds.all'),
                 'timestamp' => Arr::get($data, 'dt'),
             ];
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch (Exception $e) {
+>>>>>>> 1bb689f (.)
             Log::error('OpenWeather API error: '.$e->getMessage());
 
             return null;

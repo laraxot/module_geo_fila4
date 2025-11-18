@@ -8,6 +8,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
+<<<<<<< HEAD
+=======
+use RuntimeException;
+use Webmozart\Assert\Assert;
+>>>>>>> 1bb689f (.)
 
 use function Safe\json_decode;
 use function Safe\preg_match;
@@ -24,13 +29,21 @@ readonly class GetAddressFromMapboxAction
 
     public function __construct(
         private Client $client,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+>>>>>>> 1bb689f (.)
      */
     public function execute(string $address): ?AddressData
     {
@@ -53,11 +66,16 @@ readonly class GetAddressFromMapboxAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata
+=======
+     * @throws RuntimeException Se la chiave API non è configurata
+>>>>>>> 1bb689f (.)
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.mapbox.access_token');
+<<<<<<< HEAD
         if (empty($apiKey)) {
             throw new \RuntimeException('Mapbox access token not configured');
         }
@@ -67,6 +85,11 @@ readonly class GetAddressFromMapboxAction
         if (strlen($address) > 1000) {
             throw new \RuntimeException('Address is too long');
         }
+=======
+        Assert::notEmpty($apiKey, 'Mapbox access token not configured');
+        Assert::notEmpty($address, 'Address cannot be empty');
+        Assert::maxLength($address, 1000, 'Address is too long');
+>>>>>>> 1bb689f (.)
     }
 
     /**
@@ -95,7 +118,11 @@ readonly class GetAddressFromMapboxAction
     /**
      * Elabora la risposta dell'API.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è valida
+=======
+     * @throws RuntimeException Se la risposta non è valida
+>>>>>>> 1bb689f (.)
      */
     private function parseResponse(string $response): ?AddressData
     {

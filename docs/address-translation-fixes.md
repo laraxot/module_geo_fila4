@@ -208,6 +208,7 @@ Le stesse correzioni sono state applicate a:
 - `laravel/Modules/Geo/lang/en/address.php` - Inglese  
 - `laravel/Modules/Geo/lang/de/address.php` - Tedesco
 
+<<<<<<< HEAD
 ## Estensione: Traduzioni AddressItemEnum
 
 Per completare la copertura delle traduzioni legate agli indirizzi, sono state aggiunte anche le traduzioni per l'enum `AddressItemEnum` utilizzato in `Modules\Geo\Enums\AddressItemEnum` con il pattern `TransTrait::transClass()`.
@@ -257,6 +258,8 @@ Queste correzioni allineano `address_item.php` alle regole già descritte per `a
 - **Struttura espansa** (`label`, `placeholder`, `help`, `helper_text`, `description`).
 - **Coerenza semantica** con le descrizioni di `AddressItemEnum` documentate in `address-item-enum-guide.md`.
 
+=======
+>>>>>>> 1bb689f (.)
 ## Collegamenti
 
 - [README Modulo Geo](README.md) - Documentazione principale

@@ -89,6 +89,7 @@ $addressSchema['locality'] = Forms\Components\TextInput::make('locality')
     ->columnSpan(2);
 ```
 
+<<<<<<< HEAD
 ## AddressSection (Filament Schemas)
 
 `AddressSection` è il wrapper standard per riutilizzare lo schema di `AddressResource` all'interno delle pagine Filament, usando il nuovo layer `filament/schemas`.
@@ -113,5 +114,11 @@ Questo pattern rispetta DRY+KISS:
 
 - [address-resource.md](address-resource.md)
 - [pattern-filament-pages.md](../project_docs/pattern-filament-pages.md)
+=======
+## Riferimenti
+
+- [address-resource.md](address-resource.md)
+- [pattern-filament-pages.md](../docs/pattern-filament-pages.md)
+>>>>>>> 1bb689f (.)
 - [AddressResource](../app/Filament/Resources/AddressResource.php)
 - [StudioResource](../../<main module>/app/Filament/Resources/StudioResource.php)

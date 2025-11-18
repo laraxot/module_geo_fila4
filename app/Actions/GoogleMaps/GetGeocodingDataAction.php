@@ -8,6 +8,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\GeocodingData;
+<<<<<<< HEAD
+=======
+use RuntimeException;
+use Webmozart\Assert\Assert;
+>>>>>>> 1bb689f (.)
 
 use function Safe\json_decode;
 
@@ -20,13 +25,21 @@ readonly class GetGeocodingDataAction
 
     public function __construct(
         private Client $client,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> 1bb689f (.)
 
     /**
      * Ottiene i dati di geocodifica per un indirizzo.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
+=======
+     * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
+>>>>>>> 1bb689f (.)
      */
     public function execute(string $address): GeocodingData
     {
@@ -49,12 +62,17 @@ readonly class GetGeocodingDataAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se i dati non sono validi
+=======
+     * @throws RuntimeException Se i dati non sono validi
+>>>>>>> 1bb689f (.)
      */
     private function validateInput(string $address): void
     {
         // $apiKey = config('services.google_maps.api_key');
         $apiKey = config('services.google.maps_api_key');
+<<<<<<< HEAD
         if (empty($apiKey)) {
             throw new \RuntimeException('Chiave API Google Maps non configurata!');
         }
@@ -64,6 +82,11 @@ readonly class GetGeocodingDataAction
         if (strlen($address) > 1000) {
             throw new \RuntimeException('Indirizzo troppo lungo');
         }
+=======
+        Assert::notEmpty($apiKey, 'Chiave API Google Maps non configurata!');
+        Assert::notEmpty($address, 'Indirizzo non può essere vuoto');
+        Assert::maxLength($address, 1000, 'Indirizzo troppo lungo');
+>>>>>>> 1bb689f (.)
     }
 
     /**
@@ -84,7 +107,11 @@ readonly class GetGeocodingDataAction
     }
 
     /**
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è nel formato atteso
+=======
+     * @throws RuntimeException Se la risposta non è nel formato atteso
+>>>>>>> 1bb689f (.)
      */
     private function parseResponse(string $response): GeocodingData
     {
@@ -108,7 +135,11 @@ readonly class GetGeocodingDataAction
          * } $data */
         $data = json_decode($response, true);
 
+<<<<<<< HEAD
         if ('OK' !== $data['status'] || empty($data['results'])) {
+=======
+        if ($data['status'] !== 'OK' || empty($data['results'])) {
+>>>>>>> 1bb689f (.)
             Log::warning('Geocodifica fallita', [
                 'status' => $data['status'],
                 'error' => $data['error_message'] ?? 'Nessun risultato trovato',
