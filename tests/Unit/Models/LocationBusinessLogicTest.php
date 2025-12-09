@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use function Safe\class_uses;
 
 <<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
