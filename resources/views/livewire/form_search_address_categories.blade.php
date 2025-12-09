@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
 
 ?>
+=======
+>>>>>>> bc26394 (.)
 <div>
     <div class="home-address-container delay-1s animate__fadeInUp animate__animated">
         <div class="home-address">
