@@ -32,7 +32,10 @@ use Sushi\Sushi;
 use Sushi\Sushi;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Filament\Schemas\Components\Utilities\Get;
+<<<<<<< HEAD
 use Modules\Xot\Contracts\ProfileContract;
+=======
+>>>>>>> bc26394 (.)
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -43,10 +46,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property string|null $name
+<<<<<<< HEAD
  * @property-read ProfileContract|null $creator
  * @property-read Collection<int, Province> $provinces
  * @property-read int|null $provinces_count
  * @property-read ProfileContract|null $updater
+=======
+ * @property-read \Modules\SaluteOra\Models\Profile|null $creator
+ * @property-read Collection<int, Province> $provinces
+ * @property-read int|null $provinces_count
+ * @property-read \Modules\SaluteOra\Models\Profile|null $updater
+>>>>>>> bc26394 (.)
  * @method static Builder<static>|Region newModelQuery()
  * @method static Builder<static>|Region newQuery()
  * @method static Builder<static>|Region query()
@@ -79,11 +89,16 @@ class Region extends BaseModel
      */
     protected $keyType = 'integer';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc26394 (.)
     protected array $schema = [
         'id' => 'integer',
         'name' => 'string',
     ];
 
+<<<<<<< HEAD
     public function getRows(): array
     {
         $rows = Comune::select('regione->codice as id', 'regione->nome as name')
@@ -91,6 +106,14 @@ class Region extends BaseModel
             ->orderBy('regione->nome')
             ->get();
 
+=======
+    public function getRows(): array{
+        $rows=Comune::select("regione->codice as id","regione->nome as name")
+            ->distinct()
+            ->orderBy("regione->nome")
+            ->get();
+       
+>>>>>>> bc26394 (.)
         return $rows->toArray();
     }
 
@@ -103,7 +126,14 @@ class Region extends BaseModel
     {
         return self::orderBy('name')
             ->get()
+<<<<<<< HEAD
             ->pluck('name', 'id')
             ->toArray();
     }
 }
+=======
+            ->pluck("name", "id")
+            ->toArray();
+    }
+}
+>>>>>>> bc26394 (.)
