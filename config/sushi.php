@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 declare(strict_types=1);
 
 return [
@@ -21,6 +24,7 @@ return [
      * | Configurazione della cache per i modelli Sushi.
      * |
      */
+<<<<<<< HEAD
 =======
 return [
     /*
@@ -41,11 +45,16 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'cache' => [
         'enabled' => env('SUSHI_CACHE_ENABLED', true),
         'duration' => env('SUSHI_CACHE_DURATION', 60 * 24 * 7), // 7 giorni
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     /*
      * |--------------------------------------------------------------------------
      * | Database Configuration
@@ -54,6 +63,7 @@ return [
      * | Configurazione del database SQLite per i modelli Sushi.
      * |
      */
+<<<<<<< HEAD
 =======
 
     /*
@@ -65,11 +75,16 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'database' => [
         'connection' => env('SUSHI_DB_CONNECTION', 'sqlite'),
         'database' => env('SUSHI_DB_DATABASE', ':memory:'),
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     /*
      * |--------------------------------------------------------------------------
      * | Models Configuration
@@ -78,6 +93,7 @@ return [
      * | Configurazione specifica per i modelli Sushi.
      * |
      */
+<<<<<<< HEAD
 =======
 
     /*
@@ -89,6 +105,8 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'models' => [
         'comune' => [
             'file' => 'database/content/comuni.json',
@@ -120,7 +138,11 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 ];
 =======
 ]; 
 >>>>>>> bc26394 (.)
+=======
+];
+>>>>>>> c942565 (.)

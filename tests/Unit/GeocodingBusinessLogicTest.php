@@ -10,9 +10,12 @@ uses(TestCase::class);
 
 describe('Geocoding Business Logic', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     beforeEach(function () {
         // In-memory test data following CLAUDE.md guidelines - no database
         $this->italianAddress = [
@@ -63,6 +66,7 @@ describe('Geocoding Business Logic', function () {
 
     describe('Italian Address Validation', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
         it('validates Italian postal code format', function () {
             $address = $this->italianAddress;
 
@@ -72,6 +76,11 @@ describe('Geocoding Business Logic', function () {
             $address = $this->italianAddress;
             
 >>>>>>> bc26394 (.)
+=======
+        it('validates Italian postal code format', function () {
+            $address = $this->italianAddress;
+
+>>>>>>> c942565 (.)
             // Business Logic: Italian postal codes are 5 digits
             expect($address['postal_code'])->toMatch('/^\d{5}$/');
             expect($address['postal_code'])->toBe('20100');
@@ -81,10 +90,14 @@ describe('Geocoding Business Logic', function () {
         it('validates Italian province codes', function () {
             $address = $this->italianAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Italian provinces are 2-letter codes
             expect($address['province'])->toMatch('/^[A-Z]{2}$/');
             expect($address['province'])->toBe('MI');
@@ -94,10 +107,14 @@ describe('Geocoding Business Logic', function () {
         it('validates Italian address structure', function () {
             $address = $this->italianAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Complete Italian address requirements
             expect($address)->toHaveKey('street');
             expect($address)->toHaveKey('city');
@@ -106,10 +123,14 @@ describe('Geocoding Business Logic', function () {
             expect($address)->toHaveKey('postal_code');
             expect($address)->toHaveKey('country_code');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             expect($address['country_code'])->toBe('IT');
             expect($address['country'])->toBe('Italy');
         });
@@ -117,10 +138,14 @@ describe('Geocoding Business Logic', function () {
         it('validates Italian street address format', function () {
             $address = $this->italianAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Italian street addresses have number after street name
             expect($address['street'])->toContain('Via');
             expect($address['street'])->toMatch('/Via\s+\w+\s+\d+/');
@@ -130,20 +155,28 @@ describe('Geocoding Business Logic', function () {
         it('validates Italian regional hierarchy', function () {
             $address = $this->italianAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Milano is in Lombardia region with MI province
             if ('Milano' === $address['city']) {
                 expect($address['region'])->toBe('Lombardia');
                 expect($address['province'])->toBe('MI');
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Regional consistency check
             $lombardyProvinces = ['MI', 'BG', 'BS', 'CO', 'CR', 'MN', 'PV', 'SO', 'VA'];
             if ('Lombardia' === $address['region']) {
@@ -154,14 +187,18 @@ describe('Geocoding Business Logic', function () {
 
     describe('Geocoding Provider Logic', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
         it('validates geocoding coordinate precision', function () {
             $result = $this->geocodingResult;
 
             // Business Logic: Italian coordinates should be within bounds
             expect($result['latitude'])->toBeGreaterThan(35.0); // Southern Italy
+<<<<<<< HEAD
 <<<<<<< HEAD
             expect($result['latitude'])->toBeLessThan(47.5); // Northern Italy
             expect($result['longitude'])->toBeGreaterThan(6.0); // Western Italy
@@ -171,16 +208,25 @@ describe('Geocoding Business Logic', function () {
             expect($result['longitude'])->toBeGreaterThan(6.0);  // Western Italy
             expect($result['longitude'])->toBeLessThan(19.0);   // Eastern Italy
 >>>>>>> bc26394 (.)
+=======
+            expect($result['latitude'])->toBeLessThan(47.5); // Northern Italy
+            expect($result['longitude'])->toBeGreaterThan(6.0); // Western Italy
+            expect($result['longitude'])->toBeLessThan(19.0); // Eastern Italy
+>>>>>>> c942565 (.)
         });
 
         it('ensures geocoding accuracy levels', function () {
             $result = $this->geocodingResult;
             $validAccuracyLevels = ['country', 'region', 'city', 'district', 'street_level', 'building'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Accuracy must be from valid set
             expect($validAccuracyLevels)->toContain($result['accuracy']);
             expect($result['confidence'])->toBeGreaterThan(0.0);
@@ -190,10 +236,14 @@ describe('Geocoding Business Logic', function () {
         it('validates provider response structure', function () {
             $result = $this->geocodingResult;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: All providers must return consistent structure
             expect($result)->toHaveKey('latitude');
             expect($result)->toHaveKey('longitude');
@@ -201,10 +251,14 @@ describe('Geocoding Business Logic', function () {
             expect($result)->toHaveKey('provider');
             expect($result)->toHaveKey('confidence');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             $validProviders = ['nominatim', 'bing', 'mapbox', 'here', 'google'];
             expect($validProviders)->toContain($result['provider']);
         });
@@ -213,29 +267,41 @@ describe('Geocoding Business Logic', function () {
             $result = $this->geocodingResult;
             $bbox = $result['bounding_box'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Bounding box must contain the point
             expect($bbox['north'])->toBeGreaterThan($result['latitude']);
             expect($bbox['south'])->toBeLessThan($result['latitude']);
             expect($bbox['east'])->toBeGreaterThan($result['longitude']);
             expect($bbox['west'])->toBeLessThan($result['longitude']);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Box must be reasonable size (not too big/small)
             $latDiff = $bbox['north'] - $bbox['south'];
             $lngDiff = $bbox['east'] - $bbox['west'];
             expect($latDiff)->toBeGreaterThan(0.0001); // Not too small
 <<<<<<< HEAD
+<<<<<<< HEAD
             expect($latDiff)->toBeLessThan(1.0); // Not too big
 =======
             expect($latDiff)->toBeLessThan(1.0);       // Not too big
 >>>>>>> bc26394 (.)
+=======
+            expect($latDiff)->toBeLessThan(1.0); // Not too big
+>>>>>>> c942565 (.)
             expect($lngDiff)->toBeGreaterThan(0.0001);
             expect($lngDiff)->toBeLessThan(1.0);
         });
@@ -245,11 +311,15 @@ describe('Geocoding Business Logic', function () {
             $primaryProvider = 'nominatim';
             $fallbackProviders = ['bing', 'mapbox', 'here'];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 
             // Business Logic: Must have fallback providers
             expect($providers)->toContain($primaryProvider);
             expect(count($fallbackProviders))->toBeGreaterThan(0);
 
+<<<<<<< HEAD
 =======
             
             // Business Logic: Must have fallback providers
@@ -257,6 +327,8 @@ describe('Geocoding Business Logic', function () {
             expect(count($fallbackProviders))->toBeGreaterThan(0);
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Each fallback must be different from primary
             foreach ($fallbackProviders as $fallback) {
                 expect($fallback)->not->toBe($primaryProvider);
@@ -267,6 +339,7 @@ describe('Geocoding Business Logic', function () {
 
     describe('Weather Data Integration', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
         it('validates weather data structure', function () {
             $weather = $this->weatherData;
 
@@ -276,16 +349,25 @@ describe('Geocoding Business Logic', function () {
             $weather = $this->weatherData;
             
 >>>>>>> bc26394 (.)
+=======
+        it('validates weather data structure', function () {
+            $weather = $this->weatherData;
+
+>>>>>>> c942565 (.)
             // Business Logic: Weather data must have core measurements
             expect($weather)->toHaveKey('temperature');
             expect($weather)->toHaveKey('humidity');
             expect($weather)->toHaveKey('pressure');
             expect($weather)->toHaveKey('weather_condition');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Temperature should be reasonable for Italy
             expect($weather['temperature'])->toBeGreaterThan(-20);
             expect($weather['temperature'])->toBeLessThan(50);
@@ -300,22 +382,31 @@ describe('Geocoding Business Logic', function () {
 
             // Atmospheric pressure in hPa
 <<<<<<< HEAD
+<<<<<<< HEAD
             expect($weather['pressure'])->toBeGreaterThan(950); // Low pressure
             expect($weather['pressure'])->toBeLessThan(1050); // High pressure
 =======
             expect($weather['pressure'])->toBeGreaterThan(950);  // Low pressure
             expect($weather['pressure'])->toBeLessThan(1050);   // High pressure
 >>>>>>> bc26394 (.)
+=======
+            expect($weather['pressure'])->toBeGreaterThan(950); // Low pressure
+            expect($weather['pressure'])->toBeLessThan(1050); // High pressure
+>>>>>>> c942565 (.)
         });
 
         it('validates wind measurements', function () {
             $weather = $this->weatherData;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 
             // Business Logic: Wind speed in m/s or km/h
             expect($weather['wind_speed'])->toBeGreaterThanOrEqual(0);
             expect($weather['wind_speed'])->toBeLessThan(100); // Reasonable max
 
+<<<<<<< HEAD
 =======
             
             // Business Logic: Wind speed in m/s or km/h
@@ -323,6 +414,8 @@ describe('Geocoding Business Logic', function () {
             expect($weather['wind_speed'])->toBeLessThan(100); // Reasonable max
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Wind direction in degrees
             expect($weather['wind_direction'])->toBeGreaterThanOrEqual(0);
             expect($weather['wind_direction'])->toBeLessThan(360);
@@ -332,6 +425,9 @@ describe('Geocoding Business Logic', function () {
             $weather = $this->weatherData;
             $validConditions = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
                 'clear',
                 'partly_cloudy',
                 'cloudy',
@@ -346,6 +442,7 @@ describe('Geocoding Business Logic', function () {
                 'sleet',
             ];
 
+<<<<<<< HEAD
 =======
                 'clear', 'partly_cloudy', 'cloudy', 'overcast',
                 'rain', 'heavy_rain', 'snow', 'thunderstorm',
@@ -353,6 +450,8 @@ describe('Geocoding Business Logic', function () {
             ];
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Business Logic: Weather condition must be from valid set
             expect($validConditions)->toContain($weather['weather_condition']);
         });
@@ -368,6 +467,9 @@ describe('Geocoding Business Logic', function () {
 
     describe('Place Classification Logic', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
         it('validates place hierarchy and types', function () {
             $place = $this->place;
             $validTypes = [
@@ -382,6 +484,7 @@ describe('Geocoding Business Logic', function () {
                 'landmark',
             ];
 
+<<<<<<< HEAD
 =======
         
         it('validates place hierarchy and types', function () {
@@ -392,6 +495,8 @@ describe('Geocoding Business Logic', function () {
             ];
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Business Logic: Place type must be valid
             expect($validTypes)->toContain($place['type']);
             expect($place['name'])->toBeString();
@@ -401,10 +506,14 @@ describe('Geocoding Business Logic', function () {
         it('validates population data for cities', function () {
             $place = $this->place;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Cities should have population data
             if ('city' === $place['type']) {
                 expect($place)->toHaveKey('population');
@@ -412,10 +521,14 @@ describe('Geocoding Business Logic', function () {
                 expect($place['population'])->toBeGreaterThan(0);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Milano population validation (approx)
             if ('Milano' === $place['name']) {
                 expect($place['population'])->toBeGreaterThan(1000000);
@@ -426,20 +539,28 @@ describe('Geocoding Business Logic', function () {
         it('validates geographic measurements', function () {
             $place = $this->place;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Area and elevation must be reasonable
             if (isset($place['area_km2'])) {
                 expect($place['area_km2'])->toBeGreaterThan(0);
                 expect($place['area_km2'])->toBeLessThan(100000); // Reasonable max
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             if (isset($place['elevation'])) {
                 expect($place['elevation'])->toBeInt();
                 expect($place['elevation'])->toBeGreaterThanOrEqual(-100); // Below sea level ok
@@ -451,10 +572,14 @@ describe('Geocoding Business Logic', function () {
             $place = $this->place;
             $italianTimezones = ['Europe/Rome'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Italian places should use correct timezone
             if (isset($place['timezone'])) {
                 expect($italianTimezones)->toContain($place['timezone']);
@@ -464,10 +589,14 @@ describe('Geocoding Business Logic', function () {
 
     describe('Distance and Route Calculations', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
         it('calculates distance between coordinates', function () {
             $point1 = ['lat' => 45.4642, 'lng' => 9.1900]; // Milano
             $point2 = ['lat' => 41.9028, 'lng' => 12.4964]; // Roma
 
+<<<<<<< HEAD
 =======
         
         it('calculates distance between coordinates', function () {
@@ -475,11 +604,16 @@ describe('Geocoding Business Logic', function () {
             $point2 = ['lat' => 41.9028, 'lng' => 12.4964]; // Roma
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Business Logic: Haversine formula for distance
             $earthRadius = 6371; // km
             $dLat = deg2rad($point2['lat'] - $point1['lat']);
             $dLng = deg2rad($point2['lng'] - $point1['lng']);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 
             $a =
                 (sin($dLat / 2) * sin($dLat / 2)) +
@@ -487,6 +621,7 @@ describe('Geocoding Business Logic', function () {
             $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
             $distance = $earthRadius * $c;
 
+<<<<<<< HEAD
 =======
             
             $a = sin($dLat/2) * sin($dLat/2) + 
@@ -496,6 +631,8 @@ describe('Geocoding Business Logic', function () {
             $distance = $earthRadius * $c;
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             // Milano to Roma is approximately 480km
             expect($distance)->toBeGreaterThan(450);
             expect($distance)->toBeLessThan(520);
@@ -509,6 +646,9 @@ describe('Geocoding Business Logic', function () {
                 'west' => 9.0944,
             ];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 
             $pointInMilan = ['lat' => 45.4642, 'lng' => 9.1900];
             $pointOutsideMilan = ['lat' => 41.9028, 'lng' => 12.4964];
@@ -521,6 +661,7 @@ describe('Geocoding Business Logic', function () {
                 && $point['lng'] <= $bounds['east']
             ;
 
+<<<<<<< HEAD
 =======
             
             $pointInMilan = ['lat' => 45.4642, 'lng' => 9.1900];
@@ -535,6 +676,8 @@ describe('Geocoding Business Logic', function () {
             };
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             expect($isInBounds($pointInMilan, $milanBounds))->toBeTrue();
             expect($isInBounds($pointOutsideMilan, $milanBounds))->toBeFalse();
         });
@@ -544,10 +687,14 @@ describe('Geocoding Business Logic', function () {
             $maxReasonableRadius = 100; // km
             $minReasonableRadius = 0.1; // km
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Search radius must be reasonable
             expect($searchRadius)->toBeGreaterThan($minReasonableRadius);
             expect($searchRadius)->toBeLessThan($maxReasonableRadius);
@@ -556,6 +703,9 @@ describe('Geocoding Business Logic', function () {
 
     describe('Data Quality and Validation', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
         it('ensures coordinate precision limits', function () {
             $coordinates = ['lat' => 45.4642035, 'lng' => 9.1899738];
             $maxPrecision = 6; // decimal places
@@ -564,6 +714,7 @@ describe('Geocoding Business Logic', function () {
             $latPrecision = strlen(substr(strrchr((string) $coordinates['lat'], '.'), 1));
             $lngPrecision = strlen(substr(strrchr((string) $coordinates['lng'], '.'), 1));
 
+<<<<<<< HEAD
 =======
         
         it('ensures coordinate precision limits', function () {
@@ -575,6 +726,8 @@ describe('Geocoding Business Logic', function () {
             $lngPrecision = strlen(substr(strrchr((string)$coordinates['lng'], "."), 1));
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             expect($latPrecision)->toBeLessThanOrEqual($maxPrecision);
             expect($lngPrecision)->toBeLessThanOrEqual($maxPrecision);
         });
@@ -584,10 +737,14 @@ describe('Geocoding Business Logic', function () {
             $requiredFields = ['street', 'city', 'postal_code'];
             $optionalFields = ['province', 'region', 'country'];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             // Business Logic: Address completeness calculation
             $score = 0;
             foreach ($requiredFields as $field) {
@@ -601,10 +758,14 @@ describe('Geocoding Business Logic', function () {
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
             expect($score)->toBeGreaterThan(80); // High quality address
             expect($score)->toBeLessThanOrEqual(100);
         });
@@ -615,6 +776,9 @@ describe('Geocoding Business Logic', function () {
                 'result' => $this->geocodingResult,
                 'cached_at' => time() - 86400, // 1 day ago
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
                 'expires_at' => time() + (86400 * 30), // 30 days from now
             ];
 
@@ -622,6 +786,7 @@ describe('Geocoding Business Logic', function () {
             $isExpired = $cacheEntry['expires_at'] < time();
             $isRecentEnough = (time() - $cacheEntry['cached_at']) < (86400 * 90); // 90 days
 
+<<<<<<< HEAD
 =======
                 'expires_at' => time() + 86400 * 30, // 30 days from now
             ];
@@ -631,12 +796,18 @@ describe('Geocoding Business Logic', function () {
             $isRecentEnough = (time() - $cacheEntry['cached_at']) < (86400 * 90); // 90 days
             
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             expect($isExpired)->toBeFalse();
             expect($isRecentEnough)->toBeTrue();
         });
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 =======
 });
 >>>>>>> bc26394 (.)
+=======
+});
+>>>>>>> c942565 (.)

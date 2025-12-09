@@ -493,10 +493,14 @@ class Studio extends Model
 ### Collegamenti
 - Vedi anche: [architecture.md](./architecture.md), [place-address-schemaorg.md](./place-address-schemaorg.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Regole generali: Xot/docs/filosofia.md, Xot/docs/zen.md
 =======
 - Regole generali: Xot/project_docs/filosofia.md, Xot/project_docs/zen.md
 >>>>>>> bc26394 (.)
+=======
+- Regole generali: Xot/docs/filosofia.md, Xot/docs/zen.md
+>>>>>>> c942565 (.)
 
 ## Best practice Filament
 

@@ -368,6 +368,7 @@ class LocationSelectTest extends TestCase
 ## Related Documentation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Filament Forms Documentation](https://filamentphp.com/docs/3.x/forms/fields/select)
 - [Laravel Eloquent Relationships](https://laravel.com/docs/10.x/eloquent-relationships)
 - [Laravel Caching](https://laravel.com/docs/10.x/cache)
@@ -376,6 +377,11 @@ class LocationSelectTest extends TestCase
 - [Laravel Eloquent Relationships](https://laravel.com/project_docs/10.x/eloquent-relationships)
 - [Laravel Caching](https://laravel.com/project_docs/10.x/cache)
 >>>>>>> bc26394 (.)
+=======
+- [Filament Forms Documentation](https://filamentphp.com/docs/3.x/forms/fields/select)
+- [Laravel Eloquent Relationships](https://laravel.com/docs/10.x/eloquent-relationships)
+- [Laravel Caching](https://laravel.com/docs/10.x/cache)
+>>>>>>> c942565 (.)
 
 ## License
 
