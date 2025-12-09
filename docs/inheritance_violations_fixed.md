@@ -11,7 +11,7 @@
 // Modules/Geo/app/Models/BaseModel.php
 abstract class BaseModel extends Model
 {
-    use HasFactory;  // ← GIÀ PRESENTE QUI
+    use \Modules\Xot\Models\Traits\HasXotFactory;  // ← GIÀ PRESENTE QUI
     use Updater;
     
     // Metodo newFactory() ereditato automaticamente
@@ -33,7 +33,7 @@ abstract class BaseModel extends Model
 // ❌ PRIMA - Con duplicazioni
 class PlaceType extends BaseModel
 {
-    use HasFactory;  // DUPLICAZIONE!
+    use \Modules\Xot\Models\Traits\HasXotFactory;  // DUPLICAZIONE!
     
     protected static function newFactory(): \Modules\Geo\Database\Factories\PlaceTypeFactory
     {

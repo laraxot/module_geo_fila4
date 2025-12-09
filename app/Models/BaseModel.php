@@ -17,6 +17,8 @@ use Modules\Xot\Traits\Updater;
 
 /**
  * Class BaseModel.
+ *
+ * @template TFactory of \Illuminate\Database\Eloquent\Factories\Factory
  */
 <<<<<<< HEAD
 abstract class BaseModel extends XotBaseModel
@@ -33,7 +35,8 @@ abstract class BaseModel extends XotBaseModel
 =======
 abstract class BaseModel extends Model
 {
-    use HasFactory;
+    /** @use HasFactory<TFactory> */
+    use \Modules\Xot\Models\Traits\HasXotFactory;
     use Updater;
 
     /**
