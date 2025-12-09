@@ -26,6 +26,12 @@ use Modules\Geo\Datas\LocationData;
 >>>>>>> be08416 (.)
  * @return array<array{latitude: string, longitude: string}> Le coordinate filtrate
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> f0b4f5c (.)
 readonly class FilterCoordinatesInRadiusAction
 {
     public function __construct(
@@ -39,6 +45,26 @@ readonly class FilterCoordinatesInRadiusAction
      *
 =======
         private  CalculateDistanceAction $calculateDistanceAction,
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/develop
+class FilterCoordinatesInRadiusAction
+{
+    public function __construct(
+        private readonly CalculateDistanceAction $calculateDistanceAction,
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+readonly class FilterCoordinatesInRadiusAction
+{
+    public function __construct(
+        private  CalculateDistanceAction $calculateDistanceAction,
+>>>>>>> b93ef594b4 (.)
+=======
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
     ) {}
 
     /**
@@ -46,6 +72,12 @@ readonly class FilterCoordinatesInRadiusAction
 >>>>>>> be08416 (.)
      * @return array<array{latitude: string, longitude: string}>
      */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> f0b4f5c (.)
     public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array
     {
         $centerLocation = new LocationData(
@@ -65,5 +97,68 @@ readonly class FilterCoordinatesInRadiusAction
 
             return $distance <= $radius;
         });
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/develop
+    public function execute(
+        float $centerLatitude,
+        float $centerLongitude,
+        array $coordinates,
+        int $radius,
+    ): array {
+<<<<<<< HEAD
+=======
+    public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array
+    {
+>>>>>>> b93ef594b4 (.)
+        $centerLocation = new LocationData(
+            latitude: $centerLatitude,
+            longitude: $centerLongitude,
+            address: null,
+        );
+
+        return array_filter($coordinates, function (array $coordinate) use ($centerLocation, $radius): bool {
+            $targetLocation = new LocationData(
+                latitude: (float) $coordinate['latitude'],
+                longitude: (float) $coordinate['longitude'],
+                address: null,
+            );
+
+            $distance = $this->calculateDistanceAction->execute($centerLocation, $targetLocation)['distance']['value'];
+
+<<<<<<< HEAD
+                return $distance <= $radius;
+            }
+        );
+>>>>>>> a12f125f4a (.)
+=======
+            return $distance <= $radius;
+        });
+>>>>>>> b93ef594b4 (.)
+=======
+        $centerLocation = new LocationData(
+            latitude: $centerLatitude,
+            longitude: $centerLongitude,
+            address: null
+        );
+
+        return array_filter(
+            $coordinates,
+            function (array $coordinate) use ($centerLocation, $radius): bool {
+                $targetLocation = new LocationData(
+                    latitude: (float) $coordinate['latitude'],
+                    longitude: (float) $coordinate['longitude'],
+                    address: null
+                );
+
+                $distance = $this->calculateDistanceAction->execute($centerLocation, $targetLocation)['distance']['value'];
+
+                return $distance <= $radius;
+            }
+        );
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
     }
 }
