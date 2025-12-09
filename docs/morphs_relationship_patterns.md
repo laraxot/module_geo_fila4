@@ -1,4 +1,4 @@
-# Pattern di Relazioni Polimorfiche nell'Ecosistema SaluteOra
+# Pattern di Relazioni Polimorfiche nell'Ecosistema <main module>
 
 ## Evoluzione dei Tipi di Chiavi Primarie
 

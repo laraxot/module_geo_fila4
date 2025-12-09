@@ -191,7 +191,7 @@ protected function casts(): array
 
 ### Moduli da Verificare
 - [ ] **User**: Verificare altri modelli
-- [ ] **TechPlanner**: Verificare altri modelli
+- [ ] **<main module>**: Verificare altri modelli
 - [ ] **Notify**: Verificare altri modelli
 - [ ] **Altri moduli**: Ricerca globale
 
