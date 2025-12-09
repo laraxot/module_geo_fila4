@@ -9,11 +9,12 @@ use Filament\Widgets\Widget;
 /**
  * Widget mappa temporaneamente disabilitato per migrazione Filament v4.
  * Il pacchetto Webbingbrasil\FilamentMaps non è compatibile con Filament v4.
-<<<<<<< HEAD
+ * <<<<<<< HEAD.
  *
-=======
- * 
->>>>>>> be08416 (.)
+ * =======
+ *
+ * >>>>>>> be08416 (.)
+ *
  * @see https://github.com/webbingbrasil/filament-maps/issues
  */
 class WebbingbrasilMap extends Widget
