@@ -27,6 +27,9 @@ use Modules\Geo\Datas\LocationData;
  * @return array<array{latitude: string, longitude: string}> Le coordinate filtrate
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 readonly class FilterCoordinatesInRadiusAction
 {
     public function __construct(
@@ -40,12 +43,15 @@ readonly class FilterCoordinatesInRadiusAction
      *
 =======
         private  CalculateDistanceAction $calculateDistanceAction,
+<<<<<<< HEAD
 =======
 class FilterCoordinatesInRadiusAction
 {
     public function __construct(
         private readonly CalculateDistanceAction $calculateDistanceAction,
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     ) {}
 
     /**
@@ -54,6 +60,9 @@ class FilterCoordinatesInRadiusAction
      * @return array<array{latitude: string, longitude: string}>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array
     {
         $centerLocation = new LocationData(
@@ -73,6 +82,7 @@ class FilterCoordinatesInRadiusAction
 
             return $distance <= $radius;
         });
+<<<<<<< HEAD
 =======
     public function execute(
         float $centerLatitude,
@@ -101,5 +111,7 @@ class FilterCoordinatesInRadiusAction
             }
         );
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     }
 }

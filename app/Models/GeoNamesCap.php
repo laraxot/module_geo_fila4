@@ -9,11 +9,14 @@ use Illuminate\Database\Eloquent\Builder;
 =======
 use Modules\Xot\Contracts\ProfileContract;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Illuminate\Database\Eloquent\Collection;
 use Closure;
 use Illuminate\Contracts\Database\Query\Expression;
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 use Illuminate\Database\Eloquent\Model;
 // //use Laravel\Scout\Searchable;
 use Modules\Xot\Traits\Updater;
@@ -44,6 +47,7 @@ class GeoNamesCap extends BaseModel
  * @property ProfileContract|null $updater
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @method static GeoNamesCap|null first()
  * @method static Collection<int, GeoNamesCap> get()
@@ -54,6 +58,8 @@ class GeoNamesCap extends BaseModel
  * @method static int count(string $columns = '*')
  *
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
  * @mixin \Eloquent
  */
 class GeoNamesCap extends Model
@@ -65,23 +71,32 @@ class GeoNamesCap extends Model
     /** @var string */
     protected $table = 'geonames_cap';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // protected $connection = 'geo';
 =======
     // protected $connection = 'geo';
 
 >>>>>>> bc26394 (.)
+=======
+
+    // protected $connection = 'geo';
+>>>>>>> c942565 (.)
     /*
      * { function_description }
      *
      */
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
      * function __construct(){
      * $this->setConnection('user');
      * parent::__construct();
      * }//end construct
      */
+<<<<<<< HEAD
 =======
     function __construct(){
         $this->setConnection('user');
@@ -89,4 +104,6 @@ class GeoNamesCap extends Model
     }//end construct
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 }
