@@ -12,13 +12,13 @@ use Modules\Geo\Models\Address;
 use Webmozart\Assert\Assert;
 
 /**
- * Trait HasAddress
+ * Trait HasAddress.
  *
  * Fornisce funzionalità per la gestione degli indirizzi nei modelli Eloquent.
  * Questo trait implementa la relazione polimorfica con il modello Address
  * e offre metodi di utilità per la gestione degli indirizzi.
  *
- * @property-read Collection<int, Address> $addresses
+ * @property Collection<int, Address> $addresses
  */
 trait HasAddress
 {
@@ -44,7 +44,7 @@ trait HasAddress
     public function primaryAddress(): ?Address
     {
         $res = $this->addresses()->where('is_primary', true)->first();
-        if ($res === null) {
+        if (null === $res) {
             return $res;
         }
         Assert::isInstanceOf($res, Address::class);
@@ -68,13 +68,13 @@ trait HasAddress
             return $value;
         }
         $address = $this->address()->first();
-        if ($address === null) {
+        if (null === $address) {
             return null;
         }
         Assert::isInstanceOf($address, Address::class);
 
         $locality = $address->getLocality();
-        if ($locality === null) {
+        if (null === $locality) {
             return null;
         }
 
@@ -171,13 +171,13 @@ trait HasAddress
     /**
      * Aggiunge un nuovo indirizzo al modello.
      *
-     * @param  array<string, mixed>  $data
-     * @param  bool  $setPrimary  Se impostare questo indirizzo come principale
+     * @param array<string, mixed> $data
+     * @param bool                 $setPrimary Se impostare questo indirizzo come principale
      */
     public function addAddress(array $data, bool $setPrimary = false): Address
     {
         // Se è il primo indirizzo o è richiesto esplicitamente, impostalo come principale
-        if ($setPrimary || $this->addresses()->count() === 0) {
+        if ($setPrimary || 0 === $this->addresses()->count()) {
             $data['is_primary'] = true;
 
             // Rimuovi il flag is_primary da tutti gli altri indirizzi
@@ -186,14 +186,14 @@ trait HasAddress
             }
         }
 
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return $this->addresses()->create($data);
     }
 
     /**
      * Aggiorna l'indirizzo principale.
      *
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public function updatePrimaryAddress(array $data): ?Address
     {

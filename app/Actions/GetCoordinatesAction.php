@@ -6,7 +6,6 @@ namespace Modules\Geo\Actions;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
-use RuntimeException;
 
 use function Safe\json_decode;
 
@@ -18,13 +17,13 @@ class GetCoordinatesAction
     /**
      * Ottiene le coordinate geografiche da un indirizzo.
      *
-     * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
+     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
      */
     public function execute(string $formattedAddress): ?LocationData
     {
         $apiKey = config('services.google.maps.key');
         if (! $apiKey) {
-            throw new RuntimeException('Google Maps API key not found');
+            throw new \RuntimeException('Google Maps API key not found');
         }
 
         $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json', [
@@ -33,13 +32,13 @@ class GetCoordinatesAction
         ]);
 
         if (! $response->successful()) {
-            throw new RuntimeException('Failed to get coordinates from Google Maps API');
+            throw new \RuntimeException('Failed to get coordinates from Google Maps API');
         }
 
         /** @var array{status: string, results: array<int, array{geometry: array{location: array{lat: float, lng: float}}}>} $data */
         $data = json_decode($response->body(), true);
 
-        if ($data['status'] !== 'OK' || empty($data['results'])) {
+        if ('OK' !== $data['status'] || empty($data['results'])) {
             return null;
         }
 

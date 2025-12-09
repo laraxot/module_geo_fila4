@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Console\Commands;
 
-use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -54,7 +53,7 @@ class SushiCommand extends Command
     }
 
     /**
-     * Aggiorna il database SQLite di Sushi
+     * Aggiorna il database SQLite di Sushi.
      */
     protected function refresh(): int
     {
@@ -70,7 +69,6 @@ class SushiCommand extends Command
             }
 
             // Uso Safe\json_decode per evitare false return
-            /** @var mixed $rawData */
             $rawData = json_decode(File::get($path), true);
 
             // Validazione tipo per evitare foreach su mixed
@@ -122,7 +120,7 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi aggiornato con successo');
 
             return 0;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->error('Errore durante l\'aggiornamento del database: '.$e->getMessage());
 
             return 1;
@@ -132,7 +130,7 @@ class SushiCommand extends Command
     /**
      * Valida i dati di un comune.
      *
-     * @param  array<mixed, mixed>  $comune
+     * @param array<mixed, mixed> $comune
      */
     protected function isValidComuneData(array $comune): bool
     {
@@ -148,7 +146,7 @@ class SushiCommand extends Command
     }
 
     /**
-     * Pulisce il database SQLite di Sushi
+     * Pulisce il database SQLite di Sushi.
      */
     protected function clear(): int
     {
@@ -159,7 +157,7 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi pulito con successo');
 
             return 0;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->error('Errore durante la pulizia del database: '.$e->getMessage());
 
             return 1;
@@ -167,7 +165,7 @@ class SushiCommand extends Command
     }
 
     /**
-     * Mostra lo stato del database SQLite di Sushi
+     * Mostra lo stato del database SQLite di Sushi.
      */
     protected function status(): int
     {
@@ -196,7 +194,7 @@ class SushiCommand extends Command
             $this->info("Numero di CAP: {$cap}");
 
             return 0;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->error('Errore durante la verifica dello stato del database: '.$e->getMessage());
 
             return 1;

@@ -8,7 +8,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Datas\RouteData;
-use RuntimeException;
 
 /**
  * Action per ottimizzare un percorso utilizzando l'API di Google Maps.
@@ -22,11 +21,12 @@ class OptimizeRouteAction
     /**
      * Ottimizza il percorso tra i punti specificati.
      *
-     * @param  array<LocationData>  $locations  Lista di punti da visitare
-     * @param  LocationData  $origin  Punto di partenza
-     * @param  LocationData  $destination  Punto di arrivo
-     * @param  string  $mode  Modalità di trasporto (driving, walking, bicycling, transit)
-     * @param  string  $optimize  Criterio di ottimizzazione (distance, time)
+     * @param array<LocationData> $locations   Lista di punti da visitare
+     * @param LocationData        $origin      Punto di partenza
+     * @param LocationData        $destination Punto di arrivo
+     * @param string              $mode        Modalità di trasporto (driving, walking, bicycling, transit)
+     * @param string              $optimize    Criterio di ottimizzazione (distance, time)
+     *
      * @return array<RouteData> Lista di percorsi ottimizzati
      */
     public function execute(
@@ -42,7 +42,7 @@ class OptimizeRouteAction
 
         $apiKey = config('services.google.maps.key');
         if (! $apiKey) {
-            throw new RuntimeException('Google Maps API key not found');
+            throw new \RuntimeException('Google Maps API key not found');
         }
 
         $waypoints = $this->formatWaypoints($locations);
@@ -56,7 +56,7 @@ class OptimizeRouteAction
         ]);
 
         if (! $response->successful()) {
-            throw new RuntimeException('Failed to get directions from Google Maps API');
+            throw new \RuntimeException('Failed to get directions from Google Maps API');
         }
 
         /** @var array{routes?: array<int, array{legs: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, steps: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, html_instructions: string, travel_mode: string}>}>, overview_polyline: array{points: string}, summary: string, warnings: array<int, string>, waypoint_order: array<int, int>}>} $data */
@@ -71,7 +71,8 @@ class OptimizeRouteAction
     /**
      * Formatta una lista di punti nel formato richiesto dall'API.
      *
-     * @param  array<LocationData>  $locations
+     * @param array<LocationData> $locations
+     *
      * @return array<string>
      */
     private function formatWaypoints(array $locations): array
@@ -110,7 +111,8 @@ class OptimizeRouteAction
      *     warnings: array<int, string>,
      *     waypoint_order: array<int, int>
      * }> $routes
-     * @param  Collection<int, LocationData>  $originalLocations
+     * @param Collection<int, LocationData> $originalLocations
+     *
      * @return array<RouteData>
      */
     private function parseRoutes(array $routes, Collection $originalLocations): array

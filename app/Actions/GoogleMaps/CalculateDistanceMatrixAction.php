@@ -19,15 +19,16 @@ class CalculateDistanceMatrixAction
     /**
      * Calcola la matrice delle distanze tra origini e destinazioni.
      *
-     * @param  Collection<int, LocationData>  $origins  Punti di origine
-     * @param  Collection<int, LocationData>  $destinations  Punti di destinazione
+     * @param Collection<int, LocationData> $origins      Punti di origine
+     * @param Collection<int, LocationData> $destinations Punti di destinazione
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
+     *
      * @return array<array<array{
      *     distance: array{text: string, value: int},
      *     duration: array{text: string, value: int},
      *     status: string
      * }>>
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
      */
     public function execute(Collection $origins, Collection $destinations): array
     {
@@ -51,9 +52,7 @@ class CalculateDistanceMatrixAction
         $data = $response->json();
 
         if (! is_array($data) || ($data['status'] ?? null) !== 'OK') {
-            throw GoogleMapsApiException::requestFailed(
-                'Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'),
-            );
+            throw GoogleMapsApiException::requestFailed('Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'));
         }
 
         if (empty($data['rows'])) {

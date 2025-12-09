@@ -7,7 +7,6 @@ namespace Modules\Geo\Actions\TimeZone;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\TimeZoneData;
-use RuntimeException;
 
 use function Safe\json_decode;
 
@@ -24,7 +23,7 @@ class GetTimeZoneAction
 
     public function __construct(?string $apiKey = null)
     {
-        $this->client = new Client;
+        $this->client = new Client();
         $this->apiKey = $apiKey;
     }
 
@@ -44,8 +43,8 @@ class GetTimeZoneAction
         /** @var array{status: string, timeZoneId: string, timeZoneName: string, rawOffset: int, dstOffset: int, countryCode?: string} $data */
         $data = json_decode($response->getBody()->getContents(), true);
 
-        if ($data['status'] !== 'OK') {
-            throw new RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
+        if ('OK' !== $data['status']) {
+            throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
 
         return new TimeZoneData(

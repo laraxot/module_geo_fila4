@@ -8,10 +8,10 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
-use RuntimeException;
-use Webmozart\Assert\Assert;
 
 use function Safe\json_decode;
+
+use Webmozart\Assert\Assert;
 
 /**
  * Action per ottenere l'indirizzo da coordinate tramite Google Maps.
@@ -25,12 +25,13 @@ readonly class GetAddressByLatLngFromGoogleMapsAction
 
     public function __construct(
         private Client $client,
-    ) {}
+    ) {
+    }
 
     /**
      * Ottiene l'indirizzo dalle coordinate.
      *
-     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(float $latitude, float $longitude): LocationData
     {
@@ -46,14 +47,14 @@ readonly class GetAddressByLatLngFromGoogleMapsAction
                 'coordinates' => compact('latitude', 'longitude'),
             ]);
 
-            throw new RuntimeException('Failed to get address from coordinates');
+            throw new \RuntimeException('Failed to get address from coordinates');
         }
     }
 
     /**
      * Valida i dati di input.
      *
-     * @throws RuntimeException Se la chiave API non è configurata
+     * @throws \RuntimeException Se la chiave API non è configurata
      */
     private function validateInput(float $latitude, float $longitude): void
     {
@@ -83,7 +84,7 @@ readonly class GetAddressByLatLngFromGoogleMapsAction
     /**
      * Elabora la risposta dell'API.
      *
-     * @throws RuntimeException Se la risposta non è valida
+     * @throws \RuntimeException Se la risposta non è valida
      */
     private function parseResponse(string $response, float $latitude, float $longitude): LocationData
     {
@@ -101,8 +102,8 @@ readonly class GetAddressByLatLngFromGoogleMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ($data['status'] !== 'OK' || empty($data['results'][0])) {
-            throw new RuntimeException('No address found for coordinates');
+        if ('OK' !== $data['status'] || empty($data['results'][0])) {
+            throw new \RuntimeException('No address found for coordinates');
         }
 
         $result = $data['results'][0];

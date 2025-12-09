@@ -8,25 +8,24 @@ use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Sushi\Sushi;
 
 /**
- * @property int $id
- * @property string|null $name
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read Collection<int, \Modules\Geo\Models\Province> $provinces
- * @property-read int|null $provinces_count
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property int                                         $id
+ * @property string|null                                 $name
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property Collection<int, Province>                   $provinces
+ * @property int|null                                    $provinces_count
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static \Modules\Geo\Database\Factories\RegionFactory factory($count = null, $state = [])
- * @method static Builder<static>|Region newModelQuery()
- * @method static Builder<static>|Region newQuery()
- * @method static Builder<static>|Region query()
- * @method static Builder<static>|Region whereId($value)
- * @method static Builder<static>|Region whereName($value)
+ * @method static Builder<static>|Region                        newModelQuery()
+ * @method static Builder<static>|Region                        newQuery()
+ * @method static Builder<static>|Region                        query()
+ * @method static Builder<static>|Region                        whereId($value)
+ * @method static Builder<static>|Region                        whereName($value)
  *
  * @mixin \Eloquent
  */

@@ -11,7 +11,6 @@ use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
 use Modules\Geo\Models\Location;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Override;
 
 /**
  * Resource per la gestione dei luoghi geografici.
@@ -36,7 +35,7 @@ class LocationResource extends XotBaseResource
     /**
      * @return array<string, \Filament\Support\Components\Component>
      */
-    #[Override]
+    #[\Override]
     public static function getFormSchema(): array
     {
         return [
@@ -82,7 +81,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le relazioni configurate
      */
-    #[Override]
+    #[\Override]
     public static function getRelations(): array
     {
         return [];
@@ -98,7 +97,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le pagine configurate
      */
-    #[Override]
+    #[\Override]
     public static function getPages(): array
     {
         return [
@@ -112,7 +111,8 @@ class LocationResource extends XotBaseResource
     /**
      * Converte le coordinate in formato float.
      *
-     * @param  array{lat?: string|float|null, lng?: string|float|null}  $coordinates  Le coordinate da convertire
+     * @param array{lat?: string|float|null, lng?: string|float|null} $coordinates Le coordinate da convertire
+     *
      * @return array{lat: float, lng: float} Le coordinate convertite in float
      */
     private static function formatCoordinates(array $coordinates): array

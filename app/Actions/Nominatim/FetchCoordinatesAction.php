@@ -7,7 +7,6 @@ namespace Modules\Geo\Actions\Nominatim;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\LocationData;
-use RuntimeException;
 
 use function Safe\json_decode;
 
@@ -22,16 +21,16 @@ class FetchCoordinatesAction
 
     public function __construct()
     {
-        $this->client = new Client;
+        $this->client = new Client();
     }
 
     /**
      * Ottiene le coordinate geografiche da un indirizzo.
      *
-     * @param  string  $address  Indirizzo da geocodificare
+     * @param string $address Indirizzo da geocodificare
      *
      * @throws GuzzleException
-     * @throws RuntimeException
+     * @throws \RuntimeException
      */
     public function execute(string $address): LocationData
     {
@@ -50,7 +49,7 @@ class FetchCoordinatesAction
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (empty($data)) {
-            throw new RuntimeException('No results found for address: '.$address);
+            throw new \RuntimeException('No results found for address: '.$address);
         }
 
         $result = $data[0];

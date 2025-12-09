@@ -9,45 +9,44 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Geo\Enums\AddressTypeEnum;
-use Override;
 
 /**
- * Class Address
+ * Class Address.
  *
  * Implementazione di Schema.org PostalAddress
  *
- * @property int $id
- * @property string|null $model_type
- * @property string|null $model_id
- * @property string|null $name Nome identificativo dell'indirizzo
- * @property string|null $description Descrizione opzionale
- * @property string|null $route Via/Piazza
- * @property string|null $street_number Numero civico
- * @property string|null $locality Comune/Città
- * @property string|null $administrative_area_level_3 Provincia
- * @property string|null $administrative_area_level_2 Regione
- * @property string|null $administrative_area_level_1 Stato/Paese
- * @property string|null $country Codice paese ISO
- * @property string|null $postal_code CAP
- * @property string|null $formatted_address
- * @property string|null $place_id ID Google Places
- * @property float|null $latitude
- * @property float|null $longitude
- * @property AddressTypeEnum|null $type Tipo indirizzo (home, work, etc.)
- * @property bool $is_primary
- * @property array<array-key, mixed>|null $extra_data
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property string|null $updated_by
- * @property string|null $created_by
- * @property string|null $deleted_at
- * @property string|null $deleted_by
- * @property-read Model|\Eloquent|null $addressable
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read string $full_address
- * @property-read string $street_address
- * @property-read Model|\Eloquent|null $model
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property int                                         $id
+ * @property string|null                                 $model_type
+ * @property string|null                                 $model_id
+ * @property string|null                                 $name                        Nome identificativo dell'indirizzo
+ * @property string|null                                 $description                 Descrizione opzionale
+ * @property string|null                                 $route                       Via/Piazza
+ * @property string|null                                 $street_number               Numero civico
+ * @property string|null                                 $locality                    Comune/Città
+ * @property string|null                                 $administrative_area_level_3 Provincia
+ * @property string|null                                 $administrative_area_level_2 Regione
+ * @property string|null                                 $administrative_area_level_1 Stato/Paese
+ * @property string|null                                 $country                     Codice paese ISO
+ * @property string|null                                 $postal_code                 CAP
+ * @property string|null                                 $formatted_address
+ * @property string|null                                 $place_id                    ID Google Places
+ * @property float|null                                  $latitude
+ * @property float|null                                  $longitude
+ * @property AddressTypeEnum|null                        $type                        Tipo indirizzo (home, work, etc.)
+ * @property bool                                        $is_primary
+ * @property array<array-key, mixed>|null                $extra_data
+ * @property Carbon|null                                 $created_at
+ * @property Carbon|null                                 $updated_at
+ * @property string|null                                 $updated_by
+ * @property string|null                                 $created_by
+ * @property string|null                                 $deleted_at
+ * @property string|null                                 $deleted_by
+ * @property Model|\Eloquent|null                        $addressable
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property string                                      $full_address
+ * @property string                                      $street_address
+ * @property Model|\Eloquent|null                        $model
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static Builder<static>|Address nearby(float $latitude, float $longitude, float $radiusKm = 10)
  * @method static Builder<static>|Address newModelQuery()
@@ -118,7 +117,7 @@ class Address extends BaseModel
     }
 
     /**
-     * Relazione polimorfica (alternativa con nome più descrittivo)
+     * Relazione polimorfica (alternativa con nome più descrittivo).
      */
     public function addressable(): MorphTo
     {
@@ -163,7 +162,7 @@ class Address extends BaseModel
             ->orderBy('regione->nome')
             ->where('regione->codice', $this->administrative_area_level_1)
             ->get()
-            /** @phpstan-ignore argument.unresolvableType */
+            /* @phpstan-ignore argument.unresolvableType */
             ->map(function ($item) {
                 $regione = $item->regione;
                 if (! is_array($regione) || ! isset($regione['codice'], $regione['nome'])) {
@@ -185,11 +184,11 @@ class Address extends BaseModel
             ->orderBy('provincia->nome')
             ->where('provincia->codice', $this->administrative_area_level_2)
             ->get()
-            /** @phpstan-ignore argument.unresolvableType */
+            /* @phpstan-ignore argument.unresolvableType */
             ->map(fn ($item) => [
-                /** @phpstan-ignore offsetAccess.notFound */
+                /* @phpstan-ignore offsetAccess.notFound */
                 'codice' => $item->provincia['codice'],
-                /** @phpstan-ignore offsetAccess.notFound */
+                /* @phpstan-ignore offsetAccess.notFound */
                 'nome' => $item->provincia['nome'],
             ]);
 
@@ -198,7 +197,7 @@ class Address extends BaseModel
 
     public function getLocality(): ?array
     {
-        /** @phpstan-ignore-next-line */
+        /* @phpstan-ignore-next-line */
         return Comune::where('codice', $this->locality)
             ->distinct()
             ->first()
@@ -206,7 +205,7 @@ class Address extends BaseModel
     }
 
     /**
-     * Getter per l'indirizzo completo in formato italiano
+     * Getter per l'indirizzo completo in formato italiano.
      */
     public function getFullAddressAttribute(): string
     {
@@ -237,7 +236,7 @@ class Address extends BaseModel
     }
 
     /**
-     * Getter per l'indirizzo strada completo
+     * Getter per l'indirizzo strada completo.
      */
     public function getStreetAddressAttribute(): string
     {
@@ -270,7 +269,7 @@ class Address extends BaseModel
             $localityParts[] = $this->locality;
 
             // Per indirizzi italiani, aggiungiamo la sigla provincia
-            if ($this->country === 'IT' && $this->administrative_area_level_3) {
+            if ('IT' === $this->country && $this->administrative_area_level_3) {
                 // Se è un'implementazione reale, potremmo derivare la sigla dalla provincia
                 $provinciaSigla = $this->extra_data['provincia_sigla'] ?? null;
                 if ($provinciaSigla && is_string($provinciaSigla)) {
@@ -322,7 +321,7 @@ class Address extends BaseModel
     }
 
     /**
-     * Restituisce i dati in formato Schema.org PostalAddress
+     * Restituisce i dati in formato Schema.org PostalAddress.
      *
      * @return array<string, mixed>
      */
@@ -343,7 +342,7 @@ class Address extends BaseModel
     }
 
     /**
-     * Scope per cercare indirizzi nelle vicinanze
+     * Scope per cercare indirizzi nelle vicinanze.
      */
     public function scopeNearby(Builder $query, float $latitude, float $longitude, float $radiusKm = 10): Builder
     {
@@ -377,7 +376,7 @@ class Address extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [

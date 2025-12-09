@@ -18,13 +18,13 @@ class AddressField extends Section
     protected function setUp(): void
     {
         parent::setUp();
-        /** @phpstan-ignore argument.type */
+        /* @phpstan-ignore argument.type */
         $this->schema($this->getAddressFormSchema());
         $this->columns(2);
     }
 
     /**
-     * Disabilita gli aggiornamenti live per evitare loop infiniti nei wizard di creazione
+     * Disabilita gli aggiornamenti live per evitare loop infiniti nei wizard di creazione.
      */
     public function disableLiveUpdates(bool $disable = true): static
     {
@@ -38,8 +38,7 @@ class AddressField extends Section
         $baseSchema = AddressResource::getFormSchema();
 
         // Rimuovi campi non necessari per relazioni semplici
-        unset($baseSchema['name']);
-        unset($baseSchema['is_primary']);
+        unset($baseSchema['name'], $baseSchema['is_primary']);
 
         // Se i live updates sono disabilitati, rimuovi la reattività
         if ($this->disableLiveUpdates) {
@@ -50,32 +49,33 @@ class AddressField extends Section
     }
 
     /**
-     * Rimuove tutti i pattern reattivi dai campi per prevenire loop infiniti
+     * Rimuove tutti i pattern reattivi dai campi per prevenire loop infiniti.
      *
-     * @param  array<string, mixed>  $schema
+     * @param array<string, mixed> $schema
+     *
      * @return array<string, mixed>
      */
     protected function removeReactivityFromSchema(array $schema): array
     {
         foreach ($schema as $key => $field) {
-            /** @phpstan-ignore argument.type */
+            /* @phpstan-ignore argument.type */
             if (method_exists($field, 'live')) {
                 // Rimuovi reattività live
-                /** @phpstan-ignore method.nonObject */
+                /* @phpstan-ignore method.nonObject */
                 $field->live(false);
             }
 
-            /** @phpstan-ignore argument.type */
+            /* @phpstan-ignore argument.type */
             if (method_exists($field, 'afterStateUpdated')) {
                 // Rimuovi callback afterStateUpdated
-                /** @phpstan-ignore method.nonObject */
+                /* @phpstan-ignore method.nonObject */
                 $field->afterStateUpdated(null);
             }
 
-            /** @phpstan-ignore argument.type */
+            /* @phpstan-ignore argument.type */
             if (method_exists($field, 'disabled')) {
                 // Rimuovi condizioni disabled dinamiche
-                /** @phpstan-ignore method.nonObject */
+                /* @phpstan-ignore method.nonObject */
                 $field->disabled(false);
             }
 

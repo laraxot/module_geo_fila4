@@ -7,20 +7,19 @@ namespace Modules\Geo\Models;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sushi\Sushi;
 
 /**
- * @property int|null $region_id
- * @property int $id
- * @property string|null $name
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read Collection<int, \Modules\Geo\Models\Locality> $localities
- * @property-read int|null $localities_count
- * @property-read \Modules\Geo\Models\Region|null $region
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property int|null                                    $region_id
+ * @property int                                         $id
+ * @property string|null                                 $name
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property Collection<int, Locality>                   $localities
+ * @property int|null                                    $localities_count
+ * @property Region|null                                 $region
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static Builder<static>|Province newModelQuery()
  * @method static Builder<static>|Province newQuery()

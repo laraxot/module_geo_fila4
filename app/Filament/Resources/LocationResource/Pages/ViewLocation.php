@@ -11,7 +11,6 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Modules\Geo\Filament\Resources\LocationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
-use Override;
 
 class ViewLocation extends XotBaseViewRecord
 {
@@ -27,7 +26,7 @@ class ViewLocation extends XotBaseViewRecord
     /**
      * @return array<int, Component>
      */
-    #[Override]
+    #[\Override]
     protected function getInfolistSchema(): array
     {
         return [

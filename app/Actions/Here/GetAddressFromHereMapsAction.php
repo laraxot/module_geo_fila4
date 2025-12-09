@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Here;
 
-use Exception;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\HereMap\HereMapResponseData;
@@ -18,7 +17,7 @@ class GetAddressFromHereMapsAction
         $apiKey = config('services.here.key');
 
         if (empty($apiKey)) {
-            throw new Exception('Here Maps API key not configured');
+            throw new \Exception('Here Maps API key not configured');
         }
 
         $response = Http::get(self::BASE_URL, [

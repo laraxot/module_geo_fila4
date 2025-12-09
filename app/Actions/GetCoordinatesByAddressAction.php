@@ -122,7 +122,7 @@ class GetCoordinatesByAddressAction
     private function getFromBing(string $address): ?CoordinatesData
     {
         $apiKey = config('services.bing.maps_api_key');
-        if (! is_string($apiKey) || $apiKey === '') {
+        if (! is_string($apiKey) || '' === $apiKey) {
             return null;
         }
 
@@ -198,7 +198,7 @@ class GetCoordinatesByAddressAction
     private function getFromOpenCage(string $address): ?CoordinatesData
     {
         $apiKey = config('services.opencage.api_key');
-        if (! is_string($apiKey) || $apiKey === '') {
+        if (! is_string($apiKey) || '' === $apiKey) {
             return null;
         }
 

@@ -167,7 +167,7 @@ it('can filter models by city', static function () {
     $model1 = new HasAddressTest();
     $model1->name = 'Model 1';
     $model1->save();
-    
+
     $model1
         ->addresses()
         ->create([
@@ -180,7 +180,7 @@ it('can filter models by city', static function () {
     $model2 = new HasAddressTest();
     $model2->name = 'Model 2';
     $model2->save();
-    
+
     $model2
         ->addresses()
         ->create([

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static Builder<static>|PlaceType newModelQuery()
  * @method static Builder<static>|PlaceType newQuery()

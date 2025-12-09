@@ -9,19 +9,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Geo\Contracts\HasGeolocation;
-use Override;
 
 use function Safe\json_encode;
 
 /**
- * @property-read \Modules\Geo\Models\Address|null $address
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read string $formatted_address
- * @property-read float|null $latitude
- * @property-read float|null $longitude
- * @property-read Model|\Eloquent $linked
- * @property-read \Modules\Geo\Models\PlaceType|null $placeType
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property Address|null                                $address
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property string                                      $formatted_address
+ * @property float|null                                  $latitude
+ * @property float|null                                  $longitude
+ * @property Model|\Eloquent                             $linked
+ * @property PlaceType|null                              $placeType
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static Builder<static>|Place newModelQuery()
  * @method static Builder<static>|Place newQuery()
@@ -107,19 +106,19 @@ class Place extends BaseModel implements HasGeolocation
         return $this->belongsTo(Address::class);
     }
 
-    #[Override]
+    #[\Override]
     public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-    #[Override]
+    #[\Override]
     public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
-    #[Override]
+    #[\Override]
     public function getFormattedAddress(): string
     {
         return (string) ($this->formatted_address ?? $this->address->formatted_address ?? '');
@@ -164,18 +163,18 @@ class Place extends BaseModel implements HasGeolocation
         return is_string($address) ? $address : '';
     }
 
-    #[Override]
+    #[\Override]
     public function hasValidCoordinates(): bool
     {
-        return $this->latitude !== null &&
-            $this->longitude !== null &&
-            $this->latitude >= -90 &&
-            $this->latitude <= 90 &&
-            $this->longitude >= -180 &&
-            $this->longitude <= 180;
+        return null !== $this->latitude
+            && null !== $this->longitude
+            && $this->latitude >= -90
+            && $this->latitude <= 90
+            && $this->longitude >= -180
+            && $this->longitude <= 180;
     }
 
-    #[Override]
+    #[\Override]
     public function getMapIcon(): ?string
     {
         $slug = $this->placeType->slug ?? null;
@@ -199,7 +198,7 @@ class Place extends BaseModel implements HasGeolocation
         return is_string($icon) ? $icon : null;
     }
 
-    #[Override]
+    #[\Override]
     public function getLocationType(): ?string
     {
         $name = $this->placeType->name ?? null;
@@ -212,7 +211,7 @@ class Place extends BaseModel implements HasGeolocation
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [

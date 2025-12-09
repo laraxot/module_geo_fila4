@@ -8,7 +8,6 @@ use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Modules\Geo\Filament\Resources\AddressResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
-use Override;
 
 class ListAddresses extends XotBaseListRecords
 {
@@ -17,7 +16,7 @@ class ListAddresses extends XotBaseListRecords
     /**
      * @return array<Action>
      */
-    #[Override]
+    #[\Override]
     protected function getHeaderActions(): array
     {
         return [
