@@ -9,9 +9,6 @@ use Modules\Xot\Filament\Widgets\EnvWidget;
 
 class SettingPage extends XotBasePage
 {
-    /**
-     * @return array<string, mixed>
-     */
     public function getHeaderWidgets(): array
     {
         $only = [
@@ -20,7 +17,7 @@ class SettingPage extends XotBasePage
         ];
 
         return [
-            'env' => EnvWidget::make(['only' => $only]),
+            EnvWidget::make(['only' => $only]),
         ];
     }
 }

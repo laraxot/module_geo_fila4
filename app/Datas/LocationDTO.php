@@ -24,9 +24,6 @@ readonly class LocationDTO
     ) {}
 >>>>>>> be08416 (.)
 
-    /**
-     * @return array<string, mixed>
-     */
     public function toArray(): array
     {
         return [
