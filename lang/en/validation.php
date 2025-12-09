@@ -112,9 +112,13 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     'attributes' => [],
 =======
     'attributes' => [
     ],
 >>>>>>> bc26394 (.)
+=======
+    'attributes' => [],
+>>>>>>> c942565 (.)
 ];
