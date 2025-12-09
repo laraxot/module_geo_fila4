@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
-<<<<<<< HEAD
-=======
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
 <div class="input-group"
     wire:ignore
     x-data={lookup:{}}
@@ -33,12 +24,4 @@ declare(strict_types=1);
         required
         type="search"
     >
-<<<<<<< HEAD
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> bc26394 (.)
-=======
-</div>
->>>>>>> c942565 (.)
