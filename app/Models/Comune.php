@@ -330,7 +330,7 @@ class Comune extends BaseModel
     {
         /** @phpstan-ignore return.type */
         return static::all()
-            ->first(fn ($comune) => strtolower($comune->nome) === strtolower($nome));
+            ->first(fn (self $comune) => strtolower((string) $comune->nome) === strtolower($nome));
     }
 
     /**
