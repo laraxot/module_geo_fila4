@@ -9,15 +9,7 @@ use Modules\Geo\Models\Region;
 
 /**
  * Factory for Region model.
-<<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
- * 
->>>>>>> bc26394 (.)
-=======
- *
->>>>>>> c942565 (.)
  * @extends Factory<Region>
  */
 class RegionFactory extends Factory
@@ -168,10 +160,6 @@ class RegionFactory extends Factory
      */
     public function named(string $name): static
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
         return $this->state(fn (array $attributes) => array_merge($attributes, [
 <<<<<<< HEAD
             'name' => $name,
@@ -182,15 +170,3 @@ class RegionFactory extends Factory
 >>>>>>> be08416 (.)
     }
 }
-<<<<<<< HEAD
-=======
-        return $this->state(function (array $attributes) use ($name): array {
-            return array_merge($attributes, [
-                'name' => $name,
-            ]);
-        });
-    }
-}
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
