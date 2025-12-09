@@ -111,5 +111,23 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+<<<<<<< HEAD
     'attributes' => [],
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    'attributes' => [],
+=======
+    'attributes' => [
+    ],
+>>>>>>> a12f125f4a (.)
+=======
+    'attributes' => [],
+>>>>>>> b93ef594b4 (.)
+=======
+    'attributes' => [
+    ],
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
 ];

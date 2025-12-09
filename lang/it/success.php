@@ -19,7 +19,23 @@ return [
         'cached' => 'Risorsa memorizzata in cache con successo',
         'cleared' => 'Cache svuotata con successo',
         'backed_up' => 'Backup eseguito con successo',
+<<<<<<< HEAD
         'backup_restored' => 'Ripristino completato con successo',
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        'backup_restored' => 'Ripristino completato con successo',
+=======
+        'restored' => 'Ripristino completato con successo',
+>>>>>>> a12f125f4a (.)
+=======
+        'backup_restored' => 'Ripristino completato con successo',
+>>>>>>> b93ef594b4 (.)
+=======
+        'restored' => 'Ripristino completato con successo',
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
     ],
     'geo_specific' => [
         'coordinates_validated' => 'Coordinate geografiche validate con successo',
@@ -140,5 +156,31 @@ return [
         'difference_made' => 'Differenza creata con successo',
         'change_effected' => 'Cambio effettuato con successo',
         'transformation_realized' => 'Trasformazione realizzata con successo',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/develop
+        'evolution_completed' => 'Evoluzione completata con successo',
+        'revolution_launched' => 'Rivoluzione lanciata con successo',
+        'breakthrough_achieved' => 'Breakthrough raggiunto con successo',
+        'innovation_delivered' => 'Innovazione consegnata con successo',
+        'disruption_caused' => 'Disruption causata con successo',
+        'paradigm_shifted' => 'Cambio paradigma completato con successo',
+        'future_created' => 'Futuro creato con successo',
+        'legacy_established' => 'Eredità stabilita con successo',
+        'impact_made' => 'Impatto creato con successo',
+        'difference_made' => 'Differenza creata con successo',
+        'change_effected' => 'Cambio effettuato con successo',
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
     ],
 ];
