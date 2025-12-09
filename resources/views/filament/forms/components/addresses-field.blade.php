@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
+<<<<<<< HEAD
 =======
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 {{--
     Vista per il componente AddressesField.
     
@@ -46,7 +52,11 @@ declare(strict_types=1);
         {{ $getChildComponentContainer() }}
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </x-dynamic-component>
 =======
 </x-dynamic-component> 
 >>>>>>> bc26394 (.)
+=======
+</x-dynamic-component>
+>>>>>>> c942565 (.)

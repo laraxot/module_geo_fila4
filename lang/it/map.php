@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 declare(strict_types=1);
 
 return [
@@ -49,6 +52,7 @@ return [
         'export' => 'Esporta',
     ],
 ];
+<<<<<<< HEAD
 =======
 return array (
   'navigation' => 
@@ -113,3 +117,5 @@ return array (
   ),
 );
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)

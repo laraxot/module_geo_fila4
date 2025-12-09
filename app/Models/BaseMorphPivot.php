@@ -42,11 +42,16 @@ abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
     protected $fillable = [
         'id',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'post_id',
         'post_type',
 =======
         'post_id', 'post_type',
 >>>>>>> bc26394 (.)
+=======
+        'post_id',
+        'post_type',
+>>>>>>> c942565 (.)
         'related_type',
         'user_id',
         'note',
