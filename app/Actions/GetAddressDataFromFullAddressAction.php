@@ -41,7 +41,6 @@ class GetAddressDataFromFullAddressAction
     public function execute(string $fullAddress): ?AddressData
 =======
      * @param  string  $fullAddress  L'indirizzo da cercare
-     *
      * @return AddressData I dati dell'indirizzo trovato
      *
      * @throws RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
