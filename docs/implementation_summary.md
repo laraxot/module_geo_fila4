@@ -286,18 +286,8 @@ Il componente non solo elimina duplicazione, ma stabilisce un **pattern replicab
 ### Documentazione Correlata
 - [AddressesField Component Documentation](components/addresses-field.md)
 - [Form Schema Reuse Guidelines](form-schema-reuse.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [StudioResource Implementation](../../SaluteOra/docs/studio-resource-addresses-improvement.md)
 - [Critical Errors Resolved](../../SaluteOra/docs/critical-errors-resolved.md)
-=======
-- [StudioResource Implementation](../../SaluteOra/project_docs/studio-resource-addresses-improvement.md)
-- [Critical Errors Resolved](../../SaluteOra/project_docs/critical-errors-resolved.md)
->>>>>>> bc26394 (.)
-=======
-- [StudioResource Implementation](../../SaluteOra/docs/studio-resource-addresses-improvement.md)
-- [Critical Errors Resolved](../../SaluteOra/docs/critical-errors-resolved.md)
->>>>>>> c942565 (.)
 
 ### File Sorgente
 - [AddressesField.php](../app/Filament/Forms/Components/AddressesField.php)

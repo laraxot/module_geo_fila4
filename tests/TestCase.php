@@ -18,12 +18,4 @@ abstract class TestCase extends BaseTestCase
         // Set up any module-specific test configuration here
         $this->artisan('module:migrate', ['module' => 'Geo']);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bc26394 (.)
-=======
-}
->>>>>>> c942565 (.)

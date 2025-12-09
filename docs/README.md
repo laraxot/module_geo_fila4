@@ -2,15 +2,7 @@
 
 [![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen.svg)](https://phpstan.org/)
 [![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
-<<<<<<< HEAD
-<<<<<<< HEAD
 [![Filament 4.x](https://img.shields.io/badge/Filament-4.x-blue.svg)](https://filamentphp.com/)
-=======
-[![Filament 3.x](https://img.shields.io/badge/Filament-3.x-blue.svg)](https://filamentphp.com/)
->>>>>>> bc26394 (.)
-=======
-[![Filament 4.x](https://img.shields.io/badge/Filament-4.x-blue.svg)](https://filamentphp.com/)
->>>>>>> c942565 (.)
 [![Translation Ready](https://img.shields.io/badge/Translation-IT%20%7C%20EN%20%7C%20DE-green.svg)](https://laravel.com/docs/localization)
 [![API Integration](https://img.shields.io/badge/API-Google%20Maps%20%7C%20Mapbox%20%7C%20Here-orange.svg)](https://developers.google.com/maps)
 [![Database JSON](https://img.shields.io/badge/Database-JSON%20Comuni%20IT-yellow.svg)](https://github.com/italia/anpr)
@@ -339,10 +331,6 @@ CREATE INDEX idx_addresses_postal_code ON addresses (postal_code);
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
 ## 🚀 Aggiornamento Filament 4.x
 
 **Data**: 2025-01-27
@@ -367,13 +355,3 @@ I widget saranno riattivati non appena i pacchetti di mappatura saranno compatib
 **🌐 Translation Standards**: File traduzione certificati ✅
 **🚀 Performance**: 98/100 score
 **✨ Filament 4.x**: Aggiornato e funzionante ✅
-<<<<<<< HEAD
-=======
-**🔄 Ultimo aggiornamento**: 27 Gennaio 2025  
-**📦 Versione**: 2.1.0  
-**🐛 PHPStan Level 9**: File core certificati ✅  
-**🌐 Translation Standards**: File traduzione certificati ✅  
-**🚀 Performance**: 98/100 score
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
