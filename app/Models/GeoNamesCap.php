@@ -33,10 +33,8 @@ class GeoNamesCap extends BaseModel
  * @method static Builder|GeoNamesCap newModelQuery()
  * @method static Builder|GeoNamesCap newQuery()
  * @method static Builder|GeoNamesCap query()
- *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- *
  * @mixin \Eloquent
  */
 class GeoNamesCap extends Model
