@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -8,6 +9,11 @@ declare(strict_types=1);
     {{-- TEMPORANEAMENTE DISABILITATO PER COMPATIBILITÀ FILAMENT V4
     @livewire(\Modules\Geo\Filament\Widgets\LocationMapWidget::class)
     --}}
+=======
+<div>
+
+    @livewire(\Modules\Geo\Filament\Widgets\LocationMapWidget::class)
+>>>>>>> bc26394 (.)
     {{--
     @livewire(\Modules\Geo\Filament\Widgets\LocationMapTableWidget::class)
     --}}
