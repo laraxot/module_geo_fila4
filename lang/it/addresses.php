@@ -24,20 +24,6 @@ return [
             'description' => 'Inizia aggiungendo il primo indirizzo.',
         ],
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
     'fields' => [
         'name' => [
             'label' => 'Nome Indirizzo',
@@ -49,20 +35,6 @@ return [
             'help' => 'Designa questo come indirizzo principale (solo uno può essere principale)',
         ],
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
     'messages' => [
         'validation' => [
             'min_items' => 'È richiesto almeno :min indirizzo/i.',
@@ -76,39 +48,9 @@ return [
             'primary_set' => 'Indirizzo principale aggiornato.',
         ],
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
     'tooltips' => [
         'name_visibility' => 'Il campo nome è visibile solo quando hai più di un indirizzo',
         'primary_exclusivity' => 'Impostando questo come principale, tutti gli altri diventeranno secondari',
         'single_primary' => 'Con un solo indirizzo, questo è automaticamente il principale',
     ],
-<<<<<<< HEAD
 ];
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-];
-=======
-]; 
->>>>>>> a12f125f4a (.)
-=======
-];
->>>>>>> b93ef594b4 (.)
-=======
-]; 
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
