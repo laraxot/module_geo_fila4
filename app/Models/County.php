@@ -28,14 +28,15 @@ use Illuminate\Database\Eloquent\Builder;
  *
 =======
 use Modules\Xot\Contracts\ProfileContract;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static Builder|County newModelQuery()
  * @method static Builder|County newQuery()
  * @method static Builder|County query()
+ *
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $updater
+ *
  * @mixin IdeHelperCounty
 >>>>>>> be08416 (.)
  * @mixin \Eloquent
