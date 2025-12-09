@@ -19,60 +19,18 @@ enum AddressTypeEnum: string
     case SHIPPING = 'shipping';
     case LEGAL = 'legal';
     case OTHER = 'other';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f0b4f5c (.)
 
     /**
      * Get the label for the enum value.
      * <<<<<<< HEAD
      * =======.
      *
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> origin/develop
-    
-    /**
-     * Get the label for the enum value.
-     * 
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
-
-    /**
-     * Get the label for the enum value.
-     *
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
      * @return string
      *                >>>>>>> be08416 (.)
      */
     public function label(): string
     {
-<<<<<<< HEAD
         return match ($this) {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return match ($this) {
-=======
-        return match($this) {
->>>>>>> a12f125f4a (.)
-=======
-        return match ($this) {
->>>>>>> b93ef594b4 (.)
-=======
-        return match($this) {
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
             self::HOME => 'Casa',
             self::WORK => 'Lavoro',
             self::BILLING => 'Fatturazione',
@@ -81,36 +39,10 @@ enum AddressTypeEnum: string
             self::OTHER => 'Altro',
         };
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f0b4f5c (.)
 
     /**
      * Get all the options as key-value pairs.
      *
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> origin/develop
-    
-    /**
-     * Get all the options as key-value pairs.
-     * 
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
-
-    /**
-     * Get all the options as key-value pairs.
-     *
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
      * @return array<string, string>
      */
     public static function options(): array
@@ -124,20 +56,4 @@ enum AddressTypeEnum: string
             self::OTHER->value => self::OTHER->label(),
         ];
     }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> a12f125f4a (.)
-=======
-}
->>>>>>> b93ef594b4 (.)
-=======
-}
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)

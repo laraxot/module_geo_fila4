@@ -1,26 +1,8 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> f0b4f5c (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
 <head>
     {!! Theme::metatags() !!}
     {{--
@@ -72,20 +54,4 @@ declare(strict_types=1);
     <meta name="country" content="Austria">
     <meta name="country" content="Switzerland">
     --}}
-<<<<<<< HEAD
 </head>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-</head>
-=======
-</head>
->>>>>>> a12f125f4a (.)
-=======
-</head>
->>>>>>> b93ef594b4 (.)
-=======
-</head>
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
