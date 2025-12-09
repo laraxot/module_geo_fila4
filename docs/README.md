@@ -35,11 +35,7 @@ $address = Address::create([
     'longitude' => 9.1900,
 ]);
 
-=======
 
->>>>>>> 70c8c33 (.)
-=======
->>>>>>> f8633bc (.)
 # Test file core PHPStan level 9
 cd laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Services/BaseGeoService.php \
@@ -47,20 +43,12 @@ cd laravel
                              Modules/Geo/database/factories/AddressFactory.php \
                              Modules/Geo/database/seeders/SushiSeeder.php \
                              --level=9 --no-progress
-=======
 
->>>>>>> 70c8c33 (.)
-=======
->>>>>>> f8633bc (.)
 # Risultato: [OK] No errors ✅
-=======
 // Ricerca indirizzi nelle vicinanze
 $nearby = Address::nearby($lat, $lng, 5); // 5km radius
->>>>>>> 0c268a4 (.)
-=======
 // Ricerca indirizzi nelle vicinanze
 $nearby = Address::nearby($lat, $lng, 5); // 5km radius
->>>>>>> a93f634 (.)
 ```
 
 ### 🗺️ **API Integration**
@@ -106,19 +94,8 @@ $lombardia = $milano->regione; // "Lombardia"
 
 ### 📦 **Installazione**
 ```bash
-=======
-=======
 
->>>>>>> bda2447 (.)
-=======
 
->>>>>>> 70c8c33 (.)
-=======
->>>>>>> f8633bc (.)
-=======
->>>>>>> 0c268a4 (.)
-=======
->>>>>>> a93f634 (.)
 # Abilitare il modulo
 php artisan module:enable Geo
 
@@ -152,19 +129,8 @@ return [
 
 ### 🧪 **Testing**
 ```bash
-=======
-=======
 
->>>>>>> bda2447 (.)
-=======
 
->>>>>>> 70c8c33 (.)
-=======
->>>>>>> f8633bc (.)
-=======
->>>>>>> 0c268a4 (.)
-=======
->>>>>>> a93f634 (.)
 # Test del modulo
 php artisan test --testsuite=Geo
 
@@ -386,7 +352,6 @@ CREATE INDEX idx_addresses_postal_code ON addresses (postal_code);
 **🐛 PHPStan Level 9**: File core certificati ✅  
 **🌐 Translation Standards**: File traduzione certificati ✅  
 **🚀 Performance**: 98/100 score
-=======
 ```
 
 ### 🗺️ **Geocoding Services**
@@ -616,4 +581,3 @@ php artisan test
 **Versione**: 2.0.0  
 **Autore**: Team Laraxot  
 **Licenza**: MIT License
->>>>>>> 8946c2f (.)
