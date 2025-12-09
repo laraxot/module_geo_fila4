@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Http\Livewire;
 
-use function Safe\json_decode;
-use function Safe\json_encode;
-
-
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Session\SessionManager;
 use Illuminate\Support\Collection;
