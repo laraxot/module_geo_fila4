@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources\AddressResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions\Action;
 <<<<<<< HEAD
 use Filament\Actions\DeleteAction;
@@ -15,6 +16,16 @@ use Filament\Actions;
 >>>>>>> be08416 (.)
 use Modules\Geo\Filament\Resources\AddressResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+=======
+use Filament\Actions\ViewAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
+use Filament\Actions;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+use Modules\Geo\Filament\Resources\AddressResource;
+
+
+>>>>>>> bc26394 (.)
 
 class EditAddress extends XotBaseEditRecord
 {
@@ -30,4 +41,8 @@ class EditAddress extends XotBaseEditRecord
             DeleteAction::make(),
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bc26394 (.)
