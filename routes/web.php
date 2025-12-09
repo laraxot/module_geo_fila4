@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
  * //$this->routes();
  * Route::prefix('it')->group(function() {
  * Route::prefix('geo')->group(function() {
@@ -11,6 +14,7 @@ declare(strict_types=1);
  * });
  * });
  */
+<<<<<<< HEAD
 =======
 //$this->routes();
 Route::prefix('it')->group(function() {
@@ -20,3 +24,5 @@ Route::prefix('it')->group(function() {
 });
 */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
