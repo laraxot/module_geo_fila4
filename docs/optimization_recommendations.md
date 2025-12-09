@@ -19,9 +19,9 @@
 ### ⚠️ AREE DI MIGLIORAMENTO
 
 #### 1. Riusabilità Compromessa (CRITICO)
-- **86+ occorrenze hardcoded** di "<nome progetto>" in documentazione
+- **86+ occorrenze hardcoded** di "saluteora" in documentazione
 - **Path assoluti** in esempi e guide
-- **Riferimenti specifici** a <main module> in business logic
+- **Riferimenti specifici** a SaluteOra in business logic
 
 #### 2. Documentazione Frammentata
 - **File multipli** per stesso argomento
@@ -40,9 +40,9 @@
 #### Pattern di Correzione Documentazione
 ```markdown
 <!-- ❌ PROBLEMI ATTUALI -->
-Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni del progetto <main module>.
+Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni del progetto SaluteOra.
 
-**<main module>**: Indirizzi studi medici e pazienti
+**SaluteOra**: Indirizzi studi medici e pazienti
 
 <!-- ✅ SOLUZIONI -->
 Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni dei progetti Laraxot.
@@ -54,7 +54,7 @@ Il modello `Address` è stato riveduto seguendo i principi di design ottimali e 
 1. `docs/models/address-revised.md`
 2. `docs/modelli_factory_seeder_analisi.md`
 3. `docs/sushi-to-jsons-analysis.md`
-4. Tutti i file con path `/var/www/html/<directory progetto>/`
+4. Tutti i file con path `/var/www/html/saluteora/`
 
 ### 2. Google Places API Optimization (IMPORTANTE - 3 ore)
 
@@ -209,7 +209,7 @@ class AddressFactory extends Factory
 ## 📊 METRICHE DI SUCCESSO
 
 ### Riusabilità
-- [ ] **0 occorrenze** hardcoded "<nome progetto>"
+- [ ] **0 occorrenze** hardcoded "saluteora"
 - [ ] **100% esempi** project-agnostic
 - [ ] **Documentazione** generalizzata
 - [ ] **Script check** passa senza errori
@@ -248,7 +248,7 @@ class AddressFactory extends Factory
 ### Pre-Implementazione
 ```bash
 # Verifica hardcoding
-grep -r -i "<nome progetto>" Modules/Geo/ --include="*.md" | wc -l
+grep -r -i "saluteora" Modules/Geo/ --include="*.md" | wc -l
 
 # Test performance Google API
 php artisan geo:test-google-api
