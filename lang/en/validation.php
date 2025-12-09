@@ -111,14 +111,5 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
     'attributes' => [],
-=======
-    'attributes' => [
-    ],
->>>>>>> bc26394 (.)
-=======
-    'attributes' => [],
->>>>>>> c942565 (.)
 ];

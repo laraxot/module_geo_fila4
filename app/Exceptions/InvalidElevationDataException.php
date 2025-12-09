@@ -12,10 +12,6 @@ use Exception;
 class InvalidElevationDataException extends Exception
 >>>>>>> be08416 (.)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
     public function __construct(
         string $message = 'Invalid elevation data',
         int $code = 0,
@@ -25,13 +21,6 @@ class InvalidElevationDataException extends Exception
         null|Exception $previous = null,
 >>>>>>> be08416 (.)
     ) {
-<<<<<<< HEAD
-=======
-    public function __construct(string $message = 'Invalid elevation data', int $code = 0, ?Exception $previous = null)
-    {
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
         parent::__construct($message, $code, $previous);
     }
 }
