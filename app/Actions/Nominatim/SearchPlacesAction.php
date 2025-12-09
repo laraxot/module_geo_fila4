@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
@@ -25,31 +29,51 @@ class SearchPlacesAction
     public function __construct(string $userAgent)
     {
         $this->client = new Client();
+<<<<<<< HEAD
         $this->userAgent = $userAgent.' Application';
+=======
+        $this->userAgent = $userAgent . ' Application';
+>>>>>>> be08416 (.)
     }
 
     /**
      * Cerca luoghi usando una query di ricerca.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la richiesta fallisce
      *
      * @return Collection<int, LocationData>
      */
     public function execute(string $query, ?string $country = null, int $limit = 10): Collection
+=======
+     * @throws RuntimeException Se la richiesta fallisce
+     *
+     * @return Collection<int, LocationData>
+     */
+    public function execute(string $query, null|string $country = null, int $limit = 10): Collection
+>>>>>>> be08416 (.)
     {
         try {
             $response = $this->makeApiRequest($query, $country, $limit);
 
             return $this->parseResponse($response);
         } catch (GuzzleException $e) {
+<<<<<<< HEAD
             throw new \RuntimeException('Failed to search places: '.$e->getMessage());
+=======
+            throw new RuntimeException('Failed to search places: ' . $e->getMessage());
+>>>>>>> be08416 (.)
         }
     }
 
     /**
      * @throws GuzzleException
      */
+<<<<<<< HEAD
     private function makeApiRequest(string $query, ?string $country = null, int $limit = 10): string
+=======
+    private function makeApiRequest(string $query, null|string $country = null, int $limit = 10): string
+>>>>>>> be08416 (.)
     {
         $params = [
             'q' => $query,
@@ -74,7 +98,11 @@ class SearchPlacesAction
     }
 
     /**
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è nel formato atteso
+=======
+     * @throws RuntimeException Se la risposta non è nel formato atteso
+>>>>>>> be08416 (.)
      *
      * @return Collection<int, LocationData>
      */
@@ -91,6 +119,7 @@ class SearchPlacesAction
         $data = json_decode($response, true);
 
         if (empty($data)) {
+<<<<<<< HEAD
             throw new \RuntimeException('No results found for query');
         }
 
@@ -99,5 +128,15 @@ class SearchPlacesAction
             longitude: (float) $place['lon'],
             address: $place['display_name'],
         ));
+=======
+            throw new RuntimeException('No results found for query');
+        }
+
+        return collect($data)->map(fn (array $place): LocationData => new LocationData(
+                latitude: (float) $place['lat'],
+                longitude: (float) $place['lon'],
+                address: $place['display_name'],
+            ));
+>>>>>>> be08416 (.)
     }
 }

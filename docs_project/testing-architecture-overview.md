@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Architettura di Testing - <nome progetto>
 
 ## Panoramica
 
 Questo documento descrive l'architettura di testing del progetto <nome progetto>, basata su Pest PHP e organizzata in moduli Laravel indipendenti.
+=======
+# Architettura di Testing - SaluteOra
+
+## Panoramica
+
+Questo documento descrive l'architettura di testing del progetto SaluteOra, basata su Pest PHP e organizzata in moduli Laravel indipendenti.
+>>>>>>> be08416 (.)
 
 ## Principi Fondamentali
 
@@ -31,10 +39,17 @@ Modules/Geo/tests/Feature/AddressIntegrationTest.php
 - **Approccio**: In-memory con oggetti plain PHP
 - **Focus**: Relazioni polimorfiche, geolocalizzazione, Google Places API
 
+<<<<<<< HEAD
 ### Modulo <nome modulo>
 ```
 Modules/<nome modulo>/tests/Feature/AppointmentValidationTest.php
 Modules/<nome modulo>/tests/Feature/DashboardBusinessLogicTest.php
+=======
+### Modulo SaluteMo
+```
+Modules/SaluteMo/tests/Feature/AppointmentValidationTest.php
+Modules/SaluteMo/tests/Feature/DashboardBusinessLogicTest.php
+>>>>>>> be08416 (.)
 ```
 - **Scopo**: Validazione appuntamenti e logica dashboard
 - **Approccio**: Test di business logic con oggetti mock
@@ -99,7 +114,11 @@ expect($calculatedDuration)->toBe($appointment->duration);
 ### Connessioni Multiple
 - **sqlite**: Database principale per test
 - **user**: Connessione specifica per modulo User
+<<<<<<< HEAD
 - **salute_ora**: Connessione per modulo <nome progetto>
+=======
+- **salute_ora**: Connessione per modulo SaluteOra
+>>>>>>> be08416 (.)
 - **geo**: Connessione per modulo Geo
 
 ### Migrazioni
@@ -136,7 +155,11 @@ php artisan test
 
 # Test specifici per modulo
 php artisan test --filter=Geo
+<<<<<<< HEAD
 php artisan test --filter=<nome modulo>
+=======
+php artisan test --filter=SaluteMo
+>>>>>>> be08416 (.)
 
 # Test specifici per file
 php artisan test tests/Feature/AddressIntegrationTest.php
@@ -169,9 +192,15 @@ php artisan test --filter="validates user types"
 ## Collegamenti
 
 - [Modulo Geo Testing](../../laravel/Modules/Geo/docs/testing.md)
+<<<<<<< HEAD
 - [Modulo <nome modulo> Testing](../../laravel/Modules/<nome modulo>/docs/testing.md)
 - [Best Practices Testing](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
 - [Common Testing Errors](../../laravel/Modules/<nome modulo>/docs/common-testing-errors.md)
+=======
+- [Modulo SaluteMo Testing](../../laravel/Modules/SaluteMo/docs/testing.md)
+- [Best Practices Testing](../../laravel/Modules/SaluteMo/docs/testing-best-practices.md)
+- [Common Testing Errors](../../laravel/Modules/SaluteMo/docs/common-testing-errors.md)
+>>>>>>> be08416 (.)
 
 ---
 

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\LocationData;
@@ -31,7 +35,11 @@ class ReverseGeocodeAction
      * @param float $longitude Longitudine
      *
      * @throws GuzzleException
+<<<<<<< HEAD
      * @throws \RuntimeException
+=======
+     * @throws RuntimeException
+>>>>>>> be08416 (.)
      */
     public function execute(float $latitude, float $longitude): LocationData
     {

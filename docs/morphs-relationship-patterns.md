@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Pattern di Relazioni Polimorfiche nell'Ecosistema <nome progetto>
+=======
+# Pattern di Relazioni Polimorfiche nell'Ecosistema SaluteOra
+>>>>>>> be08416 (.)
 
 ## Evoluzione dei Tipi di Chiavi Primarie
 

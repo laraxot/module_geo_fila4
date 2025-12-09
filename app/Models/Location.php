@@ -4,13 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Carbon;
+=======
+use Override;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Contracts\ProfileContract;
+>>>>>>> be08416 (.)
 
 /**
  * Class Location.
  *
+<<<<<<< HEAD
  * @property int                                         $id
  * @property string|null                                 $model_type
  * @property string|null                                 $model_id
@@ -38,6 +47,40 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location newQuery()
  * @method static Builder<static>|Location query()
  * @method static Builder<static>|Location whereCity($value)
+=======
+ * @property int                  $id
+ * @property string|null          $model_type
+ * @property string|null          $model_id
+ * @property string|null          $name
+ * @property float|null           $lat
+ * @property float|null           $lng
+ * @property string|null          $street
+ * @property string|null          $city
+ * @property string|null          $state
+ * @property string|null          $zip
+ * @property string|null          $formatted_address
+ * @property string|null          $description
+ * @property bool|null            $processed
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property string|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property array                $location
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ * @method static Builder|Location query()
+ * @method static Builder|Location whereCity(string $value)
+ * @method static Builder|Location whereLat(float $value)
+ * @method static Builder|Location whereLng(float $value)
+ * @method static Builder|Location whereProcessed(bool $value)
+ * @method static Builder|Location whereState(string $value)
+ * @method static Builder|Location whereZip(string $value)
+ * @method static Builder<static>|Location newModelQuery()
+ * @method static Builder<static>|Location newQuery()
+ * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
+>>>>>>> be08416 (.)
  * @method static Builder<static>|Location whereCreatedAt($value)
  * @method static Builder<static>|Location whereCreatedBy($value)
  * @method static Builder<static>|Location whereDeletedAt($value)
@@ -45,6 +88,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location whereDescription($value)
  * @method static Builder<static>|Location whereFormattedAddress($value)
  * @method static Builder<static>|Location whereId($value)
+<<<<<<< HEAD
  * @method static Builder<static>|Location whereLat($value)
  * @method static Builder<static>|Location whereLng($value)
  * @method static Builder<static>|Location whereModelId($value)
@@ -58,6 +102,15 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location whereZip($value)
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
  *
+=======
+ * @method static Builder<static>|Location whereModelId($value)
+ * @method static Builder<static>|Location whereModelType($value)
+ * @method static Builder<static>|Location whereName($value)
+ * @method static Builder<static>|Location whereStreet($value)
+ * @method static Builder<static>|Location whereUpdatedAt($value)
+ * @method static Builder<static>|Location whereUpdatedBy($value)
+ * @mixin IdeHelperLocation
+>>>>>>> be08416 (.)
  * @mixin \Eloquent
  */
 class Location extends BaseModel
@@ -80,6 +133,43 @@ class Location extends BaseModel
     ];
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    #[Override]
+    protected function casts(): array
+    {
+        return [
+            'lat' => 'float',
+            'lng' => 'float',
+            'processed' => 'bool',
+        ];
+    }
+
+    /**
+     * Accessor for the "location" attribute.
+     */
+    protected function location(): Attribute
+    {
+        return Attribute::make(
+            get: fn(): array => [
+                'lat' => (float) $this->lat,
+                'lng' => (float) $this->lng,
+            ],
+            set: function (null|array $value): void {
+                if (is_array($value)) {
+                    $this->attributes['lat'] = $value['lat'] ?? null;
+                    $this->attributes['lng'] = $value['lng'] ?? null;
+                }
+            },
+        );
+    }
+
+    /**
+>>>>>>> be08416 (.)
      * Get the latitude and longitude attributes.
      */
     public static function getLatLngAttributes(): array
@@ -107,6 +197,7 @@ class Location extends BaseModel
 
         return $query->whereRaw("{$haversine} <= ?", [$distanceInKm]);
     }
+<<<<<<< HEAD
 
     /**
      * Get the attributes that should be cast.
@@ -141,4 +232,6 @@ class Location extends BaseModel
             },
         );
     }
+=======
+>>>>>>> be08416 (.)
 }

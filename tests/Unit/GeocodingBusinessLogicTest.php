@@ -104,14 +104,22 @@ describe('Geocoding Business Logic', function () {
             $address = $this->italianAddress;
 
             // Business Logic: Milano is in Lombardia region with MI province
+<<<<<<< HEAD
             if ('Milano' === $address['city']) {
+=======
+            if ($address['city'] === 'Milano') {
+>>>>>>> be08416 (.)
                 expect($address['region'])->toBe('Lombardia');
                 expect($address['province'])->toBe('MI');
             }
 
             // Regional consistency check
             $lombardyProvinces = ['MI', 'BG', 'BS', 'CO', 'CR', 'MN', 'PV', 'SO', 'VA'];
+<<<<<<< HEAD
             if ('Lombardia' === $address['region']) {
+=======
+            if ($address['region'] === 'Lombardia') {
+>>>>>>> be08416 (.)
                 expect($lombardyProvinces)->toContain($address['province']);
             }
         });
@@ -282,14 +290,22 @@ describe('Geocoding Business Logic', function () {
             $place = $this->place;
 
             // Business Logic: Cities should have population data
+<<<<<<< HEAD
             if ('city' === $place['type']) {
+=======
+            if ($place['type'] === 'city') {
+>>>>>>> be08416 (.)
                 expect($place)->toHaveKey('population');
                 expect($place['population'])->toBeInt();
                 expect($place['population'])->toBeGreaterThan(0);
             }
 
             // Milano population validation (approx)
+<<<<<<< HEAD
             if ('Milano' === $place['name']) {
+=======
+            if ($place['name'] === 'Milano') {
+>>>>>>> be08416 (.)
                 expect($place['population'])->toBeGreaterThan(1000000);
                 expect($place['population'])->toBeLessThan(2000000);
             }
@@ -355,11 +371,20 @@ describe('Geocoding Business Logic', function () {
             $pointOutsideMilan = ['lat' => 41.9028, 'lng' => 12.4964];
 
             // Business Logic: Point in bounds check
+<<<<<<< HEAD
             $isInBounds = fn ($point, $bounds) => $point['lat'] >= $bounds['south']
                 && $point['lat'] <= $bounds['north']
                 && $point['lng'] >= $bounds['west']
                 && $point['lng'] <= $bounds['east']
             ;
+=======
+            $isInBounds = fn ($point, $bounds) => (
+                    $point['lat'] >= $bounds['south'] &&
+                    $point['lat'] <= $bounds['north'] &&
+                    $point['lng'] >= $bounds['west'] &&
+                    $point['lng'] <= $bounds['east']
+                );
+>>>>>>> be08416 (.)
 
             expect($isInBounds($pointInMilan, $milanBounds))->toBeTrue();
             expect($isInBounds($pointOutsideMilan, $milanBounds))->toBeFalse();
@@ -397,12 +422,20 @@ describe('Geocoding Business Logic', function () {
             // Business Logic: Address completeness calculation
             $score = 0;
             foreach ($requiredFields as $field) {
+<<<<<<< HEAD
                 if (isset($address[$field]) && ! empty($address[$field])) {
+=======
+                if (isset($address[$field]) && !empty($address[$field])) {
+>>>>>>> be08416 (.)
                     $score += 40; // Required fields worth more
                 }
             }
             foreach ($optionalFields as $field) {
+<<<<<<< HEAD
                 if (isset($address[$field]) && ! empty($address[$field])) {
+=======
+                if (isset($address[$field]) && !empty($address[$field])) {
+>>>>>>> be08416 (.)
                     $score += 20 / count($optionalFields);
                 }
             }

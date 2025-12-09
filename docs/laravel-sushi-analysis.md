@@ -501,4 +501,8 @@ Per procedere, si consiglia di:
 ---
 
 *Documento creato il: 28/05/2025*  
+<<<<<<< HEAD
 *Autore: Team <nome progetto>*
+=======
+*Autore: Team SaluteOra*
+>>>>>>> be08416 (.)

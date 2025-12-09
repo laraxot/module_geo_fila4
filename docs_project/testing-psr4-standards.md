@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Standard PSR-4 per i Test in Laraxot <nome progetto>
+=======
+# Standard PSR-4 per i Test in Laraxot SaluteOra
+>>>>>>> be08416 (.)
 
 ## Panoramica
 
@@ -31,11 +35,19 @@ Ogni modulo deve avere la seguente configurazione nel `composer.json`:
 }
 ```
 
+<<<<<<< HEAD
 #### Modulo <nome modulo>
 ```json
 "autoload-dev": {
     "psr-4": {
         "Modules\\<nome modulo>\\Tests\\": "tests/"
+=======
+#### Modulo SaluteMo
+```json
+"autoload-dev": {
+    "psr-4": {
+        "Modules\\SaluteMo\\Tests\\": "tests/"
+>>>>>>> be08416 (.)
     }
 }
 ```
@@ -83,9 +95,15 @@ class TestClassName extends BaseClass
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\<nome modulo>\Tests\Unit;
 
 use Modules\<nome modulo>\Models\BaseModel;
+=======
+namespace Modules\SaluteMo\Tests\Unit;
+
+use Modules\SaluteMo\Models\BaseModel;
+>>>>>>> be08416 (.)
 
 /**
  * Concrete implementation of BaseModel for testing purposes.
@@ -172,7 +190,11 @@ class TestHelper extends Model
 <?php
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\<nome modulo>\Tests\Unit;
+=======
+namespace Modules\SaluteMo\Tests\Unit;
+>>>>>>> be08416 (.)
 
 /**
  * Helper class for testing.
@@ -192,7 +214,11 @@ namespace App\Tests\Unit; // Wrong namespace!
 
 ✅ **SOLUZIONE**:
 ```php
+<<<<<<< HEAD
 namespace Modules\<nome modulo>\Tests\Unit; // Correct module namespace
+=======
+namespace Modules\SaluteMo\Tests\Unit; // Correct module namespace
+>>>>>>> be08416 (.)
 ```
 
 ## Verifica della Conformità
@@ -208,7 +234,11 @@ composer dump-autoload
 ./vendor/bin/phpstan analyze Modules/*/tests/ --level=9
 
 # Test specifico per modulo
+<<<<<<< HEAD
 ./vendor/bin/phpstan analyze Modules/<nome modulo>/tests/ --level=9
+=======
+./vendor/bin/phpstan analyze Modules/SaluteMo/tests/ --level=9
+>>>>>>> be08416 (.)
 ```
 
 ### Messaggi di Errore Tipici
@@ -259,7 +289,11 @@ Prima di committare file di test:
 ## Collegamenti ai Moduli
 
 - [Testing PSR-4 Compliance - Modulo Xot](../Modules/Xot/docs/testing-psr4-compliance.md)
+<<<<<<< HEAD
 - [Testing Guide - Modulo <nome modulo>](../Modules/<nome modulo>/docs/testing.md)
+=======
+- [Testing Guide - Modulo SaluteMo](../Modules/SaluteMo/docs/testing.md)
+>>>>>>> be08416 (.)
 
 ---
 

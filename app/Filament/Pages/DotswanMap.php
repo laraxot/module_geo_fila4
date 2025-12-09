@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Pages;
 
+<<<<<<< HEAD
+=======
+use Filament\Schemas\Components\Utilities\Set;
+>>>>>>> be08416 (.)
 // use Dotswan\MapPicker\Fields\Map; // Pacchetto non installato
 use Illuminate\Support\Collection;
 use Modules\Geo\Models\Place;
@@ -24,13 +28,25 @@ class DotswanMap extends XotBasePage
         /** @var Collection<int, Place> $places */
         $places = Place::query()->whereNotNull(['latitude', 'longitude'])->get();
 
+<<<<<<< HEAD
         return $places->map(fn (Place $place): array => [
+=======
+        return $places->map(fn(Place $place): array => [
+>>>>>>> be08416 (.)
             'lat' => (float) $place->latitude,
             'lng' => (float) $place->longitude,
             'title' => (string) ($place->getAttribute('name') ?? 'Unnamed Place'),
         ]);
     }
 
+<<<<<<< HEAD
+=======
+    protected function getHeaderWidgets(): array
+    {
+        return [];
+    }
+
+>>>>>>> be08416 (.)
     public function getHeaderWidgetsColumns(): int|array
     {
         return 1;
@@ -66,9 +82,12 @@ class DotswanMap extends XotBasePage
             //     ->extraTileControl([]),
         ];
     }
+<<<<<<< HEAD
 
     protected function getHeaderWidgets(): array
     {
         return [];
     }
+=======
+>>>>>>> be08416 (.)
 }

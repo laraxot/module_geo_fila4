@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Modules\Geo\Models\City;
 use Modules\Geo\Models\Country;
 use Modules\Geo\Models\Region;
+=======
+use Modules\Geo\Models\Country;
+use Modules\Geo\Models\Region;
+use Modules\Geo\Models\City;
+>>>>>>> be08416 (.)
 use Modules\Geo\Tests\TestCase;
 
 /*

@@ -9,6 +9,7 @@ use Spatie\LaravelData\Data;
 class PhotonPropertiesData extends Data
 {
     public function __construct(
+<<<<<<< HEAD
         public ?string $country,
         public ?string $city,
         public ?string $postcode,
@@ -16,4 +17,12 @@ class PhotonPropertiesData extends Data
         public ?string $housenumber,
     ) {
     }
+=======
+        public null|string $country,
+        public null|string $city,
+        public null|string $postcode,
+        public null|string $street,
+        public null|string $housenumber,
+    ) {}
+>>>>>>> be08416 (.)
 }

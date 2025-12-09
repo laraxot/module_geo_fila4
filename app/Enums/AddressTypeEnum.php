@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace Modules\Geo\Enums;
 
 /**
+<<<<<<< HEAD
  * Enum per i tipi di indirizzi.
+=======
+ * Enum per i tipi di indirizzi
+>>>>>>> be08416 (.)
  */
 enum AddressTypeEnum: string
 {
@@ -18,6 +22,11 @@ enum AddressTypeEnum: string
 
     /**
      * Get the label for the enum value.
+<<<<<<< HEAD
+=======
+     *
+     * @return string
+>>>>>>> be08416 (.)
      */
     public function label(): string
     {

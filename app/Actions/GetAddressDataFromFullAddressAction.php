@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+<<<<<<< HEAD
+=======
+use Exception;
+use RuntimeException;
+>>>>>>> be08416 (.)
 use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\BingMaps\GetAddressFromBingMapsAction;
@@ -26,6 +31,7 @@ class GetAddressDataFromFullAddressAction
     /**
      * Ottiene i dati dell'indirizzo da un indirizzo completo.
      *
+<<<<<<< HEAD
      * @param string $fullAddress L'indirizzo da cercare
      *
      * @throws \RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
@@ -33,6 +39,14 @@ class GetAddressDataFromFullAddressAction
      * @return AddressData I dati dell'indirizzo trovato
      */
     public function execute(string $fullAddress): ?AddressData
+=======
+     * @param  string  $fullAddress  L'indirizzo da cercare
+     * @return AddressData I dati dell'indirizzo trovato
+     *
+     * @throws RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
+     */
+    public function execute(string $fullAddress): null|AddressData
+>>>>>>> be08416 (.)
     {
         $this->errors = collect();
         $services = [
@@ -50,15 +64,22 @@ class GetAddressDataFromFullAddressAction
         ];
 
         foreach ($services as $service) {
+<<<<<<< HEAD
             // PHPStan knows these classes exist since they're hardcoded
             /* @phpstan-ignore staticMethod.alreadyNarrowedType */
+=======
+>>>>>>> be08416 (.)
             Assert::classExists($service);
             try {
                 $result = app($service)->execute($fullAddress);
                 if ($result instanceof AddressData) {
                     return $result;
                 }
+<<<<<<< HEAD
             } catch (\Exception $e) {
+=======
+            } catch (Exception $e) {
+>>>>>>> be08416 (.)
                 // Logga l'errore o gestiscilo in altro modo
                 $this->errors->push($e->getMessage());
             }

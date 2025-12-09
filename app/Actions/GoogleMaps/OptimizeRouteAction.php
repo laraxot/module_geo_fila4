@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
@@ -21,6 +25,7 @@ class OptimizeRouteAction
     /**
      * Ottimizza il percorso tra i punti specificati.
      *
+<<<<<<< HEAD
      * @param array<LocationData> $locations   Lista di punti da visitare
      * @param LocationData        $origin      Punto di partenza
      * @param LocationData        $destination Punto di arrivo
@@ -28,6 +33,15 @@ class OptimizeRouteAction
      * @param string              $optimize    Criterio di ottimizzazione (distance, time)
      *
      * @return array<RouteData> Lista di percorsi ottimizzati
+=======
+     * @param LocationData[] $locations   Lista di punti da visitare
+     * @param LocationData   $origin      Punto di partenza
+     * @param LocationData   $destination Punto di arrivo
+     * @param string         $mode        Modalità di trasporto (driving, walking, bicycling, transit)
+     * @param string         $optimize    Criterio di ottimizzazione (distance, time)
+     *
+     * @return RouteData[] Lista di percorsi ottimizzati
+>>>>>>> be08416 (.)
      */
     public function execute(
         array $locations,
@@ -41,27 +55,45 @@ class OptimizeRouteAction
         }
 
         $apiKey = config('services.google.maps.key');
+<<<<<<< HEAD
         if (! $apiKey) {
             throw new \RuntimeException('Google Maps API key not found');
+=======
+        if (!$apiKey) {
+            throw new RuntimeException('Google Maps API key not found');
+>>>>>>> be08416 (.)
         }
 
         $waypoints = $this->formatWaypoints($locations);
         $response = Http::get('https://maps.googleapis.com/maps/api/directions/json', [
             'origin' => $this->formatLocation($origin),
             'destination' => $this->formatLocation($destination),
+<<<<<<< HEAD
             'waypoints' => 'optimize:true|'.implode('|', $waypoints),
+=======
+            'waypoints' => 'optimize:true|' . implode('|', $waypoints),
+>>>>>>> be08416 (.)
             'mode' => $mode,
             'optimize' => $optimize,
             'key' => $apiKey,
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
             throw new \RuntimeException('Failed to get directions from Google Maps API');
+=======
+        if (!$response->successful()) {
+            throw new RuntimeException('Failed to get directions from Google Maps API');
+>>>>>>> be08416 (.)
         }
 
         /** @var array{routes?: array<int, array{legs: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, steps: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, html_instructions: string, travel_mode: string}>}>, overview_polyline: array{points: string}, summary: string, warnings: array<int, string>, waypoint_order: array<int, int>}>} $data */
         $data = $response->json();
+<<<<<<< HEAD
         if (! isset($data['routes'][0])) {
+=======
+        if (!isset($data['routes'][0])) {
+>>>>>>> be08416 (.)
             return [];
         }
 
@@ -71,9 +103,15 @@ class OptimizeRouteAction
     /**
      * Formatta una lista di punti nel formato richiesto dall'API.
      *
+<<<<<<< HEAD
      * @param array<LocationData> $locations
      *
      * @return array<string>
+=======
+     * @param LocationData[] $locations
+     *
+     * @return string[]
+>>>>>>> be08416 (.)
      */
     private function formatWaypoints(array $locations): array
     {
@@ -113,13 +151,20 @@ class OptimizeRouteAction
      * }> $routes
      * @param Collection<int, LocationData> $originalLocations
      *
+<<<<<<< HEAD
      * @return array<RouteData>
+=======
+     * @return RouteData[]
+>>>>>>> be08416 (.)
      */
     private function parseRoutes(array $routes, Collection $originalLocations): array
     {
         return array_map(
             function (array $route) use ($originalLocations): RouteData {
+<<<<<<< HEAD
                 /** @var Collection<int, LocationData> $waypoints */
+=======
+>>>>>>> be08416 (.)
                 $waypoints = collect();
                 $steps = [];
                 $totalDistance = 0;
@@ -151,7 +196,11 @@ class OptimizeRouteAction
                 }
 
                 // Aggiungi l'ultima posizione
+<<<<<<< HEAD
                 if (! empty($route['legs'])) {
+=======
+                if (!empty($route['legs'])) {
+>>>>>>> be08416 (.)
                     $lastLeg = end($route['legs']);
                     $waypoints->push(new LocationData(
                         latitude: $lastLeg['end_location']['lat'],
@@ -160,11 +209,16 @@ class OptimizeRouteAction
                     ));
                 }
 
+<<<<<<< HEAD
                 /** @var Collection<int, LocationData> $typedWaypoints */
                 $typedWaypoints = $waypoints;
 
                 return new RouteData(
                     waypoints: $typedWaypoints,
+=======
+                return new RouteData(
+                    waypoints: $waypoints,
+>>>>>>> be08416 (.)
                     originalWaypoints: $originalLocations,
                     totalDistance: $totalDistance,
                     totalDuration: $totalDuration,

@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Forms;
 
+<<<<<<< HEAD
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Utilities\Get;
+=======
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Forms\Components\Select;
+>>>>>>> be08416 (.)
 use Illuminate\Support\Collection;
 use Modules\Geo\Models\ComuneJson;
 
@@ -42,23 +47,41 @@ class LocationForm
                 ->searchable()
                 ->required()
                 ->live()
+<<<<<<< HEAD
                 ->afterStateUpdated(fn () => ComuneJson::clearCache(false)),
             Select::make('province')
                 ->label('geo::fields.province.label')
                 ->placeholder('geo::fields.province.placeholder')
                 ->options(fn (Get $get): array => filled($get('region'))
                     ? /* @phpstan-ignore argument.type */ ComuneJson::getProvincesByRegion($get('region'))->toArray()
+=======
+                ->afterStateUpdated(fn() => ComuneJson::clearCache(false)),
+            Select::make('province')
+                ->label('geo::fields.province.label')
+                ->placeholder('geo::fields.province.placeholder')
+                ->options(fn(Get $get): array => filled($get('region'))
+                    ? /** @phpstan-ignore argument.type */ ComuneJson::getProvincesByRegion($get('region'))->toArray()
+>>>>>>> be08416 (.)
                     : [])
                 ->searchable()
                 ->required()
                 ->live()
+<<<<<<< HEAD
                 ->afterStateUpdated(fn () => ComuneJson::clearCache(false))
                 ->visible(fn (Get $get) => filled($get('region'))),
+=======
+                ->afterStateUpdated(fn() => ComuneJson::clearCache(false))
+                ->visible(fn(Get $get) => filled($get('region'))),
+>>>>>>> be08416 (.)
             Select::make('city')
                 ->label('geo::fields.city.label')
                 ->placeholder('geo::fields.city.placeholder')
                 ->options(function (Get $get): array {
+<<<<<<< HEAD
                     if (! filled($get('province'))) {
+=======
+                    if (!filled($get('province'))) {
+>>>>>>> be08416 (.)
                         return [];
                     }
 
@@ -71,13 +94,22 @@ class LocationForm
                 ->searchable()
                 ->required()
                 ->live()
+<<<<<<< HEAD
                 ->afterStateUpdated(fn () => ComuneJson::clearCache(false))
                 ->visible(fn (Get $get) => filled($get('province'))),
+=======
+                ->afterStateUpdated(fn() => ComuneJson::clearCache(false))
+                ->visible(fn(Get $get) => filled($get('province'))),
+>>>>>>> be08416 (.)
             Select::make('cap')
                 ->label('geo::fields.cap.label')
                 ->placeholder('geo::fields.cap.placeholder')
                 ->options(function (Get $get): array {
+<<<<<<< HEAD
                     if (! filled($get('province')) || ! filled($get('city'))) {
+=======
+                    if (!filled($get('province')) || !filled($get('city'))) {
+>>>>>>> be08416 (.)
                         return [];
                     }
 
@@ -90,11 +122,18 @@ class LocationForm
                     }
 
                     $caps = $cities->first()['cap'];
+<<<<<<< HEAD
 
                     return array_combine($caps, $caps);
                 })
                 ->required()
                 ->visible(fn (Get $get) => filled($get('city'))),
+=======
+                    return array_combine($caps, $caps);
+                })
+                ->required()
+                ->visible(fn(Get $get) => filled($get('city'))),
+>>>>>>> be08416 (.)
         ];
     }
 }

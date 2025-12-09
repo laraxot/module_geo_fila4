@@ -54,7 +54,11 @@ trait GeoTrait
 
     // --- functions ----
 
+<<<<<<< HEAD
     public function distance(?float $lat = null, ?float $lng = null): ?float
+=======
+    public function distance(null|float $lat = null, null|float $lng = null): null|float
+>>>>>>> be08416 (.)
     {
         return (float) GeoService::distance((float) $this->latitude, (float) $this->longitude, $lat, $lng, '');
     }
@@ -62,10 +66,17 @@ trait GeoTrait
     public function distanceCustomField(
         string $lat_field,
         string $lng_field,
+<<<<<<< HEAD
         ?float $lat = null,
         ?float $lng = null,
         ?string $unit = '',
     ): ?float {
+=======
+        null|float $lat = null,
+        null|float $lng = null,
+        null|string $unit = '',
+    ): null|float {
+>>>>>>> be08416 (.)
         return (float) GeoService::distance(
             (float) $this->{$lat_field},
             (float) $this->{$lng_field},
@@ -151,7 +162,11 @@ trait GeoTrait
        ,', \"lng\":',' ')
        ,'}','')
        ,'))')
+<<<<<<< HEAD
        ), ST_GeomFromText('POINT(".$lat.' '.$lng.")')
+=======
+       ), ST_GeomFromText('POINT(" . $lat . ' ' . $lng . ")')
+>>>>>>> be08416 (.)
        )";
 
         // dddx($query->whereNotNull($polygon_field)->whereRaw($sql)->toSql());
@@ -167,6 +182,7 @@ trait GeoTrait
             $this->country = 'Italia';
         }
 
+<<<<<<< HEAD
         return $this->route.
             ', '.
             $this->street_number.
@@ -179,6 +195,22 @@ trait GeoTrait
     }
 
     public function getLatitudeAttribute(?float $value): ?float
+=======
+        return (
+            $this->route .
+            ', ' .
+            $this->street_number .
+            ', ' .
+            $this->locality .
+            ', ' .
+            $this->administrative_area_level_2 .
+            ', ' .
+            $this->country
+        );
+    }
+
+    public function getLatitudeAttribute(null|float $value): null|float
+>>>>>>> be08416 (.)
     {
         if (null !== $value) {
             return $value;
@@ -246,7 +278,11 @@ trait GeoTrait
             // $this->attributes = array_merge($this->attributes, $json);
             $this->attributes['latitude'] = $lat;
             $this->attributes['longitude'] = $lng;
+<<<<<<< HEAD
             if (! isset($this->attributes['full_address'])) {
+=======
+            if (!isset($this->attributes['full_address'])) {
+>>>>>>> be08416 (.)
                 $this->attributes['full_address'] = ',,';
             }
 
@@ -311,7 +347,11 @@ trait GeoTrait
     /**
      * ---.
      */
+<<<<<<< HEAD
     public function getFullAddressAttribute(?string $value): ?string
+=======
+    public function getFullAddressAttribute(null|string $value): null|string
+>>>>>>> be08416 (.)
     {
         if (null === $this->address) {
             return null;
@@ -333,6 +373,7 @@ trait GeoTrait
             //    $value = implode(' ', $value);
             // }
             if (isset($geo->street_number)) {
+<<<<<<< HEAD
                 $str = $geo->street_number.', ';
                 $before = Str::before($geo->value, $str);
                 $after = Str::after($geo->value, $str);
@@ -345,6 +386,20 @@ trait GeoTrait
                 $after = Str::after($geo->value, $str);
 
                 return $before.', '.($geo->postal_code ?? '').''.$str.''.$after;
+=======
+                $str = $geo->street_number . ', ';
+                $before = Str::before($geo->value, $str);
+                $after = Str::after($geo->value, $str);
+
+                return $before . $str . '' . ($geo->postal_code ?? '') . ', ' . $after;
+            }
+            if (isset($geo->administrative_area_level_3)) {
+                $str = ', ' . $geo->administrative_area_level_3;
+                $before = Str::before($geo->value, $str);
+                $after = Str::after($geo->value, $str);
+
+                return $before . ', ' . ($geo->postal_code ?? '') . '' . $str . '' . $after;
+>>>>>>> be08416 (.)
             }
         }
         // Call to function is_object() with string|null will always evaluate to false.

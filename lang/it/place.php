@@ -12,7 +12,11 @@ return [
         ],
         'label' => 'Luoghi',
         'sort' => 32,
+<<<<<<< HEAD
         'icon' => 'ui-geo-place',
+=======
+        'icon' => 'geo-place',
+>>>>>>> be08416 (.)
     ],
     'fields' => [
         'name' => 'Nome',

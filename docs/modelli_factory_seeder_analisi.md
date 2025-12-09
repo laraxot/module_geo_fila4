@@ -140,7 +140,11 @@ Tutti i modelli attivi che necessitano factory le hanno.
 
 ### Integrazione Sistema
 Il modulo Geo si integra con:
+<<<<<<< HEAD
 - **<main module>**: Indirizzi studi medici e pazienti
+=======
+- **SaluteOra**: Indirizzi studi medici e pazienti
+>>>>>>> be08416 (.)
 - **User**: Localizzazione utenti
 - **Cms**: Contenuti geo-localizzati
 - **Notify**: Notifiche geo-localizzate
@@ -179,7 +183,11 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [Cache Strategy](./cache_strategy.md)
 
 ### Moduli Collegati
+<<<<<<< HEAD
 - [<main module> Module](../../<main module>/docs/modelli_factory_seeder_analisi.md)
+=======
+- [SaluteOra Module](../../SaluteOra/docs/modelli_factory_seeder_analisi.md)
+>>>>>>> be08416 (.)
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md)
 - [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md)
 

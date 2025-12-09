@@ -2,7 +2,11 @@
 
 [![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen.svg)](https://phpstan.org/)
 [![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
+<<<<<<< HEAD
 [![Filament 3.x](https://img.shields.io/badge/Filament-3.x-blue.svg)](https://filamentphp.com/)
+=======
+[![Filament 4.x](https://img.shields.io/badge/Filament-4.x-blue.svg)](https://filamentphp.com/)
+>>>>>>> be08416 (.)
 [![Translation Ready](https://img.shields.io/badge/Translation-IT%20%7C%20EN%20%7C%20DE-green.svg)](https://laravel.com/docs/localization)
 [![API Integration](https://img.shields.io/badge/API-Google%20Maps%20%7C%20Mapbox%20%7C%20Here-orange.svg)](https://developers.google.com/maps)
 [![Database JSON](https://img.shields.io/badge/Database-JSON%20Comuni%20IT-yellow.svg)](https://github.com/italia/anpr)
@@ -35,6 +39,7 @@ $address = Address::create([
     'longitude' => 9.1900,
 ]);
 
+<<<<<<< HEAD
 
 # Test file core PHPStan level 9
 cd laravel
@@ -47,6 +52,8 @@ cd laravel
 # Risultato: [OK] No errors ✅
 // Ricerca indirizzi nelle vicinanze
 $nearby = Address::nearby($lat, $lng, 5); // 5km radius
+=======
+>>>>>>> be08416 (.)
 // Ricerca indirizzi nelle vicinanze
 $nearby = Address::nearby($lat, $lng, 5); // 5km radius
 ```
@@ -94,8 +101,11 @@ $lombardia = $milano->regione; // "Lombardia"
 
 ### 📦 **Installazione**
 ```bash
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> be08416 (.)
 # Abilitare il modulo
 php artisan module:enable Geo
 
@@ -129,8 +139,11 @@ return [
 
 ### 🧪 **Testing**
 ```bash
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> be08416 (.)
 # Test del modulo
 php artisan test --testsuite=Geo
 
@@ -347,6 +360,7 @@ CREATE INDEX idx_addresses_postal_code ON addresses (postal_code);
 
 ---
 
+<<<<<<< HEAD
 **🔄 Ultimo aggiornamento**: 27 Gennaio 2025  
 **📦 Versione**: 2.1.0  
 **🐛 PHPStan Level 9**: File core certificati ✅  
@@ -581,3 +595,29 @@ php artisan test
 **Versione**: 2.0.0  
 **Autore**: Team Laraxot  
 **Licenza**: MIT License
+=======
+## 🚀 Aggiornamento Filament 4.x
+
+**Data**: 2025-01-27
+**Status**: ✅ COMPLETATO CON SUCCESSO
+
+Il modulo Geo è stato aggiornato con successo a Filament 4.x.
+
+### ⚠️ Widget Temporaneamente Disabilitati
+- **LocationMapTableWidget** - Dipende da `cheesegrits/filament-google-maps`
+- **LocationMapWidget** - Dipende da `webbingbrasil/filament-maps`
+- **OSMMapWidget** - Dipende da librerie di mappatura non compatibili
+- **WebbingbrasilMap** - Dipende da `webbingbrasil/filament-maps`
+
+### 🔄 Riattivazione
+I widget saranno riattivati non appena i pacchetti di mappatura saranno compatibili con Filament 4.x.
+
+---
+
+**🔄 Ultimo aggiornamento**: 27 Gennaio 2025
+**📦 Versione**: 2.2.0 (Filament 4.x)
+**🐛 PHPStan Level 9**: File core certificati ✅
+**🌐 Translation Standards**: File traduzione certificati ✅
+**🚀 Performance**: 98/100 score
+**✨ Filament 4.x**: Aggiornato e funzionante ✅
+>>>>>>> be08416 (.)

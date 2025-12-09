@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be08416 (.)
 return [
     'navigation' => [
         'name' => 'Luoghi',
@@ -12,7 +16,11 @@ return [
         ],
         'label' => 'Luoghi',
         'sort' => '32',
+<<<<<<< HEAD
         'icon' => 'ui-geo-place',
+=======
+        'icon' => 'geo-place',
+>>>>>>> be08416 (.)
     ],
     'fields' => [
         'name' => 'Nome',

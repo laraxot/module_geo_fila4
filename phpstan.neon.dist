@@ -3,7 +3,11 @@ includes:
     - ./vendor/larastan/larastan/extension.neon
 
 parameters:
+<<<<<<< HEAD
     level: max
+=======
+    level: 4
+>>>>>>> be08416 (.)
     paths:
         - .
     checkOctaneCompatibility: true

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Testing del Modulo Geo - <main module>
+=======
+# Testing del Modulo Geo - SaluteOra
+>>>>>>> be08416 (.)
 
 ## Panoramica
 

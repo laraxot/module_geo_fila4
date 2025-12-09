@@ -2,7 +2,11 @@
 
 ## Contesto e Motivazione
 
+<<<<<<< HEAD
 Durante l'audit del sistema <nome progetto>, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome modulo>") in moduli che devono essere riutilizzabili in progetti diversi.
+=======
+Durante l'audit del sistema SaluteOra, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "saluteora", "salutemo") in moduli che devono essere riutilizzabili in progetti diversi.
+>>>>>>> be08416 (.)
 
 Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e compromette la riutilizzabilità del sistema.
 
@@ -31,7 +35,11 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 #### 3. Modulo Xot (8+ violazioni)
 **Stato**: Documentazione creata, ottimizzazioni pianificate
 **File contaminati**:
+<<<<<<< HEAD
 - `PathHelper.php`: Path hardcoded per <nome progetto>
+=======
+- `PathHelper.php`: Path hardcoded per SaluteOra
+>>>>>>> be08416 (.)
 - `TestCase.php`: Dipendenze hardcoded
 - `DayOfWeek.php`: Traduzioni hardcoded
 - `InformationSchemaTableFactory.php`: Dati hardcoded
@@ -39,6 +47,7 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 
 ### Tipi di Violazioni Identificate
 
+<<<<<<< HEAD
 1. **Nomi di progetto hardcoded**: "<nome progetto>", "<nome progetto>"
 2. **Email hardcoded**: "admin@<nome progetto>.com", "developer@<nome progetto>.com"
 3. **URL hardcoded**: "https://api.<nome progetto>.com/webhooks"
@@ -47,6 +56,16 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 6. **Repository hardcoded**: "https://github.com/<nome progetto>/themes"
 7. **Import hardcoded**: `use Modules\<nome progetto>\Models\User`
 8. **Traduzioni hardcoded**: `__('<nome progetto>::widgets.title')`
+=======
+1. **Nomi di progetto hardcoded**: "SaluteOra", "saluteora"
+2. **Email hardcoded**: "admin@saluteora.com", "developer@saluteora.com"
+3. **URL hardcoded**: "https://api.saluteora.com/webhooks"
+4. **Path hardcoded**: "/var/www/html/saluteora/public_html/images/"
+5. **Nomi team hardcoded**: "Team SaluteOra"
+6. **Repository hardcoded**: "https://github.com/saluteora/themes"
+7. **Import hardcoded**: `use Modules\SaluteOra\Models\User`
+8. **Traduzioni hardcoded**: `__('saluteora::widgets.title')`
+>>>>>>> be08416 (.)
 
 ## Soluzioni Implementate
 
@@ -118,8 +137,13 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 - **Media**: Gestione media per qualsiasi progetto
 
 ### Moduli Specifici del Progetto
+<<<<<<< HEAD
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome modulo>**: Solo per progetto <nome modulo>
+=======
+- **SaluteOra**: Solo per progetto SaluteOra
+- **SaluteMo**: Solo per progetto SaluteMo
+>>>>>>> be08416 (.)
 - **Patient**: Solo per progetti sanitari specifici
 
 ### Pattern di Configurazione
@@ -150,6 +174,7 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 ### Variabili d'Ambiente Standard
 ```env
 # Configurazione Company
+<<<<<<< HEAD
 COMPANY_NAME=<nome progetto>
 COMPANY_TEAM=Team <nome progetto>
 WEBHOOK_BASE_URL=https://api.<nome progetto>.com
@@ -170,6 +195,28 @@ XOT_APPOINTMENT_MODEL=Modules\<nome progetto>\Models\Appointment
 # Configurazione Traduzioni
 UI_TRANSLATION_NAMESPACE=<nome progetto>
 XOT_TRANSLATION_NAMESPACE=<nome progetto>
+=======
+COMPANY_NAME=SaluteOra
+COMPANY_TEAM=Team SaluteOra
+WEBHOOK_BASE_URL=https://api.saluteora.com
+CLINIC_NAME=Studio Dentistico SaluteOra
+REPOSITORY_URL=https://github.com/saluteora/notify
+
+# Configurazione Path
+PROJECT_BASE_PATH=/var/www/html/saluteora
+LARAVEL_BASE_PATH=/var/www/html/saluteora/laravel
+MODULES_BASE_PATH=/var/www/html/saluteora/laravel/Modules
+
+# Configurazione Modelli
+UI_USER_MODEL=Modules\SaluteOra\Models\User
+UI_PATIENT_MODEL=Modules\SaluteOra\Models\Patient
+XOT_USER_MODEL=Modules\SaluteOra\Models\User
+XOT_APPOINTMENT_MODEL=Modules\SaluteOra\Models\Appointment
+
+# Configurazione Traduzioni
+UI_TRANSLATION_NAMESPACE=saluteora
+XOT_TRANSLATION_NAMESPACE=saluteora
+>>>>>>> be08416 (.)
 ```
 
 ## Test di Conformità
@@ -177,6 +224,7 @@ XOT_TRANSLATION_NAMESPACE=<nome progetto>
 ### Comandi di Verifica
 ```bash
 # Verifica completa per tutti i moduli generici
+<<<<<<< HEAD
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/Notify/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/User/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/UI/ --include="*.php"
@@ -188,6 +236,19 @@ grep -r "Modules\\<nome progetto>" laravel/Modules/Xot/ --include="*.php"
 
 # Verifica path hardcoded
 grep -r "/var/www/html/<nome progetto>" laravel/Modules/Xot/ --include="*.php"
+=======
+grep -r "saluteora\|salutemo" laravel/Modules/Notify/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/User/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/UI/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/Xot/ --include="*.php"
+
+# Verifica dipendenze hardcoded
+grep -r "Modules\\SaluteOra" laravel/Modules/UI/ --include="*.php"
+grep -r "Modules\\SaluteOra" laravel/Modules/Xot/ --include="*.php"
+
+# Verifica path hardcoded
+grep -r "/var/www/html/saluteora" laravel/Modules/Xot/ --include="*.php"
+>>>>>>> be08416 (.)
 ```
 
 ### Risultato Atteso

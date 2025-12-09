@@ -11,6 +11,10 @@ class IconData extends Data
     public function __construct(
         public string $url,
         public SizeData $scaledSize,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> be08416 (.)
 }

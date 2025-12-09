@@ -2,12 +2,21 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Region;
 use Sushi\Sushi;
+=======
+use Modules\Geo\Models\BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Sushi\Sushi;
+use Modules\Geo\Database\Factories\RegionFactory;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Geo\Models\Region;
+>>>>>>> be08416 (.)
 
 describe('Region Business Logic', function () {
     test('region extends base model', function () {

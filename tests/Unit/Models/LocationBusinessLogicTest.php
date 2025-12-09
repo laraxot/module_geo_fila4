@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
+=======
+use Modules\Geo\Models\BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
+>>>>>>> be08416 (.)
 use Modules\Geo\Models\Location;
 
 describe('Location Business Logic', function () {

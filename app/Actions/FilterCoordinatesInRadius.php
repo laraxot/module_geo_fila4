@@ -15,8 +15,13 @@ class FilterCoordinatesInRadius
 
         foreach ($coordinateArray as $coordinate) {
             Assert::isArray($coordinate);
+<<<<<<< HEAD
             Assert::string($lat = $coordinate['latitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
             Assert::string($lon = $coordinate['longitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
+=======
+            Assert::string($lat = $coordinate['latitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
+            Assert::string($lon = $coordinate['longitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
+>>>>>>> be08416 (.)
 
             $distanza = $this->calcolaDistanzaGeografica($latPartenza, $lonPartenza, $lat, $lon);
 
@@ -48,7 +53,13 @@ class FilterCoordinatesInRadius
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
 
         // Calcolo della distanza
+<<<<<<< HEAD
         return $raggioTerra * $c; // Distanza in chilometri
+=======
+        $distanza = $raggioTerra * $c;
+
+        return $distanza; // Distanza in chilometri
+>>>>>>> be08416 (.)
     }
 }
 

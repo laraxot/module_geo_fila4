@@ -71,7 +71,11 @@ use Modules\Geo\Contracts\HasGeolocation;
  */
 class Address extends BaseModel implements HasGeolocation
 {
+<<<<<<< HEAD
     use \Modules\Xot\Models\Traits\HasXotFactory;
+=======
+    use HasFactory;
+>>>>>>> be08416 (.)
     use SoftDeletes;
 
     /**
@@ -492,7 +496,11 @@ class Studio extends Model
 
 ### Collegamenti
 - Vedi anche: [architecture.md](./architecture.md), [place-address-schemaorg.md](./place-address-schemaorg.md)
+<<<<<<< HEAD
 - Regole generali: Xot/project_docs/filosofia.md, Xot/project_docs/zen.md
+=======
+- Regole generali: Xot/docs/filosofia.md, Xot/docs/zen.md
+>>>>>>> be08416 (.)
 
 ## Best practice Filament
 

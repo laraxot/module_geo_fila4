@@ -29,8 +29,12 @@ class MapboxMapData extends Data
      */
     public function __construct(
         private readonly array $data,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Converte i dati in un array.

@@ -33,9 +33,14 @@ class GetAddressFromBingMapsAction
     /**
      * Get the Bing Maps API key from configuration.
      *
+<<<<<<< HEAD
      * @throws InvalidLocationException
      *
      * @return non-empty-string
+=======
+     * @return non-empty-string
+     * @throws InvalidLocationException
+>>>>>>> be08416 (.)
      */
     private function getApiKey(): string
     {
@@ -47,18 +52,30 @@ class GetAddressFromBingMapsAction
         }
 
         // We've already checked that $apiKey is not empty
+<<<<<<< HEAD
         /* @var non-empty-string $apiKey */
+=======
+        /** @var non-empty-string $apiKey */
+>>>>>>> be08416 (.)
         return $apiKey;
     }
 
     /**
      * Make an API request to Bing Maps.
      *
+<<<<<<< HEAD
      * @param non-empty-string $apiKey
      *
      * @throws InvalidLocationException
      *
      * @return array<string, mixed>
+=======
+     * @param float $latitude
+     * @param float $longitude
+     * @param non-empty-string $apiKey
+     * @return array<string, mixed>
+     * @throws InvalidLocationException
+>>>>>>> be08416 (.)
      */
     private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
     {
@@ -69,19 +86,27 @@ class GetAddressFromBingMapsAction
             'maxResults' => 1,
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
+=======
+        if (!$response->successful()) {
+>>>>>>> be08416 (.)
             throw InvalidLocationException::invalidData('Richiesta a Bing Maps fallita');
         }
 
         /** @var array<string, mixed> $jsonResponse */
         $jsonResponse = $response->json();
+<<<<<<< HEAD
 
+=======
+>>>>>>> be08416 (.)
         return $jsonResponse;
     }
 
     private function parseResponse(array $response): BingMapData
     {
         $resourceSets = $response['resourceSets'] ?? [];
+<<<<<<< HEAD
         if (! \is_array($resourceSets) || empty($resourceSets) || ! \is_array($resourceSets[0] ?? null)) {
             throw InvalidLocationException::invalidData('Nessun risultato trovato');
         }
@@ -134,6 +159,16 @@ class GetAddressFromBingMapsAction
         ];
 
         return new BingMapData($validatedLocation);
+=======
+        $resources = $resourceSets[0]['resources'] ?? [];
+        $location = $resources[0] ?? null;
+
+        if (empty($location)) {
+            throw InvalidLocationException::invalidData('Nessun risultato trovato');
+        }
+
+        return new BingMapData($location);
+>>>>>>> be08416 (.)
     }
 
     private function mapResponseToAddressData(BingMapData $data): AddressData

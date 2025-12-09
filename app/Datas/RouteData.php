@@ -27,8 +27,12 @@ class RouteData extends Data
         public readonly int $totalDistance,
         public readonly int $totalDuration,
         public readonly array $steps,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Formatta la distanza totale in un formato leggibile.
@@ -86,12 +90,20 @@ class RouteData extends Data
             'duration' => $this->getFormattedDuration(),
             'steps' => count($this->steps),
             'waypoints' => $this->waypoints->count(),
+<<<<<<< HEAD
             // 'optimized' => $this->isOptimized(),
+=======
+            //'optimized' => $this->isOptimized(),
+>>>>>>> be08416 (.)
         ];
     }
 
     public function validateRouteData(Collection $routeData): bool
     {
+<<<<<<< HEAD
         return $routeData->every(fn (array $data): bool => isset($data['key']));
+=======
+        return $routeData->every(fn(array $data): bool => isset($data['key']));
+>>>>>>> be08416 (.)
     }
 }

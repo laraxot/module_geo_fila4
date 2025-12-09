@@ -2,7 +2,11 @@
 
 ## 📊 Panoramica Generale
 
+<<<<<<< HEAD
 Il modulo Geo è il sistema di gestione geografica di <main module>, fornendo modelli e funzionalità per la gestione di regioni, province, comuni, indirizzi e luoghi. Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test, con focus sulla business logic.
+=======
+Il modulo Geo è il sistema di gestione geografica di SaluteOra, fornendo modelli e funzionalità per la gestione di regioni, province, comuni, indirizzi e luoghi. Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test, con focus sulla business logic.
+>>>>>>> be08416 (.)
 
 ## 🏗️ Struttura Modelli e Relazioni
 
@@ -273,6 +277,10 @@ Il modulo Geo è il sistema di gestione geografica di <main module>, fornendo mo
 **Ultimo aggiornamento**: Dicembre 2024
 **Versione**: 1.0
 **Stato**: In Progress
+<<<<<<< HEAD
 **Responsabile**: Team Sviluppo <main module>
+=======
+**Responsabile**: Team Sviluppo SaluteOra
+>>>>>>> be08416 (.)
 **Prossima Revisione**: Gennaio 2025
 

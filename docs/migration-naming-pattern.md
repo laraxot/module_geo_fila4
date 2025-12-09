@@ -1,8 +1,14 @@
 # Convenzione di Naming e Gestione delle Migrazioni
 
+<<<<<<< HEAD
 ## Pattern del Progetto <nome progetto>
 
 Il progetto <nome progetto> adotta un approccio specifico per le migrazioni, diverso dalla convenzione standard di Laravel. Il nostro pattern è:
+=======
+## Pattern del Progetto SaluteOra
+
+Il progetto SaluteOra adotta un approccio specifico per le migrazioni, diverso dalla convenzione standard di Laravel. Il nostro pattern è:
+>>>>>>> be08416 (.)
 
 ```
 YYYY_MM_DD_HHMMSS_create_oggetto_contesto_table.php

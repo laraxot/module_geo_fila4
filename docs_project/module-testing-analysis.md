@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Analisi Completa Testing e Factory Moduli - <nome progetto>
 
 ## 📊 Panoramica Generale
 
 Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test per tutti i moduli del progetto <nome progetto>, con focus sulla business logic e copertura test.
+=======
+# Analisi Completa Testing e Factory Moduli - SaluteOra
+
+## 📊 Panoramica Generale
+
+Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test per tutti i moduli del progetto SaluteOra, con focus sulla business logic e copertura test.
+>>>>>>> be08416 (.)
 
 ## 🎯 Obiettivi
 
@@ -15,13 +23,21 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ### ✅ Moduli Completati (Test Business Logic)
 
+<<<<<<< HEAD
 #### 1. **<nome progetto>** - 100% Copertura ✅
+=======
+#### 1. **SaluteOra** - 100% Copertura ✅
+>>>>>>> be08416 (.)
 - **Factory**: 100% (tutti i modelli)
 - **Seeder**: 100% (tutti i modelli)
 - **Test**: 100% (business logic completa)
 - **Stato**: Eccellente - Modulo di riferimento
 
+<<<<<<< HEAD
 #### 2. **<nome modulo>** - 100% Copertura ✅
+=======
+#### 2. **SaluteMo** - 100% Copertura ✅
+>>>>>>> be08416 (.)
 - **Factory**: 100% (tutti i modelli)
 - **Seeder**: 100% (tutti i modelli)
 - **Test**: 100% (business logic completa)
@@ -116,8 +132,13 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 - **Documentazione**: 100% moduli analizzati
 
 ### Moduli Eccellenti (90%+)
+<<<<<<< HEAD
 1. **<nome progetto>** - 100% (modulo di riferimento)
 2. **<nome modulo>** - 100% (modulo di riferimento)
+=======
+1. **SaluteOra** - 100% (modulo di riferimento)
+2. **SaluteMo** - 100% (modulo di riferimento)
+>>>>>>> be08416 (.)
 3. **Media** - 85% (test core completati)
 4. **Lang** - 85% (test core completati)
 5. **Gdpr** - 85% (test core completati)
@@ -135,7 +156,11 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ## 🧪 Test Implementati per Modulo
 
+<<<<<<< HEAD
 ### <nome progetto> & <nome modulo> (Moduli di Riferimento)
+=======
+### SaluteOra & SaluteMo (Moduli di Riferimento)
+>>>>>>> be08416 (.)
 - ✅ **Patient Tests**: Gestione pazienti completa
 - ✅ **Doctor Tests**: Gestione dottori completa
 - ✅ **Appointment Tests**: Gestione appuntamenti completa
@@ -342,8 +367,13 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 ## 📚 Documentazione e Riferimenti
 
 ### File di Analisi Moduli
+<<<<<<< HEAD
 - [<nome progetto>](../laravel/Modules/<nome progetto>/docs/module-analysis-complete.md)
 - [<nome modulo>](../laravel/Modules/<nome modulo>/docs/module-analysis-complete.md)
+=======
+- [SaluteOra](../laravel/Modules/SaluteOra/docs/module-analysis-complete.md)
+- [SaluteMo](../laravel/Modules/SaluteMo/docs/module-analysis-complete.md)
+>>>>>>> be08416 (.)
 - [Media](../laravel/Modules/Media/docs/module-analysis-complete.md)
 - [Lang](../laravel/Modules/Lang/docs/module-analysis-complete.md)
 - [Gdpr](../laravel/Modules/Gdpr/docs/module-analysis-complete.md)

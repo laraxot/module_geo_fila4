@@ -48,13 +48,21 @@ class FormSearchAddressCategories extends Component
      * param \Illuminate\View\ComponentAttributeBag $attributes
      * param \Illuminate\Support\HtmlString         $slot
      */
+<<<<<<< HEAD
     public function mount(SessionManager $sessionManager): void
+=======
+    public function mount(SessionManager $sessionManager)/* $attributes, $slot */ : void
+>>>>>>> be08416 (.)
     {
         $this->session = $sessionManager;
         // $this->attributes = $attributes;
         // $this->slot = $slot;
         $this->form_data[$this->name] = json_encode((object) [], JSON_THROW_ON_ERROR);
+<<<<<<< HEAD
         $this->form_data[$this->name.'_value'] = null;
+=======
+        $this->form_data[$this->name . '_value'] = null;
+>>>>>>> be08416 (.)
     }
 
     /**
@@ -82,13 +90,21 @@ class FormSearchAddressCategories extends Component
         $this->warningCivicNumber = false;
         $this->showActivityTypes = false;
 
+<<<<<<< HEAD
         if (! isset($this->form_data['latlng'])) {
+=======
+        if (!isset($this->form_data['latlng'])) {
+>>>>>>> be08416 (.)
             $this->warningSuggestedAddresses = true;
 
             return;
         }
 
+<<<<<<< HEAD
         if (! isset($this->form_data['street_number'])) {
+=======
+        if (!isset($this->form_data['street_number'])) {
+>>>>>>> be08416 (.)
             $this->warningCivicNumber = true;
 
             return;
@@ -119,7 +135,11 @@ class FormSearchAddressCategories extends Component
     {
         $data = (object) $this->form_data;
 
+<<<<<<< HEAD
         if (! isset($data->street_number)) {
+=======
+        if (!isset($data->street_number)) {
+>>>>>>> be08416 (.)
             $data->street_number = '';
             $this->warningCivicNumber = true;
         }
@@ -142,16 +162,28 @@ class FormSearchAddressCategories extends Component
         $this->showActivityTypes = false;
 
         $data = json_decode($val0, true, 512, JSON_THROW_ON_ERROR);
+<<<<<<< HEAD
         if (! \is_array($data)) {
+=======
+        if (!\is_array($data)) {
+>>>>>>> be08416 (.)
             $data = [];
         }
         $this->form_data = array_merge($this->form_data, $data);
         $this->form_data[$this->name] = $val0;
+<<<<<<< HEAD
         $this->form_data[$this->name.'_value'] = $val1;
 
         if (\strlen($val1) < 4) {
             $val2 = $this->formatAddress();
             $this->form_data[$this->name.'_value'] = $val2;
+=======
+        $this->form_data[$this->name . '_value'] = $val1;
+
+        if (\strlen($val1) < 4) {
+            $val2 = $this->formatAddress();
+            $this->form_data[$this->name . '_value'] = $val2;
+>>>>>>> be08416 (.)
         }
     }
 

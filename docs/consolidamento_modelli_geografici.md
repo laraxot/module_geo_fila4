@@ -2,7 +2,11 @@
 
 ## Panoramica
 
+<<<<<<< HEAD
 Questo documento analizza la possibilità di consolidare i modelli geografici attualmente separati (`Region`, `Province`, `City`, `Cap`) in un unico modello `Comune`. L'obiettivo è valutare vantaggi, svantaggi e implicazioni di tale consolidamento nel contesto specifico dell'applicazione <main module>.
+=======
+Questo documento analizza la possibilità di consolidare i modelli geografici attualmente separati (`Region`, `Province`, `City`, `Cap`) in un unico modello `Comune`. L'obiettivo è valutare vantaggi, svantaggi e implicazioni di tale consolidamento nel contesto specifico dell'applicazione SaluteOra.
+>>>>>>> be08416 (.)
 
 ## Struttura Attuale
 
@@ -129,7 +133,11 @@ class Comune extends GeoJsonModel
 - Il completamento automatico dell'IDE è più efficace con classi distinte e ben nominate.
 - La navigazione nel codice è facilitata dalla separazione dei concetti.
 
+<<<<<<< HEAD
 ## Casi d'Uso Specifici nel Progetto <main module>
+=======
+## Casi d'Uso Specifici nel Progetto SaluteOra
+>>>>>>> be08416 (.)
 
 ### 1. Widget di Ricerca Geografica (Consolidamento sfavorevole - 20%)
 

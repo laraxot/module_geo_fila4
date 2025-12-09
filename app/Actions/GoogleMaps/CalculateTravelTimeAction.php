@@ -4,16 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Datas\TravelTimeData;
+<<<<<<< HEAD
 
 use function Safe\json_decode;
 
 use Webmozart\Assert\Assert;
 
+=======
+use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
+
+>>>>>>> be08416 (.)
 /**
  * Action per calcolare il tempo di percorrenza tra due punti tramite Google Maps.
  *
@@ -25,14 +36,23 @@ readonly class CalculateTravelTimeAction
     private const API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
 
     public function __construct(
+<<<<<<< HEAD
         private Client $client,
     ) {
     }
+=======
+        private  Client $client,
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Calcola il tempo di percorrenza tra due punti.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+>>>>>>> be08416 (.)
      */
     public function execute(LocationData $origin, LocationData $destination): TravelTimeData
     {
@@ -56,7 +76,11 @@ readonly class CalculateTravelTimeAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o i dati non sono validi
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o i dati non sono validi
+>>>>>>> be08416 (.)
      */
     private function validateInput(LocationData $origin, LocationData $destination): void
     {
@@ -93,7 +117,11 @@ readonly class CalculateTravelTimeAction
     /**
      * Elabora la risposta dell'API.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è valida
+=======
+     * @throws RuntimeException Se la risposta non è valida
+>>>>>>> be08416 (.)
      */
     private function parseResponse(string $response): TravelTimeData
     {
@@ -114,12 +142,20 @@ readonly class CalculateTravelTimeAction
          * } $data */
         $data = json_decode($response, true);
 
+<<<<<<< HEAD
         if (($data['status'] ?? null) !== 'OK') {
+=======
+        if ('OK' !== ($data['status'] ?? null)) {
+>>>>>>> be08416 (.)
             return TravelTimeData::error($data['status'] ?? 'INVALID_RESPONSE');
         }
 
         $element = $data['rows'][0]['elements'][0] ?? null;
+<<<<<<< HEAD
         if (! $element || ($element['status'] ?? null) !== 'OK') {
+=======
+        if (!$element || 'OK' !== ($element['status'] ?? null)) {
+>>>>>>> be08416 (.)
             return TravelTimeData::error($element['status'] ?? 'NO_ROUTE');
         }
 

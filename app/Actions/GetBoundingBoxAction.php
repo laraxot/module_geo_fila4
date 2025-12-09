@@ -13,8 +13,13 @@ class GetBoundingBoxAction
         $maxLat = $latitude + rad2deg($distanceKm / $earthRadius);
         $minLat = $latitude - rad2deg($distanceKm / $earthRadius);
 
+<<<<<<< HEAD
         $maxLon = $longitude + rad2deg($distanceKm / $earthRadius / cos(deg2rad($latitude)));
         $minLon = $longitude - rad2deg($distanceKm / $earthRadius / cos(deg2rad($latitude)));
+=======
+        $maxLon = $longitude + rad2deg(($distanceKm / $earthRadius) / cos(deg2rad($latitude)));
+        $minLon = $longitude - rad2deg(($distanceKm / $earthRadius) / cos(deg2rad($latitude)));
+>>>>>>> be08416 (.)
 
         return [
             'min_lat' => $minLat,

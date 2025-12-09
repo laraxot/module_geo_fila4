@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
+<<<<<<< HEAD
+=======
+use Override;
+use Throwable;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+>>>>>>> be08416 (.)
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 
 /**
@@ -17,6 +24,15 @@ class GoogleMapsService extends BaseGeoService
 
     private const ELEVATION_URL = 'https://maps.googleapis.com/maps/api/elevation/json';
 
+<<<<<<< HEAD
+=======
+    #[Override]
+    protected function getServiceName(): string
+    {
+        return 'google_maps';
+    }
+
+>>>>>>> be08416 (.)
     /**
      * Esegue una richiesta di geocodifica inversa.
      *
@@ -32,7 +48,11 @@ class GoogleMapsService extends BaseGeoService
                 'key' => $this->getApiKey(),
                 'language' => 'it',
             ]);
+<<<<<<< HEAD
         } catch (\Throwable $e) {
+=======
+        } catch (Throwable $e) {
+>>>>>>> be08416 (.)
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -57,7 +77,11 @@ class GoogleMapsService extends BaseGeoService
                 'language' => 'it',
                 'units' => 'metric',
             ]);
+<<<<<<< HEAD
         } catch (\Throwable $e) {
+=======
+        } catch (Throwable $e) {
+>>>>>>> be08416 (.)
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -76,6 +100,7 @@ class GoogleMapsService extends BaseGeoService
                 'locations' => "{$latitude},{$longitude}",
                 'key' => $this->getApiKey(),
             ]);
+<<<<<<< HEAD
         } catch (\Throwable $e) {
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
@@ -86,4 +111,10 @@ class GoogleMapsService extends BaseGeoService
     {
         return 'google_maps';
     }
+=======
+        } catch (Throwable $e) {
+            throw GoogleMapsApiException::requestFailed($e->getMessage());
+        }
+    }
+>>>>>>> be08416 (.)
 }

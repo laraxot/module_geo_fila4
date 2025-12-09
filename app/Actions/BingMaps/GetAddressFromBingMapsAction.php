@@ -4,15 +4,26 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\BingMaps;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
+<<<<<<< HEAD
 
 use function Safe\json_decode;
 
 use Webmozart\Assert\Assert;
 
+=======
+use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
+
+>>>>>>> be08416 (.)
 /**
  * Action per ottenere l'indirizzo da coordinate tramite Bing Maps.
  *
@@ -24,16 +35,27 @@ readonly class GetAddressFromBingMapsAction
     private const API_URL = 'http://dev.virtualearth.net/REST/v1/Locations';
 
     public function __construct(
+<<<<<<< HEAD
         private Client $client,
     ) {
     }
+=======
+        private  Client $client,
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Bing Maps.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(string $address): ?AddressData
+=======
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     */
+    public function execute(string $address): null|AddressData
+>>>>>>> be08416 (.)
     {
         $this->validateInput($address);
 
@@ -54,7 +76,11 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata
+=======
+     * @throws RuntimeException Se la chiave API non è configurata
+>>>>>>> be08416 (.)
      */
     private function validateInput(string $address): void
     {
@@ -85,9 +111,15 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Elabora la risposta dell'API.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è valida
      */
     private function parseResponse(string $response): ?AddressData
+=======
+     * @throws RuntimeException Se la risposta non è valida
+     */
+    private function parseResponse(string $response): null|AddressData
+>>>>>>> be08416 (.)
     {
         /** @var array{
          *     statusCode: int,

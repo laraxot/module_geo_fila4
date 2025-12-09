@@ -87,7 +87,11 @@ php -d memory_limit=4G ./vendor/bin/phpstan analyse
 
 # ✅ Analizzare moduli singolarmente
 ./vendor/bin/phpstan analyse Modules/User --level=9
+<<<<<<< HEAD
 ./vendor/bin/phpstan analyse Modules/<nome progetto> --level=9
+=======
+./vendor/bin/phpstan analyse Modules/SaluteOra --level=9
+>>>>>>> be08416 (.)
 ```
 
 ### 2. File Problematici

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Here;
 
+<<<<<<< HEAD
+=======
+use Exception;
+>>>>>>> be08416 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\HereMap\HereMapResponseData;
@@ -12,12 +16,20 @@ class GetAddressFromHereMapsAction
 {
     private const BASE_URL = 'https://geocode.search.hereapi.com/v1/geocode';
 
+<<<<<<< HEAD
     public function execute(string $address): ?AddressData
+=======
+    public function execute(string $address): null|AddressData
+>>>>>>> be08416 (.)
     {
         $apiKey = config('services.here.key');
 
         if (empty($apiKey)) {
+<<<<<<< HEAD
             throw new \Exception('Here Maps API key not configured');
+=======
+            throw new Exception('Here Maps API key not configured');
+>>>>>>> be08416 (.)
         }
 
         $response = Http::get(self::BASE_URL, [
@@ -26,7 +38,11 @@ class GetAddressFromHereMapsAction
             'limit' => 1,
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
+=======
+        if (!$response->successful()) {
+>>>>>>> be08416 (.)
             return null;
         }
 

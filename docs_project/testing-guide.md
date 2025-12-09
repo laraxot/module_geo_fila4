@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # <nome progetto> Testing Guide
+=======
+# SaluteOra Testing Guide
+>>>>>>> be08416 (.)
 
 ## Overview
 
@@ -19,8 +23,13 @@ laravel/
 │   │   ├── Feature/
 │   │   ├── Pest.php
 │   │   └── TestCase.php
+<<<<<<< HEAD
 │   ├── <nome progetto>/tests/
 │   ├── <nome modulo>/tests/
+=======
+│   ├── SaluteOra/tests/
+│   ├── SaluteMo/tests/
+>>>>>>> be08416 (.)
 │   ├── User/tests/
 │   └── Geo/tests/
 └── scripts/run-tests.sh            # Script per esecuzione test
@@ -33,12 +42,20 @@ laravel/
 - **Feature Tests**: ChartFactoryTest.php, ChartIntegrationTest.php
 - **Coverage**: Modello Chart, Factory, Accessors, Metodi business logic
 
+<<<<<<< HEAD
 #### ✅ <nome progetto> Module (Core)
+=======
+#### ✅ SaluteOra Module (Core)
+>>>>>>> be08416 (.)
 - **Unit Tests**: PatientModelTest.php, AppointmentModelTest.php
 - **Feature Tests**: AppointmentIntegrationTest.php
 - **Coverage**: Modelli core, Relazioni, Enums, State management
 
+<<<<<<< HEAD
 #### ✅ <nome modulo> Module
+=======
+#### ✅ SaluteMo Module
+>>>>>>> be08416 (.)
 - **Unit Tests**: BaseModelTest.php
 - **Coverage**: BaseModel traits, Configurazioni, Media handling
 
@@ -106,7 +123,11 @@ createChart($attributes = [])    // Crea Chart in database
 makeChart($attributes = [])      // Crea Chart in memoria
 ```
 
+<<<<<<< HEAD
 ### <nome progetto> Module
+=======
+### SaluteOra Module
+>>>>>>> be08416 (.)
 ```php
 createAppointment($attributes = [])
 createPatient($attributes = [])
@@ -207,8 +228,13 @@ vendor/bin/pest --filter="test_name" --verbose
 
 ### Moduli Completati
 - ✅ Chart: Unit + Feature tests
+<<<<<<< HEAD
 - ✅ <nome progetto>: Core models + Integration
 - ✅ <nome modulo>: Base functionality
+=======
+- ✅ SaluteOra: Core models + Integration
+- ✅ SaluteMo: Base functionality
+>>>>>>> be08416 (.)
 - ✅ User: Authentication + Authorization
 - ✅ Geo: Address + Geolocation
 

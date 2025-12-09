@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Compendio sulla Gestione dei Dati Geografici in <nome progetto>
+=======
+# Compendio sulla Gestione dei Dati Geografici in SaluteOra
+>>>>>>> be08416 (.)
 
 Questo documento fornisce una panoramica completa delle strategie implementative per la gestione dei dati geografici nel modulo Geo, collegando e contestualizzando tutte le analisi e documentazioni esistenti.
 
@@ -18,7 +22,11 @@ Questo documento fornisce una panoramica completa delle strategie implementative
 
 ## Introduzione
 
+<<<<<<< HEAD
 La gestione dei dati geografici italiani (regioni, province, comuni, CAP) rappresenta un caso specifico di dati semi-statici che richiede un approccio ottimizzato. Nel corso dello sviluppo di <nome progetto> sono state analizzate diverse strategie implementative, ognuna con vantaggi e svantaggi specifici.
+=======
+La gestione dei dati geografici italiani (regioni, province, comuni, CAP) rappresenta un caso specifico di dati semi-statici che richiede un approccio ottimizzato. Nel corso dello sviluppo di SaluteOra sono state analizzate diverse strategie implementative, ognuna con vantaggi e svantaggi specifici.
+>>>>>>> be08416 (.)
 
 Questo documento mappa e collega tutte le analisi e le documentazioni prodotte, fornendo una guida completa per comprendere e selezionare la strategia più adatta ai diversi casi d'uso.
 
@@ -204,11 +212,19 @@ Per facilitare la navigazione nella documentazione esistente, ecco una mappa org
 
 ## Conclusione
 
+<<<<<<< HEAD
 La gestione dei dati geografici in <nome progetto> presenta diverse strategie implementative, ognuna con vantaggi e svantaggi specifici. La scelta della strategia ottimale dipende dal caso d'uso specifico, dai requisiti di performance e dalle preferenze del team di sviluppo.
+=======
+La gestione dei dati geografici in SaluteOra presenta diverse strategie implementative, ognuna con vantaggi e svantaggi specifici. La scelta della strategia ottimale dipende dal caso d'uso specifico, dai requisiti di performance e dalle preferenze del team di sviluppo.
+>>>>>>> be08416 (.)
 
 Questo compendio fornisce un punto di partenza per navigare nella documentazione esistente e prendere decisioni informate sulla gestione dei dati geografici nel modulo Geo.
 
 ---
 
 *Documento creato il: 28/05/2025*  
+<<<<<<< HEAD
 *Autore: Team <nome progetto>*
+=======
+*Autore: Team SaluteOra*
+>>>>>>> be08416 (.)

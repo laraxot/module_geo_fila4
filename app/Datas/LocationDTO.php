@@ -7,6 +7,7 @@ namespace Modules\Geo\Datas;
 readonly class LocationDTO
 {
     public function __construct(
+<<<<<<< HEAD
         public float $latitude,
         public float $longitude,
         public ?string $address = null,
@@ -14,6 +15,14 @@ readonly class LocationDTO
         public ?string $country = null,
     ) {
     }
+=======
+        public  float $latitude,
+        public  float $longitude,
+        public  null|string $address = null,
+        public  null|string $city = null,
+        public  null|string $country = null,
+    ) {}
+>>>>>>> be08416 (.)
 
     public function toArray(): array
     {

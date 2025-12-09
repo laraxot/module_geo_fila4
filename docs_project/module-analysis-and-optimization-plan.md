@@ -9,7 +9,11 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 ### Current State
 - **Total Modules**: 14 modules identified
 - **Reusable Modules**: Activity, Cms, Gdpr, Geo, Job, Lang, Media, Notify, Tenant, UI, User, Xot (12 modules)
+<<<<<<< HEAD
 - **Project-Specific Modules**: <nome modulo>, <nome progetto> (2 modules)
+=======
+- **Project-Specific Modules**: SaluteMo, SaluteOra (2 modules)
+>>>>>>> be08416 (.)
 
 ### Documentation Quality Assessment
 
@@ -165,7 +169,11 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 - Multi-channel delivery support
 
 #### Critical Issues Found
+<<<<<<< HEAD
 - **HARDCODED PROJECT NAMES**: Contains "<nome progetto>" references in reusable module
+=======
+- **HARDCODED PROJECT NAMES**: Contains "SaluteOra" references in reusable module
+>>>>>>> be08416 (.)
 - **Testing**: Mixed PHPUnit/Pest approaches
 - **Configuration**: Project-specific database names in docs
 
@@ -176,7 +184,11 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 4. **Documentation**: Generic examples only
 
 #### Corrections Required
+<<<<<<< HEAD
 - Replace '<nome progetto>' with config('app.name') or generic terms
+=======
+- Replace 'saluteora' with config('app.name') or generic terms
+>>>>>>> be08416 (.)
 - Create ConfigHelper for test data management
 - Update all documentation to use placeholders
 - Implement proper template variable handling

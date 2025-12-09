@@ -20,10 +20,16 @@ class LocationData extends Data
     public function __construct(
         public readonly float $latitude,
         public readonly float $longitude,
+<<<<<<< HEAD
         public readonly ?string $name = null,
         public readonly ?string $address = null,
     ) {
     }
+=======
+        public readonly null|string $name = null,
+        public readonly null|string $address = null,
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Converte i dati in un array.

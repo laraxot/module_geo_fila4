@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Guida alla Risoluzione Conflitti Git - <nome progetto>
 
 ## Panoramica
 
 Questo documento descrive la risoluzione sistematica dei conflitti Git identificati nel progetto <nome progetto> e fornisce best practices per prevenirli in futuro.
+=======
+# Guida alla Risoluzione Conflitti Git - SaluteOra
+
+## Panoramica
+
+Questo documento descrive la risoluzione sistematica dei conflitti Git identificati nel progetto SaluteOra e fornisce best practices per prevenirli in futuro.
+>>>>>>> be08416 (.)
 
 ## Conflitti Risolti
 
@@ -35,18 +43,27 @@ use Modules\Geo\Enums\AddressTypeEnum;
 **Decisione**: Mantenuto l'approccio in-memory con enum per type safety
 **Motivazione**: Coerenza architetturale e type safety garantita
 
+<<<<<<< HEAD
 ### 2. **AppointmentValidationTest.php - Modulo <nome modulo>**
+=======
+### 2. **AppointmentValidationTest.php - Modulo SaluteMo**
+>>>>>>> be08416 (.)
 
 #### Conflitto Identificato
 - **Branch**: HEAD vs origin/staging
 - **Tipo**: Approccio unit test puro vs feature test con namespace
+<<<<<<< HEAD
 - **File**: `Modules/<nome modulo>/tests/Feature/AppointmentValidationTest.php`
+=======
+- **File**: `Modules/SaluteMo/tests/Feature/AppointmentValidationTest.php`
+>>>>>>> be08416 (.)
 
 #### Risoluzione Applicata
 ```php
 // PRIMA (conflitto)
 // Pure unit: avoid Eloquent models and factories
 it('validates basic appointment creation', function (): void {
+<<<<<<< HEAD
 namespace Modules\<nome modulo>\Tests\Feature;
 use Modules\<nome modulo>\Tests\TestCase;
 uses(TestCase::class);
@@ -56,6 +73,17 @@ namespace Modules\<nome modulo>\Tests\Feature;
 
 use Modules\<nome modulo>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
+=======
+namespace Modules\SaluteMo\Tests\Feature;
+use Modules\SaluteMo\Tests\TestCase;
+uses(TestCase::class);
+
+// DOPO (risolto)
+namespace Modules\SaluteMo\Tests\Feature;
+
+use Modules\SaluteMo\Tests\TestCase;
+use Modules\SaluteOra\Enums\UserTypeEnum;
+>>>>>>> be08416 (.)
 
 uses(TestCase::class);
 ```
@@ -63,17 +91,26 @@ uses(TestCase::class);
 **Decisione**: Mantenuto namespace e TestCase con enum per type safety
 **Motivazione**: Coerenza con architettura modulare e type safety
 
+<<<<<<< HEAD
 ### 3. **DashboardBusinessLogicTest.php - Modulo <nome modulo>**
+=======
+### 3. **DashboardBusinessLogicTest.php - Modulo SaluteMo**
+>>>>>>> be08416 (.)
 
 #### Conflitto Identificato
 - **Branch**: HEAD vs origin/staging
 - **Tipo**: Approcci diversi per testing business logic
+<<<<<<< HEAD
 - **File**: `Modules/<nome modulo>/tests/Feature/DashboardBusinessLogicTest.php`
+=======
+- **File**: `Modules/SaluteMo/tests/Feature/DashboardBusinessLogicTest.php`
+>>>>>>> be08416 (.)
 
 #### Risoluzione Applicata
 ```php
 // PRIMA (conflitto)
 // Pure unit: avoid Eloquent models and factories
+<<<<<<< HEAD
 describe('<nome modulo> Dashboard Business Logic', function () {
     beforeEach(function () {
         $this->admin = (object) ['id' => 1, 'type' => 'admin'];
@@ -86,6 +123,20 @@ namespace Modules\<nome modulo>\Tests\Feature;
 
 use Modules\<nome modulo>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
+=======
+describe('SaluteMo Dashboard Business Logic', function () {
+    beforeEach(function () {
+        $this->admin = (object) ['id' => 1, 'type' => 'admin'];
+namespace Modules\SaluteMo\Tests\Feature;
+use Modules\SaluteMo\Tests\TestCase;
+use Modules\SaluteOra\Enums\UserTypeEnum;
+
+// DOPO (risolto)
+namespace Modules\SaluteMo\Tests\Feature;
+
+use Modules\SaluteMo\Tests\TestCase;
+use Modules\SaluteOra\Enums\UserTypeEnum;
+>>>>>>> be08416 (.)
 
 uses(TestCase::class);
 ```
@@ -318,8 +369,13 @@ git log --oneline --grep="conflict" | head -20
 
 - [Architettura Testing Principale](testing-architecture-overview.md)
 - [Modulo Geo Testing](../../laravel/Modules/Geo/docs/testing.md)
+<<<<<<< HEAD
 - [Modulo <nome modulo> Testing](../../laravel/Modules/<nome modulo>/docs/testing-architecture.md)
 - [Best Practices Testing](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
+=======
+- [Modulo SaluteMo Testing](../../laravel/Modules/SaluteMo/docs/testing-architecture.md)
+- [Best Practices Testing](../../laravel/Modules/SaluteMo/docs/testing-best-practices.md)
+>>>>>>> be08416 (.)
 
 ---
 

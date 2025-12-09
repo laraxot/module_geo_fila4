@@ -1,8 +1,13 @@
 {
     "name": "Geo",
     "alias": "geo",
+<<<<<<< HEAD
     "description": "Servizi geografici per geocoding, mappe e gestione posizioni con integrazione provider esterni",
     "keywords": ["geo", "geocoding", "maps", "locations", "coordinates"],
+=======
+    "description": "",
+    "keywords": [],
+>>>>>>> be08416 (.)
     "priority": 0,
     "providers": [
         "Modules\\Geo\\Providers\\GeoServiceProvider",

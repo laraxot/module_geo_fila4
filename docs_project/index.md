@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 📚 Indice Documentazione - Progetto <nome progetto>
+=======
+# 📚 Indice Documentazione - Progetto SaluteOra
+>>>>>>> be08416 (.)
 
 ## 🏥 Business Logic e Architettura
 
@@ -51,7 +55,11 @@
 ### Analisi e Risoluzioni
 - [**PHPStan Critical Rule**](phpstan-critical-rule.md) - Regole critiche per PHPStan
 - [**PHPStan Analysis Business Logic**](phpstan-analysis-business-logic.md) - Analisi PHPStan della business logic
+<<<<<<< HEAD
 - [**PHPStan Fixes <nome progetto>**](phpstan-fixes-<nome progetto>.md) - Fix PHPStan per il modulo <nome progetto>
+=======
+- [**PHPStan Fixes SaluteOra**](phpstan-fixes-saluteora.md) - Fix PHPStan per il modulo SaluteOra
+>>>>>>> be08416 (.)
 - [**PHPStan Array Types Fixes**](phpstan-array-types-fixes.md) - Fix per tipi array in PHPStan
 - [**PHPStan Error Resolution**](phpstan-error-resolution.md) - Risoluzione errori PHPStan
 - [**PHPStan Level 10 Fixes**](phpstan-level10-fixes.md) - Fix per PHPStan livello 10
@@ -83,7 +91,11 @@
 ## 🔗 Collegamenti Moduli
 
 ### Documentazione Moduli
+<<<<<<< HEAD
 - [**<nome progetto>**](../Modules/<nome progetto>/docs/README.md) - Documentazione modulo core sanitario
+=======
+- [**SaluteOra**](../Modules/SaluteOra/docs/README.md) - Documentazione modulo core sanitario
+>>>>>>> be08416 (.)
 - [**User**](../Modules/User/docs/README.md) - Documentazione modulo gestione utenti
 - [**Geo**](../Modules/Geo/docs/README.md) - Documentazione modulo dati geografici
 - [**Media**](../Modules/Media/docs/README.md) - Documentazione modulo gestione media

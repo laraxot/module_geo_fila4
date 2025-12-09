@@ -82,7 +82,11 @@ class SafeSushiModel extends BaseModel
 ```bash
 
 # Verifica esistenza file
+<<<<<<< HEAD
 ls -la /var/www/html/<directory progetto>/laravel/Modules/Geo/resources/json/comuni.json
+=======
+ls -la /var/www/html/base_saluteora/laravel/Modules/Geo/resources/json/comuni.json
+>>>>>>> be08416 (.)
 
 # Output atteso:
 
@@ -124,8 +128,13 @@ La trasparenza del path diretto è superiore all'astrazione del `module_path()` 
 
 ## 🔗 Collegamenti
 
+<<<<<<< HEAD
 - [Modello Comune](/var/www/html/<directory progetto>/laravel/Modules/Geo/app/Models/Comune.php)
 - [File JSON](/var/www/html/<directory progetto>/laravel/Modules/Geo/resources/json/comuni.json)
+=======
+- [Modello Comune](/var/www/html/base_saluteora/laravel/Modules/Geo/app/Models/Comune.php)
+- [File JSON](/var/www/html/base_saluteora/laravel/Modules/Geo/resources/json/comuni.json)
+>>>>>>> be08416 (.)
 - [Sushi Documentation](https://github.com/calebporzio/sushi)
 
 ---

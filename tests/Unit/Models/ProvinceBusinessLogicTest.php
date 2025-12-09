@@ -2,11 +2,19 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Province;
 use Sushi\Sushi;
+=======
+use Modules\Geo\Models\BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Sushi\Sushi;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Geo\Models\Province;
+>>>>>>> be08416 (.)
 
 describe('Province Business Logic', function () {
     test('province extends base model', function () {

@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+use Throwable;
+>>>>>>> be08416 (.)
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -22,7 +27,11 @@ abstract class BaseGeoService
     /**
      * Ottiene la chiave API dal file di configurazione.
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata
+=======
+     * @throws RuntimeException Se la chiave API non è configurata
+>>>>>>> be08416 (.)
      */
     protected function getApiKey(): string
     {
@@ -30,7 +39,11 @@ abstract class BaseGeoService
         $apiKey = config("geo.api_keys.{$this->getServiceName()}");
 
         if (empty($apiKey)) {
+<<<<<<< HEAD
             throw new \RuntimeException("API key non configurata per {$this->getServiceName()}");
+=======
+            throw new RuntimeException("API key non configurata per {$this->getServiceName()}");
+>>>>>>> be08416 (.)
         }
 
         return $apiKey;
@@ -44,7 +57,11 @@ abstract class BaseGeoService
      * @param array<string, mixed> $params   Parametri della richiesta
      * @param bool                 $useCache Se utilizzare la cache
      *
+<<<<<<< HEAD
      * @throws \RuntimeException Se la richiesta fallisce
+=======
+     * @throws RuntimeException Se la richiesta fallisce
+>>>>>>> be08416 (.)
      *
      * @return array<string, mixed>
      */
@@ -66,6 +83,7 @@ abstract class BaseGeoService
         RateLimiter::attempt($this->getServiceName(), $maxAttempts, fn () => true);
 
         try {
+<<<<<<< HEAD
             $client = $this->buildHttpClient();
             $methodLower = strtolower($method);
 
@@ -74,13 +92,24 @@ abstract class BaseGeoService
 
             if (! $response->successful()) {
                 throw new \RuntimeException("Richiesta fallita a {$this->getServiceName()}: ".(string) $response->status());
+=======
+            $response = $this->buildHttpClient()->{strtolower($method)}($url, $params);
+
+            if (!$response->successful()) {
+                throw new RuntimeException("Richiesta fallita a {$this->getServiceName()}: " . $response->status());
+>>>>>>> be08416 (.)
             }
 
             $data = $response->json();
 
             // Validazione tipo di ritorno per PHPStan level 9 compliance
+<<<<<<< HEAD
             if (! is_array($data)) {
                 throw new \RuntimeException('Risposta API non valida: atteso array, ricevuto '.gettype($data));
+=======
+            if (!is_array($data)) {
+                throw new RuntimeException('Risposta API non valida: atteso array, ricevuto ' . gettype($data));
+>>>>>>> be08416 (.)
             }
 
             // Assicura che sia array<string, mixed> come richiesto dalla signature
@@ -94,8 +123,17 @@ abstract class BaseGeoService
             }
 
             return $validatedData;
+<<<<<<< HEAD
         } catch (\Throwable $e) {
             throw new \RuntimeException("Errore durante la richiesta a {$this->getServiceName()}: ".$e->getMessage(), 0, $e);
+=======
+        } catch (Throwable $e) {
+            throw new RuntimeException(
+                "Errore durante la richiesta a {$this->getServiceName()}: " . $e->getMessage(),
+                0,
+                $e,
+            );
+>>>>>>> be08416 (.)
         }
     }
 
@@ -114,9 +152,12 @@ abstract class BaseGeoService
         $whenTypes = config('geo.http_client.retry.when', []);
 
         return Http::timeout($timeout)->retry($retryTimes, $retrySleep, function ($exception) use ($whenTypes) {
+<<<<<<< HEAD
             if (! is_object($exception)) {
                 return false;
             }
+=======
+>>>>>>> be08416 (.)
             foreach ($whenTypes as $type) {
                 if (is_a($exception, "\\GuzzleHttp\\Exception\\{$type}")) {
                     return true;
@@ -138,7 +179,11 @@ abstract class BaseGeoService
     {
         /** @var string $prefix */
         $prefix = config('geo.cache.prefix', 'geo_');
+<<<<<<< HEAD
         $hash = md5($method.$url.serialize($params));
+=======
+        $hash = md5($method . $url . serialize($params));
+>>>>>>> be08416 (.)
 
         return "{$prefix}{$this->getServiceName()}_{$hash}";
     }

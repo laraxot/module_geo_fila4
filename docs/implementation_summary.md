@@ -1,13 +1,21 @@
 # Riepilogo Implementazione AddressesField
 
+<<<<<<< HEAD
 ## Caso Studio: Applicazione Principio DRY nel Progetto <main module>
+=======
+## Caso Studio: Applicazione Principio DRY nel Progetto SaluteOra
+>>>>>>> be08416 (.)
 
 ### Data Implementazione
 **Dicembre 2024**
 
 ## Panoramica
 
+<<<<<<< HEAD
 Questo documento riassume l'implementazione completa del componente riutilizzabile `AddressesField` che ha eliminato la duplicazione di codice nel progetto <main module>, dimostrando l'applicazione pratica del principio DRY (Don't Repeat Yourself).
+=======
+Questo documento riassume l'implementazione completa del componente riutilizzabile `AddressesField` che ha eliminato la duplicazione di codice nel progetto SaluteOra, dimostrando l'applicazione pratica del principio DRY (Don't Repeat Yourself).
+>>>>>>> be08416 (.)
 
 ## Problema Identificato
 
@@ -286,17 +294,30 @@ Il componente non solo elimina duplicazione, ma stabilisce un **pattern replicab
 ### Documentazione Correlata
 - [AddressesField Component Documentation](components/addresses-field.md)
 - [Form Schema Reuse Guidelines](form-schema-reuse.md)
+<<<<<<< HEAD
 - [StudioResource Implementation](../../<main module>/project_docs/studio-resource-addresses-improvement.md)
 - [Critical Errors Resolved](../../<main module>/project_docs/critical-errors-resolved.md)
+=======
+- [StudioResource Implementation](../../SaluteOra/docs/studio-resource-addresses-improvement.md)
+- [Critical Errors Resolved](../../SaluteOra/docs/critical-errors-resolved.md)
+>>>>>>> be08416 (.)
 
 ### File Sorgente
 - [AddressesField.php](../app/Filament/Forms/Components/AddressesField.php)
 - [addresses-field.blade.php](../resources/views/filament/forms/components/addresses-field.blade.php)
 - [addresses.php](../lang/it/addresses.php)
+<<<<<<< HEAD
 - [StudioResource.php](../../<main module>/app/Filament/Resources/StudioResource.php)
+=======
+- [StudioResource.php](../../SaluteOra/app/Filament/Resources/StudioResource.php)
+>>>>>>> be08416 (.)
 
 ---
 
 *Ultimo aggiornamento: Dicembre 2024*
 
+<<<<<<< HEAD
 **Il successo di questo caso studio conferma l'importanza di identificare e risolvere proattivamente la duplicazione di codice prima che diventi un debito tecnico significativo.** 
+=======
+**Il successo di questo caso studio conferma l'importanza di identificare e risolvere proattivamente la duplicazione di codice prima che diventi un debito tecnico significativo.** 
+>>>>>>> be08416 (.)

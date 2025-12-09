@@ -46,7 +46,11 @@ class GetAddressFromMapboxLatLngAction
     {
         $apiKey = config('services.mapbox.api_key');
 
+<<<<<<< HEAD
         if (empty($apiKey) || ! is_string($apiKey)) {
+=======
+        if (empty($apiKey) || !is_string($apiKey)) {
+>>>>>>> be08416 (.)
             throw InvalidLocationException::invalidData('API key di Mapbox non configurata');
         }
 
@@ -55,20 +59,32 @@ class GetAddressFromMapboxLatLngAction
 
     private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
     {
+<<<<<<< HEAD
         $response = Http::get(self::BASE_URL."/{$longitude},{$latitude}.json", [
+=======
+        $response = Http::get(self::BASE_URL . "/{$longitude},{$latitude}.json", [
+>>>>>>> be08416 (.)
             'access_token' => $apiKey,
             'types' => 'address',
             'limit' => 1,
             'language' => 'it',
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
+=======
+        if (!$response->successful()) {
+>>>>>>> be08416 (.)
             throw InvalidLocationException::invalidData('Richiesta a Mapbox fallita');
         }
 
         $data = $response->json();
 
+<<<<<<< HEAD
         if (! is_array($data)) {
+=======
+        if (!is_array($data)) {
+>>>>>>> be08416 (.)
             throw InvalidLocationException::invalidData('Risposta di Mapbox non valida');
         }
 
@@ -98,7 +114,11 @@ class GetAddressFromMapboxLatLngAction
             // Determina il tipo di contesto dal prefisso dell'ID
             $type = explode('.', $id)[0] ?? '';
 
+<<<<<<< HEAD
             if (! empty($type)) {
+=======
+            if (!empty($type)) {
+>>>>>>> be08416 (.)
                 $context[$type] = [
                     'text' => $text,
                     'short_code' => $shortCode,
@@ -110,7 +130,11 @@ class GetAddressFromMapboxLatLngAction
         $center = $location['center'] ?? [0.0, 0.0];
 
         // Validazione del tipo e dell'array center
+<<<<<<< HEAD
         if (! is_array($center) || count($center) < 2) {
+=======
+        if (!is_array($center) || count($center) < 2) {
+>>>>>>> be08416 (.)
             $center = [0.0, 0.0];
         }
 

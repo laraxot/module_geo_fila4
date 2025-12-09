@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be08416 (.)
 return [
     'navigation' => [
         'name' => 'Impostazioni Geo',
@@ -12,7 +16,11 @@ return [
         ],
         'label' => 'Impostazioni',
         'sort' => '34',
+<<<<<<< HEAD
         'icon' => 'ui-settings',
+=======
+        'icon' => 'settings',
+>>>>>>> be08416 (.)
     ],
     'fields' => [
         'default_map_provider' => 'Provider Mappa Predefinito',

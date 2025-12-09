@@ -1,8 +1,14 @@
 # Convenzione di Naming e Gestione delle Migrazioni
 
+<<<<<<< HEAD
 ## Pattern del Progetto <main module>
 
 Il progetto <main module> adotta un approccio specifico per le migrazioni, diverso dalla convenzione standard di Laravel. Il nostro pattern è:
+=======
+## Pattern del Progetto SaluteOra
+
+Il progetto SaluteOra adotta un approccio specifico per le migrazioni, diverso dalla convenzione standard di Laravel. Il nostro pattern è:
+>>>>>>> be08416 (.)
 
 ```
 YYYY_MM_DD_HHMMSS_create_oggetto_contesto_table.php
@@ -79,5 +85,10 @@ $this->tableUpdate(
 ## Riferimenti
 
 - [XotBaseMigration](../../../Xot/database/migrations/XotBaseMigration.php)
+<<<<<<< HEAD
 - [Documentazione Laravel sulle Migrazioni](https://laravel.com/project_docs/migrations)
 - [Xot Module Documentation Standards](../../../Xot/project_docs/documentation-standards.md)
+=======
+- [Documentazione Laravel sulle Migrazioni](https://laravel.com/docs/migrations)
+- [Xot Module Documentation Standards](../../../Xot/docs/documentation-standards.md)
+>>>>>>> be08416 (.)

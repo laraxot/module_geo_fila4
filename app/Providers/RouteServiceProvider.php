@@ -12,14 +12,23 @@ use Modules\Xot\Providers\XotBaseRouteServiceProvider;
  */
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+<<<<<<< HEAD
     public string $name = 'Geo';
 
+=======
+>>>>>>> be08416 (.)
     /**
      * The module namespace to assume when generating URLs to actions.
      */
     protected string $moduleNamespace = 'Modules\Geo\Http\Controllers';
+<<<<<<< HEAD
 
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
+=======
+    protected string $module_dir = __DIR__;
+    protected string $module_ns = __NAMESPACE__;
+    public string $name = 'Geo';
+>>>>>>> be08416 (.)
 }

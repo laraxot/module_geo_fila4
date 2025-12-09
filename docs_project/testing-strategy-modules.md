@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Strategia di Testing per i Moduli <nome progetto>
 
 ## Introduzione
 
 Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto <nome progetto>, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
+=======
+# Strategia di Testing per i Moduli SaluteOra
+
+## Introduzione
+
+Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto SaluteOra, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
+>>>>>>> be08416 (.)
 
 ## Principi Fondamentali
 
@@ -20,8 +28,13 @@ Seguendo il pattern implementato nei test di autenticazione esistenti:
 - **UI**: Componenti UI condivisi, temi, layout
 
 #### Moduli Business (Dominio)
+<<<<<<< HEAD
 - **<nome progetto>**: Gestione pazienti, appuntamenti, stati
 - **<nome modulo>**: Gestione pazienti specifici per Modena
+=======
+- **SaluteOra**: Gestione pazienti, appuntamenti, stati
+- **SaluteMo**: Gestione pazienti specifici per Modena
+>>>>>>> be08416 (.)
 
 #### Moduli Utility (Supporto)
 - **Cms**: Gestione contenuti
@@ -100,7 +113,11 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Moduli Business
 
+<<<<<<< HEAD
 #### Modulo <nome progetto>
+=======
+#### Modulo SaluteOra
+>>>>>>> be08416 (.)
 **Focus**: Gestione pazienti, appuntamenti, stati, calendario
 - **Unit Tests**: 
   - Models: Patient, Doctor, Appointment, Studio
@@ -120,11 +137,19 @@ tests/Feature/Modules/{ModuleName}/
   - Doctor availability management
   - Patient dashboard navigation
 
+<<<<<<< HEAD
 #### Modulo <nome modulo>
 **Focus**: Estensioni specifiche per Modena
 - **Unit Tests**: Modelli specifici, business logic locale
 - **Feature Tests**: Funzionalità specifiche di Modena
 - **Integration Tests**: Integrazione con <nome progetto>
+=======
+#### Modulo SaluteMo
+**Focus**: Estensioni specifiche per Modena
+- **Unit Tests**: Modelli specifici, business logic locale
+- **Feature Tests**: Funzionalità specifiche di Modena
+- **Integration Tests**: Integrazione con SaluteOra
+>>>>>>> be08416 (.)
 
 ### Moduli Utility
 
@@ -150,7 +175,11 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Pattern 1: Test Models con Relazioni Cross-Database
 ```php
+<<<<<<< HEAD
 // Per DoctorStudio (<nome progetto>)
+=======
+// Per DoctorStudio (SaluteOra)
+>>>>>>> be08416 (.)
 test('doctor studio pivot model manages cross-database relations', function () {
     $doctor = Doctor::factory()->create();
     $studio = Studio::factory()->create();
@@ -169,7 +198,11 @@ test('doctor studio pivot model manages cross-database relations', function () {
 
 ### Pattern 2: Test Widget Filament con Multi-Tenancy
 ```php
+<<<<<<< HEAD
 // Per DoctorCalendarWidget (<nome progetto>)
+=======
+// Per DoctorCalendarWidget (SaluteOra)
+>>>>>>> be08416 (.)
 test('doctor calendar widget shows only tenant appointments', function () {
     $studio1 = Studio::factory()->create();
     $studio2 = Studio::factory()->create();
@@ -219,11 +252,19 @@ test('appointment states have complete translations in all languages', function 
         foreach ($languages as $lang) {
             app()->setLocale($lang);
             
+<<<<<<< HEAD
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
             
             expect($label)->not->toContain('<nome progetto>::');
             expect($description)->not->toContain('<nome progetto>::');
+=======
+            $label = __("saluteora::states.{$state->value}.label");
+            $description = __("saluteora::states.{$state->value}.description");
+            
+            expect($label)->not->toContain('saluteora::');
+            expect($description)->not->toContain('saluteora::');
+>>>>>>> be08416 (.)
         }
     }
 });
@@ -332,8 +373,13 @@ class DatabaseHelper
 3. UI - Componenti e temi
 
 ### Fase 2: Moduli Business (Settimana 2)
+<<<<<<< HEAD
 1. <nome progetto> - Gestione completa pazienti/appuntamenti
 2. <nome modulo> - Estensioni specifiche Modena
+=======
+1. SaluteOra - Gestione completa pazienti/appuntamenti
+2. SaluteMo - Estensioni specifiche Modena
+>>>>>>> be08416 (.)
 
 ### Fase 3: Moduli Utility (Settimana 3)
 1. Cms, Media, Geo - Gestione contenuti e localizzazione
@@ -362,7 +408,11 @@ class DatabaseHelper
 ## Collegamenti
 
 - [Test Autenticazione Esistenti](../tests/Feature/Auth/) - Pattern di riferimento
+<<<<<<< HEAD
 - [Documentazione Modulo <nome progetto>](../Modules/<nome progetto>/docs/README.md)
+=======
+- [Documentazione Modulo SaluteOra](../Modules/SaluteOra/docs/README.md)
+>>>>>>> be08416 (.)
 - [Documentazione Modulo User](../Modules/User/docs/README.md)
 - [Configurazione Pest](../tests/Pest.php)
 

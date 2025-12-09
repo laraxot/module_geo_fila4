@@ -12,7 +12,11 @@ return [
         ],
         'label' => 'Dashboard',
         'sort' => 30,
+<<<<<<< HEAD
         'icon' => 'ui-dashboard', // Aggiornamento dell'icona della dashboard usando la nuova icona dashboard
+=======
+        'icon' => 'dashboard', // Aggiornamento dell'icona della dashboard usando la nuova icona dashboard
+>>>>>>> be08416 (.)
     ],
     'widgets' => [
         'total_locations' => 'Totale Località',

@@ -23,8 +23,12 @@ class TimeZoneData extends Data
         public readonly int $rawOffset,
         public readonly int $dstOffset,
         public readonly string $countryCode,
+<<<<<<< HEAD
     ) {
     }
+=======
+    ) {}
+>>>>>>> be08416 (.)
 
     /**
      * Crea un'istanza da un array di dati Google Maps Time Zone API.

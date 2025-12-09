@@ -21,18 +21,30 @@ class GetAddressFromNominatimAction
      *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
+<<<<<<< HEAD
     public function execute(string $address): ?AddressData
     {
         $response = Http::withHeaders([
             'User-Agent' => 'Xot/1.0',
         ])->get(self::BASE_URL.'/search', [
+=======
+    public function execute(string $address): null|AddressData
+    {
+        $response = Http::withHeaders([
+            'User-Agent' => 'Xot/1.0',
+        ])->get(self::BASE_URL . '/search', [
+>>>>>>> be08416 (.)
             'q' => $address,
             'format' => 'json',
             'addressdetails' => 1,
             'limit' => 1,
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
+=======
+        if (!$response->successful()) {
+>>>>>>> be08416 (.)
             return null;
         }
 

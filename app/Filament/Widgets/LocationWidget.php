@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Widgets;
 
 use Filament\Schemas\Components\Component;
+<<<<<<< HEAD
+=======
+use Override;
+>>>>>>> be08416 (.)
 use Modules\Geo\Filament\Forms\LocationForm;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 
@@ -19,6 +23,7 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
 class LocationWidget extends XotBaseWidget
 {
     /**
+<<<<<<< HEAD
      * Dati del widget.
      */
     public ?array $data = [];
@@ -37,6 +42,11 @@ class LocationWidget extends XotBaseWidget
      * Ordine di visualizzazione del widget.
      */
     protected static ?int $sort = 1;
+=======
+     * Ordine di visualizzazione del widget.
+     */
+    protected static null|int $sort = 1;
+>>>>>>> be08416 (.)
 
     /**
      * Numero di colonne occupate dal widget.
@@ -44,11 +54,32 @@ class LocationWidget extends XotBaseWidget
     protected int|string|array $columnSpan = 'full';
 
     /**
+<<<<<<< HEAD
+=======
+     * Dati del widget.
+     */
+    public null|array $data = [];
+
+    /**
+     * Titolo del widget.
+     */
+    public string $title = 'geo::widgets.location.title';
+
+    /**
+>>>>>>> be08416 (.)
      * Vista del widget.
      */
     protected string $view = 'geo::filament.widgets.location';
 
     /**
+<<<<<<< HEAD
+=======
+     * Icona del widget.
+     */
+    public string $icon = 'heroicon-o-map-pin';
+
+    /**
+>>>>>>> be08416 (.)
      * Form per la selezione della località.
      */
     private LocationForm $locationForm;
@@ -63,6 +94,11 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Inizializza il widget.
+<<<<<<< HEAD
+=======
+     *
+     * @return void
+>>>>>>> be08416 (.)
      */
     public function mount(): void
     {
@@ -74,7 +110,11 @@ class LocationWidget extends XotBaseWidget
      *
      * @return array<int, Component>
      */
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> be08416 (.)
     public function getFormSchema(): array
     {
         return $this->locationForm->getSchema();
@@ -82,6 +122,11 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Gestisce l'invio del form.
+<<<<<<< HEAD
+=======
+     *
+     * @return void
+>>>>>>> be08416 (.)
      */
     public function submit(): void
     {
@@ -98,6 +143,11 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Verifica se il widget può essere visualizzato.
+<<<<<<< HEAD
+=======
+     *
+     * @return bool
+>>>>>>> be08416 (.)
      */
     public static function canView(): bool
     {

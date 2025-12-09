@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏭 Factory e Seeder Consolidati - Progetto <nome progetto>
 
 ## 📋 Panoramica
@@ -7,6 +8,17 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 ## 🔍 Analisi per Modulo
 
 ### 1. **Modulo <nome progetto>** - Core Sanitario
+=======
+# 🏭 Factory e Seeder Consolidati - Progetto SaluteOra
+
+## 📋 Panoramica
+
+Questo documento fornisce un'analisi completa dello stato delle factory e seeder per tutti i moduli del progetto SaluteOra, identificando modelli funzionanti, problemi noti e soluzioni implementate.
+
+## 🔍 Analisi per Modulo
+
+### 1. **Modulo SaluteOra** - Core Sanitario
+>>>>>>> be08416 (.)
 
 #### Modelli con Factory Funzionanti ✅
 - **User**: Factory completa e funzionante
@@ -21,7 +33,11 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 - **Totale Factory**: 7
 - **Funzionanti**: 7 (100%)
 - **Problemi**: Nessuno
+<<<<<<< HEAD
 - **Namespace**: `Modules\<nome progetto>\Models`
+=======
+- **Namespace**: `Modules\SaluteOra\Models`
+>>>>>>> be08416 (.)
 
 #### Caratteristiche
 - Estendono `BaseUser` o `BaseModel` del modulo
@@ -136,7 +152,11 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 
 ### Distribuzione per Modulo
 ```
+<<<<<<< HEAD
 <nome progetto>: 7 factory (29.2%)
+=======
+SaluteOra: 7 factory (29.2%)
+>>>>>>> be08416 (.)
 User:       6 factory (25.0%)
 Geo:        6 factory (25.0%)
 Media:      3 factory (12.5%)
@@ -300,7 +320,11 @@ Ho creato uno script intelligente (`smart_populate_models.php`) che:
 ## 🔗 Collegamenti Documentazione
 
 ### Documentazione Moduli
+<<<<<<< HEAD
 - [<nome progetto> Factory](../Modules/<nome progetto>/docs/factory-issues-analysis.md)
+=======
+- [SaluteOra Factory](../Modules/SaluteOra/docs/factory-issues-analysis.md)
+>>>>>>> be08416 (.)
 - [User Factory](../Modules/User/docs/factory-audit-lessons-learned.md)
 - [Geo Factory](../Modules/Geo/docs/factory-creation-geo-module.md)
 - [Media Factory](../Modules/Media/docs/README.md)

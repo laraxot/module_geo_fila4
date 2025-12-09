@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Analisi e Ottimizzazioni Moduli Laraxot - <nome progetto>
+=======
+# Analisi e Ottimizzazioni Moduli Laraxot - SaluteOra
+>>>>>>> be08416 (.)
 
 ## Panoramica Generale
 
@@ -23,15 +27,24 @@ Dopo l'analisi approfondita della struttura documentale e del codice, ho identif
 
 ### 🏥 Moduli Project-Specific
 **Possono contenere logica specifica del progetto sanitario**
+<<<<<<< HEAD
 - **<nome progetto>** - Logica sanitaria principale
 - **<nome modulo>** - Variante regionale mobile
+=======
+- **SaluteOra** - Logica sanitaria principale
+- **SaluteMo** - Variante regionale mobile
+>>>>>>> be08416 (.)
 
 ## Analisi Dettagliata per Modulo
 
 ### 1. 📧 Modulo Notify
 
 #### 🎯 Stato Attuale
+<<<<<<< HEAD
 - **Riusabilità**: ❌ CRITICO - 336+ occorrenze hardcoded "<nome progetto>"
+=======
+- **Riusabilità**: ❌ CRITICO - 336+ occorrenze hardcoded "saluteora"
+>>>>>>> be08416 (.)
 - **Documentazione**: ⚠️ Frammentata in 150+ file
 - **Testing**: ✅ Buona copertura business logic
 - **PHPStan**: ⚠️ Alcuni errori di tipizzazione
@@ -41,9 +54,15 @@ Dopo l'analisi approfondita della struttura documentale e del codice, ho identif
 ##### CRITICO - Riusabilità
 ```php
 // ❌ PROBLEMI IDENTIFICATI
+<<<<<<< HEAD
 'content' => 'Benvenuto su <nome progetto>!'
 'created_by' => 'admin@<nome progetto>.com'
 use Modules\<nome progetto>\Models\User
+=======
+'content' => 'Benvenuto su SaluteOra!'
+'created_by' => 'admin@saluteora.com'
+use Modules\SaluteOra\Models\User
+>>>>>>> be08416 (.)
 
 // ✅ SOLUZIONI IMPLEMENTATE  
 'content' => 'Benvenuto su ' . config('app.name') . '!'
@@ -104,7 +123,11 @@ User/docs/
 ```
 
 ##### Riusabilità
+<<<<<<< HEAD
 - **Rimuovere** tutti i riferimenti hardcoded a <nome progetto>
+=======
+- **Rimuovere** tutti i riferimenti hardcoded a SaluteOra
+>>>>>>> be08416 (.)
 - **Utilizzare** XotData per classi dinamiche
 - **Generalizzare** esempi e documentazione
 
@@ -119,7 +142,11 @@ User/docs/
 #### 🔧 Ottimizzazioni Richieste
 
 ##### Riusabilità
+<<<<<<< HEAD
 - **Rimuovere** path hardcoded tipo `/var/www/html/<nome progetto>/`
+=======
+- **Rimuovere** path hardcoded tipo `/var/www/html/saluteora/`
+>>>>>>> be08416 (.)
 - **Generalizzare** esempi di configurazione
 - **Utilizzare** variabili di ambiente dinamiche
 
@@ -140,7 +167,11 @@ User/docs/
 ##### PathHelper CRITICO
 ```php
 // ❌ PROBLEMA CRITICO
+<<<<<<< HEAD
 public static string $projectBasePath = '/var/www/html/<nome progetto>';
+=======
+public static string $projectBasePath = '/var/www/html/saluteora';
+>>>>>>> be08416 (.)
 
 // ✅ SOLUZIONE RICHIESTA
 public static function getProjectBasePath(): string
@@ -154,7 +185,11 @@ public static function getProjectBasePath(): string
 - **Migliorare** gestione namespace progetti
 - **Documentare** tutti i metodi disponibili
 
+<<<<<<< HEAD
 ### 5. 🏥 Modulo <nome progetto>
+=======
+### 5. 🏥 Modulo SaluteOra
+>>>>>>> be08416 (.)
 
 #### 🎯 Stato Attuale
 - **Funzionalità**: ✅ Completa per dominio sanitario
@@ -174,17 +209,28 @@ public static function getProjectBasePath(): string
 - **Implementare** caching per dashboard
 - **Migliorare** performance seeder
 
+<<<<<<< HEAD
 ### 6. 📱 Modulo <nome modulo>
 
 #### 🎯 Stato Attuale
 - **Funzionalità**: ✅ Estensione mobile di <nome progetto>
+=======
+### 6. 📱 Modulo SaluteMo
+
+#### 🎯 Stato Attuale
+- **Funzionalità**: ✅ Estensione mobile di SaluteOra
+>>>>>>> be08416 (.)
 - **Testing**: ✅ Business logic completa
 - **Documentazione**: ⚠️ Da consolidare
 
 #### 🔧 Ottimizzazioni Richieste
 
 ##### Documentazione
+<<<<<<< HEAD
 - **Chiarire** relazione con <nome progetto>
+=======
+- **Chiarire** relazione con SaluteOra
+>>>>>>> be08416 (.)
 - **Documentare** funzionalità specifiche mobile
 - **Consolidare** guide testing
 
@@ -199,7 +245,11 @@ public static function getProjectBasePath(): string
 
 ##### Riusabilità
 - **Generalizzare** esempi di utilizzo
+<<<<<<< HEAD
 - **Rimuovere** riferimenti specifici a <nome progetto>
+=======
+- **Rimuovere** riferimenti specifici a SaluteOra
+>>>>>>> be08416 (.)
 - **Utilizzare** pattern dinamici
 
 ### 8. 📄 Modulo Cms
@@ -254,7 +304,11 @@ public static function getProjectBasePath(): string
 **Tempo stimato**: 1-2 giorni
 
 #### Azioni
+<<<<<<< HEAD
 1. **<nome progetto>**: Ottimizzazione query calendar widget
+=======
+1. **SaluteOra**: Ottimizzazione query calendar widget
+>>>>>>> be08416 (.)
 2. **Notify**: Caching template email
 3. **UI**: Bundle optimization componenti
 4. **Geo**: Caching Google Places API

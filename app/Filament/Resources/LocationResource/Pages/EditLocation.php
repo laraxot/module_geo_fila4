@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources\LocationResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Modules\Geo\Filament\Resources\LocationResource;
@@ -11,6 +12,17 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Webmozart\Assert\Assert;
 
 class EditLocation extends XotBaseEditRecord
+=======
+use Filament\Actions\ViewAction;
+use Filament\Actions\DeleteAction;
+// use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps; // Pacchetto non installato
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
+use Modules\Geo\Filament\Resources\LocationResource;
+use Webmozart\Assert\Assert;
+
+class EditLocation extends EditRecord
+>>>>>>> be08416 (.)
 {
     // use InteractsWithMaps; // Pacchetto non installato
 

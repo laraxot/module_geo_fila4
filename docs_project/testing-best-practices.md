@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Best Practices Testing Globali - <nome progetto>
 
 ## Panoramica
 
 Questo documento descrive le best practices globali per il testing del progetto <nome progetto>, basate sull'esperienza reale e sulla risoluzione sistematica di errori. Queste pratiche garantiscono test affidabili, veloci e manutenibili.
+=======
+# Best Practices Testing Globali - SaluteOra
+
+## Panoramica
+
+Questo documento descrive le best practices globali per il testing del progetto SaluteOra, basate sull'esperienza reale e sulla risoluzione sistematica di errori. Queste pratiche garantiscono test affidabili, veloci e manutenibili.
+>>>>>>> be08416 (.)
 
 ## Principi Fondamentali
 
@@ -591,7 +599,11 @@ describe('Edge Cases', function () {
 
 - [Architettura Testing Principale](testing-architecture-overview.md)
 - [Guida Risoluzione Conflitti](git-conflicts-resolution-guide.md)
+<<<<<<< HEAD
 - [Best Practices Modulo <nome modulo>](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
+=======
+- [Best Practices Modulo SaluteMo](../../laravel/Modules/SaluteMo/docs/testing-best-practices.md)
+>>>>>>> be08416 (.)
 - [Testing Modulo Geo](../../laravel/Modules/Geo/docs/testing.md)
 
 ---

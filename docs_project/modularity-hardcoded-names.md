@@ -2,7 +2,11 @@
 
 ## Problema Identificato
 
+<<<<<<< HEAD
 Durante l'audit del modulo `Notify`, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome modulo>") in un modulo che deve essere riutilizzabile in progetti diversi.
+=======
+Durante l'audit del modulo `Notify`, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "saluteora", "salutemo") in un modulo che deve essere riutilizzabile in progetti diversi.
+>>>>>>> be08416 (.)
 
 ## Impatto del Problema
 
@@ -15,12 +19,21 @@ Durante l'audit del modulo `Notify`, è stato identificato un **errore critico d
 ### Esempi di Violazioni Trovate
 ```php
 // ❌ ERRORE CRITICO - Stringhe hardcoded
+<<<<<<< HEAD
 'subject' => 'Benvenuto su <nome progetto>',
 'content' => 'Grazie per esserti registrato su <nome progetto>',
 'clinic_name' => 'Studio Dentistico <nome progetto>',
 'webhook' => 'https://api.<nome progetto>.com/webhooks',
 'author' => 'Team <nome progetto>',
 'path' => '/var/www/html/<nome progetto>/public_html/images/',
+=======
+'subject' => 'Benvenuto su SaluteOra',
+'content' => 'Grazie per esserti registrato su SaluteOra',
+'clinic_name' => 'Studio Dentistico SaluteOra',
+'webhook' => 'https://api.saluteora.com/webhooks',
+'author' => 'Team SaluteOra',
+'path' => '/var/www/html/saluteora/public_html/images/',
+>>>>>>> be08416 (.)
 ```
 
 ## Soluzioni Implementate
@@ -75,8 +88,13 @@ $notificationData = [
 - **Media**: Gestione media per qualsiasi progetto
 
 ### Moduli Specifici del Progetto
+<<<<<<< HEAD
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome modulo>**: Solo per progetto <nome modulo>
+=======
+- **SaluteOra**: Solo per progetto SaluteOra
+- **SaluteMo**: Solo per progetto SaluteMo
+>>>>>>> be08416 (.)
 - **Patient**: Solo per progetti sanitari specifici
 
 ## Checklist Pre-Commit
@@ -95,21 +113,36 @@ Prima di ogni commit, verificare:
 Eseguire regolarmente:
 ```bash
 # Cerca stringhe hardcoded nei moduli generici
+<<<<<<< HEAD
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/Notify/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/User/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/UI/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/Xot/ --include="*.php"
+=======
+grep -r "saluteora\|salutemo" laravel/Modules/Notify/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/User/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/UI/ --include="*.php"
+grep -r "saluteora\|salutemo" laravel/Modules/Xot/ --include="*.php"
+>>>>>>> be08416 (.)
 ```
 
 ## Configurazione per Progetti
 
 ### Variabili d'Ambiente
 ```env
+<<<<<<< HEAD
 COMPANY_NAME=<nome progetto>
 COMPANY_TEAM=Team <nome progetto>
 WEBHOOK_BASE_URL=https://api.<nome progetto>.com
 CLINIC_NAME=Studio Dentistico <nome progetto>
 REPOSITORY_URL=https://github.com/<nome progetto>/notify
+=======
+COMPANY_NAME=SaluteOra
+COMPANY_TEAM=Team SaluteOra
+WEBHOOK_BASE_URL=https://api.saluteora.com
+CLINIC_NAME=Studio Dentistico SaluteOra
+REPOSITORY_URL=https://github.com/saluteora/notify
+>>>>>>> be08416 (.)
 ```
 
 ### Override per Progetti Specifici

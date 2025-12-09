@@ -231,7 +231,11 @@ class ServiceClass
 Dopo l'implementazione, verificare con:
 
 ```bash
+<<<<<<< HEAD
 cd /var/www/html/_bases/<directory progetto>/laravel
+=======
+cd /var/www/html/_bases/base_techplanner_fila3_mono/laravel
+>>>>>>> be08416 (.)
 ./vendor/bin/phpstan analyze Modules/Geo --level=9
 ```
 
@@ -245,7 +249,11 @@ cd /var/www/html/_bases/<directory progetto>/laravel
 
 ## Collegamenti
 
+<<<<<<< HEAD
 - [Root PHPStan Error Analysis Guide](../../project_docs/phpstan-error-analysis-guide.md)
+=======
+- [Root PHPStan Error Analysis Guide](../../docs/phpstan-error-analysis-guide.md)
+>>>>>>> be08416 (.)
 - [Geo Module Structure](./structure.md)
 - [Geo Module Architecture](./architecture.md)
 - [Google Maps Service Documentation](./services/)

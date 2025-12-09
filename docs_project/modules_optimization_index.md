@@ -44,7 +44,11 @@
 **Azione**: Solo path generalization + README optimization  
 **Tempo**: 1 ora | **Impatto**: Mantenimento eccellenza
 
+<<<<<<< HEAD
 #### [Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/optimization_recommendations.md)
+=======
+#### [Modulo SaluteOra](../laravel/Modules/SaluteOra/docs/optimization_recommendations.md)
+>>>>>>> be08416 (.)
 **Stato**: Funzionalmente completo e robusto  
 **Azione**: Documentation update + performance optimization  
 **Tempo**: 4 ore | **Impatto**: Migliora manutenibilità
@@ -54,7 +58,11 @@
 **Azione**: Generalizzazione docs + Google API caching  
 **Tempo**: 3 ore | **Impatto**: Modulo geo riutilizzabile
 
+<<<<<<< HEAD
 #### [Modulo <nome modulo>](../laravel/Modules/<nome modulo>/docs/optimization_recommendations.md)
+=======
+#### [Modulo SaluteMo](../laravel/Modules/SaluteMo/docs/optimization_recommendations.md)
+>>>>>>> be08416 (.)
 **Stato**: Buona specializzazione mobile  
 **Azione**: Documentation enhancement + mobile testing  
 **Tempo**: 6 ore | **Impatto**: Migliora esperienza mobile
@@ -78,9 +86,15 @@
 - [ ] **Collegamenti**: Bidirezionali aggiornati
 
 ### Fase 3: Performance (Settimana 3)
+<<<<<<< HEAD
 - [ ] **<nome progetto>**: Caching dashboard e calendar
 - [ ] **Geo**: Google API optimization
 - [ ] **<nome modulo>**: Mobile performance testing
+=======
+- [ ] **SaluteOra**: Caching dashboard e calendar
+- [ ] **Geo**: Google API optimization
+- [ ] **SaluteMo**: Mobile performance testing
+>>>>>>> be08416 (.)
 - [ ] **Metriche**: Validazione target performance
 
 ## 🎯 BENEFICI ATTESI
@@ -140,7 +154,11 @@ cp -r laravel/Modules/*/docs laravel/Modules-docs-backup-$(date +%Y%m%d)
 
 ### Preservazione Eccellenze
 - **UI Module**: Mantenere qualità PHPStan Level 9
+<<<<<<< HEAD
 - **<nome progetto>**: Preservare business logic completa
+=======
+- **SaluteOra**: Preservare business logic completa
+>>>>>>> be08416 (.)
 - **Testing**: Mantenere coverage elevato
 
 ### Focus su Impatto

@@ -1,7 +1,11 @@
 # Azioni Cast Centralizzate - Regola di Progetto
 
 ## Principio Fondamentale
+<<<<<<< HEAD
 Il progetto <nome progetto> utilizza azioni cast centralizzate nel modulo Xot per garantire type safety e conformità PHPStan. Questa è una **regola critica** del progetto.
+=======
+Il progetto SaluteOra utilizza azioni cast centralizzate nel modulo Xot per garantire type safety e conformità PHPStan. Questa è una **regola critica** del progetto.
+>>>>>>> be08416 (.)
 
 ## Posizione delle Azioni
 ```
@@ -75,7 +79,11 @@ Ogni volta che si utilizzano queste azioni:
 4. Documentare l'uso specifico nel contesto
 
 ## Collegamenti
+<<<<<<< HEAD
 - [<nome progetto> Cast Usage](../laravel/Modules/<nome progetto>/docs/cast-actions-usage.md)
+=======
+- [SaluteOra Cast Usage](../laravel/Modules/SaluteOra/docs/cast-actions-usage.md)
+>>>>>>> be08416 (.)
 - [Xot Cast Actions](../laravel/Modules/Xot/docs/actions/cast-actions.md)
 - [PHPStan Best Practices](./phpstan-best-practices.md)
 

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\LocationIQ;
 
+<<<<<<< HEAD
+=======
+use Exception;
+>>>>>>> be08416 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
@@ -19,19 +23,34 @@ class GetAddressFromLocationIQAction
      *
      * @param string $address L'indirizzo da cercare
      *
+<<<<<<< HEAD
      * @throws \Exception Se la chiave API non è configurata
      *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
+=======
+     * @throws Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     */
+    public function execute(string $address): null|AddressData
+>>>>>>> be08416 (.)
     {
         $apiKey = config('services.locationiq.key');
 
         if (empty($apiKey)) {
+<<<<<<< HEAD
             throw new \Exception('LocationIQ API key not configured');
         }
 
         $response = Http::get(self::BASE_URL.'/search', [
+=======
+            throw new Exception('LocationIQ API key not configured');
+        }
+
+        $response = Http::get(self::BASE_URL . '/search', [
+>>>>>>> be08416 (.)
             'key' => $apiKey,
             'q' => $address,
             'format' => 'json',
@@ -39,7 +58,11 @@ class GetAddressFromLocationIQAction
             'addressdetails' => 1,
         ]);
 
+<<<<<<< HEAD
         if (! $response->successful()) {
+=======
+        if (!$response->successful()) {
+>>>>>>> be08416 (.)
             return null;
         }
 

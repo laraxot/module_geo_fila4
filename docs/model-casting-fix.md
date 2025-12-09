@@ -191,7 +191,11 @@ protected function casts(): array
 
 ### Moduli da Verificare
 - [ ] **User**: Verificare altri modelli
+<<<<<<< HEAD
 - [ ] **<main module>**: Verificare altri modelli
+=======
+- [ ] **TechPlanner**: Verificare altri modelli
+>>>>>>> be08416 (.)
 - [ ] **Notify**: Verificare altri modelli
 - [ ] **Altri moduli**: Ricerca globale
 

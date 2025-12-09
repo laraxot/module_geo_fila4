@@ -71,7 +71,11 @@ use Modules\Geo\Contracts\HasGeolocation;
  */
 class Address extends BaseModel implements HasGeolocation
 {
+<<<<<<< HEAD
     use \Modules\Xot\Models\Traits\HasXotFactory;
+=======
+    use HasFactory;
+>>>>>>> be08416 (.)
     use SoftDeletes;
 
     /**

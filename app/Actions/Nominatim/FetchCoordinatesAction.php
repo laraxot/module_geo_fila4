@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
+<<<<<<< HEAD
+=======
+use RuntimeException;
+>>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\LocationData;
@@ -30,7 +34,11 @@ class FetchCoordinatesAction
      * @param string $address Indirizzo da geocodificare
      *
      * @throws GuzzleException
+<<<<<<< HEAD
      * @throws \RuntimeException
+=======
+     * @throws RuntimeException
+>>>>>>> be08416 (.)
      */
     public function execute(string $address): LocationData
     {
@@ -49,7 +57,11 @@ class FetchCoordinatesAction
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (empty($data)) {
+<<<<<<< HEAD
             throw new \RuntimeException('No results found for address: '.$address);
+=======
+            throw new RuntimeException('No results found for address: ' . $address);
+>>>>>>> be08416 (.)
         }
 
         $result = $data[0];

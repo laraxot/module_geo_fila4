@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be08416 (.)
 return [
     'navigation' => [
         'icons' => [
@@ -77,7 +81,11 @@ return [
         'name' => 'Geo',
         'group' => 'Mappe',
         'sort' => '20',
+<<<<<<< HEAD
         'icon' => 'ui-geo-menu',
+=======
+        'icon' => 'geo-menu',
+>>>>>>> be08416 (.)
         'badge' => [
             'color' => 'success',
             'label' => 'Online',
@@ -107,7 +115,11 @@ return [
                 'name' => 'Mappa',
                 'group' => 'Geo',
                 'sort' => '10',
+<<<<<<< HEAD
                 'icon' => 'ui-geo-map',
+=======
+                'icon' => 'geo-map',
+>>>>>>> be08416 (.)
                 'badge' => [
                     'color' => 'info',
                     'label' => 'Interattiva',
@@ -132,7 +144,11 @@ return [
                 'name' => 'Posizioni',
                 'group' => 'Geo',
                 'sort' => '20',
+<<<<<<< HEAD
                 'icon' => 'ui-geo-location',
+=======
+                'icon' => 'geo-location',
+>>>>>>> be08416 (.)
                 'badge' => [
                     'color' => 'warning',
                     'label' => 'Da Verificare',
