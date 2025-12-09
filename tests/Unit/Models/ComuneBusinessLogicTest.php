@@ -7,24 +7,24 @@ use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Comune;
 use Modules\Tenant\Models\Traits\SushiToJson;
 
-describe('Comune Business Logic', function () {
-    test('comune extends base model', function () {
+describe('Comune Business Logic', function (): void {
+    test('comune extends base model', function (): void {
         expect(Comune::class)->toBeSubclassOf(BaseModel::class);
     });
 
-    test('comune has factory trait for testing', function () {
+    test('comune has factory trait for testing', function (): void {
         $traits = class_uses(Comune::class);
 
         expect($traits)->toHaveKey(HasFactory::class);
     });
 
-    test('comune has sushi to json trait', function () {
+    test('comune has sushi to json trait', function (): void {
         $traits = class_uses(Comune::class);
 
         expect($traits)->toHaveKey(SushiToJson::class);
     });
 
-    test('comune has expected fillable fields for italian municipalities', function () {
+    test('comune has expected fillable fields for italian municipalities', function (): void {
         $comune = new Comune;
         $expectedFillable = [
             'id',
@@ -46,7 +46,7 @@ describe('Comune Business Logic', function () {
         expect($comune->getFillable())->toEqual($expectedFillable);
     });
 
-    test('comune has schema definition for structured geographic data', function () {
+    test('comune has schema definition for structured geographic data', function (): void {
         $comune = new Comune;
 
         expect($comune)->toHaveProperty('schema');
@@ -56,20 +56,20 @@ describe('Comune Business Logic', function () {
         expect($comune->schema['cap'])->toBe('json');
     });
 
-    test('comune has json directory property for data source', function () {
+    test('comune has json directory property for data source', function (): void {
         $comune = new Comune;
 
         expect($comune)->toHaveProperty('jsonDirectory');
         expect($comune->jsonDirectory)->toBeString();
     });
 
-    test('comune has translatable array configured', function () {
+    test('comune has translatable array configured', function (): void {
         $comune = new Comune;
 
         expect($comune->translatable)->toBeArray();
     });
 
-    test('comune model can be instantiated without errors', function () {
+    test('comune model can be instantiated without errors', function (): void {
         $comune = new Comune;
 
         expect($comune)->toBeInstanceOf(Comune::class);

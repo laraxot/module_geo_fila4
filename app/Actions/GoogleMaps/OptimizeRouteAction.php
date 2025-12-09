@@ -160,8 +160,11 @@ class OptimizeRouteAction
                     ));
                 }
 
+                /** @var \Illuminate\Support\Collection<int, \Modules\Geo\Datas\LocationData> $typedWaypoints */
+                $typedWaypoints = $waypoints;
+                
                 return new RouteData(
-                    waypoints: $waypoints,
+                    waypoints: $typedWaypoints,
                     originalWaypoints: $originalLocations,
                     totalDistance: $totalDistance,
                     totalDuration: $totalDuration,

@@ -97,7 +97,7 @@ use Modules\Geo\Enums\AddressTypeEnum;
  */
 class Address extends Model implements HasGeolocation
 {
-    use HasFactory;
+    use \Modules\Xot\Models\Traits\HasXotFactory;
     use SoftDeletes;
     
     /** list<string> */

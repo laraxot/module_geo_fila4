@@ -58,6 +58,7 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  *
  * @mixin \Eloquent
  */
+/** */
 class Comune extends BaseModel
 {
     use SushiToJson;
@@ -105,6 +106,9 @@ class Comune extends BaseModel
         return module_path('Geo', 'resources/json/comuni.json');
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getRows(): array
     {
         return $this->getSushiRows();

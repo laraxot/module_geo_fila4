@@ -7,24 +7,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Location;
 
-describe('Location Business Logic', function () {
-    test('location extends base model', function () {
+describe('Location Business Logic', function (): void {
+    test('location extends base model', function (): void {
         expect(Location::class)->toBeSubclassOf(BaseModel::class);
     });
 
-    test('location has factory trait for testing', function () {
+    test('location has factory trait for testing', function (): void {
         $traits = class_uses(Location::class);
 
         expect($traits)->toHaveKey(HasFactory::class);
     });
 
-    test('location can be queried within distance scope', function () {
+    test('location can be queried within distance scope', function (): void {
         $query = Location::withinDistance(45.4642, 9.1900, 10.0);
 
         expect($query)->toBeInstanceOf(Builder::class);
     });
 
-    test('location has geographic coordinate properties', function () {
+    test('location has geographic coordinate properties', function (): void {
         $location = new Location;
         $location->lat = 45.4642;
         $location->lng = 9.1900;
@@ -33,7 +33,7 @@ describe('Location Business Logic', function () {
         expect($location->lng)->toBe(9.1900);
     });
 
-    test('location can store address components', function () {
+    test('location can store address components', function (): void {
         $location = new Location;
         $location->street = 'Via Roma 123';
         $location->city = 'Milano';
@@ -46,33 +46,33 @@ describe('Location Business Logic', function () {
         expect($location->zip)->toBe('20121');
     });
 
-    test('location has processing status tracking', function () {
+    test('location has processing status tracking', function (): void {
         $location = new Location;
         $location->processed = true;
 
         expect($location->processed)->toBe(true);
     });
 
-    test('location can store formatted address', function () {
+    test('location can store formatted address', function (): void {
         $location = new Location;
         $location->formatted_address = 'Via Roma 123, 20121 Milano MI, Italy';
 
         expect($location->formatted_address)->toBe('Via Roma 123, 20121 Milano MI, Italy');
     });
 
-    test('location can be queried by city', function () {
+    test('location can be queried by city', function (): void {
         $query = Location::whereCity('Milano');
 
         expect($query)->toBeInstanceOf(Builder::class);
     });
 
-    test('location can be queried by coordinates', function () {
+    test('location can be queried by coordinates', function (): void {
         $query = Location::whereLat(45.4642)->whereLng(9.1900);
 
         expect($query)->toBeInstanceOf(Builder::class);
     });
 
-    test('location can be queried by processing status', function () {
+    test('location can be queried by processing status', function (): void {
         $query = Location::whereProcessed(true);
 
         expect($query)->toBeInstanceOf(Builder::class);
