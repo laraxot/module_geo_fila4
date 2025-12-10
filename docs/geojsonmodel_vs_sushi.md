@@ -167,7 +167,7 @@ La scelta tra GeoJsonModel e Laravel Sushi dovrebbe essere guidata dalle esigenz
 
 ## Raccomandazione
 
-Per il modulo Geo del progetto SaluteOra, **consigliamo di mantenere l'implementazione GeoJsonModel attuale** per i seguenti motivi:
+Per il modulo Geo del progetto <main module>, **consigliamo di mantenere l'implementazione GeoJsonModel attuale** per i seguenti motivi:
 
 1. I dati geografici italiani sono altamente statici e ben definiti
 2. Le performance sono critiche per i widget di ricerca
@@ -184,9 +184,9 @@ Una migrazione a Laravel Sushi potrebbe essere riconsiderata, con un costo di co
 
 ## Collegamenti a Documentazione Correlata
 
-- [Modulo Core: Architettura](../../Xot/docs/module-architecture.md)
-- [Best Practices per i Modelli](../../Xot/docs/model-best-practices.md)
-- [Pattern di Data Access](../../Xot/docs/data-access-patterns.md)
+- [Modulo Core: Architettura](../../Xot/project_docs/module-architecture.md)
+- [Best Practices per i Modelli](../../Xot/project_docs/model-best-practices.md)
+- [Pattern di Data Access](../../Xot/project_docs/data-access-patterns.md)
 - [Laravel Sushi GitHub](https://github.com/calebporzio/sushi)
 
 ---
