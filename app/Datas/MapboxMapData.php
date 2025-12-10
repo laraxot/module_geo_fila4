@@ -59,3 +59,4 @@ class MapboxMapData extends Data
         return $this->data;
     }
 }
+}

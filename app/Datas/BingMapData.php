@@ -61,3 +61,4 @@ class BingMapData extends Data
         return $this->data;
     }
 }
+}

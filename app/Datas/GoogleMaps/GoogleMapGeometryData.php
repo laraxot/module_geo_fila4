@@ -12,7 +12,7 @@ use Spatie\LaravelData\Data;
 class GoogleMapGeometryData extends Data
 {
     /**
-     * @param  GoogleMapLocationData  $location  Posizione geografica
+     * @param GoogleMapLocationData $location Posizione geografica
      */
     public function __construct(
         public readonly GoogleMapLocationData $location,
@@ -22,4 +22,5 @@ class GoogleMapGeometryData extends Data
 =======
     ) {}
 >>>>>>> be08416 (.)
+}
 }

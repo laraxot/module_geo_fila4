@@ -19,3 +19,4 @@ class GoogleMapComponentData extends Data
     ) {}
 >>>>>>> be08416 (.)
 }
+}

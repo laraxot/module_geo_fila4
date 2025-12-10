@@ -13,8 +13,8 @@ use Spatie\LaravelData\DataCollection;
 class GoogleMapResponseData extends Data
 {
     /**
-     * @param  DataCollection<GoogleMapResultData>  $results  Risultati della geocodifica
-     * @param  string  $status  Stato della risposta
+     * @param DataCollection<GoogleMapResultData> $results Risultati della geocodifica
+     * @param string                              $status  Stato della risposta
      */
     public function __construct(
         public readonly DataCollection $results,
@@ -25,4 +25,5 @@ class GoogleMapResponseData extends Data
 =======
     ) {}
 >>>>>>> be08416 (.)
+}
 }

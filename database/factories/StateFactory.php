@@ -23,16 +23,26 @@ class StateFactory extends Factory
     public function definition(): array
     {
         $italianRegions = [
-            'Lazio' => 'LAZ',
-            'Lombardia' => 'LOM',
-            'Campania' => 'CAM',
-            'Sicilia' => 'SIC',
-            'Veneto' => 'VEN',
-            'Piemonte' => 'PIE',
-            'Emilia-Romagna' => 'EMR',
-            'Toscana' => 'TOS',
-            'Puglia' => 'PUG',
+            'Abruzzo' => 'ABR',
+            'Basilicata' => 'BAS',
             'Calabria' => 'CAL',
+            'Campania' => 'CAM',
+            'Emilia-Romagna' => 'EMR',
+            'Friuli-Venezia Giulia' => 'FVG',
+            'Lazio' => 'LAZ',
+            'Liguria' => 'LIG',
+            'Lombardia' => 'LOM',
+            'Marche' => 'MAR',
+            'Molise' => 'MOL',
+            'Piemonte' => 'PIE',
+            'Puglia' => 'PUG',
+            'Sardegna' => 'SAR',
+            'Sicilia' => 'SIC',
+            'Toscana' => 'TOS',
+            'Trentino-Alto Adige' => 'TAA',
+            'Umbria' => 'UMB',
+            "Valle d'Aosta" => 'VDA',
+            'Veneto' => 'VEN',
         ];
 
         $state = $this->faker->randomElement(array_keys($italianRegions));
