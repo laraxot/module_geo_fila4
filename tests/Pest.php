@@ -54,17 +54,32 @@ expect()->extend('toBeCity', fn () => $this->toBeInstanceOf(City::class));
  * |
  */
 
+/**
+ * @param array<string, mixed> $attributes
+ */
 function createCountry(array $attributes = []): Country
 {
-    return Country::factory()->create($attributes);
+    $Country = Country::factory()->create($attributes);
+    assert($Country instanceof Country);
+    return $Country;
 }
 
+/**
+ * @param array<string, mixed> $attributes
+ */
 function createRegion(array $attributes = []): Region
 {
-    return Region::factory()->create($attributes);
+    $Region = Region::factory()->create($attributes);
+    assert($Region instanceof Region);
+    return $Region;
 }
 
+/**
+ * @param array<string, mixed> $attributes
+ */
 function createCity(array $attributes = []): City
 {
-    return City::factory()->create($attributes);
+    $City = City::factory()->create($attributes);
+    assert($City instanceof City);
+    return $City;
 }

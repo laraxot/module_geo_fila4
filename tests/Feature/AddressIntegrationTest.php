@@ -64,8 +64,8 @@ function formatFullAddress(object $a): string
     return implode(', ', $parts);
 }
 
-describe('Address Integration', function () {
-    it('can attach address to patient via polymorphic relationship', function () {
+describe('Address Integration', function (): void {
+    it('can attach address to patient via polymorphic relationship', function (): void {
         $patient = (object) ['id' => 1001, 'type' => 'patient'];
 
         $address = makeAddress([
@@ -86,7 +86,7 @@ describe('Address Integration', function () {
             ->toBeTrue();
     });
 
-    it('generates proper full address from components', function () {
+    it('generates proper full address from components', function (): void {
         $address = makeAddress([
             'route' => 'Via Giuseppe Verdi',
             'street_number' => '42',
@@ -108,7 +108,7 @@ describe('Address Integration', function () {
             ->toContain('20121');
     });
 
-    it('handles geolocation data correctly', function () {
+    it('handles geolocation data correctly', function (): void {
         $milan = makeAddress([
             'latitude' => 45.4642,
             'longitude' => 9.1900,
@@ -117,7 +117,7 @@ describe('Address Integration', function () {
         expect($milan->latitude)->toBe(45.4642)->and($milan->longitude)->toBe(9.1900);
     });
 
-    it('can store Google Places API data', function () {
+    it('can store Google Places API data', function (): void {
         $address = makeAddress([
             'place_id' => 'ChIJu46S-ZZjhkcRLuFvLjVZ400',
             'formatted_address' => 'Piazza del Duomo, 20121 Milano MI, Italy',
@@ -138,7 +138,7 @@ describe('Address Integration', function () {
             ->toBe(4.5);
     });
 
-    it('supports multiple addresses per entity', function () {
+    it('supports multiple addresses per entity', function (): void {
         $patient = (object) ['id' => 2001, 'type' => 'patient'];
 
         $homeAddress = makeAddress([
@@ -174,7 +174,7 @@ describe('Address Integration', function () {
         expect($primary?->id)->toBe($homeAddress->id);
     });
 
-    it('handles soft deletion correctly', function () {
+    it('handles soft deletion correctly', function (): void {
         $address = makeAddress();
 
         // Soft delete simulation
