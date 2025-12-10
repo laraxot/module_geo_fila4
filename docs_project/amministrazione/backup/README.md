@@ -23,7 +23,7 @@
 // config/backup.php
 return [
     'backup' => [
-        'name' => env('APP_NAME', 'saluteora'),
+        'name' => env('APP_NAME', '<nome progetto>'),
         'source' => [
             'files' => [
                 'include' => [
@@ -39,7 +39,7 @@ return [
             ],
         ],
         'destination' => [
-            'filename_prefix' => 'saluteora-',
+            'filename_prefix' => '<nome progetto>-',
             'disks' => [
                 'backup',
             ],
@@ -102,13 +102,13 @@ php artisan backup:restore
 ```bash
 
 # Backup giornaliero
-0 0 * * * cd /var/www/html/saluteora && php artisan backup:run
+0 0 * * * cd /var/www/html/<nome progetto> && php artisan backup:run
 
 # Backup incrementale
-0 */6 * * * cd /var/www/html/saluteora && php artisan backup:run --only-db
+0 */6 * * * cd /var/www/html/<nome progetto> && php artisan backup:run --only-db
 
 # Pulizia backup vecchi
-0 1 * * * cd /var/www/html/saluteora && php artisan backup:clean
+0 1 * * * cd /var/www/html/<nome progetto> && php artisan backup:clean
 ```
 
 ### Notifiche
@@ -117,7 +117,7 @@ php artisan backup:restore
 return [
     'notifications' => [
         'mail' => [
-            'to' => 'admin@saluteora.it',
+            'to' => 'admin@<nome progetto>.it',
         ],
         'slack' => [
             'webhook_url' => env('SLACK_WEBHOOK_URL'),
