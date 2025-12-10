@@ -32,6 +32,7 @@ class InvalidLocationException extends RuntimeException
     public static function invalidCoordinates(float $latitude, float $longitude): self
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return new self(sprintf('Coordinate non valide: latitudine %f, longitudine %f', $latitude, $longitude));
 =======
         return new self(sprintf(
@@ -40,6 +41,9 @@ class InvalidLocationException extends RuntimeException
             $longitude
         ));
 >>>>>>> bc26394 (.)
+=======
+        return new self(sprintf('Coordinate non valide: latitudine %f, longitudine %f', $latitude, $longitude));
+>>>>>>> c942565 (.)
     }
 
     /**

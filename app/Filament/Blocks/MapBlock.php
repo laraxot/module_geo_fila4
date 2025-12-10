@@ -14,6 +14,7 @@ use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 class MapBlock
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static function make(string $name = 'map', string $context = 'form'): Block
     {
 =======
@@ -22,6 +23,10 @@ class MapBlock
         string $context = 'form',
     ): Block {
 >>>>>>> bc26394 (.)
+=======
+    public static function make(string $name = 'map', string $context = 'form'): Block
+    {
+>>>>>>> c942565 (.)
         $view = 'geo::components.blocks.map.location-map-table';
         $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
 
@@ -29,12 +34,16 @@ class MapBlock
             ->schema([
                 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
                  * Select::make('article_id')
                  * ->label('Article')
                  * ->options(Article::published()->orderBy('title')->pluck('title', 'id'))
                  * ->required(),
                  */
                 TextInput::make('text')->label('Link text (optional)'),
+<<<<<<< HEAD
 =======
                 Select::make('article_id')
                     ->label('Article')
@@ -44,6 +53,8 @@ class MapBlock
                 TextInput::make('text')
                     ->label('Link text (optional)'),
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
                 Select::make('_tpl')
                     ->label('layout')
                     ->options($views)

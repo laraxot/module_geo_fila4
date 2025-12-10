@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
+<<<<<<< HEAD
 =======
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 <div>
     <div class="home-address-container delay-1s animate__fadeInUp animate__animated">
         <div class="home-address">

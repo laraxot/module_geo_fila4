@@ -16,10 +16,14 @@ class EditLocation extends XotBaseEditRecord
 use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
 // use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps; // Pacchetto non installato
 =======
 use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps;
 >>>>>>> bc26394 (.)
+=======
+// use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps; // Pacchetto non installato
+>>>>>>> c942565 (.)
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Geo\Filament\Resources\LocationResource;
@@ -29,10 +33,14 @@ class EditLocation extends EditRecord
 >>>>>>> be08416 (.)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // use InteractsWithMaps; // Pacchetto non installato
 =======
     use InteractsWithMaps;
 >>>>>>> bc26394 (.)
+=======
+    // use InteractsWithMaps; // Pacchetto non installato
+>>>>>>> c942565 (.)
 
     protected static string $resource = LocationResource::class;
 
