@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Pages;
 
+<<<<<<< HEAD
 use Modules\Xot\Filament\Pages\XotBaseDashboard;
 <<<<<<< HEAD
 
@@ -12,6 +13,10 @@ class Dashboard extends XotBaseDashboard
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
 =======
 use Modules\Xot\Filament\Pages\XotBasePage;
+=======
+use Modules\Xot\Filament\Pages\XotBasePage;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
+>>>>>>> bc26394 (.)
 
 class Dashboard extends XotBaseDashboard
 {
