@@ -32,14 +32,7 @@ use Sushi\Sushi;
 use Sushi\Sushi;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Filament\Schemas\Components\Utilities\Get;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\ProfileContract;
-=======
->>>>>>> bc26394 (.)
-=======
-use Modules\Xot\Contracts\ProfileContract;
->>>>>>> c942565 (.)
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -50,23 +43,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property string|null $name
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
  * @property-read ProfileContract|null $creator
  * @property-read Collection<int, Province> $provinces
  * @property-read int|null $provinces_count
  * @property-read ProfileContract|null $updater
-<<<<<<< HEAD
-=======
- * @property-read \Modules\SaluteOra\Models\Profile|null $creator
- * @property-read Collection<int, Province> $provinces
- * @property-read int|null $provinces_count
- * @property-read \Modules\SaluteOra\Models\Profile|null $updater
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
  * @method static Builder<static>|Region newModelQuery()
  * @method static Builder<static>|Region newQuery()
  * @method static Builder<static>|Region query()
@@ -99,22 +79,11 @@ class Region extends BaseModel
      */
     protected $keyType = 'integer';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
     protected array $schema = [
         'id' => 'integer',
         'name' => 'string',
     ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
     public function getRows(): array
     {
         $rows = Comune::select('regione->codice as id', 'regione->nome as name')
@@ -122,17 +91,6 @@ class Region extends BaseModel
             ->orderBy('regione->nome')
             ->get();
 
-<<<<<<< HEAD
-=======
-    public function getRows(): array{
-        $rows=Comune::select("regione->codice as id","regione->nome as name")
-            ->distinct()
-            ->orderBy("regione->nome")
-            ->get();
-       
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
         return $rows->toArray();
     }
 
@@ -145,20 +103,7 @@ class Region extends BaseModel
     {
         return self::orderBy('name')
             ->get()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c942565 (.)
             ->pluck('name', 'id')
             ->toArray();
     }
 }
-<<<<<<< HEAD
-=======
-            ->pluck("name", "id")
-            ->toArray();
-    }
-}
->>>>>>> bc26394 (.)
-=======
->>>>>>> c942565 (.)
