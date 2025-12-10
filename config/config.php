@@ -5,6 +5,9 @@ declare(strict_types=1);
 return [
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
      * |--------------------------------------------------------------------------
      * | API Keys
      * |--------------------------------------------------------------------------
@@ -12,6 +15,7 @@ return [
      * | Chiavi API per i vari servizi di mappe utilizzati dal modulo.
      * |
      */
+<<<<<<< HEAD
 =======
     |--------------------------------------------------------------------------
     | API Keys
@@ -21,12 +25,17 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'api_keys' => [
         'google_maps' => env('GOOGLE_MAPS_API_KEY'),
         'bing_maps' => env('BING_MAPS_API_KEY'),
         'mapbox' => env('MAPBOX_API_KEY'),
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     /*
      * |--------------------------------------------------------------------------
      * | Rate Limiting
@@ -35,6 +44,7 @@ return [
      * | Configurazione per il rate limiting delle chiamate API.
      * |
      */
+<<<<<<< HEAD
 =======
 
     /*
@@ -46,6 +56,8 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'rate_limits' => [
         'google_maps' => [
             'requests_per_second' => 50,
@@ -61,6 +73,9 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     /*
      * |--------------------------------------------------------------------------
      * | Cache
@@ -69,6 +84,7 @@ return [
      * | Configurazione per la cache dei risultati.
      * |
      */
+<<<<<<< HEAD
 =======
 
     /*
@@ -80,12 +96,17 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'cache' => [
         'enabled' => true,
         'ttl' => 86400, // 24 ore
         'prefix' => 'geo_',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
     /*
      * |--------------------------------------------------------------------------
      * | Timeout & Retry
@@ -94,6 +115,7 @@ return [
      * | Configurazione per timeout e retry delle chiamate API.
      * |
      */
+<<<<<<< HEAD
 =======
 
     /*
@@ -105,6 +127,8 @@ return [
     |
     */
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'http_client' => [
         'timeout' => 5.0,
         'retry' => [

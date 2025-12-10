@@ -370,9 +370,13 @@ return array (
     'icon' => 'heroicon-o-map-pin',
     'group' => 'Geo',
 <<<<<<< HEAD
+<<<<<<< HEAD
     'label' => 'address.navigation',
 =======
 >>>>>>> bc26394 (.)
+=======
+    'label' => 'address.navigation',
+>>>>>>> c942565 (.)
   ),
   'actions' => 
   array (
