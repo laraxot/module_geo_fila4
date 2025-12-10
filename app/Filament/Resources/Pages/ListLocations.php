@@ -19,10 +19,20 @@ class ListLocations extends XotBaseListRecords
     public function getTableComumns(): array
     {
         return [
+<<<<<<< HEAD
             TextColumn::make('name')->searchable(),
             TextColumn::make('street'),
             TextColumn::make('city')->searchable(),
             TextColumn::make('state')->searchable(),
+=======
+            TextColumn::make('name')
+                ->searchable(),
+            TextColumn::make('street'),
+            TextColumn::make('city')
+                ->searchable(),
+            TextColumn::make('state')
+                ->searchable(),
+>>>>>>> bc26394 (.)
             TextColumn::make('zip'),
         ];
     }
