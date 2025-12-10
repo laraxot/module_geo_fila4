@@ -6,6 +6,7 @@ namespace Modules\Geo\Transformers;
 
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  GEOJSON e' uno standard
  * https://it.wikipedia.org/wiki/GeoJSON
  */
@@ -14,6 +15,11 @@ namespace Modules\Geo\Transformers;
 * https://it.wikipedia.org/wiki/GeoJSON
 */
 >>>>>>> bc26394 (.)
+=======
+ *  GEOJSON e' uno standard
+ * https://it.wikipedia.org/wiki/GeoJSON
+ */
+>>>>>>> c942565 (.)
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -36,12 +42,17 @@ class GeoJsonCollection extends ResourceCollection
             'features' => $this->collection,
             /*'links' => [
 <<<<<<< HEAD
+<<<<<<< HEAD
              * 'self' => 'link-value',
              * ],*/
 =======
                 'self' => 'link-value',
             ],*/
 >>>>>>> bc26394 (.)
+=======
+             * 'self' => 'link-value',
+             * ],*/
+>>>>>>> c942565 (.)
         ];
     }
 }

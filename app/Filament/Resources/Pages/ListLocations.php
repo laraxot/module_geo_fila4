@@ -20,10 +20,14 @@ class ListLocations extends XotBaseListRecords
     {
         return [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
             TextColumn::make('name')->searchable(),
             TextColumn::make('street'),
             TextColumn::make('city')->searchable(),
             TextColumn::make('state')->searchable(),
+<<<<<<< HEAD
 =======
             TextColumn::make('name')
                 ->searchable(),
@@ -33,6 +37,8 @@ class ListLocations extends XotBaseListRecords
             TextColumn::make('state')
                 ->searchable(),
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
             TextColumn::make('zip'),
         ];
     }

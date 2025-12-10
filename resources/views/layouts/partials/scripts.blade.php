@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
+<<<<<<< HEAD
 =======
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 {{--
 <script src="js/leaflet.js"></script>
     <script src="js/leaflet.permalink.min.js"></script>
@@ -51,7 +57,11 @@ declare(strict_types=1);
 @endphp
 {!! Theme::showScripts(false) !!}
 <<<<<<< HEAD
+<<<<<<< HEAD
 @stack('scripts')
 =======
 @stack('scripts')
 >>>>>>> bc26394 (.)
+=======
+@stack('scripts')
+>>>>>>> c942565 (.)
