@@ -50,15 +50,7 @@ class ReverseGeocodeAction
                 'format' => 'json',
             ],
             'headers' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'User-Agent' => 'Xot/1.0',
-=======
-                'User-Agent' => 'TechPlanner/1.0',
->>>>>>> bc26394 (.)
-=======
-                'User-Agent' => 'Xot/1.0',
->>>>>>> c942565 (.)
             ],
         ]);
 
@@ -68,15 +60,7 @@ class ReverseGeocodeAction
         return new LocationData(
             latitude: $latitude,
             longitude: $longitude,
-<<<<<<< HEAD
-<<<<<<< HEAD
             address: $data['display_name'],
-=======
-            address: $data['display_name']
->>>>>>> bc26394 (.)
-=======
-            address: $data['display_name'],
->>>>>>> c942565 (.)
         );
     }
 }
