@@ -1,26 +1,8 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> f0b4f5c (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
 {{--
 <script src="js/leaflet.js"></script>
     <script src="js/leaflet.permalink.min.js"></script>
@@ -65,20 +47,4 @@ declare(strict_types=1);
     Theme::add('geo::js/popupcontent.js'); //Uncaught ReferenceError: popupcontent is not defined
 @endphp
 {!! Theme::showScripts(false) !!}
-<<<<<<< HEAD
 @stack('scripts')
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-@stack('scripts')
-=======
-@stack('scripts')
->>>>>>> a12f125f4a (.)
-=======
-@stack('scripts')
->>>>>>> b93ef594b4 (.)
-=======
-@stack('scripts')
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
