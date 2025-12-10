@@ -369,7 +369,10 @@ return array (
     'sort' => 96,
     'icon' => 'heroicon-o-map-pin',
     'group' => 'Geo',
+<<<<<<< HEAD
     'label' => 'address.navigation',
+=======
+>>>>>>> bc26394 (.)
   ),
   'actions' => 
   array (
