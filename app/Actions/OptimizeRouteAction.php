@@ -13,20 +13,13 @@ use Modules\Geo\Datas\LocationData;
 readonly class OptimizeRouteAction
 {
     public function __construct(
-<<<<<<< HEAD
         private CalculateDistanceAction $calculateDistance,
-    ) {
-    }
-=======
-        private  CalculateDistanceAction $calculateDistance,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Ottimizza l'ordine dei punti minimizzando la distanza totale.
      *
-     * @param Collection<int, LocationData> $locations
-     *
+     * @param  Collection<int, LocationData>  $locations
      * @return Collection<int, LocationData>
      */
     public function execute(Collection $locations): Collection
@@ -45,17 +38,13 @@ readonly class OptimizeRouteAction
             $currentLocation = $optimizedLocations->last();
             $nearestLocation = $this->findNearestLocation($currentLocation, $remainingLocations);
 
-            if (null === $nearestLocation) {
+            if ($nearestLocation === null) {
                 break;
             }
 
             $optimizedLocations->push($nearestLocation);
             $remainingLocations = $remainingLocations->reject(
-<<<<<<< HEAD
                 fn (LocationData $location) => $location === $nearestLocation,
-=======
-                fn(LocationData $location) => $location === $nearestLocation,
->>>>>>> be08416 (.)
             );
         }
 
@@ -65,13 +54,9 @@ readonly class OptimizeRouteAction
     /**
      * Trova il punto più vicino a quello corrente.
      *
-     * @param Collection<int, LocationData> $locations
+     * @param  Collection<int, LocationData>  $locations
      */
-<<<<<<< HEAD
     private function findNearestLocation(LocationData $currentLocation, Collection $locations): ?LocationData
-=======
-    private function findNearestLocation(LocationData $currentLocation, Collection $locations): null|LocationData
->>>>>>> be08416 (.)
     {
         $nearestLocation = null;
         $shortestDistance = PHP_FLOAT_MAX;

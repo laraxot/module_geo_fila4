@@ -12,38 +12,20 @@ use Modules\Geo\Datas\LocationData;
  * Questa action prende un punto centrale (latitudine e longitudine) e un array di coordinate,
  * e restituisce solo le coordinate che si trovano entro il raggio specificato dal punto centrale.
  *
-<<<<<<< HEAD
- * @param float                                             $centerLatitude  La latitudine del punto centrale
- * @param float                                             $centerLongitude La longitudine del punto centrale
- * @param array<array{latitude: string, longitude: string}> $coordinates     Array di coordinate da filtrare
- * @param int                                               $radius          Raggio in metri entro cui filtrare le coordinate
- *
-=======
  * @param  float  $centerLatitude  La latitudine del punto centrale
  * @param  float  $centerLongitude  La longitudine del punto centrale
  * @param  array<array{latitude: string, longitude: string}>  $coordinates  Array di coordinate da filtrare
  * @param  int  $radius  Raggio in metri entro cui filtrare le coordinate
->>>>>>> be08416 (.)
  * @return array<array{latitude: string, longitude: string}> Le coordinate filtrate
  */
 readonly class FilterCoordinatesInRadiusAction
 {
     public function __construct(
-<<<<<<< HEAD
         private CalculateDistanceAction $calculateDistanceAction,
-    ) {
-    }
-
-    /**
-     * @param array<array{latitude: string, longitude: string}> $coordinates
-     *
-=======
-        private  CalculateDistanceAction $calculateDistanceAction,
     ) {}
 
     /**
      * @param  array<array{latitude: string, longitude: string}>  $coordinates
->>>>>>> be08416 (.)
      * @return array<array{latitude: string, longitude: string}>
      */
     public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array

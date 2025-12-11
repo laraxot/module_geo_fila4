@@ -1,11 +1,7 @@
 # Modello Address Riveduto
 
 ## Panoramica
-<<<<<<< HEAD
-Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni del progetto <nome progetto>. Questo documento descrive l'implementazione aggiornata che:
-=======
-Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni del progetto SaluteOra. Questo documento descrive l'implementazione aggiornata che:
->>>>>>> be08416 (.)
+Il modello `Address` è stato riveduto seguendo i principi di design ottimali e le convenzioni del progetto <main module>. Questo documento descrive l'implementazione aggiornata che:
 
 1. Evita prefissi ridondanti nei nomi dei campi
 2. Separa correttamente il numero civico dalla strada
@@ -101,11 +97,7 @@ use Modules\Geo\Enums\AddressTypeEnum;
  */
 class Address extends Model implements HasGeolocation
 {
-<<<<<<< HEAD
     use \Modules\Xot\Models\Traits\HasXotFactory;
-=======
-    use HasFactory;
->>>>>>> be08416 (.)
     use SoftDeletes;
     
     /** list<string> */

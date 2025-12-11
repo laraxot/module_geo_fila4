@@ -1,19 +1,16 @@
 # Business Logic Factory & Seeder Audit Completo
 
 ## 🎯 **Obiettivo**
-<<<<<<< HEAD
 Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza di factory e seeder per ogni modello business, e creare 100 records tramite Tinker per ogni tipo per validare la funzionalità.
 
 ## 📊 **Moduli da Analizzare**
 
 ### 1. **<nome progetto>** (Core Healthcare Business)
-=======
-Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di factory e seeder per ogni modello business, e creare 100 records tramite Tinker per ogni tipo per validare la funzionalità.
+Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza di factory e seeder per ogni modello business, e creare 100 records tramite Tinker per ogni tipo per validare la funzionalità.
 
 ## 📊 **Moduli da Analizzare**
 
-### 1. **SaluteOra** (Core Healthcare Business)
->>>>>>> be08416 (.)
+### 1. **<nome progetto>** (Core Healthcare Business)
 - **Focus**: Entità sanitarie principali (Patient, Doctor, Appointment, Report)
 - **Business Value**: CRITICO - Workflow sanitari core
 - **Priorità**: ALTA
@@ -80,11 +77,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 
 ## 🔍 **Analisi Completa Moduli**
 
-<<<<<<< HEAD
 ### **1. Modulo <nome progetto> - ANALISI COMPLETATA ✅**
-=======
-### **1. Modulo SaluteOra - ANALISI COMPLETATA ✅**
->>>>>>> be08416 (.)
+### **1. Modulo <nome progetto> - ANALISI COMPLETATA ✅**
 
 #### **Factory Esistenti e Funzionanti**
 - ✅ **UserFactory** - Crea 100 users con successo
@@ -100,11 +94,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 - ✅ **Risolto**: Rimossi campi non esistenti, aggiornati metodi per usare schema corretto
 
 #### **Seeder Esistenti**
-<<<<<<< HEAD
 - ✅ **<nome progetto>Seeder** - Seeder principale del modulo
-=======
-- ✅ **SaluteOraSeeder** - Seeder principale del modulo
->>>>>>> be08416 (.)
+- ✅ **<nome progetto>Seeder** - Seeder principale del modulo
 - ✅ **UserSeeder** - Seeder per utenti
 - ✅ **DoctorSeeder** - Seeder per dottori
 - ✅ **PatientSeeder** - Seeder per pazienti
@@ -332,11 +323,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 ## 📊 **Metriche di Copertura**
 
 ### **Factory Coverage**
-<<<<<<< HEAD
 - **<nome progetto>**: 100% ✅ (6/6 factory funzionanti)
-=======
-- **SaluteOra**: 100% ✅ (6/6 factory funzionanti)
->>>>>>> be08416 (.)
+- **<nome progetto>**: 100% ✅ (6/6 factory funzionanti)
 - **User**: 100% ✅ (3/3 factory esistenti)
 - **Geo**: 100% ✅ (3/3 factory esistenti)
 - **Tenant**: 100% ✅ (2/2 factory esistenti)
@@ -348,11 +336,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 - **Activity**: 100% ✅ (2/2 factory esistenti)
 
 ### **Seeder Coverage**
-<<<<<<< HEAD
 - **<nome progetto>**: 100% ✅ (4/4 seeder esistenti)
-=======
-- **SaluteOra**: 100% ✅ (4/4 seeder esistenti)
->>>>>>> be08416 (.)
+- **<nome progetto>**: 100% ✅ (4/4 seeder esistenti)
 - **User**: 100% ✅ (2/2 seeder esistenti)
 - **Geo**: 100% ✅ (2/2 seeder esistenti)
 - **Tenant**: 100% ✅ (1/1 seeder esistente)
@@ -364,11 +349,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 - **Activity**: 100% ✅ (1/1 seeder esistente)
 
 ### **Test Tinker Coverage**
-<<<<<<< HEAD
 - **<nome progetto>**: 100% ✅ (6/6 factory testati)
-=======
-- **SaluteOra**: 100% ✅ (6/6 factory testati)
->>>>>>> be08416 (.)
+- **<nome progetto>**: 100% ✅ (6/6 factory testati)
 - **User**: 0% 🔄 (0/3 factory testati)
 - **Geo**: 0% 🔄 (0/3 factory testati)
 - **Tenant**: 0% 🔄 (0/2 factory testati)
@@ -381,11 +363,8 @@ Analizzare tutti i moduli del progetto SaluteOra, verificare l'esistenza di fact
 
 ## 🔧 **Prossimi Passi**
 
-<<<<<<< HEAD
 ### **Fase 1: Completamento Test <nome progetto> ✅**
-=======
-### **Fase 1: Completamento Test SaluteOra ✅**
->>>>>>> be08416 (.)
+### **Fase 1: Completamento Test <nome progetto> ✅**
 - [x] Testare tutti i factory con Tinker
 - [x] Identificare e risolvere problemi di schema
 - [x] Aggiornare factory per compliance schema
@@ -433,11 +412,8 @@ Al completamento di questo audit:
 
 ---
 
-<<<<<<< HEAD
 **Stato**: <nome progetto> completato, altri moduli in corso
-=======
-**Stato**: SaluteOra completato, altri moduli in corso
->>>>>>> be08416 (.)
+**Stato**: <nome progetto> completato, altri moduli in corso
 **Priorità**: User e Geo Factory (ALTA)
 **Responsabile**: AI Assistant
 **Ultimo Aggiornamento**: 2025-01-06

@@ -10,17 +10,14 @@ I moduli condivisi tra progetti (Notify, User, Xot, UI, ecc.) devono essere **co
 ❌ **VIETATO utilizzare nomi di progetti hardcoded:**
 ```php
 // ERRORE: Riferimenti hardcoded
-<<<<<<< HEAD
 'content' => 'Benvenuto su <nome progetto>!',
 'database' => '<nome progetto>_test',
 use Modules\<nome progetto>\Models\User;
 'Modules\\<nome progetto>\\Models\\Patient',
-=======
-'content' => 'Benvenuto su SaluteOra!',
-'database' => 'saluteora_test',
-use Modules\SaluteOra\Models\User;
-'Modules\\SaluteOra\\Models\\Patient',
->>>>>>> be08416 (.)
+'content' => 'Benvenuto su <nome progetto>!',
+'database' => '<nome progetto>_test',
+use Modules\<nome progetto>\Models\User;
+'Modules\\<nome progetto>\\Models\\Patient',
 ```
 
 ✅ **SEMPRE utilizzare pattern dinamici:**
@@ -95,15 +92,12 @@ protected function createTestPatient(): mixed
 - **Geo**: Gestione geografica
 
 ### Moduli Project-Specific (Possono Contenere Hardcoding)
-<<<<<<< HEAD
 - **<nome progetto>**: Specifico per progetti sanitari
 - **DentalPro**: Specifico per studi dentistici
 - **<nome modulo>**: Variante regionale
-=======
-- **SaluteOra**: Specifico per progetti sanitari
+- **<nome progetto>**: Specifico per progetti sanitari
 - **DentalPro**: Specifico per studi dentistici
-- **SaluteMo**: Variante regionale
->>>>>>> be08416 (.)
+- **<nome progetto>**: Variante regionale
 
 ## Checklist per Moduli Riutilizzabili
 
@@ -186,11 +180,8 @@ REUSABLE_MODULES=("Notify" "User" "Xot" "UI" "Cms" "Blog" "Geo")
 
 for module in "${REUSABLE_MODULES[@]}"; do
     echo "Controllo modulo $module..."
-<<<<<<< HEAD
     grep -r -i "<nome progetto>\|<nome modulo>\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
-=======
-    grep -r -i "saluteora\|salutemo\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
->>>>>>> be08416 (.)
+    grep -r -i "<nome progetto>\|<nome progetto>\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
 done
 ```
 
@@ -200,11 +191,8 @@ done
 grep -r "use Modules\\\\[^N][^o][^t][^i][^f][^y]" Modules/Notify/ --include="*.php"
 
 # Cerca configurazioni database hardcoded
-<<<<<<< HEAD
 grep -r "database.*<nome progetto>\|app.*<nome progetto>" Modules/Notify/ --include="*.php"
-=======
-grep -r "database.*saluteora\|app.*saluteora" Modules/Notify/ --include="*.php"
->>>>>>> be08416 (.)
+grep -r "database.*<nome progetto>\|app.*<nome progetto>" Modules/Notify/ --include="*.php"
 
 # Cerca riferimenti User hardcoded
 grep -r "User::" Modules/Notify/ --include="*.php" | grep -v "XotData"
@@ -231,17 +219,14 @@ grep -r "User::" Modules/Notify/ --include="*.php" | grep -v "XotData"
 ```php
 // Documentare chiaramente le eccezioni
 /**
-<<<<<<< HEAD
  * NOTA: Questo modulo è specifico per <nome progetto>
  * e può contenere riferimenti hardcoded al progetto.
  */
 class <nome progetto>SpecificService
-=======
- * NOTA: Questo modulo è specifico per SaluteOra
+ * NOTA: Questo modulo è specifico per <nome progetto>
  * e può contenere riferimenti hardcoded al progetto.
  */
-class SaluteOraSpecificService
->>>>>>> be08416 (.)
+class <nome progetto>SpecificService
 {
     // Implementazione project-specific...
 }

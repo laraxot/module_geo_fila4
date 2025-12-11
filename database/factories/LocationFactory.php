@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\Location;
 
 /**
-<<<<<<< HEAD
- * Location Factory.
-=======
  * Location Factory
->>>>>>> be08416 (.)
  *
  * Factory for creating Location model instances for testing and seeding.
  *
@@ -82,11 +78,7 @@ class LocationFactory extends Factory
             'name' => $this->faker->optional()->words(2, true) ?? null,
             'lat' => $this->faker->latitude(35.0, 47.0), // Italy bounds
             'lng' => $this->faker->longitude(6.0, 19.0),
-<<<<<<< HEAD
             'street' => $street.' '.((string) $this->faker->numberBetween(1, 999)),
-=======
-            'street' => $street . ' ' . ((string) $this->faker->numberBetween(1, 999)),
->>>>>>> be08416 (.)
             'city' => $city,
             'state' => $state,
             'zip' => (string) $this->faker->regexify('[0-9]{5}'), // Italian ZIP code
@@ -98,59 +90,30 @@ class LocationFactory extends Factory
 
     /**
      * Create an unprocessed location.
-<<<<<<< HEAD
      */
     public function unprocessed(): static
     {
         return $this->state(fn (array $_attributes): array => [
-=======
-     *
-     * @return static
-     */
-    public function unprocessed(): static
-    {
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> be08416 (.)
             'processed' => false,
         ]);
     }
 
     /**
      * Create a processed location.
-<<<<<<< HEAD
      */
     public function processed(): static
     {
         return $this->state(fn (array $_attributes): array => [
-=======
-     *
-     * @return static
-     */
-    public function processed(): static
-    {
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> be08416 (.)
             'processed' => true,
         ]);
     }
 
     /**
      * Create location in specific city.
-<<<<<<< HEAD
      */
     public function inCity(string $city, ?string $state = null): static
     {
         return $this->state(fn (array $attributes): array => [
-=======
-     *
-     * @param string $city
-     * @param string|null $state
-     * @return static
-     */
-    public function inCity(string $city, null|string $state = null): static
-    {
-        return $this->state(fn(array $attributes): array => [
->>>>>>> be08416 (.)
             'city' => $city,
             'state' => $state ?? ((string) ($attributes['state'] ?? 'Lazio')),
             'formatted_address' => sprintf(
@@ -164,21 +127,10 @@ class LocationFactory extends Factory
 
     /**
      * Create location with specific coordinates.
-<<<<<<< HEAD
      */
     public function withCoordinates(float $latitude, float $longitude): static
     {
         return $this->state(fn (array $_attributes): array => [
-=======
-     *
-     * @param float $latitude
-     * @param float $longitude
-     * @return static
-     */
-    public function withCoordinates(float $latitude, float $longitude): static
-    {
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> be08416 (.)
             'lat' => $latitude,
             'lng' => $longitude,
         ]);
@@ -186,11 +138,6 @@ class LocationFactory extends Factory
 
     /**
      * Create location in Rome.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function inRome(): static
     {
@@ -199,11 +146,6 @@ class LocationFactory extends Factory
 
     /**
      * Create location in Milan.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function inMilan(): static
     {

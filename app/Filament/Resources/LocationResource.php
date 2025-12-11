@@ -4,22 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources;
 
-<<<<<<< HEAD
 use Filament\Forms\Components\TextInput;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
-=======
-use Override;
-use Filament\Forms\Components\TextInput;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
->>>>>>> be08416 (.)
 use Modules\Geo\Models\Location;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+use Override;
 
 /**
  * Resource per la gestione dei luoghi geografici.
@@ -33,7 +25,6 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
  */
 class LocationResource extends XotBaseResource
 {
-<<<<<<< HEAD
     protected static ?string $model = Location::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-map-pin';
@@ -45,11 +36,10 @@ class LocationResource extends XotBaseResource
     /**
      * @return array<string, \Filament\Support\Components\Component>
      */
-    #[\Override]
+    #[Override]
     public static function getFormSchema(): array
     {
         return [
-<<<<<<< HEAD
             'name' => TextInput::make('name')->required()->maxLength(255),
             'latitude' => TextInput::make('latitude')->required()->numeric(),
             'longitude' => TextInput::make('longitude')->required()->numeric(),
@@ -58,48 +48,6 @@ class LocationResource extends XotBaseResource
             'state' => TextInput::make('state')->maxLength(255),
             'zip' => TextInput::make('zip')->maxLength(255),
             'formatted_address' => TextInput::make('formatted_address')->maxLength(1024),
-=======
-=======
-    protected static null|string $model = Location::class;
-
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-map-pin';
-
-    // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
-
-    protected static null|int $navigationSort = 2;
-
-    /**
-     * Converte le coordinate in formato float.
-     *
-     * @param array{lat?: string|float|null, lng?: string|float|null} $coordinates Le coordinate da convertire
-     *
-     * @return array{lat: float, lng: float} Le coordinate convertite in float
-     */
-    private static function formatCoordinates(array $coordinates): array
-    {
-        return [
-            'lat' => (float) ($coordinates['lat'] ?? 0),
-            'lng' => (float) ($coordinates['lng'] ?? 0),
-        ];
-    }
-
-    #[Override]
-    public static function getFormSchema(): array
-    {
-        return [
->>>>>>> be08416 (.)
-            TextInput::make('name')->required()->maxLength(255),
-            TextInput::make('latitude')->required()->numeric(),
-            TextInput::make('longitude')->required()->numeric(),
-            TextInput::make('street')->maxLength(255),
-            TextInput::make('city')->maxLength(255),
-            TextInput::make('state')->maxLength(255),
-            TextInput::make('zip')->maxLength(255),
-            TextInput::make('formatted_address')->maxLength(1024),
-<<<<<<< HEAD
->>>>>>> 535c490 (.)
-=======
->>>>>>> be08416 (.)
             // Temporaneamente commentato per compatibilità Filament 4.x
             // Map::make('location')
             //     ->reactive()
@@ -134,11 +82,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le relazioni configurate
      */
-<<<<<<< HEAD
-    #[\Override]
-=======
     #[Override]
->>>>>>> be08416 (.)
     public static function getRelations(): array
     {
         return [];
@@ -154,11 +98,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le pagine configurate
      */
-<<<<<<< HEAD
-    #[\Override]
-=======
     #[Override]
->>>>>>> be08416 (.)
     public static function getPages(): array
     {
         return [
@@ -168,13 +108,11 @@ class LocationResource extends XotBaseResource
             'edit' => EditLocation::route('/{record}/edit'),
         ];
     }
-<<<<<<< HEAD
 
     /**
      * Converte le coordinate in formato float.
      *
-     * @param array{lat?: string|float|null, lng?: string|float|null} $coordinates Le coordinate da convertire
-     *
+     * @param  array{lat?: string|float|null, lng?: string|float|null}  $coordinates  Le coordinate da convertire
      * @return array{lat: float, lng: float} Le coordinate convertite in float
      */
     private static function formatCoordinates(array $coordinates): array
@@ -184,6 +122,4 @@ class LocationResource extends XotBaseResource
             'lng' => (float) ($coordinates['lng'] ?? 0),
         ];
     }
-=======
->>>>>>> be08416 (.)
 }

@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-<<<<<<< HEAD
-=======
 use Exception;
 
->>>>>>> be08416 (.)
 // https://www.geodatasource.com/world-cities-database/free
 // https://mikepolatoglou.com/geospatial-mysql-laravel-53
 // https://github.com/malhal/Laravel-Geographical
@@ -25,11 +22,7 @@ class GeoService
 
     public static string $longitude_field = 'longitude';
 
-<<<<<<< HEAD
     private static ?self $_instance = null;
-=======
-    private static null|self $_instance = null;
->>>>>>> be08416 (.)
 
     /**
      * getInstance.
@@ -38,11 +31,7 @@ class GeoService
      */
     public static function getInstance(): self
     {
-<<<<<<< HEAD
         if (! (self::$_instance instanceof GeoService)) {
-=======
-        if (!(self::$_instance instanceof GeoService)) {
->>>>>>> be08416 (.)
             self::$_instance = new self();
         }
 
@@ -102,34 +91,25 @@ class GeoService
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     public static function distance(
-<<<<<<< HEAD
         ?float $lat1,
         ?float $lon1,
         ?float $lat2,
         ?float $lon2,
         ?string $unit,
     ): ?float {
-=======
-        null|float $lat1,
-        null|float $lon1,
-        null|float $lat2,
-        null|float $lon2,
-        null|string $unit,
-    ): null|float {
->>>>>>> be08416 (.)
         if ($lat1 === $lat2 && $lon1 === $lon2) {
             return 0;
         }
-        if (null === $lat1) {
+        if ($lat1 === null) {
             return null;
         }
-        if (null === $lon1) {
+        if ($lon1 === null) {
             return null;
         }
-        if (null === $lat2) {
+        if ($lat2 === null) {
             return null;
         }
-        if (null === $lon2) {
+        if ($lon2 === null) {
             return null;
         }
         $theta = $lon1 - $lon2;
@@ -139,7 +119,7 @@ class GeoService
         $dist = acos($dist);
         $dist = rad2deg($dist);
         $miles = $dist * 60 * 1.1515;
-        if (null === $unit) {
+        if ($unit === null) {
             $unit = 'K'; // default
         }
         $unit = strtoupper($unit);
@@ -156,7 +136,6 @@ class GeoService
     // echo GeoService::distance(32.9697, -96.80322, 29.46786, -98.53506, "N") . " Nautical Miles<br>";
     public static function haversine(float $latitude, float $longitude): string
     {
-<<<<<<< HEAD
         return '(6371 * acos(cos(radians('.
             $latitude.
             '))
@@ -175,28 +154,6 @@ class GeoService
         * sin(radians(`'.
             self::$latitude_field.
             '`)))) *1.1515';
-=======
-        return (
-            '(6371 * acos(cos(radians(' .
-            $latitude .
-            '))
-        * cos(radians(`' .
-            self::$latitude_field .
-            '`))
-        * cos(radians(`' .
-            self::$longitude_field .
-            '`)
-        - radians(' .
-            $longitude .
-            '))
-        + sin(radians(' .
-            $latitude .
-            '))
-        * sin(radians(`' .
-            self::$latitude_field .
-            '`)))) *1.1515'
-        );
->>>>>>> be08416 (.)
     }
 
     /**
@@ -210,7 +167,6 @@ class GeoService
         // dddx([$latitude, $longitude, $polygon]);
 
         for ($i = 0, $j = $points_polygon; $i < $points_polygon; $j = $i++) {
-<<<<<<< HEAD
             if (! is_array($polygon[$i]) || ! is_array($polygon[$j])) {
                 continue;
             }
@@ -228,54 +184,28 @@ class GeoService
             $lngJ = is_float($pointJ->lng) || is_int($pointJ->lng) ? (float) $pointJ->lng : 0.0;
 
             if (
-                ($latI > $latitude) !== ($latJ > $latitude)
-                    && $longitude <
+                ($latI > $latitude) !== ($latJ > $latitude) &&
+                    $longitude <
                     (($lngJ - $lngI) * ($latitude - $latI) /
                                 ($latJ - $latI)) +
                         $lngI
             ) {
                 $c = ! $c;
-=======
-            $polygon[$i] = (object) $polygon[$i];
-            $polygon[$j] = (object) $polygon[$j];
-
-            if (
-                ($polygon[$i]->lat > $latitude) !== ($polygon[$j]->lat > $latitude) &&
-                    $longitude <
-                    (
-                            (
-                                    (($polygon[$j]->lng - $polygon[$i]->lng) * ($latitude - $polygon[$i]->lat)) /
-                                        ($polygon[$j]->lat - $polygon[$i]->lat)
-                                ) +
-                                $polygon[$i]->lng
-                        )
-            ) {
-                $c = !$c;
->>>>>>> be08416 (.)
             }
         }
 
         return (bool) $c;
     }
 
-<<<<<<< HEAD
     public static function pointInPolygon(float $lat, float $lng, ?string $polygon): bool
-=======
-    public static function pointInPolygon(float $lat, float $lng, null|string $polygon): bool
->>>>>>> be08416 (.)
     {
-        if (null === $polygon || '' === $polygon) {
+        if ($polygon === null || $polygon === '') {
             return false;
         }
 
         $original_data = json_decode($polygon, true, 512, JSON_THROW_ON_ERROR);
-<<<<<<< HEAD
         if (! \is_array($original_data)) {
-            throw new \Exception('['.__LINE__.']['.__FILE__.']');
-=======
-        if (!\is_array($original_data)) {
-            throw new Exception('[' . __LINE__ . '][' . __FILE__ . ']');
->>>>>>> be08416 (.)
+            throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
 
         if (self::is_in_polygon($lat, $lng, $original_data)) {

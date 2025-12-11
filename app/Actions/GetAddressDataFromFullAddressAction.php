@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-<<<<<<< HEAD
-=======
 use Exception;
-use RuntimeException;
->>>>>>> be08416 (.)
 use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\BingMaps\GetAddressFromBingMapsAction;
@@ -19,7 +15,7 @@ use Modules\Geo\Actions\Nominatim\GetAddressFromNominatimAction;
 use Modules\Geo\Actions\OpenCage\GetAddressFromOpenCageAction;
 use Modules\Geo\Actions\Photon\GetAddressFromPhotonAction;
 use Modules\Geo\Datas\AddressData;
-use Webmozart\Assert\Assert;
+use RuntimeException;
 
 /**
  * Classe per ottenere i dati dell'indirizzo utilizzando diversi servizi di geocoding.
@@ -31,22 +27,12 @@ class GetAddressDataFromFullAddressAction
     /**
      * Ottiene i dati dell'indirizzo da un indirizzo completo.
      *
-<<<<<<< HEAD
-     * @param string $fullAddress L'indirizzo da cercare
-     *
-     * @throws \RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
-     *
-     * @return AddressData I dati dell'indirizzo trovato
-     */
-    public function execute(string $fullAddress): ?AddressData
-=======
      * @param  string  $fullAddress  L'indirizzo da cercare
      * @return AddressData I dati dell'indirizzo trovato
      *
      * @throws RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
      */
-    public function execute(string $fullAddress): null|AddressData
->>>>>>> be08416 (.)
+    public function execute(string $fullAddress): ?AddressData
     {
         $this->errors = collect();
         $services = [
@@ -64,22 +50,16 @@ class GetAddressDataFromFullAddressAction
         ];
 
         foreach ($services as $service) {
-<<<<<<< HEAD
             // PHPStan knows these classes exist since they're hardcoded
-            /* @phpstan-ignore staticMethod.alreadyNarrowedType */
-=======
->>>>>>> be08416 (.)
-            Assert::classExists($service);
+            if (! class_exists($service)) {
+                continue; // Skip if class doesn't exist
+            }
             try {
                 $result = app($service)->execute($fullAddress);
                 if ($result instanceof AddressData) {
                     return $result;
                 }
-<<<<<<< HEAD
-            } catch (\Exception $e) {
-=======
             } catch (Exception $e) {
->>>>>>> be08416 (.)
                 // Logga l'errore o gestiscilo in altro modo
                 $this->errors->push($e->getMessage());
             }

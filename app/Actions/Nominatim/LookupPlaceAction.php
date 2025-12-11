@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
-<<<<<<< HEAD
-=======
-use RuntimeException;
->>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\LocationData;
+use RuntimeException;
 
 use function Safe\json_decode;
 
@@ -31,14 +28,10 @@ class LookupPlaceAction
     /**
      * Cerca un luogo usando il suo OSM ID.
      *
-     * @param string $osmId ID OpenStreetMap del luogo
+     * @param  string  $osmId  ID OpenStreetMap del luogo
      *
      * @throws GuzzleException
-<<<<<<< HEAD
-     * @throws \RuntimeException
-=======
      * @throws RuntimeException
->>>>>>> be08416 (.)
      */
     public function execute(string $osmId): LocationData
     {
@@ -56,11 +49,7 @@ class LookupPlaceAction
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (empty($data)) {
-<<<<<<< HEAD
-            throw new \RuntimeException('No results found for OSM ID: '.$osmId);
-=======
-            throw new RuntimeException('No results found for OSM ID: ' . $osmId);
->>>>>>> be08416 (.)
+            throw new RuntimeException('No results found for OSM ID: '.$osmId);
         }
 
         $result = $data[0];

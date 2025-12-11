@@ -4,27 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Mapbox;
 
-<<<<<<< HEAD
-=======
-use RuntimeException;
->>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-<<<<<<< HEAD
-=======
-use Webmozart\Assert\Assert;
->>>>>>> be08416 (.)
+use RuntimeException;
 
 use function Safe\json_decode;
 use function Safe\preg_match;
 
-<<<<<<< HEAD
-use Webmozart\Assert\Assert;
-
-=======
->>>>>>> be08416 (.)
 /**
  * Action per ottenere l'indirizzo e le coordinate tramite Mapbox.
  *
@@ -36,27 +24,15 @@ readonly class GetAddressFromMapboxAction
     private const API_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
 
     public function __construct(
-<<<<<<< HEAD
         private Client $client,
-    ) {
-    }
-=======
-        private  Client $client,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
-     */
-    public function execute(string $address): ?AddressData
-=======
      * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
-    public function execute(string $address): null|AddressData
->>>>>>> be08416 (.)
+    public function execute(string $address): ?AddressData
     {
         $this->validateInput($address);
 
@@ -77,18 +53,20 @@ readonly class GetAddressFromMapboxAction
     /**
      * Valida i dati di input.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata
-=======
      * @throws RuntimeException Se la chiave API non è configurata
->>>>>>> be08416 (.)
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.mapbox.access_token');
-        Assert::notEmpty($apiKey, 'Mapbox access token not configured');
-        Assert::notEmpty($address, 'Address cannot be empty');
-        Assert::maxLength($address, 1000, 'Address is too long');
+        if (empty($apiKey)) {
+            throw new RuntimeException('Mapbox access token not configured');
+        }
+        if (empty($address)) {
+            throw new RuntimeException('Address cannot be empty');
+        }
+        if (strlen($address) > 1000) {
+            throw new RuntimeException('Address is too long');
+        }
     }
 
     /**
@@ -117,15 +95,9 @@ readonly class GetAddressFromMapboxAction
     /**
      * Elabora la risposta dell'API.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la risposta non è valida
-     */
-    private function parseResponse(string $response): ?AddressData
-=======
      * @throws RuntimeException Se la risposta non è valida
      */
-    private function parseResponse(string $response): null|AddressData
->>>>>>> be08416 (.)
+    private function parseResponse(string $response): ?AddressData
     {
         /** @var array{
          *     features: array<array{
@@ -182,11 +154,7 @@ readonly class GetAddressFromMapboxAction
             'longitude' => (float) ($feature['center'][0] ?? 0),
             'country' => $country,
             'city' => $city,
-<<<<<<< HEAD
             'postal_code' => (int) ($postalCode ? $postalCode : 0),
-=======
-            'postal_code' => (int) ($postalCode ?: 0),
->>>>>>> be08416 (.)
             'street' => $street,
             'street_number' => $streetNumber,
             'province' => $province,

@@ -4,19 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions\GoogleMaps;
 
-<<<<<<< HEAD
-/**
- * Eccezione lanciata quando si verificano errori con l'API di Google Maps.
- */
-class GoogleMapsApiException extends \RuntimeException
-=======
 use RuntimeException;
 
 /**
  * Eccezione lanciata quando si verificano errori con l'API di Google Maps.
  */
 class GoogleMapsApiException extends RuntimeException
->>>>>>> be08416 (.)
 {
     /**
      * Crea una nuova istanza per API key mancante.

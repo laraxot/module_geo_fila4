@@ -2,7 +2,6 @@
 
 ## Executive Summary
 
-<<<<<<< HEAD
 Intervento di refactoring per rimuovere tutti i riferimenti specifici al progetto <nome progetto> dalla cartella `bashscripts/database/seeding`, mantenendo solo script generici riutilizzabili in qualsiasi progetto Laravel con moduli.
 
 ## Problema Identificato
@@ -20,31 +19,11 @@ La cartella `bashscripts/database/seeding` conteneva file specifici del progetto
 
 ### Script Generatori Specifici
 - `bashscripts/<nome progetto>/generate_<nome progetto>_factories_and_seeders.sh` - Generatore specifico <nome progetto>
-=======
-Intervento di refactoring per rimuovere tutti i riferimenti specifici al progetto SaluteOra dalla cartella `bashscripts/database/seeding`, mantenendo solo script generici riutilizzabili in qualsiasi progetto Laravel con moduli.
-
-## Problema Identificato
-
-La cartella `bashscripts/database/seeding` conteneva file specifici del progetto SaluteOra, violando il principio di riusabilità della cartella bashscripts che deve essere condivisa tra mille progetti diversi.
-
-### File Specifici Identificati
-- `salutemo-database-seeding.php` - Script specifico SaluteMo
-- `saluteora-1000-records.php` - Script seeding 1000 record SaluteOra
-- `saluteora-20-studios-66010.php` - Script 20 studi CAP 66010
-- `saluteora-mass-seeding.php` - Script seeding massivo SaluteOra
-- `tinker-1000-records.php` - Comandi Tinker specifici
-- `tinker-20-studios-66010.php` - Tinker studi CAP 66010
-- `tinker-commands.php` - Comandi Tinker SaluteOra
-
-### Script Generatori Specifici
-- `bashscripts/saluteora/generate_saluteora_factories_and_seeders.sh` - Generatore specifico SaluteOra
->>>>>>> be08416 (.)
 
 ## Soluzione Implementata
 
 ### 1. Spostamento File Specifici
 
-<<<<<<< HEAD
 #### Script <nome progetto>
 **Da**: `bashscripts/database/seeding/<nome progetto>-*.php`  
 **A**: `laravel/Modules/<nome progetto>/scripts/seeding/`
@@ -56,19 +35,6 @@ La cartella `bashscripts/database/seeding` conteneva file specifici del progetto
 #### Script Generatori
 **Da**: `bashscripts/<nome progetto>/generate_<nome progetto>_factories_and_seeders.sh`  
 **A**: `laravel/Modules/<nome progetto>/scripts/generators/`
-=======
-#### Script SaluteOra
-**Da**: `bashscripts/database/seeding/saluteora-*.php`  
-**A**: `laravel/Modules/SaluteOra/scripts/seeding/`
-
-#### Script SaluteMo
-**Da**: `bashscripts/database/seeding/salutemo-*.php`  
-**A**: `laravel/Modules/SaluteMo/scripts/seeding/`
-
-#### Script Generatori
-**Da**: `bashscripts/saluteora/generate_saluteora_factories_and_seeders.sh`  
-**A**: `laravel/Modules/SaluteOra/scripts/generators/`
->>>>>>> be08416 (.)
 
 ### 2. Creazione Script Generici
 
@@ -85,11 +51,7 @@ La cartella `bashscripts/database/seeding` conteneva file specifici del progetto
 **Utilizzo**:
 ```bash
 # Seeding specifico
-<<<<<<< HEAD
 SEEDING_MODULE=<nome progetto> SEEDING_MODEL=Patient SEEDING_COUNT=500 php generic-module-seeding.php
-=======
-SEEDING_MODULE=SaluteOra SEEDING_MODEL=Patient SEEDING_COUNT=500 php generic-module-seeding.php
->>>>>>> be08416 (.)
 
 # Auto-discovery
 SEEDING_MODULE=User php generic-module-seeding.php
@@ -104,34 +66,19 @@ SEEDING_MODULE=User php generic-module-seeding.php
 - Riferimenti ai nuovi percorsi
 
 #### README per Nuove Cartelle
-<<<<<<< HEAD
 - `Modules/<nome progetto>/scripts/seeding/README.md` - Documentazione script seeding
 - `Modules/<nome modulo>/scripts/seeding/README.md` - Documentazione <nome modulo>
 - `Modules/<nome progetto>/scripts/generators/README.md` - Documentazione generatori
-=======
-- `Modules/SaluteOra/scripts/seeding/README.md` - Documentazione script seeding
-- `Modules/SaluteMo/scripts/seeding/README.md` - Documentazione SaluteMo
-- `Modules/SaluteOra/scripts/generators/README.md` - Documentazione generatori
->>>>>>> be08416 (.)
 
 ### 4. Pulizia Strutturale
 
 #### Cartelle Rimosse
-<<<<<<< HEAD
 - `bashscripts/<nome progetto>/` - Completamente rimossa (era vuota dopo lo spostamento)
 
 #### Cartelle Create
 - `laravel/Modules/<nome progetto>/scripts/seeding/`
 - `laravel/Modules/<nome progetto>/scripts/generators/`
 - `laravel/Modules/<nome modulo>/scripts/seeding/`
-=======
-- `bashscripts/saluteora/` - Completamente rimossa (era vuota dopo lo spostamento)
-
-#### Cartelle Create
-- `laravel/Modules/SaluteOra/scripts/seeding/`
-- `laravel/Modules/SaluteOra/scripts/generators/`
-- `laravel/Modules/SaluteMo/scripts/seeding/`
->>>>>>> be08416 (.)
 
 ## Regole Implementate
 
@@ -142,11 +89,7 @@ SEEDING_MODULE=User php generic-module-seeding.php
 4. **Funzioni helper** senza riferimenti specifici
 
 ### ❌ Cosa NON deve essere in bashscripts/database/seeding/
-<<<<<<< HEAD
 1. **Nomi specifici progetto** (es. `<nome progetto>-*`, `<nome modulo>-*`)
-=======
-1. **Nomi specifici progetto** (es. `saluteora-*`, `salutemo-*`)
->>>>>>> be08416 (.)
 2. **Riferimenti hardcoded** a moduli specifici
 3. **Logica business specifica** del dominio sanitario
 4. **Dati specifici** del progetto (CAP, nomi studi, etc.)
@@ -229,25 +172,15 @@ function genericFunction($module, $count) {
 ### Verifica Pulizia bashscripts/
 ```bash
 # Non dovrebbe restituire risultati
-<<<<<<< HEAD
 find bashscripts/ -name "*<nome progetto>*" -o -name "*<nome modulo>*"
-=======
-find bashscripts/ -name "*saluteora*" -o -name "*salutemo*"
->>>>>>> be08416 (.)
 ```
 
 ### Verifica Nuovi Percorsi
 ```bash
 # Dovrebbe mostrare i file spostati
-<<<<<<< HEAD
 ls -la laravel/Modules/<nome progetto>/scripts/seeding/
 ls -la laravel/Modules/<nome progetto>/scripts/generators/
 ls -la laravel/Modules/<nome modulo>/scripts/seeding/
-=======
-ls -la laravel/Modules/SaluteOra/scripts/seeding/
-ls -la laravel/Modules/SaluteOra/scripts/generators/
-ls -la laravel/Modules/SaluteMo/scripts/seeding/
->>>>>>> be08416 (.)
 ```
 
 ### Test Script Generico
@@ -272,11 +205,7 @@ SEEDING_MODULE=User SEEDING_COUNT=10 php bashscripts/database/seeding/generic-mo
 
 ## Conclusioni
 
-<<<<<<< HEAD
 L'intervento di refactoring ha raggiunto completamente l'obiettivo di rimuovere tutti i riferimenti specifici al progetto <nome progetto> dalla cartella `bashscripts/database/seeding`, mantenendo la piena funzionalità e migliorando l'organizzazione del codice.
-=======
-L'intervento di refactoring ha raggiunto completamente l'obiettivo di rimuovere tutti i riferimenti specifici al progetto SaluteOra dalla cartella `bashscripts/database/seeding`, mantenendo la piena funzionalità e migliorando l'organizzazione del codice.
->>>>>>> be08416 (.)
 
 La cartella bashscripts è ora veramente condivisibile tra progetti diversi, rispettando il principio di riusabilità e portabilità richiesto.
 

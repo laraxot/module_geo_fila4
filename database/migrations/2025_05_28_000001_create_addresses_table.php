@@ -6,12 +6,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\Geo\Models\Address;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
-<<<<<<< HEAD
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Address::class;
-=======
-    protected null|string $model_class = Address::class;
->>>>>>> be08416 (.)
 
     public function up(): void
     {

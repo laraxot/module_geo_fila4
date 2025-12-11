@@ -11,10 +11,5 @@ class CoordinatesData extends Data
     public function __construct(
         public readonly float $latitude,
         public readonly float $longitude,
-<<<<<<< HEAD
-    ) {
-    }
-=======
     ) {}
->>>>>>> be08416 (.)
 }

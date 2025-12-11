@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-# Migration Guide: Moving from <nome progetto> to Geo Module
+# Migration Guide: Moving from <main module> to Geo Module
 
 ## Overview
 
-This guide explains how to migrate from using geographical models in the <nome progetto> module to using the centralized Geo module.
-=======
-# Migration Guide: Moving from SaluteOra to Geo Module
-
-## Overview
-
-This guide explains how to migrate from using geographical models in the SaluteOra module to using the centralized Geo module.
->>>>>>> be08416 (.)
+This guide explains how to migrate from using geographical models in the <main module> module to using the centralized Geo module.
 
 ## Why Migrate?
 
@@ -35,23 +27,13 @@ Update your module's `composer.json` to require the Geo module if not already pr
 
 ### 2. Update Model Imports
 
-<<<<<<< HEAD
-Replace imports from <nome progetto> models to Geo models:
+Replace imports from <main module> models to Geo models:
 
 ```diff
-- use Modules\<nome progetto>\Models\Region;
-- use Modules\<nome progetto>\Models\Province;
-- use Modules\<nome progetto>\Models\City;
-- use Modules\<nome progetto>\Models\Cap;
-=======
-Replace imports from SaluteOra models to Geo models:
-
-```diff
-- use Modules\SaluteOra\Models\Region;
-- use Modules\SaluteOra\Models\Province;
-- use Modules\SaluteOra\Models\City;
-- use Modules\SaluteOra\Models\Cap;
->>>>>>> be08416 (.)
+- use Modules\<main module>\Models\Region;
+- use Modules\<main module>\Models\Province;
+- use Modules\<main module>\Models\City;
+- use Modules\<main module>\Models\Cap;
 
 + use Modules\Geo\Models\Region;
 + use Modules\Geo\Models\Province;
@@ -83,11 +65,7 @@ Update any relationships to use the new model classes:
 // Before
 public function region()
 {
-<<<<<<< HEAD
-    return $this->belongsTo(\Modules\<nome progetto>\Models\Region::class);
-=======
-    return $this->belongsTo(\Modules\SaluteOra\Models\Region::class);
->>>>>>> be08416 (.)
+    return $this->belongsTo(\Modules\<main module>\Models\Region::class);
 }
 
 // After
@@ -107,11 +85,7 @@ php artisan migrate
 
 ## Data Migration
 
-<<<<<<< HEAD
-If you have existing data in the <nome progetto> module's geographical tables, you'll need to migrate it to the Geo module's tables. Create a custom migration for this purpose.
-=======
-If you have existing data in the SaluteOra module's geographical tables, you'll need to migrate it to the Geo module's tables. Create a custom migration for this purpose.
->>>>>>> be08416 (.)
+If you have existing data in the <main module> module's geographical tables, you'll need to migrate it to the Geo module's tables. Create a custom migration for this purpose.
 
 ## Testing
 

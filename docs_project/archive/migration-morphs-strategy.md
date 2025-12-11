@@ -1,18 +1,10 @@
-<<<<<<< HEAD
 # Strategia Migrazioni e Morphs Polymorphic - <nome progetto>
-=======
-# Strategia Migrazioni e Morphs Polymorphic - SaluteOra
->>>>>>> be08416 (.)
 
 ## Principio Architetturale Fondamentale
 
 ### Una Tabella = Una Migrazione = Una Verità
 
-<<<<<<< HEAD
 Il sistema <nome progetto> segue la **filosofia Laraxot** per le migrazioni database, dove ogni tabella ha una sola migrazione che evolve nel tempo attraverso il cambio di timestamp nel nome file.
-=======
-Il sistema SaluteOra segue la **filosofia Laraxot** per le migrazioni database, dove ogni tabella ha una sola migrazione che evolve nel tempo attraverso il cambio di timestamp nel nome file.
->>>>>>> be08416 (.)
 
 ## Regole Critiche per Morphs Polymorphic
 
@@ -28,11 +20,7 @@ $table->unsignedBigInteger('causer_id')->nullable()->change();
 
 ### Motivazione Architetturale
 
-<<<<<<< HEAD
 Il sistema <nome progetto> è **multi-modulo** con diverse strategie ID:
-=======
-Il sistema SaluteOra è **multi-modulo** con diverse strategie ID:
->>>>>>> be08416 (.)
 
 - **User**: UUID `"550e8400-e29b-41d4-a716-446655440000"`
 - **Doctor**: UUID `"a1b2c3d4-e5f6-7890-abcd-ef1234567890"`
@@ -169,11 +157,7 @@ Schema::create('activity_log', function($table) { /* ... */ });
 Schema::table('activity_log', function($table) { /* stessa logica */ });
 ```
 
-<<<<<<< HEAD
 ## Filosofia <nome progetto>
-=======
-## Filosofia SaluteOra
->>>>>>> be08416 (.)
 
 > *"In un sistema sanitario, ogni azione deve essere tracciata universalmente. Come un medico deve curare pazienti di ogni nazionalità, il nostro sistema deve registrare attività di ogni modulo, indipendentemente dal formato del loro ID. L'universalità è salute, la rigidità è malattia."*
 
@@ -184,10 +168,6 @@ Schema::table('activity_log', function($table) { /* stessa logica */ });
 - [.cursor/rules/migration-complete-rules.mdc](../.cursor/rules/migration-complete-rules.mdc)
 
 *Ultimo aggiornamento: 2025-01-06*  
-<<<<<<< HEAD
 *Autore: Sistema di AI Learning <nome progetto>*  
-=======
-*Autore: Sistema di AI Learning SaluteOra*  
->>>>>>> be08416 (.)
 *Motivazione: Comprensione profonda architettura morphs polymorphic*
 

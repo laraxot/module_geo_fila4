@@ -154,11 +154,6 @@ class ProvinceFactory extends Factory
 
     /**
      * Create a province from Northern Italy.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function northern(): static
     {
@@ -224,11 +219,6 @@ class ProvinceFactory extends Factory
 
     /**
      * Create a province from Central Italy.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function central(): static
     {
@@ -275,11 +265,6 @@ class ProvinceFactory extends Factory
 
     /**
      * Create a province from Southern Italy.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function southern(): static
     {
@@ -333,43 +318,21 @@ class ProvinceFactory extends Factory
 
     /**
      * Create a specific province by name.
-<<<<<<< HEAD
-=======
-     *
-     * @param string $name
-     * @return static
->>>>>>> be08416 (.)
      */
     public function named(string $name): static
     {
         return $this->state(fn (array $attributes) => array_merge($attributes, [
-<<<<<<< HEAD
             'name' => $name,
         ]));
-=======
-                'name' => $name,
-            ]));
->>>>>>> be08416 (.)
     }
 
     /**
      * Create a province with a specific region.
-<<<<<<< HEAD
-=======
-     *
-     * @param Region $region
-     * @return static
->>>>>>> be08416 (.)
      */
     public function forRegion(Region $region): static
     {
         return $this->state(fn (array $attributes) => array_merge($attributes, [
-<<<<<<< HEAD
             'region_id' => $region->id,
         ]));
-=======
-                'region_id' => $region->id,
-            ]));
->>>>>>> be08416 (.)
     }
 }

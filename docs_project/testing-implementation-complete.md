@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 # Implementazione Completa Test Pest per Moduli <nome progetto>
 
 ## Panoramica
 
 È stata completata l'implementazione di una suite di test Pest completa per tutti i moduli del progetto <nome progetto>, seguendo rigorosamente le best practice architetturali e i pattern di testing definiti nel progetto.
-=======
-# Implementazione Completa Test Pest per Moduli SaluteOra
+# Implementazione Completa Test Pest per Moduli <nome progetto>
 
 ## Panoramica
 
-È stata completata l'implementazione di una suite di test Pest completa per tutti i moduli del progetto SaluteOra, seguendo rigorosamente le best practice architetturali e i pattern di testing definiti nel progetto.
->>>>>>> be08416 (.)
+È stata completata l'implementazione di una suite di test Pest completa per tutti i moduli del progetto <nome progetto>, seguendo rigorosamente le best practice architetturali e i pattern di testing definiti nel progetto.
 
 ## Struttura Implementata
 
@@ -22,17 +19,14 @@
   - `tests/Feature/Modules/User/Feature/Filament/Widgets/LoginWidgetTest.php` - Test widget di login
 
 #### Moduli Business
-<<<<<<< HEAD
 - **<nome progetto> Module**:
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
   - `tests/Feature/Modules/<nome progetto>/Feature/Filament/Widgets/DoctorCalendarWidgetTest.php` - Test widget calendario
-=======
-- **SaluteOra Module**:
-  - `tests/Feature/Modules/SaluteOra/Unit/Models/AppointmentTest.php` - Test modello Appointment
-  - `tests/Feature/Modules/SaluteOra/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
-  - `tests/Feature/Modules/SaluteOra/Feature/Filament/Widgets/DoctorCalendarWidgetTest.php` - Test widget calendario
->>>>>>> be08416 (.)
+- **<nome progetto> Module**:
+  - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
+  - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
+  - `tests/Feature/Modules/<nome progetto>/Feature/Filament/Widgets/DoctorCalendarWidgetTest.php` - Test widget calendario
 
 #### Moduli Utility
 - **Geo Module**:
@@ -56,11 +50,8 @@ Seguendo il pattern già implementato nei test di autenticazione:
 - **Integration Tests**: Testano integrazioni tra moduli e servizi esterni
 - **Browser Tests**: Testano flussi utente completi end-to-end
 
-<<<<<<< HEAD
 ### 2. Pattern Specifici per <nome progetto>
-=======
-### 2. Pattern Specifici per SaluteOra
->>>>>>> be08416 (.)
+### 2. Pattern Specifici per <nome progetto>
 
 #### Test Models con Single Table Inheritance (STI)
 ```php
@@ -125,19 +116,16 @@ test('appointment states have complete translations in all languages', function 
         foreach ($languages as $lang) {
             app()->setLocale($lang);
             
-<<<<<<< HEAD
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
             
             expect($label)->not->toContain('<nome progetto>::');
             expect($description)->not->toContain('<nome progetto>::');
-=======
-            $label = __("saluteora::states.{$state->value}.label");
-            $description = __("saluteora::states.{$state->value}.description");
+            $label = __("<nome progetto>::states.{$state->value}.label");
+            $description = __("<nome progetto>::states.{$state->value}.description");
             
-            expect($label)->not->toContain('saluteora::');
-            expect($description)->not->toContain('saluteora::');
->>>>>>> be08416 (.)
+            expect($label)->not->toContain('<nome progetto>::');
+            expect($description)->not->toContain('<nome progetto>::');
         }
     }
 });
@@ -181,11 +169,8 @@ Classe helper completa con utilities per:
 
 ### Opzioni Disponibili
 - `--core`: Test moduli core (User, Xot, UI)
-<<<<<<< HEAD
 - `--business`: Test moduli business (<nome progetto>, <nome modulo>)
-=======
-- `--business`: Test moduli business (SaluteOra, SaluteMo)
->>>>>>> be08416 (.)
+- `--business`: Test moduli business (<nome progetto>, <nome progetto>)
 - `--utility`: Test moduli utility (Cms, Media, Geo, etc.)
 - `--all`: Test tutti i moduli
 - `--performance`: Test di performance
@@ -211,11 +196,8 @@ php artisan migrate:fresh --env=testing --seed
 ./vendor/bin/pest tests/Feature/Modules/User --verbose
 
 # Test specifico
-<<<<<<< HEAD
 ./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
-=======
-./vendor/bin/pest tests/Feature/Modules/SaluteOra/Unit/Models/AppointmentTest.php
->>>>>>> be08416 (.)
+./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
 
 # Test con coverage
 ./vendor/bin/pest --coverage --coverage-html=storage/app/coverage
@@ -249,11 +231,8 @@ php artisan migrate:fresh --env=testing --seed
 - ✅ Relazioni teams e tenants
 - ✅ Validazione e sicurezza
 
-<<<<<<< HEAD
 ### Modulo <nome progetto>
-=======
-### Modulo SaluteOra
->>>>>>> be08416 (.)
+### Modulo <nome progetto>
 - ✅ Modelli Appointment con stati e traduzioni
 - ✅ Modelli pivot DoctorStudio cross-database
 - ✅ Widget calendario per dottori con multi-tenancy
@@ -321,11 +300,8 @@ jobs:
 
 - [Strategia di Testing Moduli](testing-strategy-modules.md) - Strategia completa
 - [Test Autenticazione](../tests/Feature/Auth/) - Pattern di riferimento esistenti
-<<<<<<< HEAD
 - [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
-=======
-- [Documentazione SaluteOra](../Modules/SaluteOra/docs/README.md) - Funzionalità business
->>>>>>> be08416 (.)
+- [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
 - [Documentazione User](../Modules/User/docs/README.md) - Modulo core
 
 ## Stato Implementazione
@@ -334,11 +310,8 @@ jobs:
 - [x] Analisi struttura moduli esistenti
 - [x] Creazione strategia di testing completa
 - [x] Implementazione test per moduli core (User, Xot, UI)
-<<<<<<< HEAD
 - [x] Implementazione test per moduli business (<nome progetto>, <nome modulo>)
-=======
-- [x] Implementazione test per moduli business (SaluteOra, SaluteMo)
->>>>>>> be08416 (.)
+- [x] Implementazione test per moduli business (<nome progetto>, <nome progetto>)
 - [x] Implementazione test per moduli utility (Cms, Media, Geo, etc.)
 - [x] Creazione helper e utilities per testing
 - [x] Script automatizzato per esecuzione test

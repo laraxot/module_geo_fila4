@@ -217,7 +217,3 @@ Le stesse correzioni sono state applicate a:
 ---
 
 **Ultimo aggiornamento**: 27 Gennaio 2025  
-<<<<<<< HEAD
-=======
-**Stato**: ✅ Correzioni completate per tutte le lingue 
->>>>>>> be08416 (.)

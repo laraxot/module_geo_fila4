@@ -16,33 +16,11 @@ use function Safe\json_decode;
 abstract class GeoJsonModel
 {
     /**
-<<<<<<< HEAD
-     * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario).
-=======
      * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario)
->>>>>>> be08416 (.)
      */
     protected static string $jsonFile = 'resources/json/comuni.json';
 
     /**
-<<<<<<< HEAD
-=======
-     * Carica e cache-izza i dati dal file json.
-     */
-    protected static function loadData(): Collection
-    {
-        $path = module_path('Geo', static::$jsonFile);
-        $cacheKey = 'geo_comuni_json_'.md5($path);
-        $data = cache()->rememberForever($cacheKey, fn () => json_decode(file_get_contents($path), true));
-
-        /**
-         * @phpstan-ignore argument.type, argument.templateType, argument.templateType
-         */
-        return collect($data);
-    }
-
-    /**
->>>>>>> be08416 (.)
      * Restituisce tutti i dati come collection.
      */
     public static function all(): Collection
@@ -57,16 +35,11 @@ abstract class GeoJsonModel
      */
     public static function where(string $key, $value): Collection
     {
-<<<<<<< HEAD
-        /*
-=======
         /**
->>>>>>> be08416 (.)
          * @phpstan-ignore-next-line
          */
         return static::all()->where($key, $value);
     }
-<<<<<<< HEAD
 
     /**
      * Carica e cache-izza i dati dal file json.
@@ -77,11 +50,9 @@ abstract class GeoJsonModel
         $cacheKey = 'geo_comuni_json_'.md5($path);
         $data = cache()->rememberForever($cacheKey, fn () => json_decode(file_get_contents($path), true));
 
-        /*
+        /**
          * @phpstan-ignore argument.type, argument.templateType, argument.templateType
          */
         return collect($data);
     }
-=======
->>>>>>> be08416 (.)
 }

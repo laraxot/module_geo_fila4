@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Weather;
 
-<<<<<<< HEAD
-=======
 use Exception;
->>>>>>> be08416 (.)
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -16,11 +15,7 @@ class GetOpenWeatherDataAction
 {
     private const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather';
 
-<<<<<<< HEAD
     public function execute(float $latitude, float $longitude): ?array
-=======
-    public function execute(float $latitude, float $longitude): null|array
->>>>>>> be08416 (.)
     {
         try {
             $response = Http::get(self::ENDPOINT, [
@@ -31,21 +26,19 @@ class GetOpenWeatherDataAction
                 'lang' => 'it',
             ]);
 
-<<<<<<< HEAD
+            // Handle PromiseInterface|Response union type
+            if ($response instanceof PromiseInterface) {
+                $response = $response->wait();
+            }
+
+            /** @var \Illuminate\Http\Client\Response $response */
             if (! $response->successful()) {
-=======
-            if (!$response->successful()) {
->>>>>>> be08416 (.)
                 return null;
             }
 
             $data = $response->json();
 
-<<<<<<< HEAD
             if (! is_array($data)) {
-=======
-            if (!is_array($data)) {
->>>>>>> be08416 (.)
                 return null;
             }
 
@@ -66,13 +59,8 @@ class GetOpenWeatherDataAction
                 'clouds' => Arr::get($data, 'clouds.all'),
                 'timestamp' => Arr::get($data, 'dt'),
             ];
-<<<<<<< HEAD
-        } catch (\Exception $e) {
-            Log::error('OpenWeather API error: '.$e->getMessage());
-=======
         } catch (Exception $e) {
-            Log::error('OpenWeather API error: ' . $e->getMessage());
->>>>>>> be08416 (.)
+            Log::error('OpenWeather API error: '.$e->getMessage());
 
             return null;
         }

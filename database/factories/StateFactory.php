@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\State;
 
 /**
-<<<<<<< HEAD
- * State Factory.
-=======
  * State Factory
->>>>>>> be08416 (.)
  *
  * @extends Factory<State>
  */
@@ -23,26 +19,16 @@ class StateFactory extends Factory
     public function definition(): array
     {
         $italianRegions = [
-            'Abruzzo' => 'ABR',
-            'Basilicata' => 'BAS',
-            'Calabria' => 'CAL',
-            'Campania' => 'CAM',
-            'Emilia-Romagna' => 'EMR',
-            'Friuli-Venezia Giulia' => 'FVG',
             'Lazio' => 'LAZ',
-            'Liguria' => 'LIG',
             'Lombardia' => 'LOM',
-            'Marche' => 'MAR',
-            'Molise' => 'MOL',
-            'Piemonte' => 'PIE',
-            'Puglia' => 'PUG',
-            'Sardegna' => 'SAR',
+            'Campania' => 'CAM',
             'Sicilia' => 'SIC',
-            'Toscana' => 'TOS',
-            'Trentino-Alto Adige' => 'TAA',
-            'Umbria' => 'UMB',
-            "Valle d'Aosta" => 'VDA',
             'Veneto' => 'VEN',
+            'Piemonte' => 'PIE',
+            'Emilia-Romagna' => 'EMR',
+            'Toscana' => 'TOS',
+            'Puglia' => 'PUG',
+            'Calabria' => 'CAL',
         ];
 
         $state = $this->faker->randomElement(array_keys($italianRegions));
@@ -55,11 +41,7 @@ class StateFactory extends Factory
 
     public function lombardia(): static
     {
-<<<<<<< HEAD
         return $this->state(fn (array $_attributes): array => [
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> be08416 (.)
             'state' => 'Lombardia',
             'state_code' => 'LOM',
         ]);
@@ -67,11 +49,7 @@ class StateFactory extends Factory
 
     public function lazio(): static
     {
-<<<<<<< HEAD
         return $this->state(fn (array $_attributes): array => [
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> be08416 (.)
             'state' => 'Lazio',
             'state_code' => 'LAZ',
         ]);

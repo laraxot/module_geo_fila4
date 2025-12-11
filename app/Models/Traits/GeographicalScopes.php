@@ -28,11 +28,7 @@ trait GeographicalScopes
     public function getDistanceExpression(
         float $latitude,
         float $longitude,
-<<<<<<< HEAD
         ?string $alias = null,
-=======
-        null|string $alias = null,
->>>>>>> be08416 (.)
     ): Expression|\Illuminate\Contracts\Database\Query\Expression {
         $sql = "
             (6371 * acos(
@@ -43,7 +39,7 @@ trait GeographicalScopes
                 sin(radians(latitude))
             ))
         ";
-        if (null !== $alias) {
+        if ($alias !== null) {
             $sql .= " AS {$alias}";
         }
 

@@ -12,7 +12,6 @@ use Spatie\LaravelData\Data;
 class GeocodingData extends Data
 {
     public function __construct(
-<<<<<<< HEAD
         public readonly ?float $latitude,
         public readonly ?float $longitude,
         public readonly ?string $formatted_address,
@@ -23,21 +22,7 @@ class GeocodingData extends Data
         public readonly ?string $country,
         public readonly ?string $postal_code,
         public readonly ?string $error = null,
-    ) {
-    }
-=======
-        public readonly null|float $latitude,
-        public readonly null|float $longitude,
-        public readonly null|string $formatted_address,
-        public readonly null|string $street_number,
-        public readonly null|string $route,
-        public readonly null|string $locality,
-        public readonly null|string $administrative_area,
-        public readonly null|string $country,
-        public readonly null|string $postal_code,
-        public readonly null|string $error = null,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Crea un'istanza di errore.
@@ -106,7 +91,6 @@ class GeocodingData extends Data
      *     short_name: string,
      *     types: array<string>
      * }> $components
-     *
      * @return array<string, string>
      */
     private static function extractAddressComponents(array $components): array

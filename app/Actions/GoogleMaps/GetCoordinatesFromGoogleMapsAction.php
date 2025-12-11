@@ -4,26 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-<<<<<<< HEAD
-=======
-use RuntimeException;
->>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
-<<<<<<< HEAD
-
-use function Safe\json_decode;
-
-use Webmozart\Assert\Assert;
-
-=======
+use RuntimeException;
 use Webmozart\Assert\Assert;
 
 use function Safe\json_decode;
 
->>>>>>> be08416 (.)
 /**
  * Action per ottenere le coordinate da un indirizzo tramite Google Maps.
  *
@@ -35,23 +24,13 @@ readonly class GetCoordinatesFromGoogleMapsAction
     private const API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     public function __construct(
-<<<<<<< HEAD
         private Client $client,
-    ) {
-    }
-=======
-        private  Client $client,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Ottiene le coordinate da un indirizzo.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
-=======
      * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
->>>>>>> be08416 (.)
      */
     public function execute(string $address): LocationData
     {
@@ -67,22 +46,14 @@ readonly class GetCoordinatesFromGoogleMapsAction
                 'address' => $address,
             ]);
 
-<<<<<<< HEAD
-            throw new \RuntimeException('Failed to get coordinates from address');
-=======
             throw new RuntimeException('Failed to get coordinates from address');
->>>>>>> be08416 (.)
         }
     }
 
     /**
      * Valida i dati di input.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata
-=======
      * @throws RuntimeException Se la chiave API non è configurata
->>>>>>> be08416 (.)
      */
     private function validateInput(string $address): void
     {
@@ -112,11 +83,7 @@ readonly class GetCoordinatesFromGoogleMapsAction
     /**
      * Elabora la risposta dell'API.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la risposta non è valida
-=======
      * @throws RuntimeException Se la risposta non è valida
->>>>>>> be08416 (.)
      */
     private function parseResponse(string $response, string $address): LocationData
     {
@@ -133,12 +100,8 @@ readonly class GetCoordinatesFromGoogleMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ('OK' !== $data['status'] || empty($data['results'][0]['geometry']['location'])) {
-<<<<<<< HEAD
-            throw new \RuntimeException('No coordinates found for address');
-=======
+        if ($data['status'] !== 'OK' || empty($data['results'][0]['geometry']['location'])) {
             throw new RuntimeException('No coordinates found for address');
->>>>>>> be08416 (.)
         }
 
         $location = $data['results'][0]['geometry']['location'];

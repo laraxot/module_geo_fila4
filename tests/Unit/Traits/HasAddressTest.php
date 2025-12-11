@@ -2,13 +2,9 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 namespace Modules\Geo\Tests\Unit\Traits;
 
 use Modules\Geo\Models\BaseModel;
-=======
-use Illuminate\Database\Eloquent\Model;
->>>>>>> be08416 (.)
 use Modules\Geo\Models\Traits\HasAddress;
 use Tests\TestCase;
 
@@ -17,11 +13,7 @@ uses(TestCase::class);
 /**
  * Modello di test per il trait HasAddress.
  */
-<<<<<<< HEAD
 class HasAddressTest extends BaseModel
-=======
-class TestModel extends Model
->>>>>>> be08416 (.)
 {
     use HasAddress;
 
@@ -32,27 +24,19 @@ class TestModel extends Model
     protected $table = 'test_models';
 
     /**
-<<<<<<< HEAD
      * Override connection for testing - use default connection.
      */
     protected $connection;
 
     /**
-=======
->>>>>>> be08416 (.)
      * Bootstrap this model.
      */
     public static function boot()
     {
         parent::boot();
 
-<<<<<<< HEAD
         static::creating(static function () {
             if (! app()->environment('testing')) {
-=======
-        static::creating(function () {
-            if (!app()->environment('testing')) {
->>>>>>> be08416 (.)
                 throw new Exception('TestModel should only be used in tests.');
             }
         });
@@ -61,15 +45,9 @@ class TestModel extends Model
 
 beforeEach(function () {
     // Crea un modello di test
-<<<<<<< HEAD
     $this->model = new HasAddressTest();
     $this->model->name = 'Test Model';
     $this->model->save();
-=======
-    $this->model = TestModel::create([
-        'name' => 'Test Model',
-    ]);
->>>>>>> be08416 (.)
 });
 
 it('can have multiple addresses', function () {
@@ -184,18 +162,12 @@ it('can get formatted address', function () {
     expect($fullAddress)->toContain('Milano');
 });
 
-<<<<<<< HEAD
 it('can filter models by city', static function () {
     // Crea due modelli con indirizzi in città diverse
     $model1 = new HasAddressTest();
     $model1->name = 'Model 1';
     $model1->save();
 
-=======
-it('can filter models by city', function () {
-    // Crea due modelli con indirizzi in città diverse
-    $model1 = TestModel::create(['name' => 'Model 1']);
->>>>>>> be08416 (.)
     $model1
         ->addresses()
         ->create([
@@ -205,14 +177,10 @@ it('can filter models by city', function () {
             'postal_code' => '20100',
         ]);
 
-<<<<<<< HEAD
     $model2 = new HasAddressTest();
     $model2->name = 'Model 2';
     $model2->save();
 
-=======
-    $model2 = TestModel::create(['name' => 'Model 2']);
->>>>>>> be08416 (.)
     $model2
         ->addresses()
         ->create([
@@ -223,13 +191,8 @@ it('can filter models by city', function () {
         ]);
 
     // Filtra i modelli per città
-<<<<<<< HEAD
     $modelsInMilano = HasAddressTest::inCity('Milano')->get();
     $modelsInRoma = HasAddressTest::inCity('Roma')->get();
-=======
-    $modelsInMilano = TestModel::inCity('Milano')->get();
-    $modelsInRoma = TestModel::inCity('Roma')->get();
->>>>>>> be08416 (.)
 
     // Verifica che il filtro funzioni correttamente
     expect($modelsInMilano)->toHaveCount(1);

@@ -6,20 +6,11 @@ namespace Modules\Geo\Models;
 
 // use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 // //use Laravel\Scout\Searchable;
-<<<<<<< HEAD
 use Modules\Xot\Models\XotBaseModel;
-=======
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Xot\Traits\Updater;
->>>>>>> be08416 (.)
 
 /**
  * Class BaseModel.
- *
  */
-<<<<<<< HEAD
 abstract class BaseModel extends XotBaseModel
 {
     protected $connection = 'geo';
@@ -31,43 +22,6 @@ abstract class BaseModel extends XotBaseModel
     protected $hidden = [
         // 'password'
     ];
-=======
-abstract class BaseModel extends Model
-{
-    use \Modules\Xot\Models\Traits\HasXotFactory;
-    use Updater;
-
-    /**
-     * The factory class for this model.
-     *
-     * @var class-string<Factory>
-     */
-    protected static $factory = null;
-
-    /**
-     * Indicates whether attributes are snake cased on arrays.
-     *
-     * @see  https://laravel-news.com/6-eloquent-secrets
-     *
-     * @var bool
-     */
-    public static $snakeAttributes = true;
-
-    /** @var bool */
-    public $incrementing = true;
-
-    /** @var bool */
-    public $timestamps = true;
-
-    /** @var int */
-    protected $perPage = 30;
-
-    // use Searchable;
-    // use Cachable;
-
-    /** @var list<string> */
-    protected $fillable = ['id'];
->>>>>>> be08416 (.)
 
     /**
      * Get the attributes that should be cast.
@@ -82,17 +36,4 @@ abstract class BaseModel extends Model
             'updated_at' => 'datetime',
         ]);
     }
-<<<<<<< HEAD
-=======
-
-    /** @var string */
-    protected $primaryKey = 'id';
-
-    /** @var list<string> */
-    protected $hidden = [
-        // 'password'
-    ];
-
-    protected $connection = 'geo';
->>>>>>> be08416 (.)
 }

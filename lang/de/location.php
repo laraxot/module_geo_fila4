@@ -12,11 +12,7 @@ return [
         ],
         'label' => 'Standorte',
         'sort' => 94,
-<<<<<<< HEAD
         'icon' => 'ui-geo-location',
-=======
-        'icon' => 'geo-location',
->>>>>>> be08416 (.)
     ],
     'fields' => [
         'name' => [

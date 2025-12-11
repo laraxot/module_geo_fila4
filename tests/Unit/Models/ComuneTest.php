@@ -2,17 +2,10 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Modules\Geo\Models\Comune;
 use Tests\TestCase;
-=======
-use Tests\TestCase;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\File;
-use Modules\Geo\Models\Comune;
->>>>>>> be08416 (.)
 
 uses(TestCase::class);
 

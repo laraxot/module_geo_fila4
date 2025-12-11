@@ -38,15 +38,12 @@ abstract class BasePivot extends Pivot
     protected $appends = [];
 
     /**
-<<<<<<< HEAD
      * Undocumented variable.
      */
     /** @var string */
     protected $primaryKey = 'id';
 
     /**
-=======
->>>>>>> be08416 (.)
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -59,13 +56,4 @@ abstract class BasePivot extends Pivot
             'updated_at' => 'datetime',
         ];
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * Undocumented variable.
-     */
-    /** @var string */
-    protected $primaryKey = 'id';
->>>>>>> be08416 (.)
 }

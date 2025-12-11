@@ -14,7 +14,6 @@ class AddressData extends Data
     public function __construct(
         public readonly float $latitude,
         public readonly float $longitude,
-<<<<<<< HEAD
         public readonly ?string $country = null,
         public readonly ?string $city = null,
         public readonly ?string $country_code = null,
@@ -25,21 +24,7 @@ class AddressData extends Data
         public readonly ?string $street_number = null,
         public readonly ?string $district = null,
         public readonly ?string $state = null,
-    ) {
-    }
-=======
-        public readonly null|string $country = null,
-        public readonly null|string $city = null,
-        public readonly null|string $country_code = null,
-        public readonly null|int $postal_code = null,
-        public readonly null|string $locality = null,
-        public readonly null|string $county = null,
-        public readonly null|string $street = null,
-        public readonly null|string $street_number = null,
-        public readonly null|string $district = null,
-        public readonly null|string $state = null,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Restituisce l'indirizzo formattato.
@@ -51,11 +36,7 @@ class AddressData extends Data
         if ($this->street) {
             $parts[] = $this->street;
             if ($this->street_number) {
-<<<<<<< HEAD
                 $parts[count($parts) - 1] .= ', '.$this->street_number;
-=======
-                $parts[count($parts) - 1] .= ', ' . $this->street_number;
->>>>>>> be08416 (.)
             }
         }
 

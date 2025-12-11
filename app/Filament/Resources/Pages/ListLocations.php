@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Resources\Pages;
 
 use Filament\Tables\Columns\TextColumn;
-<<<<<<< HEAD
-=======
-use Filament\Tables;
->>>>>>> be08416 (.)
 use Modules\Geo\Filament\Resources\LocationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 

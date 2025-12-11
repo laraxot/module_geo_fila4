@@ -3,11 +3,8 @@
 ## Summary Status by Module
 
 ### ✅ Excellent Coverage (90-100%)
-<<<<<<< HEAD
 - **<nome progetto>** (16/16 business models) - Core healthcare business
-=======
-- **SaluteOra** (16/16 business models) - Core healthcare business
->>>>>>> be08416 (.)
+- **<nome progetto>** (16/16 business models) - Core healthcare business
 - **User** (33/33 business models) - User management  
 - **Notify** (10/10 business models) - Notifications
 - **Media** (3/3 business models) - File management
@@ -26,11 +23,8 @@
 
 ## Detailed Analysis by Module
 
-<<<<<<< HEAD
 ### <nome progetto> ⭐ (Core Healthcare Business)
-=======
-### SaluteOra ⭐ (Core Healthcare Business)
->>>>>>> be08416 (.)
+### <nome progetto> ⭐ (Core Healthcare Business)
 **Models**: 25 | **Factories**: 16 | **Seeders**: 14
 - ✅ All business models have factories
 - ✅ Comprehensive seeder suite

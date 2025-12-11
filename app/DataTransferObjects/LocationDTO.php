@@ -12,23 +12,15 @@ use Modules\Geo\Datas\LocationData;
 readonly class LocationDTO
 {
     /**
-     * @param float       $latitude  Latitudine in gradi decimali
-     * @param float       $longitude Longitudine in gradi decimali
-     * @param string|null $name      Nome opzionale della posizione
+     * @param  float  $latitude  Latitudine in gradi decimali
+     * @param  float  $longitude  Longitudine in gradi decimali
+     * @param  string|null  $name  Nome opzionale della posizione
      */
     public function __construct(
-<<<<<<< HEAD
         public float $latitude,
         public float $longitude,
         public ?string $name = null,
-    ) {
-    }
-=======
-        public  float $latitude,
-        public  float $longitude,
-        public  null|string $name = null,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Crea una nuova istanza da un oggetto LocationData.

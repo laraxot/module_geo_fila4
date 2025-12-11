@@ -7,19 +7,16 @@ Analisi completa degli errori PHPStan per identificare e risolvere problemi di b
 
 **Totale Errori**: 3408 file analizzati
 **Errori Critici**: 15+ errori di business logic
-<<<<<<< HEAD
 **Moduli Principali Affetti**: <nome progetto>, User, Cms, Xot, UI, Geo, Tenant, Notify, Media, Lang, Job, Gdpr, Activity
 
 ## 🚨 **Errori Critici per Business Logic**
 
 ### 1. **Modulo <nome progetto> - Factory Type Safety**
-=======
-**Moduli Principali Affetti**: SaluteOra, User, Cms, Xot, UI, Geo, Tenant, Notify, Media, Lang, Job, Gdpr, Activity
+**Moduli Principali Affetti**: <nome progetto>, User, Cms, Xot, UI, Geo, Tenant, Notify, Media, Lang, Job, Gdpr, Activity
 
 ## 🚨 **Errori Critici per Business Logic**
 
-### 1. **Modulo SaluteOra - Factory Type Safety**
->>>>>>> be08416 (.)
+### 1. **Modulo <nome progetto> - Factory Type Safety**
 
 #### DoctorFactory.php
 - **Linea 70, 86**: `json_encode` non sicuro (thecodingmachine/safe)
@@ -204,17 +201,14 @@ use function Safe\json_encode;
 ## 📋 **Checklist Implementazione**
 
 ### **Fase 1: Factory Type Safety**
-<<<<<<< HEAD
 - [x] <nome progetto> - DoctorFactory.php
 - [x] <nome progetto> - PatientFactory.php
 - [x] <nome progetto> - AppointmentFactory.php
 - [x] <nome progetto> - ReportFactory.php
-=======
-- [x] SaluteOra - DoctorFactory.php
-- [x] SaluteOra - PatientFactory.php
-- [x] SaluteOra - AppointmentFactory.php
-- [x] SaluteOra - ReportFactory.php
->>>>>>> be08416 (.)
+- [x] <nome progetto> - DoctorFactory.php
+- [x] <nome progetto> - PatientFactory.php
+- [x] <nome progetto> - AppointmentFactory.php
+- [x] <nome progetto> - ReportFactory.php
 - [ ] User - UserFactory.php
 - [ ] Geo - AddressFactory.php
 - [ ] Notify - SendEmailAction.php
@@ -243,11 +237,8 @@ use function Safe\json_encode;
 ## 🎯 **Priorità di Implementazione**
 
 ### **ALTA PRIORITÀ (Business Critical)**
-<<<<<<< HEAD
 1. **<nome progetto> Factory** - Dati sanitari a rischio
-=======
-1. **SaluteOra Factory** - Dati sanitari a rischio
->>>>>>> be08416 (.)
+1. **<nome progetto> Factory** - Dati sanitari a rischio
 2. **User Factory** - Sistema di accesso critico
 3. **Geo Factory** - Dati geografici essenziali
 
@@ -287,11 +278,8 @@ use function Safe\json_encode;
 ## 🔍 **Prossimi Passi**
 
 ### **Immediato (Oggi)**
-<<<<<<< HEAD
 1. Completare <nome progetto> Factory fixes
-=======
-1. Completare SaluteOra Factory fixes
->>>>>>> be08416 (.)
+1. Completare <nome progetto> Factory fixes
 2. Implementare User Factory fixes
 3. Testare factory con Tinker
 
@@ -325,10 +313,7 @@ Al completamento di questo audit e delle correzioni:
 ---
 
 **Stato**: Analisi completata, implementazione in corso
-<<<<<<< HEAD
 **Priorità**: <nome progetto> Factory (CRITICO)
-=======
-**Priorità**: SaluteOra Factory (CRITICO)
->>>>>>> be08416 (.)
+**Priorità**: <nome progetto> Factory (CRITICO)
 **Responsabile**: AI Assistant
 **Ultimo Aggiornamento**: 2025-01-06

@@ -1,21 +1,13 @@
 # Riepilogo Implementazione AddressesField
 
-<<<<<<< HEAD
-## Caso Studio: Applicazione Principio DRY nel Progetto <nome progetto>
-=======
-## Caso Studio: Applicazione Principio DRY nel Progetto SaluteOra
->>>>>>> be08416 (.)
+## Caso Studio: Applicazione Principio DRY nel Progetto <main module>
 
 ### Data Implementazione
 **Dicembre 2024**
 
 ## Panoramica
 
-<<<<<<< HEAD
-Questo documento riassume l'implementazione completa del componente riutilizzabile `AddressesField` che ha eliminato la duplicazione di codice nel progetto <nome progetto>, dimostrando l'applicazione pratica del principio DRY (Don't Repeat Yourself).
-=======
-Questo documento riassume l'implementazione completa del componente riutilizzabile `AddressesField` che ha eliminato la duplicazione di codice nel progetto SaluteOra, dimostrando l'applicazione pratica del principio DRY (Don't Repeat Yourself).
->>>>>>> be08416 (.)
+Questo documento riassume l'implementazione completa del componente riutilizzabile `AddressesField` che ha eliminato la duplicazione di codice nel progetto <main module>, dimostrando l'applicazione pratica del principio DRY (Don't Repeat Yourself).
 
 ## Problema Identificato
 
@@ -294,23 +286,14 @@ Il componente non solo elimina duplicazione, ma stabilisce un **pattern replicab
 ### Documentazione Correlata
 - [AddressesField Component Documentation](components/addresses-field.md)
 - [Form Schema Reuse Guidelines](form-schema-reuse.md)
-<<<<<<< HEAD
-- [StudioResource Implementation](../../<nome progetto>/docs/studio-resource-addresses-improvement.md)
-- [Critical Errors Resolved](../../<nome progetto>/docs/critical-errors-resolved.md)
-=======
-- [StudioResource Implementation](../../SaluteOra/docs/studio-resource-addresses-improvement.md)
-- [Critical Errors Resolved](../../SaluteOra/docs/critical-errors-resolved.md)
->>>>>>> be08416 (.)
+- [StudioResource Implementation](../../<main module>/docs/studio-resource-addresses-improvement.md)
+- [Critical Errors Resolved](../../<main module>/docs/critical-errors-resolved.md)
 
 ### File Sorgente
 - [AddressesField.php](../app/Filament/Forms/Components/AddressesField.php)
 - [addresses-field.blade.php](../resources/views/filament/forms/components/addresses-field.blade.php)
 - [addresses.php](../lang/it/addresses.php)
-<<<<<<< HEAD
-- [StudioResource.php](../../<nome progetto>/app/Filament/Resources/StudioResource.php)
-=======
-- [StudioResource.php](../../SaluteOra/app/Filament/Resources/StudioResource.php)
->>>>>>> be08416 (.)
+- [StudioResource.php](../../<main module>/app/Filament/Resources/StudioResource.php)
 
 ---
 

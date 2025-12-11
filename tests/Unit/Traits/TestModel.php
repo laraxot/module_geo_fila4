@@ -2,11 +2,8 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 namespace Modules\Geo\Tests\Unit\Traits;
 
-=======
->>>>>>> be08416 (.)
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\Traits\HasAddress;
 use Tests\TestCase;
@@ -33,13 +30,8 @@ class TestModel extends Model
     {
         parent::boot();
 
-<<<<<<< HEAD
         static::creating(static function () {
             if (! app()->environment('testing')) {
-=======
-        static::creating(function () {
-            if (!app()->environment('testing')) {
->>>>>>> be08416 (.)
                 throw new Exception('TestModel should only be used in tests.');
             }
         });
@@ -165,11 +157,7 @@ it('can get formatted address', function () {
     expect($fullAddress)->toContain('Milano');
 });
 
-<<<<<<< HEAD
 it('can filter models by city', static function () {
-=======
-it('can filter models by city', function () {
->>>>>>> be08416 (.)
     // Crea due modelli con indirizzi in città diverse
     $model1 = TestModel::create(['name' => 'Model 1']);
     $model1

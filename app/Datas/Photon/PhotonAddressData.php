@@ -14,7 +14,6 @@ use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 class PhotonAddressData extends Data
 {
     public function __construct(
-<<<<<<< HEAD
         public ?string $country,
         public ?string $city,
         public ?string $postcode,
@@ -24,7 +23,7 @@ class PhotonAddressData extends Data
     ) {}
 
     /**
-     * @param array{properties: array<string, mixed>, geometry: array{coordinates: array<float>}} $feature
+     * @param  array{properties: array<string, mixed>, geometry: array{coordinates: array<float>}}  $feature
      */
     public static function fromPhotonFeature(array $feature): self
     {
@@ -51,30 +50,6 @@ class PhotonAddressData extends Data
             coordinates: [
                 'latitude' => (float) $coordinates[1],
                 'longitude' => (float) $coordinates[0],
-=======
-        public null|string $country,
-        public null|string $city,
-        public null|string $postcode,
-        public null|string $street,
-        public null|string $housenumber,
-        public array $coordinates,
-    ) {}
-
-    public static function fromPhotonFeature(array $feature): self
-    {
-        $properties = $feature['properties'];
-        $coordinates = $feature['geometry']['coordinates'];
-
-        return new self(
-            country: $properties['country'] ?? null,
-            city: $properties['city'] ?? null,
-            postcode: $properties['postcode'] ?? null,
-            street: $properties['street'] ?? null,
-            housenumber: $properties['housenumber'] ?? null,
-            coordinates: [
-                'latitude' => $coordinates[1],
-                'longitude' => $coordinates[0],
->>>>>>> be08416 (.)
             ],
         );
     }

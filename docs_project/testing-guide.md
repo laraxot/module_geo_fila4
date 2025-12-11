@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 # <nome progetto> Testing Guide
-=======
-# SaluteOra Testing Guide
->>>>>>> be08416 (.)
+# <nome progetto> Testing Guide
 
 ## Overview
 
@@ -23,13 +20,10 @@ laravel/
 │   │   ├── Feature/
 │   │   ├── Pest.php
 │   │   └── TestCase.php
-<<<<<<< HEAD
 │   ├── <nome progetto>/tests/
 │   ├── <nome modulo>/tests/
-=======
-│   ├── SaluteOra/tests/
-│   ├── SaluteMo/tests/
->>>>>>> be08416 (.)
+│   ├── <nome progetto>/tests/
+│   ├── <nome progetto>/tests/
 │   ├── User/tests/
 │   └── Geo/tests/
 └── scripts/run-tests.sh            # Script per esecuzione test
@@ -42,20 +36,14 @@ laravel/
 - **Feature Tests**: ChartFactoryTest.php, ChartIntegrationTest.php
 - **Coverage**: Modello Chart, Factory, Accessors, Metodi business logic
 
-<<<<<<< HEAD
 #### ✅ <nome progetto> Module (Core)
-=======
-#### ✅ SaluteOra Module (Core)
->>>>>>> be08416 (.)
+#### ✅ <nome progetto> Module (Core)
 - **Unit Tests**: PatientModelTest.php, AppointmentModelTest.php
 - **Feature Tests**: AppointmentIntegrationTest.php
 - **Coverage**: Modelli core, Relazioni, Enums, State management
 
-<<<<<<< HEAD
 #### ✅ <nome modulo> Module
-=======
-#### ✅ SaluteMo Module
->>>>>>> be08416 (.)
+#### ✅ <nome progetto> Module
 - **Unit Tests**: BaseModelTest.php
 - **Coverage**: BaseModel traits, Configurazioni, Media handling
 
@@ -123,11 +111,8 @@ createChart($attributes = [])    // Crea Chart in database
 makeChart($attributes = [])      // Crea Chart in memoria
 ```
 
-<<<<<<< HEAD
 ### <nome progetto> Module
-=======
-### SaluteOra Module
->>>>>>> be08416 (.)
+### <nome progetto> Module
 ```php
 createAppointment($attributes = [])
 createPatient($attributes = [])
@@ -228,13 +213,10 @@ vendor/bin/pest --filter="test_name" --verbose
 
 ### Moduli Completati
 - ✅ Chart: Unit + Feature tests
-<<<<<<< HEAD
 - ✅ <nome progetto>: Core models + Integration
 - ✅ <nome modulo>: Base functionality
-=======
-- ✅ SaluteOra: Core models + Integration
-- ✅ SaluteMo: Base functionality
->>>>>>> be08416 (.)
+- ✅ <nome progetto>: Core models + Integration
+- ✅ <nome progetto>: Base functionality
 - ✅ User: Authentication + Authorization
 - ✅ Geo: Address + Geolocation
 

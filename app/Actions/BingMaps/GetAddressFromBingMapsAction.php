@@ -4,26 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\BingMaps;
 
-<<<<<<< HEAD
-=======
-use RuntimeException;
->>>>>>> be08416 (.)
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-<<<<<<< HEAD
+use RuntimeException;
 
 use function Safe\json_decode;
 
-use Webmozart\Assert\Assert;
-
-=======
-use Webmozart\Assert\Assert;
-
-use function Safe\json_decode;
-
->>>>>>> be08416 (.)
 /**
  * Action per ottenere l'indirizzo da coordinate tramite Bing Maps.
  *
@@ -35,27 +23,15 @@ readonly class GetAddressFromBingMapsAction
     private const API_URL = 'http://dev.virtualearth.net/REST/v1/Locations';
 
     public function __construct(
-<<<<<<< HEAD
         private Client $client,
-    ) {
-    }
-=======
-        private  Client $client,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Bing Maps.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
-     */
-    public function execute(string $address): ?AddressData
-=======
      * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
-    public function execute(string $address): null|AddressData
->>>>>>> be08416 (.)
+    public function execute(string $address): ?AddressData
     {
         $this->validateInput($address);
 
@@ -76,18 +52,20 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Valida i dati di input.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la chiave API non è configurata
-=======
      * @throws RuntimeException Se la chiave API non è configurata
->>>>>>> be08416 (.)
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.bing.maps_api_key');
-        Assert::notEmpty($apiKey, 'Bing Maps API key not configured');
-        Assert::notEmpty($address, 'Address cannot be empty');
-        Assert::maxLength($address, 1000, 'Address is too long');
+        if (empty($apiKey)) {
+            throw new RuntimeException('Bing Maps API key not configured');
+        }
+        if (empty($address)) {
+            throw new RuntimeException('Address cannot be empty');
+        }
+        if (strlen($address) > 1000) {
+            throw new RuntimeException('Address is too long');
+        }
     }
 
     /**
@@ -111,15 +89,9 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Elabora la risposta dell'API.
      *
-<<<<<<< HEAD
-     * @throws \RuntimeException Se la risposta non è valida
-     */
-    private function parseResponse(string $response): ?AddressData
-=======
      * @throws RuntimeException Se la risposta non è valida
      */
-    private function parseResponse(string $response): null|AddressData
->>>>>>> be08416 (.)
+    private function parseResponse(string $response): ?AddressData
     {
         /** @var array{
          *     statusCode: int,
@@ -140,7 +112,7 @@ readonly class GetAddressFromBingMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if (200 !== $data['statusCode'] || empty($data['resourceSets'][0]['resources'])) {
+        if ($data['statusCode'] !== 200 || empty($data['resourceSets'][0]['resources'])) {
             return null;
         }
 

@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 # Testing Error Resolution Guide - <nome progetto> Project
 
 ## Overview
 
 This guide documents critical testing patterns and error resolution strategies identified during the <nome modulo> module testing improvements. These patterns apply across all modules in the <nome progetto> project.
-=======
-# Testing Error Resolution Guide - SaluteOra Project
-
-## Overview
-
-This guide documents critical testing patterns and error resolution strategies identified during the SaluteMo module testing improvements. These patterns apply across all modules in the SaluteOra project.
->>>>>>> be08416 (.)
 
 ## Critical Testing Errors and Solutions
 
@@ -33,11 +25,7 @@ $this->faker->optional(0.6)->regexify('[A-Z]{2}')   // 60% chance of regex value
 $this->faker->optional(0.9)->dateTimeBetween('-2 years', '-1 month')  // 90% chance of date
 ```
 
-<<<<<<< HEAD
 **Global Impact**: This error was found in `Modules/<nome progetto>/database/factories/PatientFactory.php` and potentially affects all factories across modules.
-=======
-**Global Impact**: This error was found in `Modules/SaluteOra/database/factories/PatientFactory.php` and potentially affects all factories across modules.
->>>>>>> be08416 (.)
 
 ### 2. Database Connection in Feature Tests
 
@@ -106,11 +94,7 @@ expect($appointment->type->getDuration())->toBe(20);  // Non-translation method
 
 ## Module-Specific Implementations
 
-<<<<<<< HEAD
 ### <nome modulo> Module Results
-=======
-### SaluteMo Module Results
->>>>>>> be08416 (.)
 - **Before**: 14 failing tests due to factory and database errors
 - **After**: 44 passing tests (100% success rate)
 - **Performance**: 3.24 seconds total execution time
@@ -181,11 +165,7 @@ it('exposes casts as array', function () { });
 
 ## Cross-Module Benefits
 
-<<<<<<< HEAD
 These patterns provide benefits across all <nome progetto> modules:
-=======
-These patterns provide benefits across all SaluteOra modules:
->>>>>>> be08416 (.)
 
 1. **Reliability**: Tests don't fail due to external dependencies
 2. **Speed**: Pure tests execute 10-100x faster than database tests
@@ -212,15 +192,9 @@ These patterns provide benefits across all SaluteOra modules:
 
 ## Links to Module Documentation
 
-<<<<<<< HEAD
 - [<nome modulo> Testing Lessons Learned](../laravel/Modules/<nome modulo>/docs/testing-lessons-learned.md)
 - [<nome modulo> Test Error Resolution](../laravel/Modules/<nome modulo>/docs/test-errors-resolution.md)
 - [<nome modulo> Testing Guide](../laravel/Modules/<nome modulo>/docs/testing.md)
-=======
-- [SaluteMo Testing Lessons Learned](../laravel/Modules/SaluteMo/docs/testing-lessons-learned.md)
-- [SaluteMo Test Error Resolution](../laravel/Modules/SaluteMo/docs/test-errors-resolution.md)
-- [SaluteMo Testing Guide](../laravel/Modules/SaluteMo/docs/testing.md)
->>>>>>> be08416 (.)
 
 ## Windsurf Rules Integration
 
@@ -231,9 +205,5 @@ These patterns provide benefits across all SaluteOra modules:
 
 **Last Updated**: 2025-01-06  
 **Status**: Active Implementation  
-<<<<<<< HEAD
 **Success Rate**: 100% (<nome modulo>: 44/44 tests passing)  
-=======
-**Success Rate**: 100% (SaluteMo: 44/44 tests passing)  
->>>>>>> be08416 (.)
 **Philosophy**: Simple, Fast, Reliable Testing

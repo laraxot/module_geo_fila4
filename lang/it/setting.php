@@ -12,11 +12,7 @@ return [
         ],
         'label' => 'Impostazioni',
         'sort' => 34,
-<<<<<<< HEAD
         'icon' => 'ui-settings', // Aggiornamento dell'icona delle impostazioni
-=======
-        'icon' => 'settings', // Aggiornamento dell'icona delle impostazioni
->>>>>>> be08416 (.)
     ],
     'fields' => [
         'default_map_provider' => 'Provider Mappa Predefinito',

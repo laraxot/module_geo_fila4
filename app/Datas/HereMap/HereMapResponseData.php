@@ -11,17 +11,8 @@ class HereMapResponseData extends Data
 {
     public function __construct(
         #[MapInputName('items.0.position')]
-<<<<<<< HEAD
         public ?array $position,
         #[MapInputName('items.0.address')]
         public ?array $address,
-    ) {
-    }
-=======
-        public null|array $position,
-
-        #[MapInputName('items.0.address')]
-        public null|array $address,
     ) {}
->>>>>>> be08416 (.)
 }

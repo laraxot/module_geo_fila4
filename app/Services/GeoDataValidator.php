@@ -64,53 +64,35 @@ class GeoDataValidator
     /**
      * Valida i dati geografici.
      *
-     * @param array $data Dati da validare
-<<<<<<< HEAD
-=======
-     * @return bool
->>>>>>> be08416 (.)
+     * @param  array  $data  Dati da validare
      */
     public function validate(array $data): bool
     {
         $validator = Validator::make($data, self::VALIDATION_RULES, self::CUSTOM_MESSAGES);
 
-<<<<<<< HEAD
         return ! $validator->fails();
-=======
-        return !$validator->fails();
->>>>>>> be08416 (.)
     }
 
     /**
      * Ottiene gli errori di validazione.
      *
-     * @param array $data Dati da validare
-<<<<<<< HEAD
-     *
+     * @param  array  $data  Dati da validare
      * @return array<string, array<int, string>>
-=======
-     * @return array<string, string>
->>>>>>> be08416 (.)
      */
     public function getErrors(array $data): array
     {
         $validator = Validator::make($data, self::VALIDATION_RULES, self::CUSTOM_MESSAGES);
 
-<<<<<<< HEAD
         /** @var array<string, array<int, string>> $errors */
         $errors = $validator->errors()->toArray();
 
         return $errors;
-=======
-        return $validator->errors()->toArray();
->>>>>>> be08416 (.)
     }
 
     /**
      * Verifica l'integrità dei dati.
      *
-     * @param array $data Dati da verificare
-<<<<<<< HEAD
+     * @param  array  $data  Dati da verificare
      */
     public function checkIntegrity(array $data): bool
     {
@@ -119,13 +101,6 @@ class GeoDataValidator
         }
 
         if (! isset($data['regions']) || ! \is_array($data['regions'])) {
-=======
-     * @return bool
-     */
-    public function checkIntegrity(array $data): bool
-    {
-        if (!$this->validate($data)) {
->>>>>>> be08416 (.)
             return false;
         }
 
@@ -135,19 +110,14 @@ class GeoDataValidator
         $cityCodes = [];
 
         foreach ($data['regions'] as $region) {
-<<<<<<< HEAD
             if (! \is_array($region) || ! isset($region['code'])) {
                 return false;
             }
             if (\in_array($region['code'], $regionCodes, strict: true)) {
-=======
-            if (in_array($region['code'], $regionCodes, strict: true)) {
->>>>>>> be08416 (.)
                 return false;
             }
             $regionCodes[] = $region['code'];
 
-<<<<<<< HEAD
             if (! isset($region['provinces']) || ! \is_array($region['provinces'])) {
                 return false;
             }
@@ -157,15 +127,10 @@ class GeoDataValidator
                     return false;
                 }
                 if (\in_array($province['code'], $provinceCodes, strict: true)) {
-=======
-            foreach ($region['provinces'] as $province) {
-                if (in_array($province['code'], $provinceCodes, strict: true)) {
->>>>>>> be08416 (.)
                     return false;
                 }
                 $provinceCodes[] = $province['code'];
 
-<<<<<<< HEAD
                 if (! isset($province['cities']) || ! \is_array($province['cities'])) {
                     return false;
                 }
@@ -175,10 +140,6 @@ class GeoDataValidator
                         return false;
                     }
                     if (\in_array($city['code'], $cityCodes, strict: true)) {
-=======
-                foreach ($province['cities'] as $city) {
-                    if (in_array($city['code'], $cityCodes, strict: true)) {
->>>>>>> be08416 (.)
                         return false;
                     }
                     $cityCodes[] = $city['code'];

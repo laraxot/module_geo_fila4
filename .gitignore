@@ -2,17 +2,12 @@
 # LARAXOT MODULE GEO - .GITIGNORE
 # ==============================================
 # Modulo Geo Laraxot - Template standardizzato
-<<<<<<< HEAD
 # Ultimo aggiornamento: 2025-01-31
-=======
-# Ultimo aggiornamento: 2025-01-06
->>>>>>> be08416 (.)
 # ==============================================
 
 # ==============================================
 # DEPENDENCIES & PACKAGES
 # ==============================================
-<<<<<<< HEAD
 /vendor/
 /vendor
 /node_modules/
@@ -22,27 +17,14 @@ yarn.lock
 composer.lock
 yarn-error.log
 npm-debug.log
-=======
-vendor/
-node_modules/
-package-lock.json
-yarn.lock
-composer.lock
->>>>>>> be08416 (.)
 
 # ==============================================
 # BUILD & COMPILED FILES
 # ==============================================
 /build
-<<<<<<< HEAD
 /build/
 build/
 dist/
-=======
-build/
-dist/
-docs/cache/
->>>>>>> be08416 (.)
 cache/
 
 # ==============================================
@@ -97,10 +79,7 @@ Homestead.json
 # GIT SPECIFIC
 # ==============================================
 .git-rewrite/
-<<<<<<< HEAD
 .git-rewrite
-=======
->>>>>>> be08416 (.)
 .git-blame-ignore-revs
 
 # ==============================================
@@ -136,17 +115,12 @@ Thumbs.db
 # ==============================================
 # DOCUMENTATION CACHE
 # ==============================================
-<<<<<<< HEAD
 
 # ==============================================
 # LANGUAGE FILES
 # ==============================================
 lang/lang/
 resources/lang/
-=======
-docs/phpstan/
-docs/cache/
->>>>>>> be08416 (.)
 
 # ==============================================
 # OLD DIRECTORIES (LEGACY CLEANUP)
@@ -181,15 +155,7 @@ test_geo_data.sql
 # END OF GEO .GITIGNORE
 # ==============================================
 
-<<<<<<< HEAD
 # 🚫 File specifici del progetto
 *.fila2
 laravel
 public_html
-=======
-
-# 🚫 File specifici del progetto
-*.fila2
-laravel
-public_html
->>>>>>> be08416 (.)

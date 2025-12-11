@@ -6,12 +6,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\Geo\Models\Location;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
-<<<<<<< HEAD
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Location::class;
-=======
-    protected null|string $model_class = Location::class;
->>>>>>> be08416 (.)
 
     public function up(): void
     {

@@ -149,8 +149,4 @@ Alcuni documenti potrebbero avere nomi simili ma contenuti diversi, in particola
 
 *Documento creato il: 28/05/2025*  
 *Ultimo aggiornamento: 28/05/2025*  
-<<<<<<< HEAD
 *Autore: Team <main module>*
-=======
-*Autore: Team SaluteOra*
->>>>>>> be08416 (.)

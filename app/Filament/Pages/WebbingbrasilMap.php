@@ -9,29 +9,15 @@ use Modules\Xot\Filament\Pages\XotBasePage;
 
 class WebbingbrasilMap extends XotBasePage
 {
-<<<<<<< HEAD
     public function getHeaderWidgetsColumns(): int|array
     {
         return 1;
     }
 
-=======
-    /**
-     * @return array<class-string<\Filament\Widgets\Widget>|\Filament\Widgets\WidgetConfiguration>
-     */
->>>>>>> be08416 (.)
     protected function getHeaderWidgets(): array
     {
         return [
             Map::class,
         ];
     }
-<<<<<<< HEAD
-=======
-
-    public function getHeaderWidgetsColumns(): int|array
-    {
-        return 1;
-    }
->>>>>>> be08416 (.)
 }

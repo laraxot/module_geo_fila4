@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-<<<<<<< HEAD
-=======
-use Throwable;
-use InvalidArgumentException;
->>>>>>> be08416 (.)
 use Illuminate\Support\Collection;
+use InvalidArgumentException;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\DistanceCalculationException;
+use Throwable;
 
 /**
  * Classe per calcolare la distanza tra due punti geografici.
@@ -27,46 +24,25 @@ use Modules\Geo\Exceptions\DistanceCalculationException;
 readonly class CalculateDistanceAction
 {
     /**
-<<<<<<< HEAD
-     * @param CalculateDistanceMatrixAction $distanceMatrixAction Servizio per il calcolo delle distanze
-     */
-    public function __construct(
-        private CalculateDistanceMatrixAction $distanceMatrixAction,
-    ) {
-    }
-=======
      * @param  CalculateDistanceMatrixAction  $distanceMatrixAction  Servizio per il calcolo delle distanze
      */
     public function __construct(
-        private  CalculateDistanceMatrixAction $distanceMatrixAction,
+        private CalculateDistanceMatrixAction $distanceMatrixAction,
     ) {}
->>>>>>> be08416 (.)
 
     /**
      * Calcola la distanza e il tempo di percorrenza tra due punti.
      *
-<<<<<<< HEAD
-     * @param LocationData $origin      Punto di origine con coordinate valide
-     * @param LocationData $destination Punto di destinazione con coordinate valide
-     *
-     * @throws DistanceCalculationException Se il calcolo della distanza fallisce o restituisce dati non validi
-     * @throws \InvalidArgumentException    Se le coordinate non sono valide
-     *
-=======
      * @param  LocationData  $origin  Punto di origine con coordinate valide
      * @param  LocationData  $destination  Punto di destinazione con coordinate valide
->>>>>>> be08416 (.)
      * @return array{
      *     distance: array{text: string, value: int},
      *     duration: array{text: string, value: int},
      *     status: string
      * } Array con distanza, durata e stato
-<<<<<<< HEAD
-=======
      *
      * @throws DistanceCalculationException Se il calcolo della distanza fallisce o restituisce dati non validi
      * @throws InvalidArgumentException Se le coordinate non sono valide
->>>>>>> be08416 (.)
      */
     public function execute(LocationData $origin, LocationData $destination): array
     {
@@ -81,40 +57,25 @@ readonly class CalculateDistanceAction
             }
 
             return $response[0][0];
-<<<<<<< HEAD
-        } catch (\Throwable $e) {
-            throw DistanceCalculationException::calculationError('Errore nel calcolo della distanza: '.$e->getMessage(), $e);
-=======
         } catch (Throwable $e) {
             throw DistanceCalculationException::calculationError(
-                'Errore nel calcolo della distanza: ' . $e->getMessage(),
+                'Errore nel calcolo della distanza: '.$e->getMessage(),
                 $e,
             );
->>>>>>> be08416 (.)
         }
     }
 
     /**
      * Formatta la distanza in metri in una stringa leggibile.
      *
-<<<<<<< HEAD
-     * @param int $meters Distanza in metri
-     *
-     * @throws \InvalidArgumentException Se il valore in metri è negativo
-=======
      * @param  int  $meters  Distanza in metri
      *
      * @throws InvalidArgumentException Se il valore in metri è negativo
->>>>>>> be08416 (.)
      */
     public function formatDistance(int $meters): string
     {
         if ($meters < 0) {
-<<<<<<< HEAD
-            throw new \InvalidArgumentException('La distanza non può essere negativa');
-=======
             throw new InvalidArgumentException('La distanza non può essere negativa');
->>>>>>> be08416 (.)
         }
 
         if ($meters < 1000) {
@@ -129,32 +90,18 @@ readonly class CalculateDistanceAction
     /**
      * Valida le coordinate di una posizione.
      *
-<<<<<<< HEAD
-     * @param LocationData $location Posizione da validare
-     *
-     * @throws \InvalidArgumentException Se le coordinate non sono valide
-=======
      * @param  LocationData  $location  Posizione da validare
      *
      * @throws InvalidArgumentException Se le coordinate non sono valide
->>>>>>> be08416 (.)
      */
     private function validateCoordinates(LocationData $location): void
     {
         if ($location->latitude < -90 || $location->latitude > 90) {
-<<<<<<< HEAD
-            throw new \InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
-        }
-
-        if ($location->longitude < -180 || $location->longitude > 180) {
-            throw new \InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
-=======
             throw new InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
         }
 
         if ($location->longitude < -180 || $location->longitude > 180) {
             throw new InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
->>>>>>> be08416 (.)
         }
     }
 }

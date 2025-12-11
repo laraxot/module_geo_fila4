@@ -4,17 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Actions;
 
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Http;
-=======
-use RuntimeException;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Mockery;
->>>>>>> be08416 (.)
 use Modules\Geo\Actions\GetCoordinatesAction;
 use Modules\Geo\Datas\LocationData;
+use RuntimeException;
 use Tests\TestCase;
 
 class GetCoordinatesActionTest extends TestCase
@@ -28,11 +23,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itReturnsCoordinatesForValidAddress(): void
-=======
     public function it_returns_coordinates_for_valid_address(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -73,32 +64,19 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itThrowsExceptionWhenApiKeyMissing(): void
-=======
     public function it_throws_exception_when_api_key_missing(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
         Config::set('services.google.maps.key', null);
 
         // Act & Assert
-<<<<<<< HEAD
         expect(fn () => $this->action->execute($address))
-            ->toThrow(\RuntimeException::class, 'Google Maps API key not found');
-    }
-
-    /** @test */
-    public function itThrowsExceptionWhenApiRequestFails(): void
-=======
-        expect(fn() => $this->action->execute($address))
             ->toThrow(RuntimeException::class, 'Google Maps API key not found');
     }
 
     /** @test */
     public function it_throws_exception_when_api_request_fails(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -109,21 +87,12 @@ class GetCoordinatesActionTest extends TestCase
         ]);
 
         // Act & Assert
-<<<<<<< HEAD
         expect(fn () => $this->action->execute($address))
-            ->toThrow(\RuntimeException::class, 'Failed to get coordinates from Google Maps API');
-    }
-
-    /** @test */
-    public function itReturnsNullForInvalidAddress(): void
-=======
-        expect(fn() => $this->action->execute($address))
             ->toThrow(RuntimeException::class, 'Failed to get coordinates from Google Maps API');
     }
 
     /** @test */
     public function it_returns_null_for_invalid_address(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Invalid Address That Does Not Exist';
@@ -146,11 +115,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itReturnsNullForOverQueryLimitStatus(): void
-=======
     public function it_returns_null_for_over_query_limit_status(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -173,11 +138,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itReturnsNullForRequestDeniedStatus(): void
-=======
     public function it_returns_null_for_request_denied_status(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -200,11 +161,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesEmptyResultsArray(): void
-=======
     public function it_handles_empty_results_array(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -227,11 +184,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesMultipleResultsAndReturnsFirst(): void
-=======
     public function it_handles_multiple_results_and_returns_first(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma, Italia';
@@ -278,11 +231,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesSpecialCharactersInAddress(): void
-=======
     public function it_handles_special_characters_in_address(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia - Ufficio 4° piano';
@@ -316,11 +265,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesNumericCoordinatesCorrectly(): void
-=======
     public function it_handles_numeric_coordinates_correctly(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = '123 Main St, New York, NY';
@@ -359,17 +304,10 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesVeryLongAddresses(): void
-    {
-        // Arrange
-        $address = str_repeat('Via Roma 123, Milano, Italia - ', 50).'Ufficio 4° piano';
-=======
     public function it_handles_very_long_addresses(): void
     {
         // Arrange
-        $address = str_repeat('Via Roma 123, Milano, Italia - ', 50) . 'Ufficio 4° piano';
->>>>>>> be08416 (.)
+        $address = str_repeat('Via Roma 123, Milano, Italia - ', 50).'Ufficio 4° piano';
         $expectedLatitude = 45.4642;
         $expectedLongitude = 9.1900;
 
@@ -400,11 +338,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesCoordinatesWithHighPrecision(): void
-=======
     public function it_handles_coordinates_with_high_precision(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Precise Location Test';
@@ -443,11 +377,7 @@ class GetCoordinatesActionTest extends TestCase
     }
 
     /** @test */
-<<<<<<< HEAD
-    public function itHandlesNetworkTimeoutGracefully(): void
-=======
     public function it_handles_network_timeout_gracefully(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -458,21 +388,12 @@ class GetCoordinatesActionTest extends TestCase
         ]);
 
         // Act & Assert
-<<<<<<< HEAD
         expect(fn () => $this->action->execute($address))
-            ->toThrow(\RuntimeException::class, 'Failed to get coordinates from Google Maps API');
-    }
-
-    /** @test */
-    public function itHandlesInvalidJsonResponse(): void
-=======
-        expect(fn() => $this->action->execute($address))
             ->toThrow(RuntimeException::class, 'Failed to get coordinates from Google Maps API');
     }
 
     /** @test */
     public function it_handles_invalid_json_response(): void
->>>>>>> be08416 (.)
     {
         // Arrange
         $address = 'Via Roma 123, Milano, Italia';
@@ -483,20 +404,12 @@ class GetCoordinatesActionTest extends TestCase
         ]);
 
         // Act & Assert
-<<<<<<< HEAD
-        expect(fn () => $this->action->execute($address))->toThrow(\RuntimeException::class);
-=======
-        expect(fn() => $this->action->execute($address))->toThrow(RuntimeException::class);
->>>>>>> be08416 (.)
+        expect(fn () => $this->action->execute($address))->toThrow(RuntimeException::class);
     }
 
     protected function tearDown(): void
     {
-<<<<<<< HEAD
-        \Mockery::close();
-=======
         Mockery::close();
->>>>>>> be08416 (.)
         parent::tearDown();
     }
 }

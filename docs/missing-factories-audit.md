@@ -56,11 +56,7 @@
 ## Impatto Critico
 
 ### Moduli Dipendenti Compromessi
-<<<<<<< HEAD
 - **<main module>**: Address per studi medici
-=======
-- **SaluteOra**: Address per studi medici
->>>>>>> be08416 (.)
 - **User**: Address per profili utenti
 - **Cms**: Location per contenuti geografici
 - **Tutti i form**: Selezione geografica rotta

@@ -2,11 +2,7 @@
 
 ## La Dualità degli Identificatori nel Sistema
 
-<<<<<<< HEAD
-Nel sistema <nome progetto>, esiste una dualità fondamentale nei tipi di identificatori primari utilizzati dai diversi modelli:
-=======
-Nel sistema SaluteOra, esiste una dualità fondamentale nei tipi di identificatori primari utilizzati dai diversi modelli:
->>>>>>> be08416 (.)
+Nel sistema <main module>, esiste una dualità fondamentale nei tipi di identificatori primari utilizzati dai diversi modelli:
 
 1. **UUID** - Utilizzati principalmente per entità legate all'utente (User, Profile, ecc.)
 2. **Interi auto-incrementanti** - Utilizzati per la maggior parte delle altre entità

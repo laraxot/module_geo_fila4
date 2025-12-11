@@ -2,11 +2,7 @@
 
 ## Principio DRY nella Definizione dei Form
 
-<<<<<<< HEAD
-Uno dei principi fondamentali nella progettazione di <nome progetto> è l'applicazione rigorosa del principio DRY (Don't Repeat Yourself). Questo si applica anche alla definizione degli schemi dei form Filament, in particolare per entità che condividono strutture comuni come gli indirizzi.
-=======
-Uno dei principi fondamentali nella progettazione di SaluteOra è l'applicazione rigorosa del principio DRY (Don't Repeat Yourself). Questo si applica anche alla definizione degli schemi dei form Filament, in particolare per entità che condividono strutture comuni come gli indirizzi.
->>>>>>> be08416 (.)
+Uno dei principi fondamentali nella progettazione di <main module> è l'applicazione rigorosa del principio DRY (Don't Repeat Yourself). Questo si applica anche alla definizione degli schemi dei form Filament, in particolare per entità che condividono strutture comuni come gli indirizzi.
 
 ## Pattern di Condivisione degli Schemi Form
 
@@ -25,11 +21,7 @@ Il pattern di condivisione degli schemi form risolve questi problemi attraverso:
 2. **Riutilizzo attraverso i moduli**: Altri moduli richiamano lo schema attraverso metodi statici
 3. **Personalizzazione contestuale**: Adattamenti locali dove necessario
 
-<<<<<<< HEAD
-## Implementazione in <nome progetto>
-=======
-## Implementazione in SaluteOra
->>>>>>> be08416 (.)
+## Implementazione in <main module>
 
 ### Definizione dello Schema in AddressResource
 
@@ -48,11 +40,7 @@ public static function getFormSchema(): array
 ### Riutilizzo in StudioResource
 
 ```php
-<<<<<<< HEAD
-// In Modules\<nome progetto>\Filament\Resources\StudioResource
-=======
-// In Modules\SaluteOra\Filament\Resources\StudioResource
->>>>>>> be08416 (.)
+// In Modules\<main module>\Filament\Resources\StudioResource
 public static function getFormSchema(): array
 {
     return [
@@ -106,8 +94,4 @@ $addressSchema['locality'] = Forms\Components\TextInput::make('locality')
 - [address-resource.md](address-resource.md)
 - [pattern-filament-pages.md](../docs/pattern-filament-pages.md)
 - [AddressResource](../app/Filament/Resources/AddressResource.php)
-<<<<<<< HEAD
-- [StudioResource](../../<nome progetto>/app/Filament/Resources/StudioResource.php)
-=======
-- [StudioResource](../../SaluteOra/app/Filament/Resources/StudioResource.php)
->>>>>>> be08416 (.)
+- [StudioResource](../../<main module>/app/Filament/Resources/StudioResource.php)

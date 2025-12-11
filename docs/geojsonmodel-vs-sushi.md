@@ -167,11 +167,7 @@ La scelta tra GeoJsonModel e Laravel Sushi dovrebbe essere guidata dalle esigenz
 
 ## Raccomandazione
 
-<<<<<<< HEAD
-Per il modulo Geo del progetto <nome progetto>, **consigliamo di mantenere l'implementazione GeoJsonModel attuale** per i seguenti motivi:
-=======
-Per il modulo Geo del progetto SaluteOra, **consigliamo di mantenere l'implementazione GeoJsonModel attuale** per i seguenti motivi:
->>>>>>> be08416 (.)
+Per il modulo Geo del progetto <main module>, **consigliamo di mantenere l'implementazione GeoJsonModel attuale** per i seguenti motivi:
 
 1. I dati geografici italiani sono altamente statici e ben definiti
 2. Le performance sono critiche per i widget di ricerca

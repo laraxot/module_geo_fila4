@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Webmozart\Assert\Assert;
-
 class FilterCoordinatesInRadius
 {
     // filtra Coordinate In Raggio
@@ -14,14 +12,16 @@ class FilterCoordinatesInRadius
         $coordinateInRaggio = [];
 
         foreach ($coordinateArray as $coordinate) {
-            Assert::isArray($coordinate);
-<<<<<<< HEAD
-            Assert::string($lat = $coordinate['latitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
-            Assert::string($lon = $coordinate['longitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
-=======
-            Assert::string($lat = $coordinate['latitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
-            Assert::string($lon = $coordinate['longitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
->>>>>>> be08416 (.)
+            if (! is_array($coordinate)) {
+                continue; // Skip non-array elements
+            }
+
+            $lat = $coordinate['latitude'] ?? null;
+            $lon = $coordinate['longitude'] ?? null;
+
+            if (! is_string($lat) || ! is_string($lon)) {
+                continue; // Skip if coordinates are not strings
+            }
 
             $distanza = $this->calcolaDistanzaGeografica($latPartenza, $lonPartenza, $lat, $lon);
 
@@ -53,13 +53,7 @@ class FilterCoordinatesInRadius
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
 
         // Calcolo della distanza
-<<<<<<< HEAD
         return $raggioTerra * $c; // Distanza in chilometri
-=======
-        $distanza = $raggioTerra * $c;
-
-        return $distanza; // Distanza in chilometri
->>>>>>> be08416 (.)
     }
 }
 

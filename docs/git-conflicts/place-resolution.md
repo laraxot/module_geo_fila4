@@ -9,15 +9,7 @@ The file had multiple Git conflict markers due to merge conflicts between differ
 
 ### Conflicting Elements:
 1. **PHPDoc comments**: Two versions with different Profile model references
-<<<<<<< HEAD
-<<<<<<< HEAD
-   - Version A: `\Modules\Xot\Contracts\ProfileContract`
-=======
-   - Version A: `\Modules\SaluteOra\Models\Profile`
->>>>>>> f0b4f5c (.)
-=======
-   - Version A: `\Modules\Xot\Contracts\ProfileContract`
->>>>>>> be08416 (.)
+   - Version A: `\Modules\<main module>\Models\Profile`
    - Version B: `\Modules\User\Models\Profile`
 2. **Class declaration**: Multiple conflicting class declarations
 3. **Git merge markers**: Multiple nested conflict markers
@@ -43,11 +35,7 @@ The file had multiple Git conflict markers due to merge conflicts between differ
 ## Impact:
 - **Low Risk**: Only documentation and reference cleanup
 - **No Breaking Changes**: Core functionality unchanged
-<<<<<<< HEAD
-- **Dependencies**: Correctly references User module instead of non-existent <nome progetto> module
-=======
-- **Dependencies**: Correctly references User module instead of non-existent SaluteOra module
->>>>>>> be08416 (.)
+- **Dependencies**: Correctly references User module instead of non-existent <main module> module
 
 ## Next Steps:
 - Continue with County.php

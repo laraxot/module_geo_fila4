@@ -1,27 +1,15 @@
-<<<<<<< HEAD
 # Regola del Buon Boy Scout - Progetto <nome progetto>
-=======
-# Regola del Buon Boy Scout - Progetto SaluteOra
->>>>>>> be08416 (.)
 
 ## Principio Fondamentale
 **"Lascia il campo più pulito di come l'hai trovato"**
 
 ## Significato e Importanza
-<<<<<<< HEAD
 Questa regola è **SACRA** e **IMMUTABILE** nel progetto <nome progetto>. Ogni modifica al codice deve migliorare la codebase, non peggiorarla. La qualità del codice è responsabilità di ogni sviluppatore.
-=======
-Questa regola è **SACRA** e **IMMUTABILE** nel progetto SaluteOra. Ogni modifica al codice deve migliorare la codebase, non peggiorarla. La qualità del codice è responsabilità di ogni sviluppatore.
->>>>>>> be08416 (.)
 
 ## Applicazione Globale
 
 ### In Tutti i Moduli
-<<<<<<< HEAD
 - **<nome progetto>**: Factory, seeder, modelli e documentazione
-=======
-- **SaluteOra**: Factory, seeder, modelli e documentazione
->>>>>>> be08416 (.)
 - **User**: Autenticazione, autorizzazione e gestione utenti
 - **UI**: Componenti, widget e interfacce
 - **Xot**: Funzionalità base e convenzioni
@@ -105,11 +93,7 @@ Questa regola è **SACRA** e **IMMUTABILE** nel progetto SaluteOra. Ogni modific
 ## Collegamenti
 
 - [Regola Cursor](../../.cursor/rules/boy-scout-rule.mdc)
-<<<<<<< HEAD
 - [Regola <nome progetto>](../laravel/Modules/<nome progetto>/docs/boy-scout-rule.md)
-=======
-- [Regola SaluteOra](../laravel/Modules/SaluteOra/docs/boy-scout-rule.md)
->>>>>>> be08416 (.)
 - [Convenzioni Laraxot](laraxot-conventions.md)
 - [Best Practices](best-practices.md)
 

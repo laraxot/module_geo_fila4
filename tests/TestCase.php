@@ -5,11 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-<<<<<<< HEAD
 use Modules\Xot\Tests\CreatesApplication;
-=======
-use Tests\CreatesApplication;
->>>>>>> be08416 (.)
 
 abstract class TestCase extends BaseTestCase
 {

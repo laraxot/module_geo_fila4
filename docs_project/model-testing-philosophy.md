@@ -61,8 +61,5 @@ public function test_fillable_fields(): void
 ---
 **Ultimo aggiornamento**: Dicembre 2024  
 **Versione**: 1.0  
-<<<<<<< HEAD
 **Compatibilità**: Laraxot <nome progetto>, Testing Philosophy
-=======
-**Compatibilità**: Laraxot SaluteOra, Testing Philosophy
->>>>>>> be08416 (.)
+**Compatibilità**: Laraxot <nome progetto>, Testing Philosophy

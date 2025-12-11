@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -16,12 +15,3 @@ return [
         'icon' => 'heroicon-o-map',
     ],
 ];
-=======
-<?php return array (
-  'navigation' => 
-  array (
-    'label' => '.navigation',
-    'group' => '.navigation',
-  ),
-);
->>>>>>> be08416 (.)

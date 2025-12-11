@@ -9,23 +9,17 @@ Lo script di verifica ha identificato **15 moduli** con problemi di riusabilità
 I file di traduzione nei moduli riutilizzabili contengono placeholder e testi hardcoded:
 
 **File da correggere:**
-<<<<<<< HEAD
 - `Modules/Notify/lang/en/test_smtp.php` - "<nome progetto>" in placeholder
 - `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder  
-=======
-- `Modules/Notify/lang/en/test_smtp.php` - "SaluteOra" in placeholder
-- `Modules/Notify/lang/de/test_smtp.php` - "SaluteOra" in placeholder  
->>>>>>> be08416 (.)
+- `Modules/Notify/lang/en/test_smtp.php` - "<nome progetto>" in placeholder
+- `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder  
 - Altri file di traduzione con hardcoding
 
 **Pattern di correzione:**
 ```php
 // ❌ PRIMA
-<<<<<<< HEAD
 'placeholder' => 'Test configurazione SMTP - <nome progetto>',
-=======
-'placeholder' => 'Test configurazione SMTP - SaluteOra',
->>>>>>> be08416 (.)
+'placeholder' => 'Test configurazione SMTP - <nome progetto>',
 
 // ✅ DOPO
 'placeholder' => 'Test configurazione SMTP - {{app_name}}',
@@ -40,11 +34,8 @@ I file di traduzione nei moduli riutilizzabili contengono placeholder e testi ha
 **Correzioni richieste:**
 ```php
 // ❌ PRIMA
-<<<<<<< HEAD
 public static string $projectBasePath = '/var/www/html/<nome progetto>';
-=======
-public static string $projectBasePath = '/var/www/html/saluteora';
->>>>>>> be08416 (.)
+public static string $projectBasePath = '/var/www/html/<nome progetto>';
 
 // ✅ DOPO  
 public static function getProjectBasePath(): string
@@ -59,11 +50,8 @@ Aggiornare tutti i file di documentazione per rimuovere riferimenti specifici al
 **Pattern di correzione:**
 ```markdown
 <!-- ❌ PRIMA -->
-<<<<<<< HEAD
 # Implementazione Pagina Servizi - <nome progetto>
-=======
-# Implementazione Pagina Servizi - SaluteOra
->>>>>>> be08416 (.)
+# Implementazione Pagina Servizi - <nome progetto>
 
 <!-- ✅ DOPO -->
 # Implementazione Pagina Servizi - Progetto Laraxot
@@ -75,11 +63,8 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 ## Azioni Implementate
 
 ### ✅ Completate
-<<<<<<< HEAD
 1. **NotificationManagementBusinessLogicTest.php** - Rimosso hardcoding "<nome progetto>"
-=======
-1. **NotificationManagementBusinessLogicTest.php** - Rimosso hardcoding "SaluteOra"
->>>>>>> be08416 (.)
+1. **NotificationManagementBusinessLogicTest.php** - Rimosso hardcoding "<nome progetto>"
 2. **NotifyThemeableFactory.php** - Implementato `getProjectNamespace()` 
 3. **Documentazione base** - Creata `docs/module_reusability_guidelines.md`
 4. **Regole Cursor/Windsurf** - Aggiornate con nuove regole critiche
@@ -120,13 +105,10 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 #!/bin/bash
 # Correzione automatica per file di traduzione
 
-<<<<<<< HEAD
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>/{{app_name}}/g' {} \;
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>\.com/{{app_domain}}/g' {} \;
-=======
-find Modules/*/lang/ -name "*.php" -exec sed -i 's/SaluteOra/{{app_name}}/g' {} \;
-find Modules/*/lang/ -name "*.php" -exec sed -i 's/saluteora\.com/{{app_domain}}/g' {} \;
->>>>>>> be08416 (.)
+find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>/{{app_name}}/g' {} \;
+find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>\.com/{{app_domain}}/g' {} \;
 ```
 
 ### Validazione Continua

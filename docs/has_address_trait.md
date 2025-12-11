@@ -2,11 +2,7 @@
 
 ## Panoramica
 
-<<<<<<< HEAD
 Il trait `HasAddress` fornisce una soluzione standardizzata per la gestione degli indirizzi in tutti i modelli dell'applicazione <main module>. Questo trait implementa il pattern di relazione polimorfica con il modello `Address` del modulo Geo, permettendo a qualsiasi entità di avere uno o più indirizzi associati.
-=======
-Il trait `HasAddress` fornisce una soluzione standardizzata per la gestione degli indirizzi in tutti i modelli dell'applicazione SaluteOra. Questo trait implementa il pattern di relazione polimorfica con il modello `Address` del modulo Geo, permettendo a qualsiasi entità di avere uno o più indirizzi associati.
->>>>>>> be08416 (.)
 
 
 ## Motivazione Filosofica

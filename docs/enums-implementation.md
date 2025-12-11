@@ -2,11 +2,7 @@
 
 ## Introduzione
 
-<<<<<<< HEAD
-Questo documento descrive l'implementazione degli enum nel modulo Geo di <nome progetto>, con particolare attenzione alla gestione dei tipi e stati dei modelli geografici.
-=======
-Questo documento descrive l'implementazione degli enum nel modulo Geo di SaluteOra, con particolare attenzione alla gestione dei tipi e stati dei modelli geografici.
->>>>>>> be08416 (.)
+Questo documento descrive l'implementazione degli enum nel modulo Geo di <main module>, con particolare attenzione alla gestione dei tipi e stati dei modelli geografici.
 
 ## Struttura degli Enum
 

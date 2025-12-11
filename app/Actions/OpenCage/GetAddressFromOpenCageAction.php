@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\OpenCage;
 
-<<<<<<< HEAD
-=======
 use Exception;
->>>>>>> be08416 (.)
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
@@ -21,47 +20,33 @@ class GetAddressFromOpenCageAction
     /**
      * Esegue la ricerca dell'indirizzo su OpenCage.
      *
-     * @param string $address L'indirizzo da cercare
-     *
-<<<<<<< HEAD
-     * @throws \Exception Se la chiave API non è configurata
-     *
+     * @param  string  $address  L'indirizzo da cercare
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     *
+     * @throws Exception Se la chiave API non è configurata
      */
     public function execute(string $address): ?AddressData
-=======
-     * @throws Exception Se la chiave API non è configurata
-     *
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
-     */
-    public function execute(string $address): null|AddressData
->>>>>>> be08416 (.)
     {
         $apiKey = config('services.opencage.key');
 
         if (empty($apiKey)) {
-<<<<<<< HEAD
-            throw new \Exception('OpenCage API key not configured');
-        }
-
-        $response = Http::get(self::BASE_URL.'/json', [
-=======
             throw new Exception('OpenCage API key not configured');
         }
 
-        $response = Http::get(self::BASE_URL . '/json', [
->>>>>>> be08416 (.)
+        $response = Http::get(self::BASE_URL.'/json', [
             'q' => $address,
             'key' => $apiKey,
             'limit' => 1,
             'no_annotations' => 1,
         ]);
 
-<<<<<<< HEAD
+        // Handle PromiseInterface|Response union type
+        if ($response instanceof PromiseInterface) {
+            $response = $response->wait();
+        }
+
+        /** @var \Illuminate\Http\Client\Response $response */
         if (! $response->successful()) {
-=======
-        if (!$response->successful()) {
->>>>>>> be08416 (.)
             return null;
         }
 

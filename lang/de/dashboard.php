@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> be08416 (.)
 return [
     'navigation' => [
         'name' => 'Dashboard Geo',
@@ -16,11 +12,7 @@ return [
         ],
         'label' => 'Dashboard',
         'sort' => '30',
-<<<<<<< HEAD
         'icon' => 'ui-dashboard',
-=======
-        'icon' => 'dashboard',
->>>>>>> be08416 (.)
     ],
     'widgets' => [
         'total_locations' => 'Totale Località',

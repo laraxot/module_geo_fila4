@@ -2,11 +2,8 @@
 
 ## 📊 Panoramica Generale
 
-<<<<<<< HEAD
 Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
-=======
-Analisi sistematica di tutti i 14 moduli del progetto SaluteOra seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
->>>>>>> be08416 (.)
+Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
 
 ## 🏗️ Gerarchia Architetturale
 
@@ -27,13 +24,10 @@ Analisi sistematica di tutti i 14 moduli del progetto SaluteOra seguendo i princ
 - **Tenant**: Multi-tenancy
 
 ### Moduli Specifici (Livello 3)
-<<<<<<< HEAD
 - **<nome progetto>**: Modulo principale sanitario
 - **<nome modulo>**: Funzionalità mobile
-=======
-- **SaluteOra**: Modulo principale sanitario
-- **SaluteMo**: Funzionalità mobile
->>>>>>> be08416 (.)
+- **<nome progetto>**: Modulo principale sanitario
+- **<nome progetto>**: Funzionalità mobile
 
 ## 🎯 Pattern Comuni Identificati
 
@@ -247,13 +241,10 @@ class ModuleMetricsService
 - [Tenant - Multi-Tenancy](../laravel/Modules/Tenant/docs/ottimizzazioni-e-miglioramenti.md)
 
 ### Moduli Specifici
-<<<<<<< HEAD
 - [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome modulo> - Mobile Features](../laravel/Modules/<nome modulo>/docs/ottimizzazioni-e-miglioramenti.md)
-=======
-- [SaluteOra - Main Healthcare](../laravel/Modules/SaluteOra/docs/ottimizzazioni-e-miglioramenti.md)
-- [SaluteMo - Mobile Features](../laravel/Modules/SaluteMo/docs/ottimizzazioni-e-miglioramenti.md)
->>>>>>> be08416 (.)
+- [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
+- [<nome progetto> - Mobile Features](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 
 ## 🎯 Conclusioni
 

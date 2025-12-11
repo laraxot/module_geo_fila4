@@ -1,11 +1,7 @@
 # BaseModel Testing - Lessons Learned (Gennaio 2025)
 
 ## Context
-<<<<<<< HEAD
 Durante la risoluzione del test fallito `BaseModelTest` nel modulo <nome modulo>, sono stati identificati e risolti pattern problematici comuni nei test di modelli complessi che utilizzano molti trait.
-=======
-Durante la risoluzione del test fallito `BaseModelTest` nel modulo SaluteMo, sono stati identificati e risolti pattern problematici comuni nei test di modelli complessi che utilizzano molti trait.
->>>>>>> be08416 (.)
 
 ## Problema Identificato
 
@@ -86,22 +82,14 @@ $this->getMockBuilder(BaseModel::class)
 
 ### Before
 ```
-<<<<<<< HEAD
 FAILED  Modules\<nome modulo>\tests\Unit\BaseModelTest
-=======
-FAILED  Modules\SaluteMo\tests\Unit\BaseModelTest
->>>>>>> be08416 (.)
 ⨯ it supports media methods presence → BindingResolutionException
 ! it exposes casts as array → Undefined array key
 ```
 
 ### After
 ```
-<<<<<<< HEAD
 PASS  Modules\<nome modulo>\tests\Unit\BaseModelTest
-=======
-PASS  Modules\SaluteMo\tests\Unit\BaseModelTest
->>>>>>> be08416 (.)
 ✓ it has correct trait usage
 ✓ it supports media methods presence  
 ✓ it implements HasMedia interface
@@ -114,13 +102,8 @@ Tests: 54 passed (114 assertions)
 
 ### Moduli Potenzialmente Interessati
 Tutti i moduli che utilizzano `BaseModel` o pattern simili:
-<<<<<<< HEAD
 - <nome modulo> ✅ (Fixed)
 - <nome progetto> (Potential)
-=======
-- SaluteMo ✅ (Fixed)
-- SaluteOra (Potential)
->>>>>>> be08416 (.)
 - Geo (Potential)
 - Altri moduli con trait complessi
 
@@ -148,8 +131,4 @@ Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 **Data**: 25 Gennaio 2025
 **Responsabile**: Claude Code Testing Resolution
 **Status**: Completato e Documentato
-<<<<<<< HEAD
 **Moduli Testati**: <nome modulo> (54/54 tests passing)
-=======
-**Moduli Testati**: SaluteMo (54/54 tests passing)
->>>>>>> be08416 (.)

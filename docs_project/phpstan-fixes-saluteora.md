@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 # Correzioni PHPStan <nome progetto> - Uso Azioni Cast Xot
 
 ## Descrizione
 Questo documento documenta le correzioni PHPStan per il modulo <nome progetto> utilizzando le azioni di casting pre-esistenti in `laravel/Modules/Xot/app/Actions/Cast`.
-=======
-# Correzioni PHPStan SaluteOra - Uso Azioni Cast Xot
+# Correzioni PHPStan <nome progetto> - Uso Azioni Cast Xot
 
 ## Descrizione
-Questo documento documenta le correzioni PHPStan per il modulo SaluteOra utilizzando le azioni di casting pre-esistenti in `laravel/Modules/Xot/app/Actions/Cast`.
->>>>>>> be08416 (.)
+Questo documento documenta le correzioni PHPStan per il modulo <nome progetto> utilizzando le azioni di casting pre-esistenti in `laravel/Modules/Xot/app/Actions/Cast`.
 
 ## Principio Fondamentale
 **SEMPRE** utilizzare le azioni di casting Xot invece di cast manuali per risolvere errori PHPStan e garantire type safety.
@@ -79,20 +76,14 @@ $startTime->addMinutes($duration);
 ```php
 // Prima (ERRATO)
 /**
-<<<<<<< HEAD
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Doctor>
-=======
- * @extends \Modules\SaluteOra\Database\Factories\UserFactory<\Modules\SaluteOra\Models\Doctor>
->>>>>>> be08416 (.)
+ * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Doctor>
  */
 
 // Dopo (CORRETTO)
 /**
-<<<<<<< HEAD
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Doctor>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\SaluteOra\Models\Doctor>
->>>>>>> be08416 (.)
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Doctor>
  */
 ```
 
@@ -106,20 +97,14 @@ $startTime->addMinutes($duration);
 ```php
 // Prima (ERRATO)
 /**
-<<<<<<< HEAD
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Patient>
-=======
- * @extends \Modules\SaluteOra\Database\Factories\UserFactory<\Modules\SaluteOra\Models\Patient>
->>>>>>> be08416 (.)
+ * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Patient>
  */
 
 // Dopo (CORRETTO)
 /**
-<<<<<<< HEAD
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Patient>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\SaluteOra\Models\Patient>
->>>>>>> be08416 (.)
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Patient>
  */
 ```
 

@@ -2,11 +2,7 @@
 
 ## Introduzione
 
-<<<<<<< HEAD
 Questo documento descrive l'implementazione degli enum nel modulo Geo di <main module>, con particolare attenzione alla gestione dei tipi e stati dei modelli geografici.
-=======
-Questo documento descrive l'implementazione degli enum nel modulo Geo di SaluteOra, con particolare attenzione alla gestione dei tipi e stati dei modelli geografici.
->>>>>>> be08416 (.)
 
 ## Struttura degli Enum
 
@@ -133,10 +129,5 @@ $request->validate([
 ## Collegamenti Correlati
 
 - [Documentazione PHP sugli Enum](https://www.php.net/manual/en/language.enumerations.php)
-<<<<<<< HEAD
 - [Filament Enums Docs](https://filamentphp.com/project_docs/3.x/support/enums)
 - [Best Practices Enum](enums-best-practices.md) 
-=======
-- [Filament Enums Docs](https://filamentphp.com/docs/3.x/support/enums)
-- [Best Practices Enum](enums-best-practices.md) 
->>>>>>> be08416 (.)

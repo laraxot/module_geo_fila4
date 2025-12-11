@@ -69,11 +69,7 @@ $table->unsignedBigInteger('causer_id')->nullable();
 // Activity con Admin (Integer)
 [
     'causer_id' => '123', // Integer convertito in string
-<<<<<<< HEAD
     'causer_type' => 'Modules\<nome progetto>\Models\Admin'
-=======
-    'causer_type' => 'Modules\SaluteOra\Models\Admin'
->>>>>>> be08416 (.)
 ]
 ```
 
@@ -233,11 +229,7 @@ $table->index(['morphable_id', 'morphable_type']); // Performance
 ### **Esempi Pratici**
 - [Activity Migration](../laravel/Modules/Activity/database/migrations/2024_01_15_103351_create_activity_table.php)
 - [User UUID Model](../laravel/Modules/User/app/Models/User.php)
-<<<<<<< HEAD
 - [Admin Integer Model](../laravel/Modules/<nome progetto>/app/Models/Admin.php)
-=======
-- [Admin Integer Model](../laravel/Modules/SaluteOra/app/Models/Admin.php)
->>>>>>> be08416 (.)
 
 ### **Tools e Validazione**
 - **PHPStan**: Validazione tipi polimorfici

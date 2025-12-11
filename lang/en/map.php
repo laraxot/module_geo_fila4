@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> be08416 (.)
 return [
     'navigation' => [
         'name' => 'Mappe',
@@ -16,11 +12,7 @@ return [
         ],
         'label' => 'Mappe',
         'sort' => '33',
-<<<<<<< HEAD
         'icon' => 'ui-geo-map',
-=======
-        'icon' => 'geo-map',
->>>>>>> be08416 (.)
     ],
     'fields' => [
         'title' => 'Titolo',
