@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-use RuntimeException;
 
 use function Safe\json_decode;
 use function Safe\preg_match;
@@ -25,12 +24,13 @@ readonly class GetAddressFromMapboxAction
 
     public function __construct(
         private Client $client,
-    ) {}
+    ) {
+    }
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.
      *
-     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(string $address): ?AddressData
     {
@@ -53,19 +53,19 @@ readonly class GetAddressFromMapboxAction
     /**
      * Valida i dati di input.
      *
-     * @throws RuntimeException Se la chiave API non è configurata
+     * @throws \RuntimeException Se la chiave API non è configurata
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.mapbox.access_token');
         if (empty($apiKey)) {
-            throw new RuntimeException('Mapbox access token not configured');
+            throw new \RuntimeException('Mapbox access token not configured');
         }
         if (empty($address)) {
-            throw new RuntimeException('Address cannot be empty');
+            throw new \RuntimeException('Address cannot be empty');
         }
         if (strlen($address) > 1000) {
-            throw new RuntimeException('Address is too long');
+            throw new \RuntimeException('Address is too long');
         }
     }
 
@@ -95,7 +95,7 @@ readonly class GetAddressFromMapboxAction
     /**
      * Elabora la risposta dell'API.
      *
-     * @throws RuntimeException Se la risposta non è valida
+     * @throws \RuntimeException Se la risposta non è valida
      */
     private function parseResponse(string $response): ?AddressData
     {

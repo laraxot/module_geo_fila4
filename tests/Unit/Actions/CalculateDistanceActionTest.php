@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Actions;
 
-use Exception;
 use Illuminate\Support\Collection;
-use InvalidArgumentException;
-use Mockery;
 use Modules\Geo\Actions\CalculateDistanceAction;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Datas\LocationData;
@@ -23,12 +20,12 @@ class CalculateDistanceActionTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->mockDistanceMatrixAction = Mockery::mock(CalculateDistanceMatrixAction::class);
+        $this->mockDistanceMatrixAction = \Mockery::mock(CalculateDistanceMatrixAction::class);
         $this->action = new CalculateDistanceAction($this->mockDistanceMatrixAction);
     }
 
     /** @test */
-    public function it_calculates_distance_between_two_valid_locations(): void
+    public function itCalculatesDistanceBetweenTwoValidLocations(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -56,7 +53,7 @@ class CalculateDistanceActionTest extends TestCase
         $this->mockDistanceMatrixAction
             ->shouldReceive('execute')
             ->once()
-            ->with(Mockery::type(Collection::class), Mockery::type(Collection::class))
+            ->with(\Mockery::type(Collection::class), \Mockery::type(Collection::class))
             ->andReturn($expectedResponse);
 
         // Act
@@ -78,7 +75,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_throws_exception_for_invalid_latitude(): void
+    public function itThrowsExceptionForInvalidLatitude(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -95,11 +92,11 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(InvalidArgumentException::class, 'Latitudine non valida: 100.000000');
+            ->toThrow(\InvalidArgumentException::class, 'Latitudine non valida: 100.000000');
     }
 
     /** @test */
-    public function it_throws_exception_for_invalid_longitude(): void
+    public function itThrowsExceptionForInvalidLongitude(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -116,11 +113,11 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(InvalidArgumentException::class, 'Longitudine non valida: 200.000000');
+            ->toThrow(\InvalidArgumentException::class, 'Longitudine non valida: 200.000000');
     }
 
     /** @test */
-    public function it_throws_exception_for_negative_latitude(): void
+    public function itThrowsExceptionForNegativeLatitude(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -137,11 +134,11 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(InvalidArgumentException::class, 'Latitudine non valida: -100.000000');
+            ->toThrow(\InvalidArgumentException::class, 'Latitudine non valida: -100.000000');
     }
 
     /** @test */
-    public function it_throws_exception_for_negative_longitude(): void
+    public function itThrowsExceptionForNegativeLongitude(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -158,11 +155,11 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(InvalidArgumentException::class, 'Longitudine non valida: -200.000000');
+            ->toThrow(\InvalidArgumentException::class, 'Longitudine non valida: -200.000000');
     }
 
     /** @test */
-    public function it_throws_exception_for_empty_response(): void
+    public function itThrowsExceptionForEmptyResponse(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -187,7 +184,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_throws_exception_for_malformed_response(): void
+    public function itThrowsExceptionForMalformedResponse(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -214,7 +211,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_throws_exception_when_distance_matrix_fails(): void
+    public function itThrowsExceptionWhenDistanceMatrixFails(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -232,7 +229,7 @@ class CalculateDistanceActionTest extends TestCase
         $this->mockDistanceMatrixAction
             ->shouldReceive('execute')
             ->once()
-            ->andThrow(new Exception('API Error'));
+            ->andThrow(new \Exception('API Error'));
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
@@ -240,7 +237,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_formats_distance_in_meters_correctly(): void
+    public function itFormatsDistanceInMetersCorrectly(): void
     {
         // Arrange
         $meters = 500;
@@ -253,7 +250,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_formats_distance_in_kilometers_correctly(): void
+    public function itFormatsDistanceInKilometersCorrectly(): void
     {
         // Arrange
         $meters = 1500;
@@ -266,7 +263,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_formats_distance_with_decimal_kilometers(): void
+    public function itFormatsDistanceWithDecimalKilometers(): void
     {
         // Arrange
         $meters = 2500;
@@ -279,7 +276,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_formats_exact_kilometer_distance(): void
+    public function itFormatsExactKilometerDistance(): void
     {
         // Arrange
         $meters = 1000;
@@ -292,18 +289,18 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_throws_exception_for_negative_distance(): void
+    public function itThrowsExceptionForNegativeDistance(): void
     {
         // Arrange
         $negativeMeters = -100;
 
         // Act & Assert
         expect(fn () => $this->action->formatDistance($negativeMeters))
-            ->toThrow(InvalidArgumentException::class, 'La distanza non può essere negativa');
+            ->toThrow(\InvalidArgumentException::class, 'La distanza non può essere negativa');
     }
 
     /** @test */
-    public function it_handles_zero_distance(): void
+    public function itHandlesZeroDistance(): void
     {
         // Arrange
         $zeroMeters = 0;
@@ -316,7 +313,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_very_small_distances(): void
+    public function itHandlesVerySmallDistances(): void
     {
         // Arrange
         $smallMeters = 1;
@@ -329,7 +326,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_very_large_distances(): void
+    public function itHandlesVeryLargeDistances(): void
     {
         // Arrange
         $largeMeters = 999999;
@@ -342,7 +339,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_boundary_latitude_values(): void
+    public function itHandlesBoundaryLatitudeValues(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -380,7 +377,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_boundary_longitude_values(): void
+    public function itHandlesBoundaryLongitudeValues(): void
     {
         // Arrange
         $origin = new LocationData(
@@ -418,7 +415,7 @@ class CalculateDistanceActionTest extends TestCase
     }
 
     /** @test */
-    public function it_handles_same_origin_and_destination(): void
+    public function itHandlesSameOriginAndDestination(): void
     {
         // Arrange
         $sameLocation = new LocationData(
@@ -456,7 +453,7 @@ class CalculateDistanceActionTest extends TestCase
 
     protected function tearDown(): void
     {
-        Mockery::close();
+        \Mockery::close();
         parent::tearDown();
     }
 }

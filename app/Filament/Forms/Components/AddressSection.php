@@ -24,8 +24,7 @@ class AddressSection extends Section
     protected function getFormSchema(): array
     {
         $res = AddressResource::getFormSchema();
-        unset($res['name']);
-        unset($res['is_primary']);
+        unset($res['name'], $res['is_primary']);
 
         return $res;
     }

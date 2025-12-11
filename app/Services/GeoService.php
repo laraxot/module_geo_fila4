@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-use Exception;
-
 // https://www.geodatasource.com/world-cities-database/free
 // https://mikepolatoglou.com/geospatial-mysql-laravel-53
 // https://github.com/malhal/Laravel-Geographical
@@ -100,16 +98,16 @@ class GeoService
         if ($lat1 === $lat2 && $lon1 === $lon2) {
             return 0;
         }
-        if ($lat1 === null) {
+        if (null === $lat1) {
             return null;
         }
-        if ($lon1 === null) {
+        if (null === $lon1) {
             return null;
         }
-        if ($lat2 === null) {
+        if (null === $lat2) {
             return null;
         }
-        if ($lon2 === null) {
+        if (null === $lon2) {
             return null;
         }
         $theta = $lon1 - $lon2;
@@ -119,7 +117,7 @@ class GeoService
         $dist = acos($dist);
         $dist = rad2deg($dist);
         $miles = $dist * 60 * 1.1515;
-        if ($unit === null) {
+        if (null === $unit) {
             $unit = 'K'; // default
         }
         $unit = strtoupper($unit);
@@ -184,8 +182,8 @@ class GeoService
             $lngJ = is_float($pointJ->lng) || is_int($pointJ->lng) ? (float) $pointJ->lng : 0.0;
 
             if (
-                ($latI > $latitude) !== ($latJ > $latitude) &&
-                    $longitude <
+                ($latI > $latitude) !== ($latJ > $latitude)
+                    && $longitude <
                     (($lngJ - $lngI) * ($latitude - $latI) /
                                 ($latJ - $latI)) +
                         $lngI
@@ -199,13 +197,13 @@ class GeoService
 
     public static function pointInPolygon(float $lat, float $lng, ?string $polygon): bool
     {
-        if ($polygon === null || $polygon === '') {
+        if (null === $polygon || '' === $polygon) {
             return false;
         }
 
         $original_data = json_decode($polygon, true, 512, JSON_THROW_ON_ERROR);
         if (! \is_array($original_data)) {
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
+            throw new \Exception('['.__LINE__.']['.__FILE__.']');
         }
 
         if (self::is_in_polygon($lat, $lng, $original_data)) {

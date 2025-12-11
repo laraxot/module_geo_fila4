@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-use RuntimeException;
 
 use function Safe\json_decode;
 
@@ -24,12 +23,13 @@ readonly class GetAddressFromBingMapsAction
 
     public function __construct(
         private Client $client,
-    ) {}
+    ) {
+    }
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Bing Maps.
      *
-     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(string $address): ?AddressData
     {
@@ -52,19 +52,19 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Valida i dati di input.
      *
-     * @throws RuntimeException Se la chiave API non è configurata
+     * @throws \RuntimeException Se la chiave API non è configurata
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.bing.maps_api_key');
         if (empty($apiKey)) {
-            throw new RuntimeException('Bing Maps API key not configured');
+            throw new \RuntimeException('Bing Maps API key not configured');
         }
         if (empty($address)) {
-            throw new RuntimeException('Address cannot be empty');
+            throw new \RuntimeException('Address cannot be empty');
         }
         if (strlen($address) > 1000) {
-            throw new RuntimeException('Address is too long');
+            throw new \RuntimeException('Address is too long');
         }
     }
 
@@ -89,7 +89,7 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Elabora la risposta dell'API.
      *
-     * @throws RuntimeException Se la risposta non è valida
+     * @throws \RuntimeException Se la risposta non è valida
      */
     private function parseResponse(string $response): ?AddressData
     {
@@ -112,7 +112,7 @@ readonly class GetAddressFromBingMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ($data['statusCode'] !== 200 || empty($data['resourceSets'][0]['resources'])) {
+        if (200 !== $data['statusCode'] || empty($data['resourceSets'][0]['resources'])) {
             return null;
         }
 

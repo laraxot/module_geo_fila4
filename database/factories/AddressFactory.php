@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\Address;
 
 /**
- * Address Factory
+ * Address Factory.
  *
  * @extends Factory<Address>
  */

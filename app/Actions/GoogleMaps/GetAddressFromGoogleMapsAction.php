@@ -57,9 +57,8 @@ final class GetAddressFromGoogleMapsAction
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
-        
-        /** @var \Illuminate\Http\Client\Response $response */
 
+        /** @var Response $response */
         if (! $response->successful()) {
             throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
@@ -72,7 +71,7 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapResponseData $responseData */
         $responseData = GoogleMapResponseData::from($response->json());
 
-        if ($responseData->results->count() === 0) {
+        if (0 === $responseData->results->count()) {
             throw GoogleMapsApiException::noResultsFound();
         }
 
@@ -112,8 +111,8 @@ final class GetAddressFromGoogleMapsAction
     }
 
     /**
-     * @param  DataCollection<GoogleMapAddressComponentData>  $components
-     * @param  array<string>  $types
+     * @param DataCollection<GoogleMapAddressComponentData> $components
+     * @param array<string>                                 $types
      */
     private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
     {

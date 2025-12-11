@@ -124,27 +124,27 @@ class GetCoordinatesByAddressAction
     private function makeHttpRequest(string $url, array $params): \Illuminate\Http\Client\Response
     {
         $response = Http::get($url, $params);
-        
+
         // Handle PromiseInterface|Response union type
         if ($response instanceof \GuzzleHttp\Promise\PromiseInterface) {
             $response = $response->wait();
         }
-        
-        /** @var \Illuminate\Http\Client\Response $response */
+
+        /* @var \Illuminate\Http\Client\Response $response */
         return $response;
     }
 
     private function getFromBing(string $address): ?CoordinatesData
     {
         $apiKey = config('services.bing.maps_api_key');
-        if (! is_string($apiKey) || $apiKey === '') {
+        if (! is_string($apiKey) || '' === $apiKey) {
             return null;
         }
 
         $data = $this->getBingResponse($address, $apiKey);
 
         $coordinates = $this->extractBingCoordinates($data);
-        if ($coordinates === null) {
+        if (null === $coordinates) {
             return null;
         }
 
@@ -216,7 +216,7 @@ class GetCoordinatesByAddressAction
     private function getFromOpenCage(string $address): ?CoordinatesData
     {
         $apiKey = config('services.opencage.api_key');
-        if (! is_string($apiKey) || $apiKey === '') {
+        if (! is_string($apiKey) || '' === $apiKey) {
             return null;
         }
 

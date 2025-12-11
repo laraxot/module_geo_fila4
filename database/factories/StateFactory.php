@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\State;
 
 /**
- * State Factory
+ * State Factory.
  *
  * @extends Factory<State>
  */

@@ -19,7 +19,8 @@ class GetAddressFromNominatimAction
     /**
      * Esegue la ricerca dell'indirizzo su Nominatim.
      *
-     * @param  string  $address  L'indirizzo da cercare
+     * @param string $address L'indirizzo da cercare
+     *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
@@ -38,7 +39,7 @@ class GetAddressFromNominatimAction
             $response = $response->wait();
         }
 
-        /** @var \Illuminate\Http\Client\Response $response */
+        /** @var Response $response */
         if (! $response->successful()) {
             return null;
         }

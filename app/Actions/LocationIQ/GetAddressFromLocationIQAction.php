@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\LocationIQ;
 
-use Exception;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
@@ -20,17 +19,18 @@ class GetAddressFromLocationIQAction
     /**
      * Esegue la ricerca dell'indirizzo su LocationIQ.
      *
-     * @param  string  $address  L'indirizzo da cercare
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+     * @param string $address L'indirizzo da cercare
      *
-     * @throws Exception Se la chiave API non è configurata
+     * @throws \Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.locationiq.key');
 
         if (empty($apiKey)) {
-            throw new Exception('LocationIQ API key not configured');
+            throw new \Exception('LocationIQ API key not configured');
         }
 
         $response = Http::get(self::BASE_URL.'/search', [
@@ -46,7 +46,7 @@ class GetAddressFromLocationIQAction
             $response = $response->wait();
         }
 
-        /** @var \Illuminate\Http\Client\Response $response */
+        /** @var Response $response */
         if (! $response->successful()) {
             return null;
         }

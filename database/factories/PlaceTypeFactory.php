@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\PlaceType;
 
 /**
- * PlaceType Factory
+ * PlaceType Factory.
  *
  * Factory for creating PlaceType model instances for testing and seeding.
  *

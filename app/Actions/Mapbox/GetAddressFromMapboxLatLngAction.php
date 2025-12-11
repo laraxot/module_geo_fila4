@@ -69,7 +69,7 @@ class GetAddressFromMapboxLatLngAction
             $response = $response->wait();
         }
 
-        /** @var \Illuminate\Http\Client\Response $response */
+        /** @var Response $response */
         if (! $response->successful()) {
             throw InvalidLocationException::invalidData('Richiesta a Mapbox fallita');
         }

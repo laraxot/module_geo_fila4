@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\County;
 
 /**
- * County Factory
+ * County Factory.
  *
  * @extends Factory<County>
  */

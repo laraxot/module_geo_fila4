@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Modules\Geo\Models\GeoNamesCap.
  *
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
  *
  * @method static Builder<static>|GeoNamesCap newModelQuery()
  * @method static Builder<static>|GeoNamesCap newQuery()

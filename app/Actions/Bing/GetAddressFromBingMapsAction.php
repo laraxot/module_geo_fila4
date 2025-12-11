@@ -35,10 +35,9 @@ class GetAddressFromBingMapsAction
     /**
      * Get the Bing Maps API key from configuration.
      *
+     * @throws InvalidLocationException
      *
      * @return non-empty-string
-     *
-     * @throws InvalidLocationException
      */
     private function getApiKey(): string
     {
@@ -70,9 +69,8 @@ class GetAddressFromBingMapsAction
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
-        
-        /** @var \Illuminate\Http\Client\Response $response */
 
+        /** @var Response $response */
         if (! $response->successful()) {
             throw InvalidLocationException::invalidData('Richiesta a Bing Maps fallita');
         }

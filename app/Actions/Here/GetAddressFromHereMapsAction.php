@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Here;
 
-use Exception;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
@@ -20,7 +19,7 @@ class GetAddressFromHereMapsAction
         $apiKey = config('services.here.key');
 
         if (empty($apiKey)) {
-            throw new Exception('Here Maps API key not configured');
+            throw new \Exception('Here Maps API key not configured');
         }
 
         $response = Http::get(self::BASE_URL, [
@@ -34,7 +33,7 @@ class GetAddressFromHereMapsAction
             $response = $response->wait();
         }
 
-        /** @var \Illuminate\Http\Client\Response $response */
+        /** @var Response $response */
         if (! $response->successful()) {
             return null;
         }
