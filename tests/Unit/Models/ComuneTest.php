@@ -43,6 +43,7 @@ beforeEach(function (): void {
         ],
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     /** @phpstan-ignore-next-line property.notFound */
     File::put(base_path('database/content/comuni.json'), json_encode($this->testData, JSON_PRETTY_PRINT));
@@ -52,15 +53,23 @@ beforeEach(function (): void {
         json_encode($this->testData, JSON_PRETTY_PRINT)
     );
 >>>>>>> bc26394 (.)
+=======
+
+    File::put(base_path('database/content/comuni.json'), json_encode($this->testData, JSON_PRETTY_PRINT));
+>>>>>>> c942565 (.)
 });
 
 afterEach(function (): void {
     // Pulisci la cache
     Cache::forget('sushi_Comune_data');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     // Rimuovi il file di test
     File::delete(base_path('database/content/comuni.json'));
 });
@@ -68,9 +77,13 @@ afterEach(function (): void {
 test('it can load comuni from json', function (): void {
     $comuni = Comune::all();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(2);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -81,9 +94,13 @@ test('it can load comuni from json', function (): void {
 test('it can filter comuni by region', function (): void {
     $comuni = Comune::byRegion('Lombardia')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(2);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->regione)->toBe('Lombardia');
@@ -94,9 +111,13 @@ test('it can filter comuni by region', function (): void {
 test('it can filter comuni by province', function (): void {
     $comuni = Comune::byProvince('Milano')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(2);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->provincia)->toBe('Milano');
@@ -107,9 +128,13 @@ test('it can filter comuni by province', function (): void {
 test('it can filter comuni by cap', function (): void {
     $comuni = Comune::byCap('20100')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->cap)->toBe('20100');
@@ -118,9 +143,13 @@ test('it can filter comuni by cap', function (): void {
 test('it can filter comuni by name', function (): void {
     $comuni = Comune::byName('Milano')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -129,9 +158,13 @@ test('it can filter comuni by name', function (): void {
 test('it can filter comuni by exact name', function (): void {
     $comuni = Comune::byExactName('Milano')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -140,9 +173,13 @@ test('it can filter comuni by exact name', function (): void {
 test('it can filter comuni by name and province', function (): void {
     $comuni = Comune::byNameAndProvince('Milano', 'Milano')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -153,9 +190,13 @@ test('it can filter comuni by name and province', function (): void {
 test('it can filter comuni by name and region', function (): void {
     $comuni = Comune::byNameAndRegion('Milano', 'Lombardia')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -166,9 +207,13 @@ test('it can filter comuni by name and region', function (): void {
 test('it can filter comuni by name province and region', function (): void {
     $comuni = Comune::byNameProvinceAndRegion('Milano', 'Milano', 'Lombardia')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -181,9 +226,13 @@ test('it can filter comuni by name province and region', function (): void {
 test('it can filter comuni by name and cap', function (): void {
     $comuni = Comune::byNameAndCap('Milano', '20100')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -194,9 +243,13 @@ test('it can filter comuni by name and cap', function (): void {
 test('it can filter comuni by name province and cap', function (): void {
     $comuni = Comune::byNameProvinceAndCap('Milano', 'Milano', '20100')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -209,9 +262,13 @@ test('it can filter comuni by name province and cap', function (): void {
 test('it can filter comuni by name region and cap', function (): void {
     $comuni = Comune::byNameRegionAndCap('Milano', 'Lombardia', '20100')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -224,9 +281,13 @@ test('it can filter comuni by name region and cap', function (): void {
 test('it can filter comuni by name province region and cap', function (): void {
     $comuni = Comune::byNameProvinceRegionAndCap('Milano', 'Milano', 'Lombardia', '20100')->get();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comuni)->toHaveCount(1);
     /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
     expect($comuni[0]->comune)->toBe('Milano');
@@ -248,9 +309,13 @@ test('it can create a new comune', function (): void {
         'lng' => 9.1900,
     ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comune->id)->not->toBeNull();
     expect($comune->comune)->toBe('Bresso');
     expect($comune->provincia)->toBe('Milano');
@@ -268,9 +333,13 @@ test('it can update an existing comune', function (): void {
         'cap' => '20121',
     ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
     expect($comune->comune)->toBe('Milano Centro');
     expect($comune->cap)->toBe('20121');
 });
