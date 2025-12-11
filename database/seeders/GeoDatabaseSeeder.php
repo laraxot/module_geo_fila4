@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Database\Seeders;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Database\Seeders\AddressSeeder;
 use Database\Seeders\LocationSeeder;
@@ -13,6 +14,8 @@ use Database\Seeders\ProvinceSeeder;
 use Database\Seeders\RegionSeeder;
 use Database\Seeders\PlaceSeeder;
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -29,6 +32,7 @@ class GeoDatabaseSeeder extends Seeder
         Model::unguard();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->call([]);
 =======
         $this->call([
@@ -40,5 +44,8 @@ class GeoDatabaseSeeder extends Seeder
             PlaceSeeder::class,
         ]);
 >>>>>>> bc26394 (.)
+=======
+        $this->call([]);
+>>>>>>> c942565 (.)
     }
 }

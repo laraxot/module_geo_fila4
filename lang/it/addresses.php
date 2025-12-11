@@ -25,9 +25,12 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'fields' => [
         'name' => [
             'label' => 'Nome Indirizzo',
@@ -40,9 +43,12 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'messages' => [
         'validation' => [
             'min_items' => 'È richiesto almeno :min indirizzo/i.',
@@ -57,16 +63,23 @@ return [
         ],
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     'tooltips' => [
         'name_visibility' => 'Il campo nome è visibile solo quando hai più di un indirizzo',
         'primary_exclusivity' => 'Impostando questo come principale, tutti gli altri diventeranno secondari',
         'single_primary' => 'Con un solo indirizzo, questo è automaticamente il principale',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 ];
 =======
 ]; 
 >>>>>>> bc26394 (.)
+=======
+];
+>>>>>>> c942565 (.)

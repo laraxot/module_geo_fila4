@@ -19,9 +19,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Database\Factories\StateFactory;
 use Illuminate\Database\Eloquent\Builder;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Xot\Contracts\ProfileContract;
 =======
 >>>>>>> bc26394 (.)
+=======
+use Modules\Xot\Contracts\ProfileContract;
+>>>>>>> c942565 (.)
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,12 +34,17 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|State newQuery()
  * @method static Builder|State query()
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $updater
 =======
  * @property-read \Modules\SaluteOra\Models\Profile|null $creator
  * @property-read \Modules\SaluteOra\Models\Profile|null $updater
 >>>>>>> bc26394 (.)
+=======
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
+>>>>>>> c942565 (.)
  * @mixin IdeHelperState
 >>>>>>> be08416 (.)
  * @mixin \Eloquent
