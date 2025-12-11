@@ -6,9 +6,13 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Support\Collection;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> bc26394 (.)
+=======
+
+>>>>>>> c942565 (.)
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
@@ -56,10 +60,14 @@ abstract class GeoJsonModel
     /**
      * Filtra la collection per chiave/valore.
 <<<<<<< HEAD
+<<<<<<< HEAD
      *
 =======
      * 
 >>>>>>> bc26394 (.)
+=======
+     *
+>>>>>>> c942565 (.)
      * @phpstan-ignore missingType.parameter, missingType.generics
      */
     public static function where(string $key, $value): Collection
