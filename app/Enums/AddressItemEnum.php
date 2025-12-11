@@ -12,7 +12,7 @@ use Illuminate\Support\Arr;
 use Modules\Xot\Filament\Traits\TransTrait;
 
 /**
- * Enum per i driver SMS supportati
+ * Enum per i driver SMS supportati.
  *
  * Questo enum centralizza la gestione dei driver SMS disponibili
  * e fornisce metodi helper per ottenere le opzioni e le etichette.
@@ -39,35 +39,36 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
 
     public function getLabel(): string
     {
-        return $this->transClass(self::class, $this->value . '.label');
+        return $this->transClass(self::class, $this->value.'.label');
     }
 
     public function getColor(): string
     {
-        return $this->transClass(self::class, $this->value . '.color');
+        return $this->transClass(self::class, $this->value.'.color');
     }
 
     public function getIcon(): string
     {
-        return $this->transClass(self::class, $this->value . '.icon');
+        return $this->transClass(self::class, $this->value.'.icon');
     }
 
     public function getDescription(): string
     {
-        return $this->transClass(self::class, $this->value . '.description');
+        return $this->transClass(self::class, $this->value.'.description');
     }
 
     public static function getSearchable(): array
     {
-        return array_map(fn($item) => $item->value, self::cases());
+        return array_map(fn ($item) => $item->value, self::cases());
     }
 
     public static function getFormSchema(): array
     {
         $res = Arr::map(
             self::cases(),
-            fn($item) => TextInput::make($item->value)->prefixIcon($item->getIcon()),
+            fn ($item) => TextInput::make($item->value)->prefixIcon($item->getIcon()),
         );
+
         return $res;
     }
 }
