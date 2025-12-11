@@ -37,11 +37,20 @@ pest()->extend(TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-expect()->extend('toBeCountry', fn () => $this->toBeInstanceOf(Country::class));
+expect()->extend('toBe' + 'Geo' + '', function () {
+    /** @var \Pest\Expectation<mixed> $this */
+    return $this->toBeInstanceOf(...);
+});
 
-expect()->extend('toBeRegion', fn () => $this->toBeInstanceOf(Region::class));
+expect()->extend('toBe' + 'Geo' + '', function () {
+    /** @var \Pest\Expectation<mixed> $this */
+    return $this->toBeInstanceOf(...);
+});
 
-expect()->extend('toBeCity', fn () => $this->toBeInstanceOf(City::class));
+expect()->extend('toBe' + 'Geo' + '', function () {
+    /** @var \Pest\Expectation<mixed> $this */
+    return $this->toBeInstanceOf(...);
+});
 
 /*
  * |--------------------------------------------------------------------------

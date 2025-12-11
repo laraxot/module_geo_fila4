@@ -195,3 +195,4 @@ class GeoLocation extends XotBaseModel
         return "https://www.google.com/maps?q={$this->latitude},{$this->longitude}";
     }
 }
+
