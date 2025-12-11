@@ -19,18 +19,29 @@ enum AddressTypeEnum: string
     case SHIPPING = 'shipping';
     case LEGAL = 'legal';
     case OTHER = 'other';
+<<<<<<< HEAD
 
     /**
      * Get the label for the enum value.
      * <<<<<<< HEAD
      * =======.
      *
+=======
+    
+    /**
+     * Get the label for the enum value.
+     * 
+>>>>>>> bc26394 (.)
      * @return string
      *                >>>>>>> be08416 (.)
      */
     public function label(): string
     {
+<<<<<<< HEAD
         return match ($this) {
+=======
+        return match($this) {
+>>>>>>> bc26394 (.)
             self::HOME => 'Casa',
             self::WORK => 'Lavoro',
             self::BILLING => 'Fatturazione',
@@ -39,10 +50,17 @@ enum AddressTypeEnum: string
             self::OTHER => 'Altro',
         };
     }
+<<<<<<< HEAD
 
     /**
      * Get all the options as key-value pairs.
      *
+=======
+    
+    /**
+     * Get all the options as key-value pairs.
+     * 
+>>>>>>> bc26394 (.)
      * @return array<string, string>
      */
     public static function options(): array
@@ -56,4 +74,8 @@ enum AddressTypeEnum: string
             self::OTHER->value => self::OTHER->label(),
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bc26394 (.)

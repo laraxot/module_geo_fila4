@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
 
 ?>
+=======
+>>>>>>> bc26394 (.)
 <head>
     {!! Theme::metatags() !!}
     {{--
@@ -54,4 +57,8 @@ declare(strict_types=1);
     <meta name="country" content="Austria">
     <meta name="country" content="Switzerland">
     --}}
+<<<<<<< HEAD
 </head>
+=======
+</head>
+>>>>>>> bc26394 (.)

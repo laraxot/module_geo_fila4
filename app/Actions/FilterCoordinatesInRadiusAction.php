@@ -26,6 +26,7 @@ use Modules\Geo\Datas\LocationData;
 >>>>>>> be08416 (.)
  * @return array<array{latitude: string, longitude: string}> Le coordinate filtrate
  */
+<<<<<<< HEAD
 readonly class FilterCoordinatesInRadiusAction
 {
     public function __construct(
@@ -39,6 +40,12 @@ readonly class FilterCoordinatesInRadiusAction
      *
 =======
         private  CalculateDistanceAction $calculateDistanceAction,
+=======
+class FilterCoordinatesInRadiusAction
+{
+    public function __construct(
+        private readonly CalculateDistanceAction $calculateDistanceAction,
+>>>>>>> bc26394 (.)
     ) {}
 
     /**
@@ -46,6 +53,7 @@ readonly class FilterCoordinatesInRadiusAction
 >>>>>>> be08416 (.)
      * @return array<array{latitude: string, longitude: string}>
      */
+<<<<<<< HEAD
     public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array
     {
         $centerLocation = new LocationData(
@@ -65,5 +73,33 @@ readonly class FilterCoordinatesInRadiusAction
 
             return $distance <= $radius;
         });
+=======
+    public function execute(
+        float $centerLatitude,
+        float $centerLongitude,
+        array $coordinates,
+        int $radius,
+    ): array {
+        $centerLocation = new LocationData(
+            latitude: $centerLatitude,
+            longitude: $centerLongitude,
+            address: null
+        );
+
+        return array_filter(
+            $coordinates,
+            function (array $coordinate) use ($centerLocation, $radius): bool {
+                $targetLocation = new LocationData(
+                    latitude: (float) $coordinate['latitude'],
+                    longitude: (float) $coordinate['longitude'],
+                    address: null
+                );
+
+                $distance = $this->calculateDistanceAction->execute($centerLocation, $targetLocation)['distance']['value'];
+
+                return $distance <= $radius;
+            }
+        );
+>>>>>>> bc26394 (.)
     }
 }
