@@ -9,7 +9,6 @@ namespace Modules\Geo\Actions;
 use InvalidArgumentException;
 >>>>>>> be08416 (.)
 use Modules\Geo\Traits\HandlesCoordinates;
-use Webmozart\Assert\Assert;
 
 /**
  * Action per filtrare le coordinate in base alla distanza da un punto.
@@ -49,8 +48,12 @@ class FilterCoordinatesAction
                 $lat = (float) $coord['latitude'];
                 $lng = (float) $coord['longitude'];
 
-                Assert::range($lat, -90, 90, 'Latitudine non valida');
-                Assert::range($lng, -180, 180, 'Longitudine non valida');
+                if ($lat < -90 || $lat > 90) {
+                    throw new InvalidArgumentException('Latitudine non valida');
+                }
+                if ($lng < -180 || $lng > 180) {
+                    throw new InvalidArgumentException('Longitudine non valida');
+                }
 
                 return [
                     'latitude' => $lat,
@@ -79,9 +82,17 @@ class FilterCoordinatesAction
      */
     private function validateInput(float $latitude, float $longitude, float $radius): void
     {
-        Assert::range($latitude, -90, 90, 'Latitudine centrale non valida');
-        Assert::range($longitude, -180, 180, 'Longitudine centrale non valida');
-        Assert::greaterThan($radius, 0, 'Il raggio deve essere maggiore di 0');
-        Assert::lessThan($radius, 20000, 'Il raggio non può essere maggiore della circonferenza terrestre');
+        if ($latitude < -90 || $latitude > 90) {
+            throw new InvalidArgumentException('Latitudine centrale non valida');
+        }
+        if ($longitude < -180 || $longitude > 180) {
+            throw new InvalidArgumentException('Longitudine centrale non valida');
+        }
+        if ($radius <= 0) {
+            throw new InvalidArgumentException('Il raggio deve essere maggiore di 0');
+        }
+        if ($radius >= 20000) {
+            throw new InvalidArgumentException('Il raggio non può essere maggiore della circonferenza terrestre');
+        }
     }
 }

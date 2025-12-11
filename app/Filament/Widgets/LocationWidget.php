@@ -89,7 +89,7 @@ class LocationWidget extends XotBaseWidget
      */
     public function __construct()
     {
-        $this->locationForm = new LocationForm;
+        $this->locationForm = new LocationForm();
     }
 
     /**
