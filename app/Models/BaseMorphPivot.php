@@ -41,8 +41,26 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var list<string> */
     protected $fillable = [
         'id',
+<<<<<<< HEAD
         'post_id',
         'post_type',
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        'post_id',
+        'post_type',
+=======
+        'post_id', 'post_type',
+>>>>>>> a12f125f4a (.)
+=======
+        'post_id',
+        'post_type',
+>>>>>>> b93ef594b4 (.)
+=======
+        'post_id', 'post_type',
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
         'related_type',
         'user_id',
         'note',
