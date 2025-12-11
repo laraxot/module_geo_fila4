@@ -18,6 +18,7 @@ class AddressSection extends Section
     protected function setUp(): void
     {
         parent::setUp();
+        $this->schema($this->getFormSchema());
         $this->columns(2);
     }
 
