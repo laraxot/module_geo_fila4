@@ -12,7 +12,7 @@ use Modules\Geo\Enums\AddressTypeEnum;
 
 /**
  * Class Address.
- *
+ * 
  * Implementazione di Schema.org PostalAddress
  *
  * @property int                                         $id
@@ -47,7 +47,6 @@ use Modules\Geo\Enums\AddressTypeEnum;
  * @property string                                      $street_address
  * @property Model|\Eloquent|null                        $model
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
- *
  * @method static Builder<static>|Address nearby(float $latitude, float $longitude, float $radiusKm = 10)
  * @method static Builder<static>|Address newModelQuery()
  * @method static Builder<static>|Address newQuery()
@@ -80,7 +79,8 @@ use Modules\Geo\Enums\AddressTypeEnum;
  * @method static Builder<static>|Address whereType($value)
  * @method static Builder<static>|Address whereUpdatedAt($value)
  * @method static Builder<static>|Address whereUpdatedBy($value)
- *
+ * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
+ * @method static \Modules\Geo\Database\Factories\AddressFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class Address extends BaseModel

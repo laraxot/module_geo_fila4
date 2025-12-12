@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
+use Illuminate\Support\Arr;
+use Webmozart\Assert\Assert;
+use Modules\Geo\Models\Address;
+use Modules\Geo\Enums\AddressItemEnum;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Modules\Geo\Models\Address;
-use Webmozart\Assert\Assert;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 /**
  * Trait HasAddress.
@@ -23,7 +25,17 @@ use Webmozart\Assert\Assert;
 trait HasAddress
 {
 
-
+     /**
+     * Initialize the trait
+     *
+     * @return void
+     */
+    protected function initializeHasAddress()
+    {
+        // Automatically create a random token
+        $fields=Arr::map(AddressItemEnum::cases(), fn ($item) => $item->value);
+        $this->mergeFillable($fields);
+    }
     
     /**
      * Ottiene gli indirizzi associati al modello.
@@ -65,7 +77,24 @@ trait HasAddress
         return $address ? $address->getFullAddress() : null;
     }
 
-    public function getFullAddressAttribute(?string $value): ?string
+     public function getFullAddressAttribute(?string $value): string
+    {
+        if ($value !== null) {
+            return $value;
+        }
+        $address = sprintf(
+            '%s, %s - %s, %s (%s)',
+            $this->route,
+            $this->street_number,
+            $this->postal_code,
+            $this->city,
+            $this->province,
+        );
+
+        return trim(preg_replace('/[,\s]+/', ' ', $address));
+    }
+
+    public function getFullAddressesAttribute(?string $value): ?string
     {
         if ($value) {
             return $value;

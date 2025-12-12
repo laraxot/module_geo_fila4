@@ -10,11 +10,11 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 /**
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
- *
  * @method static Builder<static>|PlaceType newModelQuery()
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
- *
+ * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
+ * @method static \Modules\Geo\Database\Factories\PlaceTypeFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class PlaceType extends BaseModel

@@ -33,7 +33,6 @@ use Illuminate\Support\Carbon;
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property array                                       $location
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
- *
  * @method static Builder<static>|Location newModelQuery()
  * @method static Builder<static>|Location newQuery()
  * @method static Builder<static>|Location query()
@@ -57,7 +56,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location whereUpdatedBy($value)
  * @method static Builder<static>|Location whereZip($value)
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
- *
+ * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
+ * @method static \Modules\Geo\Database\Factories\LocationFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class Location extends BaseModel

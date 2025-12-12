@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Cache;
  * @see docs/comune-unificazione-analisi.md Analisi dell'unificazione dei modelli
  * @see docs/geo-json-model.md Documentazione tecnica del modello base
  */
+/**
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+
 class ComuneJson extends GeoJsonModel
 {
     /**
