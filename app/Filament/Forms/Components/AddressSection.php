@@ -23,7 +23,7 @@ class AddressSection extends XotBaseSection
         $this->columns(3);
     }
 
-/**
+    /**
      * @return array<string, \Filament\Forms\Components\TextInput>
      */
     public function getFormSchema(): array
