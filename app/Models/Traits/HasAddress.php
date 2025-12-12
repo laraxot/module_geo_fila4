@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
-use Illuminate\Support\Arr;
-use Webmozart\Assert\Assert;
-use Modules\Geo\Models\Address;
-use Modules\Geo\Enums\AddressItemEnum;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Support\Arr;
+use Modules\Geo\Enums\AddressItemEnum;
+use Modules\Geo\Models\Address;
+use Webmozart\Assert\Assert;
 
 /**
  * Trait HasAddress.
@@ -24,19 +24,18 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  */
 trait HasAddress
 {
-
-     /**
-     * Initialize the trait
+    /**
+     * Initialize the trait.
      *
      * @return void
      */
     protected function initializeHasAddress()
     {
         // Automatically create a random token
-        $fields=Arr::map(AddressItemEnum::cases(), fn ($item) => $item->value);
+        $fields = Arr::map(AddressItemEnum::cases(), fn ($item) => $item->value);
         $this->mergeFillable($fields);
     }
-    
+
     /**
      * Ottiene gli indirizzi associati al modello.
      */
@@ -77,9 +76,9 @@ trait HasAddress
         return $address ? $address->getFullAddress() : null;
     }
 
-     public function getFullAddressAttribute(?string $value): string
+    public function getFullAddressAttribute(?string $value): string
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $address = sprintf(

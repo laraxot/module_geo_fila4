@@ -7,7 +7,6 @@ namespace Modules\Geo\Filament\Forms\Components;
 use Modules\Geo\Enums\AddressItemEnum;
 use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
 
-
 // use Squire\Models\Country;
 
 class AddressSection extends XotBaseSection
@@ -31,9 +30,8 @@ class AddressSection extends XotBaseSection
      */
     protected function getFormSchema(): array
     {
-
         /*
-        // @var array<string, \Filament\Schemas\Components\Component> $schema 
+        // @var array<string, \Filament\Schemas\Components\Component> $schema
         $schema = AddressResource::getFormSchema();
         unset($schema['name'], $schema['is_primary']);
 

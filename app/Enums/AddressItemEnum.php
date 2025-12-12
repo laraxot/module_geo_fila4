@@ -9,7 +9,6 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Arr;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Filament\Traits\TransTrait;
 
@@ -23,9 +22,9 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
 {
     use TransTrait;
 
-    //case PHONE = 'phone';
-    //case NAME = 'name';
-    //case DESCRIPTION = 'description';
+    // case PHONE = 'phone';
+    // case NAME = 'name';
+    // case DESCRIPTION = 'description';
     case ROUTE = 'route';
     case STREET_NUMBER = 'street_number';
     case POSTAL_CODE = 'postal_code';
@@ -34,16 +33,16 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     case ADMINISTRATIVE_AREA_LEVEL_2 = 'administrative_area_level_2'; // provincia
     case ADMINISTRATIVE_AREA_LEVEL_1 = 'administrative_area_level_1'; // regione
     case COUNTRY = 'country'; // Stato/Paese
-    //case FORMATTED_ADDRESS = 'formatted_address';
-    //case PLACE_ID = 'place_id';
+    // case FORMATTED_ADDRESS = 'formatted_address';
+    // case PLACE_ID = 'place_id';
     case LATITUDE = 'latitude';
     case LONGITUDE = 'longitude';
-    //case FAX = 'fax';
-    //case MOBILE = 'mobile';
-    //case PEC = 'pec';
-    //case WHATSAPP = 'whatsapp';
-    //case EMAIL = 'email';
-    //case NOTES = 'notes';
+    // case FAX = 'fax';
+    // case MOBILE = 'mobile';
+    // case PEC = 'pec';
+    // case WHATSAPP = 'whatsapp';
+    // case EMAIL = 'email';
+    // case NOTES = 'notes';
 
     public function getLabel(): string
     {
@@ -78,11 +77,11 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
         $cases = self::cases();
         /** @var array<string, TextInput> $res */
         $res = [];
-        
+
         foreach ($cases as $item) {
             $fieldName = $item->value;
             $icon = $item->getIcon();
-            
+
             $res[$fieldName] = TextInput::make($fieldName)
                 ->prefixIcon($icon);
         }
@@ -121,16 +120,16 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
      * });
      * ```
      *
-     * @param  Blueprint  $table  The table blueprint
-     * @param  XotBaseMigration|null  $migration  XotBaseMigration instance for UPDATE context (provides hasColumn())
-     * @param  bool  $withLegacy  Whether to include legacy compatibility fields
+     * @param Blueprint             $table      The table blueprint
+     * @param XotBaseMigration|null $migration  XotBaseMigration instance for UPDATE context (provides hasColumn())
+     * @param bool                  $withLegacy Whether to include legacy compatibility fields
      */
     public static function columns(Blueprint $table, ?XotBaseMigration $migration = null, bool $withLegacy = false): void
     {
         // Colonne indirizzo - aggiungi con check solo se in UPDATE context
         // Following the Laraxot pattern from workers_table migration
         foreach (self::getColumnDefinitions() as $name => $definition) {
-            if ($migration === null || ! $migration->hasColumn($name)) {
+            if (null === $migration || ! $migration->hasColumn($name)) {
                 $definition($table);
             }
         }
@@ -168,7 +167,7 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
      * AddressItemEnum::dropColumns($table);
      * ```
      *
-     * @param  Blueprint  $table  The table blueprint
+     * @param Blueprint $table The table blueprint
      */
     public static function dropColumns(Blueprint $table): void
     {
@@ -308,8 +307,8 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
      * These fields maintain compatibility with older code that expects
      * generic field names like 'address', 'city', 'province', etc.
      *
-     * @param  Blueprint  $table  The table blueprint
-     * @param  XotBaseMigration|null  $migration  XotBaseMigration instance for UPDATE context
+     * @param Blueprint             $table     The table blueprint
+     * @param XotBaseMigration|null $migration XotBaseMigration instance for UPDATE context
      */
     private static function addLegacyColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
@@ -342,7 +341,7 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
         ];
 
         foreach ($legacyColumns as $name => $definition) {
-            if ($migration === null || ! $migration->hasColumn($name)) {
+            if (null === $migration || ! $migration->hasColumn($name)) {
                 $definition($table);
             }
         }

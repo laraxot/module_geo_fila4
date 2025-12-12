@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Geo\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,4 +21,3 @@ class GeoNamesCapFactory extends Factory
         return [];
     }
 }
-

@@ -8,7 +8,7 @@ use Filament\Tables\Columns\ViewColumn;
 use Modules\Geo\Enums\AddressItemEnum;
 
 /**
- * AddressColumn - Colonna Filament riutilizzabile per rendering indirizzi
+ * AddressColumn - Colonna Filament riutilizzabile per rendering indirizzi.
  *
  * Utilizza ViewColumn + Blade view per separare completamente
  * logica e presentazione seguendo i principi DRY/KISS
@@ -22,13 +22,15 @@ use Modules\Geo\Enums\AddressItemEnum;
  * per garantire consistenza nel codebase
  *
  * @author Laraxot Team
+ *
  * @version 1.0 - IMPLEMENTAZIONE INIZIALE
+ *
  * @since 2025-12-12
  */
 class AddressColumn extends ViewColumn
 {
     /**
-     * View Blade per il rendering della colonna
+     * View Blade per il rendering della colonna.
      */
     protected string $view = 'geo::filament.tables.columns.address';
 
@@ -41,7 +43,7 @@ class AddressColumn extends ViewColumn
 
         /** @var array<string> $searchableArray */
         $searchableArray = AddressItemEnum::getSearchable();
-        
+
         $this->view(static::getView(), [
             'address_items' => $addressItems,
         ])

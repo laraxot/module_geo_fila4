@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Cache;
 /**
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-
 class ComuneJson extends GeoJsonModel
 {
     /**

@@ -10,7 +10,7 @@ use Modules\Tenant\Models\Traits\SushiToJson;
 
 /**
  * Modello per i comuni italiani con Sushi.
- * 
+ *
  * Implementa il pattern Facade per fornire un'interfaccia unificata a tutti i dati geografici:
  * regioni, province, città, CAP, codici ISTAT, ecc.
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
@@ -34,6 +34,7 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @property string|null                                 $updated_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
  * @method static Builder<static>|Comune query()
@@ -54,8 +55,11 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @method static Builder<static>|Comune whereUpdatedAt($value)
  * @method static Builder<static>|Comune whereUpdatedBy($value)
  * @method static Builder<static>|Comune whereZona($value)
- * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
+ *
+ * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ *
  * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 class Comune extends BaseModel

@@ -11,11 +11,15 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ *
  * @method static Builder<static>|GeoNamesCap newModelQuery()
  * @method static Builder<static>|GeoNamesCap newQuery()
  * @method static Builder<static>|GeoNamesCap query()
- * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
+ *
+ * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ *
  * @method static \Modules\Geo\Database\Factories\GeoNamesCapFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 class GeoNamesCap extends BaseModel
