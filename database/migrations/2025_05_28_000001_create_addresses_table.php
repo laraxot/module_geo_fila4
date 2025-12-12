@@ -19,14 +19,15 @@ return new class extends XotBaseMigration {
             // Campi informativi
             $table->string('name')->nullable()->comment('Nome identificativo dell\'indirizzo');
             $table->text('description')->nullable()->comment('Descrizione opzionale');
+            $table->string('phone')->nullable()->comment('Numero di telefono associato all\'indirizzo');
 
             // Campi indirizzo (evitando prefissi ridondanti)
             $table->string('route')->nullable()->comment('Via/Piazza');
             $table->string('street_number')->nullable()->comment('Numero civico');
-            $table->string('locality')->nullable()->comment('Comune/Città');
-            $table->string('administrative_area_level_3')->nullable()->comment('Provincia');
-            $table->string('administrative_area_level_2')->nullable()->comment('Regione');
-            $table->string('administrative_area_level_1')->nullable()->comment('Stato/Paese');
+            $table->string('locality')->nullable()->comment('Località/Frazione');
+            $table->string('administrative_area_level_3')->nullable()->comment('Comune/Città');
+            $table->string('administrative_area_level_2')->nullable()->comment('Provincia');
+            $table->string('administrative_area_level_1')->nullable()->comment('Regione');
             $table->string('country', 2)->nullable()->comment('Codice paese ISO');
             $table->string('postal_code', 20)->nullable()->comment('CAP');
 

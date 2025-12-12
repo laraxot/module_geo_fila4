@@ -208,6 +208,27 @@ Le stesse correzioni sono state applicate a:
 - `laravel/Modules/Geo/lang/en/address.php` - Inglese  
 - `laravel/Modules/Geo/lang/de/address.php` - Tedesco
 
+## Estensione: Traduzioni AddressItemEnum
+
+Per completare la copertura delle traduzioni legate agli indirizzi, sono state aggiunte anche le traduzioni per l'enum `AddressItemEnum` utilizzato in `Modules\Geo\Enums\AddressItemEnum` con il pattern `TransTrait::transClass()`.
+
+### Nuovi file di traduzione enum
+
+- `laravel/Modules/Geo/lang/en/address-item-enum.php`
+- `laravel/Modules/Geo/lang/it/address-item-enum.php`
+- `laravel/Modules/Geo/lang/de/address-item-enum.php`
+
+### Struttura applicata
+
+Per ogni valore dell'enum (`phone`, `name`, `description`, `route`, `street_number`, `locality`, `administrative_area_level_1/2/3`, `country`, `postal_code`, `formatted_address`, `place_id`, `latitude`, `longitude`) è stata applicata la struttura espansa standard per gli enum:
+
+- `label` – etichetta leggibile (localizzata)
+- `icon` – icona Heroicon coerente con il tipo di informazione
+- `color` – classe/e Tailwind per il colore
+- `description` – descrizione testuale del significato del campo
+
+Questo consente a `AddressItemEnum` di usare `transClass(self::class, $this->value.'.label|color|icon|description')` in modo coerente con le regole di `enum-translation-pattern`, evitando label hardcoded e garantendo una localizzazione completa per tutti i componenti legati agli indirizzi.
+
 ## Collegamenti
 
 - [README Modulo Geo](README.md) - Documentazione principale

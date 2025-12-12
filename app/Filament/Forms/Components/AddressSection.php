@@ -18,16 +18,23 @@ class AddressSection extends Section
     protected function setUp(): void
     {
         parent::setUp();
-        $this->schema($this->getFormSchema());
+        // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
+        $this->schema(fn (): array => $this->getFormSchema());
         $this->columns(2);
     }
 
+    /**
+     * Restituisce lo schema del form per la sezione indirizzo.
+     *
+     * @return array<string, \Filament\Schemas\Components\Component>
+     */
     protected function getFormSchema(): array
     {
-        $res = AddressResource::getFormSchema();
-        unset($res['name'], $res['is_primary']);
+        /** @var array<string, \Filament\Schemas\Components\Component> $schema */
+        $schema = AddressResource::getFormSchema();
+        unset($schema['name'], $schema['is_primary']);
 
-        return $res;
+        return $schema;
     }
 
     /*
