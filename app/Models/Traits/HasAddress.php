@@ -22,6 +22,9 @@ use Webmozart\Assert\Assert;
  */
 trait HasAddress
 {
+
+
+    
     /**
      * Ottiene gli indirizzi associati al modello.
      */

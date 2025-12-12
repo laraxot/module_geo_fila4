@@ -93,4 +93,40 @@ return [
         'icon' => 'heroicon-o-map-pin',
         'color' => 'primary',
     ],
+    'fax' => [
+        'label' => 'Fax',
+        'description' => 'Faxnummer, die mit der Adresse verknüpft ist',
+        'icon' => 'heroicon-o-printer',
+        'color' => 'gray',
+    ],
+    'mobile' => [
+        'label' => 'Mobiltelefon',
+        'description' => 'Mobiltelefonnummer für schnellen Kontakt',
+        'icon' => 'heroicon-o-device-phone-mobile',
+        'color' => 'primary',
+    ],
+    'pec' => [
+        'label' => 'PEC',
+        'description' => 'Zertifizierte E-Mail-Adresse (PEC)',
+        'icon' => 'heroicon-o-shield-check',
+        'color' => 'purple',
+    ],
+    'whatsapp' => [
+        'label' => 'WhatsApp',
+        'description' => 'WhatsApp-Kontakt, der mit der Adresse verknüpft ist',
+        'icon' => 'heroicon-o-chat-bubble-left-right',
+        'color' => 'success',
+    ],
+    'email' => [
+        'label' => 'E-Mail',
+        'description' => 'E-Mail-Adresse, die mit der Adresse verknüpft ist',
+        'icon' => 'heroicon-o-envelope',
+        'color' => 'info',
+    ],
+    'notes' => [
+        'label' => 'Notizen',
+        'description' => 'Zusätzliche Notizen zur Adresse',
+        'icon' => 'heroicon-o-document-text',
+        'color' => 'gray',
+    ],
 ];

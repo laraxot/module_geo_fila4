@@ -76,6 +76,12 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     case PLACE_ID = 'place_id';              // Google Places ID
     case LATITUDE = 'latitude';              // Geographic coordinates
     case LONGITUDE = 'longitude';            // Geographic coordinates
+    case FAX = 'fax';                        // Fax number associated with address
+    case MOBILE = 'mobile';                  // Mobile number associated with address
+    case PEC = 'pec';                        // Certified Email Address (PEC)
+    case WHATSAPP = 'whatsapp';              // WhatsApp number associated with address
+    case EMAIL = 'email';                    // Email address associated with address
+    case NOTES = 'notes';                    // General notes about the address
 }
 ```
 
@@ -175,7 +181,13 @@ CREATE TABLE addresses (
     place_id VARCHAR(255),                 -- AddressItemEnum::PLACE_ID
     latitude DECIMAL(15,10),              -- AddressItemEnum::LATITUDE
     longitude DECIMAL(15,10),             -- AddressItemEnum::LONGITUDE
-    phone VARCHAR(50)                      -- AddressItemEnum::PHONE
+    phone VARCHAR(50),                     -- AddressItemEnum::PHONE
+    fax VARCHAR(50),                       -- AddressItemEnum::FAX
+    mobile VARCHAR(50),                    -- AddressItemEnum::MOBILE
+    pec VARCHAR(255),                      -- AddressItemEnum::PEC
+    whatsapp VARCHAR(50),                  -- AddressItemEnum::WHATSAPP
+    email VARCHAR(255),                    -- AddressItemEnum::EMAIL
+    notes TEXT                             -- AddressItemEnum::NOTES
 );
 ```
 

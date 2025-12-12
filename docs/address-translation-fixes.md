@@ -229,6 +229,34 @@ Per ogni valore dell'enum (`phone`, `name`, `description`, `route`, `street_numb
 
 Questo consente a `AddressItemEnum` di usare `transClass(self::class, $this->value.'.label|color|icon|description')` in modo coerente con le regole di `enum-translation-pattern`, evitando label hardcoded e garantendo una localizzazione completa per tutti i componenti legati agli indirizzi.
 
+## Correzioni specifiche: `lang/it/address_item.php`
+
+Nel file `laravel/Modules/Geo/lang/it/address_item.php` erano presenti traduzioni **placeholder** non localizzate:
+
+- `label`, `placeholder`, `helper_text` e `description` uguali alla chiave (es. `"route"`, `"postal_code"`, `"administrative_area_level_1"`).
+
+### Problemi
+
+- ❌ Interfaccia italiana con testi in inglese/chiave tecnica.
+- ❌ `helper_text` duplicato rispetto alla chiave, senza reale utilità.
+- ❌ Mancanza di `help` descrittivo coerente con gli standard di traduzione estesi.
+
+### Soluzione applicata (Gennaio 2025)
+
+Per **tutti** i campi definiti in `address_item.php` (`phone`, `name`, `description`, `route`, `street_number`, `locality`, `administrative_area_level_3/2/1`, `country`, `postal_code`, `formatted_address`, `place_id`, `latitude`, `longitude`, `fax`, `mobile`, `pec`, `whatsapp`, `email`, `notes`):
+
+- ✅ `label` tradotto in italiano leggibile (es. `"Indirizzo"`, `"Comune"`, `"Regione"`, `"CAP"`, `"Telefono"`).
+- ✅ `placeholder` trasformato in frase guida (es. `"Inserisci il CAP"`, `"Inserisci la località o frazione"`).
+- ✅ `help` aggiunto con descrizione breve del significato del campo (es. `"Comune in cui si trova l'indirizzo"`).
+- ✅ `helper_text` impostato a stringa vuota quando ridondante, seguendo la regola: *mai duplicare la chiave come helper*.
+- ✅ `description` reso testualmente esplicativo, pensato per la documentazione interna/tooltip avanzati.
+
+Queste correzioni allineano `address_item.php` alle regole già descritte per `address.php`:
+
+- **Localizzazione completa** per l'utente finale.
+- **Struttura espansa** (`label`, `placeholder`, `help`, `helper_text`, `description`).
+- **Coerenza semantica** con le descrizioni di `AddressItemEnum` documentate in `address-item-enum-guide.md`.
+
 ## Collegamenti
 
 - [README Modulo Geo](README.md) - Documentazione principale

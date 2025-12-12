@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Forms\Components;
 
-use Filament\Schemas\Components\Section;
-use Modules\Geo\Filament\Resources\AddressResource;
+use Modules\Geo\Enums\AddressItemEnum;
+use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
+
 
 // use Squire\Models\Country;
 
-class AddressSection extends Section
+class AddressSection extends XotBaseSection
 {
     // protected string $view = 'filament-forms::components.group';
 
@@ -20,21 +21,25 @@ class AddressSection extends Section
         parent::setUp();
         // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
         $this->schema(fn (): array => $this->getFormSchema());
-        $this->columns(2);
+        $this->columns(3);
     }
 
     /**
      * Restituisce lo schema del form per la sezione indirizzo.
      *
-     * @return array<string, \Filament\Schemas\Components\Component>
+     * @return array<int, \Filament\Forms\Components\TextInput>
      */
     protected function getFormSchema(): array
     {
-        /** @var array<string, \Filament\Schemas\Components\Component> $schema */
+
+        /*
+        // @var array<string, \Filament\Schemas\Components\Component> $schema 
         $schema = AddressResource::getFormSchema();
         unset($schema['name'], $schema['is_primary']);
 
         return $schema;
+        */
+        return AddressItemEnum::getFormSchema();
     }
 
     /*
