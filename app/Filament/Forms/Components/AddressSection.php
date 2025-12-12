@@ -23,12 +23,10 @@ class AddressSection extends XotBaseSection
         $this->columns(3);
     }
 
-    /**
-     * Restituisce lo schema del form per la sezione indirizzo.
-     *
-     * @return array<int, \Filament\Forms\Components\TextInput>
+/**
+     * @return array<string, \Filament\Forms\Components\TextInput>
      */
-    protected function getFormSchema(): array
+    public function getFormSchema(): array
     {
         /*
         // @var array<string, \Filament\Schemas\Components\Component> $schema
