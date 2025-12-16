@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
+<<<<<<< HEAD
 =======
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
 <div>
 {{ Theme::add('https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js') }}
     {{ __FILE__ }}{{ __LINE__ }}
@@ -21,7 +27,11 @@ declare(strict_types=1);
     </div>
     </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </div>
 =======
 </div>
 >>>>>>> bc26394 (.)
+=======
+</div>
+>>>>>>> c942565 (.)
