@@ -22,15 +22,9 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
 {
     use TransTrait;
 
-<<<<<<< HEAD
     // case PHONE = 'phone';
     // case NAME = 'name';
     // case DESCRIPTION = 'description';
-=======
-    case PHONE = 'phone';
-    case NAME = 'name';
-    case DESCRIPTION = 'description';
->>>>>>> 6e6e7f5 (.)
     case ROUTE = 'route';
     case STREET_NUMBER = 'street_number';
     case POSTAL_CODE = 'postal_code';
@@ -39,7 +33,6 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     case ADMINISTRATIVE_AREA_LEVEL_2 = 'administrative_area_level_2'; // provincia
     case ADMINISTRATIVE_AREA_LEVEL_1 = 'administrative_area_level_1'; // regione
     case COUNTRY = 'country'; // Stato/Paese
-<<<<<<< HEAD
     // case FORMATTED_ADDRESS = 'formatted_address';
     // case PLACE_ID = 'place_id';
     case LATITUDE = 'latitude';
@@ -50,18 +43,6 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     // case WHATSAPP = 'whatsapp';
     // case EMAIL = 'email';
     // case NOTES = 'notes';
-=======
-    case FORMATTED_ADDRESS = 'formatted_address';
-    case PLACE_ID = 'place_id';
-    case LATITUDE = 'latitude';
-    case LONGITUDE = 'longitude';
-    case FAX = 'fax';
-    case MOBILE = 'mobile';
-    case PEC = 'pec';
-    case WHATSAPP = 'whatsapp';
-    case EMAIL = 'email';
-    case NOTES = 'notes';
->>>>>>> 6e6e7f5 (.)
 
     public function getLabel(): string
     {

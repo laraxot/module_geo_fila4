@@ -30,16 +30,11 @@ class TestModel extends Model
 
         static::creating(static function () {
             if (! app()->environment('testing')) {
-<<<<<<< HEAD
                 throw new Exception('TestModel should only be used in tests.');
-=======
-                throw new RuntimeException('TestModel should only be used in tests.');
->>>>>>> 6e6e7f5 (.)
             }
         });
     }
 }
-<<<<<<< HEAD
 
 beforeEach(function () {
     // Crea un modello di test
@@ -193,5 +188,3 @@ it('can filter models by city', static function () {
     expect($modelsInRoma)->toHaveCount(1);
     expect($modelsInRoma->first()->name)->toBe('Model 2');
 });
-=======
->>>>>>> 6e6e7f5 (.)

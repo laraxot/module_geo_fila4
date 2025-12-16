@@ -32,12 +32,8 @@ trait HasAddress
     protected function initializeHasAddress()
     {
         // Automatically create a random token
-<<<<<<< HEAD
-        $fields = Arr::map(AddressItemEnum::cases(), fn ($item) => $item->value);
-=======
         /** @var array<int, string> $fields */
         $fields = Arr::map(AddressItemEnum::cases(), fn (AddressItemEnum $item): string => $item->value);
->>>>>>> 6e6e7f5 (.)
         $this->mergeFillable($fields);
     }
 
@@ -114,17 +110,6 @@ trait HasAddress
             return null;
         }
 
-<<<<<<< HEAD
-        return $address->street_address.
-            ', '.
-            $address->street_number.
-            ' - '.
-            $address->postal_code.
-            ' '.
-            $locality['nome'].
-            ' ('.
-            $locality['provincia']['nome'].
-=======
         $streetAddress = is_string($address->street_address) ? $address->street_address : '';
         $streetNumber = is_string($address->street_number) ? $address->street_number : '';
         $postalCode = is_string($address->postal_code) ? $address->postal_code : '';
@@ -141,7 +126,6 @@ trait HasAddress
             $localityNome.
             ' ('.
             $provinciaNome.
->>>>>>> 6e6e7f5 (.)
             ') ';
     }
 
