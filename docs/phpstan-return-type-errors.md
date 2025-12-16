@@ -246,6 +246,22 @@ grep -n "Attribute.*string" Modules/*/Models/*.php | grep -v "SafeStringCastActi
 
 ## Riferimenti
 
+<<<<<<< HEAD
+- [Laravel Accessors & Mutators](https://laravel.com/project_docs/eloquent-mutators)
+=======
+<<<<<<< HEAD
+- [Laravel Accessors & Mutators](https://laravel.com/docs/eloquent-mutators)
+>>>>>>> c24a803 (.)
+- [PHPStan Return Types](https://phpstan.org/writing-php-code/phpdoc-types#return-types)
+- [Safe Casting Actions](../../Xot/project_docs/safe-casting-actions.md)
+
+## Backlink
+
+<<<<<<< HEAD
+- [Root PHPStan Rules](../../../project_docs/phpstan_rules.md)
+=======
+- [Root PHPStan Rules](../../../docs/phpstan_rules.md)
+=======
 - [Laravel Accessors & Mutators](https://laravel.com/project_docs/eloquent-mutators)
 - [PHPStan Return Types](https://phpstan.org/writing-php-code/phpdoc-types#return-types)
 - [Safe Casting Actions](../../Xot/project_docs/safe-casting-actions.md)
@@ -253,6 +269,8 @@ grep -n "Attribute.*string" Modules/*/Models/*.php | grep -v "SafeStringCastActi
 ## Backlink
 
 - [Root PHPStan Rules](../../../project_docs/phpstan_rules.md)
+>>>>>>> f0b4f5c (.)
+>>>>>>> c24a803 (.)
 - [Geo Module Structure](./structure.md)
 - [Class Not Found Errors](./class_not_found_errors.md)
 
