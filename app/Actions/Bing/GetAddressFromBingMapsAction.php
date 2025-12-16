@@ -83,37 +83,11 @@ class GetAddressFromBingMapsAction
 
     private function parseResponse(array $response): BingMapData
     {
-        $resourceSets = $response['resourceSets'] ?? [];
-        if (! \is_array($resourceSets) || empty($resourceSets) || ! \is_array($resourceSets[0] ?? null)) {
-            throw InvalidLocationException::invalidData('Nessun risultato trovato');
-        }
+        $location = $this->extractLocationFromResponse($response);
+        $coordinates = $this->extractCoordinatesFromLocation($location);
 
-        $resources = $resourceSets[0]['resources'] ?? [];
-        if (! \is_array($resources) || empty($resources)) {
-            throw InvalidLocationException::invalidData('Nessun risultato trovato');
-        }
-
-        $location = $resources[0] ?? null;
-        if (! \is_array($location) || empty($location)) {
-            throw InvalidLocationException::invalidData('Nessun risultato trovato');
-        }
-
-        // Validate structure
-        if (! isset($location['point']) || ! \is_array($location['point'])) {
-            throw InvalidLocationException::invalidData('Point mancante nella risposta');
-        }
-        if (! isset($location['point']['coordinates']) || ! \is_array($location['point']['coordinates'])) {
-            throw InvalidLocationException::invalidData('Coordinate mancanti nella risposta');
-        }
-        if (! isset($location['address']) || ! \is_array($location['address'])) {
-            throw InvalidLocationException::invalidData('Indirizzo mancante nella risposta');
-        }
-
-        $point = $location['point'];
-        $coordinates = $point['coordinates'];
-        if (! isset($coordinates[0], $coordinates[1])) {
-            throw InvalidLocationException::invalidData('Coordinate non valide');
-        }
+        /** @var array<string, mixed> $address */
+        $address = $location['address'];
 
         /** @var array{point: array{coordinates: array{0: float, 1: float}}, address: array{countryRegion: string|null, adminDistrict: string|null, adminDistrict2: string|null, locality: string|null, postalCode: string|null, addressLine: string|null, countryRegionIso2: string|null, neighborhood: string|null}} $validatedLocation */
         $validatedLocation = [
@@ -124,14 +98,14 @@ class GetAddressFromBingMapsAction
                 ],
             ],
             'address' => [
-                'countryRegion' => isset($location['address']['countryRegion']) && \is_string($location['address']['countryRegion']) ? $location['address']['countryRegion'] : null,
-                'adminDistrict' => isset($location['address']['adminDistrict']) && \is_string($location['address']['adminDistrict']) ? $location['address']['adminDistrict'] : null,
-                'adminDistrict2' => isset($location['address']['adminDistrict2']) && \is_string($location['address']['adminDistrict2']) ? $location['address']['adminDistrict2'] : null,
-                'locality' => isset($location['address']['locality']) && \is_string($location['address']['locality']) ? $location['address']['locality'] : null,
-                'postalCode' => isset($location['address']['postalCode']) && \is_string($location['address']['postalCode']) ? $location['address']['postalCode'] : null,
-                'addressLine' => isset($location['address']['addressLine']) && \is_string($location['address']['addressLine']) ? $location['address']['addressLine'] : null,
-                'countryRegionIso2' => isset($location['address']['countryRegionIso2']) && \is_string($location['address']['countryRegionIso2']) ? $location['address']['countryRegionIso2'] : null,
-                'neighborhood' => isset($location['address']['neighborhood']) && \is_string($location['address']['neighborhood']) ? $location['address']['neighborhood'] : null,
+                'countryRegion' => $this->extractStringField($address, 'countryRegion'),
+                'adminDistrict' => $this->extractStringField($address, 'adminDistrict'),
+                'adminDistrict2' => $this->extractStringField($address, 'adminDistrict2'),
+                'locality' => $this->extractStringField($address, 'locality'),
+                'postalCode' => $this->extractStringField($address, 'postalCode'),
+                'addressLine' => $this->extractStringField($address, 'addressLine'),
+                'countryRegionIso2' => $this->extractStringField($address, 'countryRegionIso2'),
+                'neighborhood' => $this->extractStringField($address, 'neighborhood'),
             ],
         ];
 
@@ -156,5 +130,85 @@ class GetAddressFromBingMapsAction
             district: $res['address']['neighborhood'] ?? null,
             state: $res['address']['adminDistrict'] ?? null,
         );
+    }
+
+    /**
+     * Extract location array from Bing Maps API response.
+     *
+     * @param array<string, mixed> $response
+     *
+     * @throws InvalidLocationException
+     *
+     * @return array<string, mixed>
+     */
+    private function extractLocationFromResponse(array $response): array
+    {
+        $resourceSets = $response['resourceSets'] ?? [];
+        if (! \is_array($resourceSets) || empty($resourceSets) || ! \is_array($resourceSets[0] ?? null)) {
+            throw InvalidLocationException::invalidData('Nessun risultato trovato');
+        }
+
+        $resources = $resourceSets[0]['resources'] ?? [];
+        if (! \is_array($resources) || empty($resources)) {
+            throw InvalidLocationException::invalidData('Nessun risultato trovato');
+        }
+
+        $location = $resources[0] ?? null;
+        if (! \is_array($location) || empty($location)) {
+            throw InvalidLocationException::invalidData('Nessun risultato trovato');
+        }
+
+        // Validate required structure
+        if (! isset($location['point']) || ! \is_array($location['point'])) {
+            throw InvalidLocationException::invalidData('Point mancante nella risposta');
+        }
+        if (! isset($location['point']['coordinates']) || ! \is_array($location['point']['coordinates'])) {
+            throw InvalidLocationException::invalidData('Coordinate mancanti nella risposta');
+        }
+        if (! isset($location['address']) || ! \is_array($location['address'])) {
+            throw InvalidLocationException::invalidData('Indirizzo mancante nella risposta');
+        }
+
+        return $location;
+    }
+
+    /**
+     * Extract coordinates from location array.
+     *
+     * @param array<string, mixed> $location
+     *
+     * @throws InvalidLocationException
+     *
+     * @return array{0: float, 1: float}
+     */
+    private function extractCoordinatesFromLocation(array $location): array
+    {
+        $point = $location['point'];
+        $coordinates = $point['coordinates'];
+
+        if (! isset($coordinates[0], $coordinates[1])) {
+            throw InvalidLocationException::invalidData('Coordinate non valide');
+        }
+
+        return [
+            0 => (float) $coordinates[0],
+            1 => (float) $coordinates[1],
+        ];
+    }
+
+    /**
+     * Extract a string field from array with type safety.
+     *
+     * Centralizes the repeated validation pattern: isset + is_string + default null.
+     * This helper reduces cyclomatic complexity by applying DRY principle.
+     *
+     * @param array<string, mixed> $data Source array
+     * @param string               $key  Field key to extract
+     *
+     * @return string|null Validated string value or null if not found/not string
+     */
+    private function extractStringField(array $data, string $key): ?string
+    {
+        return isset($data[$key]) && \is_string($data[$key]) ? $data[$key] : null;
     }
 }
