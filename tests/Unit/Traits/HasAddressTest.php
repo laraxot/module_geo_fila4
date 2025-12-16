@@ -6,9 +6,7 @@ namespace Modules\Geo\Tests\Unit\Traits;
 
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Traits\HasAddress;
-use Tests\TestCase;
-
-uses(TestCase::class);
+use RuntimeException;
 
 /**
  * Modello di test per il trait HasAddress.
@@ -31,17 +29,22 @@ class HasAddressTest extends BaseModel
     /**
      * Bootstrap this model.
      */
-    public static function boot()
+    protected static function boot(): void
     {
         parent::boot();
 
         static::creating(static function () {
             if (! app()->environment('testing')) {
+<<<<<<< HEAD
                 throw new Exception('TestModel should only be used in tests.');
+=======
+                throw new RuntimeException('TestModel should only be used in tests.');
+>>>>>>> 6e6e7f5 (.)
             }
         });
     }
 }
+<<<<<<< HEAD
 
 beforeEach(function () {
     // Crea un modello di test
@@ -201,3 +204,5 @@ it('can filter models by city', static function () {
     expect($modelsInRoma)->toHaveCount(1);
     expect($modelsInRoma->first()->name)->toBe('Model 2');
 });
+=======
+>>>>>>> 6e6e7f5 (.)

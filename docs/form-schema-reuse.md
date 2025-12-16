@@ -112,6 +112,6 @@ Questo pattern rispetta DRY+KISS:
 ## Riferimenti
 
 - [address-resource.md](address-resource.md)
-- [pattern-filament-pages.md](../docs/pattern-filament-pages.md)
+- [pattern-filament-pages.md](../project_docs/pattern-filament-pages.md)
 - [AddressResource](../app/Filament/Resources/AddressResource.php)
 - [StudioResource](../../<main module>/app/Filament/Resources/StudioResource.php)
