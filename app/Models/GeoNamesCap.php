@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static Builder<static>|GeoNamesCap newQuery()
  * @method static Builder<static>|GeoNamesCap query()
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\GeoNamesCapFactory factory($count = null, $state = [])
  *

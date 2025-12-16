@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static Builder<static>|County newQuery()
  * @method static Builder<static>|County query()
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\CountyFactory factory($count = null, $state = [])
  *

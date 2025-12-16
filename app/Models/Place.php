@@ -64,7 +64,7 @@ use function Safe\json_encode;
  * @property \Illuminate\Support\Carbon|null          $created_at
  * @property \Illuminate\Support\Carbon|null          $updated_at
  * @property string|null                              $post_type
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\PlaceFactory factory($count = null, $state = [])
  * @method static Builder<static>|Place                        whereAddress($value)

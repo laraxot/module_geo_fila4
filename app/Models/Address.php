@@ -81,7 +81,7 @@ use Modules\Geo\Enums\AddressTypeEnum;
  * @method static Builder<static>|Address whereUpdatedAt($value)
  * @method static Builder<static>|Address whereUpdatedBy($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\AddressFactory factory($count = null, $state = [])
  *

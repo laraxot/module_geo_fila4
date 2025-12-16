@@ -28,7 +28,7 @@ use Sushi\Sushi;
  * @method static Builder<static>|Province whereName($value)
  * @method static Builder<static>|Province whereRegionId($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ProvinceFactory factory($count = null, $state = [])
  *

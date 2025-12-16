@@ -27,7 +27,7 @@ use Sushi\Sushi;
  * @method static Builder<static>|Region                        whereId($value)
  * @method static Builder<static>|Region                        whereName($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @mixin \Eloquent
  */

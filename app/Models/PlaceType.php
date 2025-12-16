@@ -15,7 +15,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\PlaceTypeFactory factory($count = null, $state = [])
  *

@@ -58,7 +58,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location whereZip($value)
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\LocationFactory factory($count = null, $state = [])
  *

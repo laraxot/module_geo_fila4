@@ -56,7 +56,7 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @method static Builder<static>|Comune whereUpdatedBy($value)
  * @method static Builder<static>|Comune whereZona($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
  *
