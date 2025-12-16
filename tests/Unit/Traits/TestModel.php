@@ -6,7 +6,6 @@ namespace Modules\Geo\Tests\Unit\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\Traits\HasAddress;
-use RuntimeException;
 
 /**
  * Modello di test per il trait HasAddress.
