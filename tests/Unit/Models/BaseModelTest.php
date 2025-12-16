@@ -6,8 +6,6 @@ namespace Modules\Geo\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\BaseModel;
-use Tests\TestCase;
-
 
 beforeEach(function () {
     $this->baseModel = new class extends BaseModel {

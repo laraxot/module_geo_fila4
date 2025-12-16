@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Geo\Models\Address;
 use Modules\Geo\Models\Comune;
 use Modules\Geo\Models\Province;
-use Tests\TestCase;
-
 
 beforeEach(function () {
     $this->address = Address::factory()->create();
