@@ -49,7 +49,6 @@ class AddressResource extends XotBaseResource
                 ->visible(false)
                 ->columnSpan(2),
             'administrative_area_level_1' => Select::make('administrative_area_level_1')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Region::getOptions(...))
                 ->searchable()
                 ->required()
@@ -61,7 +60,6 @@ class AddressResource extends XotBaseResource
                     $set('cap', null);
                 }),
             'administrative_area_level_2' => Select::make('administrative_area_level_2')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Province::getOptions(...))
                 ->searchable()
                 ->required()
@@ -74,7 +72,6 @@ class AddressResource extends XotBaseResource
                 ->disabled(fn (Get $get) => ! $get('administrative_area_level_1'))
                 ->placeholder(__('filament-forms::components.select.placeholder')),
             'locality' => Select::make('locality')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Locality::getOptions(...))
                 ->searchable()
                 ->required()
@@ -86,7 +83,6 @@ class AddressResource extends XotBaseResource
                 })
                 ->placeholder(__('filament-forms::components.select.placeholder')),
             'postal_code' => Select::make('postal_code')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Locality::getPostalCodeOptions(...))
                 ->searchable()
                 ->required()
@@ -103,7 +99,6 @@ class AddressResource extends XotBaseResource
     {
         return [
             'region' => Select::make('region')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Region::getOptions(...))
                 ->searchable()
                 ->required()
@@ -115,7 +110,6 @@ class AddressResource extends XotBaseResource
                     $set('cap', null);
                 }),
             'province' => Select::make('province')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Province::getOptions(...))
                 ->searchable()
                 ->required()
@@ -131,7 +125,6 @@ class AddressResource extends XotBaseResource
             // 'class' => 'h-9'
             // ])
             'locality' => Select::make('locality')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Locality::getOptions(...))
                 ->searchable()
                 ->required()
@@ -142,7 +135,6 @@ class AddressResource extends XotBaseResource
                     $set('postal_code', null);
                 }),
             'postal_code' => Select::make('postal_code')
-                /* @phpstan-ignore-next-line staticMethod.notFound */
                 ->options(Locality::getPostalCodeOptions(...))
                 ->searchable()
                 ->required()

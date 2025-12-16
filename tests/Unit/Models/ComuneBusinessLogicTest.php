@@ -1,12 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Comune;
 use Modules\Tenant\Models\Traits\SushiToJson;
-
-use function Safe\class_uses;
 
 describe('Comune Business Logic', function () {
     test('comune extends base model', function () {
@@ -26,7 +25,7 @@ describe('Comune Business Logic', function () {
     });
 
     test('comune has expected fillable fields for italian municipalities', function () {
-        $comune = new Comune();
+        $comune = new Comune;
         $expectedFillable = [
             'id',
             'codice',
@@ -48,7 +47,7 @@ describe('Comune Business Logic', function () {
     });
 
     test('comune has schema definition for structured geographic data', function () {
-        $comune = new Comune();
+        $comune = new Comune;
 
         expect($comune)->toHaveProperty('schema');
         expect($comune->schema['zona'])->toBe('json');
@@ -58,20 +57,20 @@ describe('Comune Business Logic', function () {
     });
 
     test('comune has json directory property for data source', function () {
-        $comune = new Comune();
+        $comune = new Comune;
 
         expect($comune)->toHaveProperty('jsonDirectory');
         expect($comune->jsonDirectory)->toBeString();
     });
 
     test('comune has translatable array configured', function () {
-        $comune = new Comune();
+        $comune = new Comune;
 
         expect($comune->translatable)->toBeArray();
     });
 
     test('comune model can be instantiated without errors', function () {
-        $comune = new Comune();
+        $comune = new Comune;
 
         expect($comune)->toBeInstanceOf(Comune::class);
         expect($comune)->toBeInstanceOf(BaseModel::class);

@@ -18,14 +18,6 @@ enum AddressTypeEnum: string
 
     /**
      * Get the label for the enum value.
-     * <<<<<<< HEAD
-     * =======
-     * <<<<<<< HEAD
-     * =======.
-     *
-     * @return string
-     *                >>>>>>> be08416 (.)
-     *                >>>>>>> c24a803 (.)
      */
     public function label(): string
     {
