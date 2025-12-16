@@ -26,6 +26,10 @@ trait HasPlaceTrait
     }
 
     // ----- mutators -----
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc26394 (.)
     // public function getPlaceAttribute(string $value){
     //     return
     // }
