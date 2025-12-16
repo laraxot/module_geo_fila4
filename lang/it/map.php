@@ -1,15 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
 declare(strict_types=1);
 
 return [
@@ -54,76 +44,3 @@ return [
         'export' => 'Esporta',
     ],
 ];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-return array (
-  'navigation' => 
-  array (
-    'name' => 'Mappe',
-    'plural' => 'Mappe',
-    'group' => 
-    array (
-      'name' => 'Geo',
-      'description' => 'Gestione e visualizzazione delle mappe',
-    ),
-    'label' => 'Mappe',
-    'sort' => 33,
-    'icon' => 'geo-map',
-  ),
-  'fields' => 
-  array (
-    'title' => 'Titolo',
-    'type' => 'Tipo Mappa',
-    'zoom_level' => 'Livello Zoom',
-    'center_lat' => 'Latitudine Centro',
-    'center_lng' => 'Longitudine Centro',
-    'markers' => 'Marcatori',
-    'layers' => 'Livelli',
-    'style' => 'Stile',
-    'text' => 
-    array (
-      'label' => 'text',
-      'placeholder' => 'text',
-      'helper_text' => 'text',
-      'description' => 'text',
-    ),
-    '_tpl' => 
-    array (
-      'label' => '_tpl',
-      'placeholder' => '_tpl',
-      'helper_text' => '_tpl',
-      'description' => '_tpl',
-    ),
-  ),
-  'map_types' => 
-  array (
-    'roadmap' => 'Stradale',
-    'satellite' => 'Satellite',
-    'hybrid' => 'Ibrida',
-    'terrain' => 'Terreno',
-  ),
-  'controls' => 
-  array (
-    'zoom' => 'Zoom',
-    'pan' => 'Panoramica',
-    'fullscreen' => 'Schermo Intero',
-    'streetview' => 'Street View',
-    'layers' => 'Livelli',
-  ),
-  'actions' => 
-  array (
-    'add_marker' => 'Aggiungi Marcatore',
-    'draw_polygon' => 'Disegna Poligono',
-    'measure_distance' => 'Misura Distanza',
-    'export' => 'Esporta',
-  ),
-);
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> f0b4f5c (.)
