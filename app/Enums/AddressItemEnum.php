@@ -22,9 +22,9 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
 {
     use TransTrait;
 
-    // case PHONE = 'phone';
-    // case NAME = 'name';
-    // case DESCRIPTION = 'description';
+    case PHONE = 'phone';
+    case NAME = 'name';
+    case DESCRIPTION = 'description';
     case ROUTE = 'route';
     case STREET_NUMBER = 'street_number';
     case POSTAL_CODE = 'postal_code';
@@ -33,16 +33,16 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     case ADMINISTRATIVE_AREA_LEVEL_2 = 'administrative_area_level_2'; // provincia
     case ADMINISTRATIVE_AREA_LEVEL_1 = 'administrative_area_level_1'; // regione
     case COUNTRY = 'country'; // Stato/Paese
-    // case FORMATTED_ADDRESS = 'formatted_address';
-    // case PLACE_ID = 'place_id';
+    case FORMATTED_ADDRESS = 'formatted_address';
+    case PLACE_ID = 'place_id';
     case LATITUDE = 'latitude';
     case LONGITUDE = 'longitude';
-    // case FAX = 'fax';
-    // case MOBILE = 'mobile';
-    // case PEC = 'pec';
-    // case WHATSAPP = 'whatsapp';
-    // case EMAIL = 'email';
-    // case NOTES = 'notes';
+    case FAX = 'fax';
+    case MOBILE = 'mobile';
+    case PEC = 'pec';
+    case WHATSAPP = 'whatsapp';
+    case EMAIL = 'email';
+    case NOTES = 'notes';
 
     public function getLabel(): string
     {
@@ -188,7 +188,7 @@ enum AddressItemEnum: string implements HasLabel, HasIcon, HasColor
     /**
      * Internal map of standard address column definitions.
      *
-     * @return array<string, callable(Blueprint): void>
+     * @return array<string, \Closure(Blueprint): void>
      */
     private static function getColumnDefinitions(): array
     {

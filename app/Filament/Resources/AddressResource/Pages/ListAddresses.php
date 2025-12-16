@@ -14,13 +14,13 @@ class ListAddresses extends XotBaseListRecords
     protected static string $resource = AddressResource::class;
 
     /**
-     * @return array<Action>
+     * @return array<string, Action>
      */
     #[\Override]
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            'create' => CreateAction::make(),
         ];
     }
 }
