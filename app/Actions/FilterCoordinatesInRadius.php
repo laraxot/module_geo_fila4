@@ -34,6 +34,7 @@ class FilterCoordinatesInRadius
             }
         }
 
+        /** @var list<array<string, mixed>> */
         return $coordinateInRaggio;
     }
 
