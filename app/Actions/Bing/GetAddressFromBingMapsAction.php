@@ -87,19 +87,19 @@ class GetAddressFromBingMapsAction
      */
     private function parseResponse(array $response): BingMapData
     {
-        /** @var array<string, mixed> $location */
         $location = $this->extractLocationFromResponse($response);
         $coordinates = $this->extractCoordinatesFromLocation($location);
+        $address = $location['address'] ?? [];
 
-        /** @var array<string, mixed> $address */
-        $address = $location['address'];
+        if (! \is_array($address)) {
+            throw InvalidLocationException::invalidData('Struttura indirizzo non valida nella risposta Bing Maps');
+        }
 
-        /** @var array{point: array{coordinates: array{0: float, 1: float}}, address: array{countryRegion: string|null, adminDistrict: string|null, adminDistrict2: string|null, locality: string|null, postalCode: string|null, addressLine: string|null, countryRegionIso2: string|null, neighborhood: string|null}} $validatedLocation */
         $validatedLocation = [
             'point' => [
                 'coordinates' => [
-                    0 => (float) $coordinates[0],
-                    1 => (float) $coordinates[1],
+                    0 => $coordinates[0],
+                    1 => $coordinates[1],
                 ],
             ],
             'address' => [
@@ -111,6 +111,7 @@ class GetAddressFromBingMapsAction
                 'addressLine' => $this->extractStringField($address, 'addressLine'),
                 'countryRegionIso2' => $this->extractStringField($address, 'countryRegionIso2'),
                 'neighborhood' => $this->extractStringField($address, 'neighborhood'),
+                'houseNumber' => $this->extractStringField($address, 'houseNumber'),
             ],
         ];
 
@@ -146,7 +147,7 @@ class GetAddressFromBingMapsAction
      *
      * @return array<string, mixed>
      */
-    private function extractLocationFromResponse(array $response): array
+    private function extractLocationFromResponse(array $response): array<string, mixed>
     {
         $resourceSets = $response['resourceSets'] ?? [];
         if (! \is_array($resourceSets) || empty($resourceSets) || ! \is_array($resourceSets[0] ?? null)) {
@@ -174,8 +175,10 @@ class GetAddressFromBingMapsAction
             throw InvalidLocationException::invalidData('Indirizzo mancante nella risposta');
         }
 
-        /* @var array<string, mixed> $location */
-        return $location;
+        /** @var array<string, mixed> $validatedLocation */
+        $validatedLocation = $location;
+
+        return (array) $validatedLocation;
     }
 
     /**
