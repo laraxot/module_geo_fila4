@@ -8,10 +8,11 @@ class FilterCoordinatesInRadius
 {
     // filtra Coordinate In Raggio
     /**
-     * @return array<string, mixed>
+     * @return list<array<string, mixed>>
      */
     public function execute(float $latPartenza, float $lonPartenza, array $coordinateArray, int $raggio): array
     {
+        /** @var list<array<string, mixed>> $coordinateInRaggio */
         $coordinateInRaggio = [];
 
         foreach ($coordinateArray as $coordinate) {
