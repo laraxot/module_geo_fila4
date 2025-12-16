@@ -54,7 +54,7 @@ uses(TestCase::class, RefreshDatabase::class);
 >>>>>>> c24a803 (.)
 
 beforeEach(function (): void {
-    $this->address = Address::factory()->create();
+    $this->address = Address/** @phpstan-ignore-line */ ::factory()->create();
 });
 
 test('address can be created', function (): void {
@@ -118,7 +118,7 @@ test('address has proper table name', function (): void {
 
 test('address belongs to comune', function (): void {
     /** @var \Illuminate\Database\Eloquent\Collection */
-        $comune = Comune::factory()->create();
+        $comune = Comune/** @phpstan-ignore-line */ ::factory()->create();
     /** @phpstan-ignore-next-line property.notFound */
     $this->address->update(['comune_id' => $comune->id]);
 <<<<<<< HEAD
@@ -148,7 +148,7 @@ test('address belongs to comune', function (): void {
 
 test('address belongs to province', function (): void {
     /** @var \Illuminate\Database\Eloquent\Collection */
-        $province = Province::factory()->create();
+        $province = Province/** @phpstan-ignore-line */ ::factory()->create();
     /** @phpstan-ignore-next-line property.notFound */
     $this->address->update(['province_id' => $province->id]);
 <<<<<<< HEAD
