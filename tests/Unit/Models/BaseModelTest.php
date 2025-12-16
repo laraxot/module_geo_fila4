@@ -7,29 +7,41 @@ namespace Modules\Geo\Tests\Unit\Models;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\BaseModel;
 
+<<<<<<< HEAD
 beforeEach(function () {
     $this->baseModel = new class extends BaseModel {
+=======
+beforeEach(function (): void {
+    $this->baseModel = new class extends BaseModel
+    {
+>>>>>>> 30b582c (.)
         protected $table = 'test_geo_table';
     };
 });
 
-test('base model extends eloquent model', function () {
+test('base model extends eloquent model', function (): void {
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel)->toBeInstanceOf(Model::class);
 });
 
-test('base model has correct table name', function () {
+test('base model has correct table name', function (): void {
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel->getTable())->toBe('test_geo_table');
 });
 
-test('base model can be instantiated', function () {
+test('base model can be instantiated', function (): void {
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel)->toBeInstanceOf(BaseModel::class);
 });
 
-test('base model has proper inheritance chain', function () {
+test('base model has proper inheritance chain', function (): void {
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel)->toBeInstanceOf(BaseModel::class);
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel)->toBeInstanceOf(Model::class);
 });
 
-test('base model has timestamps enabled', function () {
+test('base model has timestamps enabled', function (): void {
+    /** @phpstan-ignore-next-line property.notFound */
     expect($this->baseModel->usesTimestamps())->toBeTrue();
 });
