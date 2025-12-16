@@ -33,12 +33,21 @@
         }
     },
     "require": {
+<<<<<<< HEAD
         
     },
     "require_comment": {
         "cheesegrits/filament-google-maps": "*",
         "dotswan/filament-map-picker": "*",
         "webbingbrasil/filament-maps": "*"
+=======
+      
+    },
+    "require_comment": {
+        "cheesegrits/filament-google-maps": "^3.0",
+        "dotswan/filament-map-picker": "^1.2",
+        "webbingbrasil/filament-maps": "^3.0@beta"
+>>>>>>> f0b4f5c (.)
     },
     "repositories": [
         {
