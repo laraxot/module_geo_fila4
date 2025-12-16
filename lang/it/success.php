@@ -20,10 +20,14 @@ return [
         'cleared' => 'Cache svuotata con successo',
         'backed_up' => 'Backup eseguito con successo',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'backup_restored' => 'Ripristino completato con successo',
 =======
         'restored' => 'Ripristino completato con successo',
 >>>>>>> bc26394 (.)
+=======
+        'backup_restored' => 'Ripristino completato con successo',
+>>>>>>> c942565 (.)
     ],
     'geo_specific' => [
         'coordinates_validated' => 'Coordinate geografiche validate con successo',
@@ -145,6 +149,7 @@ return [
         'change_effected' => 'Cambio effettuato con successo',
         'transformation_realized' => 'Trasformazione realizzata con successo',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'evolution_completed' => 'Evoluzione completata con successo',
         'revolution_launched' => 'Rivoluzione lanciata con successo',
@@ -158,5 +163,7 @@ return [
         'difference_made' => 'Differenza creata con successo',
         'change_effected' => 'Cambio effettuato con successo',
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     ],
 ];

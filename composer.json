@@ -34,17 +34,23 @@
     },
     "require": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
         
     },
     "require_comment": {
         "cheesegrits/filament-google-maps": "*",
         "dotswan/filament-map-picker": "*",
         "webbingbrasil/filament-maps": "*"
+<<<<<<< HEAD
 =======
         "cheesegrits/filament-google-maps": "^3.0",
         "dotswan/filament-map-picker": "^1.2",
         "webbingbrasil/filament-maps": "^3.0@beta"
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     },
     "repositories": [
         {
