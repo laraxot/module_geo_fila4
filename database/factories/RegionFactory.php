@@ -9,7 +9,23 @@ use Modules\Geo\Models\Region;
 
 /**
  * Factory for Region model.
+<<<<<<< HEAD
  *
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *
+=======
+ * 
+>>>>>>> a12f125f4a (.)
+=======
+ *
+>>>>>>> b93ef594b4 (.)
+=======
+ * 
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
  * @extends Factory<Region>
  */
 class RegionFactory extends Factory
@@ -139,8 +155,40 @@ class RegionFactory extends Factory
      */
     public function named(string $name): static
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> f0b4f5c (.)
         return $this->state(fn (array $attributes) => array_merge($attributes, [
             'name' => $name,
         ]));
     }
 }
+<<<<<<< HEAD
+=======
+=======
+        return $this->state(function (array $attributes) use ($name): array {
+            return array_merge($attributes, [
+=======
+        return $this->state(fn (array $attributes) => array_merge($attributes, [
+>>>>>>> b93ef594b4 (.)
+                'name' => $name,
+            ]));
+    }
+}
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+        return $this->state(function (array $attributes) use ($name): array {
+            return array_merge($attributes, [
+                'name' => $name,
+            ]);
+        });
+    }
+}
+>>>>>>> origin/develop
+>>>>>>> f0b4f5c (.)
