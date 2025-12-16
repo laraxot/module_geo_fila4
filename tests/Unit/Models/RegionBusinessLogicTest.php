@@ -1,13 +1,14 @@
 <?php
 
 declare(strict_types=1);
-use function Safe\class_uses;
-
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Region;
+
+use function Safe\class_uses;
+
 use Sushi\Sushi;
 
 describe('Region Business Logic', function () {

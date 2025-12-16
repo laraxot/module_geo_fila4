@@ -1,12 +1,13 @@
 <?php
 
 declare(strict_types=1);
-use function Safe\class_uses;
-
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Province;
+
+use function Safe\class_uses;
+
 use Sushi\Sushi;
 
 describe('Province Business Logic', function () {

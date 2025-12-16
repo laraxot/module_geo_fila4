@@ -1,12 +1,12 @@
 <?php
 
 declare(strict_types=1);
-use function Safe\class_uses;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Comune;
 use Modules\Tenant\Models\Traits\SushiToJson;
+
+use function Safe\class_uses;
 
 describe('Comune Business Logic', function () {
     test('comune extends base model', function () {

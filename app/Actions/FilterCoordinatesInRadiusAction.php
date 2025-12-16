@@ -29,16 +29,15 @@ readonly class FilterCoordinatesInRadiusAction
     /**
      * @param array<array{latitude: string, longitude: string}> $coordinates
      *
-<<<<<<< HEAD
-=======
-=======
-        private  CalculateDistanceAction $calculateDistanceAction,
-    ) {}
-
-    /**
-     * @param  array<array{latitude: string, longitude: string}>  $coordinates
->>>>>>> be08416 (.)
->>>>>>> c24a803 (.)
+     * <<<<<<< HEAD
+     * =======
+     * =======
+     * private  CalculateDistanceAction $calculateDistanceAction,
+     * ) {}
+     * @param array<array{latitude: string, longitude: string}> $coordinates
+     *                                                                       >>>>>>> be08416 (.)
+     *                                                                       >>>>>>> c24a803 (.)
+     *
      * @return array<array{latitude: string, longitude: string}>
      */
     public function execute(float $centerLatitude, float $centerLongitude, array $coordinates, int $radius): array
