@@ -66,6 +66,29 @@ public function getFormattedAddressAttribute(): string
 }
 ```
 
+## Correzione Effettuata
+
+I metodi seguenti sono stati aggiornati con le correzioni appropriate:
+
+### Place Model
+- `getFormattedAddressAttribute()` - Corretto utilizzando `SafeStringCastAction`
+
+### Address Model
+- `getFormattedAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+- `getFullAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+- `getStreetAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+
+### Employee Model
+- `getStatusLabelAttribute()` - Aggiunto controllo di tipo esplicito per l'attributo status
+
+## Risultato
+
+Dopo le correzioni:
+- Nessun errore PHPStan per i metodi menzionati
+- Comportamento funzionale mantenuto
+- Sicurezza dei tipi migliorata
+- Conformità alle best practices del progetto
+
 ## Pattern di Correzione per Place Model
 
 ### Analisi del Metodo

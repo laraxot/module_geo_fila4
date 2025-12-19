@@ -50,6 +50,10 @@ AddressColumn::make('address')
 - **AddressItemEnum** - Definizione campi indirizzo
 - **Geocoding Actions** - Logica geocodifica
 - **Coordinate Utilities** - Gestione coordinate
+- **UpdateCoordinatesBulkAction** - BulkAction riutilizzabile per aggiornamento coordinate
+- **UpdateCoordinatesFromAddressAction** - Action Spatie per business logic geocoding
+- **UpdateCoordinatesBulkAction** - BulkAction riutilizzabile per aggiornamento coordinate
+- **UpdateCoordinatesFromAddressAction** - Action Spatie per business logic geocoding
 
 ### Componenti nel Modulo Notify
 - **ContactColumn** - Visualizzazione contatti

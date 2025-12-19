@@ -53,15 +53,13 @@ Questo documento analizza tutti i modelli del modulo Geo verificando la presenza
 |---------|-------|---------|
 | **SushiSeeder.php.old** | 🗑️ Obsoleto | Approccio Sushi non utilizzato |
 
-<<<<<<< HEAD
-#### 1. Address
+## Modelli Specializzati - Analisi Dettagliata
+
+### 1. Address
 - **Utilizzo**: Alto - Sistema di indirizzi completo
 - **Business Logic**: Gestione indirizzi per studi medici, pazienti, dottori
 - **Integrazione**: HasAddress trait, <main module> models, Filament resources
 - **Necessità**: CRITICA per geolocalizzazione
-=======
-## Modelli Specializzati - Analisi Dettagliata
->>>>>>> 6e6e7f5 (.)
 
 ### ComuneJson - Modello Facade
 **Utilizzo**: Fornisce interfaccia unificata ai dati geografici italiani
@@ -132,15 +130,13 @@ Tutti i modelli attivi che necessitano factory le hanno.
 - **CAP**: Sistema CAP completo
 - **Codici ISTAT**: Codici identificativi ufficiali
 
-<<<<<<< HEAD
 Il modulo Geo è **fondamentale** per <main module>:
 - **Studi medici**: Geolocalizzazione e indirizzi
 - **Ricerca dottori**: FindDoctorAndAppointmentWidget con selezione geografica
 - **Gestione pazienti**: Indirizzi e localizzazione
 - **Compliance**: Dati geografici ufficiali italiani
-=======
+
 ## Note Tecniche
->>>>>>> 6e6e7f5 (.)
 
 ### Pattern Architetturali
 - **Facade Pattern**: ComuneJson fornisce interfaccia unificata
