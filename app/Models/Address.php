@@ -220,7 +220,7 @@ class Address extends BaseModel
             $this->administrative_area_level_2, // Regione
             $this->postal_code,
             $this->country,
-        ], fn ($part) => null !== $part && '' !== $part );
+        ], fn ($part) => null !== $part && '' !== $part);
 
         return implode(', ', $parts);
     }

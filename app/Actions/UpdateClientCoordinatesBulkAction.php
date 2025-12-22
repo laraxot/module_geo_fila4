@@ -39,7 +39,7 @@ class UpdateClientCoordinatesBulkAction
                 $fullAddress = is_string($address->full_address) ? $address->full_address : '';
                 $addressData = $this->getAddressDataFromFullAddressAction->execute($fullAddress);
 
-                if ($addressData !== null) {
+                if (null !== $addressData) {
                     /** @var array<string, string|int|float|bool|null> $toArray */
                     $toArray = $addressData->toArray();
                     /** @var array<string, string|int|float|bool|null> $up */
