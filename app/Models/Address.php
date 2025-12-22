@@ -247,10 +247,7 @@ class Address extends BaseModel
         $route = $this->route ?? '';
         $streetNumber = $this->street_number ?? '';
 
-        $routeStr = is_string($route) ? $route : '';
-        $streetNumberStr = is_string($streetNumber) ? $streetNumber : '';
-
-        return trim($routeStr.' '.$streetNumberStr);
+        return trim($route.' '.$streetNumber);
     }
 
     /**
@@ -258,7 +255,7 @@ class Address extends BaseModel
      */
     public function getFormattedAddressAttribute(?string $value): ?string
     {
-        if (is_string($value)) {
+        if (null !== $value) {
             return $value;
         }
 
