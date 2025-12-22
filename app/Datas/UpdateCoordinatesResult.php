@@ -15,17 +15,10 @@ use Spatie\LaravelData\Data;
 class UpdateCoordinatesResult extends Data
 {
     /**
-<<<<<<< HEAD
      * @param int $totalProcessed Total number of records processed
      * @param int $successCount Number of successfully updated records
      * @param int $failureCount Number of failed updates
      * @param Collection<int, array{model: string, error: string}> $errors Collection of error details
-=======
-     * @param int                                                  $totalProcessed Total number of records processed
-     * @param int                                                  $successCount   Number of successfully updated records
-     * @param int                                                  $failureCount   Number of failed updates
-     * @param Collection<int, array{model: string, error: string}> $errors         Collection of error details
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
      */
     public function __construct(
         public readonly int $totalProcessed,
@@ -48,11 +41,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteSuccess(): bool
     {
-<<<<<<< HEAD
         return $this->failureCount === 0 && $this->successCount > 0;
-=======
-        return 0 === $this->failureCount && $this->successCount > 0;
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
     }
 
     /**
@@ -60,11 +49,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteFailure(): bool
     {
-<<<<<<< HEAD
         return $this->successCount === 0 && $this->totalProcessed > 0;
-=======
-        return 0 === $this->successCount && $this->totalProcessed > 0;
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
     }
 
     /**
@@ -72,11 +57,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getSuccessRate(): float
     {
-<<<<<<< HEAD
         if ($this->totalProcessed === 0) {
-=======
-        if (0 === $this->totalProcessed) {
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
             return 0.0;
         }
 
@@ -90,11 +71,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getErrorMessages(): array
     {
-<<<<<<< HEAD
         /** @var array<int, string> */
-=======
-        /* @var array<int, string> */
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
         return $this->errors
             ->map(fn (array $error): string => "{$error['model']}: {$error['error']}")
             ->toArray();

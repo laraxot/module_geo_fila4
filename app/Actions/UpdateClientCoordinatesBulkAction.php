@@ -7,10 +7,7 @@ namespace Modules\Geo\Actions;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
 use Modules\Geo\Actions\GetAddressDataFromFullAddressAction;
-=======
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
 use Modules\TechPlanner\Models\Client;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -22,11 +19,7 @@ class UpdateClientCoordinatesBulkAction
     use QueueableAction;
 
     public function __construct(
-<<<<<<< HEAD
         private readonly GetAddressDataFromFullAddressAction $getAddressDataFromFullAddressAction
-=======
-        private readonly GetAddressDataFromFullAddressAction $getAddressDataFromFullAddressAction,
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
     ) {
     }
 
@@ -34,10 +27,6 @@ class UpdateClientCoordinatesBulkAction
      * Execute the action to update coordinates for a collection of clients.
      *
      * @param Collection<int, Client> $clients
-<<<<<<< HEAD
-=======
-     *
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
      * @return array{success_count: int, error_messages: array<string>}
      */
     public function execute(Collection $clients): array
@@ -50,11 +39,7 @@ class UpdateClientCoordinatesBulkAction
                 $fullAddress = is_string($client->full_address) ? $client->full_address : '';
                 $addressData = $this->getAddressDataFromFullAddressAction->execute($fullAddress);
 
-<<<<<<< HEAD
                 if ($addressData !== null && method_exists($addressData, 'toArray')) {
-=======
-                if (null !== $addressData && method_exists($addressData, 'toArray')) {
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
                     $toArray = $addressData->toArray();
                     if (is_array($toArray)) {
                         /** @var array<string, string|int|float|bool|null> $toArrayTyped */
@@ -62,11 +47,7 @@ class UpdateClientCoordinatesBulkAction
                         /** @var array<string, string|int|float|bool|null> $up */
                         $up = Arr::only($toArrayTyped, ['latitude', 'longitude']);
                         $client->update($up);
-<<<<<<< HEAD
                         $successCount++;
-=======
-                        ++$successCount;
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
                     }
                 } else {
                     $clientName = is_string($client->name) ? $client->name : 'Unknown';
@@ -83,8 +64,4 @@ class UpdateClientCoordinatesBulkAction
             'error_messages' => $errorMessages,
         ];
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
