@@ -243,7 +243,11 @@ class Place extends BaseModel implements HasGeolocation
     public function getFormattedAddressAttribute(): string
     {
         $address = $this->attributes['formatted_address'] ?? null;
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
         return \Modules\Xot\Actions\Cast\SafeStringCastAction::cast($address);
     }
 

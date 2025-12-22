@@ -38,13 +38,20 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
      *
      * Questo nome viene utilizzato come chiave nell'array delle actions
      * e per la generazione automatica delle traduzioni tramite LangServiceProvider.
+<<<<<<< HEAD
      *
      * @return string|null
+=======
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
      */
     public static function getDefaultName(): ?string
     {
         return 'update_coordinates_bulk';
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
     /**
      * Configurazione iniziale dell'azione.
      */
@@ -70,16 +77,25 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
         $result = app(UpdateCoordinatesAction::class)->execute($records);
         /** @var \Illuminate\Support\Collection<int, string> $errorMessages */
         $errorMessages = $result->errors->map(function (array $error): string {
+<<<<<<< HEAD
             /** @var array{model: string, error: string} $error */
+=======
+            /* @var array{model: string, error: string} $error */
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
             return $error['error'];
         });
         $this->sendNotifications(
             $result->successCount,
+<<<<<<< HEAD
             $errorMessages, 
+=======
+            $errorMessages,
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
             $result->totalProcessed
         );
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -88,11 +104,21 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
      * @param int $successCount
      * @param \Illuminate\Support\Collection<int, string> $errorMessages
      * @param int $totalCount
+=======
+    /**
+     * Invia le notifiche di risultato all'utente.
+     *
+     * @param \Illuminate\Support\Collection<int, string> $errorMessages
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
      */
     protected function sendNotifications(
         int $successCount,
         \Illuminate\Support\Collection $errorMessages,
+<<<<<<< HEAD
         int $totalCount
+=======
+        int $totalCount,
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
     ): void {
         $this->notifySuccess($successCount, $totalCount);
         $this->notifyErrors($errorMessages);
@@ -125,7 +151,11 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
         if ($errorMessages->isNotEmpty()) {
             $errorBody = $errorMessages->take(10)->join("\n");
             if ($errorMessages->count() > 10) {
+<<<<<<< HEAD
                 $errorBody .= "\n" . __('geo::actions.update_coordinates.bulk.notifications.warning.more_errors', [
+=======
+                $errorBody .= "\n".__('geo::actions.update_coordinates.bulk.notifications.warning.more_errors', [
+>>>>>>> f0257c6e44bf36cf89605a4070ebc29a378cd3ed
                     'count' => $errorMessages->count() - 10,
                 ]);
             }
