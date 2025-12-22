@@ -220,7 +220,7 @@ class Address extends BaseModel
             $this->administrative_area_level_2, // Regione
             $this->postal_code,
             $this->country,
-        ], fn ($part) => null !== $part && '' !== $part && is_string($part));
+        ], fn ($part) => null !== $part && '' !== $part );
 
         return implode(', ', $parts);
     }
@@ -258,7 +258,7 @@ class Address extends BaseModel
      */
     public function getFormattedAddressAttribute(?string $value): ?string
     {
-        if (null !== $value && is_string($value)) {
+        if (is_string($value)) {
             return $value;
         }
 
