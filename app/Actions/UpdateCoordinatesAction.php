@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Modules\Geo\Datas\UpdateCoordinatesResult;
 use Spatie\QueueableAction\QueueableAction;
-use Throwable;
 
 /**
  * Update coordinates (latitude/longitude) for a collection of models.
@@ -39,14 +38,14 @@ class UpdateCoordinatesAction
     /**
      * Execute bulk coordinate update.
      *
-     * @param Collection<int, Model> $models Collection of models to update
-     * @param string $addressAttribute Attribute containing the full address
+     * @param Collection<int, Model> $models           Collection of models to update
+     * @param string                 $addressAttribute Attribute containing the full address
      *
      * @return UpdateCoordinatesResult Result with statistics and errors
      */
     public function execute(
         Collection $models,
-        string $addressAttribute = 'full_address'
+        string $addressAttribute = 'full_address',
     ): UpdateCoordinatesResult {
         $geocodingAction = app(GetAddressDataFromFullAddressAction::class);
 
@@ -58,11 +57,11 @@ class UpdateCoordinatesAction
 
         foreach ($models as $model) {
             $outcome = $this->processSingleModelAndCollectErrors($model, $addressAttribute, $geocodingAction, $errors);
-            $totalProcessed++;
-            if ($outcome === true) {
-                $successCount++;
-            } elseif ($outcome === false) {
-                $failureCount++;
+            ++$totalProcessed;
+            if (true === $outcome) {
+                ++$successCount;
+            } elseif (false === $outcome) {
+                ++$failureCount;
             }
         }
 
@@ -72,39 +71,37 @@ class UpdateCoordinatesAction
     /**
      * Process a single model for coordinate update and collect errors.
      *
-     * @param Model $model
-     * @param string $addressAttribute
-     * @param GetAddressDataFromFullAddressAction $geocodingAction
      * @param \Illuminate\Support\Collection<int, array{model: string, error: string}> $errors
-     * @return bool|null True for success, false for failure (error pushed), null for skipped model.
+     *
+     * @return bool|null true for success, false for failure (error pushed), null for skipped model
      */
     private function processSingleModelAndCollectErrors(
         Model $model,
         string $addressAttribute,
         GetAddressDataFromFullAddressAction $geocodingAction,
-        \Illuminate\Support\Collection $errors
+        \Illuminate\Support\Collection $errors,
     ): ?bool {
         try {
             $fullAddress = $this->validateAddress($model, $addressAttribute, $errors);
-            if ($fullAddress === null) {
+            if (null === $fullAddress) {
                 return null;
             }
 
             $addressData = $this->performGeocoding($fullAddress, $geocodingAction, $model, $errors);
-            if ($addressData === null) {
+            if (null === $addressData) {
                 return false;
             }
 
             /** @var array<string, string|int|float|bool|null> $updateData */
             $updateData = $this->extractUpdateData($addressData, $model, $errors);
-            if ($updateData === null) {
+            if (null === $updateData) {
                 return false;
             }
 
             $model->update($updateData);
 
             return true;
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             $this->addError($errors, $model, $e->getMessage());
 
             return false;
@@ -114,15 +111,14 @@ class UpdateCoordinatesAction
     /**
      * Validate and retrieve the full address from the model.
      *
-     * @param Model $model
-     * @param string $addressAttribute
      * @param \Illuminate\Support\Collection<int, array{model: string, error: string}> $errors
-     * @return string|null The full address on success, null on failure.
+     *
+     * @return string|null the full address on success, null on failure
      */
     private function validateAddress(Model $model, string $addressAttribute, \Illuminate\Support\Collection $errors): ?string
     {
         $fullAddress = $model->getAttribute($addressAttribute);
-        if (! is_string($fullAddress) || $fullAddress === '') {
+        if (! is_string($fullAddress) || '' === $fullAddress) {
             $this->addError($errors, $model, "Missing or invalid {$addressAttribute} attribute");
 
             return null;
@@ -134,21 +130,19 @@ class UpdateCoordinatesAction
     /**
      * Perform geocoding and validate the result.
      *
-     * @param string $fullAddress
-     * @param GetAddressDataFromFullAddressAction $geocodingAction
-     * @param Model $model
      * @param \Illuminate\Support\Collection<int, array{model: string, error: string}> $errors
-     * @return object|null The address data object on success, null on failure.
+     *
+     * @return object|null the address data object on success, null on failure
      */
     private function performGeocoding(
         string $fullAddress,
         GetAddressDataFromFullAddressAction $geocodingAction,
         Model $model,
-        \Illuminate\Support\Collection $errors
+        \Illuminate\Support\Collection $errors,
     ): ?object {
         $addressData = $geocodingAction->execute($fullAddress);
 
-        if ($addressData === null) {
+        if (null === $addressData) {
             $geocodingErrors = $geocodingAction->errors;
             $errorMsg = $geocodingErrors->isNotEmpty()
                 ? $geocodingErrors->join(', ')
@@ -165,10 +159,9 @@ class UpdateCoordinatesAction
     /**
      * Extract update data (latitude/longitude) from address data.
      *
-     * @param object $addressData
-     * @param Model $model
      * @param \Illuminate\Support\Collection<int, array{model: string, error: string}> $errors
-     * @return array<string, string|int|float|bool|null>|null Update data on success, null on failure.
+     *
+     * @return array<string, string|int|float|bool|null>|null update data on success, null on failure
      */
     private function extractUpdateData(object $addressData, Model $model, \Illuminate\Support\Collection $errors): ?array
     {
@@ -188,7 +181,7 @@ class UpdateCoordinatesAction
         /** @var array<string, string|int|float|bool|null> $updateData */
         $updateData = Arr::only($toArray, ['latitude', 'longitude']);
 
-        if ($updateData === []) { // Changed from empty($updateData)
+        if ([] === $updateData) { // Changed from empty($updateData)
             $this->addError($errors, $model, 'No latitude/longitude in geocoding result');
 
             return null;
@@ -201,8 +194,6 @@ class UpdateCoordinatesAction
      * Add an error to the errors collection.
      *
      * @param \Illuminate\Support\Collection<int, array{model: string, error: string}> $errors
-     * @param Model $model
-     * @param string $message
      */
     private function addError(\Illuminate\Support\Collection $errors, Model $model, string $message): void
     {
@@ -223,7 +214,7 @@ class UpdateCoordinatesAction
 
         foreach ($nameAttributes as $attr) {
             $value = $model->getAttribute($attr);
-            if (is_string($value) && $value !== '') {
+            if (is_string($value) && '' !== $value) {
                 return $value;
             }
         }

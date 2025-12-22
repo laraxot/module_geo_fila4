@@ -49,6 +49,7 @@ class UpdateCoordinatesFromAddressAction
      * Esegue l'aggiornamento delle coordinate per un modello.
      *
      * @param Model $model Il modello da aggiornare (deve avere full_address, latitude, longitude)
+     *
      * @return bool True se l'aggiornamento è riuscito, false altrimenti
      */
     public function execute(Model $model): bool
@@ -61,13 +62,14 @@ class UpdateCoordinatesFromAddressAction
 
         if (empty($fullAddress)) {
             $this->errors->push(__('geo::actions.update_coordinates.errors.empty_address'));
+
             return false;
         }
 
         // Esegui geocoding per ottenere i dati dell'indirizzo
         $addressData = $this->getAddressDataAction->execute($fullAddress);
 
-        if ($addressData === null) {
+        if (null === $addressData) {
             // Raccogli errori dal servizio di geocoding
             $geocodingErrors = $this->getAddressDataAction->getErrors();
             if ($geocodingErrors->isNotEmpty()) {
@@ -75,6 +77,7 @@ class UpdateCoordinatesFromAddressAction
             } else {
                 $this->errors->push(__('geo::actions.update_coordinates.errors.geocoding_failed'));
             }
+
             return false;
         }
 
@@ -85,7 +88,6 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Ottiene l'indirizzo completo dal modello.
      *
-     * @param Model $model
      * @return string Indirizzo completo o stringa vuota
      */
     private function getFullAddressFromModel(Model $model): string
@@ -101,6 +103,7 @@ class UpdateCoordinatesFromAddressAction
             // Eloquent accessor pattern: get{AttributeName}Attribute($value)
             // Chiamiamo direttamente il metodo con il valore raw
             $fullAddress = $model->getFullAddressAttribute($fullAddressRaw);
+
             return is_string($fullAddress) ? $fullAddress : '';
         }
 
@@ -111,8 +114,6 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Aggiorna le coordinate del modello con i dati ottenuti dal geocoding.
      *
-     * @param Model $model
-     * @param AddressData $addressData
      * @return bool True se l'aggiornamento è riuscito
      */
     private function updateModelCoordinates(Model $model, AddressData $addressData): bool
