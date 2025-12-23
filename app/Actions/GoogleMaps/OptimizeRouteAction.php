@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-use RuntimeException;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
@@ -47,7 +46,7 @@ class OptimizeRouteAction
 
         $apiKey = config('services.google.maps.key');
         if (! $apiKey) {
-            throw new RuntimeException('Google Maps API key not found');
+            throw new \RuntimeException('Google Maps API key not found');
         }
 
         $waypoints = $this->formatWaypoints($locations);
@@ -67,7 +66,7 @@ class OptimizeRouteAction
 
         /** @var Response $response */
         if (! $response->successful()) {
-            throw new RuntimeException('Failed to get directions from Google Maps API');
+            throw new \RuntimeException('Failed to get directions from Google Maps API');
         }
 
         /** @var array{routes?: array<int, array{legs: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, steps: array<int, array{distance: array{text: string, value: int}, duration: array{text: string, value: int}, start_location: array{lat: float, lng: float}, end_location: array{lat: float, lng: float}, html_instructions: string, travel_mode: string}>}>, overview_polyline: array{points: string}, summary: string, warnings: array<int, string>, waypoint_order: array<int, int>}>} $data */

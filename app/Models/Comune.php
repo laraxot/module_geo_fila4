@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Override;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Geo\Database\Factories\ComuneFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
+use Modules\Geo\Database\Factories\ComuneFactory;
 use Modules\Tenant\Models\Traits\SushiToJson;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modello per i comuni italiani con Sushi.
@@ -18,25 +17,25 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * regioni, province, città, CAP, codici ISTAT, ecc.
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
  *
- * @property string|null                                 $nome
- * @property float|null                                  $codice
- * @property array<array-key, mixed>|null                $zona
- * @property array<array-key, mixed>|null                $regione
- * @property array<array-key, mixed>|null                $provincia
- * @property string|null                                 $sigla
- * @property string|null                                 $codiceCatastale
- * @property array<array-key, mixed>|null                $cap
- * @property int|null                                    $popolazione
- * @property int|null                                    $id
- * @property string|null                                 $title
- * @property string|null                                 $slug
- * @property string|null                                 $content
- * @property string|null                                 $created_at
- * @property string|null                                 $updated_at
- * @property string|null                                 $created_by
- * @property string|null                                 $updated_by
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
+ * @property string|null                  $nome
+ * @property float|null                   $codice
+ * @property array<array-key, mixed>|null $zona
+ * @property array<array-key, mixed>|null $regione
+ * @property array<array-key, mixed>|null $provincia
+ * @property string|null                  $sigla
+ * @property string|null                  $codiceCatastale
+ * @property array<array-key, mixed>|null $cap
+ * @property int|null                     $popolazione
+ * @property int|null                     $id
+ * @property string|null                  $title
+ * @property string|null                  $slug
+ * @property string|null                  $content
+ * @property string|null                  $created_at
+ * @property string|null                  $updated_at
+ * @property string|null                  $created_by
+ * @property string|null                  $updated_by
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
@@ -215,7 +214,7 @@ class Comune extends BaseModel
     }
 
     /** @return array<string, string>     */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [

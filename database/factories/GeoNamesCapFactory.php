@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Database\Factories;
 
-use Modules\Geo\Models\GeoNamesCap;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Geo\Models\GeoNamesCap;
 
 class GeoNamesCapFactory extends Factory
 {

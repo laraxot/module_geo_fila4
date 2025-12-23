@@ -4,22 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Override;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Geo\Database\Factories\LocalityFactory;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
+use Modules\Geo\Database\Factories\LocalityFactory;
+use Modules\Xot\Contracts\ProfileContract;
 use Sushi\Sushi;
 
 /**
- * @property int|null                                    $region_id
- * @property int|null                                    $province_id
- * @property string|null                                 $name
- * @property int                                         $id
- * @property array<array-key, mixed>|null                $postal_code
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
+ * @property int|null                     $region_id
+ * @property int|null                     $province_id
+ * @property string|null                  $name
+ * @property int                          $id
+ * @property array<array-key, mixed>|null $postal_code
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Locality newModelQuery()
  * @method static Builder<static>|Locality newQuery()
@@ -126,7 +125,7 @@ class Locality extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [

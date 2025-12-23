@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Widgets;
 
-use Override;
 use Filament\Schemas\Components\Component;
 use Modules\Geo\Filament\Forms\LocationForm;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
@@ -75,7 +74,7 @@ class LocationWidget extends XotBaseWidget
      *
      * @return array<int, Component>
      */
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return $this->locationForm->getSchema();

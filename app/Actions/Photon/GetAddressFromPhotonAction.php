@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Photon;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
@@ -60,7 +59,7 @@ readonly class GetAddressFromPhotonAction
                 street: $photonData->street,
                 street_number: $photonData->housenumber,
             );
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             Log::error('Exception during Photon API request', [
                 'exception' => $e->getMessage(),
                 'address' => $address,

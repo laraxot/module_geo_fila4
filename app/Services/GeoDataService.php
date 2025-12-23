@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-use RuntimeException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -196,29 +195,29 @@ class GeoDataService
     /**
      * Carica i dati dal file JSON.
      *
-     * @throws RuntimeException Se il file non esiste o non è valido
+     * @throws \RuntimeException Se il file non esiste o non è valido
      *
      * @return Collection<int, array<string, mixed>>
      */
     private function loadData(): Collection
     {
         if (! File::exists(base_path(self::JSON_PATH))) {
-            throw new RuntimeException('Il file JSON dei comuni non esiste');
+            throw new \RuntimeException('Il file JSON dei comuni non esiste');
         }
 
         /** @var array<string, mixed> $data */
         $data = json_decode(File::get(base_path(self::JSON_PATH)), true);
 
         if (! \is_array($data)) {
-            throw new RuntimeException('Il file JSON dei comuni non è valido');
+            throw new \RuntimeException('Il file JSON dei comuni non è valido');
         }
 
         if (! $this->validator->checkIntegrity($data)) {
-            throw new RuntimeException('Il file JSON dei comuni non è valido');
+            throw new \RuntimeException('Il file JSON dei comuni non è valido');
         }
 
         if (! isset($data['regions']) || ! \is_array($data['regions'])) {
-            throw new RuntimeException('Regioni mancanti nel file JSON');
+            throw new \RuntimeException('Regioni mancanti nel file JSON');
         }
 
         /** @var Collection<int, array<string, mixed>> $result */

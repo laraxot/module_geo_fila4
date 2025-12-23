@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use RuntimeException;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
@@ -20,13 +19,13 @@ class GetCoordinatesAction
     /**
      * Ottiene le coordinate geografiche da un indirizzo.
      *
-     * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
+     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
      */
     public function execute(string $formattedAddress): ?LocationData
     {
         $apiKey = config('services.google.maps.key');
         if (! $apiKey) {
-            throw new RuntimeException('Google Maps API key not found');
+            throw new \RuntimeException('Google Maps API key not found');
         }
 
         $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json', [
@@ -41,7 +40,7 @@ class GetCoordinatesAction
 
         /** @var Response $response */
         if (! $response->successful()) {
-            throw new RuntimeException('Failed to get coordinates from Google Maps API');
+            throw new \RuntimeException('Failed to get coordinates from Google Maps API');
         }
 
         /** @var array{status: string, results: array<int, array{geometry: array{location: array{lat: float, lng: float}}}>} $data */

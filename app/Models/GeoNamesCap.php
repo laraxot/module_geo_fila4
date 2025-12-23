@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Geo\Database\Factories\GeoNamesCapFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Modules\Geo\Database\Factories\GeoNamesCapFactory;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modules\Geo\Models\GeoNamesCap.
