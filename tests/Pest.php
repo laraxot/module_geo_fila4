@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Modules\Geo\Models\City;
 use Modules\Geo\Models\Country;
 use Modules\Geo\Models\Region;
+=======
+use Modules\Geo\Models\Country;
+use Modules\Geo\Models\Region;
+use Modules\Geo\Models\City;
+>>>>>>> be08416 (.)
 use Modules\Geo\Tests\TestCase;
 
 /*
@@ -31,20 +37,11 @@ pest()->extend(TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-expect()->extend('toBe' + 'Geo' + '', function () {
-    /** @var \Pest\Expectation<mixed> $this */
-    return $this->toBeInstanceOf(...);
-});
+expect()->extend('toBeCountry', fn () => $this->toBeInstanceOf(Country::class));
 
-expect()->extend('toBe' + 'Geo' + '', function () {
-    /** @var \Pest\Expectation<mixed> $this */
-    return $this->toBeInstanceOf(...);
-});
+expect()->extend('toBeRegion', fn () => $this->toBeInstanceOf(Region::class));
 
-expect()->extend('toBe' + 'Geo' + '', function () {
-    /** @var \Pest\Expectation<mixed> $this */
-    return $this->toBeInstanceOf(...);
-});
+expect()->extend('toBeCity', fn () => $this->toBeInstanceOf(City::class));
 
 /*
  * |--------------------------------------------------------------------------
@@ -57,32 +54,17 @@ expect()->extend('toBe' + 'Geo' + '', function () {
  * |
  */
 
-/**
- * @param array<string, mixed> $attributes
- */
 function createCountry(array $attributes = []): Country
 {
-    $Country = Country::factory()->create($attributes);
-    assert($Country instanceof Country);
-    return $Country;
+    return Country::factory()->create($attributes);
 }
 
-/**
- * @param array<string, mixed> $attributes
- */
 function createRegion(array $attributes = []): Region
 {
-    $Region = Region::factory()->create($attributes);
-    assert($Region instanceof Region);
-    return $Region;
+    return Region::factory()->create($attributes);
 }
 
-/**
- * @param array<string, mixed> $attributes
- */
 function createCity(array $attributes = []): City
 {
-    $City = City::factory()->create($attributes);
-    assert($City instanceof City);
-    return $City;
+    return City::factory()->create($attributes);
 }

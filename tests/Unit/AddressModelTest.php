@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Geo\Contracts\HasGeolocation;
+=======
+use Modules\Geo\Contracts\HasGeolocation;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+>>>>>>> be08416 (.)
 use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Models\Address;
 
-describe('Address Model', function (): void {
-    it('can be created with factory', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create();
+describe('Address Model', function () {
+    it('can be created with factory', function () {
+        $address = Address::factory()->create();
 
         expect($address)
             ->toBeInstanceOf(Address::class)
@@ -20,8 +24,8 @@ describe('Address Model', function (): void {
             ->toBeInt();
     });
 
-    it('has correct fillable attributes', function (): void {
-        $address = new Address;
+    it('has correct fillable attributes', function () {
+        $address = new Address();
 
         expect($address->getFillable())->toContain([
             'model_type',
@@ -46,16 +50,14 @@ describe('Address Model', function (): void {
         ]);
     });
 
-    it('implements HasGeolocation contract', function (): void {
-        $address = new Address;
+    it('implements HasGeolocation contract', function () {
+        $address = new Address();
 
         expect($address)->toBeInstanceOf(HasGeolocation::class);
     });
 
-    it('uses soft deletes', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create();
-        /** @phpstan-ignore-next-line method.nonObject */
+    it('uses soft deletes', function () {
+        $address = Address::factory()->create();
         $address->delete();
 
         expect($address->deleted_at)
@@ -63,9 +65,8 @@ describe('Address Model', function (): void {
             ->not->toBeNull()->and(Address::find($address->id))->toBeNull();
     });
 
-    it('casts attributes correctly', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+    it('casts attributes correctly', function () {
+        $address = Address::factory()->create([
             'latitude' => 45.4642,
             'longitude' => 9.1900,
             'is_primary' => true,
@@ -82,17 +83,15 @@ describe('Address Model', function (): void {
             ->toBeArray();
     });
 
-    it('has polymorphic relationship', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create();
+    it('has polymorphic relationship', function () {
+        $address = Address::factory()->create();
 
         expect($address->addressable())->toBeInstanceOf(MorphTo::class);
     });
 
-    describe('Accessors', function (): void {
-        it('generates full_address accessor', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+    describe('Accessors', function () {
+        it('generates full_address accessor', function () {
+            $address = Address::factory()->create([
                 'route' => 'Via Roma',
                 'street_number' => '123',
                 'locality' => 'Milano',
@@ -109,9 +108,8 @@ describe('Address Model', function (): void {
                 ->toContain('Milano');
         });
 
-        it('generates street_address accessor', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+        it('generates street_address accessor', function () {
+            $address = Address::factory()->create([
                 'route' => 'Via Roma',
                 'street_number' => '123',
             ]);
@@ -125,10 +123,9 @@ describe('Address Model', function (): void {
         });
     });
 
-    describe('Geolocation Features', function (): void {
-        it('stores coordinates correctly', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+    describe('Geolocation Features', function () {
+        it('stores coordinates correctly', function () {
+            $address = Address::factory()->create([
                 'latitude' => 45.4642,
                 'longitude' => 9.1900,
             ]);
@@ -136,65 +133,60 @@ describe('Address Model', function (): void {
             expect($address->latitude)->toBe(45.4642)->and($address->longitude)->toBe(9.1900);
         });
 
-        it('can calculate distance between addresses', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address1 = Address/** @phpstan-ignore-line */ ::factory()->create([
+        it('can calculate distance between addresses', function () {
+            $address1 = Address::factory()->create([
                 'latitude' => 45.4642,
                 'longitude' => 9.1900,
             ]);
 
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address2 = Address/** @phpstan-ignore-line */ ::factory()->create([
+            $address2 = Address::factory()->create([
                 'latitude' => 45.4654,
                 'longitude' => 9.1859,
             ]);
 
             if (method_exists($address1, 'distanceTo')) {
-                /** @phpstan-ignore-next-line method.nonObject */
                 $distance = $address1->distanceTo($address2);
                 expect($distance)->toBeFloat()->and($distance)->toBeGreaterThan(0);
             }
         });
     });
 
-    describe('Address Types', function (): void {
-        it('can be set as primary address', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create(['is_primary' => true]);
+    describe('Address Types', function () {
+        it('can be set as primary address', function () {
+            $address = Address::factory()->create(['is_primary' => true]);
 
             expect($address->is_primary)->toBeTrue();
         });
 
-        it('can have different types', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create(['type' => AddressTypeEnum::HOME]);
+        it('can have different types', function () {
+            $address = Address::factory()->create(['type' => AddressTypeEnum::HOME]);
 
             expect($address->type)->toBe(AddressTypeEnum::HOME);
         });
     });
 
-    describe('Scopes and Queries', function (): void {
-        it('can filter by primary addresses', function (): void {
-            Address/** @phpstan-ignore-line */ ::factory()->create(['is_primary' => true]);
-            Address/** @phpstan-ignore-line */ ::factory()->create(['is_primary' => false]);
+    describe('Scopes and Queries', function () {
+        it('can filter by primary addresses', function () {
+            Address::factory()->create(['is_primary' => true]);
+            Address::factory()->create(['is_primary' => false]);
 
             $primaryAddresses = Address::where('is_primary', true)->get();
 
             expect($primaryAddresses)->toHaveCount(1);
         });
 
-        it('can filter by locality', function (): void {
-            Address/** @phpstan-ignore-line */ ::factory()->create(['locality' => 'Milano']);
-            Address/** @phpstan-ignore-line */ ::factory()->create(['locality' => 'Roma']);
+        it('can filter by locality', function () {
+            Address::factory()->create(['locality' => 'Milano']);
+            Address::factory()->create(['locality' => 'Roma']);
 
             $milanAddresses = Address::where('locality', 'Milano')->get();
 
             expect($milanAddresses)->toHaveCount(1);
         });
 
-        it('can filter by postal code', function (): void {
-            Address/** @phpstan-ignore-line */ ::factory()->create(['postal_code' => '20100']);
-            Address/** @phpstan-ignore-line */ ::factory()->create(['postal_code' => '00100']);
+        it('can filter by postal code', function () {
+            Address::factory()->create(['postal_code' => '20100']);
+            Address::factory()->create(['postal_code' => '00100']);
 
             $milanPostalCodes = Address::where('postal_code', '20100')->get();
 
@@ -202,19 +194,17 @@ describe('Address Model', function (): void {
         });
     });
 
-    describe('Google Places Integration', function (): void {
-        it('can store place_id from Google Places', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+    describe('Google Places Integration', function () {
+        it('can store place_id from Google Places', function () {
+            $address = Address::factory()->create([
                 'place_id' => 'ChIJu46S-ZZjhkcRLuFvLjVZ400',
             ]);
 
             expect($address->place_id)->toBe('ChIJu46S-ZZjhkcRLuFvLjVZ400');
         });
 
-        it('can store formatted_address from Google Places', function (): void {
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create([
+        it('can store formatted_address from Google Places', function () {
+            $address = Address::factory()->create([
                 'formatted_address' => 'Via Roma, 123, 20100 Milano MI, Italy',
             ]);
 
@@ -222,8 +212,8 @@ describe('Address Model', function (): void {
         });
     });
 
-    describe('Extra Data Storage', function (): void {
-        it('can store additional metadata', function (): void {
+    describe('Extra Data Storage', function () {
+        it('can store additional metadata', function () {
             $extraData = [
                 'building_type' => 'residential',
                 'floor' => 3,
@@ -231,8 +221,7 @@ describe('Address Model', function (): void {
                 'buzzer_code' => '123',
             ];
 
-            /** @var \Illuminate\Database\Eloquent\Collection */
-        $address = Address/** @phpstan-ignore-line */ ::factory()->create(['extra_data' => $extraData]);
+            $address = Address::factory()->create(['extra_data' => $extraData]);
 
             expect($address->extra_data)
                 ->toBe($extraData)

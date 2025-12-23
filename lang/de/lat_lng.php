@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be08416 (.)
 return [
     'navigation' => [
         'label' => 'Coordinate GPS',

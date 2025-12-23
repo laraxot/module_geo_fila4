@@ -18,24 +18,21 @@ use Illuminate\Http\Resources\Json\JsonResource as ResCollection;
 /**
  * Class GeoJsonResource.
  *
- * @property int $id
+ * @property int         $id
  * @property string|null $post_type
- * @property int|null $post_id
- * @property int|null $url
- * @property int|null $title
- * @property int|null $subtitle
- * @property float|null $ratings_avg
+ * @property int|null    $post_id
+ * @property int|null    $url
+ * @property int|null    $title
+ * @property int|null    $subtitle
+ * @property float|null  $ratings_avg
  * @property string|null $phone
  * @property string|null $full_address
  * @property string|null $email
- * @property float $latitude
- * @property float $longitude
+ * @property float       $latitude
+ * @property float       $longitude
  */
 class GeoJsonResource extends ResCollection
 {
-    /**
-     * @return array<string, mixed>
-     */
     public function toArray(Request $request): array
     {
         app()->getLocale();
@@ -43,7 +40,11 @@ class GeoJsonResource extends ResCollection
         return [
             'type' => 'Feature',
             'properties' => [
+<<<<<<< HEAD
                 'id' => $this->post_type.'-'.$this->post_id,
+=======
+                'id' => $this->post_type . '-' . $this->post_id,
+>>>>>>> be08416 (.)
                 // "index"=> 0,
                 'isActive' => true,
                 // "logo"=> "http://placehold.it/32x32",
@@ -59,7 +60,11 @@ class GeoJsonResource extends ResCollection
                 'stars' => $this->ratings_avg,
                 'phone' => $this->phone,
                 'address' => $this->full_address,
+<<<<<<< HEAD
                 'about' => $this->subtitle."\r\n",
+=======
+                'about' => $this->subtitle . "\r\n",
+>>>>>>> be08416 (.)
                 'tags' => [
                     $this->post_type,
                     // "Restaurant",

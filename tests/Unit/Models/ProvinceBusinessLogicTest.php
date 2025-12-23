@@ -3,31 +3,39 @@
 declare(strict_types=1);
 use function Safe\class_uses;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Province;
 use Sushi\Sushi;
+=======
+use Modules\Geo\Models\BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Sushi\Sushi;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Geo\Models\Province;
+>>>>>>> be08416 (.)
 
-describe('Province Business Logic', function (): void {
-    test('province extends base model', function (): void {
+describe('Province Business Logic', function () {
+    test('province extends base model', function () {
         expect(Province::class)->toBeSubclassOf(BaseModel::class);
     });
 
-    test('province has factory trait for testing', function (): void {
+    test('province has factory trait for testing', function () {
         $traits = class_uses(Province::class);
 
         expect($traits)->toHaveKey(HasFactory::class);
     });
 
-    test('province uses sushi trait for in-memory data', function (): void {
+    test('province uses sushi trait for in-memory data', function () {
         $traits = class_uses(Province::class);
 
         expect($traits)->toHaveKey(Sushi::class);
     });
 
-    test('province has schema definition for geographic hierarchy', function (): void {
-        $province = new Province;
+    test('province has schema definition for geographic hierarchy', function () {
+        $province = new Province();
 
         expect($province)->toHaveProperty('schema');
         expect($province->schema['region_id'])->toBe('integer');
@@ -35,27 +43,27 @@ describe('Province Business Logic', function (): void {
         expect($province->schema['name'])->toBe('string');
     });
 
-    test('province can get rows from comune data', function (): void {
-        $province = new Province;
+    test('province can get rows from comune data', function () {
+        $province = new Province();
 
         expect(method_exists($province, 'getRows'))->toBeTrue();
         expect($province->getRows())->toBeArray();
     });
 
-    test('province model can be instantiated without errors', function (): void {
-        $province = new Province;
+    test('province model can be instantiated without errors', function () {
+        $province = new Province();
 
         expect($province)->toBeInstanceOf(Province::class);
         expect($province)->toBeInstanceOf(BaseModel::class);
     });
 
-    test('province can be queried by name', function (): void {
+    test('province can be queried by name', function () {
         $query = Province::whereName('Milano');
 
         expect($query)->toBeInstanceOf(Builder::class);
     });
 
-    test('province can be queried by region id', function (): void {
+    test('province can be queried by region id', function () {
         $query = Province::whereRegionId(1);
 
         expect($query)->toBeInstanceOf(Builder::class);

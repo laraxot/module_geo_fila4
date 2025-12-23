@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Fields;
 
+<<<<<<< HEAD
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
+=======
+use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\TextInput;
+>>>>>>> be08416 (.)
 
 class AddressField extends Section
 {
@@ -15,7 +20,11 @@ class AddressField extends Section
     {
         parent::setUp();
         $this// ->description('The items you have selected for purchase')
+<<<<<<< HEAD
             ->icon('heroicon-o-map-pin')
+=======
+        ->icon('heroicon-o-map-pin')
+>>>>>>> be08416 (.)
             // ->label(__('geo::place.fields.address'))
             ->relationship('place')
             ->schema([
