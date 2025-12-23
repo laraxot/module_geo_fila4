@@ -15,6 +15,9 @@ class AddressField extends Section
     {
         parent::setUp();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
         $this// ->description('The items you have selected for purchase')
             ->icon('heroicon-o-map-pin')
             // ->label(__('geo::place.fields.address'))
@@ -31,6 +34,7 @@ class AddressField extends Section
                 TextInput::make('country')->label(__('geo::place.fields.country')), // italia
             ])
             ->columns(2);
+<<<<<<< HEAD
 =======
         $this
             // ->description('The items you have selected for purchase')
@@ -49,5 +53,7 @@ class AddressField extends Section
                 ]
             )->columns(2);
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
     }
 }

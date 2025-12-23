@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c942565 (.)
 namespace Modules\Geo\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +13,7 @@ use Modules\Geo\Models\BaseModel;
 
 beforeEach(function () {
     $this->baseModel = new class extends BaseModel {
+<<<<<<< HEAD
 =======
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\BaseModel;
@@ -18,6 +22,8 @@ beforeEach(function () {
     $this->baseModel = new class() extends BaseModel
     {
 >>>>>>> bc26394 (.)
+=======
+>>>>>>> c942565 (.)
         protected $table = 'test_geo_table';
     };
 });
