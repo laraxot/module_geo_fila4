@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
+use function Safe\json_decode;
+use function Safe\json_encode;
+
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 // --- models ---

@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @mixin \Eloquent
  */
+/** */
 class County extends BaseModel
 {
     protected $fillable = [

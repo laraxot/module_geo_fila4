@@ -7,6 +7,9 @@ namespace Modules\Geo\Actions;
 class FilterCoordinatesInRadius
 {
     // filtra Coordinate In Raggio
+    /**
+     * @return array<string, mixed>
+     */
     public function execute(float $latPartenza, float $lonPartenza, array $coordinateArray, int $raggio): array
     {
         $coordinateInRaggio = [];
