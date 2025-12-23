@@ -35,9 +35,13 @@ class MapBlock
             ])
             ->label('Map')
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->columns('form' === $context ? 2 : 1);
 =======
             ->columns($context === 'form' ? 2 : 1);
 >>>>>>> 1bb689f (.)
+=======
+            ->columns('form' === $context ? 2 : 1);
+>>>>>>> 0746367 (.)
     }
 }

@@ -14,16 +14,22 @@ class GoogleMapResultData extends Data
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
      * @param DataCollection<GoogleMapAddressComponentData> $address_components Componenti dell'indirizzo
      * @param GoogleMapGeometryData                         $geometry           Dati geometrici
      * @param string                                        $formatted_address  Indirizzo formattato
      * @param array<string>                                 $types              Tipi di indirizzo
+<<<<<<< HEAD
 =======
      * @param  DataCollection<GoogleMapAddressComponentData>  $address_components  Componenti dell'indirizzo
      * @param  GoogleMapGeometryData  $geometry  Dati geometrici
      * @param  string  $formatted_address  Indirizzo formattato
      * @param  array<string>  $types  Tipi di indirizzo
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
      */
     public function __construct(
         public readonly DataCollection $address_components,
@@ -31,9 +37,14 @@ class GoogleMapResultData extends Data
         public readonly string $formatted_address,
         public readonly array $types,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

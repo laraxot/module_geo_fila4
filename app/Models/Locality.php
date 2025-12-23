@@ -11,6 +11,9 @@ use Sushi\Sushi;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property int|null                                    $region_id
  * @property int|null                                    $province_id
  * @property string|null                                 $name
@@ -18,6 +21,7 @@ use Sushi\Sushi;
  * @property array<array-key, mixed>|null                $postal_code
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
 =======
  * @property int|null $region_id
  * @property int|null $province_id
@@ -27,6 +31,8 @@ use Sushi\Sushi;
  * @property \Modules\Quaeris\Models\Profile|null $creator
  * @property \Modules\Quaeris\Models\Profile|null $updater
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  *
  * @method static Builder<static>|Locality newModelQuery()
  * @method static Builder<static>|Locality newQuery()
@@ -38,12 +44,18 @@ use Sushi\Sushi;
  * @method static Builder<static>|Locality whereRegionId($value)
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\LocalityFactory factory($count = null, $state = [])
  *
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  * @mixin \Eloquent
  */
 class Locality extends BaseModel
@@ -109,10 +121,14 @@ class Locality extends BaseModel
         $res = self::where('region_id', $region)
             ->where('province_id', $province)
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->when(null !== $city, static fn ($query) => $query->where('id', $city))
 =======
             ->when($city !== null, static fn ($query) => $query->where('id', $city))
 >>>>>>> 1bb689f (.)
+=======
+            ->when(null !== $city, static fn ($query) => $query->where('id', $city))
+>>>>>>> 0746367 (.)
             ->select('postal_code')
             ->distinct()
             ->orderBy('postal_code')

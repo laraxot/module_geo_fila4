@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Forms\Components;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Geo\Enums\AddressItemEnum;
 use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
 
@@ -19,6 +20,14 @@ use Modules\Geo\Filament\Resources\AddressResource;
 
 class AddressSection extends Section
 >>>>>>> 1bb689f (.)
+=======
+use Modules\Geo\Enums\AddressItemEnum;
+use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
+
+// use Squire\Models\Country;
+
+class AddressSection extends XotBaseSection
+>>>>>>> 0746367 (.)
 {
     // protected string $view = 'filament-forms::components.group';
 
@@ -27,6 +36,7 @@ class AddressSection extends Section
     protected function setUp(): void
     {
         parent::setUp();
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
         $this->schema(fn (): array => $this->getFormSchema());
@@ -48,16 +58,31 @@ class AddressSection extends Section
         return AddressItemEnum::getFormSchema();
 =======
         $this->columns(2);
+=======
+        // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
+        $this->schema(fn (): array => $this->getFormSchema());
+        $this->columns(3);
+>>>>>>> 0746367 (.)
     }
 
-    protected function getFormSchema(): array
+    /**
+     * @return array<string, \Filament\Forms\Components\TextInput>
+     */
+    public function getFormSchema(): array
     {
-        $res = AddressResource::getFormSchema();
-        unset($res['name']);
-        unset($res['is_primary']);
+        /*
+        // @var array<string, \Filament\Schemas\Components\Component> $schema
+        $schema = AddressResource::getFormSchema();
+        unset($schema['name'], $schema['is_primary']);
 
+<<<<<<< HEAD
         return $res;
 >>>>>>> 1bb689f (.)
+=======
+        return $schema;
+        */
+        return AddressItemEnum::getFormSchema();
+>>>>>>> 0746367 (.)
     }
 
     /*

@@ -9,10 +9,13 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\GeocodingData;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use RuntimeException;
 use Webmozart\Assert\Assert;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 use function Safe\json_decode;
 
@@ -26,20 +29,29 @@ readonly class GetGeocodingDataAction
     public function __construct(
         private Client $client,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 
     /**
      * Ottiene i dati di geocodifica per un indirizzo.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
 =======
      * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
 >>>>>>> 1bb689f (.)
+=======
+     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
+>>>>>>> 0746367 (.)
      */
     public function execute(string $address): GeocodingData
     {
@@ -63,16 +75,23 @@ readonly class GetGeocodingDataAction
      * Valida i dati di input.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @throws \RuntimeException Se i dati non sono validi
 =======
      * @throws RuntimeException Se i dati non sono validi
 >>>>>>> 1bb689f (.)
+=======
+     * @throws \RuntimeException Se i dati non sono validi
+>>>>>>> 0746367 (.)
      */
     private function validateInput(string $address): void
     {
         // $apiKey = config('services.google_maps.api_key');
         $apiKey = config('services.google.maps_api_key');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
         if (empty($apiKey)) {
             throw new \RuntimeException('Chiave API Google Maps non configurata!');
         }
@@ -82,11 +101,14 @@ readonly class GetGeocodingDataAction
         if (strlen($address) > 1000) {
             throw new \RuntimeException('Indirizzo troppo lungo');
         }
+<<<<<<< HEAD
 =======
         Assert::notEmpty($apiKey, 'Chiave API Google Maps non configurata!');
         Assert::notEmpty($address, 'Indirizzo non può essere vuoto');
         Assert::maxLength($address, 1000, 'Indirizzo troppo lungo');
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
     }
 
     /**
@@ -108,10 +130,14 @@ readonly class GetGeocodingDataAction
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @throws \RuntimeException Se la risposta non è nel formato atteso
 =======
      * @throws RuntimeException Se la risposta non è nel formato atteso
 >>>>>>> 1bb689f (.)
+=======
+     * @throws \RuntimeException Se la risposta non è nel formato atteso
+>>>>>>> 0746367 (.)
      */
     private function parseResponse(string $response): GeocodingData
     {
@@ -136,10 +162,14 @@ readonly class GetGeocodingDataAction
         $data = json_decode($response, true);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ('OK' !== $data['status'] || empty($data['results'])) {
 =======
         if ($data['status'] !== 'OK' || empty($data['results'])) {
 >>>>>>> 1bb689f (.)
+=======
+        if ('OK' !== $data['status'] || empty($data['results'])) {
+>>>>>>> 0746367 (.)
             Log::warning('Geocodifica fallita', [
                 'status' => $data['status'],
                 'error' => $data['error_message'] ?? 'Nessun risultato trovato',

@@ -9,6 +9,7 @@ use Modules\Xot\Filament\Pages\XotBaseDashboard;
 class Dashboard extends XotBaseDashboard
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
 
     // protected string $view = 'geo::filament.pages.dashboard';
@@ -17,6 +18,11 @@ class Dashboard extends XotBaseDashboard
 
     protected string $view = 'geo::filament.pages.dashboard';
 >>>>>>> 1bb689f (.)
+=======
+    // protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
+
+    // protected string $view = 'geo::filament.pages.dashboard';
+>>>>>>> 0746367 (.)
 
     // public function mount(): void {
     //     $user = auth()->user();

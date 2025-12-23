@@ -9,21 +9,28 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Sushi\Sushi;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property int                                         $id
  * @property string|null                                 $name
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property Collection<int, Province>                   $provinces
  * @property int|null                                    $provinces_count
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
  *
  * @method static \Modules\Geo\Database\Factories\RegionFactory factory($count = null, $state = [])
  * @method static Builder<static>|Region                        newModelQuery()
@@ -48,6 +55,17 @@ use Sushi\Sushi;
  * @method static Builder<static>|Region whereId($value)
  * @method static Builder<static>|Region whereName($value)
 >>>>>>> 1bb689f (.)
+=======
+ *
+ * @method static \Modules\Geo\Database\Factories\RegionFactory factory($count = null, $state = [])
+ * @method static Builder<static>|Region                        newModelQuery()
+ * @method static Builder<static>|Region                        newQuery()
+ * @method static Builder<static>|Region                        query()
+ * @method static Builder<static>|Region                        whereId($value)
+ * @method static Builder<static>|Region                        whereName($value)
+ *
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+>>>>>>> 0746367 (.)
  *
  * @mixin \Eloquent
  */

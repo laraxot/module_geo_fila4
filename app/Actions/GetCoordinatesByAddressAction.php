@@ -6,9 +6,13 @@ namespace Modules\Geo\Actions;
 
 use Filament\Notifications\Notification;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Http\Client\Response;
 =======
 >>>>>>> 1bb689f (.)
+=======
+use Illuminate\Http\Client\Response;
+>>>>>>> 0746367 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\CoordinatesData;
 
@@ -59,10 +63,14 @@ class GetCoordinatesByAddressAction
     private function getGoogleResponse(string $address): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->makeHttpRequest('https://maps.googleapis.com/maps/api/geocode/json', [
 =======
         $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json', [
 >>>>>>> 1bb689f (.)
+=======
+        $response = $this->makeHttpRequest('https://maps.googleapis.com/maps/api/geocode/json', [
+>>>>>>> 0746367 (.)
             'address' => $address,
             'key' => config('services.google.maps_api_key'),
         ]);
@@ -97,12 +105,18 @@ class GetCoordinatesByAddressAction
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $coordinatesClass = CoordinatesData::class;
 
         return $coordinatesClass::from([
 =======
         return CoordinatesData::from([
 >>>>>>> 1bb689f (.)
+=======
+        $coordinatesClass = CoordinatesData::class;
+
+        return $coordinatesClass::from([
+>>>>>>> 0746367 (.)
             'latitude' => (float) $location['lat'],
             'longitude' => (float) $location['lng'],
         ]);
@@ -116,10 +130,14 @@ class GetCoordinatesByAddressAction
     private function getBingResponse(string $address, string $apiKey): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->makeHttpRequest('http://dev.virtualearth.net/REST/v1/Locations', [
 =======
         $response = Http::get('http://dev.virtualearth.net/REST/v1/Locations', [
 >>>>>>> 1bb689f (.)
+=======
+        $response = $this->makeHttpRequest('http://dev.virtualearth.net/REST/v1/Locations', [
+>>>>>>> 0746367 (.)
             'q' => $address,
             'key' => $apiKey,
         ]);
@@ -138,6 +156,9 @@ class GetCoordinatesByAddressAction
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
     /**
      * Execute an HTTP GET request and always return a typed Response.
      *
@@ -151,6 +172,7 @@ class GetCoordinatesByAddressAction
         return $response;
     }
 
+<<<<<<< HEAD
     private function getFromBing(string $address): ?CoordinatesData
     {
         $apiKey = config('services.bing.maps_api_key');
@@ -161,11 +183,18 @@ class GetCoordinatesByAddressAction
         $apiKey = config('services.bing.maps_api_key');
         if (! is_string($apiKey) || $apiKey === '') {
 >>>>>>> 1bb689f (.)
+=======
+    private function getFromBing(string $address): ?CoordinatesData
+    {
+        $apiKey = config('services.bing.maps_api_key');
+        if (! is_string($apiKey) || '' === $apiKey) {
+>>>>>>> 0746367 (.)
             return null;
         }
 
         $data = $this->getBingResponse($address, $apiKey);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         $coordinates = $this->extractBingCoordinates($data);
         if (null === $coordinates) {
@@ -203,6 +232,10 @@ class GetCoordinatesByAddressAction
         $coordinates = $point['coordinates'];
         if (count($coordinates) < 2) {
 >>>>>>> 1bb689f (.)
+=======
+        $coordinates = $this->extractBingCoordinates($data);
+        if (null === $coordinates) {
+>>>>>>> 0746367 (.)
             return null;
         }
 
@@ -213,6 +246,9 @@ class GetCoordinatesByAddressAction
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
     private function extractBingCoordinates(array $data): ?array
     {
         $resourceSets = $data['resourceSets'] ?? null;
@@ -246,8 +282,11 @@ class GetCoordinatesByAddressAction
         return $coordinates;
     }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
     /**
      * Ottiene la risposta dall'API di OpenCage.
      *
@@ -256,10 +295,14 @@ class GetCoordinatesByAddressAction
     private function getOpenCageResponse(string $address, string $apiKey): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->makeHttpRequest('https://api.opencagedata.com/geocode/v1/json', [
 =======
         $response = Http::get('https://api.opencagedata.com/geocode/v1/json', [
 >>>>>>> 1bb689f (.)
+=======
+        $response = $this->makeHttpRequest('https://api.opencagedata.com/geocode/v1/json', [
+>>>>>>> 0746367 (.)
             'q' => $address,
             'key' => $apiKey,
         ]);
@@ -282,10 +325,14 @@ class GetCoordinatesByAddressAction
     {
         $apiKey = config('services.opencage.api_key');
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (! is_string($apiKey) || '' === $apiKey) {
 =======
         if (! is_string($apiKey) || $apiKey === '') {
 >>>>>>> 1bb689f (.)
+=======
+        if (! is_string($apiKey) || '' === $apiKey) {
+>>>>>>> 0746367 (.)
             return null;
         }
 
@@ -302,12 +349,18 @@ class GetCoordinatesByAddressAction
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $coordinatesClass = CoordinatesData::class;
 
         return $coordinatesClass::from([
 =======
         return CoordinatesData::from([
 >>>>>>> 1bb689f (.)
+=======
+        $coordinatesClass = CoordinatesData::class;
+
+        return $coordinatesClass::from([
+>>>>>>> 0746367 (.)
             'latitude' => (float) $location['lat'],
             'longitude' => (float) $location['lng'],
         ]);
@@ -319,10 +372,14 @@ class GetCoordinatesByAddressAction
     private function getNominatimResponse(string $address): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->makeHttpRequest('https://nominatim.openstreetmap.org/search', [
 =======
         $response = Http::get('https://nominatim.openstreetmap.org/search', [
 >>>>>>> 1bb689f (.)
+=======
+        $response = $this->makeHttpRequest('https://nominatim.openstreetmap.org/search', [
+>>>>>>> 0746367 (.)
             'q' => $address,
             'format' => 'json',
             'limit' => 1,
@@ -353,12 +410,18 @@ class GetCoordinatesByAddressAction
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $coordinatesClass = CoordinatesData::class;
 
         return $coordinatesClass::from([
 =======
         return CoordinatesData::from([
 >>>>>>> 1bb689f (.)
+=======
+        $coordinatesClass = CoordinatesData::class;
+
+        return $coordinatesClass::from([
+>>>>>>> 0746367 (.)
             'latitude' => (float) $location['lat'],
             'longitude' => (float) $location['lon'],
         ]);
@@ -370,10 +433,14 @@ class GetCoordinatesByAddressAction
     private function getOpenApiResponse(string $address): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->makeHttpRequest('https://api.open-meteo.com/v1/geocoding', [
 =======
         $response = Http::get('https://api.open-meteo.com/v1/geocoding', [
 >>>>>>> 1bb689f (.)
+=======
+        $response = $this->makeHttpRequest('https://api.open-meteo.com/v1/geocoding', [
+>>>>>>> 0746367 (.)
             'name' => $address,
             'count' => 1,
         ]);
@@ -407,12 +474,18 @@ class GetCoordinatesByAddressAction
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $coordinatesClass = CoordinatesData::class;
 
         return $coordinatesClass::from([
 =======
         return CoordinatesData::from([
 >>>>>>> 1bb689f (.)
+=======
+        $coordinatesClass = CoordinatesData::class;
+
+        return $coordinatesClass::from([
+>>>>>>> 0746367 (.)
             'latitude' => (float) $firstResult['latitude'],
             'longitude' => (float) $firstResult['longitude'],
         ]);

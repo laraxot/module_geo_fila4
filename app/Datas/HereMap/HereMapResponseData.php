@@ -15,9 +15,14 @@ class HereMapResponseData extends Data
         #[MapInputName('items.0.address')]
         public ?array $address,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

@@ -5,10 +5,15 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions\Nominatim;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 =======
 >>>>>>> 1bb689f (.)
+=======
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
+>>>>>>> 0746367 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
@@ -23,11 +28,16 @@ class GetAddressFromNominatimAction
      * Esegue la ricerca dell'indirizzo su Nominatim.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param string $address L'indirizzo da cercare
      *
 =======
      * @param  string  $address  L'indirizzo da cercare
 >>>>>>> 1bb689f (.)
+=======
+     * @param string $address L'indirizzo da cercare
+     *
+>>>>>>> 0746367 (.)
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
@@ -42,14 +52,20 @@ class GetAddressFromNominatimAction
         ]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
         if (! $response->successful()) {
             return null;
         }

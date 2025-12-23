@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\Geo\Console\Commands;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Exception;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -58,10 +61,14 @@ class SushiCommand extends Command
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Aggiorna il database SQLite di Sushi.
 =======
      * Aggiorna il database SQLite di Sushi
 >>>>>>> 1bb689f (.)
+=======
+     * Aggiorna il database SQLite di Sushi.
+>>>>>>> 0746367 (.)
      */
     protected function refresh(): int
     {
@@ -78,9 +85,12 @@ class SushiCommand extends Command
 
             // Uso Safe\json_decode per evitare false return
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             /** @var mixed $rawData */
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
             $rawData = json_decode(File::get($path), true);
 
             // Validazione tipo per evitare foreach su mixed
@@ -133,10 +143,14 @@ class SushiCommand extends Command
 
             return 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         } catch (\Exception $e) {
 =======
         } catch (Exception $e) {
 >>>>>>> 1bb689f (.)
+=======
+        } catch (\Exception $e) {
+>>>>>>> 0746367 (.)
             $this->error('Errore durante l\'aggiornamento del database: '.$e->getMessage());
 
             return 1;
@@ -147,10 +161,14 @@ class SushiCommand extends Command
      * Valida i dati di un comune.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<mixed, mixed> $comune
 =======
      * @param  array<mixed, mixed>  $comune
 >>>>>>> 1bb689f (.)
+=======
+     * @param array<mixed, mixed> $comune
+>>>>>>> 0746367 (.)
      */
     protected function isValidComuneData(array $comune): bool
     {
@@ -167,10 +185,14 @@ class SushiCommand extends Command
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Pulisce il database SQLite di Sushi.
 =======
      * Pulisce il database SQLite di Sushi
 >>>>>>> 1bb689f (.)
+=======
+     * Pulisce il database SQLite di Sushi.
+>>>>>>> 0746367 (.)
      */
     protected function clear(): int
     {
@@ -182,10 +204,14 @@ class SushiCommand extends Command
 
             return 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         } catch (\Exception $e) {
 =======
         } catch (Exception $e) {
 >>>>>>> 1bb689f (.)
+=======
+        } catch (\Exception $e) {
+>>>>>>> 0746367 (.)
             $this->error('Errore durante la pulizia del database: '.$e->getMessage());
 
             return 1;
@@ -194,10 +220,14 @@ class SushiCommand extends Command
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Mostra lo stato del database SQLite di Sushi.
 =======
      * Mostra lo stato del database SQLite di Sushi
 >>>>>>> 1bb689f (.)
+=======
+     * Mostra lo stato del database SQLite di Sushi.
+>>>>>>> 0746367 (.)
      */
     protected function status(): int
     {
@@ -227,10 +257,14 @@ class SushiCommand extends Command
 
             return 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         } catch (\Exception $e) {
 =======
         } catch (Exception $e) {
 >>>>>>> 1bb689f (.)
+=======
+        } catch (\Exception $e) {
+>>>>>>> 0746367 (.)
             $this->error('Errore durante la verifica dello stato del database: '.$e->getMessage());
 
             return 1;

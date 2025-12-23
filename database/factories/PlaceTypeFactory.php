@@ -9,10 +9,14 @@ use Modules\Geo\Models\PlaceType;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * PlaceType Factory.
 =======
  * PlaceType Factory
 >>>>>>> 1bb689f (.)
+=======
+ * PlaceType Factory.
+>>>>>>> 0746367 (.)
  *
  * Factory for creating PlaceType model instances for testing and seeding.
  *

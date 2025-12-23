@@ -5,11 +5,16 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions\OpenCage;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 =======
 use Exception;
 >>>>>>> 1bb689f (.)
+=======
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
+>>>>>>> 0746367 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
@@ -24,6 +29,7 @@ class GetAddressFromOpenCageAction
      * Esegue la ricerca dell'indirizzo su OpenCage.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param string $address L'indirizzo da cercare
      *
      * @throws \Exception Se la chiave API non è configurata
@@ -35,6 +41,13 @@ class GetAddressFromOpenCageAction
      *
      * @throws Exception Se la chiave API non è configurata
 >>>>>>> 1bb689f (.)
+=======
+     * @param string $address L'indirizzo da cercare
+     *
+     * @throws \Exception Se la chiave API non è configurata
+     *
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
+>>>>>>> 0746367 (.)
      */
     public function execute(string $address): ?AddressData
     {
@@ -42,10 +55,14 @@ class GetAddressFromOpenCageAction
 
         if (empty($apiKey)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             throw new \Exception('OpenCage API key not configured');
 =======
             throw new Exception('OpenCage API key not configured');
 >>>>>>> 1bb689f (.)
+=======
+            throw new \Exception('OpenCage API key not configured');
+>>>>>>> 0746367 (.)
         }
 
         $response = Http::get(self::BASE_URL.'/json', [
@@ -56,14 +73,20 @@ class GetAddressFromOpenCageAction
         ]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
         if (! $response->successful()) {
             return null;
         }

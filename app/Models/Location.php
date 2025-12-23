@@ -8,14 +8,20 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Carbon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Override;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 /**
  * Class Location.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property int                                         $id
  * @property string|null                                 $model_type
  * @property string|null                                 $model_id
@@ -38,6 +44,7 @@ use Override;
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property array                                       $location
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
 =======
  * @property int $id
  * @property string|null $model_type
@@ -62,6 +69,8 @@ use Override;
  * @property array $location
  * @property-read \Modules\Quaeris\Models\Profile|null $updater
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  *
  * @method static Builder<static>|Location newModelQuery()
  * @method static Builder<static>|Location newQuery()
@@ -88,12 +97,18 @@ use Override;
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\LocationFactory factory($count = null, $state = [])
  *
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  * @mixin \Eloquent
  */
 class Location extends BaseModel
@@ -150,10 +165,14 @@ class Location extends BaseModel
      * @return array<string, string>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
 =======
     #[Override]
 >>>>>>> 1bb689f (.)
+=======
+    #[\Override]
+>>>>>>> 0746367 (.)
     protected function casts(): array
     {
         return [

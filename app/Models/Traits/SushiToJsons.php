@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Models\Traits;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 =======
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
 >>>>>>> 1bb689f (.)
+=======
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
+>>>>>>> 0746367 (.)
 use Sushi\Sushi;
 
 trait SushiToJsons
@@ -21,10 +26,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Carica i dati dal file JSON.
 =======
      * Carica i dati dal file JSON
 >>>>>>> 1bb689f (.)
+=======
+     * Carica i dati dal file JSON.
+>>>>>>> 0746367 (.)
      */
     public function getSushiRows(): array
     {
@@ -33,10 +42,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Ottiene il percorso del file JSON.
 =======
      * Ottiene il percorso del file JSON
 >>>>>>> 1bb689f (.)
+=======
+     * Ottiene il percorso del file JSON.
+>>>>>>> 0746367 (.)
      */
     public function getJsonFile(): string
     {
@@ -45,10 +58,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Salva i dati nel file JSON.
 =======
      * Salva i dati nel file JSON
 >>>>>>> 1bb689f (.)
+=======
+     * Salva i dati nel file JSON.
+>>>>>>> 0746367 (.)
      */
     public function saveToJson(array $data): bool
     {
@@ -60,10 +77,14 @@ trait SushiToJsons
 
             return true;
 <<<<<<< HEAD
+<<<<<<< HEAD
         } catch (\Exception $e) {
 =======
         } catch (Exception $e) {
 >>>>>>> 1bb689f (.)
+=======
+        } catch (\Exception $e) {
+>>>>>>> 0746367 (.)
             report($e);
 
             return false;
@@ -72,10 +93,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Crea un nuovo record.
 =======
      * Crea un nuovo record
 >>>>>>> 1bb689f (.)
+=======
+     * Crea un nuovo record.
+>>>>>>> 0746367 (.)
      */
     public function create(array $attributes = []): static
     {
@@ -91,6 +116,7 @@ trait SushiToJsons
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         throw new \RuntimeException('Impossibile salvare il record');
     }
 
@@ -103,6 +129,13 @@ trait SushiToJsons
     /**
      * Aggiorna un record esistente
 >>>>>>> 1bb689f (.)
+=======
+        throw new \RuntimeException('Impossibile salvare il record');
+    }
+
+    /**
+     * Aggiorna un record esistente.
+>>>>>>> 0746367 (.)
      */
     public function update(array $attributes = []): bool
     {
@@ -110,10 +143,14 @@ trait SushiToJsons
         $index = $this->findIndex($this->getKey());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (null === $index) {
 =======
         if ($index === null) {
 >>>>>>> 1bb689f (.)
+=======
+        if (null === $index) {
+>>>>>>> 0746367 (.)
             return false;
         }
 
@@ -125,10 +162,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Elimina un record.
 =======
      * Elimina un record
 >>>>>>> 1bb689f (.)
+=======
+     * Elimina un record.
+>>>>>>> 0746367 (.)
      */
     public function delete(): bool
     {
@@ -136,10 +177,14 @@ trait SushiToJsons
         $index = $this->findIndex($this->getKey());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (null === $index) {
 =======
         if ($index === null) {
 >>>>>>> 1bb689f (.)
+=======
+        if (null === $index) {
+>>>>>>> 0746367 (.)
             return false;
         }
 
@@ -150,10 +195,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Carica i dati dal file JSON.
 =======
      * Carica i dati dal file JSON
 >>>>>>> 1bb689f (.)
+=======
+     * Carica i dati dal file JSON.
+>>>>>>> 0746367 (.)
      */
     protected function loadFromJson(): array
     {
@@ -166,12 +215,17 @@ trait SushiToJsons
         $data = json_decode(File::get($path), true);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
 =======
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
 >>>>>>> 1bb689f (.)
+=======
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            throw new \RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
+>>>>>>> 0746367 (.)
         }
 
         return $data;
@@ -179,10 +233,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Ottiene la chiave di cache.
 =======
      * Ottiene la chiave di cache
 >>>>>>> 1bb689f (.)
+=======
+     * Ottiene la chiave di cache.
+>>>>>>> 0746367 (.)
      */
     protected function getCacheKey(): string
     {
@@ -191,10 +249,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Ottiene la durata della cache in secondi.
 =======
      * Ottiene la durata della cache in secondi
 >>>>>>> 1bb689f (.)
+=======
+     * Ottiene la durata della cache in secondi.
+>>>>>>> 0746367 (.)
      */
     protected function getCacheDuration(): int
     {
@@ -203,10 +265,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Trova l'indice di un record.
 =======
      * Trova l'indice di un record
 >>>>>>> 1bb689f (.)
+=======
+     * Trova l'indice di un record.
+>>>>>>> 0746367 (.)
      */
     protected function findIndex($id): ?int
     {
@@ -223,10 +289,14 @@ trait SushiToJsons
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Genera un nuovo ID.
 =======
      * Genera un nuovo ID
 >>>>>>> 1bb689f (.)
+=======
+     * Genera un nuovo ID.
+>>>>>>> 0746367 (.)
      */
     protected function generateId(): string
     {

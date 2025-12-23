@@ -8,9 +8,12 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\IPLocationData;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use RuntimeException;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 use function Safe\json_decode;
 
@@ -26,15 +29,20 @@ class FetchIPLocationAction
     public function __construct()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->client = new Client();
 =======
         $this->client = new Client;
 >>>>>>> 1bb689f (.)
+=======
+        $this->client = new Client();
+>>>>>>> 0746367 (.)
     }
 
     /**
      * Ottiene le informazioni di geolocalizzazione per un indirizzo IP.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
      * @param string $ip Indirizzo IP da geolocalizzare
      *
@@ -46,6 +54,12 @@ class FetchIPLocationAction
      * @throws GuzzleException
      * @throws RuntimeException
 >>>>>>> 1bb689f (.)
+=======
+     * @param string $ip Indirizzo IP da geolocalizzare
+     *
+     * @throws GuzzleException
+     * @throws \RuntimeException
+>>>>>>> 0746367 (.)
      */
     public function execute(string $ip): IPLocationData
     {
@@ -84,12 +98,17 @@ class FetchIPLocationAction
         $data = json_decode($response->getBody()->getContents(), true);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ('success' !== $data['status']) {
             throw new \RuntimeException('Failed to get IP location: '.($data['message'] ?? 'Unknown error'));
 =======
         if ($data['status'] !== 'success') {
             throw new RuntimeException('Failed to get IP location: '.($data['message'] ?? 'Unknown error'));
 >>>>>>> 1bb689f (.)
+=======
+        if ('success' !== $data['status']) {
+            throw new \RuntimeException('Failed to get IP location: '.($data['message'] ?? 'Unknown error'));
+>>>>>>> 0746367 (.)
         }
 
         return new IPLocationData(

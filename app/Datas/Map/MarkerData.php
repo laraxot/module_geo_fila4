@@ -13,9 +13,14 @@ class MarkerData extends Data
         public ?string $title = null,
         public ?IconData $icon = null,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

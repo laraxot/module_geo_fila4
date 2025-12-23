@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Geo\Traits\HandlesCoordinates;
 =======
 use InvalidArgumentException;
 use Modules\Geo\Traits\HandlesCoordinates;
 use Webmozart\Assert\Assert;
 >>>>>>> 1bb689f (.)
+=======
+use Modules\Geo\Traits\HandlesCoordinates;
+>>>>>>> 0746367 (.)
 
 /**
  * Action per filtrare le coordinate in base alla distanza da un punto.
@@ -23,10 +27,14 @@ class FilterCoordinatesAction
      * Filtra le coordinate che si trovano entro un certo raggio da un punto.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
      * @param array<array{latitude: float|string, longitude: float|string}> $coordinates Lista delle coordinate da filtrare
      * @param float                                                         $centerLat   Latitudine del punto centrale
      * @param float                                                         $centerLng   Longitudine del punto centrale
      * @param float                                                         $radiusKm    Raggio in chilometri
+<<<<<<< HEAD
      *
      * @throws \InvalidArgumentException Se le coordinate non sono valide
      *
@@ -40,6 +48,12 @@ class FilterCoordinatesAction
      *
      * @throws InvalidArgumentException Se le coordinate non sono valide
 >>>>>>> 1bb689f (.)
+=======
+     *
+     * @throws \InvalidArgumentException Se le coordinate non sono valide
+     *
+     * @return array<array{latitude: float, longitude: float, distance: float}> Coordinate filtrate con distanza
+>>>>>>> 0746367 (.)
      */
     public function execute(array $coordinates, float $centerLat, float $centerLng, float $radiusKm): array
     {
@@ -51,16 +65,22 @@ class FilterCoordinatesAction
                 $lng = (float) $coord['longitude'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
                 if ($lat < -90 || $lat > 90) {
                     throw new \InvalidArgumentException('Latitudine non valida');
                 }
                 if ($lng < -180 || $lng > 180) {
                     throw new \InvalidArgumentException('Longitudine non valida');
                 }
+<<<<<<< HEAD
 =======
                 Assert::range($lat, -90, 90, 'Latitudine non valida');
                 Assert::range($lng, -180, 180, 'Longitudine non valida');
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
                 return [
                     'latitude' => $lat,
@@ -77,6 +97,7 @@ class FilterCoordinatesAction
     /**
      * Valida i dati di input.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
      * @throws \InvalidArgumentException Se i dati non sono validi
      */
@@ -104,5 +125,23 @@ class FilterCoordinatesAction
         Assert::greaterThan($radius, 0, 'Il raggio deve essere maggiore di 0');
         Assert::lessThan($radius, 20000, 'Il raggio non può essere maggiore della circonferenza terrestre');
 >>>>>>> 1bb689f (.)
+=======
+     * @throws \InvalidArgumentException Se i dati non sono validi
+     */
+    private function validateInput(float $latitude, float $longitude, float $radius): void
+    {
+        if ($latitude < -90 || $latitude > 90) {
+            throw new \InvalidArgumentException('Latitudine centrale non valida');
+        }
+        if ($longitude < -180 || $longitude > 180) {
+            throw new \InvalidArgumentException('Longitudine centrale non valida');
+        }
+        if ($radius <= 0) {
+            throw new \InvalidArgumentException('Il raggio deve essere maggiore di 0');
+        }
+        if ($radius >= 20000) {
+            throw new \InvalidArgumentException('Il raggio non può essere maggiore della circonferenza terrestre');
+        }
+>>>>>>> 0746367 (.)
     }
 }

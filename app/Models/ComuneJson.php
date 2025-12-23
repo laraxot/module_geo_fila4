@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Cache;
  * @see docs/geo-json-model.md Documentazione tecnica del modello base
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -34,15 +35,28 @@ class ComuneJson extends GeoJsonModel
     /**
      * Cache duration in seconds (1 week)
 >>>>>>> 1bb689f (.)
+=======
+/**
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+class ComuneJson extends GeoJsonModel
+{
+    /**
+     * Cache duration in seconds (1 week).
+>>>>>>> 0746367 (.)
      */
     protected const CACHE_TTL = 604800;
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all comuni with their complete data.
 =======
      * Get all comuni with their complete data
 >>>>>>> 1bb689f (.)
+=======
+     * Get all comuni with their complete data.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<array-key, array{
      *     nome: string,
@@ -62,10 +76,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get comuni by region code.
 =======
      * Get comuni by region code
 >>>>>>> 1bb689f (.)
+=======
+     * Get comuni by region code.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<int, array{
      *     nome: string,
@@ -100,10 +118,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get comuni by province code.
 =======
      * Get comuni by province code
 >>>>>>> 1bb689f (.)
+=======
+     * Get comuni by province code.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<int, array{
      *     nome: string,
@@ -138,10 +160,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
      * Get all comuni by name (case insensitive partial match).
      *
      * @param string $name  Nome parziale del comune da cercare
      * @param int    $limit Numero massimo di risultati (0 = nessun limite)
+<<<<<<< HEAD
      *
 =======
      * Get all comuni by name (case insensitive partial match)
@@ -149,6 +175,9 @@ class ComuneJson extends GeoJsonModel
      * @param  string  $name  Nome parziale del comune da cercare
      * @param  int  $limit  Numero massimo di risultati (0 = nessun limite)
 >>>>>>> 1bb689f (.)
+=======
+     *
+>>>>>>> 0746367 (.)
      * @return Collection<int, array{
      *     nome: string,
      *     codice: string,
@@ -187,10 +216,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get comuni by CAP.
 =======
      * Get comuni by CAP
 >>>>>>> 1bb689f (.)
+=======
+     * Get comuni by CAP.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<int, array{
      *     nome: string,
@@ -224,10 +257,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all regions with their codes and names.
 =======
      * Get all regions with their codes and names
 >>>>>>> 1bb689f (.)
+=======
+     * Get all regions with their codes and names.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<string, string> [code => name]
      */
@@ -244,10 +281,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all provinces with their codes and names.
 =======
      * Get all provinces with their codes and names
 >>>>>>> 1bb689f (.)
+=======
+     * Get all provinces with their codes and names.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<string, string> [code => name]
      */
@@ -264,10 +305,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all provinces for a specific region.
 =======
      * Get all provinces for a specific region
 >>>>>>> 1bb689f (.)
+=======
+     * Get all provinces for a specific region.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<string, string> [code => name]
      */
@@ -287,10 +332,14 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all CAPs for a specific city.
 =======
      * Get all CAPs for a specific city
 >>>>>>> 1bb689f (.)
+=======
+     * Get all CAPs for a specific city.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<int, string> List of CAP codes for the city
      */
@@ -310,6 +359,7 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Clear all cached data.
      *
      * @param bool $verbose Se true, restituisce la lista delle chiavi di cache eliminate
@@ -319,6 +369,12 @@ class ComuneJson extends GeoJsonModel
      *
      * @param  bool  $verbose  Se true, restituisce la lista delle chiavi di cache eliminate
 >>>>>>> 1bb689f (.)
+=======
+     * Clear all cached data.
+     *
+     * @param bool $verbose Se true, restituisce la lista delle chiavi di cache eliminate
+     *
+>>>>>>> 0746367 (.)
      * @return array<int, string>|null Lista delle chiavi di cache eliminate se $verbose è true
      */
     public static function clearCache(bool $verbose = false): ?array
@@ -362,10 +418,14 @@ class ComuneJson extends GeoJsonModel
         // Puliamo alcune chiavi di ricerca comuni per essere sicuri
         foreach ($searchPatterns as $pattern) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             for ($i = 0; $i < 10; ++$i) {
 =======
             for ($i = 0; $i < 10; $i++) {
 >>>>>>> 1bb689f (.)
+=======
+            for ($i = 0; $i < 10; ++$i) {
+>>>>>>> 0746367 (.)
                 $testKey = $pattern.md5((string) $i);
                 Cache::forget($testKey);
             }
@@ -376,6 +436,7 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Verifica se il CAP esiste nel database.
      *
      * @param string $cap CAP da verificare
@@ -385,6 +446,12 @@ class ComuneJson extends GeoJsonModel
      *
      * @param  string  $cap  CAP da verificare
 >>>>>>> 1bb689f (.)
+=======
+     * Verifica se il CAP esiste nel database.
+     *
+     * @param string $cap CAP da verificare
+     *
+>>>>>>> 0746367 (.)
      * @return bool True se il CAP esiste, false altrimenti
      */
     public static function isValidCap(string $cap): bool
@@ -399,6 +466,7 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Ottiene la gerarchia completa per un comune (regione, provincia, comune, cap).
      *
      * @param string $comuneNome Nome esatto del comune
@@ -408,6 +476,12 @@ class ComuneJson extends GeoJsonModel
      *
      * @param  string  $comuneNome  Nome esatto del comune
 >>>>>>> 1bb689f (.)
+=======
+     * Ottiene la gerarchia completa per un comune (regione, provincia, comune, cap).
+     *
+     * @param string $comuneNome Nome esatto del comune
+     *
+>>>>>>> 0746367 (.)
      * @return array{
      *     regione: array{codice: string, nome: string}|null,
      *     provincia: array{codice: string, nome: string}|null,
@@ -449,10 +523,14 @@ class ComuneJson extends GeoJsonModel
 
             if (! $comune) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return;
 =======
                 return null;
 >>>>>>> 1bb689f (.)
+=======
+                return;
+>>>>>>> 0746367 (.)
             }
 
             return [
@@ -473,6 +551,7 @@ class ComuneJson extends GeoJsonModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Restituisce regole di validazione Laravel per form geografici.
      *
      * @param bool $required Se true, tutti i campi sono obbligatori
@@ -482,6 +561,12 @@ class ComuneJson extends GeoJsonModel
      *
      * @param  bool  $required  Se true, tutti i campi sono obbligatori
 >>>>>>> 1bb689f (.)
+=======
+     * Restituisce regole di validazione Laravel per form geografici.
+     *
+     * @param bool $required Se true, tutti i campi sono obbligatori
+     *
+>>>>>>> 0746367 (.)
      * @return array<string, array<int, mixed>> Regole di validazione
      */
     public static function getValidationRules(bool $required = true): array

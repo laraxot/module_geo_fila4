@@ -8,9 +8,12 @@ use Filament\Schemas\Components\Component;
 use Modules\Geo\Filament\Forms\LocationForm;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Override;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 /**
  * Widget per la selezione della località.
@@ -63,10 +66,14 @@ class LocationWidget extends XotBaseWidget
     public function __construct()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->locationForm = new LocationForm();
 =======
         $this->locationForm = new LocationForm;
 >>>>>>> 1bb689f (.)
+=======
+        $this->locationForm = new LocationForm();
+>>>>>>> 0746367 (.)
     }
 
     /**
@@ -83,10 +90,14 @@ class LocationWidget extends XotBaseWidget
      * @return array<int, Component>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
 =======
     #[Override]
 >>>>>>> 1bb689f (.)
+=======
+    #[\Override]
+>>>>>>> 0746367 (.)
     public function getFormSchema(): array
     {
         return $this->locationForm->getSchema();

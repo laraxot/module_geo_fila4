@@ -14,9 +14,14 @@ class PhotonResponseData extends Data
         #[DataCollectionOf(PhotonFeatureData::class)]
         public ?DataCollection $features,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

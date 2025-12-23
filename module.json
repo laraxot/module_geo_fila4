@@ -2,12 +2,17 @@
     "name": "Geo",
     "alias": "geo",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "description": "Servizi geografici per geocoding, mappe e gestione posizioni con integrazione provider esterni",
     "keywords": ["geo", "geocoding", "maps", "locations", "coordinates"],
 =======
     "description": "",
     "keywords": [],
 >>>>>>> 1bb689f (.)
+=======
+    "description": "Servizi geografici per geocoding, mappe e gestione posizioni con integrazione provider esterni",
+    "keywords": ["geo", "geocoding", "maps", "locations", "coordinates"],
+>>>>>>> 0746367 (.)
     "priority": 0,
     "providers": [
         "Modules\\Geo\\Providers\\GeoServiceProvider",
@@ -17,7 +22,11 @@
     "files": [],
     "requires": []
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 1bb689f (.)
+=======
+}
+>>>>>>> 0746367 (.)

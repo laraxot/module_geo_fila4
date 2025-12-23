@@ -13,6 +13,7 @@ class GoogleMapGeometryData extends Data
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param GoogleMapLocationData $location Posizione geografica
      */
     public function __construct(
@@ -26,4 +27,12 @@ class GoogleMapGeometryData extends Data
         public readonly GoogleMapLocationData $location,
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+     * @param GoogleMapLocationData $location Posizione geografica
+     */
+    public function __construct(
+        public readonly GoogleMapLocationData $location,
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

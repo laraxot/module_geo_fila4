@@ -7,11 +7,14 @@ namespace Modules\Geo\Tests\Unit\Traits;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Models\Traits\HasAddress;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Tests\TestCase;
 
 uses(TestCase::class);
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 /**
  * Modello di test per il trait HasAddress.
@@ -30,10 +33,14 @@ class TestModel extends Model
      * Bootstrap this model.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected static function boot(): void
 =======
     public static function boot()
 >>>>>>> 1bb689f (.)
+=======
+    protected static function boot(): void
+>>>>>>> 0746367 (.)
     {
         parent::boot();
 

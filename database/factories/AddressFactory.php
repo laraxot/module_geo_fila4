@@ -9,10 +9,14 @@ use Modules\Geo\Models\Address;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Address Factory.
 =======
  * Address Factory
 >>>>>>> 1bb689f (.)
+=======
+ * Address Factory.
+>>>>>>> 0746367 (.)
  *
  * @extends Factory<Address>
  */

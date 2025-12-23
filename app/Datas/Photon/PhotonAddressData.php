@@ -21,6 +21,7 @@ class PhotonAddressData extends Data
         public ?string $housenumber,
         public array $coordinates,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 
@@ -32,6 +33,13 @@ class PhotonAddressData extends Data
     /**
      * @param  array{properties: array<string, mixed>, geometry: array{coordinates: array<float>}}  $feature
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+
+    /**
+     * @param array{properties: array<string, mixed>, geometry: array{coordinates: array<float>}} $feature
+>>>>>>> 0746367 (.)
      */
     public static function fromPhotonFeature(array $feature): self
     {

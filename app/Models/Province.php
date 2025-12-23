@@ -8,15 +8,21 @@ use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Sushi\Sushi;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property int|null                                    $region_id
  * @property int                                         $id
  * @property string|null                                 $name
@@ -25,6 +31,7 @@ use Sushi\Sushi;
  * @property int|null                                    $localities_count
  * @property Region|null                                 $region
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
 =======
  * @property int|null $region_id
  * @property int $id
@@ -35,6 +42,8 @@ use Sushi\Sushi;
  * @property-read \Modules\Geo\Models\Region|null $region
  * @property-read \Modules\Quaeris\Models\Profile|null $updater
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  *
  * @method static Builder<static>|Province newModelQuery()
  * @method static Builder<static>|Province newQuery()
@@ -44,12 +53,18 @@ use Sushi\Sushi;
  * @method static Builder<static>|Province whereRegionId($value)
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ProvinceFactory factory($count = null, $state = [])
  *
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  * @mixin \Eloquent
  */
 class Province extends BaseModel

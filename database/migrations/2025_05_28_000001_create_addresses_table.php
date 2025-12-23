@@ -7,11 +7,15 @@ use Modules\Geo\Models\Address;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return new class extends XotBaseMigration {
 =======
 return new class extends XotBaseMigration
 {
 >>>>>>> 1bb689f (.)
+=======
+return new class extends XotBaseMigration {
+>>>>>>> 0746367 (.)
     protected ?string $model_class = Address::class;
 
     public function up(): void
@@ -25,24 +29,34 @@ return new class extends XotBaseMigration
             $table->string('name')->nullable()->comment('Nome identificativo dell\'indirizzo');
             $table->text('description')->nullable()->comment('Descrizione opzionale');
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('phone')->nullable()->comment('Numero di telefono associato all\'indirizzo');
 =======
 >>>>>>> 1bb689f (.)
+=======
+            $table->string('phone')->nullable()->comment('Numero di telefono associato all\'indirizzo');
+>>>>>>> 0746367 (.)
 
             // Campi indirizzo (evitando prefissi ridondanti)
             $table->string('route')->nullable()->comment('Via/Piazza');
             $table->string('street_number')->nullable()->comment('Numero civico');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
             $table->string('locality')->nullable()->comment('Località/Frazione');
             $table->string('administrative_area_level_3')->nullable()->comment('Comune/Città');
             $table->string('administrative_area_level_2')->nullable()->comment('Provincia');
             $table->string('administrative_area_level_1')->nullable()->comment('Regione');
+<<<<<<< HEAD
 =======
             $table->string('locality')->nullable()->comment('Comune/Città');
             $table->string('administrative_area_level_3')->nullable()->comment('Provincia');
             $table->string('administrative_area_level_2')->nullable()->comment('Regione');
             $table->string('administrative_area_level_1')->nullable()->comment('Stato/Paese');
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
             $table->string('country', 2)->nullable()->comment('Codice paese ISO');
             $table->string('postal_code', 20)->nullable()->comment('CAP');
 

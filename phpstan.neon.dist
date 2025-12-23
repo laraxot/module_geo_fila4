@@ -1,10 +1,14 @@
 includes:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - ../../vendor/larastan/larastan/extension.neon
 =======
     - phpstan-baseline.neon
     - ./vendor/larastan/larastan/extension.neon
 >>>>>>> 1bb689f (.)
+=======
+    - ../../vendor/larastan/larastan/extension.neon
+>>>>>>> 0746367 (.)
 
 parameters:
     level: max

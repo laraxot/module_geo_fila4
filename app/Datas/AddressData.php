@@ -25,11 +25,16 @@ class AddressData extends Data
         public readonly ?string $district = null,
         public readonly ?string $state = null,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 
     /**
      * Restituisce l'indirizzo formattato.

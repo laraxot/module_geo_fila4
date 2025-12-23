@@ -17,10 +17,14 @@ abstract class GeoJsonModel
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario).
 =======
      * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario)
 >>>>>>> 1bb689f (.)
+=======
+     * Percorso relativo al file json (da ridefinire nelle sottoclassi se necessario).
+>>>>>>> 0746367 (.)
      */
     protected static string $jsonFile = 'resources/json/comuni.json';
 
@@ -40,10 +44,14 @@ abstract class GeoJsonModel
     public static function where(string $key, $value): Collection
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /*
 =======
         /**
 >>>>>>> 1bb689f (.)
+=======
+        /*
+>>>>>>> 0746367 (.)
          * @phpstan-ignore-next-line
          */
         return static::all()->where($key, $value);
@@ -59,10 +67,14 @@ abstract class GeoJsonModel
         $data = cache()->rememberForever($cacheKey, fn () => json_decode(file_get_contents($path), true));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /*
 =======
         /**
 >>>>>>> 1bb689f (.)
+=======
+        /*
+>>>>>>> 0746367 (.)
          * @phpstan-ignore argument.type, argument.templateType, argument.templateType
          */
         return collect($data);

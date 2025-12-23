@@ -13,16 +13,22 @@ class LocationData extends Data
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
      * @param float       $latitude  Latitudine in gradi decimali
      * @param float       $longitude Longitudine in gradi decimali
      * @param string|null $name      Nome opzionale della posizione
      * @param string|null $address   Indirizzo opzionale della posizione
+<<<<<<< HEAD
 =======
      * @param  float  $latitude  Latitudine in gradi decimali
      * @param  float  $longitude  Longitudine in gradi decimali
      * @param  string|null  $name  Nome opzionale della posizione
      * @param  string|null  $address  Indirizzo opzionale della posizione
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
      */
     public function __construct(
         public readonly float $latitude,
@@ -30,11 +36,16 @@ class LocationData extends Data
         public readonly ?string $name = null,
         public readonly ?string $address = null,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 
     /**
      * Converte i dati in un array.

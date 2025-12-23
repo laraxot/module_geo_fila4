@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Modules\Tenant\Models\Traits\SushiToJson;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Override;
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
 
 /**
  * Modello per i comuni italiani con Sushi.
@@ -20,6 +23,9 @@ use Override;
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property string|null                                 $nome
  * @property float|null                                  $codice
  * @property array<array-key, mixed>|null                $zona
@@ -39,6 +45,7 @@ use Override;
  * @property string|null                                 $updated_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
 =======
  * @property string|null $nome
  * @property float|null $codice
@@ -60,6 +67,8 @@ use Override;
  * @property-read \Modules\Quaeris\Models\Profile|null $creator
  * @property-read \Modules\Quaeris\Models\Profile|null $updater
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
@@ -83,12 +92,18 @@ use Override;
  * @method static Builder<static>|Comune whereZona($value)
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
  * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
  *
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
  * @mixin \Eloquent
  */
 class Comune extends BaseModel
@@ -145,20 +160,28 @@ class Comune extends BaseModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all regions.
 =======
      * Get all regions
 >>>>>>> 1bb689f (.)
+=======
+     * Get all regions.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<string>
      */
     public static function getRegioni(): Collection
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return static::all()
             ->pluck('regione')
             ->unique()
@@ -168,20 +191,28 @@ class Comune extends BaseModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all provinces for a region.
 =======
      * Get all provinces for a region
 >>>>>>> 1bb689f (.)
+=======
+     * Get all provinces for a region.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<string>
      */
     public static function getProvinceByRegione(string $regione): Collection
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return static::where('regione', $regione)
             ->pluck('provincia')
             ->unique()
@@ -191,24 +222,33 @@ class Comune extends BaseModel
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Get all comuni for a province.
 =======
      * Get all comuni for a province
 >>>>>>> 1bb689f (.)
+=======
+     * Get all comuni for a province.
+>>>>>>> 0746367 (.)
      *
      * @return Collection<static>
      */
     public static function getComuniByProvincia(string $provincia): Collection
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return static::where('provincia', $provincia)->orderBy('nome')->get();
     }
 
     /**
+<<<<<<< HEAD
 <<<<<<< HEAD
      * Find a comune by name (case insensitive).
      *
@@ -219,20 +259,31 @@ class Comune extends BaseModel
      *
      * @param  string  $nome  The name of the comune to find (case insensitive)
 >>>>>>> 1bb689f (.)
+=======
+     * Find a comune by name (case insensitive).
+     *
+     * @param string $nome The name of the comune to find (case insensitive)
+     *
+>>>>>>> 0746367 (.)
      * @return static|null The found comune or null if not found
      */
     public static function findByNome(string $nome): ?self
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return static::all()
             ->first(fn ($comune) => strtolower($comune->nome ?? '') === strtolower($nome));
     }
 
     /**
+<<<<<<< HEAD
 <<<<<<< HEAD
      * Find comuni by CAP code (partial match supported).
      *
@@ -243,24 +294,38 @@ class Comune extends BaseModel
      *
      * @param  string  $cap  The CAP code to search for
 >>>>>>> 1bb689f (.)
+=======
+     * Find comuni by CAP code (partial match supported).
+     *
+     * @param string $cap The CAP code to search for
+     *
+>>>>>>> 0746367 (.)
      * @return Collection<static> Collection of matching comuni
      */
     public static function findByCap(string $cap): Collection
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return static::where('cap', 'like', "%{$cap}%")->get();
     }
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Find a city by ID.
 =======
      * Find a city by ID
 >>>>>>> 1bb689f (.)
+=======
+     * Find a city by ID.
+>>>>>>> 0746367 (.)
      *
      * @return array{id: int, nome: string, provincia: string, regione: string, cap: string, codice_catastale: string, popolazione: int, altitudine: int, superficie: float, lat: float, lng: float, zona_altimetrica: string}|null
      */
@@ -269,10 +334,14 @@ class Comune extends BaseModel
         $comune = static::query()->where('id', $id)->first();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return $comune ? $comune->toArray() : null;
     }
 
@@ -294,10 +363,14 @@ class Comune extends BaseModel
 
     /** @return array<string, string>     */
 <<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
 =======
     #[Override]
 >>>>>>> 1bb689f (.)
+=======
+    #[\Override]
+>>>>>>> 0746367 (.)
     protected function casts(): array
     {
         return [

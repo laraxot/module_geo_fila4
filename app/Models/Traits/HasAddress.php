@@ -9,34 +9,50 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Modules\Geo\Enums\AddressItemEnum;
 =======
 >>>>>>> 1bb689f (.)
+=======
+use Illuminate\Support\Arr;
+use Modules\Geo\Enums\AddressItemEnum;
+>>>>>>> 0746367 (.)
 use Modules\Geo\Models\Address;
 use Webmozart\Assert\Assert;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Trait HasAddress.
 =======
  * Trait HasAddress
 >>>>>>> 1bb689f (.)
+=======
+ * Trait HasAddress.
+>>>>>>> 0746367 (.)
  *
  * Fornisce funzionalità per la gestione degli indirizzi nei modelli Eloquent.
  * Questo trait implementa la relazione polimorfica con il modello Address
  * e offre metodi di utilità per la gestione degli indirizzi.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property Collection<int, Address> $addresses
 =======
  * @property-read Collection<int, Address> $addresses
 >>>>>>> 1bb689f (.)
+=======
+ * @property Collection<int, Address> $addresses
+>>>>>>> 0746367 (.)
  */
 trait HasAddress
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
      * Initialize the trait.
      *
      * @return void
@@ -50,8 +66,11 @@ trait HasAddress
     }
 
     /**
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
      * Ottiene gli indirizzi associati al modello.
      */
     public function addresses(): MorphMany
@@ -74,10 +93,14 @@ trait HasAddress
     {
         $res = $this->addresses()->where('is_primary', true)->first();
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (null === $res) {
 =======
         if ($res === null) {
 >>>>>>> 1bb689f (.)
+=======
+        if (null === $res) {
+>>>>>>> 0746367 (.)
             return $res;
         }
         Assert::isInstanceOf($res, Address::class);
@@ -96,6 +119,9 @@ trait HasAddress
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
     public function getFullAddressAttribute(?string $value): string
     {
         if (null !== $value) {
@@ -114,24 +140,32 @@ trait HasAddress
     }
 
     public function getFullAddressesAttribute(?string $value): ?string
+<<<<<<< HEAD
 =======
     public function getFullAddressAttribute(?string $value): ?string
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
     {
         if ($value) {
             return $value;
         }
         $address = $this->address()->first();
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (null === $address) {
 =======
         if ($address === null) {
 >>>>>>> 1bb689f (.)
+=======
+        if (null === $address) {
+>>>>>>> 0746367 (.)
             return null;
         }
         Assert::isInstanceOf($address, Address::class);
 
         $locality = $address->getLocality();
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (null === $locality) {
             return null;
@@ -155,19 +189,33 @@ trait HasAddress
             $provinciaNome.
 =======
         if ($locality === null) {
+=======
+        if (null === $locality) {
+>>>>>>> 0746367 (.)
             return null;
         }
 
-        return $address->street_address.
+        $streetAddress = is_string($address->street_address) ? $address->street_address : '';
+        $streetNumber = is_string($address->street_number) ? $address->street_number : '';
+        $postalCode = is_string($address->postal_code) ? $address->postal_code : '';
+
+        $localityNome = isset($locality['nome']) && is_string($locality['nome']) ? $locality['nome'] : '';
+        $provinciaNome = isset($locality['provincia']) && is_array($locality['provincia']) && isset($locality['provincia']['nome']) && is_string($locality['provincia']['nome']) ? $locality['provincia']['nome'] : '';
+
+        return $streetAddress.
             ', '.
-            $address->street_number.
+            $streetNumber.
             ' - '.
-            $address->postal_code.
+            $postalCode.
             ' '.
-            $locality['nome'].
+            $localityNome.
             ' ('.
+<<<<<<< HEAD
             $locality['provincia']['nome'].
 >>>>>>> 1bb689f (.)
+=======
+            $provinciaNome.
+>>>>>>> 0746367 (.)
             ') ';
     }
 
@@ -253,21 +301,30 @@ trait HasAddress
      * Aggiunge un nuovo indirizzo al modello.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<string, mixed> $data
      * @param bool                 $setPrimary Se impostare questo indirizzo come principale
 =======
      * @param  array<string, mixed>  $data
      * @param  bool  $setPrimary  Se impostare questo indirizzo come principale
 >>>>>>> 1bb689f (.)
+=======
+     * @param array<string, mixed> $data
+     * @param bool                 $setPrimary Se impostare questo indirizzo come principale
+>>>>>>> 0746367 (.)
      */
     public function addAddress(array $data, bool $setPrimary = false): Address
     {
         // Se è il primo indirizzo o è richiesto esplicitamente, impostalo come principale
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ($setPrimary || 0 === $this->addresses()->count()) {
 =======
         if ($setPrimary || $this->addresses()->count() === 0) {
 >>>>>>> 1bb689f (.)
+=======
+        if ($setPrimary || 0 === $this->addresses()->count()) {
+>>>>>>> 0746367 (.)
             $data['is_primary'] = true;
 
             // Rimuovi il flag is_primary da tutti gli altri indirizzi
@@ -277,10 +334,14 @@ trait HasAddress
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @phpstan-ignore return.type */
 =======
         /** @phpstan-ignore return.type */
 >>>>>>> 1bb689f (.)
+=======
+        /* @phpstan-ignore return.type */
+>>>>>>> 0746367 (.)
         return $this->addresses()->create($data);
     }
 
@@ -288,10 +349,14 @@ trait HasAddress
      * Aggiorna l'indirizzo principale.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<string, mixed> $data
 =======
      * @param  array<string, mixed>  $data
 >>>>>>> 1bb689f (.)
+=======
+     * @param array<string, mixed> $data
+>>>>>>> 0746367 (.)
      */
     public function updatePrimaryAddress(array $data): ?Address
     {

@@ -5,11 +5,16 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions\Here;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 =======
 use Exception;
 >>>>>>> 1bb689f (.)
+=======
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
+>>>>>>> 0746367 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 use Modules\Geo\Datas\HereMap\HereMapResponseData;
@@ -24,10 +29,14 @@ class GetAddressFromHereMapsAction
 
         if (empty($apiKey)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             throw new \Exception('Here Maps API key not configured');
 =======
             throw new Exception('Here Maps API key not configured');
 >>>>>>> 1bb689f (.)
+=======
+            throw new \Exception('Here Maps API key not configured');
+>>>>>>> 0746367 (.)
         }
 
         $response = Http::get(self::BASE_URL, [
@@ -37,14 +46,20 @@ class GetAddressFromHereMapsAction
         ]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
+<<<<<<< HEAD
 =======
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
         if (! $response->successful()) {
             return null;
         }

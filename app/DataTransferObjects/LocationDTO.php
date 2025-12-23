@@ -13,6 +13,7 @@ readonly class LocationDTO
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param float       $latitude  Latitudine in gradi decimali
      * @param float       $longitude Longitudine in gradi decimali
      * @param string|null $name      Nome opzionale della posizione
@@ -21,17 +22,27 @@ readonly class LocationDTO
      * @param  float  $longitude  Longitudine in gradi decimali
      * @param  string|null  $name  Nome opzionale della posizione
 >>>>>>> 1bb689f (.)
+=======
+     * @param float       $latitude  Latitudine in gradi decimali
+     * @param float       $longitude Longitudine in gradi decimali
+     * @param string|null $name      Nome opzionale della posizione
+>>>>>>> 0746367 (.)
      */
     public function __construct(
         public float $latitude,
         public float $longitude,
         public ?string $name = null,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 
     /**
      * Crea una nuova istanza da un oggetto LocationData.

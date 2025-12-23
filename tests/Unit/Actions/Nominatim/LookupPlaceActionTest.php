@@ -13,6 +13,7 @@ uses(TestCase::class);
 
 beforeEach(function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line method.nonObject */
     $this->mockClient = $this->mock(Client::class);
     $this->action = new LookupPlaceAction();
@@ -21,12 +22,18 @@ beforeEach(function (): void {
     $this->mockClient = $this->mock(Client::class);
     $this->action = new LookupPlaceAction;
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line method.nonObject */
+    $this->mockClient = $this->mock(Client::class);
+    $this->action = new LookupPlaceAction();
+>>>>>>> 0746367 (.)
 
     // Replace the client instance with our mock
     /** @phpstan-ignore-next-line property.notFound */
     $reflection = new ReflectionClass($this->action);
     /** @phpstan-ignore-next-line method.nonObject */
     $property = $reflection->getProperty('client');
+<<<<<<< HEAD
 <<<<<<< HEAD
     /* @phpstan-ignore-next-line method.nonObject */
     $property->setAccessible(true);
@@ -36,6 +43,11 @@ beforeEach(function (): void {
     $property->setAccessible(true);
     /** @phpstan-ignore-next-line property.notFound, method.nonObject */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line method.nonObject */
+    $property->setAccessible(true);
+    /* @phpstan-ignore-next-line property.notFound, method.nonObject */
+>>>>>>> 0746367 (.)
     $property->setValue($this->action, $this->mockClient);
 });
 
@@ -49,10 +61,14 @@ test('lookup place action returns location data for valid osm id', function (): 
     ]));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
@@ -80,40 +96,56 @@ test('lookup place action throws exception for empty results', function (): void
     $mockResponse = new Response(200, [], json_encode([]));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->andReturn($mockResponse);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     expect(fn () => $this->action->execute('R999999'))
         ->toThrow(RuntimeException::class, 'No results found for OSM ID: R999999');
 });
 
 test('lookup place action handles guzzle exceptions', function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->andThrow(new GuzzleException('API unavailable'));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     expect(fn () => $this->action->execute('R123456'))
         ->toThrow(GuzzleException::class, 'API unavailable');
 });
@@ -124,25 +156,35 @@ test('lookup place action uses correct user agent header', function (): void {
     ]));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* @phpstan-ignore-next-line property.notFound */
 =======
     /** @phpstan-ignore-next-line property.notFound */
 >>>>>>> 1bb689f (.)
+=======
+    /* @phpstan-ignore-next-line property.notFound */
+>>>>>>> 0746367 (.)
     $this->mockClient
         ->shouldReceive('get')
         ->once()
         ->withArgs(function ($url, $options) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0746367 (.)
             /* @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
             return isset($options['headers']['User-Agent'])
                    /* @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
                    && '<main module>/1.0' === $options['headers']['User-Agent'];
+<<<<<<< HEAD
 =======
             /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
             return isset($options['headers']['User-Agent']) &&
                    /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
                    $options['headers']['User-Agent'] === '<main module>/1.0';
 >>>>>>> 1bb689f (.)
+=======
+>>>>>>> 0746367 (.)
         })
         ->andReturn($mockResponse);
 

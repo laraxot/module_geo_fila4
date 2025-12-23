@@ -48,10 +48,14 @@ class LocationForm
                 ->placeholder('geo::fields.province.placeholder')
                 ->options(fn (Get $get): array => filled($get('region'))
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ? /* @phpstan-ignore argument.type */ ComuneJson::getProvincesByRegion($get('region'))->toArray()
 =======
                     ? /** @phpstan-ignore argument.type */ ComuneJson::getProvincesByRegion($get('region'))->toArray()
 >>>>>>> 1bb689f (.)
+=======
+                    ? /* @phpstan-ignore argument.type */ ComuneJson::getProvincesByRegion($get('region'))->toArray()
+>>>>>>> 0746367 (.)
                     : [])
                 ->searchable()
                 ->required()

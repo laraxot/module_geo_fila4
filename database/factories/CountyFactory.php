@@ -9,10 +9,14 @@ use Modules\Geo\Models\County;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * County Factory.
 =======
  * County Factory
 >>>>>>> 1bb689f (.)
+=======
+ * County Factory.
+>>>>>>> 0746367 (.)
  *
  * @extends Factory<County>
  */

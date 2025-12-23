@@ -15,9 +15,14 @@ class PhotonPropertiesData extends Data
         public ?string $street,
         public ?string $housenumber,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ) {
     }
 =======
     ) {}
 >>>>>>> 1bb689f (.)
+=======
+    ) {
+    }
+>>>>>>> 0746367 (.)
 }

@@ -35,10 +35,14 @@ class OSMMapWidget extends Widget
 
         return $places
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->filter(fn (Place $place) => null !== $place->latitude && null !== $place->longitude)
 =======
             ->filter(fn (Place $place) => $place->latitude !== null && $place->longitude !== null)
 >>>>>>> 1bb689f (.)
+=======
+            ->filter(fn (Place $place) => null !== $place->latitude && null !== $place->longitude)
+>>>>>>> 0746367 (.)
             ->map(function (Place $place): array {
                 $marker = [
                     'position' => [
@@ -51,10 +55,14 @@ class OSMMapWidget extends Widget
 
                 $icon = $this->getMarkerIcon($place);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (null !== $icon) {
 =======
                 if ($icon !== null) {
 >>>>>>> 1bb689f (.)
+=======
+                if (null !== $icon) {
+>>>>>>> 0746367 (.)
                     $marker['icon'] = $icon;
                 }
 
@@ -86,11 +94,16 @@ class OSMMapWidget extends Widget
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param Collection<int, Place> $places
      *
 =======
      * @param  Collection<int, Place>  $places
 >>>>>>> 1bb689f (.)
+=======
+     * @param Collection<int, Place> $places
+     *
+>>>>>>> 0746367 (.)
      * @return array{lat: float, lng: float}
      */
     protected function getMapCenter(Collection $places): array
@@ -110,10 +123,14 @@ class OSMMapWidget extends Widget
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param Collection<int, Place> $places
 =======
      * @param  Collection<int, Place>  $places
 >>>>>>> 1bb689f (.)
+=======
+     * @param Collection<int, Place> $places
+>>>>>>> 0746367 (.)
      */
     protected function getMapZoom(Collection $places): int
     {
