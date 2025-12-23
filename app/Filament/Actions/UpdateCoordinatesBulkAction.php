@@ -38,13 +38,12 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
      *
      * Questo nome viene utilizzato come chiave nell'array delle actions
      * e per la generazione automatica delle traduzioni tramite LangServiceProvider.
-     *
-     * @return string|null
      */
     public static function getDefaultName(): ?string
     {
         return 'update_coordinates_bulk';
     }
+
     /**
      * Configurazione iniziale dell'azione.
      */
@@ -70,29 +69,25 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
         $result = app(UpdateCoordinatesAction::class)->execute($records);
         /** @var \Illuminate\Support\Collection<int, string> $errorMessages */
         $errorMessages = $result->errors->map(function (array $error): string {
-            /** @var array{model: string, error: string} $error */
+            /* @var array{model: string, error: string} $error */
             return $error['error'];
         });
         $this->sendNotifications(
             $result->successCount,
-            $errorMessages, 
+            $errorMessages,
             $result->totalProcessed
         );
     }
 
-
-
     /**
      * Invia le notifiche di risultato all'utente.
      *
-     * @param int $successCount
      * @param \Illuminate\Support\Collection<int, string> $errorMessages
-     * @param int $totalCount
      */
     protected function sendNotifications(
         int $successCount,
         \Illuminate\Support\Collection $errorMessages,
-        int $totalCount
+        int $totalCount,
     ): void {
         $this->notifySuccess($successCount, $totalCount);
         $this->notifyErrors($errorMessages);
@@ -125,7 +120,7 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
         if ($errorMessages->isNotEmpty()) {
             $errorBody = $errorMessages->take(10)->join("\n");
             if ($errorMessages->count() > 10) {
-                $errorBody .= "\n" . __('geo::actions.update_coordinates.bulk.notifications.warning.more_errors', [
+                $errorBody .= "\n".__('geo::actions.update_coordinates.bulk.notifications.warning.more_errors', [
                     'count' => $errorMessages->count() - 10,
                 ]);
             }

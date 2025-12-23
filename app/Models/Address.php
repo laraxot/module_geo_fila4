@@ -246,10 +246,10 @@ class Address extends BaseModel
     {
         $route = $this->route ?? '';
         $streetNumber = $this->street_number ?? '';
-        
+
         $routeStr = is_string($route) ? $route : '';
         $streetNumberStr = is_string($streetNumber) ? $streetNumber : '';
-        
+
         return trim($routeStr.' '.$streetNumberStr);
     }
 

@@ -7,7 +7,6 @@ namespace Modules\Geo\Actions;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Modules\Geo\Actions\GetAddressDataFromFullAddressAction;
 use Modules\TechPlanner\Models\Client;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -19,7 +18,7 @@ class UpdateClientCoordinatesBulkAction
     use QueueableAction;
 
     public function __construct(
-        private readonly GetAddressDataFromFullAddressAction $getAddressDataFromFullAddressAction
+        private readonly GetAddressDataFromFullAddressAction $getAddressDataFromFullAddressAction,
     ) {
     }
 
@@ -27,6 +26,7 @@ class UpdateClientCoordinatesBulkAction
      * Execute the action to update coordinates for a collection of clients.
      *
      * @param Collection<int, Client> $clients
+     *
      * @return array{success_count: int, error_messages: array<string>}
      */
     public function execute(Collection $clients): array
@@ -39,7 +39,7 @@ class UpdateClientCoordinatesBulkAction
                 $fullAddress = is_string($client->full_address) ? $client->full_address : '';
                 $addressData = $this->getAddressDataFromFullAddressAction->execute($fullAddress);
 
-                if ($addressData !== null && method_exists($addressData, 'toArray')) {
+                if (null !== $addressData && method_exists($addressData, 'toArray')) {
                     $toArray = $addressData->toArray();
                     if (is_array($toArray)) {
                         /** @var array<string, string|int|float|bool|null> $toArrayTyped */
@@ -47,7 +47,7 @@ class UpdateClientCoordinatesBulkAction
                         /** @var array<string, string|int|float|bool|null> $up */
                         $up = Arr::only($toArrayTyped, ['latitude', 'longitude']);
                         $client->update($up);
-                        $successCount++;
+                        ++$successCount;
                     }
                 } else {
                     $clientName = is_string($client->name) ? $client->name : 'Unknown';
