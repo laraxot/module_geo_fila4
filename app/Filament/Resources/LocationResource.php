@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources;
 
+use Override;
+use Filament\Support\Components\Component;
 use Filament\Forms\Components\TextInput;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
@@ -26,16 +28,16 @@ class LocationResource extends XotBaseResource
 {
     protected static ?string $model = Location::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-map-pin';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-map-pin';
 
     // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
 
     protected static ?int $navigationSort = 2;
 
     /**
-     * @return array<string, \Filament\Support\Components\Component>
+     * @return array<string, Component>
      */
-    #[\Override]
+    #[Override]
     public static function getFormSchema(): array
     {
         return [
@@ -81,7 +83,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le relazioni configurate
      */
-    #[\Override]
+    #[Override]
     public static function getRelations(): array
     {
         return [];
@@ -97,7 +99,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le pagine configurate
      */
-    #[\Override]
+    #[Override]
     public static function getPages(): array
     {
         return [

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Illuminate\Support\Collection;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
@@ -37,7 +39,7 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Collection per memorizzare eventuali errori durante l'esecuzione.
      */
-    private \Illuminate\Support\Collection $errors;
+    private Collection $errors;
 
     public function __construct(
         private readonly GetAddressDataFromFullAddressAction $getAddressDataAction,
@@ -125,7 +127,7 @@ class UpdateCoordinatesFromAddressAction
             ]);
 
             return true;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             // Log dell'errore per debugging
             Log::error('Errore aggiornamento coordinate', [
                 'model' => $model::class,
@@ -142,9 +144,9 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Restituisce la collezione degli errori verificatisi durante l'esecuzione.
      *
-     * @return \Illuminate\Support\Collection<int, string>
+     * @return Collection<int, string>
      */
-    public function getErrors(): \Illuminate\Support\Collection
+    public function getErrors(): Collection
     {
         return $this->errors;
     }

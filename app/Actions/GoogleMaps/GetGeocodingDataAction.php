@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
+use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
@@ -26,7 +27,7 @@ readonly class GetGeocodingDataAction
     /**
      * Ottiene i dati di geocodifica per un indirizzo.
      *
-     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
+     * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
      */
     public function execute(string $address): GeocodingData
     {
@@ -49,20 +50,20 @@ readonly class GetGeocodingDataAction
     /**
      * Valida i dati di input.
      *
-     * @throws \RuntimeException Se i dati non sono validi
+     * @throws RuntimeException Se i dati non sono validi
      */
     private function validateInput(string $address): void
     {
         // $apiKey = config('services.google_maps.api_key');
         $apiKey = config('services.google.maps_api_key');
         if (empty($apiKey)) {
-            throw new \RuntimeException('Chiave API Google Maps non configurata!');
+            throw new RuntimeException('Chiave API Google Maps non configurata!');
         }
         if (empty($address)) {
-            throw new \RuntimeException('Indirizzo non può essere vuoto');
+            throw new RuntimeException('Indirizzo non può essere vuoto');
         }
         if (strlen($address) > 1000) {
-            throw new \RuntimeException('Indirizzo troppo lungo');
+            throw new RuntimeException('Indirizzo troppo lungo');
         }
     }
 
@@ -84,7 +85,7 @@ readonly class GetGeocodingDataAction
     }
 
     /**
-     * @throws \RuntimeException Se la risposta non è nel formato atteso
+     * @throws RuntimeException Se la risposta non è nel formato atteso
      */
     private function parseResponse(string $response): GeocodingData
     {

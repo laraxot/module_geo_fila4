@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Database\Factories;
 
+use Modules\Geo\Models\GeoNamesCap;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GeoNamesCapFactory extends Factory
@@ -11,7 +12,7 @@ class GeoNamesCapFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      */
-    protected $model = \Modules\Geo\Models\GeoNamesCap::class;
+    protected $model = GeoNamesCap::class;
 
     /**
      * Define the model's default state.

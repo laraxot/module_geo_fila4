@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Actions;
 
+use Mockery;
+use InvalidArgumentException;
+use Exception;
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\CalculateDistanceAction;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
@@ -20,7 +23,7 @@ class CalculateDistanceActionTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->mockDistanceMatrixAction = \Mockery::mock(CalculateDistanceMatrixAction::class);
+        $this->mockDistanceMatrixAction = Mockery::mock(CalculateDistanceMatrixAction::class);
         $this->action = new CalculateDistanceAction($this->mockDistanceMatrixAction);
     }
 
@@ -53,7 +56,7 @@ class CalculateDistanceActionTest extends TestCase
         $this->mockDistanceMatrixAction
             ->shouldReceive('execute')
             ->once()
-            ->with(\Mockery::type(Collection::class), \Mockery::type(Collection::class))
+            ->with(Mockery::type(Collection::class), Mockery::type(Collection::class))
             ->andReturn($expectedResponse);
 
         // Act
@@ -92,7 +95,7 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(\InvalidArgumentException::class, 'Latitudine non valida: 100.000000');
+            ->toThrow(InvalidArgumentException::class, 'Latitudine non valida: 100.000000');
     }
 
     /** @test */
@@ -113,7 +116,7 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(\InvalidArgumentException::class, 'Longitudine non valida: 200.000000');
+            ->toThrow(InvalidArgumentException::class, 'Longitudine non valida: 200.000000');
     }
 
     /** @test */
@@ -134,7 +137,7 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(\InvalidArgumentException::class, 'Latitudine non valida: -100.000000');
+            ->toThrow(InvalidArgumentException::class, 'Latitudine non valida: -100.000000');
     }
 
     /** @test */
@@ -155,7 +158,7 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
-            ->toThrow(\InvalidArgumentException::class, 'Longitudine non valida: -200.000000');
+            ->toThrow(InvalidArgumentException::class, 'Longitudine non valida: -200.000000');
     }
 
     /** @test */
@@ -229,7 +232,7 @@ class CalculateDistanceActionTest extends TestCase
         $this->mockDistanceMatrixAction
             ->shouldReceive('execute')
             ->once()
-            ->andThrow(new \Exception('API Error'));
+            ->andThrow(new Exception('API Error'));
 
         // Act & Assert
         expect(fn () => $this->action->execute($origin, $destination))
@@ -296,7 +299,7 @@ class CalculateDistanceActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->formatDistance($negativeMeters))
-            ->toThrow(\InvalidArgumentException::class, 'La distanza non può essere negativa');
+            ->toThrow(InvalidArgumentException::class, 'La distanza non può essere negativa');
     }
 
     /** @test */
@@ -453,7 +456,7 @@ class CalculateDistanceActionTest extends TestCase
 
     protected function tearDown(): void
     {
-        \Mockery::close();
+        Mockery::close();
         parent::tearDown();
     }
 }

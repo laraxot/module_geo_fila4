@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Traits;
 
+use InvalidArgumentException;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
@@ -72,7 +73,7 @@ trait HasAddresses
     {
         // Assicurati che l'indirizzo appartenga a questo modello
         if ($address->model_id !== $this->id || $address->model_type !== static::class) {
-            throw new \InvalidArgumentException('L\'indirizzo non appartiene a questo modello.');
+            throw new InvalidArgumentException('L\'indirizzo non appartiene a questo modello.');
         }
 
         // Rimuovi lo stato primario da tutti gli altri indirizzi

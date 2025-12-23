@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources\AddressResource\Pages;
 
+use Override;
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Modules\Geo\Filament\Resources\AddressResource;
@@ -16,7 +17,7 @@ class ListAddresses extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[\Override]
+    #[Override]
     protected function getHeaderActions(): array
     {
         return [

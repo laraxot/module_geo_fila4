@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Override;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Geo\Database\Factories\LocalityFactory;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
@@ -15,8 +18,8 @@ use Sushi\Sushi;
  * @property string|null                                 $name
  * @property int                                         $id
  * @property array<array-key, mixed>|null                $postal_code
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Locality newModelQuery()
  * @method static Builder<static>|Locality newQuery()
@@ -27,9 +30,9 @@ use Sushi\Sushi;
  * @method static Builder<static>|Locality whereProvinceId($value)
  * @method static Builder<static>|Locality whereRegionId($value)
  *
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+ * @property ProfileContract|null $deleter
  *
- * @method static \Modules\Geo\Database\Factories\LocalityFactory factory($count = null, $state = [])
+ * @method static LocalityFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
@@ -123,7 +126,7 @@ class Locality extends BaseModel
      *
      * @return array<string, string>
      */
-    #[\Override]
+    #[Override]
     protected function casts(): array
     {
         return [

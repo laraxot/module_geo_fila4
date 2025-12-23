@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Datas\Photon;
 
+use InvalidArgumentException;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapOutputName;
 use Spatie\LaravelData\Data;
@@ -29,17 +30,17 @@ class PhotonAddressData extends Data
     public static function fromPhotonFeature(array $feature): self
     {
         if (! isset($feature['properties']) || ! is_array($feature['properties'])) {
-            throw new \InvalidArgumentException('Properties mancanti nel feature');
+            throw new InvalidArgumentException('Properties mancanti nel feature');
         }
         if (! isset($feature['geometry']['coordinates']) || ! is_array($feature['geometry']['coordinates'])) {
-            throw new \InvalidArgumentException('Coordinate mancanti nel feature');
+            throw new InvalidArgumentException('Coordinate mancanti nel feature');
         }
 
         $properties = $feature['properties'];
         $coordinates = $feature['geometry']['coordinates'];
 
         if (! isset($coordinates[0], $coordinates[1])) {
-            throw new \InvalidArgumentException('Coordinate non valide');
+            throw new InvalidArgumentException('Coordinate non valide');
         }
 
         return new self(

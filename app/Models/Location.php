@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Override;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Geo\Database\Factories\LocationFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Carbon;
@@ -30,9 +33,9 @@ use Illuminate\Support\Carbon;
  * @property string|null                                 $created_by
  * @property string|null                                 $deleted_at
  * @property string|null                                 $deleted_by
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property ProfileContract|null $creator
  * @property array                                       $location
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Location newModelQuery()
  * @method static Builder<static>|Location newQuery()
@@ -58,9 +61,9 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Location whereZip($value)
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
  *
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+ * @property ProfileContract|null $deleter
  *
- * @method static \Modules\Geo\Database\Factories\LocationFactory factory($count = null, $state = [])
+ * @method static LocationFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
@@ -117,7 +120,7 @@ class Location extends BaseModel
      *
      * @return array<string, string>
      */
-    #[\Override]
+    #[Override]
     protected function casts(): array
     {
         return [

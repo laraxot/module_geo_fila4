@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Elevation;
 
+use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\ElevationData;
@@ -25,7 +26,7 @@ readonly class FetchOpenElevationAction
     /**
      * Ottiene l'elevazione per un punto.
      *
-     * @throws \RuntimeException Se la richiesta fallisce o la risposta non è valida
+     * @throws RuntimeException Se la richiesta fallisce o la risposta non è valida
      */
     public function execute(float $latitude, float $longitude): ElevationData
     {
@@ -34,7 +35,7 @@ readonly class FetchOpenElevationAction
 
             return $this->parseResponse($response);
         } catch (GuzzleException $e) {
-            throw new \RuntimeException('Failed to get elevation data: '.$e->getMessage());
+            throw new RuntimeException('Failed to get elevation data: '.$e->getMessage());
         }
     }
 
@@ -58,7 +59,7 @@ readonly class FetchOpenElevationAction
     }
 
     /**
-     * @throws \RuntimeException Se la risposta non è nel formato atteso
+     * @throws RuntimeException Se la risposta non è nel formato atteso
      */
     private function parseResponse(string $response): ElevationData
     {
@@ -72,7 +73,7 @@ readonly class FetchOpenElevationAction
         $data = json_decode($response, true);
 
         if (empty($data['results'][0])) {
-            throw new \RuntimeException('Invalid elevation data response');
+            throw new RuntimeException('Invalid elevation data response');
         }
 
         $result = $data['results'][0];

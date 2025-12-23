@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Providers;
 
+use Override;
 use Modules\Xot\Providers\XotBaseEventServiceProvider;
 
 class EventServiceProvider extends XotBaseEventServiceProvider
@@ -27,7 +28,7 @@ class EventServiceProvider extends XotBaseEventServiceProvider
     /**
      * Configure the proper event listeners for email verification.
      */
-    #[\Override]
+    #[Override]
     protected function configureEmailVerification(): void
     {
     }

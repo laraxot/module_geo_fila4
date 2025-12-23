@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Override;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Geo\Database\Factories\ComuneFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Modules\Tenant\Models\Traits\SushiToJson;
@@ -32,8 +35,8 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @property string|null                                 $updated_at
  * @property string|null                                 $created_by
  * @property string|null                                 $updated_by
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
@@ -56,9 +59,9 @@ use Modules\Tenant\Models\Traits\SushiToJson;
  * @method static Builder<static>|Comune whereUpdatedBy($value)
  * @method static Builder<static>|Comune whereZona($value)
  *
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+ * @property ProfileContract|null $deleter
  *
- * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
+ * @method static ComuneFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
@@ -212,7 +215,7 @@ class Comune extends BaseModel
     }
 
     /** @return array<string, string>     */
-    #[\Override]
+    #[Override]
     protected function casts(): array
     {
         return [

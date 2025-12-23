@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Modules\Xot\Models\Traits\HasXotFactory;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Geo\Database\Factories\ProvinceFactory;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -15,11 +18,11 @@ use Sushi\Sushi;
  * @property int|null                                    $region_id
  * @property int                                         $id
  * @property string|null                                 $name
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property ProfileContract|null $creator
  * @property Collection<int, Locality>                   $localities
  * @property int|null                                    $localities_count
  * @property Region|null                                 $region
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Province newModelQuery()
  * @method static Builder<static>|Province newQuery()
@@ -28,15 +31,15 @@ use Sushi\Sushi;
  * @method static Builder<static>|Province whereName($value)
  * @method static Builder<static>|Province whereRegionId($value)
  *
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+ * @property ProfileContract|null $deleter
  *
- * @method static \Modules\Geo\Database\Factories\ProvinceFactory factory($count = null, $state = [])
+ * @method static ProvinceFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
 class Province extends BaseModel
 {
-    use \Modules\Xot\Models\Traits\HasXotFactory;
+    use HasXotFactory;
     use Sushi;
 
     protected array $schema = [
