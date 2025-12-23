@@ -24,6 +24,10 @@ return [
             'description' => 'Inizia aggiungendo il primo indirizzo.',
         ],
     ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc26394 (.)
     'fields' => [
         'name' => [
             'label' => 'Nome Indirizzo',
@@ -35,6 +39,10 @@ return [
             'help' => 'Designa questo come indirizzo principale (solo uno può essere principale)',
         ],
     ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc26394 (.)
     'messages' => [
         'validation' => [
             'min_items' => 'È richiesto almeno :min indirizzo/i.',
@@ -48,9 +56,17 @@ return [
             'primary_set' => 'Indirizzo principale aggiornato.',
         ],
     ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc26394 (.)
     'tooltips' => [
         'name_visibility' => 'Il campo nome è visibile solo quando hai più di un indirizzo',
         'primary_exclusivity' => 'Impostando questo come principale, tutti gli altri diventeranno secondari',
         'single_primary' => 'Con un solo indirizzo, questo è automaticamente il principale',
     ],
+<<<<<<< HEAD
 ];
+=======
+]; 
+>>>>>>> bc26394 (.)

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
@@ -20,10 +21,31 @@ return [
      * | Configurazione della cache per i modelli Sushi.
      * |
      */
+=======
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Sushi Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Qui puoi configurare le impostazioni per il pacchetto Sushi.
+    |
+    */
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configurazione della cache per i modelli Sushi.
+    |
+    */
+>>>>>>> bc26394 (.)
     'cache' => [
         'enabled' => env('SUSHI_CACHE_ENABLED', true),
         'duration' => env('SUSHI_CACHE_DURATION', 60 * 24 * 7), // 7 giorni
     ],
+<<<<<<< HEAD
     /*
      * |--------------------------------------------------------------------------
      * | Database Configuration
@@ -32,10 +54,22 @@ return [
      * | Configurazione del database SQLite per i modelli Sushi.
      * |
      */
+=======
+
+    /*
+    |--------------------------------------------------------------------------
+    | Database Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configurazione del database SQLite per i modelli Sushi.
+    |
+    */
+>>>>>>> bc26394 (.)
     'database' => [
         'connection' => env('SUSHI_DB_CONNECTION', 'sqlite'),
         'database' => env('SUSHI_DB_DATABASE', ':memory:'),
     ],
+<<<<<<< HEAD
     /*
      * |--------------------------------------------------------------------------
      * | Models Configuration
@@ -44,6 +78,17 @@ return [
      * | Configurazione specifica per i modelli Sushi.
      * |
      */
+=======
+
+    /*
+    |--------------------------------------------------------------------------
+    | Models Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configurazione specifica per i modelli Sushi.
+    |
+    */
+>>>>>>> bc26394 (.)
     'models' => [
         'comune' => [
             'file' => 'database/content/comuni.json',
@@ -74,4 +119,8 @@ return [
             ],
         ],
     ],
+<<<<<<< HEAD
 ];
+=======
+]; 
+>>>>>>> bc26394 (.)
