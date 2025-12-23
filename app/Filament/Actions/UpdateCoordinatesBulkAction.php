@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Modules\Geo\Actions\UpdateCoordinatesAction;
 use Modules\Geo\Models\Place;
 use Modules\Xot\Filament\Tables\Actions\XotBaseBulkAction;
-use Throwable;
 
 /**
  * BulkAction Filament per aggiornare le coordinate geografiche di più record contemporaneamente.
@@ -56,7 +55,7 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
             ->icon('heroicon-o-map-pin')
             ->deselectRecordsAfterCompletion()
             ->action(function (Collection $records): void {
-                /** @var Collection<int, Place> $records */
+                /* @var Collection<int, Place> $records */
                 $this->processRecords($records);
             });
     }
@@ -76,8 +75,8 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
         foreach ($records as $record) {
             try {
                 $action->execute($record);
-                $successCount++;
-            } catch (Throwable $e) {
+                ++$successCount;
+            } catch (\Throwable $e) {
                 $errors->push(sprintf('Place #%s: %s', (string) $record->getKey(), $e->getMessage()));
             }
         }
