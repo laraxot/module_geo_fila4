@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\PlaceType;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
+ * <<<<<<< HEAD
+ * <<<<<<< HEAD
  * PlaceType Factory.
-=======
+ * =======
  * PlaceType Factory
->>>>>>> 1bb689f (.)
-=======
+ * >>>>>>> 1bb689f (.)
+ * =======
  * PlaceType Factory.
->>>>>>> 0746367 (.)
+ * >>>>>>> 0746367 (.).
  *
  * Factory for creating PlaceType model instances for testing and seeding.
  *

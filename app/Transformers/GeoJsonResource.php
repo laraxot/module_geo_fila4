@@ -18,8 +18,9 @@ use Illuminate\Http\Resources\Json\JsonResource as ResCollection;
 /**
  * Class GeoJsonResource.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
+ * <<<<<<< HEAD
+ * <<<<<<< HEAD
+ *
  * @property int         $id
  * @property string|null $post_type
  * @property int|null    $post_id
@@ -32,11 +33,11 @@ use Illuminate\Http\Resources\Json\JsonResource as ResCollection;
  * @property string|null $email
  * @property float       $latitude
  * @property float       $longitude
-=======
- * @property int $id
-=======
+ *                                     =======
  * @property int         $id
->>>>>>> 0746367 (.)
+ *                                     =======
+ * @property int         $id
+ *                                     >>>>>>> 0746367 (.)
  * @property string|null $post_type
  * @property int|null    $post_id
  * @property int|null    $url
@@ -46,14 +47,14 @@ use Illuminate\Http\Resources\Json\JsonResource as ResCollection;
  * @property string|null $phone
  * @property string|null $full_address
  * @property string|null $email
-<<<<<<< HEAD
- * @property float $latitude
- * @property float $longitude
->>>>>>> 1bb689f (.)
-=======
+ *                                     <<<<<<< HEAD
  * @property float       $latitude
  * @property float       $longitude
->>>>>>> 0746367 (.)
+ *                                     >>>>>>> 1bb689f (.)
+ *                                     =======
+ * @property float       $latitude
+ * @property float       $longitude
+ *                                     >>>>>>> 0746367 (.)
  */
 class GeoJsonResource extends ResCollection
 {
