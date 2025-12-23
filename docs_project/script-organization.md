@@ -10,13 +10,8 @@
 bashscripts/
 ├── database/
 │   ├── seeding/          # Script per popolamento database
-<<<<<<< HEAD
-│   │   ├── <nome progetto>-seeding.php
-│   │   ├── <nome modulo>-seeding.php
-=======
-│   │   ├── saluteora-seeding.php
-│   │   ├── salutemo-seeding.php
->>>>>>> be08416 (.)
+│   │   ├── {nome-progetto}-seeding.php
+│   │   ├── {nome-modulo}-seeding.php
 │   │   └── mass-seeding.php
 │   ├── migration/        # Script per gestione migrazioni
 │   └── backup/          # Script per backup database
@@ -70,13 +65,8 @@ bashscripts/
 
 ### Script di Seeding
 ```
-<<<<<<< HEAD
-<nome progetto>-mass-seeding.php          # Popolamento massivo <nome progetto>
-<nome modulo>-database-seeding.php       # Popolamento <nome modulo>
-=======
-saluteora-mass-seeding.php          # Popolamento massivo SaluteOra
-salutemo-database-seeding.php       # Popolamento SaluteMo
->>>>>>> be08416 (.)
+{nome-progetto}-mass-seeding.php          # Popolamento massivo progetto
+{nome-modulo}-database-seeding.php       # Popolamento modulo
 user-role-seeding.php               # Popolamento ruoli utente
 ```
 
@@ -93,11 +83,7 @@ clear-cache-all.php                 # Pulizia cache completa
 ```bash
 # Dalla root del progetto
 cd ..
-<<<<<<< HEAD
-php bashscripts/database/seeding/<nome progetto>-mass-seeding.php
-=======
-php bashscripts/database/seeding/saluteora-mass-seeding.php
->>>>>>> be08416 (.)
+php bashscripts/database/seeding/{nome-progetto}-mass-seeding.php
 ```
 
 ### Esecuzione via Tinker
@@ -107,11 +93,7 @@ cd laravel
 php artisan tinker
 
 # Incolla il contenuto dello script
-<<<<<<< HEAD
-include_once('../bashscripts/database/seeding/<nome progetto>-mass-seeding.php');
-=======
-include_once('../bashscripts/database/seeding/saluteora-mass-seeding.php');
->>>>>>> be08416 (.)
+include_once('../bashscripts/database/seeding/{nome-progetto}-mass-seeding.php');
 ```
 
 ## Documentazione Obbligatoria

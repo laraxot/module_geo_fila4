@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# <nome progetto> Testing Guide
-=======
-# SaluteOra Testing Guide
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Overview
 
@@ -23,13 +19,7 @@ laravel/
 │   │   ├── Feature/
 │   │   ├── Pest.php
 │   │   └── TestCase.php
-<<<<<<< HEAD
-│   ├── <nome progetto>/tests/
-│   ├── <nome modulo>/tests/
-=======
-│   ├── SaluteOra/tests/
-│   ├── SaluteMo/tests/
->>>>>>> be08416 (.)
+{nome-progetto}
 │   ├── User/tests/
 │   └── Geo/tests/
 └── scripts/run-tests.sh            # Script per esecuzione test
@@ -42,92 +32,12 @@ laravel/
 - **Feature Tests**: ChartFactoryTest.php, ChartIntegrationTest.php
 - **Coverage**: Modello Chart, Factory, Accessors, Metodi business logic
 
-<<<<<<< HEAD
-#### ✅ <nome progetto> Module (Core)
-=======
-#### ✅ SaluteOra Module (Core)
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Unit Tests**: PatientModelTest.php, AppointmentModelTest.php
 - **Feature Tests**: AppointmentIntegrationTest.php
 - **Coverage**: Modelli core, Relazioni, Enums, State management
 
-<<<<<<< HEAD
-#### ✅ <nome modulo> Module
-=======
-#### ✅ SaluteMo Module
->>>>>>> be08416 (.)
-- **Unit Tests**: BaseModelTest.php
-- **Coverage**: BaseModel traits, Configurazioni, Media handling
-
-#### ✅ User Module
-- **Unit Tests**: UserModelTest.php
-- **Feature Tests**: UserAuthenticationTest.php
-- **Coverage**: Autenticazione, Autorizzazione, Relazioni team
-
-#### ✅ Geo Module
-- **Unit Tests**: AddressModelTest.php
-- **Feature Tests**: AddressIntegrationTest.php
-- **Coverage**: Indirizzi, Geolocalizzazione, Google Places integration
-
-## Esecuzione Test
-
-### Script Automatico
-```bash
-# Esegui tutti i test con coverage
-./scripts/run-tests.sh
-
-# Solo test senza coverage
-./scripts/run-tests.sh --skip-coverage
-
-# Solo test specifici
-./scripts/run-tests.sh --filter="Chart"
-
-# Salta PHPStan
-./scripts/run-tests.sh --skip-phpstan
-```
-
-### Comandi Manuali
-```bash
-# Tutti i test
-vendor/bin/pest
-
-# Con coverage
-vendor/bin/pest --coverage --coverage-html=coverage
-
-# Test specifico modulo
-vendor/bin/pest Modules/Chart/tests
-
-# Test specifico
-vendor/bin/pest --filter="ChartModelTest"
-```
-
-## Configurazione Coverage
-
-### PHPUnit Configuration
-Il file `phpunit.xml` è configurato per:
-- **Source Directories**: `app/` e `Modules/*/app/`
-- **Test Suites**: Unit, Feature, Browser
-- **Coverage Formats**: HTML, Clover, Cobertura
-- **Thresholds**: Low 50%, High 80%
-
-### Coverage Reports
-- **HTML**: `coverage-html/index.html`
-- **Clover**: `coverage-clover.xml`
-- **Text**: `coverage-text.txt`
-
-## Helper Functions
-
-### Chart Module
-```php
-createChart($attributes = [])    // Crea Chart in database
-makeChart($attributes = [])      // Crea Chart in memoria
-```
-
-<<<<<<< HEAD
-### <nome progetto> Module
-=======
-### SaluteOra Module
->>>>>>> be08416 (.)
+{nome-progetto}
 ```php
 createAppointment($attributes = [])
 createPatient($attributes = [])
@@ -228,13 +138,7 @@ vendor/bin/pest --filter="test_name" --verbose
 
 ### Moduli Completati
 - ✅ Chart: Unit + Feature tests
-<<<<<<< HEAD
-- ✅ <nome progetto>: Core models + Integration
-- ✅ <nome modulo>: Base functionality
-=======
-- ✅ SaluteOra: Core models + Integration
-- ✅ SaluteMo: Base functionality
->>>>>>> be08416 (.)
+{nome-progetto}
 - ✅ User: Authentication + Authorization
 - ✅ Geo: Address + Geolocation
 

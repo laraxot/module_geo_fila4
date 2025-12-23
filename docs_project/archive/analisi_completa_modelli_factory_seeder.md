@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Analisi Completa Modelli, Factory e Seeder - Sistema <nome progetto>
-
-## Executive Summary
-
-Analisi sistematica completa di tutti i 14 moduli del sistema <nome progetto> per verificare la presenza di factory e seeder per ogni modello, identificando modelli non utilizzati nella business logic principale.
-=======
-# Analisi Completa Modelli, Factory e Seeder - Sistema SaluteOra
-
-## Executive Summary
-
-Analisi sistematica completa di tutti i 14 moduli del sistema SaluteOra per verificare la presenza di factory e seeder per ogni modello, identificando modelli non utilizzati nella business logic principale.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### Statistiche Generali
 - **Moduli Analizzati**: 14
@@ -24,11 +12,7 @@ Analisi sistematica completa di tutti i 14 moduli del sistema SaluteOra per veri
 
 ### Moduli Core Business Logic
 
-<<<<<<< HEAD
-#### 1. <nome progetto> (Modulo Principale)
-=======
-#### 1. SaluteOra (Modulo Principale)
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Modelli Attivi**: 20
 - **Modelli Obsoleti**: 7 file .old
 - **Factory Coverage**: ✅ 100%
@@ -125,89 +109,13 @@ Analisi sistematica completa di tutti i 14 moduli del sistema SaluteOra per veri
 - **Criticità**: 🟢 Nessuna
 - **Azioni**: Nessuna
 
-<<<<<<< HEAD
-#### 13. <nome modulo> (Modena Specifico)
-=======
-#### 13. SaluteMo (Modena Specifico)
->>>>>>> be08416 (.)
-- **Modelli Attivi**: 2 (solo base)
-- **Modelli Obsoleti**: 1 file .old
-- **Factory Coverage**: N/A
-- **Seeder Coverage**: N/A
-- **Criticità**: 🟢 Bassa
-- **Azioni**: Rimuovere file obsoleti
-
-#### 14. Xot (Framework Base)
-- **Modelli Attivi**: 12+
-- **Modelli Base**: 10+ abstract
-- **Factory Coverage**: ✅ 100%
-- **Seeder Coverage**: ⚠️ 8%
-- **Criticità**: 🟡 Media
-- **Azioni**: Creare 11 seeder sistema
-
-## Modelli Non Utilizzati nella Business Logic
-
-### Categoria 1: File Obsoleti (.old, .no, .up, .fixed)
-**Totale**: ~20 file da rimuovere
-
-<<<<<<< HEAD
-#### <nome progetto>
-=======
-#### SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 - DoctorValidation.php.old - Sistema validazione non implementato
 - Isee.php.old - Gestione ISEE non utilizzata
 - MedicalHistory.php.old - Storia medica gestita diversamente
 - PatientDocument.php.old - Documenti via Media module
 - PatientIsee.php.old - Relazione ISEE non utilizzata
-<<<<<<< HEAD
-- Pregnancy.php.old - Spostato in <nome modulo>
-=======
-- Pregnancy.php.old - Spostato in SaluteMo
->>>>>>> be08416 (.)
-- ReimbursementRequest.php.old - Rimborsi non implementati
-
-#### Altri Moduli
-- Geo: GeoNamesCap.php.old
-- Notify: 4 file .up (backup)
-- Lang: 2 file .fixed (backup)
-- Activity: BaseActivity.php.no
-- Tenant: 2 file .no
-<<<<<<< HEAD
-- <nome modulo>: Patient.php.old
-=======
-- SaluteMo: Patient.php.old
->>>>>>> be08416 (.)
-- Job: 2 file .aaa (disabilitati)
-
-### Categoria 2: Modelli Specializzati ReadOnly
-**Utilizzo**: Specifico, non necessitano factory/seeder
-
-#### Geo Module
-- **ComuneJson** - Facade per dati geografici statici
-- **GeoJsonModel** - Base astratta per modelli JSON
-
-**Caratteristiche**:
-- Dati da file JSON statici
-- Sistema cache integrato
-- Metodi di ricerca avanzati
-- Non necessitano factory/seeder
-
-### Categoria 3: Modelli Base Abstract
-**Utilizzo**: Classi base per ereditarietà
-
-Tutti i modelli BaseModel, BasePivot, BaseUser, etc. sono classi astratte utilizzate come base per l'ereditarietà e non necessitano factory/seeder.
-
-## Piano di Azione Prioritario
-
-### Fase 1: Pulizia (Immediata)
-**Obiettivo**: Rimuovere file obsoleti e backup
-
-<<<<<<< HEAD
-1. **Rimuovere file .old**: 7 file <nome progetto> + altri
-=======
-1. **Rimuovere file .old**: 7 file SaluteOra + altri
->>>>>>> be08416 (.)
+{nome-progetto}
 2. **Rimuovere file backup**: .up, .fixed, .no
 3. **Pulizia factory obsolete**: Corrispondenti ai modelli rimossi
 4. **Aggiornare riferimenti**: Documentazione e import
@@ -218,11 +126,7 @@ Tutti i modelli BaseModel, BasePivot, BaseUser, etc. sono classi astratte utiliz
 ### Fase 2: Seeder Core (Alta Priorità)
 **Obiettivo**: Creare seeder per moduli critici
 
-<<<<<<< HEAD
-1. **<nome progetto>**: 5 seeder pivot team
-=======
-1. **SaluteOra**: 5 seeder pivot team
->>>>>>> be08416 (.)
+{nome-progetto}
 2. **User**: 6 seeder core (Profile, Team, Tenant)
 3. **Notify**: 4 seeder template e tipi
 4. **Job**: 4 seeder configurazione base
@@ -313,11 +217,7 @@ Tutti i modelli BaseModel, BasePivot, BaseUser, etc. sono classi astratte utiliz
 ## Collegamenti Documentazione
 
 ### Documentazione Moduli
-<<<<<<< HEAD
-- [<nome progetto> Analysis](../laravel/Modules/<nome progetto>/docs/modelli_factory_seeder_analisi.md)
-=======
-- [SaluteOra Analysis](../laravel/Modules/SaluteOra/docs/modelli_factory_seeder_analisi.md)
->>>>>>> be08416 (.)
+{nome-progetto}
 - [User Analysis](../laravel/Modules/User/docs/modelli_factory_seeder_analisi.md)
 - [Geo Analysis](../laravel/Modules/Geo/docs/modelli_factory_seeder_analisi.md)
 - [Media Analysis](../laravel/Modules/Media/docs/modelli_factory_seeder_analisi.md)
@@ -339,8 +239,4 @@ Tutti i modelli BaseModel, BasePivot, BaseUser, etc. sono classi astratte utiliz
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Autore: Sistema di analisi automatizzata*
-<<<<<<< HEAD
-*Scope: Completo sistema <nome progetto> (14 moduli, ~150 modelli)*
-=======
-*Scope: Completo sistema SaluteOra (14 moduli, ~150 modelli)*
->>>>>>> be08416 (.)
+{nome-progetto}

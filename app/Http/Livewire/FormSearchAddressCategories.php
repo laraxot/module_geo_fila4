@@ -15,9 +15,6 @@ use Illuminate\Support\Collection;
 use Livewire\Component;
 use Modules\Xot\Actions\GetViewAction;
 
-use function Safe\json_decode;
-use function Safe\json_encode;
-
 /**
  * Undocumented class.
  */

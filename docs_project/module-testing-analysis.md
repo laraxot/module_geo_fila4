@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Analisi Completa Testing e Factory Moduli - <nome progetto>
-
-## 📊 Panoramica Generale
-
-Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test per tutti i moduli del progetto <nome progetto>, con focus sulla business logic e copertura test.
-=======
-# Analisi Completa Testing e Factory Moduli - SaluteOra
-
-## 📊 Panoramica Generale
-
-Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test per tutti i moduli del progetto SaluteOra, con focus sulla business logic e copertura test.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## 🎯 Obiettivi
 
@@ -23,122 +11,13 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ### ✅ Moduli Completati (Test Business Logic)
 
-<<<<<<< HEAD
-#### 1. **<nome progetto>** - 100% Copertura ✅
-=======
-#### 1. **SaluteOra** - 100% Copertura ✅
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Factory**: 100% (tutti i modelli)
 - **Seeder**: 100% (tutti i modelli)
 - **Test**: 100% (business logic completa)
 - **Stato**: Eccellente - Modulo di riferimento
 
-<<<<<<< HEAD
-#### 2. **<nome modulo>** - 100% Copertura ✅
-=======
-#### 2. **SaluteMo** - 100% Copertura ✅
->>>>>>> be08416 (.)
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 100% (business logic completa)
-- **Stato**: Eccellente - Modulo di riferimento
-
-#### 3. **Media** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test core completati
-
-#### 4. **Lang** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test core completati
-
-#### 5. **Gdpr** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test core completati
-
-#### 6. **Tenant** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test core completati
-
-#### 7. **Xot** - 80% Copertura ✅
-- **Factory**: 62% (13/21 modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 80% (business logic implementata)
-- **Stato**: Buono - Test core completati
-
-#### 8. **User** - 80% Copertura ✅
-- **Factory**: 73% (33/45 modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 80% (business logic implementata)
-- **Stato**: Buono - Test core completati
-
-#### 9. **UI** - 75% Copertura ✅
-- **Factory**: N/A (nessun modello database)
-- **Seeder**: N/A (nessun modello database)
-- **Test**: 75% (business logic implementata)
-- **Stato**: Buono - Test widget completati
-
-#### 10. **Geo** - 75% Copertura ✅
-- **Factory**: 67% (10/15 modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 75% (business logic implementata)
-- **Stato**: Buono - Test core completati
-
-#### 11. **Cms** - 75% Copertura ✅
-- **Factory**: 64% (7/11 modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 75% (business logic implementata)
-- **Stato**: Buono - Test core completati
-
-#### 12. **Notify** - 95% Copertura ✅
-- **Factory**: 77% (10/13 modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 95% (business logic implementata)
-- **Stato**: Eccellente - Test business logic completati
-
-#### 13. **Job** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test business logic completati
-
-### 🔄 Moduli in Progress
-
-#### 13. **Job** - 85% Copertura ✅
-- **Factory**: 100% (tutti i modelli)
-- **Seeder**: 100% (tutti i modelli)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test business logic completati
-
-#### 14. **Activity** - 85% Copertura ✅
-- **Factory**: 0% (da implementare)
-- **Seeder**: 0% (da implementare)
-- **Test**: 85% (business logic implementata)
-- **Stato**: Ottimo - Test business logic completati
-
-## 🏆 Risultati Raggiunti
-
-### Copertura Test Business Logic
-- **Completati**: 13/14 moduli (93%)
-- **Copertura Media**: 85%
-- **Test Implementati**: 70+ test business logic
-- **Documentazione**: 100% moduli analizzati
-
-### Moduli Eccellenti (90%+)
-<<<<<<< HEAD
-1. **<nome progetto>** - 100% (modulo di riferimento)
-2. **<nome modulo>** - 100% (modulo di riferimento)
-=======
-1. **SaluteOra** - 100% (modulo di riferimento)
-2. **SaluteMo** - 100% (modulo di riferimento)
->>>>>>> be08416 (.)
+{nome-progetto}
 3. **Media** - 85% (test core completati)
 4. **Lang** - 85% (test core completati)
 5. **Gdpr** - 85% (test core completati)
@@ -156,11 +35,7 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ## 🧪 Test Implementati per Modulo
 
-<<<<<<< HEAD
-### <nome progetto> & <nome modulo> (Moduli di Riferimento)
-=======
-### SaluteOra & SaluteMo (Moduli di Riferimento)
->>>>>>> be08416 (.)
+{nome-progetto}
 - ✅ **Patient Tests**: Gestione pazienti completa
 - ✅ **Doctor Tests**: Gestione dottori completa
 - ✅ **Appointment Tests**: Gestione appuntamenti completa
@@ -367,13 +242,7 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 ## 📚 Documentazione e Riferimenti
 
 ### File di Analisi Moduli
-<<<<<<< HEAD
-- [<nome progetto>](../laravel/Modules/<nome progetto>/docs/module-analysis-complete.md)
-- [<nome modulo>](../laravel/Modules/<nome modulo>/docs/module-analysis-complete.md)
-=======
-- [SaluteOra](../laravel/Modules/SaluteOra/docs/module-analysis-complete.md)
-- [SaluteMo](../laravel/Modules/SaluteMo/docs/module-analysis-complete.md)
->>>>>>> be08416 (.)
+{nome-progetto}
 - [Media](../laravel/Modules/Media/docs/module-analysis-complete.md)
 - [Lang](../laravel/Modules/Lang/docs/module-analysis-complete.md)
 - [Gdpr](../laravel/Modules/Gdpr/docs/module-analysis-complete.md)

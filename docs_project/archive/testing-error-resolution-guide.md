@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Testing Error Resolution Guide - <nome progetto> Project
-
-## Overview
-
-This guide documents critical testing patterns and error resolution strategies identified during the <nome modulo> module testing improvements. These patterns apply across all modules in the <nome progetto> project.
-=======
-# Testing Error Resolution Guide - SaluteOra Project
-
-## Overview
-
-This guide documents critical testing patterns and error resolution strategies identified during the SaluteMo module testing improvements. These patterns apply across all modules in the SaluteOra project.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Critical Testing Errors and Solutions
 
@@ -33,11 +21,7 @@ $this->faker->optional(0.6)->regexify('[A-Z]{2}')   // 60% chance of regex value
 $this->faker->optional(0.9)->dateTimeBetween('-2 years', '-1 month')  // 90% chance of date
 ```
 
-<<<<<<< HEAD
-**Global Impact**: This error was found in `Modules/<nome progetto>/database/factories/PatientFactory.php` and potentially affects all factories across modules.
-=======
-**Global Impact**: This error was found in `Modules/SaluteOra/database/factories/PatientFactory.php` and potentially affects all factories across modules.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### 2. Database Connection in Feature Tests
 
@@ -106,86 +90,7 @@ expect($appointment->type->getDuration())->toBe(20);  // Non-translation method
 
 ## Module-Specific Implementations
 
-<<<<<<< HEAD
-### <nome modulo> Module Results
-=======
-### SaluteMo Module Results
->>>>>>> be08416 (.)
-- **Before**: 14 failing tests due to factory and database errors
-- **After**: 44 passing tests (100% success rate)
-- **Performance**: 3.24 seconds total execution time
-- **Techniques Applied**: Pure object testing, factory corrections, enum value testing
-
-### Implementation Pattern for Other Modules
-
-1. **Identify Test Categories**:
-   - Business logic → Pure tests
-   - Laravel features → Integration tests
-   - Filament components → Unit tests with TestCase
-
-2. **Factory Audit**:
-   - Search for `->boolean(\d+)` patterns
-   - Replace with `->optional(0.\d+)->boolean()`
-   - Test factories in isolation
-
-3. **Feature Test Conversion**:
-   - Replace model factories with plain objects
-   - Focus on business rules, not persistence
-   - Remove database dependencies where possible
-
-## Prevention Strategies
-
-### Pre-Commit Checklist
-- [ ] No `$this->faker->boolean(number)` usage in factories
-- [ ] Feature tests use plain objects for business logic
-- [ ] No enum `getLabel()` calls in tests without full Laravel context
-- [ ] TestCase only used when Laravel/Filament features are tested
-
-### Development Workflow
-1. **Start Simple**: Begin with pure object tests for business logic
-2. **Add Complexity Gradually**: Only add database/container when testing Laravel features
-3. **Run Tests Frequently**: Catch issues early in development cycle
-4. **Isolate Failures**: Test single files to identify error patterns
-
-### Code Review Guidelines
-- Business logic tests should be database-free
-- Factory methods should use `optional()` for conditional values
-- Enum tests should avoid translation-dependent methods
-- Test execution time should be optimized for speed
-
-## Global Project Standards
-
-### Test Naming Conventions
-```php
-// Feature tests - describe business behavior
-it('validates appointment time constraints', function () { });
-it('prevents double booking for same doctor', function () { });
-
-// Unit tests - describe component functionality  
-it('has correct resource pages', function () { });
-it('exposes casts as array', function () { });
-```
-
-### Performance Targets
-- **Feature tests**: < 0.1 seconds each
-- **Unit tests**: < 0.5 seconds each
-- **Total module suite**: < 5 seconds
-- **Zero flaky tests**: 100% deterministic results
-
-### Error Recovery Process
-1. **Identify Error Pattern**: Match to known categories above
-2. **Apply Solution Pattern**: Use documented fixes
-3. **Test in Isolation**: Verify fix on single test
-4. **Run Full Suite**: Ensure no regressions
-5. **Document**: Update module docs with specific fixes
-
-## Cross-Module Benefits
-
-<<<<<<< HEAD
-These patterns provide benefits across all <nome progetto> modules:
-=======
-These patterns provide benefits across all SaluteOra modules:
->>>>>>> be08416 (.)
+{nome-progetto}
 
 1. **Reliability**: Tests don't fail due to external dependencies
 2. **Speed**: Pure tests execute 10-100x faster than database tests
@@ -212,15 +117,7 @@ These patterns provide benefits across all SaluteOra modules:
 
 ## Links to Module Documentation
 
-<<<<<<< HEAD
-- [<nome modulo> Testing Lessons Learned](../laravel/Modules/<nome modulo>/docs/testing-lessons-learned.md)
-- [<nome modulo> Test Error Resolution](../laravel/Modules/<nome modulo>/docs/test-errors-resolution.md)
-- [<nome modulo> Testing Guide](../laravel/Modules/<nome modulo>/docs/testing.md)
-=======
-- [SaluteMo Testing Lessons Learned](../laravel/Modules/SaluteMo/docs/testing-lessons-learned.md)
-- [SaluteMo Test Error Resolution](../laravel/Modules/SaluteMo/docs/test-errors-resolution.md)
-- [SaluteMo Testing Guide](../laravel/Modules/SaluteMo/docs/testing.md)
->>>>>>> be08416 (.)
+{nome-modulo}
 
 ## Windsurf Rules Integration
 
@@ -231,9 +128,5 @@ These patterns provide benefits across all SaluteOra modules:
 
 **Last Updated**: 2025-01-06  
 **Status**: Active Implementation  
-<<<<<<< HEAD
-**Success Rate**: 100% (<nome modulo>: 44/44 tests passing)  
-=======
-**Success Rate**: 100% (SaluteMo: 44/44 tests passing)  
->>>>>>> be08416 (.)
+{nome-modulo}
 **Philosophy**: Simple, Fast, Reliable Testing

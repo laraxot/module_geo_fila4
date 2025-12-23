@@ -4,11 +4,7 @@
 
 **IL TESTING DEVE VERIFICARE IL COMPORTAMENTO BUSINESS, NON L'IMPLEMENTAZIONE!**
 
-<<<<<<< HEAD
-Questa è la regola fondamentale che ha precedenza ASSOLUTA su qualsiasi altra considerazione di testing in tutto il progetto <nome progetto>.
-=======
-Questa è la regola fondamentale che ha precedenza ASSOLUTA su qualsiasi altra considerazione di testing in tutto il progetto SaluteOra.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## MANTRA UNIVERSALE
 
@@ -27,11 +23,7 @@ Questa è la regola fondamentale che ha precedenza ASSOLUTA su qualsiasi altra c
 - **[Laravel AI Guidelines - Testing Priority](../laravel/.ai/guidelines/testing-priority-rule.md)**
 
 ### 📁 Regole per Modulo
-<<<<<<< HEAD
-- **[<nome progetto> Testing Guidelines](../laravel/Modules/<nome progetto>/docs/testing-guidelines.md)**
-=======
-- **[SaluteOra Testing Guidelines](../laravel/Modules/SaluteOra/docs/testing-guidelines.md)**
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### ⚙️ Regole Sistema
 - **[Windsurf Rules - Testing Business Behavior](../.windsurf/rules/testing-business-behavior-supreme.mdc)**
@@ -113,11 +105,7 @@ Queste regole si applicano a:
 
 ---
 
-<<<<<<< HEAD
-**Questa è la REGOLA SUPREMA del progetto <nome progetto> e ha precedenza su qualsiasi altra considerazione di testing.**
-=======
-**Questa è la REGOLA SUPREMA del progetto SaluteOra e ha precedenza su qualsiasi altra considerazione di testing.**
->>>>>>> be08416 (.)
+{nome-progetto}
 
 **Ultimo aggiornamento**: Gennaio 2025  
 **Status**: REGOLA SUPREMA E NON NEGOZIABILE  

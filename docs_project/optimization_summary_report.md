@@ -2,11 +2,7 @@
 
 ## 📋 Executive Summary
 
-<<<<<<< HEAD
-Dopo un'analisi approfondita della struttura documentale e del codice di tutti i moduli del progetto <nome progetto>, ho identificato **problemi critici di riusabilità** che compromettono la portabilità dei moduli condivisi e **opportunità di ottimizzazione** significative.
-=======
-Dopo un'analisi approfondita della struttura documentale e del codice di tutti i moduli del progetto SaluteOra, ho identificato **problemi critici di riusabilità** che compromettono la portabilità dei moduli condivisi e **opportunità di ottimizzazione** significative.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## 🚨 PROBLEMI CRITICI IDENTIFICATI
 
@@ -54,36 +50,7 @@ Dopo un'analisi approfondita della struttura documentale e del codice di tutti i
 **Problema**: PathHelper con path hardcoded compromette tutto il framework
 ```php
 // ❌ CRITICO
-<<<<<<< HEAD
-public static string $projectBasePath = '/var/www/html/<nome progetto>';
-=======
-public static string $projectBasePath = '/var/www/html/saluteora';
->>>>>>> be08416 (.)
-
-// ✅ SOLUZIONE IMMEDIATA
-public static function getProjectBasePath(): string {
-    return config('app.project_path', base_path('../../'));
-}
-```
-**Tempo**: 2 ore | **Impatto**: Sblocca riusabilità di tutto il framework
-
-#### Modulo Notify (Sistema Notifiche)  
-**Problema**: 336 occorrenze hardcoded bloccano uso in altri progetti
-- **Test files**: Aggiornare per usare `XotData::make()->getUserClass()`
-- **Factory**: Completare pattern dinamici per tutti i modelli
-- **Documentazione**: Consolidare 150+ file in struttura organizzata
-**Tempo**: 1-2 giorni | **Impatto**: Sblocca sistema notifiche riutilizzabile
-
-### 🟡 PRIORITÀ ALTA
-
-#### Modulo User (Autenticazione)
-**Problema**: README gigantesco (955 righe) e 141 occorrenze hardcoded
-- **Ristrutturazione**: Dividere in 6 aree funzionali
-<<<<<<< HEAD
-- **Riusabilità**: Eliminare riferimenti <nome progetto>-specific
-=======
-- **Riusabilità**: Eliminare riferimenti SaluteOra-specific
->>>>>>> be08416 (.)
+{nome-progetto}
 - **STI Documentation**: Consolidare documentazione parental/STI
 **Tempo**: 1 giorno | **Impatto**: Migliora DX e riusabilità auth
 
@@ -102,26 +69,14 @@ public static function getProjectBasePath(): string {
 - **README optimization**: Ridurre da 407 a 150 righe
 **Tempo**: 1 ora | **Impatto**: Mantenere eccellenza esistente
 
-<<<<<<< HEAD
-#### Modulo <nome progetto> (Business Core)
-=======
-#### Modulo SaluteOra (Business Core)
->>>>>>> be08416 (.)
+{nome-progetto}
 **Stato**: Funzionalmente completo e robusto
 - **Documentation**: Aggiornare README con stato attuale
 - **Performance**: Implementare caching dashboard e calendar
 - **Translation**: Normalizzare helper_text
 **Tempo**: 4 ore | **Impatto**: Migliora performance e manutenibilità
 
-<<<<<<< HEAD
-#### Modulo <nome modulo> (Mobile)
-**Stato**: Buona specializzazione mobile
-- **Documentation**: Chiarire relazione con <nome progetto>
-=======
-#### Modulo SaluteMo (Mobile)
-**Stato**: Buona specializzazione mobile
-- **Documentation**: Chiarire relazione con SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Mobile testing**: Aggiungere test performance mobile
 - **PWA**: Implementare funzionalità offline base
 **Tempo**: 6 ore | **Impatto**: Migliora esperienza mobile
@@ -155,20 +110,12 @@ public static function getProjectBasePath(): string {
 - **Cms**: Organizzazione per aree
 
 #### Giorno 3-4: Performance Enhancement
-<<<<<<< HEAD
-- **<nome progetto>**: Caching dashboard e calendar
-=======
-- **SaluteOra**: Caching dashboard e calendar
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Geo**: Google API optimization
 - **UI**: Mantenimento eccellenze
 
 #### Giorno 5: Mobile + Testing
-<<<<<<< HEAD
-- **<nome modulo>**: Mobile testing enhancement
-=======
-- **SaluteMo**: Mobile testing enhancement
->>>>>>> be08416 (.)
+{nome-modulo}
 - **Integration**: Test cross-modulo
 - **Performance**: Validazione metriche
 

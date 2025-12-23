@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Strategia di Eliminazione Database dai Test - <nome progetto>
-
-## PROBLEMA IDENTIFICATO
-
-La maggior parte dei test <nome progetto> sta ancora usando database e factory, contraddicendo la regola fondamentale **NO DATABASE NEI TEST**.
-=======
-# Strategia di Eliminazione Database dai Test - SaluteOra
-
-## PROBLEMA IDENTIFICATO
-
-La maggior parte dei test SaluteOra sta ancora usando database e factory, contraddicendo la regola fondamentale **NO DATABASE NEI TEST**.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## ERRORI PRINCIPALI
 
@@ -43,15 +31,7 @@ La maggior parte dei test SaluteOra sta ancora usando database e factory, contra
 
 ### Fase 1: Identificare tutti i test con database
 ```bash
-<<<<<<< HEAD
-grep -r "::factory" Modules/<nome progetto>/tests/ --include="*.php"
-grep -r "RefreshDatabase" Modules/<nome progetto>/tests/ --include="*.php" 
-grep -r "uses(TestCase" Modules/<nome progetto>/tests/ --include="*.php"
-=======
-grep -r "::factory" Modules/SaluteOra/tests/ --include="*.php"
-grep -r "RefreshDatabase" Modules/SaluteOra/tests/ --include="*.php" 
-grep -r "uses(TestCase" Modules/SaluteOra/tests/ --include="*.php"
->>>>>>> be08416 (.)
+{nome-progetto}
 ```
 
 ### Fase 2: Convertire sistematicamente ogni test

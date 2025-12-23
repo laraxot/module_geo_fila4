@@ -10,17 +10,7 @@ I moduli condivisi tra progetti (Notify, User, Xot, UI, ecc.) devono essere **co
 ❌ **VIETATO utilizzare nomi di progetti hardcoded:**
 ```php
 // ERRORE: Riferimenti hardcoded
-<<<<<<< HEAD
-'content' => 'Benvenuto su <nome progetto>!',
-'database' => '<nome progetto>_test',
-use Modules\<nome progetto>\Models\User;
-'Modules\\<nome progetto>\\Models\\Patient',
-=======
-'content' => 'Benvenuto su SaluteOra!',
-'database' => 'saluteora_test',
-use Modules\SaluteOra\Models\User;
-'Modules\\SaluteOra\\Models\\Patient',
->>>>>>> be08416 (.)
+{nome-progetto}
 ```
 
 ✅ **SEMPRE utilizzare pattern dinamici:**
@@ -95,15 +85,7 @@ protected function createTestPatient(): mixed
 - **Geo**: Gestione geografica
 
 ### Moduli Project-Specific (Possono Contenere Hardcoding)
-<<<<<<< HEAD
-- **<nome progetto>**: Specifico per progetti sanitari
-- **DentalPro**: Specifico per studi dentistici
-- **<nome modulo>**: Variante regionale
-=======
-- **SaluteOra**: Specifico per progetti sanitari
-- **DentalPro**: Specifico per studi dentistici
-- **SaluteMo**: Variante regionale
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Checklist per Moduli Riutilizzabili
 
@@ -186,62 +168,7 @@ REUSABLE_MODULES=("Notify" "User" "Xot" "UI" "Cms" "Blog" "Geo")
 
 for module in "${REUSABLE_MODULES[@]}"; do
     echo "Controllo modulo $module..."
-<<<<<<< HEAD
-    grep -r -i "<nome progetto>\|<nome modulo>\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
-=======
-    grep -r -i "saluteora\|salutemo\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
->>>>>>> be08416 (.)
-done
-```
-
-### Controlli Specifici
-```bash
-# Cerca import diretti da progetti specifici
-grep -r "use Modules\\\\[^N][^o][^t][^i][^f][^y]" Modules/Notify/ --include="*.php"
-
-# Cerca configurazioni database hardcoded
-<<<<<<< HEAD
-grep -r "database.*<nome progetto>\|app.*<nome progetto>" Modules/Notify/ --include="*.php"
-=======
-grep -r "database.*saluteora\|app.*saluteora" Modules/Notify/ --include="*.php"
->>>>>>> be08416 (.)
-
-# Cerca riferimenti User hardcoded
-grep -r "User::" Modules/Notify/ --include="*.php" | grep -v "XotData"
-```
-
-## Benefici della Riusabilità
-
-1. **Portabilità**: Moduli utilizzabili in qualsiasi progetto Laraxot
-2. **Manutenibilità**: Un solo codebase per tutti i progetti
-3. **Coerenza**: Comportamento uniforme tra progetti
-4. **Efficienza**: Evita duplicazione di codice
-5. **Scalabilità**: Facilita l'aggiunta di nuovi progetti
-6. **Testing**: Test più robusti e generici
-7. **Deployment**: Semplifica il deployment multi-progetto
-
-## Eccezioni e Casi Particolari
-
-### Quando è Accettabile l'Hardcoding
-- **Moduli project-specific**: Moduli dedicati a un singolo progetto
-- **Configurazioni di esempio**: Nei file di documentazione come esempi
-- **Test di integrazione**: Quando si testa l'integrazione con un progetto specifico
-
-### Gestione delle Eccezioni
-```php
-// Documentare chiaramente le eccezioni
-/**
-<<<<<<< HEAD
- * NOTA: Questo modulo è specifico per <nome progetto>
- * e può contenere riferimenti hardcoded al progetto.
- */
-class <nome progetto>SpecificService
-=======
- * NOTA: Questo modulo è specifico per SaluteOra
- * e può contenere riferimenti hardcoded al progetto.
- */
-class SaluteOraSpecificService
->>>>>>> be08416 (.)
+{nome-progetto}
 {
     // Implementazione project-specific...
 }

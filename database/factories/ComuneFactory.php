@@ -146,11 +146,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a comune in Lombardia region.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function lombardia(): static
     {
@@ -178,11 +173,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a comune in Emilia-Romagna region.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function emiliaRomagna(): static
     {
@@ -215,11 +205,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a small comune (under 5000 inhabitants).
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function small(): static
     {
@@ -231,11 +216,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a large comune (over 100000 inhabitants).
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function large(): static
     {
@@ -247,11 +227,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a mountain comune.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function mountain(): static
     {
@@ -264,11 +239,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a coastal comune.
-<<<<<<< HEAD
-=======
-     *
-     * @return static
->>>>>>> be08416 (.)
      */
     public function coastal(): static
     {
@@ -281,22 +251,11 @@ class ComuneFactory extends Factory
 
     /**
      * Create a specific comune by name.
-<<<<<<< HEAD
-=======
-     *
-     * @param string $name
-     * @return static
->>>>>>> be08416 (.)
      */
     public function named(string $name): static
     {
         return $this->state(fn (array $attributes) => array_merge($attributes, [
-<<<<<<< HEAD
             'nome' => $name,
         ]));
-=======
-                'nome' => $name,
-            ]));
->>>>>>> be08416 (.)
     }
 }

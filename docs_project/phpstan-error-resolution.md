@@ -26,11 +26,7 @@ Risolti sistematicamente 9 errori PHPStan critici attraverso l'analisi del codic
 
 1. **Chart** - Gestione dati grafici e configurazioni ✅ **NUOVO**
 2. **Job** - Azioni per frequenze task
-<<<<<<< HEAD
-3. **<nome progetto>** - Stati appuntamenti medici
-=======
-3. **SaluteOra** - Stati appuntamenti medici
->>>>>>> be08416 (.)
+{nome-progetto}
 4. **User** - Comandi console per gestione utenti
 5. **Xot** - Trait e servizi base del framework
 

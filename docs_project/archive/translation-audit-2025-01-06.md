@@ -2,11 +2,7 @@
 
 ## Executive Summary
 
-<<<<<<< HEAD
-Comprehensive translation audit conducted on <nome progetto> project, focusing on the User module's LoginWidget component. Identified and resolved missing translation files that were causing potential runtime errors.
-=======
-Comprehensive translation audit conducted on SaluteOra project, focusing on the User module's LoginWidget component. Identified and resolved missing translation files that were causing potential runtime errors.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Key Findings
 

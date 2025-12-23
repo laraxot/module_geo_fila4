@@ -1,11 +1,7 @@
 # Architettura Homepage - Panoramica Sistema
 
 ## Panoramica
-<<<<<<< HEAD
-Il sistema <nome progetto> implementa un'architettura moderna per la gestione della homepage basata su Filament Blocks, Laravel Folio e Livewire Volt, con separazione chiara delle responsabilità tra moduli.
-=======
-Il sistema SaluteOra implementa un'architettura moderna per la gestione della homepage basata su Filament Blocks, Laravel Folio e Livewire Volt, con separazione chiara delle responsabilità tra moduli.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Architettura Generale
 
@@ -17,11 +13,7 @@ Il sistema SaluteOra implementa un'architettura moderna per la gestione della ho
 - **JSON Storage**: Contenuti dinamici
 
 ### Moduli Coinvolti
-<<<<<<< HEAD
-1. **<nome progetto>**: Modulo principale, logica business
-=======
-1. **SaluteOra**: Modulo principale, logica business
->>>>>>> be08416 (.)
+{nome-progetto}
 2. **CMS**: Gestione contenuti e blocchi
 3. **UI**: Componenti blocchi riutilizzabili
 4. **User**: Autenticazione e gestione utenti
@@ -38,69 +30,7 @@ Il sistema SaluteOra implementa un'architettura moderna per la gestione della ho
 - Routing Folio per rotta `/`
 
 ### Contenuto JSON
-<<<<<<< HEAD
-**Percorso**: `/laravel/config/local/<nome progetto>/database/content/pages/home.json`
-=======
-**Percorso**: `/laravel/config/local/saluteora/database/content/pages/home.json`
->>>>>>> be08416 (.)
-
-**Struttura**:
-- Titoli multilingua
-- Blocchi contenuto dinamici
-- Configurazioni UI/UX
-- Metadati e tracking
-
-## Flusso di Rendering
-
-### 1. Routing (Laravel Folio)
-```
-GET / → Folio → index.blade.php
-```
-
-### 2. Template Rendering
-```blade
-<x-layouts.app>
-    @volt('home')
-        <x-page side="content" slug="home" :type="auth()->user()?->type?->value" />
-    @endvolt
-</x-layouts.app>
-```
-
-### 3. Content Loading
-- Componente `<x-page>` carica contenuto JSON
-- Parsing blocchi e configurazioni
-- Rendering blocchi tramite view specifiche
-
-### 4. Block Rendering
-- Ogni blocco ha view dedicata
-- Supporto multilingua
-- Responsive design
-- Performance ottimizzate
-
-## Sistema Filament Blocks
-
-### Architettura Blocchi
-- **Auto-Discovery**: Scan automatico moduli
-- **Context Support**: Form, display, preview
-- **Validation**: Regole business integrate
-- **Localization**: Supporto multilingua completo
-
-### Tipi Blocchi Disponibili
-- **Hero**: Sezioni principali con CTA
-- **Content**: Testi e formattazione
-- **Media**: Immagini, video, gallerie
-- **Navigation**: Menu e breadcrumb
-- **Forms**: Contatti e interazioni
-
-## Responsabilità Moduli
-
-<<<<<<< HEAD
-### Modulo <nome progetto>
-- **Business Logic**: Regole specifiche <slogan>
-=======
-### Modulo SaluteOra
-- **Business Logic**: Regole specifiche salute orale
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Frontend Integration**: Coordinamento componenti
 - **Performance**: Ottimizzazioni frontend
 - **SEO**: Meta tags e struttura semantica
@@ -119,11 +49,7 @@ GET / → Folio → index.blade.php
 
 ## Testing Strategy
 
-<<<<<<< HEAD
-### Test <nome progetto> (Frontend)
-=======
-### Test SaluteOra (Frontend)
->>>>>>> be08416 (.)
+{nome-progetto}
 - Rendering homepage
 - Integrazione componenti
 - Business logic
@@ -182,11 +108,7 @@ GET / → Folio → index.blade.php
 - Monitoring performance
 
 ## Collegamenti
-<<<<<<< HEAD
-- [Modulo <nome progetto>](laravel/Modules/<nome progetto>/docs/homepage-architecture.md)
-=======
-- [Modulo SaluteOra](laravel/Modules/SaluteOra/docs/homepage-architecture.md)
->>>>>>> be08416 (.)
+{nome-progetto}
 - [Modulo CMS](laravel/Modules/Cms/docs/filament-blocks-system.md)
 - [Modulo UI](laravel/Modules/UI/docs/blocks-system.md)
 - [Tema One](laravel/Themes/One/docs/homepage-structure.md)

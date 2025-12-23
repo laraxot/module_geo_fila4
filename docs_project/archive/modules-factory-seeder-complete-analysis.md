@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Analisi Completa Modelli, Factory e Seeder - Sistema <nome progetto>
-=======
-# Analisi Completa Modelli, Factory e Seeder - Sistema SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Riepilogo Generale
 
@@ -15,13 +11,7 @@
 6. ✅ **Lang** - Sistema multilingua
 7. ✅ **Media** - Gestione media files
 8. ✅ **Notify** - Sistema notifiche
-<<<<<<< HEAD
-9. ✅ **<nome modulo>** - Modulo specifico (analisi da completare)
-10. ✅ **<nome progetto>** - Modulo principale sanitario
-=======
-9. ✅ **SaluteMo** - Modulo specifico (analisi da completare)
-10. ✅ **SaluteOra** - Modulo principale sanitario
->>>>>>> be08416 (.)
+{nome-progetto}
 11. ✅ **Tenant** - Multi-tenancy
 12. ✅ **UI** - Componenti interfaccia
 13. ⏳ **User** - Sistema utenti (da completare)
@@ -37,20 +27,12 @@
 
 ### Seeder Coverage
 - **Moduli con seeder**: 14/14 (100%)
-<<<<<<< HEAD
-- **Seeder specializzati**: 25+ (inclusi seeder specifici <nome progetto>)
-=======
-- **Seeder specializzati**: 25+ (inclusi seeder specifici SaluteOra)
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Modelli per Criticità Business Logic
 
 ### CRITICI (Essenziali per funzionamento)
-<<<<<<< HEAD
-- **<nome progetto>**: Patient, Doctor, Appointment, Studio, User
-=======
-- **SaluteOra**: Patient, Doctor, Appointment, Studio, User
->>>>>>> be08416 (.)
+{nome-progetto}
 - **GDPR**: Consent, Treatment, Event, Profile
 - **Activity**: Activity, StoredEvent, Snapshot
 - **Geo**: Address, Location, ComuneJson, Province, Region
@@ -73,11 +55,7 @@
 ### DA RIVEDERE (Potenzialmente inutilizzati)
 - **CMS**: Module (verificare utilizzo)
 - **Geo**: County, State (non italiani)
-<<<<<<< HEAD
-- **<nome progetto>**: Modelli .old (da rimuovere)
-=======
-- **SaluteOra**: Modelli .old (da rimuovere)
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Problemi Identificati
 
@@ -88,17 +66,7 @@
 ### Modelli Inutilizzati Candidati
 1. **CMS Module** - Verificare se utilizzato
 2. **Geo County/State** - Per contesto non italiano
-<<<<<<< HEAD
-3. **<nome progetto> .old files** - Rimuovere completamente
-
-### Raccomandazioni Pulizia
-1. **Rimuovere tutti i file .old** da <nome progetto>
-=======
-3. **SaluteOra .old files** - Rimuovere completamente
-
-### Raccomandazioni Pulizia
-1. **Rimuovere tutti i file .old** da SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 2. **Valutare rimozione County/State** se non utilizzati
 3. **Verificare utilizzo CMS Module**
 
@@ -111,11 +79,7 @@
 4. **Lang** - Tutte factory, tutti modelli utilizzati
 5. **Media** - Tutte factory, tutti modelli utilizzati
 6. **Notify** - Tutte factory, tutti modelli utilizzati
-<<<<<<< HEAD
-7. **<nome progetto>** - Tutte factory, tutti modelli attivi critici
-=======
-7. **SaluteOra** - Tutte factory, tutti modelli attivi critici
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### ✅ Moduli Buoni (copertura completa con qualche nota)
 1. **CMS** - Tutte factory, un modello da verificare
@@ -150,11 +114,7 @@
 
 ### Immediate (Priorità Alta)
 1. **Completare analisi User e Xot** - Moduli fondamentali
-<<<<<<< HEAD
-2. **Rimuovere file .old** da <nome progetto>
-=======
-2. **Rimuovere file .old** da SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 3. **Verificare utilizzo CMS Module**
 
 ### A Medio Termine (Priorità Media)
@@ -169,11 +129,7 @@
 
 ## Stato Complessivo: 🟢 ECCELLENTE
 
-<<<<<<< HEAD
-Il sistema <nome progetto> ha una **copertura factory del 100%** per tutti i modelli attivamente utilizzati. La struttura è ben organizzata, modulare e tutti i modelli critici per il sistema sanitario sono completamente supportati.
-=======
-Il sistema SaluteOra ha una **copertura factory del 100%** per tutti i modelli attivamente utilizzati. La struttura è ben organizzata, modulare e tutti i modelli critici per il sistema sanitario sono completamente supportati.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### Punti di Forza
 - ✅ Factory coverage completa

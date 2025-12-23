@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Architettura di Testing - <nome progetto>
-
-## Panoramica
-
-Questo documento descrive l'architettura di testing del progetto <nome progetto>, basata su Pest PHP e organizzata in moduli Laravel indipendenti.
-=======
-# Architettura di Testing - SaluteOra
-
-## Panoramica
-
-Questo documento descrive l'architettura di testing del progetto SaluteOra, basata su Pest PHP e organizzata in moduli Laravel indipendenti.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Principi Fondamentali
 
@@ -39,86 +27,7 @@ Modules/Geo/tests/Feature/AddressIntegrationTest.php
 - **Approccio**: In-memory con oggetti plain PHP
 - **Focus**: Relazioni polimorfiche, geolocalizzazione, Google Places API
 
-<<<<<<< HEAD
-### Modulo <nome modulo>
-```
-Modules/<nome modulo>/tests/Feature/AppointmentValidationTest.php
-Modules/<nome modulo>/tests/Feature/DashboardBusinessLogicTest.php
-=======
-### Modulo SaluteMo
-```
-Modules/SaluteMo/tests/Feature/AppointmentValidationTest.php
-Modules/SaluteMo/tests/Feature/DashboardBusinessLogicTest.php
->>>>>>> be08416 (.)
-```
-- **Scopo**: Validazione appuntamenti e logica dashboard
-- **Approccio**: Test di business logic con oggetti mock
-- **Focus**: Regole di scheduling, permessi utente, integrità dati
-
-### Configurazione Pest
-```
-tests/Pest.php
-```
-- **Scopo**: Configurazione globale per tutti i test
-- **Funzionalità**: Helper functions, configurazione database, factory resolution
-- **Integrazione**: Supporto per moduli multipli e connessioni database
-
-## Pattern di Testing
-
-### 1. **Test In-Memory**
-```php
-// Utilizzo di oggetti plain PHP per test isolati
-$patient = (object) ['id' => 1001, 'type' => 'patient'];
-$address = makeAddress([
-    'model_type' => 'patient',
-    'model_id' => $patient->id,
-]);
-```
-
-### 2. **Validazione Enum**
-```php
-// Utilizzo di enum per type safety
-expect($user->type)->toBe(UserTypeEnum::DOCTOR->value);
-expect($address->type)->toBe(AddressTypeEnum::HOME->value);
-```
-
-### 3. **Test di Business Logic**
-```php
-// Validazione di regole aziendali
-$startTime = strtotime($appointment->start_time);
-$endTime = strtotime($appointment->end_time);
-$calculatedDuration = ($endTime - $startTime) / 60;
-
-expect($calculatedDuration)->toBe($appointment->duration);
-```
-
-## Best Practices
-
-### 1. **Isolamento dei Test**
-- Ogni test deve essere indipendente
-- Utilizzo di oggetti mock per dipendenze esterne
-- Evitare accesso al database nei unit test
-
-### 2. **Naming Convention**
-- Nomi descrittivi per test e describe blocks
-- Organizzazione logica per gruppi di test
-- Documentazione chiara del comportamento testato
-
-### 3. **Gestione Errori**
-- Test di edge cases e scenari di errore
-- Validazione di messaggi di errore appropriati
-- Test di fallback e comportamenti di default
-
-## Configurazione Database
-
-### Connessioni Multiple
-- **sqlite**: Database principale per test
-- **user**: Connessione specifica per modulo User
-<<<<<<< HEAD
-- **salute_ora**: Connessione per modulo <nome progetto>
-=======
-- **salute_ora**: Connessione per modulo SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 - **geo**: Connessione per modulo Geo
 
 ### Migrazioni
@@ -155,11 +64,7 @@ php artisan test
 
 # Test specifici per modulo
 php artisan test --filter=Geo
-<<<<<<< HEAD
-php artisan test --filter=<nome modulo>
-=======
-php artisan test --filter=SaluteMo
->>>>>>> be08416 (.)
+{nome-modulo}
 
 # Test specifici per file
 php artisan test tests/Feature/AddressIntegrationTest.php
@@ -192,15 +97,7 @@ php artisan test --filter="validates user types"
 ## Collegamenti
 
 - [Modulo Geo Testing](../../laravel/Modules/Geo/docs/testing.md)
-<<<<<<< HEAD
-- [Modulo <nome modulo> Testing](../../laravel/Modules/<nome modulo>/docs/testing.md)
-- [Best Practices Testing](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
-- [Common Testing Errors](../../laravel/Modules/<nome modulo>/docs/common-testing-errors.md)
-=======
-- [Modulo SaluteMo Testing](../../laravel/Modules/SaluteMo/docs/testing.md)
-- [Best Practices Testing](../../laravel/Modules/SaluteMo/docs/testing-best-practices.md)
-- [Common Testing Errors](../../laravel/Modules/SaluteMo/docs/common-testing-errors.md)
->>>>>>> be08416 (.)
+{nome-modulo}
 
 ---
 

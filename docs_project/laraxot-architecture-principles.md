@@ -78,8 +78,4 @@ laravel/.ai/guidelines/
 ---
 **Ultimo aggiornamento**: Dicembre 2024  
 **Versione**: 1.0  
-<<<<<<< HEAD
-**Compatibilità**: Laraxot <nome progetto>, Architecture Principles
-=======
-**Compatibilità**: Laraxot SaluteOra, Architecture Principles
->>>>>>> be08416 (.)
+{nome-progetto}

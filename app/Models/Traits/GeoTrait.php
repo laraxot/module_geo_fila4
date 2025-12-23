@@ -6,13 +6,10 @@ namespace Modules\Geo\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-use Modules\Geo\Datas\GeoData;
-use Modules\Geo\Services\GeoService;
-
 // --- models ---
-use function Safe\json_decode;
+use Modules\Geo\Datas\GeoData;
 // ---- services --
-use function Safe\json_encode;
+use Modules\Geo\Services\GeoService;
 
 /**
  * Modules\Geo\Models\Traits\GeoTrait.

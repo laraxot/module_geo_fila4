@@ -20,17 +20,6 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @mixin \Eloquent
  */
-/**
- * @property \Modules\Fixcity\Models\Profile|null $creator
- * @property \Modules\Fixcity\Models\Profile|null $updater
- *
- * @method static \Modules\Geo\Database\Factories\CountyFactory factory($count = null, $state = [])
- * @method static Builder<static>|County                        newModelQuery()
- * @method static Builder<static>|County                        newQuery()
- * @method static Builder<static>|County                        query()
- *
- * @mixin \Eloquent
- */
 class County extends BaseModel
 {
     protected $fillable = [

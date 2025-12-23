@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# Strategia di Testing per i Moduli <nome progetto>
-
-## Introduzione
-
-Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto <nome progetto>, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
-=======
-# Strategia di Testing per i Moduli SaluteOra
-
-## Introduzione
-
-Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto SaluteOra, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## Principi Fondamentali
 
@@ -28,13 +16,7 @@ Seguendo il pattern implementato nei test di autenticazione esistenti:
 - **UI**: Componenti UI condivisi, temi, layout
 
 #### Moduli Business (Dominio)
-<<<<<<< HEAD
-- **<nome progetto>**: Gestione pazienti, appuntamenti, stati
-- **<nome modulo>**: Gestione pazienti specifici per Modena
-=======
-- **SaluteOra**: Gestione pazienti, appuntamenti, stati
-- **SaluteMo**: Gestione pazienti specifici per Modena
->>>>>>> be08416 (.)
+{nome-progetto}
 
 #### Moduli Utility (Supporto)
 - **Cms**: Gestione contenuti
@@ -113,11 +95,7 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Moduli Business
 
-<<<<<<< HEAD
-#### Modulo <nome progetto>
-=======
-#### Modulo SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 **Focus**: Gestione pazienti, appuntamenti, stati, calendario
 - **Unit Tests**: 
   - Models: Patient, Doctor, Appointment, Studio
@@ -137,19 +115,7 @@ tests/Feature/Modules/{ModuleName}/
   - Doctor availability management
   - Patient dashboard navigation
 
-<<<<<<< HEAD
-#### Modulo <nome modulo>
-**Focus**: Estensioni specifiche per Modena
-- **Unit Tests**: Modelli specifici, business logic locale
-- **Feature Tests**: Funzionalità specifiche di Modena
-- **Integration Tests**: Integrazione con <nome progetto>
-=======
-#### Modulo SaluteMo
-**Focus**: Estensioni specifiche per Modena
-- **Unit Tests**: Modelli specifici, business logic locale
-- **Feature Tests**: Funzionalità specifiche di Modena
-- **Integration Tests**: Integrazione con SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### Moduli Utility
 
@@ -175,11 +141,7 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Pattern 1: Test Models con Relazioni Cross-Database
 ```php
-<<<<<<< HEAD
-// Per DoctorStudio (<nome progetto>)
-=======
-// Per DoctorStudio (SaluteOra)
->>>>>>> be08416 (.)
+{nome-progetto}
 test('doctor studio pivot model manages cross-database relations', function () {
     $doctor = Doctor::factory()->create();
     $studio = Studio::factory()->create();
@@ -198,11 +160,7 @@ test('doctor studio pivot model manages cross-database relations', function () {
 
 ### Pattern 2: Test Widget Filament con Multi-Tenancy
 ```php
-<<<<<<< HEAD
-// Per DoctorCalendarWidget (<nome progetto>)
-=======
-// Per DoctorCalendarWidget (SaluteOra)
->>>>>>> be08416 (.)
+{nome-progetto}
 test('doctor calendar widget shows only tenant appointments', function () {
     $studio1 = Studio::factory()->create();
     $studio2 = Studio::factory()->create();
@@ -252,134 +210,7 @@ test('appointment states have complete translations in all languages', function 
         foreach ($languages as $lang) {
             app()->setLocale($lang);
             
-<<<<<<< HEAD
-            $label = __("<nome progetto>::states.{$state->value}.label");
-            $description = __("<nome progetto>::states.{$state->value}.description");
-            
-            expect($label)->not->toContain('<nome progetto>::');
-            expect($description)->not->toContain('<nome progetto>::');
-=======
-            $label = __("saluteora::states.{$state->value}.label");
-            $description = __("saluteora::states.{$state->value}.description");
-            
-            expect($label)->not->toContain('saluteora::');
-            expect($description)->not->toContain('saluteora::');
->>>>>>> be08416 (.)
-        }
-    }
-});
-```
-
-## Configurazione Pest per Moduli
-
-### Setup Base
-```php
-// tests/Pest.php - Aggiunta configurazione moduli
-pest()->extend(Tests\TestCase::class)
-    ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
-
-// Helper per testing moduli
-function moduleEnabled(string $module): bool {
-    $moduleStatuses = json_decode(file_get_contents(base_path('modules_statuses.json')), true);
-    return $moduleStatuses[$module] ?? false;
-}
-
-function skipIfModuleDisabled(string $module): void {
-    if (!moduleEnabled($module)) {
-        test()->markTestSkipped("Module {$module} is disabled");
-    }
-}
-```
-
-### TestCase Base per Moduli
-```php
-// tests/ModuleTestCase.php
-abstract class ModuleTestCase extends TestCase
-{
-    protected string $moduleName;
-    
-    protected function setUp(): void
-    {
-        parent::setUp();
-        
-        if (!moduleEnabled($this->moduleName)) {
-            $this->markTestSkipped("Module {$this->moduleName} is disabled");
-        }
-        
-        $this->setupModuleEnvironment();
-    }
-    
-    abstract protected function setupModuleEnvironment(): void;
-}
-```
-
-## Utilities e Helper
-
-### Factory Helper
-```php
-// tests/Helpers/FactoryHelper.php
-class FactoryHelper
-{
-    public static function createUserOfType(UserTypeEnum $type): User
-    {
-        return match($type) {
-            UserTypeEnum::PATIENT => UserFactory::new()->patient()->create(),
-            UserTypeEnum::DOCTOR => UserFactory::new()->doctor()->create(),
-            UserTypeEnum::ADMIN => UserFactory::new()->admin()->create(),
-        };
-    }
-}
-```
-
-### Database Helper
-```php
-// tests/Helpers/DatabaseHelper.php
-class DatabaseHelper
-{
-    public static function assertCrossDatabaseRelation($pivotModel, string $relation1, string $relation2): void
-    {
-        expect($pivotModel->$relation1)->not->toBeNull();
-        expect($pivotModel->$relation2)->not->toBeNull();
-        expect($pivotModel->$relation1->getConnectionName())->not->toBe($pivotModel->$relation2->getConnectionName());
-    }
-}
-```
-
-## Criteri di Qualità
-
-### Coverage Requirements
-- **Unit Tests**: Minimo 90% coverage per models, actions, enums
-- **Feature Tests**: Minimo 80% coverage per controllers, resources
-- **Integration Tests**: Copertura completa delle integrazioni critiche
-
-### Performance Benchmarks
-- **Unit Tests**: < 100ms per test
-- **Feature Tests**: < 500ms per test
-- **Integration Tests**: < 2s per test
-- **Browser Tests**: < 10s per test
-
-### Naming Conventions
-- Test files: `{ClassName}Test.php`
-- Test methods: `test_{what_it_should_do}`
-- Dataset names: snake_case
-- Helper methods: camelCase
-
-## Implementazione Graduale
-
-### Fase 1: Moduli Core (Settimana 1)
-1. Xot - Classi base e configurazioni
-2. User - Autenticazione e autorizzazione
-3. UI - Componenti e temi
-
-### Fase 2: Moduli Business (Settimana 2)
-<<<<<<< HEAD
-1. <nome progetto> - Gestione completa pazienti/appuntamenti
-2. <nome modulo> - Estensioni specifiche Modena
-=======
-1. SaluteOra - Gestione completa pazienti/appuntamenti
-2. SaluteMo - Estensioni specifiche Modena
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ### Fase 3: Moduli Utility (Settimana 3)
 1. Cms, Media, Geo - Gestione contenuti e localizzazione
@@ -408,11 +239,7 @@ class DatabaseHelper
 ## Collegamenti
 
 - [Test Autenticazione Esistenti](../tests/Feature/Auth/) - Pattern di riferimento
-<<<<<<< HEAD
-- [Documentazione Modulo <nome progetto>](../Modules/<nome progetto>/docs/README.md)
-=======
-- [Documentazione Modulo SaluteOra](../Modules/SaluteOra/docs/README.md)
->>>>>>> be08416 (.)
+{nome-progetto}
 - [Documentazione Modulo User](../Modules/User/docs/README.md)
 - [Configurazione Pest](../tests/Pest.php)
 

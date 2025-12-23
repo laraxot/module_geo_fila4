@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-# 🏥 Business Logic Analysis - Progetto <nome progetto>
-
-## 📋 Panoramica del Sistema
-
-<nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
-=======
-# 🏥 Business Logic Analysis - Progetto SaluteOra
-
-## 📋 Panoramica del Sistema
-
-SaluteOra è un sistema completo di gestione sanitaria modulare basato su Laravel, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
->>>>>>> be08416 (.)
+{nome-progetto}
 
 ## 🏗️ Architettura Modulare
 
@@ -21,11 +9,7 @@ SaluteOra è un sistema completo di gestione sanitaria modulare basato su Larave
 - **Componenti**: 50+ classi base, 20+ service provider, 15+ trait
 - **Funzionalità**: Autenticazione, autorizzazione, migrazioni, componenti Filament base
 
-<<<<<<< HEAD
-#### 2. **<nome progetto>** - Modulo Core Sanitario
-=======
-#### 2. **SaluteOra** - Modulo Core Sanitario
->>>>>>> be08416 (.)
+{nome-progetto}
 - **Scopo**: Gestione completa del sistema sanitario
 - **Modelli**: User, Doctor, Patient, Admin, Studio, Appointment, Report
 - **Funzionalità**: Gestione pazienti, appuntamenti, referti medici, stati appuntamenti
@@ -176,22 +160,14 @@ graph TD
 
 1. **Xot** ← Base per tutti gli altri moduli
 2. **User** ← Dipende da Xot per classi base
-<<<<<<< HEAD
-3. **<nome progetto>** ← Dipende da User, Geo, Media
-=======
-3. **SaluteOra** ← Dipende da User, Geo, Media
->>>>>>> be08416 (.)
+{nome-progetto}
 4. **Geo** ← Dipende da Xot per modelli base
 5. **Media** ← Dipende da Xot per gestione file
 6. **UI** ← Dipende da Xot per componenti base
 
 ## 📊 Modelli e Entità
 
-<<<<<<< HEAD
-### Modelli Core <nome progetto>
-=======
-### Modelli Core SaluteOra
->>>>>>> be08416 (.)
+{nome-progetto}
 
 #### User (Utente Base)
 - **Responsabilità**: Gestione autenticazione e profilo base
@@ -393,11 +369,7 @@ Il modulo implementa una strategia di testing ad alte prestazioni:
 
 ```bash
 # Esecuzione test con performance target
-<<<<<<< HEAD
-./vendor/bin/pest Modules/<nome progetto> --coverage
-=======
-./vendor/bin/pest Modules/SaluteOra --coverage
->>>>>>> be08416 (.)
+{nome-progetto}
 
 # Test specifici per business logic
 php artisan test --filter=AppointmentStateTest
@@ -410,11 +382,7 @@ php artisan test --filter=UserTypeValidationTest
 
 ```env
 # Configurazione base
-<<<<<<< HEAD
-APP_NAME="<nome progetto>"
-=======
-APP_NAME="SaluteOra"
->>>>>>> be08416 (.)
+{nome-progetto}
 APP_ENV=production
 APP_DEBUG=false
 
@@ -422,66 +390,7 @@ APP_DEBUG=false
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-<<<<<<< HEAD
-DB_DATABASE=<nome progetto>
-DB_USERNAME=<nome progetto>_user
-=======
-DB_DATABASE=saluteora
-DB_USERNAME=saluteora_user
->>>>>>> be08416 (.)
-DB_PASSWORD=secure_password
-
-# Google Maps API (per modulo Geo)
-GEO_GOOGLE_MAPS_API_KEY=your_api_key_here
-
-# File Storage
-FILESYSTEM_DISK=s3
-AWS_ACCESS_KEY_ID=your_key
-AWS_SECRET_ACCESS_KEY=your_secret
-AWS_DEFAULT_REGION=eu-west-1
-<<<<<<< HEAD
-AWS_BUCKET=<nome progetto>-media
-=======
-AWS_BUCKET=saluteora-media
->>>>>>> be08416 (.)
-```
-
-### Configurazione Cache
-
-```php
-// config/cache.php
-'stores' => [
-    'redis' => [
-        'driver' => 'redis',
-        'connection' => 'cache',
-        'lock_connection' => 'default',
-    ],
-],
-
-// config/queue.php
-'default' => env('QUEUE_CONNECTION', 'redis'),
-'connections' => [
-    'redis' => [
-        'driver' => 'redis',
-        'connection' => 'default',
-        'queue' => env('REDIS_QUEUE', 'default'),
-        'retry_after' => 90,
-        'block_for' => null,
-    ],
-],
-```
-
-## 📚 Documentazione e Manutenzione
-
-### Aggiornamento Documentazione
-
-La documentazione deve essere mantenuta aggiornata in:
-
-<<<<<<< HEAD
-1. **Modulo specifico**: `Modules/<nome progetto>/docs/`
-=======
-1. **Modulo specifico**: `Modules/SaluteOra/docs/`
->>>>>>> be08416 (.)
+{nome-progetto}
 2. **Documentazione root**: `laravel/docs/`
 3. **Regole Cursor**: `.cursor/rules/`
 4. **Regole Windsurf**: `.windsurf/rules/`
