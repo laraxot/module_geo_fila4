@@ -40,11 +40,7 @@ class GeoJsonResource extends ResCollection
         return [
             'type' => 'Feature',
             'properties' => [
-<<<<<<< HEAD
-                'id' => $this->post_type.'-'.$this->post_id,
-=======
                 'id' => $this->post_type . '-' . $this->post_id,
->>>>>>> be08416 (.)
                 // "index"=> 0,
                 'isActive' => true,
                 // "logo"=> "http://placehold.it/32x32",
