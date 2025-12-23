@@ -115,15 +115,15 @@ class LocationMapTableWidget extends MapTableWidget
     protected function getTableHeaderActions(): array
     {
         return [
-            CreateAction::make()->form($this->getFormSchema()),
+            CreateAction::make()->schema($this->getFormSchema()),
         ];
     }
 
     public function getTableActions(): array
     {
         return [
-            Tables\Actions\ViewAction::make()->form($this->getFormSchema()),
-            Tables\Actions\EditAction::make()->form($this->getFormSchema()),
+            Tables\Actions\ViewAction::make()->schema($this->getFormSchema()),
+            Tables\Actions\EditAction::make()->schema($this->getFormSchema()),
             GoToAction::make()->zoom(fn() => 14),
             RadiusAction::make('location'),
         ];

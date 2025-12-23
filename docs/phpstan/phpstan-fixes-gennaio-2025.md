@@ -133,7 +133,7 @@ if (is_array($data)) {
 
 **Comando di Verifica Originale**:
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Services/BaseGeoService.php \
                              Modules/Geo/app/Services/GeoDataService.php \
                              Modules/Geo/database/factories/AddressFactory.php \
@@ -324,7 +324,7 @@ Errori rimanenti sono **fuori scope** dell'issue originale ma rappresentano oppo
 
 ### ✅ Comando Validazione Issue Target
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Services/BaseGeoService.php \
                              Modules/Geo/app/Services/GeoDataService.php \
                              Modules/Geo/database/factories/AddressFactory.php \
@@ -336,7 +336,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 
 ### ✅ **NUOVO**: Comando Validazione Phase 3 - Filament Components
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Filament/Resources/LocationResource.php \
                              Modules/Geo/app/Filament/Widgets/LocationMapTableWidget.php \
                              Modules/Geo/app/Filament/Widgets/LocationMapWidget.php \
@@ -349,7 +349,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 
 ### 📋 Test Completo del Modulo (Scope Esteso)
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo --level=9 --no-progress
 ```
 
@@ -433,7 +433,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 
 ### ✅ **Comando Validazione Phase 4**
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Console/Commands/SushiCommand.php --level=9 --no-progress
 ```
 
@@ -499,7 +499,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 ### ✅ **Comando Validazione Phase 5**
 ```bash
 # Test Cms translation file
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Cms/lang/it/edit_section.php --level=9 --no-progress
 
 # Test DbForge command
@@ -555,7 +555,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 
 ### ✅ **Comando Validazione Phase 2 Supplementary**
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze Modules/Geo/app/Actions/GetCoordinatesByAddressAction.php \
                              Modules/Geo/app/Actions/GoogleMaps/GetAddressFromGoogleMapsAction.php \
                              Modules/Geo/app/Actions/Mapbox/GetAddressFromMapboxLatLngAction.php \
@@ -595,7 +595,7 @@ cd /var/www/html/_bases/base_<nome progetto>/laravel
 
 ### ✅ **Comando Test Finale Completo - Tutte le Fasi**
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd /var/www/html/_bases/base_saluteora/laravel
 ./vendor/bin/phpstan analyze \
     Modules/Geo/app/Services/BaseGeoService.php \
     Modules/Geo/app/Services/GeoDataService.php \

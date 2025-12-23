@@ -73,7 +73,7 @@ Nel file `/Modules/Geo/lang/en/address.php` sono stati trovati campi con `helper
 È stato eseguito un audit automatico su tutti i file di traduzione del progetto per identificare violazioni di questa regola:
 
 ```bash
-cd /var/www/html/_bases/<directory progetto>/laravel
+cd /var/www/html/_bases/<main module>/laravel
 php docs/helper-text-audit-script.php
 ```
 

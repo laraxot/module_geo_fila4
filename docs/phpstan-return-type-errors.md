@@ -66,6 +66,29 @@ public function getFormattedAddressAttribute(): string
 }
 ```
 
+## Correzione Effettuata
+
+I metodi seguenti sono stati aggiornati con le correzioni appropriate:
+
+### Place Model
+- `getFormattedAddressAttribute()` - Corretto utilizzando `SafeStringCastAction`
+
+### Address Model
+- `getFormattedAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+- `getFullAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+- `getStreetAddressAttribute()` - Aggiunti controlli di tipo espliciti per tutti gli attributi
+
+### Employee Model
+- `getStatusLabelAttribute()` - Aggiunto controllo di tipo esplicito per l'attributo status
+
+## Risultato
+
+Dopo le correzioni:
+- Nessun errore PHPStan per i metodi menzionati
+- Comportamento funzionale mantenuto
+- Sicurezza dei tipi migliorata
+- Conformità alle best practices del progetto
+
 ## Pattern di Correzione per Place Model
 
 ### Analisi del Metodo
@@ -246,13 +269,13 @@ grep -n "Attribute.*string" Modules/*/Models/*.php | grep -v "SafeStringCastActi
 
 ## Riferimenti
 
-- [Laravel Accessors & Mutators](https://laravel.com/docs/eloquent-mutators)
+- [Laravel Accessors & Mutators](https://laravel.com/project_docs/eloquent-mutators)
 - [PHPStan Return Types](https://phpstan.org/writing-php-code/phpdoc-types#return-types)
-- [Safe Casting Actions](../../Xot/docs/safe-casting-actions.md)
+- [Safe Casting Actions](../../Xot/project_docs/safe-casting-actions.md)
 
 ## Backlink
 
-- [Root PHPStan Rules](../../../docs/phpstan_rules.md)
+- [Root PHPStan Rules](../../../project_docs/phpstan_rules.md)
 - [Geo Module Structure](./structure.md)
 - [Class Not Found Errors](./class_not_found_errors.md)
 

@@ -214,13 +214,13 @@ class Address extends BaseModel
     public function getFullAddressAttribute(): string
     {
         $parts = array_filter([
-            $this->route.($this->street_number ? ' '.$this->street_number : ''),
+            is_string($this->route) && is_string($this->street_number) ? $this->route.('' !== $this->street_number ? ' '.$this->street_number : '') : null,
             $this->locality,
             $this->administrative_area_level_3, // Provincia
             $this->administrative_area_level_2, // Regione
             $this->postal_code,
             $this->country,
-        ]);
+        ], fn ($part) => null !== $part && '' !== $part && is_string($part));
 
         return implode(', ', $parts);
     }
@@ -244,7 +244,13 @@ class Address extends BaseModel
      */
     public function getStreetAddressAttribute(): string
     {
-        return trim(($this->route ?? '').' '.($this->street_number ?? ''));
+        $route = $this->route ?? '';
+        $streetNumber = $this->street_number ?? '';
+        
+        $routeStr = is_string($route) ? $route : '';
+        $streetNumberStr = is_string($streetNumber) ? $streetNumber : '';
+        
+        return trim($routeStr.' '.$streetNumberStr);
     }
 
     /**
@@ -252,7 +258,7 @@ class Address extends BaseModel
      */
     public function getFormattedAddressAttribute(?string $value): ?string
     {
-        if ($value) {
+        if (null !== $value && is_string($value)) {
             return $value;
         }
 
@@ -260,20 +266,25 @@ class Address extends BaseModel
 
         // Indirizzo stradale
         if ($this->route) {
-            $parts[] = $this->getStreetAddressAttribute();
+            $route = $this->route;
+            $streetNumber = $this->street_number;
+            $streetAddress = is_string($route) && is_string($streetNumber) ? trim($route.' '.$streetNumber) : '';
+            if ('' !== $streetAddress) {
+                $parts[] = $streetAddress;
+            }
         }
 
         // Località e provincia (formato italiano)
         $localityParts = [];
-        if ($this->postal_code) {
+        if ($this->postal_code && is_string($this->postal_code)) {
             $localityParts[] = $this->postal_code;
         }
 
-        if ($this->locality) {
+        if ($this->locality && is_string($this->locality)) {
             $localityParts[] = $this->locality;
 
             // Per indirizzi italiani, aggiungiamo la sigla provincia
-            if ('IT' === $this->country && $this->administrative_area_level_3) {
+            if ('IT' === ($this->country ?? '') && $this->administrative_area_level_3 && is_string($this->administrative_area_level_3)) {
                 // Se è un'implementazione reale, potremmo derivare la sigla dalla provincia
                 $provinciaSigla = $this->extra_data['provincia_sigla'] ?? null;
                 if ($provinciaSigla && is_string($provinciaSigla)) {
@@ -287,14 +298,14 @@ class Address extends BaseModel
         }
 
         // Regione
-        if ($this->administrative_area_level_2) {
+        if ($this->administrative_area_level_2 && is_string($this->administrative_area_level_2)) {
             $parts[] = $this->administrative_area_level_2;
         }
 
         // Paese
-        if ($this->country) {
-            $countryName = $this->administrative_area_level_1 ?? $this->country;
-            $parts[] = strtoupper($countryName);
+        if ($this->country && is_string($this->country)) {
+            $countryName = ($this->administrative_area_level_1 ?? $this->country) ?? '';
+            $parts[] = strtoupper(is_string($countryName) ? $countryName : '');
         }
 
         return implode("\n", $parts);
