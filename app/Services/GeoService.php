@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Exception;
-
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 // https://www.geodatasource.com/world-cities-database/free
 // https://mikepolatoglou.com/geospatial-mysql-laravel-53
 // https://github.com/malhal/Laravel-Geographical
@@ -38,15 +30,7 @@ class GeoService
     public static function getInstance(): self
     {
         if (! (self::$_instance instanceof GeoService)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             self::$_instance = new self();
-=======
-            self::$_instance = new self;
->>>>>>> 1bb689f (.)
-=======
-            self::$_instance = new self();
->>>>>>> 0746367 (.)
         }
 
         return self::$_instance;
@@ -114,8 +98,6 @@ class GeoService
         if ($lat1 === $lat2 && $lon1 === $lon2) {
             return 0;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (null === $lat1) {
             return null;
         }
@@ -126,25 +108,6 @@ class GeoService
             return null;
         }
         if (null === $lon2) {
-=======
-        if ($lat1 === null) {
-=======
-        if (null === $lat1) {
->>>>>>> 0746367 (.)
-            return null;
-        }
-        if (null === $lon1) {
-            return null;
-        }
-        if (null === $lat2) {
-            return null;
-        }
-<<<<<<< HEAD
-        if ($lon2 === null) {
->>>>>>> 1bb689f (.)
-=======
-        if (null === $lon2) {
->>>>>>> 0746367 (.)
             return null;
         }
         $theta = $lon1 - $lon2;
@@ -154,15 +117,7 @@ class GeoService
         $dist = acos($dist);
         $dist = rad2deg($dist);
         $miles = $dist * 60 * 1.1515;
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (null === $unit) {
-=======
-        if ($unit === null) {
->>>>>>> 1bb689f (.)
-=======
-        if (null === $unit) {
->>>>>>> 0746367 (.)
             $unit = 'K'; // default
         }
         $unit = strtoupper($unit);
@@ -227,18 +182,8 @@ class GeoService
             $lngJ = is_float($pointJ->lng) || is_int($pointJ->lng) ? (float) $pointJ->lng : 0.0;
 
             if (
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ($latI > $latitude) !== ($latJ > $latitude)
                     && $longitude <
-=======
-                ($latI > $latitude) !== ($latJ > $latitude) &&
-                    $longitude <
->>>>>>> 1bb689f (.)
-=======
-                ($latI > $latitude) !== ($latJ > $latitude)
-                    && $longitude <
->>>>>>> 0746367 (.)
                     (($lngJ - $lngI) * ($latitude - $latI) /
                                 ($latJ - $latI)) +
                         $lngI
@@ -252,29 +197,13 @@ class GeoService
 
     public static function pointInPolygon(float $lat, float $lng, ?string $polygon): bool
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (null === $polygon || '' === $polygon) {
-=======
-        if ($polygon === null || $polygon === '') {
->>>>>>> 1bb689f (.)
-=======
-        if (null === $polygon || '' === $polygon) {
->>>>>>> 0746367 (.)
             return false;
         }
 
         $original_data = json_decode($polygon, true, 512, JSON_THROW_ON_ERROR);
         if (! \is_array($original_data)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             throw new \Exception('['.__LINE__.']['.__FILE__.']');
-=======
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
->>>>>>> 1bb689f (.)
-=======
-            throw new \Exception('['.__LINE__.']['.__FILE__.']');
->>>>>>> 0746367 (.)
         }
 
         if (self::is_in_polygon($lat, $lng, $original_data)) {

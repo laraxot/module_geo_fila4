@@ -5,14 +5,6 @@ declare(strict_types=1);
 namespace Modules\Geo\Services;
 
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Override;
-use Throwable;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
 /**
  * Servizio per le interazioni con l'API di Google Maps.
@@ -28,21 +20,9 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Esegue una richiesta di geocodifica inversa.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @throws GoogleMapsApiException Se la richiesta fallisce
      *
      * @return array<string, mixed>
-=======
-     * @return array<string, mixed>
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
->>>>>>> 1bb689f (.)
-=======
-     * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
-     * @return array<string, mixed>
->>>>>>> 0746367 (.)
      */
     public function reverseGeocode(float $latitude, float $longitude): array
     {
@@ -52,15 +32,7 @@ class GoogleMapsService extends BaseGeoService
                 'key' => $this->getApiKey(),
                 'language' => 'it',
             ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Throwable $e) {
-=======
-        } catch (Throwable $e) {
->>>>>>> 1bb689f (.)
-=======
-        } catch (\Throwable $e) {
->>>>>>> 0746367 (.)
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -68,29 +40,12 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Calcola la matrice delle distanze.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param array<string> $origins      Punti di origine (formato: "lat,lng|lat,lng|...")
      * @param array<string> $destinations Punti di destinazione (formato: "lat,lng|lat,lng|...")
      *
      * @throws GoogleMapsApiException Se la richiesta fallisce
      *
      * @return array<string, mixed>
-=======
-     * @param  array<string>  $origins  Punti di origine (formato: "lat,lng|lat,lng|...")
-     * @param  array<string>  $destinations  Punti di destinazione (formato: "lat,lng|lat,lng|...")
-     * @return array<string, mixed>
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
->>>>>>> 1bb689f (.)
-=======
-     * @param array<string> $origins      Punti di origine (formato: "lat,lng|lat,lng|...")
-     * @param array<string> $destinations Punti di destinazione (formato: "lat,lng|lat,lng|...")
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
-     * @return array<string, mixed>
->>>>>>> 0746367 (.)
      */
     public function getDistanceMatrix(array $origins, array $destinations): array
     {
@@ -102,15 +57,7 @@ class GoogleMapsService extends BaseGeoService
                 'language' => 'it',
                 'units' => 'metric',
             ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Throwable $e) {
-=======
-        } catch (Throwable $e) {
->>>>>>> 1bb689f (.)
-=======
-        } catch (\Throwable $e) {
->>>>>>> 0746367 (.)
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -118,21 +65,9 @@ class GoogleMapsService extends BaseGeoService
     /**
      * Ottiene l'elevazione per un punto.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @throws GoogleMapsApiException Se la richiesta fallisce
      *
      * @return array<string, mixed>
-=======
-     * @return array<string, mixed>
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce
->>>>>>> 1bb689f (.)
-=======
-     * @throws GoogleMapsApiException Se la richiesta fallisce
-     *
-     * @return array<string, mixed>
->>>>>>> 0746367 (.)
      */
     public function getElevation(float $latitude, float $longitude): array
     {
@@ -141,28 +76,12 @@ class GoogleMapsService extends BaseGeoService
                 'locations' => "{$latitude},{$longitude}",
                 'key' => $this->getApiKey(),
             ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Throwable $e) {
-=======
-        } catch (Throwable $e) {
->>>>>>> 1bb689f (.)
-=======
-        } catch (\Throwable $e) {
->>>>>>> 0746367 (.)
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     protected function getServiceName(): string
     {
         return 'google_maps';

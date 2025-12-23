@@ -208,10 +208,6 @@ return [
             'description' => 'Provincia di appartenenza',
             'helper_text' => '',
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
         'fax' => [
             'label' => 'Fax',
             'placeholder' => 'Inserisci il numero di fax',
@@ -254,11 +250,6 @@ return [
             'description' => 'Note aggiuntive',
             'helper_text' => '',
         ],
-<<<<<<< HEAD
-=======
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
     ],
     'columns' => [
         'name' => 'Nome',

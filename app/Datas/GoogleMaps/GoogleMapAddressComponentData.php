@@ -12,35 +12,14 @@ use Spatie\LaravelData\Data;
 class GoogleMapAddressComponentData extends Data
 {
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param string        $long_name  Nome completo del componente
      * @param string        $short_name Nome abbreviato del componente
      * @param array<string> $types      Tipi del componente
-=======
-     * @param  string  $long_name  Nome completo del componente
-     * @param  string  $short_name  Nome abbreviato del componente
-     * @param  array<string>  $types  Tipi del componente
->>>>>>> 1bb689f (.)
-=======
-     * @param string        $long_name  Nome completo del componente
-     * @param string        $short_name Nome abbreviato del componente
-     * @param array<string> $types      Tipi del componente
->>>>>>> 0746367 (.)
      */
     public function __construct(
         public readonly string $long_name,
         public readonly string $short_name,
         public readonly array $types,
-<<<<<<< HEAD
-<<<<<<< HEAD
     ) {
     }
-=======
-    ) {}
->>>>>>> 1bb689f (.)
-=======
-    ) {
-    }
->>>>>>> 0746367 (.)
 }

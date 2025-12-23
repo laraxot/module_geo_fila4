@@ -9,21 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Geo\Contracts\HasGeolocation;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Override;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
 use function Safe\json_encode;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
  * @property Address|null                                $address
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property string                                      $formatted_address
@@ -32,28 +21,11 @@ use function Safe\json_encode;
  * @property Model|\Eloquent                             $linked
  * @property PlaceType|null                              $placeType
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
-<<<<<<< HEAD
-=======
- * @property-read \Modules\Geo\Models\Address|null $address
- * @property-read \Modules\Quaeris\Models\Profile|null $creator
- * @property-read string $formatted_address
- * @property-read float|null $latitude
- * @property-read float|null $longitude
- * @property-read Model|\Eloquent $linked
- * @property-read \Modules\Geo\Models\PlaceType|null $placeType
- * @property-read \Modules\Quaeris\Models\Profile|null $updater
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
  *
  * @method static Builder<static>|Place newModelQuery()
  * @method static Builder<static>|Place newQuery()
  * @method static Builder<static>|Place query()
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
  * @property int                                         $id
  * @property string|null                                 $model_type
  * @property int|null                                    $model_id
@@ -138,11 +110,6 @@ use function Safe\json_encode;
  * @method static Builder<static>|Place                        whereUpdatedAt($value)
  * @method static Builder<static>|Place                        whereUpdatedBy($value)
  *
-<<<<<<< HEAD
-=======
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
  * @mixin \Eloquent
  */
 class Place extends BaseModel implements HasGeolocation
@@ -223,43 +190,19 @@ class Place extends BaseModel implements HasGeolocation
         return $this->belongsTo(Address::class);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     public function getFormattedAddress(): string
     {
         return (string) ($this->formatted_address ?? $this->address->formatted_address ?? '');
@@ -299,32 +242,9 @@ class Place extends BaseModel implements HasGeolocation
 
     public function getFormattedAddressAttribute(): string
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $address = $this->attributes['formatted_address'] ?? null;
-
-        return \Modules\Xot\Actions\Cast\SafeStringCastAction::cast($address);
-    }
-
-    #[\Override]
-    public function hasValidCoordinates(): bool
-    {
-        return null !== $this->latitude
-            && null !== $this->longitude
-            && $this->latitude >= -90
-            && $this->latitude <= 90
-            && $this->longitude >= -180
-            && $this->longitude <= 180;
-    }
-
-    #[\Override]
-=======
         $address = $this->attributes['formatted_address'] ?? '';
-=======
-        $address = $this->attributes['formatted_address'] ?? null;
->>>>>>> 0746367 (.)
 
-        return \Modules\Xot\Actions\Cast\SafeStringCastAction::cast($address);
+        return is_string($address) ? $address : '';
     }
 
     #[\Override]
@@ -338,12 +258,7 @@ class Place extends BaseModel implements HasGeolocation
             && $this->longitude <= 180;
     }
 
-<<<<<<< HEAD
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
     #[\Override]
->>>>>>> 0746367 (.)
     public function getMapIcon(): ?string
     {
         $slug = $this->placeType->slug ?? null;
@@ -367,15 +282,7 @@ class Place extends BaseModel implements HasGeolocation
         return is_string($icon) ? $icon : null;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     public function getLocationType(): ?string
     {
         $name = $this->placeType->name ?? null;
@@ -388,15 +295,7 @@ class Place extends BaseModel implements HasGeolocation
      *
      * @return array<string, string>
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     protected function casts(): array
     {
         return [

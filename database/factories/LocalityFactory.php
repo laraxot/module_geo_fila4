@@ -8,15 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\Locality;
 
 /**
- * <<<<<<< HEAD
- * <<<<<<< HEAD
  * Locality Factory.
- * =======
- * Locality Factory
- * >>>>>>> 1bb689f (.)
- * =======
- * Locality Factory.
- * >>>>>>> 0746367 (.).
  *
  * @extends Factory<Locality>
  */

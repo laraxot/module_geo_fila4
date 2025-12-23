@@ -12,8 +12,6 @@ trait HandlesCoordinates
     /**
      * Valida le coordinate geografiche.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param float|null $latitude  La latitudine da validare
      * @param float|null $longitude La longitudine da validare
      */
@@ -25,54 +23,15 @@ trait HandlesCoordinates
             && $latitude <= 90
             && $longitude >= -180
             && $longitude <= 180;
-=======
-     * @param  float|null  $latitude  La latitudine da validare
-     * @param  float|null  $longitude  La longitudine da validare
-     */
-    protected function areValidCoordinates(?float $latitude, ?float $longitude): bool
-    {
-        return $latitude !== null &&
-            $longitude !== null &&
-            $latitude >= -90 &&
-            $latitude <= 90 &&
-            $longitude >= -180 &&
-            $longitude <= 180;
->>>>>>> 1bb689f (.)
-=======
-     * @param float|null $latitude  La latitudine da validare
-     * @param float|null $longitude La longitudine da validare
-     */
-    protected function areValidCoordinates(?float $latitude, ?float $longitude): bool
-    {
-        return null !== $latitude
-            && null !== $longitude
-            && $latitude >= -90
-            && $latitude <= 90
-            && $longitude >= -180
-            && $longitude <= 180;
->>>>>>> 0746367 (.)
     }
 
     /**
      * Calcola la distanza tra due punti in chilometri.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
      * @param float $lat1 Latitudine del primo punto
      * @param float $lon1 Longitudine del primo punto
      * @param float $lat2 Latitudine del secondo punto
      * @param float $lon2 Longitudine del secondo punto
-<<<<<<< HEAD
-=======
-     * @param  float  $lat1  Latitudine del primo punto
-     * @param  float  $lon1  Longitudine del primo punto
-     * @param  float  $lat2  Latitudine del secondo punto
-     * @param  float  $lon2  Longitudine del secondo punto
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
      */
     protected function calculateDistance(float $lat1, float $lon1, float $lat2, float $lon2): float
     {
@@ -93,21 +52,9 @@ trait HandlesCoordinates
     /**
      * Formatta le coordinate in una stringa leggibile.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param float $latitude  La latitudine da formattare
      * @param float $longitude La longitudine da formattare
      * @param int   $decimals  Il numero di decimali da mostrare
-=======
-     * @param  float  $latitude  La latitudine da formattare
-     * @param  float  $longitude  La longitudine da formattare
-     * @param  int  $decimals  Il numero di decimali da mostrare
->>>>>>> 1bb689f (.)
-=======
-     * @param float $latitude  La latitudine da formattare
-     * @param float $longitude La longitudine da formattare
-     * @param int   $decimals  Il numero di decimali da mostrare
->>>>>>> 0746367 (.)
      */
     protected function formatCoordinates(float $latitude, float $longitude, int $decimals = 6): string
     {

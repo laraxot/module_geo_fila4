@@ -11,13 +11,6 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Modules\Geo\Filament\Resources\LocationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Override;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
 class ViewLocation extends XotBaseViewRecord
 {
@@ -33,15 +26,7 @@ class ViewLocation extends XotBaseViewRecord
     /**
      * @return array<int, Component>
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     protected function getInfolistSchema(): array
     {
         return [

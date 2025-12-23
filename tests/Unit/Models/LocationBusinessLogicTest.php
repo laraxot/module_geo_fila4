@@ -25,15 +25,7 @@ describe('Location Business Logic', function () {
     });
 
     test('location has geographic coordinate properties', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $location = new Location();
-=======
-        $location = new Location;
->>>>>>> 1bb689f (.)
-=======
-        $location = new Location();
->>>>>>> 0746367 (.)
         $location->lat = 45.4642;
         $location->lng = 9.1900;
 
@@ -42,15 +34,7 @@ describe('Location Business Logic', function () {
     });
 
     test('location can store address components', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $location = new Location();
-=======
-        $location = new Location;
->>>>>>> 1bb689f (.)
-=======
-        $location = new Location();
->>>>>>> 0746367 (.)
         $location->street = 'Via Roma 123';
         $location->city = 'Milano';
         $location->state = 'Lombardia';
@@ -63,30 +47,14 @@ describe('Location Business Logic', function () {
     });
 
     test('location has processing status tracking', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $location = new Location();
-=======
-        $location = new Location;
->>>>>>> 1bb689f (.)
-=======
-        $location = new Location();
->>>>>>> 0746367 (.)
         $location->processed = true;
 
         expect($location->processed)->toBe(true);
     });
 
     test('location can store formatted address', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $location = new Location();
-=======
-        $location = new Location;
->>>>>>> 1bb689f (.)
-=======
-        $location = new Location();
->>>>>>> 0746367 (.)
         $location->formatted_address = 'Via Roma 123, 20121 Milano MI, Italy';
 
         expect($location->formatted_address)->toBe('Via Roma 123, 20121 Milano MI, Italy');

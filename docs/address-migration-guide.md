@@ -7,34 +7,15 @@ Quando progettiamo la tabella per il modello `Address`, è importante considerar
 ### Migrazione Proposta
 
 ```php
-<<<<<<< HEAD
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-use Modules\Geo\Enums\AddressItemEnum;
-
-public function up(): void
-{
-    Schema::create('addresses', function (Blueprint $table): void {
-=======
 public function up(): void
 {
     Schema::create('addresses', function (Blueprint $table) {
->>>>>>> 1bb689f (.)
         $table->id();
         $table->nullableMorphs('addressable'); // Relazione polimorfica
         $table->string('name')->nullable()->comment('Nome identificativo dell\'indirizzo');
         $table->text('description')->nullable()->comment('Descrizione dell\'indirizzo');
         $table->string('type', 20)->nullable()->comment('Tipo di indirizzo (casa, lavoro, ecc.)');
         $table->boolean('is_primary')->default(false)->comment('Indica se è l\'indirizzo principale');
-<<<<<<< HEAD
-
-        // Tutti i componenti dell'indirizzo definiti da AddressItemEnum (route, locality, ...)
-        AddressItemEnum::columns($table);
-
-        // Dati aggiuntivi
-        $table->json('extra_data')->nullable()->comment('Dati aggiuntivi in formato JSON');
-
-=======
         
         // Componenti dell'indirizzo
         $table->string('street_number', 20)->nullable()->comment('Numero civico');
@@ -55,30 +36,12 @@ public function up(): void
         // Dati aggiuntivi
         $table->json('extra_data')->nullable()->comment('Dati aggiuntivi in formato JSON');
         
->>>>>>> 1bb689f (.)
         // Timestamp standard
         $table->timestamps();
     });
 }
 ```
 
-<<<<<<< HEAD
-Per rollback o refactor, è possibile usare:
-
-```php
-Schema::table('addresses', function (Blueprint $table): void {
-    AddressItemEnum::dropColumns($table);
-});
-```
-
-e ottenere la lista delle colonne standard (utile per select dinamiche, validazioni, DTO, ecc.) con:
-
-```php
-$columns = AddressItemEnum::getColumnNames();
-```
-
-=======
->>>>>>> 1bb689f (.)
 ## Convenzioni di Naming
 
 ### Perché Evitare il Prefisso "address_" nei Campi?

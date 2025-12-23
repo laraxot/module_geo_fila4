@@ -44,15 +44,7 @@ class LocationMapWidget extends Widget
      */
     public function getPlaces(): Collection
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         /* @var Collection<int, Place> */
-=======
-        /** @var Collection<int, Place> */
->>>>>>> 1bb689f (.)
-=======
-        /* @var Collection<int, Place> */
->>>>>>> 0746367 (.)
         return Place::with(['placeType'])->get();
     }
 
@@ -68,15 +60,7 @@ class LocationMapWidget extends Widget
     public function getMarkers(): array
     {
         return $this->getPlaces()
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->filter(fn (Place $place) => null !== $place->latitude && null !== $place->longitude)
-=======
-            ->filter(fn (Place $place) => $place->latitude !== null && $place->longitude !== null)
->>>>>>> 1bb689f (.)
-=======
-            ->filter(fn (Place $place) => null !== $place->latitude && null !== $place->longitude)
->>>>>>> 0746367 (.)
             ->map(function (Place $place): array {
                 $marker = [
                     'position' => [
@@ -87,15 +71,7 @@ class LocationMapWidget extends Widget
                 ];
 
                 $icon = $this->getMarkerIcon($place);
-<<<<<<< HEAD
-<<<<<<< HEAD
                 if (null !== $icon) {
-=======
-                if ($icon !== null) {
->>>>>>> 1bb689f (.)
-=======
-                if (null !== $icon) {
->>>>>>> 0746367 (.)
                     $marker['icon'] = $icon;
                 }
 

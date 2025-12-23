@@ -21,17 +21,8 @@ class TravelTimeData extends Data
         public readonly string $formatted_duration,
         public readonly string $formatted_distance,
         public readonly string $status = 'OK',
-<<<<<<< HEAD
-<<<<<<< HEAD
     ) {
     }
-=======
-    ) {}
->>>>>>> 1bb689f (.)
-=======
-    ) {
-    }
->>>>>>> 0746367 (.)
 
     /**
      * Crea un'istanza di errore.
@@ -69,15 +60,7 @@ class TravelTimeData extends Data
      */
     public static function fromGoogleResponse(array $response): self
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if ('OK' !== $response['status']) {
-=======
-        if ($response['status'] !== 'OK') {
->>>>>>> 1bb689f (.)
-=======
-        if ('OK' !== $response['status']) {
->>>>>>> 0746367 (.)
             return self::error($response['status']);
         }
 

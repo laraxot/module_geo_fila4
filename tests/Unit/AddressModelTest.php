@@ -20,15 +20,7 @@ describe('Address Model', function () {
     });
 
     it('has correct fillable attributes', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $address = new Address();
-=======
-        $address = new Address;
->>>>>>> 1bb689f (.)
-=======
-        $address = new Address();
->>>>>>> 0746367 (.)
 
         expect($address->getFillable())->toContain([
             'model_type',
@@ -54,15 +46,7 @@ describe('Address Model', function () {
     });
 
     it('implements HasGeolocation contract', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $address = new Address();
-=======
-        $address = new Address;
->>>>>>> 1bb689f (.)
-=======
-        $address = new Address();
->>>>>>> 0746367 (.)
 
         expect($address)->toBeInstanceOf(HasGeolocation::class);
     });

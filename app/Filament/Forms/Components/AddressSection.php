@@ -4,30 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Forms\Components;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Geo\Enums\AddressItemEnum;
 use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
 
 // use Squire\Models\Country;
 
 class AddressSection extends XotBaseSection
-=======
-use Filament\Schemas\Components\Section;
-use Modules\Geo\Filament\Resources\AddressResource;
-
-// use Squire\Models\Country;
-
-class AddressSection extends Section
->>>>>>> 1bb689f (.)
-=======
-use Modules\Geo\Enums\AddressItemEnum;
-use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
-
-// use Squire\Models\Country;
-
-class AddressSection extends XotBaseSection
->>>>>>> 0746367 (.)
 {
     // protected string $view = 'filament-forms::components.group';
 
@@ -36,8 +18,6 @@ class AddressSection extends XotBaseSection
     protected function setUp(): void
     {
         parent::setUp();
-<<<<<<< HEAD
-<<<<<<< HEAD
         // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
         $this->schema(fn (): array => $this->getFormSchema());
         $this->columns(3);
@@ -56,33 +36,6 @@ class AddressSection extends XotBaseSection
         return $schema;
         */
         return AddressItemEnum::getFormSchema();
-=======
-        $this->columns(2);
-=======
-        // Passiamo una Closure a schema() per rispettare la firma di Filament\Schemas
-        $this->schema(fn (): array => $this->getFormSchema());
-        $this->columns(3);
->>>>>>> 0746367 (.)
-    }
-
-    /**
-     * @return array<string, \Filament\Forms\Components\TextInput>
-     */
-    public function getFormSchema(): array
-    {
-        /*
-        // @var array<string, \Filament\Schemas\Components\Component> $schema
-        $schema = AddressResource::getFormSchema();
-        unset($schema['name'], $schema['is_primary']);
-
-<<<<<<< HEAD
-        return $res;
->>>>>>> 1bb689f (.)
-=======
-        return $schema;
-        */
-        return AddressItemEnum::getFormSchema();
->>>>>>> 0746367 (.)
     }
 
     /*

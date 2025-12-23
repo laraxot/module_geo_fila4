@@ -4,14 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\GoogleMaps;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use GuzzleHttp\Promise\PromiseInterface;
-=======
->>>>>>> 1bb689f (.)
-=======
-use GuzzleHttp\Promise\PromiseInterface;
->>>>>>> 0746367 (.)
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
@@ -60,21 +53,12 @@ final class GetAddressFromGoogleMapsAction
             'key' => $apiKey,
         ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
         // Handle PromiseInterface|Response union type
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
         }
 
         /** @var Response $response */
-<<<<<<< HEAD
-=======
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
         if (! $response->successful()) {
             throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
@@ -87,15 +71,7 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapResponseData $responseData */
         $responseData = GoogleMapResponseData::from($response->json());
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (0 === $responseData->results->count()) {
-=======
-        if ($responseData->results->count() === 0) {
->>>>>>> 1bb689f (.)
-=======
-        if (0 === $responseData->results->count()) {
->>>>>>> 0746367 (.)
             throw GoogleMapsApiException::noResultsFound();
         }
 
@@ -135,18 +111,8 @@ final class GetAddressFromGoogleMapsAction
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param DataCollection<GoogleMapAddressComponentData> $components
      * @param array<string>                                 $types
-=======
-     * @param  DataCollection<GoogleMapAddressComponentData>  $components
-     * @param  array<string>  $types
->>>>>>> 1bb689f (.)
-=======
-     * @param DataCollection<GoogleMapAddressComponentData> $components
-     * @param array<string>                                 $types
->>>>>>> 0746367 (.)
      */
     private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
     {

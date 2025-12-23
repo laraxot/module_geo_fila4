@@ -59,15 +59,7 @@ class AddressesField extends Repeater
             ->visible(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                 /* @phpstan-ignore argument.type */
-=======
-                /** @phpstan-ignore argument.type */
->>>>>>> 1bb689f (.)
-=======
-                /* @phpstan-ignore argument.type */
->>>>>>> 0746367 (.)
                 return count($addresses) > 1;
             })
             ->live();
@@ -77,43 +69,19 @@ class AddressesField extends Repeater
             ->visible(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                 /* @phpstan-ignore argument.type */
-=======
-                /** @phpstan-ignore argument.type */
->>>>>>> 1bb689f (.)
-=======
-                /* @phpstan-ignore argument.type */
->>>>>>> 0746367 (.)
                 return count($addresses) > 1;
             })
             ->default(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
 
                 // Se è il primo elemento o c'è un solo elemento, default true
-<<<<<<< HEAD
-<<<<<<< HEAD
                 /* @phpstan-ignore argument.type */
-=======
-                /** @phpstan-ignore argument.type */
->>>>>>> 1bb689f (.)
-=======
-                /* @phpstan-ignore argument.type */
->>>>>>> 0746367 (.)
                 return count($addresses) <= 1;
             })
             ->afterStateUpdated(function ($state, $set, Get $get, Component $component): void {
                 // Se questo diventa primary, disattiva tutti gli altri
-<<<<<<< HEAD
-<<<<<<< HEAD
                 if (true === $state) {
-=======
-                if ($state === true) {
->>>>>>> 1bb689f (.)
-=======
-                if (true === $state) {
->>>>>>> 0746367 (.)
                     $addresses = $get('../../addresses') ?? [];
 
                     // Estrae l'indice dal path del componente (es. "addresses.0.is_primary")
@@ -121,35 +89,15 @@ class AddressesField extends Repeater
                     preg_match('/addresses\.(\d+)\.is_primary/', $path ?? '', $matches);
                     $currentIndex = $matches[1] ?? null;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                     if (null !== $currentIndex) {
                         // Disattiva is_primary negli altri elementi
                         /* @phpstan-ignore foreach.nonIterable */
-=======
-                    if ($currentIndex !== null) {
-                        // Disattiva is_primary negli altri elementi
-                        /** @phpstan-ignore foreach.nonIterable */
->>>>>>> 1bb689f (.)
-=======
-                    if (null !== $currentIndex) {
-                        // Disattiva is_primary negli altri elementi
-                        /* @phpstan-ignore foreach.nonIterable */
->>>>>>> 0746367 (.)
                         foreach ($addresses as $index => $address) {
                             $indexStr = app(SafeStringCastAction::class)->execute($index);
                             $currentIndexStr = app(SafeStringCastAction::class)
                                 ->execute($currentIndex);
                             if ($indexStr !== $currentIndexStr) {
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 /* @phpstan-ignore callable.nonCallable */
-=======
-                                /** @phpstan-ignore callable.nonCallable */
->>>>>>> 1bb689f (.)
-=======
-                                /* @phpstan-ignore callable.nonCallable */
->>>>>>> 0746367 (.)
                                 $set('../../addresses.'.$indexStr.'.is_primary', false);
                             }
                         }
@@ -160,15 +108,7 @@ class AddressesField extends Repeater
             ->dehydrateStateUsing(function ($state, Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
                 // Se c'è un solo elemento, forza sempre true
-<<<<<<< HEAD
-<<<<<<< HEAD
                 /* @phpstan-ignore argument.type */
-=======
-                /** @phpstan-ignore argument.type */
->>>>>>> 1bb689f (.)
-=======
-                /* @phpstan-ignore argument.type */
->>>>>>> 0746367 (.)
                 if (count($addresses) <= 1) {
                     return true;
                 }

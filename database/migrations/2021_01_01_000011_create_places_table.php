@@ -14,16 +14,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class CreatePlacesTable.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 return new class extends XotBaseMigration {
-=======
-return new class extends XotBaseMigration
-{
->>>>>>> 1bb689f (.)
-=======
-return new class extends XotBaseMigration {
->>>>>>> 0746367 (.)
     /**
      * db up.
      */

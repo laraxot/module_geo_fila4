@@ -51,15 +51,7 @@ class GeoDataService
      */
     public function __construct()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         $this->validator = new GeoDataValidator();
-=======
-        $this->validator = new GeoDataValidator;
->>>>>>> 1bb689f (.)
-=======
-        $this->validator = new GeoDataValidator();
->>>>>>> 0746367 (.)
     }
 
     /**
@@ -82,17 +74,8 @@ class GeoDataService
     /**
      * Ottiene le province di una regione.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param string $regionCode Codice della regione
      *
-=======
-     * @param  string  $regionCode  Codice della regione
->>>>>>> 1bb689f (.)
-=======
-     * @param string $regionCode Codice della regione
-     *
->>>>>>> 0746367 (.)
      * @return Collection<int, array{name: string, code: string}>
      */
     public function getProvinces(string $regionCode): Collection
@@ -106,15 +89,7 @@ class GeoDataService
 
             if (! $region || ! \is_array($region) || ! isset($region['provinces']) || ! \is_array($region['provinces'])) {
                 /* @var Collection<int, array{name: string, code: string}> */
-<<<<<<< HEAD
-<<<<<<< HEAD
                 return new Collection();
-=======
-                return new Collection;
->>>>>>> 1bb689f (.)
-=======
-                return new Collection();
->>>>>>> 0746367 (.)
             }
 
             /** @var array<int, array<string, mixed>> $provinces */
@@ -135,17 +110,8 @@ class GeoDataService
     /**
      * Ottiene le città di una provincia.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param string $provinceCode Codice della provincia
      *
-=======
-     * @param  string  $provinceCode  Codice della provincia
->>>>>>> 1bb689f (.)
-=======
-     * @param string $provinceCode Codice della provincia
-     *
->>>>>>> 0746367 (.)
      * @return Collection<int, array{name: string, code: string}>
      */
     public function getCities(string $provinceCode): Collection
@@ -161,15 +127,7 @@ class GeoDataService
 
             if (! $province || ! \is_array($province) || ! isset($province['cities']) || ! \is_array($province['cities'])) {
                 /* @var Collection<int, array{name: string, code: string}> */
-<<<<<<< HEAD
-<<<<<<< HEAD
                 return new Collection();
-=======
-                return new Collection;
->>>>>>> 1bb689f (.)
-=======
-                return new Collection();
->>>>>>> 0746367 (.)
             }
 
             /** @var array<int, array<string, mixed>> $cities */
@@ -190,18 +148,8 @@ class GeoDataService
     /**
      * Ottiene il CAP di una città.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param string $provinceCode Codice della provincia
      * @param string $cityCode     Codice della città
-=======
-     * @param  string  $provinceCode  Codice della provincia
-     * @param  string  $cityCode  Codice della città
->>>>>>> 1bb689f (.)
-=======
-     * @param string $provinceCode Codice della provincia
-     * @param string $cityCode     Codice della città
->>>>>>> 0746367 (.)
      */
     public function getCap(string $provinceCode, string $cityCode): ?string
     {
@@ -247,22 +195,9 @@ class GeoDataService
     /**
      * Carica i dati dal file JSON.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @throws \RuntimeException Se il file non esiste o non è valido
      *
      * @return Collection<int, array<string, mixed>>
-=======
-     *
-     * @return Collection<int, array<string, mixed>>
-     *
-     * @throws \RuntimeException Se il file non esiste o non è valido
->>>>>>> 1bb689f (.)
-=======
-     * @throws \RuntimeException Se il file non esiste o non è valido
-     *
-     * @return Collection<int, array<string, mixed>>
->>>>>>> 0746367 (.)
      */
     private function loadData(): Collection
     {

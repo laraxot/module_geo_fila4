@@ -8,14 +8,6 @@ use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\RateLimiter;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use RuntimeException;
-use Throwable;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
 /**
  * Classe base per i servizi geografici.
@@ -30,15 +22,7 @@ abstract class BaseGeoService
     /**
      * Ottiene la chiave API dal file di configurazione.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @throws \RuntimeException Se la chiave API non è configurata
-=======
-     * @throws RuntimeException Se la chiave API non è configurata
->>>>>>> 1bb689f (.)
-=======
-     * @throws \RuntimeException Se la chiave API non è configurata
->>>>>>> 0746367 (.)
      */
     protected function getApiKey(): string
     {
@@ -46,15 +30,7 @@ abstract class BaseGeoService
         $apiKey = config("geo.api_keys.{$this->getServiceName()}");
 
         if (empty($apiKey)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             throw new \RuntimeException("API key non configurata per {$this->getServiceName()}");
-=======
-            throw new RuntimeException("API key non configurata per {$this->getServiceName()}");
->>>>>>> 1bb689f (.)
-=======
-            throw new \RuntimeException("API key non configurata per {$this->getServiceName()}");
->>>>>>> 0746367 (.)
         }
 
         return $apiKey;
@@ -63,34 +39,14 @@ abstract class BaseGeoService
     /**
      * Esegue una richiesta HTTP con rate limiting, cache e retry.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
      * @param string               $method   Metodo HTTP (GET, POST, etc.)
      * @param string               $url      URL della richiesta
      * @param array<string, mixed> $params   Parametri della richiesta
      * @param bool                 $useCache Se utilizzare la cache
-<<<<<<< HEAD
      *
      * @throws \RuntimeException Se la richiesta fallisce
      *
      * @return array<string, mixed>
-=======
-     * @param  string  $method  Metodo HTTP (GET, POST, etc.)
-     * @param  string  $url  URL della richiesta
-     * @param  array<string, mixed>  $params  Parametri della richiesta
-     * @param  bool  $useCache  Se utilizzare la cache
-     * @return array<string, mixed>
-     *
-     * @throws RuntimeException Se la richiesta fallisce
->>>>>>> 1bb689f (.)
-=======
-     *
-     * @throws \RuntimeException Se la richiesta fallisce
-     *
-     * @return array<string, mixed>
->>>>>>> 0746367 (.)
      */
     protected function makeRequest(string $method, string $url, array $params = [], bool $useCache = true): array
     {
@@ -99,15 +55,7 @@ abstract class BaseGeoService
         if ($useCache && config('geo.cache.enabled')) {
             /** @var array<string, mixed>|null $cached */
             $cached = Cache::get($cacheKey);
-<<<<<<< HEAD
-<<<<<<< HEAD
             if (null !== $cached) {
-=======
-            if ($cached !== null) {
->>>>>>> 1bb689f (.)
-=======
-            if (null !== $cached) {
->>>>>>> 0746367 (.)
                 return $cached;
             }
         }
@@ -125,30 +73,14 @@ abstract class BaseGeoService
             $response = $client->{$methodLower}($url, $params);
 
             if (! $response->successful()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
                 throw new \RuntimeException("Richiesta fallita a {$this->getServiceName()}: ".(string) $response->status());
-=======
-                throw new RuntimeException("Richiesta fallita a {$this->getServiceName()}: ".(string) $response->status());
->>>>>>> 1bb689f (.)
-=======
-                throw new \RuntimeException("Richiesta fallita a {$this->getServiceName()}: ".(string) $response->status());
->>>>>>> 0746367 (.)
             }
 
             $data = $response->json();
 
             // Validazione tipo di ritorno per PHPStan level 9 compliance
             if (! is_array($data)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
                 throw new \RuntimeException('Risposta API non valida: atteso array, ricevuto '.gettype($data));
-=======
-                throw new RuntimeException('Risposta API non valida: atteso array, ricevuto '.gettype($data));
->>>>>>> 1bb689f (.)
-=======
-                throw new \RuntimeException('Risposta API non valida: atteso array, ricevuto '.gettype($data));
->>>>>>> 0746367 (.)
             }
 
             // Assicura che sia array<string, mixed> come richiesto dalla signature
@@ -162,22 +94,8 @@ abstract class BaseGeoService
             }
 
             return $validatedData;
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Throwable $e) {
             throw new \RuntimeException("Errore durante la richiesta a {$this->getServiceName()}: ".$e->getMessage(), 0, $e);
-=======
-        } catch (Throwable $e) {
-            throw new RuntimeException(
-                "Errore durante la richiesta a {$this->getServiceName()}: ".$e->getMessage(),
-                0,
-                $e,
-            );
->>>>>>> 1bb689f (.)
-=======
-        } catch (\Throwable $e) {
-            throw new \RuntimeException("Errore durante la richiesta a {$this->getServiceName()}: ".$e->getMessage(), 0, $e);
->>>>>>> 0746367 (.)
         }
     }
 
@@ -212,21 +130,9 @@ abstract class BaseGeoService
     /**
      * Genera una chiave di cache per la richiesta.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param string               $method Metodo HTTP
      * @param string               $url    URL della richiesta
      * @param array<string, mixed> $params Parametri della richiesta
-=======
-     * @param  string  $method  Metodo HTTP
-     * @param  string  $url  URL della richiesta
-     * @param  array<string, mixed>  $params  Parametri della richiesta
->>>>>>> 1bb689f (.)
-=======
-     * @param string               $method Metodo HTTP
-     * @param string               $url    URL della richiesta
-     * @param array<string, mixed> $params Parametri della richiesta
->>>>>>> 0746367 (.)
      */
     protected function getCacheKey(string $method, string $url, array $params): string
     {

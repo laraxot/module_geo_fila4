@@ -8,27 +8,12 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Modules\Geo\Filament\Resources\LocationResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Override;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
 class ViewLocation extends XotBaseViewRecord
 {
     protected static string $resource = LocationResource::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
-    #[Override]
->>>>>>> 1bb689f (.)
-=======
-    #[\Override]
->>>>>>> 0746367 (.)
     protected function getInfolistSchema(): array
     {
         return [

@@ -12,15 +12,6 @@ class PhotonFeatureData extends Data
     public function __construct(
         public PositionData $geometry,
         public PhotonPropertiesData $properties,
-<<<<<<< HEAD
-<<<<<<< HEAD
     ) {
     }
-=======
-    ) {}
->>>>>>> 1bb689f (.)
-=======
-    ) {
-    }
->>>>>>> 0746367 (.)
 }

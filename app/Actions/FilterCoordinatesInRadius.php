@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Webmozart\Assert\Assert;
-
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 class FilterCoordinatesInRadius
 {
     // filtra Coordinate In Raggio
@@ -20,10 +12,6 @@ class FilterCoordinatesInRadius
         $coordinateInRaggio = [];
 
         foreach ($coordinateArray as $coordinate) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
             if (! is_array($coordinate)) {
                 continue; // Skip non-array elements
             }
@@ -34,14 +22,6 @@ class FilterCoordinatesInRadius
             if (! is_string($lat) || ! is_string($lon)) {
                 continue; // Skip if coordinates are not strings
             }
-<<<<<<< HEAD
-=======
-            Assert::isArray($coordinate);
-            Assert::string($lat = $coordinate['latitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
-            Assert::string($lon = $coordinate['longitude'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
             $distanza = $this->calcolaDistanzaGeografica($latPartenza, $lonPartenza, $lat, $lon);
 

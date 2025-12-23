@@ -9,15 +9,7 @@ use Modules\Geo\Models\Place;
 use Modules\Geo\Models\PlaceType;
 
 /**
- * <<<<<<< HEAD
- * <<<<<<< HEAD
  * Place Factory.
- * =======
- * Place Factory
- * >>>>>>> 1bb689f (.)
- * =======
- * Place Factory.
- * >>>>>>> 0746367 (.).
  *
  * @extends Factory<Place>
  */

@@ -6,9 +6,10 @@ namespace Modules\Geo\Filament\Actions;
 
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Modules\Geo\Actions\UpdateCoordinatesAction;
+use Modules\Geo\Models\Place;
 use Modules\Xot\Filament\Tables\Actions\XotBaseBulkAction;
+use Throwable;
 
 /**
  * BulkAction Filament per aggiornare le coordinate geografiche di più record contemporaneamente.
@@ -55,6 +56,7 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
             ->icon('heroicon-o-map-pin')
             ->deselectRecordsAfterCompletion()
             ->action(function (Collection $records): void {
+                /** @var Collection<int, Place> $records */
                 $this->processRecords($records);
             });
     }
@@ -62,20 +64,28 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
     /**
      * Elabora i record selezionati aggiornando le coordinate.
      *
-     * @param Collection<int, Model> $records
+     * @param Collection<int, Place> $records
      */
     private function processRecords(Collection $records): void
     {
-        $result = app(UpdateCoordinatesAction::class)->execute($records);
-        /** @var \Illuminate\Support\Collection<int, string> $errorMessages */
-        $errorMessages = $result->errors->map(function (array $error): string {
-            /* @var array{model: string, error: string} $error */
-            return $error['error'];
-        });
+        /** @var \Illuminate\Support\Collection<int, string> $errors */
+        $errors = collect();
+        $successCount = 0;
+        $action = app(UpdateCoordinatesAction::class);
+
+        foreach ($records as $record) {
+            try {
+                $action->execute($record);
+                $successCount++;
+            } catch (Throwable $e) {
+                $errors->push(sprintf('Place #%s: %s', (string) $record->getKey(), $e->getMessage()));
+            }
+        }
+
         $this->sendNotifications(
-            $result->successCount,
-            $errorMessages,
-            $result->totalProcessed
+            $successCount,
+            $errors,
+            $records->count()
         );
     }
 

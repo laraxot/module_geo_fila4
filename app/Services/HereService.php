@@ -4,13 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Exception;
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 use Illuminate\Support\Facades\Http;
 use Modules\Tenant\Services\TenantService;
 use Webmozart\Assert\Assert;
@@ -38,27 +31,11 @@ class HereService
         $base_url = 'https://router.hereapi.com/v8/routes';
         $response = Http::get($base_url, $data);
         if (! method_exists($response, 'json')) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             throw new \Exception('['.__LINE__.']['.__FILE__.']');
         }
         $json = $response->json();
         if (! \is_array($json)) {
             throw new \Exception('['.__LINE__.']['.__FILE__.']');
-=======
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
-        }
-        $json = $response->json();
-        if (! \is_array($json)) {
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
->>>>>>> 1bb689f (.)
-=======
-            throw new \Exception('['.__LINE__.']['.__FILE__.']');
-        }
-        $json = $response->json();
-        if (! \is_array($json)) {
-            throw new \Exception('['.__LINE__.']['.__FILE__.']');
->>>>>>> 0746367 (.)
         }
 
         if (! isset($json['routes'])) {

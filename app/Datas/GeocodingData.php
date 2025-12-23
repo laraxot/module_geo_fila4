@@ -22,17 +22,8 @@ class GeocodingData extends Data
         public readonly ?string $country,
         public readonly ?string $postal_code,
         public readonly ?string $error = null,
-<<<<<<< HEAD
-<<<<<<< HEAD
     ) {
     }
-=======
-    ) {}
->>>>>>> 1bb689f (.)
-=======
-    ) {
-    }
->>>>>>> 0746367 (.)
 
     /**
      * Crea un'istanza di errore.
@@ -101,14 +92,7 @@ class GeocodingData extends Data
      *     short_name: string,
      *     types: array<string>
      * }> $components
-<<<<<<< HEAD
-<<<<<<< HEAD
      *
-=======
->>>>>>> 1bb689f (.)
-=======
-     *
->>>>>>> 0746367 (.)
      * @return array<string, string>
      */
     private static function extractAddressComponents(array $components): array

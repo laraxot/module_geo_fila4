@@ -104,30 +104,14 @@ describe('Geocoding Business Logic', function () {
             $address = $this->italianAddress;
 
             // Business Logic: Milano is in Lombardia region with MI province
-<<<<<<< HEAD
-<<<<<<< HEAD
             if ('Milano' === $address['city']) {
-=======
-            if ($address['city'] === 'Milano') {
->>>>>>> 1bb689f (.)
-=======
-            if ('Milano' === $address['city']) {
->>>>>>> 0746367 (.)
                 expect($address['region'])->toBe('Lombardia');
                 expect($address['province'])->toBe('MI');
             }
 
             // Regional consistency check
             $lombardyProvinces = ['MI', 'BG', 'BS', 'CO', 'CR', 'MN', 'PV', 'SO', 'VA'];
-<<<<<<< HEAD
-<<<<<<< HEAD
             if ('Lombardia' === $address['region']) {
-=======
-            if ($address['region'] === 'Lombardia') {
->>>>>>> 1bb689f (.)
-=======
-            if ('Lombardia' === $address['region']) {
->>>>>>> 0746367 (.)
                 expect($lombardyProvinces)->toContain($address['province']);
             }
         });
@@ -298,30 +282,14 @@ describe('Geocoding Business Logic', function () {
             $place = $this->place;
 
             // Business Logic: Cities should have population data
-<<<<<<< HEAD
-<<<<<<< HEAD
             if ('city' === $place['type']) {
-=======
-            if ($place['type'] === 'city') {
->>>>>>> 1bb689f (.)
-=======
-            if ('city' === $place['type']) {
->>>>>>> 0746367 (.)
                 expect($place)->toHaveKey('population');
                 expect($place['population'])->toBeInt();
                 expect($place['population'])->toBeGreaterThan(0);
             }
 
             // Milano population validation (approx)
-<<<<<<< HEAD
-<<<<<<< HEAD
             if ('Milano' === $place['name']) {
-=======
-            if ($place['name'] === 'Milano') {
->>>>>>> 1bb689f (.)
-=======
-            if ('Milano' === $place['name']) {
->>>>>>> 0746367 (.)
                 expect($place['population'])->toBeGreaterThan(1000000);
                 expect($place['population'])->toBeLessThan(2000000);
             }
@@ -387,25 +355,10 @@ describe('Geocoding Business Logic', function () {
             $pointOutsideMilan = ['lat' => 41.9028, 'lng' => 12.4964];
 
             // Business Logic: Point in bounds check
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
             $isInBounds = fn ($point, $bounds) => $point['lat'] >= $bounds['south']
                 && $point['lat'] <= $bounds['north']
                 && $point['lng'] >= $bounds['west']
                 && $point['lng'] <= $bounds['east'];
-<<<<<<< HEAD
-=======
-            $isInBounds = fn ($point, $bounds) => (
-                $point['lat'] >= $bounds['south'] &&
-                $point['lat'] <= $bounds['north'] &&
-                $point['lng'] >= $bounds['west'] &&
-                $point['lng'] <= $bounds['east']
-            );
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
 
             expect($isInBounds($pointInMilan, $milanBounds))->toBeTrue();
             expect($isInBounds($pointOutsideMilan, $milanBounds))->toBeFalse();

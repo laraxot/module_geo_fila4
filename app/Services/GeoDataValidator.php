@@ -64,16 +64,7 @@ class GeoDataValidator
     /**
      * Valida i dati geografici.
      *
-     * <<<<<<< HEAD
-     * <<<<<<< HEAD
-     *
      * @param array $data Dati da validare
-     *                    =======
-     * @param array $data Dati da validare
-     *                    >>>>>>> 1bb689f (.)
-     *                    =======
-     * @param array $data Dati da validare
-     *                    >>>>>>> 0746367 (.)
      */
     public function validate(array $data): bool
     {
@@ -85,18 +76,7 @@ class GeoDataValidator
     /**
      * Ottiene gli errori di validazione.
      *
-     * <<<<<<< HEAD
-     * <<<<<<< HEAD
-     *
      * @param array $data Dati da validare
-     *
-     * =======
-     * @param array $data Dati da validare
-     *                    >>>>>>> 1bb689f (.)
-     *                    =======
-     * @param array $data Dati da validare
-     *
-     * >>>>>>> 0746367 (.)
      *
      * @return array<string, array<int, string>>
      */
@@ -113,16 +93,7 @@ class GeoDataValidator
     /**
      * Verifica l'integrità dei dati.
      *
-     * <<<<<<< HEAD
-     * <<<<<<< HEAD
-     *
      * @param array $data Dati da verificare
-     *                    =======
-     * @param array $data Dati da verificare
-     *                    >>>>>>> 1bb689f (.)
-     *                    =======
-     * @param array $data Dati da verificare
-     *                    >>>>>>> 0746367 (.)
      */
     public function checkIntegrity(array $data): bool
     {

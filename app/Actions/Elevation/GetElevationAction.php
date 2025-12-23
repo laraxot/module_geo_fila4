@@ -4,23 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Elevation;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\ElevationException;
 use Modules\Geo\Services\GoogleMapsService;
-=======
-use InvalidArgumentException;
-use Modules\Geo\Datas\LocationData;
-use Modules\Geo\Exceptions\ElevationException;
-use Modules\Geo\Services\GoogleMapsService;
-use Throwable;
->>>>>>> 1bb689f (.)
-=======
-use Modules\Geo\Datas\LocationData;
-use Modules\Geo\Exceptions\ElevationException;
-use Modules\Geo\Services\GoogleMapsService;
->>>>>>> 0746367 (.)
 
 /**
  * Classe per ottenere l'elevazione di un punto geografico.
@@ -34,56 +20,22 @@ use Modules\Geo\Services\GoogleMapsService;
 readonly class GetElevationAction
 {
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param GoogleMapsService $googleMapsService Servizio per le richieste a Google Maps
      */
     public function __construct(
         private GoogleMapsService $googleMapsService,
     ) {
     }
-=======
-     * @param  GoogleMapsService  $googleMapsService  Servizio per le richieste a Google Maps
-     */
-    public function __construct(
-        private GoogleMapsService $googleMapsService,
-    ) {}
->>>>>>> 1bb689f (.)
-=======
-     * @param GoogleMapsService $googleMapsService Servizio per le richieste a Google Maps
-     */
-    public function __construct(
-        private GoogleMapsService $googleMapsService,
-    ) {
-    }
->>>>>>> 0746367 (.)
 
     /**
      * Ottiene l'elevazione per una posizione geografica.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param LocationData $location La posizione di cui ottenere l'elevazione
      *
      * @throws ElevationException        Se il recupero dell'elevazione fallisce
      * @throws \InvalidArgumentException Se le coordinate non sono valide
      *
      * @return float L'elevazione in metri sul livello del mare
-=======
-     * @param  LocationData  $location  La posizione di cui ottenere l'elevazione
-     * @return float L'elevazione in metri sul livello del mare
-     *
-     * @throws ElevationException Se il recupero dell'elevazione fallisce
-     * @throws InvalidArgumentException Se le coordinate non sono valide
->>>>>>> 1bb689f (.)
-=======
-     * @param LocationData $location La posizione di cui ottenere l'elevazione
-     *
-     * @throws ElevationException        Se il recupero dell'elevazione fallisce
-     * @throws \InvalidArgumentException Se le coordinate non sono valide
-     *
-     * @return float L'elevazione in metri sul livello del mare
->>>>>>> 0746367 (.)
      */
     public function execute(LocationData $location): float
     {
@@ -103,15 +55,7 @@ readonly class GetElevationAction
             }
 
             return (float) $firstResult['elevation'];
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Throwable $e) {
-=======
-        } catch (Throwable $e) {
->>>>>>> 1bb689f (.)
-=======
-        } catch (\Throwable $e) {
->>>>>>> 0746367 (.)
             if ($e instanceof ElevationException) {
                 throw $e;
             }
@@ -123,17 +67,8 @@ readonly class GetElevationAction
     /**
      * Formatta l'elevazione in una stringa leggibile.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param float $meters Elevazione in metri
      *
-=======
-     * @param  float  $meters  Elevazione in metri
->>>>>>> 1bb689f (.)
-=======
-     * @param float $meters Elevazione in metri
-     *
->>>>>>> 0746367 (.)
      * @return string Elevazione formattata con unità di misura
      */
     public function formatElevation(float $meters): string
@@ -144,46 +79,18 @@ readonly class GetElevationAction
     /**
      * Valida le coordinate di una posizione.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param LocationData $location Posizione da validare
      *
      * @throws \InvalidArgumentException Se le coordinate non sono valide
-=======
-     * @param  LocationData  $location  Posizione da validare
-     *
-     * @throws InvalidArgumentException Se le coordinate non sono valide
->>>>>>> 1bb689f (.)
-=======
-     * @param LocationData $location Posizione da validare
-     *
-     * @throws \InvalidArgumentException Se le coordinate non sono valide
->>>>>>> 0746367 (.)
      */
     private function validateCoordinates(LocationData $location): void
     {
         if ($location->latitude < -90 || $location->latitude > 90) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
         }
 
         if ($location->longitude < -180 || $location->longitude > 180) {
             throw new \InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
-=======
-            throw new InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
-        }
-
-        if ($location->longitude < -180 || $location->longitude > 180) {
-            throw new InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
->>>>>>> 1bb689f (.)
-=======
-            throw new \InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
-        }
-
-        if ($location->longitude < -180 || $location->longitude > 180) {
-            throw new \InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
->>>>>>> 0746367 (.)
         }
     }
 }

@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Enums;
 
 /**
- * <<<<<<< HEAD
- * <<<<<<< HEAD
  * Enum per i tipi di indirizzi.
- * =======
- * Enum per i tipi di indirizzi
- * >>>>>>> 1bb689f (.)
- * =======
- * Enum per i tipi di indirizzi.
- * >>>>>>> 0746367 (.).
  */
 enum AddressTypeEnum: string
 {

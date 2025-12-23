@@ -23,14 +23,6 @@ abstract class BaseModel extends XotBaseModel
         // 'password'
     ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
-
->>>>>>> 1bb689f (.)
-=======
->>>>>>> 0746367 (.)
     /**
      * Get the attributes that should be cast.
      *

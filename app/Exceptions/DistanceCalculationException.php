@@ -4,27 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /**
  * Eccezione lanciata quando si verificano errori durante il calcolo della distanza.
  */
 class DistanceCalculationException extends \RuntimeException
-=======
-use RuntimeException;
-use Throwable;
-
-/**
- * Eccezione lanciata quando si verificano errori durante il calcolo della distanza.
- */
-class DistanceCalculationException extends RuntimeException
->>>>>>> 1bb689f (.)
-=======
-/**
- * Eccezione lanciata quando si verificano errori durante il calcolo della distanza.
- */
-class DistanceCalculationException extends \RuntimeException
->>>>>>> 0746367 (.)
 {
     /**
      * Crea una nuova istanza per risposta non valida.
@@ -45,15 +28,7 @@ class DistanceCalculationException extends \RuntimeException
     /**
      * Crea una nuova istanza per errore di calcolo.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function calculationError(string $message, ?\Throwable $previous = null): self
-=======
-    public static function calculationError(string $message, ?Throwable $previous = null): self
->>>>>>> 1bb689f (.)
-=======
-    public static function calculationError(string $message, ?\Throwable $previous = null): self
->>>>>>> 0746367 (.)
     {
         return new self($message, 0, $previous);
     }

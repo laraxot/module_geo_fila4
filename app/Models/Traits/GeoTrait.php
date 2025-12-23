@@ -14,18 +14,8 @@ use Modules\Geo\Services\GeoService;
 /**
  * Modules\Geo\Models\Traits\GeoTrait.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
  * @property float  $latitude
  * @property float  $longitude
-=======
- * @property float $latitude
- * @property float $longitude
->>>>>>> 1bb689f (.)
-=======
- * @property float  $latitude
- * @property float  $longitude
->>>>>>> 0746367 (.)
  * @property string $country.
  * @property string $country.
  * @property string $administrative_area_level_2.
@@ -173,15 +163,7 @@ trait GeoTrait
 
     public function getAddress(): string
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if ('' === $this->country) {
-=======
-        if ($this->country === '') {
->>>>>>> 1bb689f (.)
-=======
-        if ('' === $this->country) {
->>>>>>> 0746367 (.)
             $this->country = 'Italia';
         }
 
@@ -196,15 +178,10 @@ trait GeoTrait
             $this->country;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0746367 (.)
     /**
      * Get latitude attribute.
      */
     public function getLatitudeAttribute(mixed $value): ?float
-<<<<<<< HEAD
     {
         if (is_float($value) || is_int($value)) {
             return (float) $value;
@@ -225,41 +202,6 @@ trait GeoTrait
                 ]);
                 $this->save();
             }
-=======
-    public function getLatitudeAttribute(?float $value): ?float
-=======
->>>>>>> 0746367 (.)
-    {
-        if (is_float($value) || is_int($value)) {
-            return (float) $value;
-        }
-        $address = $this->address;
-        if (null === $address) {
-            return null;
-        }
-        if (is_string($address) && isJson($address)) {
-            $geo = GeoData::from(json_decode($address, true, 512, JSON_THROW_ON_ERROR));
-            $latlng = $geo->latlng;
-<<<<<<< HEAD
-            $lat = $latlng['lat'];
-            $lng = $latlng['lng'];
-            $this->update([
-                'latitude' => $lat,
-                'longitude' => $lng,
-            ]);
-            $this->save();
->>>>>>> 1bb689f (.)
-=======
-            $lat = is_float($latlng['lat'] ?? null) || is_int($latlng['lat'] ?? null) ? (float) ($latlng['lat']) : null;
-            $lng = is_float($latlng['lng'] ?? null) || is_int($latlng['lng'] ?? null) ? (float) ($latlng['lng']) : null;
-            if (null !== $lat && null !== $lng) {
-                $this->update([
-                    'latitude' => $lat,
-                    'longitude' => $lng,
-                ]);
-                $this->save();
-            }
->>>>>>> 0746367 (.)
 
             return $lat;
         }
@@ -313,8 +255,6 @@ trait GeoTrait
                 $this->attributes['full_address'] = ',,';
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             $fullAddress = (string) ($this->attributes['full_address'] ?? '');
             if (strlen($fullAddress) < 10) {
                 $tmp = [];
@@ -323,33 +263,6 @@ trait GeoTrait
                 $tmp[] = $geo->postal_code ?? '';
                 $tmp[] = $geo->administrative_area_level_3 ?? '';
                 $tmp[] = $geo->administrative_area_level_2_short ?? '';
-=======
-            if (\strlen($this->attributes['full_address']) < 10) {
-                /*$address = collect($json);
-                 * $tmp = [];
-                 * $tmp[] = $address->get('route');
-                 * $tmp[] = $address->get('street_number');
-                 * $tmp[] = $address->get('postal_code');
-                 * $tmp[] = $address->get('administrative_area_level_3');
-                 * $tmp[] = $address->get('administrative_area_level_2_short');
-                 */
-                $tmp = [];
-                $tmp[] = $geo->route;
-                $tmp[] = $geo->street_number;
-                $tmp[] = $geo->postal_code;
-                $tmp[] = $geo->administrative_area_level_3;
-                $tmp[] = $geo->administrative_area_level_2_short;
->>>>>>> 1bb689f (.)
-=======
-            $fullAddress = (string) ($this->attributes['full_address'] ?? '');
-            if (strlen($fullAddress) < 10) {
-                $tmp = [];
-                $tmp[] = $geo->route ?? '';
-                $tmp[] = $geo->street_number ?? '';
-                $tmp[] = $geo->postal_code ?? '';
-                $tmp[] = $geo->administrative_area_level_3 ?? '';
-                $tmp[] = $geo->administrative_area_level_2_short ?? '';
->>>>>>> 0746367 (.)
                 $this->attributes['full_address'] = implode(', ', $tmp);
             }
         }
@@ -363,17 +276,8 @@ trait GeoTrait
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param mixed $value
      *
-=======
-     * @param  mixed  $value
->>>>>>> 1bb689f (.)
-=======
-     * @param mixed $value
-     *
->>>>>>> 0746367 (.)
      * @return bool|mixed|string
      */
     /*
@@ -407,15 +311,7 @@ trait GeoTrait
      */
     public function getFullAddressAttribute(?string $value): ?string
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (null === $this->address) {
-=======
-        if ($this->address === null) {
->>>>>>> 1bb689f (.)
-=======
-        if (null === $this->address) {
->>>>>>> 0746367 (.)
             return null;
         }
         if (is_string($this->address) && isJson($this->address)) {
