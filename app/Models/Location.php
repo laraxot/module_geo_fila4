@@ -64,7 +64,6 @@ use Illuminate\Support\Carbon;
  *
  * @mixin \Eloquent
  */
-/** */
 class Location extends BaseModel
 {
     protected $fillable = [

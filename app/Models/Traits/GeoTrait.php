@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
-use function Safe\json_decode;
-use function Safe\json_encode;
-
-
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-// --- models ---
 use Modules\Geo\Datas\GeoData;
-// ---- services --
 use Modules\Geo\Services\GeoService;
+
+// --- models ---
+use function Safe\json_decode;
+// ---- services --
+use function Safe\json_encode;
 
 /**
  * Modules\Geo\Models\Traits\GeoTrait.
