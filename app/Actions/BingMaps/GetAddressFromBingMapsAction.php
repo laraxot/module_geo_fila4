@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\BingMaps;
 
+use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
@@ -29,7 +30,7 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Bing Maps.
      *
-     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(string $address): ?AddressData
     {
@@ -52,19 +53,19 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Valida i dati di input.
      *
-     * @throws \RuntimeException Se la chiave API non è configurata
+     * @throws RuntimeException Se la chiave API non è configurata
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.bing.maps_api_key');
         if (empty($apiKey)) {
-            throw new \RuntimeException('Bing Maps API key not configured');
+            throw new RuntimeException('Bing Maps API key not configured');
         }
         if (empty($address)) {
-            throw new \RuntimeException('Address cannot be empty');
+            throw new RuntimeException('Address cannot be empty');
         }
         if (strlen($address) > 1000) {
-            throw new \RuntimeException('Address is too long');
+            throw new RuntimeException('Address is too long');
         }
     }
 
@@ -89,7 +90,7 @@ readonly class GetAddressFromBingMapsAction
     /**
      * Elabora la risposta dell'API.
      *
-     * @throws \RuntimeException Se la risposta non è valida
+     * @throws RuntimeException Se la risposta non è valida
      */
     private function parseResponse(string $response): ?AddressData
     {

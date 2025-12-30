@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Console\Commands;
 
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -120,7 +121,7 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi aggiornato con successo');
 
             return 0;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('Errore durante l\'aggiornamento del database: '.$e->getMessage());
 
             return 1;
@@ -157,7 +158,7 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi pulito con successo');
 
             return 0;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('Errore durante la pulizia del database: '.$e->getMessage());
 
             return 1;
@@ -194,7 +195,7 @@ class SushiCommand extends Command
             $this->info("Numero di CAP: {$cap}");
 
             return 0;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('Errore durante la verifica dello stato del database: '.$e->getMessage());
 
             return 1;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\TimeZone;
 
+use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\TimeZoneData;
@@ -44,7 +45,7 @@ class GetTimeZoneAction
         $data = json_decode($response->getBody()->getContents(), true);
 
         if ('OK' !== $data['status']) {
-            throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
+            throw new RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
 
         return new TimeZoneData(

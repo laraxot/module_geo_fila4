@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Exception;
+use RuntimeException;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\BingMaps\GetAddressFromBingMapsAction;
@@ -27,7 +29,7 @@ class GetAddressDataFromFullAddressAction
      *
      * @param string $fullAddress L'indirizzo da cercare
      *
-     * @throws \RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
+     * @throws RuntimeException Se la richiesta fallisce o l'indirizzo non viene trovato
      *
      * @return AddressData I dati dell'indirizzo trovato
      */
@@ -58,7 +60,7 @@ class GetAddressDataFromFullAddressAction
                 if ($result instanceof AddressData) {
                     return $result;
                 }
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 // Logga l'errore o gestiscilo in altro modo
                 $this->errors->push($e->getMessage());
             }
