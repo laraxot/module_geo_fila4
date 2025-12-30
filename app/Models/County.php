@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Geo\Database\Factories\CountyFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Database\Factories\CountyFactory;
+use Modules\Geo\Database\Factories\CountyFactory;
+use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
