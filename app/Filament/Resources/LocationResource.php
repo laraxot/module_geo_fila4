@@ -6,7 +6,6 @@ namespace Modules\Geo\Filament\Resources;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Support\Components\Component;
-use Filament\Support\Components\Component;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
 use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;

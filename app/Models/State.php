@@ -6,8 +6,6 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Database\Factories\StateFactory;
-use Modules\Geo\Database\Factories\StateFactory;
-use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**

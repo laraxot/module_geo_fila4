@@ -6,7 +6,6 @@ namespace Modules\Geo\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\GeoNamesCap;
-use Modules\Geo\Models\GeoNamesCap;
 
 class GeoNamesCapFactory extends Factory
 {

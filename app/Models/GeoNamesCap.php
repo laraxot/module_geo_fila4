@@ -6,8 +6,6 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Database\Factories\GeoNamesCapFactory;
-use Modules\Geo\Database\Factories\GeoNamesCapFactory;
-use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
