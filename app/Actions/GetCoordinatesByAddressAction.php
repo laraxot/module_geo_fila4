@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Filament\Notifications\Notification;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Filament\Notifications\Notification;
 use Modules\Geo\Datas\CoordinatesData;
 
 class GetCoordinatesByAddressAction
