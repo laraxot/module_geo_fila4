@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Nominatim;
 
+use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
@@ -31,7 +32,7 @@ class SearchPlacesAction
     /**
      * Cerca luoghi usando una query di ricerca.
      *
-     * @throws \RuntimeException Se la richiesta fallisce
+     * @throws RuntimeException Se la richiesta fallisce
      *
      * @return Collection<int, LocationData>
      */
@@ -42,7 +43,7 @@ class SearchPlacesAction
 
             return $this->parseResponse($response);
         } catch (GuzzleException $e) {
-            throw new \RuntimeException('Failed to search places: '.$e->getMessage());
+            throw new RuntimeException('Failed to search places: '.$e->getMessage());
         }
     }
 
@@ -74,7 +75,7 @@ class SearchPlacesAction
     }
 
     /**
-     * @throws \RuntimeException Se la risposta non è nel formato atteso
+     * @throws RuntimeException Se la risposta non è nel formato atteso
      *
      * @return Collection<int, LocationData>
      */
@@ -91,7 +92,7 @@ class SearchPlacesAction
         $data = json_decode($response, true);
 
         if (empty($data)) {
-            throw new \RuntimeException('No results found for query');
+            throw new RuntimeException('No results found for query');
         }
 
         return collect($data)->map(fn (array $place): LocationData => new LocationData(

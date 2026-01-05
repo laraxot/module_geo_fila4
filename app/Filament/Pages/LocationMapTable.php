@@ -9,7 +9,7 @@ use Modules\Xot\Filament\Pages\XotBasePage;
 
 class LocationMapTable extends XotBasePage
 {
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document-text';
 
     protected string $view = 'geo::filament.pages.location-map';
 

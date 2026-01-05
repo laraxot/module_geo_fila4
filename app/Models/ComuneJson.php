@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+use Override;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -44,7 +45,7 @@ class ComuneJson extends GeoJsonModel
      *     popolazione: int
      * }>
      */
-    #[\Override]
+    #[Override]
     public static function all(): Collection
     {
         return static::loadData();

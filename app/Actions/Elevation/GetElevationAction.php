@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Elevation;
 
+use Throwable;
+use InvalidArgumentException;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\ElevationException;
 use Modules\Geo\Services\GoogleMapsService;
@@ -33,7 +35,7 @@ readonly class GetElevationAction
      * @param LocationData $location La posizione di cui ottenere l'elevazione
      *
      * @throws ElevationException        Se il recupero dell'elevazione fallisce
-     * @throws \InvalidArgumentException Se le coordinate non sono valide
+     * @throws InvalidArgumentException Se le coordinate non sono valide
      *
      * @return float L'elevazione in metri sul livello del mare
      */
@@ -55,7 +57,7 @@ readonly class GetElevationAction
             }
 
             return (float) $firstResult['elevation'];
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             if ($e instanceof ElevationException) {
                 throw $e;
             }
@@ -81,16 +83,16 @@ readonly class GetElevationAction
      *
      * @param LocationData $location Posizione da validare
      *
-     * @throws \InvalidArgumentException Se le coordinate non sono valide
+     * @throws InvalidArgumentException Se le coordinate non sono valide
      */
     private function validateCoordinates(LocationData $location): void
     {
         if ($location->latitude < -90 || $location->latitude > 90) {
-            throw new \InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
+            throw new InvalidArgumentException(sprintf('Latitudine non valida: %f', $location->latitude));
         }
 
         if ($location->longitude < -180 || $location->longitude > 180) {
-            throw new \InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
+            throw new InvalidArgumentException(sprintf('Longitudine non valida: %f', $location->longitude));
         }
     }
 }

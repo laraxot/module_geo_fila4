@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Exceptions;
 
+use RuntimeException;
+
 /**
  * Eccezione lanciata quando i dati di una posizione non sono validi.
  */
-class InvalidLocationException extends \RuntimeException
+class InvalidLocationException extends RuntimeException
 {
     /**
      * Crea una nuova istanza per dati non validi.

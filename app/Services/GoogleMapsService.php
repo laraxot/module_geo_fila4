@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
+use Throwable;
+use Override;
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
 
 /**
@@ -32,7 +34,7 @@ class GoogleMapsService extends BaseGeoService
                 'key' => $this->getApiKey(),
                 'language' => 'it',
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -57,7 +59,7 @@ class GoogleMapsService extends BaseGeoService
                 'language' => 'it',
                 'units' => 'metric',
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
@@ -76,12 +78,12 @@ class GoogleMapsService extends BaseGeoService
                 'locations' => "{$latitude},{$longitude}",
                 'key' => $this->getApiKey(),
             ]);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             throw GoogleMapsApiException::requestFailed($e->getMessage());
         }
     }
 
-    #[\Override]
+    #[Override]
     protected function getServiceName(): string
     {
         return 'google_maps';

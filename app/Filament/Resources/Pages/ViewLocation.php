@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources\Pages;
 
+use Override;
+use Filament\Schemas\Components\Component;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Modules\Geo\Filament\Resources\LocationResource;
@@ -14,9 +16,9 @@ class ViewLocation extends XotBaseViewRecord
     protected static string $resource = LocationResource::class;
 
     /**
-     * @return array<string, \Filament\Schemas\Components\Component>
+     * @return array<string, Component>
      */
-    #[\Override]
+    #[Override]
     protected function getInfolistSchema(): array
     {
         return [
