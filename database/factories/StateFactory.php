@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\State;
 
 /**
- * State Factory
+ * State Factory.
  *
  * @extends Factory<State>
  */
@@ -41,7 +41,7 @@ class StateFactory extends Factory
 
     public function lombardia(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'state' => 'Lombardia',
             'state_code' => 'LOM',
         ]);
@@ -49,7 +49,7 @@ class StateFactory extends Factory
 
     public function lazio(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'state' => 'Lazio',
             'state_code' => 'LAZ',
         ]);

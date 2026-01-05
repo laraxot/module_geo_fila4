@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Pages;
 
 use Modules\Xot\Filament\Pages\XotBaseDashboard;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
 class Dashboard extends XotBaseDashboard
 {
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-home';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
 
     protected string $view = 'geo::filament.pages.dashboard';
 

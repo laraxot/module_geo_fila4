@@ -62,8 +62,6 @@ class RegionFactory extends Factory
 
     /**
      * Create a region from Northern Italy.
-     *
-     * @return static
      */
     public function northern(): static
     {
@@ -90,8 +88,6 @@ class RegionFactory extends Factory
 
     /**
      * Create a region from Central Italy.
-     *
-     * @return static
      */
     public function central(): static
     {
@@ -116,8 +112,6 @@ class RegionFactory extends Factory
 
     /**
      * Create a region from Southern Italy.
-     *
-     * @return static
      */
     public function southern(): static
     {
@@ -142,14 +136,11 @@ class RegionFactory extends Factory
 
     /**
      * Create a specific region by name.
-     *
-     * @param string $name
-     * @return static
      */
     public function named(string $name): static
     {
         return $this->state(fn (array $attributes) => array_merge($attributes, [
-                'name' => $name,
-            ]));
+            'name' => $name,
+        ]));
     }
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Console\Commands;
 
-use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -55,7 +54,7 @@ class SushiCommand extends Command
     }
 
     /**
-     * Aggiorna il database SQLite di Sushi
+     * Aggiorna il database SQLite di Sushi.
      */
     protected function refresh(): int
     {
@@ -64,18 +63,17 @@ class SushiCommand extends Command
         try {
             $path = base_path('database/content/comuni.json');
 
-            if (!File::exists($path)) {
+            if (! File::exists($path)) {
                 $this->error('File comuni.json non trovato');
 
                 return 1;
             }
 
             // Uso Safe\json_decode per evitare false return
-            /** @var mixed $rawData */
             $rawData = json_decode(File::get($path), true);
 
             // Validazione tipo per evitare foreach su mixed
-            if (!is_array($rawData)) {
+            if (! is_array($rawData)) {
                 $this->error('Il file JSON non contiene un array valido');
 
                 return 1;
@@ -88,8 +86,8 @@ class SushiCommand extends Command
 
             foreach ($data as $comune) {
                 // Type guard per ogni elemento del foreach
-                if (!is_array($comune)) {
-                    $this->warn('Elemento non valido saltato: ' . gettype($comune));
+                if (! is_array($comune)) {
+                    $this->warn('Elemento non valido saltato: '.gettype($comune));
 
                     continue;
                 }
@@ -98,8 +96,8 @@ class SushiCommand extends Command
                 $arrayComune = $comune;
 
                 // Validazione sicura degli offset con type guards
-                if (!$this->isValidComuneData($arrayComune)) {
-                    $this->warn('Dati comune non validi saltati: ' . json_encode($arrayComune));
+                if (! $this->isValidComuneData($arrayComune)) {
+                    $this->warn('Dati comune non validi saltati: '.json_encode($arrayComune));
 
                     continue;
                 }
@@ -123,8 +121,8 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi aggiornato con successo');
 
             return 0;
-        } catch (Exception $e) {
-            $this->error('Errore durante l\'aggiornamento del database: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            $this->error('Errore durante l\'aggiornamento del database: '.$e->getMessage());
 
             return 1;
         }
@@ -133,14 +131,14 @@ class SushiCommand extends Command
     /**
      * Valida i dati di un comune.
      *
-     * @param  array<mixed, mixed>  $comune
+     * @param array<mixed, mixed> $comune
      */
     protected function isValidComuneData(array $comune): bool
     {
         $requiredFields = ['id', 'regione', 'provincia', 'comune', 'cap', 'lat', 'lng'];
 
         foreach ($requiredFields as $field) {
-            if (!array_key_exists($field, $comune)) {
+            if (! array_key_exists($field, $comune)) {
                 return false;
             }
         }
@@ -149,7 +147,7 @@ class SushiCommand extends Command
     }
 
     /**
-     * Pulisce il database SQLite di Sushi
+     * Pulisce il database SQLite di Sushi.
      */
     protected function clear(): int
     {
@@ -160,15 +158,15 @@ class SushiCommand extends Command
             $this->info('Database SQLite di Sushi pulito con successo');
 
             return 0;
-        } catch (Exception $e) {
-            $this->error('Errore durante la pulizia del database: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            $this->error('Errore durante la pulizia del database: '.$e->getMessage());
 
             return 1;
         }
     }
 
     /**
-     * Mostra lo stato del database SQLite di Sushi
+     * Mostra lo stato del database SQLite di Sushi.
      */
     protected function status(): int
     {
@@ -197,8 +195,8 @@ class SushiCommand extends Command
             $this->info("Numero di CAP: {$cap}");
 
             return 0;
-        } catch (Exception $e) {
-            $this->error('Errore durante la verifica dello stato del database: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            $this->error('Errore durante la verifica dello stato del database: '.$e->getMessage());
 
             return 1;
         }

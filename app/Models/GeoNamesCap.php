@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Xot\Contracts\ProfileContract;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Contracts\ProfileContract;
 // //use Laravel\Scout\Searchable;
 use Modules\Xot\Traits\Updater;
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\OpenCage;
 
-use Exception;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\AddressData;
 
@@ -20,26 +19,26 @@ class GetAddressFromOpenCageAction
      *
      * @param string $address L'indirizzo da cercare
      *
-     * @throws Exception Se la chiave API non è configurata
+     * @throws \Exception Se la chiave API non è configurata
      *
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
-    public function execute(string $address): null|AddressData
+    public function execute(string $address): ?AddressData
     {
         $apiKey = config('services.opencage.key');
 
         if (empty($apiKey)) {
-            throw new Exception('OpenCage API key not configured');
+            throw new \Exception('OpenCage API key not configured');
         }
 
-        $response = Http::get(self::BASE_URL . '/json', [
+        $response = Http::get(self::BASE_URL.'/json', [
             'q' => $address,
             'key' => $apiKey,
             'limit' => 1,
             'no_annotations' => 1,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             return null;
         }
 

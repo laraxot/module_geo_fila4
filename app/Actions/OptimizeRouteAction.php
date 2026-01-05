@@ -13,8 +13,9 @@ use Modules\Geo\Datas\LocationData;
 readonly class OptimizeRouteAction
 {
     public function __construct(
-        private  CalculateDistanceAction $calculateDistance,
-    ) {}
+        private CalculateDistanceAction $calculateDistance,
+    ) {
+    }
 
     /**
      * Ottimizza l'ordine dei punti minimizzando la distanza totale.
@@ -45,7 +46,7 @@ readonly class OptimizeRouteAction
 
             $optimizedLocations->push($nearestLocation);
             $remainingLocations = $remainingLocations->reject(
-                fn(LocationData $location) => $location === $nearestLocation,
+                fn (LocationData $location) => $location === $nearestLocation,
             );
         }
 
@@ -57,7 +58,7 @@ readonly class OptimizeRouteAction
      *
      * @param Collection<int, LocationData> $locations
      */
-    private function findNearestLocation(LocationData $currentLocation, Collection $locations): null|LocationData
+    private function findNearestLocation(LocationData $currentLocation, Collection $locations): ?LocationData
     {
         $nearestLocation = null;
         $shortestDistance = PHP_FLOAT_MAX;

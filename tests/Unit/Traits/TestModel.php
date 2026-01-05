@@ -29,7 +29,7 @@ class TestModel extends Model
         parent::boot();
 
         static::creating(function () {
-            if (!app()->environment('testing')) {
+            if (! app()->environment('testing')) {
                 throw new Exception('TestModel should only be used in tests.');
             }
         });

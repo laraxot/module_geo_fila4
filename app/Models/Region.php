@@ -4,29 +4,31 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Sushi\Sushi;
-use Modules\Geo\Database\Factories\RegionFactory;
 use Filament\Schemas\Components\Utilities\Get;
-use Modules\Xot\Contracts\ProfileContract;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Geo\Database\Factories\RegionFactory;
+use Modules\Xot\Contracts\ProfileContract;
+use Sushi\Sushi;
 
 /**
- * @property int $id
- * @property string|null $name
- * @property-read ProfileContract|null $creator
- * @property-read Collection<int, Province> $provinces
- * @property-read int|null $provinces_count
- * @property-read ProfileContract|null $updater
+ * @property int                       $id
+ * @property string|null               $name
+ * @property ProfileContract|null      $creator
+ * @property Collection<int, Province> $provinces
+ * @property int|null                  $provinces_count
+ * @property ProfileContract|null      $updater
+ *
  * @method static Builder<static>|Region newModelQuery()
  * @method static Builder<static>|Region newQuery()
  * @method static Builder<static>|Region query()
  * @method static Builder<static>|Region whereId($value)
  * @method static Builder<static>|Region whereName($value)
+ *
  * @mixin IdeHelperRegion
  * @mixin \Eloquent
  */

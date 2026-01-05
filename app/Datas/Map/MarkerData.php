@@ -10,7 +10,8 @@ class MarkerData extends Data
 {
     public function __construct(
         public PositionData $position,
-        public null|string $title = null,
-        public null|IconData $icon = null,
-    ) {}
+        public ?string $title = null,
+        public ?IconData $icon = null,
+    ) {
+    }
 }

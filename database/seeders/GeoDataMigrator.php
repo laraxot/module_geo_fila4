@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Database\Seeders;
 
-use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -37,20 +36,21 @@ class GeoDataMigrator extends Seeder
 
             DB::commit();
             $this->command->info('Successfully migrated all geographical data to Geo module.');
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Failed to migrate geographical data: ' . $e->getMessage());
-            $this->command->error('Failed to migrate geographical data: ' . $e->getMessage());
+            Log::error('Failed to migrate geographical data: '.$e->getMessage());
+            $this->command->error('Failed to migrate geographical data: '.$e->getMessage());
         }
     }
 
     /**
-     * Migrate regions from SaluteOra to Geo module
+     * Migrate regions from SaluteOra to Geo module.
      */
     protected function migrateRegions(): void
     {
-        if (!DB::getSchemaBuilder()->hasTable('regions')) {
+        if (! DB::getSchemaBuilder()->hasTable('regions')) {
             $this->command->warn('Regions table does not exist in SaluteOra module. Skipping...');
+
             return;
         }
 
@@ -75,12 +75,13 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
-     * Migrate provinces from SaluteOra to Geo module
+     * Migrate provinces from SaluteOra to Geo module.
      */
     protected function migrateProvinces(): void
     {
-        if (!DB::getSchemaBuilder()->hasTable('provinces')) {
+        if (! DB::getSchemaBuilder()->hasTable('provinces')) {
             $this->command->warn('Provinces table does not exist in SaluteOra module. Skipping...');
+
             return;
         }
 
@@ -106,12 +107,13 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
-     * Migrate cities from SaluteOra to Geo module
+     * Migrate cities from SaluteOra to Geo module.
      */
     protected function migrateCities(): void
     {
-        if (!DB::getSchemaBuilder()->hasTable('cities')) {
+        if (! DB::getSchemaBuilder()->hasTable('cities')) {
             $this->command->warn('Cities table does not exist in SaluteOra module. Skipping...');
+
             return;
         }
 
@@ -137,12 +139,13 @@ class GeoDataMigrator extends Seeder
     }
 
     /**
-     * Migrate CAPs from SaluteOra to Geo module
+     * Migrate CAPs from SaluteOra to Geo module.
      */
     protected function migrateCaps(): void
     {
-        if (!DB::getSchemaBuilder()->hasTable('caps')) {
+        if (! DB::getSchemaBuilder()->hasTable('caps')) {
             $this->command->warn('CAPs table does not exist in SaluteOra module. Skipping...');
+
             return;
         }
 

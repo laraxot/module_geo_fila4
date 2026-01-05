@@ -24,7 +24,7 @@ abstract class BaseModel extends Model
      *
      * @var class-string<Factory>
      */
-    protected static $factory = null;
+    protected static $factory;
 
     /**
      * Indicates whether attributes are snake cased on arrays.

@@ -36,32 +36,30 @@ class CalculateDistanceMatrixAction
 
         $response = Http::get(self::BASE_URL, [
             'origins' => $origins
-                ->map(fn(LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude))
+                ->map(fn (LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude))
                 ->join('|'),
             'destinations' => $destinations
-                ->map(fn(LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude))
+                ->map(fn (LocationData $location): string => sprintf('%f,%f', $location->latitude, $location->longitude))
                 ->join('|'),
             'key' => $apiKey,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw GoogleMapsApiException::requestFailed((string) $response->status());
         }
 
         /** @var array{status?: string, rows?: array<int, array{elements?: array<int, array{distance?: array{text: string, value: int}, duration?: array{text: string, value: int}, status?: string}>}>} $data */
         $data = $response->json();
 
-        if (!is_array($data) || 'OK' !== ($data['status'] ?? null)) {
-            throw GoogleMapsApiException::requestFailed(
-                'Stato della risposta non valido: ' . ($data['status'] ?? 'sconosciuto'),
-            );
+        if (! is_array($data) || 'OK' !== ($data['status'] ?? null)) {
+            throw GoogleMapsApiException::requestFailed('Stato della risposta non valido: '.($data['status'] ?? 'sconosciuto'));
         }
 
         if (empty($data['rows'])) {
             throw GoogleMapsApiException::noResultsFound();
         }
 
-        return array_map(fn(array $row): array => array_map(fn(array $element): array => [
+        return array_map(fn (array $row): array => array_map(fn (array $element): array => [
             'distance' => $element['distance'] ?? ['text' => '0 km', 'value' => 0],
             'duration' => $element['duration'] ?? ['text' => '0 min', 'value' => 0],
             'status' => $element['status'] ?? 'ZERO_RESULTS',
@@ -72,7 +70,7 @@ class CalculateDistanceMatrixAction
     {
         $apiKey = config('services.google.maps_api_key');
 
-        if (empty($apiKey) || !is_string($apiKey)) {
+        if (empty($apiKey) || ! is_string($apiKey)) {
             throw GoogleMapsApiException::missingApiKey();
         }
 

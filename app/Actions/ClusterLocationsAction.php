@@ -10,24 +10,26 @@ use Modules\Geo\Exceptions\InvalidLocationException;
 readonly class ClusterLocationsAction
 {
     public function __construct(
-        private  CalculateDistanceAction $distanceCalculator,
-    ) {}
+        private CalculateDistanceAction $distanceCalculator,
+    ) {
+    }
 
     /**
      * Raggruppa le posizioni in cluster basati sulla distanza.
      *
-     * @param  array<LocationData>  $locations  Lista delle posizioni da raggruppare
-     * @param  float  $maxDistance  Distanza massima in km tra i punti di un cluster
-     * @return array<array{center: LocationData, points: array<LocationData>}>
+     * @param array<LocationData> $locations   Lista delle posizioni da raggruppare
+     * @param float               $maxDistance Distanza massima in km tra i punti di un cluster
      *
      * @throws InvalidLocationException Se i dati della posizione non sono validi
+     *
+     * @return array<array{center: LocationData, points: array<LocationData>}>
      */
     public function execute(array $locations, float $maxDistance = 1.0): array
     {
         $clusters = [];
 
         foreach ($locations as $location) {
-            if (!($location instanceof LocationData)) {
+            if (! ($location instanceof LocationData)) {
                 throw InvalidLocationException::invalidData();
             }
 
@@ -45,7 +47,7 @@ readonly class ClusterLocationsAction
                 }
             }
 
-            if (!$assigned) {
+            if (! $assigned) {
                 $clusters[] = [
                     'center' => $location,
                     'points' => [$location],
@@ -59,13 +61,13 @@ readonly class ClusterLocationsAction
     /**
      * Aggiorna il centro del cluster calcolando la media delle coordinate.
      *
-     * @param  array{center: LocationData, points: array<LocationData>}  $cluster
+     * @param array{center: LocationData, points: array<LocationData>} $cluster
      */
     private function updateClusterCenter(array &$cluster): void
     {
-        $latSum = array_sum(array_map(fn(LocationData $point) => $point->latitude, $cluster['points']));
+        $latSum = array_sum(array_map(fn (LocationData $point) => $point->latitude, $cluster['points']));
 
-        $lonSum = array_sum(array_map(fn(LocationData $point) => $point->longitude, $cluster['points']));
+        $lonSum = array_sum(array_map(fn (LocationData $point) => $point->longitude, $cluster['points']));
 
         $count = count($cluster['points']);
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Override;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Carbon;
@@ -35,13 +34,14 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array                $location
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- * @method static Builder|Location query()
- * @method static Builder|Location whereCity(string $value)
- * @method static Builder|Location whereLat(float $value)
- * @method static Builder|Location whereLng(float $value)
- * @method static Builder|Location whereProcessed(bool $value)
- * @method static Builder|Location whereState(string $value)
- * @method static Builder|Location whereZip(string $value)
+ *
+ * @method static Builder|Location         query()
+ * @method static Builder|Location         whereCity(string $value)
+ * @method static Builder|Location         whereLat(float $value)
+ * @method static Builder|Location         whereLng(float $value)
+ * @method static Builder|Location         whereProcessed(bool $value)
+ * @method static Builder|Location         whereState(string $value)
+ * @method static Builder|Location         whereZip(string $value)
  * @method static Builder<static>|Location newModelQuery()
  * @method static Builder<static>|Location newQuery()
  * @method static Builder<static>|Location withinDistance(float $latitude, float $longitude, float $distanceInKm)
@@ -58,6 +58,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Location whereStreet($value)
  * @method static Builder<static>|Location whereUpdatedAt($value)
  * @method static Builder<static>|Location whereUpdatedBy($value)
+ *
  * @mixin IdeHelperLocation
  * @mixin \Eloquent
  */
@@ -85,7 +86,7 @@ class Location extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -101,11 +102,11 @@ class Location extends BaseModel
     protected function location(): Attribute
     {
         return Attribute::make(
-            get: fn(): array => [
+            get: fn (): array => [
                 'lat' => (float) $this->lat,
                 'lng' => (float) $this->lng,
             ],
-            set: function (null|array $value): void {
+            set: function (?array $value): void {
                 if (is_array($value)) {
                     $this->attributes['lat'] = $value['lat'] ?? null;
                     $this->attributes['lng'] = $value['lng'] ?? null;

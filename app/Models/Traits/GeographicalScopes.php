@@ -28,7 +28,7 @@ trait GeographicalScopes
     public function getDistanceExpression(
         float $latitude,
         float $longitude,
-        null|string $alias = null,
+        ?string $alias = null,
     ): Expression|\Illuminate\Contracts\Database\Query\Expression {
         $sql = "
             (6371 * acos(

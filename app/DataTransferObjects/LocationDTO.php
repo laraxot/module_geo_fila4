@@ -17,10 +17,11 @@ readonly class LocationDTO
      * @param string|null $name      Nome opzionale della posizione
      */
     public function __construct(
-        public  float $latitude,
-        public  float $longitude,
-        public  null|string $name = null,
-    ) {}
+        public float $latitude,
+        public float $longitude,
+        public ?string $name = null,
+    ) {
+    }
 
     /**
      * Crea una nuova istanza da un oggetto LocationData.

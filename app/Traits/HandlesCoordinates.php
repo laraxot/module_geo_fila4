@@ -15,16 +15,16 @@ trait HandlesCoordinates
      * @param float|null $latitude  La latitudine da validare
      * @param float|null $longitude La longitudine da validare
      */
-    protected function areValidCoordinates(null|float $latitude, null|float $longitude): bool
+    protected function areValidCoordinates(?float $latitude, ?float $longitude): bool
     {
-        return (
-            null !== $latitude &&
-            null !== $longitude &&
-            $latitude >= -90 &&
-            $latitude <= 90 &&
-            $longitude >= -180 &&
-            $longitude <= 180
-        );
+        return
+            null !== $latitude
+            && null !== $longitude
+            && $latitude >= -90
+            && $latitude <= 90
+            && $longitude >= -180
+            && $longitude <= 180
+        ;
     }
 
     /**

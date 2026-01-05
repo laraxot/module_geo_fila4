@@ -4,22 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources;
 
-use Override;
-use Filament\Forms\Components\TextInput;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
-use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
-use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Tables;
-use Filament\Tables\Filters\FiltersLayout;
+use Filament\Forms\Components\TextInput;
 use Filament\Tables\Table;
-use Modules\Geo\Filament\Resources\LocationResource\Actions\RadiusAction;
-use Modules\Geo\Filament\Resources\LocationResource\Filters\RadiusFilter;
-use Modules\Geo\Filament\Resources\LocationResource\Pages;
-use Modules\Geo\Filament\Resources\LocationResource\RelationManagers;
+use Modules\Geo\Filament\Resources\LocationResource\Pages\CreateLocation;
+use Modules\Geo\Filament\Resources\LocationResource\Pages\EditLocation;
+use Modules\Geo\Filament\Resources\LocationResource\Pages\ListLocations;
+use Modules\Geo\Filament\Resources\LocationResource\Pages\ViewLocation;
 use Modules\Geo\Models\Location;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
@@ -35,13 +26,13 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
  */
 class LocationResource extends XotBaseResource
 {
-    protected static null|string $model = Location::class;
+    protected static ?string $model = Location::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-map-pin';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-map-pin';
 
     // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
 
-    protected static null|int $navigationSort = 2;
+    protected static ?int $navigationSort = 2;
 
     /**
      * Converte le coordinate in formato float.
@@ -58,7 +49,7 @@ class LocationResource extends XotBaseResource
         ];
     }
 
-    #[Override]
+    #[\Override]
     public static function getFormSchema(): array
     {
         return [
@@ -104,7 +95,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le relazioni configurate
      */
-    #[Override]
+    #[\Override]
     public static function getRelations(): array
     {
         return [];
@@ -120,7 +111,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array Le pagine configurate
      */
-    #[Override]
+    #[\Override]
     public static function getPages(): array
     {
         return [

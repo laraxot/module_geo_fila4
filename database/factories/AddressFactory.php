@@ -6,10 +6,9 @@ namespace Modules\Geo\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\Address;
-use Modules\Geo\Models\Comune;
 
 /**
- * Address Factory
+ * Address Factory.
  *
  * @extends Factory<Address>
  */
@@ -46,7 +45,7 @@ class AddressFactory extends Factory
 
     public function italian(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'country' => 'IT',
             'administrative_area_level_1' => $this->faker->randomElement([
                 'Lombardia',

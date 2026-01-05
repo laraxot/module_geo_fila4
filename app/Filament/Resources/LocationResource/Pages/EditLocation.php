@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources\LocationResource\Pages;
 
-use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
 // use Cheesegrits\FilamentGoogleMaps\Concerns\InteractsWithMaps; // Pacchetto non installato
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Geo\Filament\Resources\LocationResource;
 use Webmozart\Assert\Assert;

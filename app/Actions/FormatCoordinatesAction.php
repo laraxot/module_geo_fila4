@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use InvalidArgumentException;
-
 class FormatCoordinatesAction
 {
     public function execute(float $latitude, float $longitude, string $format = 'decimal'): string
@@ -14,7 +12,7 @@ class FormatCoordinatesAction
             'dms' => $this->toDMS($latitude, $longitude),
             'decimal' => $this->toDecimal($latitude, $longitude),
             'google' => $this->toGoogleMapsUrl($latitude, $longitude),
-            default => throw new InvalidArgumentException('Formato non supportato'),
+            default => throw new \InvalidArgumentException('Formato non supportato'),
         };
     }
 

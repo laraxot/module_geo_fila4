@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Override;
-use Modules\User\Models\Profile;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Modules\Tenant\Models\Traits\SushiToJson;
+use Modules\User\Models\Profile;
 use Sushi\Sushi;
 
 /**
@@ -21,25 +18,26 @@ use Sushi\Sushi;
  * regioni, province, città, CAP, codici ISTAT, ecc.
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
  *
- * @property int $id
- * @property string $nome
- * @property string $codice
- * @property string $regione
- * @property string $provincia
- * @property string $sigla_provincia
- * @property string $cap
- * @property string $codice_catastale
- * @property int $popolazione
- * @property string $zona_altimetrica
- * @property int $altitudine
- * @property float $superficie
- * @property float $lat
- * @property float $lng
+ * @property int                          $id
+ * @property string                       $nome
+ * @property string                       $codice
+ * @property string                       $regione
+ * @property string                       $provincia
+ * @property string                       $sigla_provincia
+ * @property string                       $cap
+ * @property string                       $codice_catastale
+ * @property int                          $popolazione
+ * @property string                       $zona_altimetrica
+ * @property int                          $altitudine
+ * @property float                        $superficie
+ * @property float                        $lat
+ * @property float                        $lng
  * @property array<array-key, mixed>|null $zona
- * @property string|null $sigla
- * @property string|null $codiceCatastale
- * @property-read Profile|null $creator
- * @property-read Profile|null $updater
+ * @property string|null                  $sigla
+ * @property string|null                  $codiceCatastale
+ * @property Profile|null                 $creator
+ * @property Profile|null                 $updater
+ *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
  * @method static Builder<static>|Comune query()
@@ -53,6 +51,7 @@ use Sushi\Sushi;
  * @method static Builder<static>|Comune whereRegione($value)
  * @method static Builder<static>|Comune whereSigla($value)
  * @method static Builder<static>|Comune whereZona($value)
+ *
  * @mixin IdeHelperComune
  * @mixin \Eloquent
  */
@@ -109,7 +108,7 @@ class Comune extends BaseModel
     }
 
     /** @return array<string, string>     */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -121,13 +120,13 @@ class Comune extends BaseModel
     }
 
     /**
-     * Get all regions
+     * Get all regions.
      *
      * @return Collection<string>
      */
     public static function getRegioni(): Collection
     {
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return static::all()
             ->pluck('regione')
             ->unique()
@@ -136,14 +135,13 @@ class Comune extends BaseModel
     }
 
     /**
-     * Get all provinces for a region
+     * Get all provinces for a region.
      *
-     * @param string $regione
      * @return Collection<string>
      */
     public static function getProvinceByRegione(string $regione): Collection
     {
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return static::where('regione', $regione)
             ->pluck('provincia')
             ->unique()
@@ -152,60 +150,58 @@ class Comune extends BaseModel
     }
 
     /**
-     * Get all comuni for a province
+     * Get all comuni for a province.
      *
-     * @param string $provincia
      * @return Collection<static>
      */
     public static function getComuniByProvincia(string $provincia): Collection
     {
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return static::where('provincia', $provincia)->orderBy('nome')->get();
     }
 
     /**
-     * Find a comune by name (case insensitive)
+     * Find a comune by name (case insensitive).
      *
      * @param string $nome The name of the comune to find (case insensitive)
+     *
      * @return static|null The found comune or null if not found
      */
-    public static function findByNome(string $nome): null|self
+    public static function findByNome(string $nome): ?self
     {
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return static::all()
             ->first(fn ($comune) => strtolower($comune->nome) === strtolower($nome));
     }
 
     /**
-     * Find comuni by CAP code (partial match supported)
+     * Find comuni by CAP code (partial match supported).
      *
      * @param string $cap The CAP code to search for
+     *
      * @return Collection<static> Collection of matching comuni
      */
     public static function findByCap(string $cap): Collection
     {
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return static::where('cap', 'like', "%{$cap}%")->get();
     }
 
     /**
-     * Find a city by ID
+     * Find a city by ID.
      *
-     * @param int $id
      * @return array{id: int, nome: string, provincia: string, regione: string, cap: string, codice_catastale: string, popolazione: int, altitudine: int, superficie: float, lat: float, lng: float, zona_altimetrica: string}|null
      */
-    public static function findComune(int $id): null|array
+    public static function findComune(int $id): ?array
     {
         $comune = static::query()->where('id', $id)->first();
 
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return $comune ? $comune->toArray() : null;
     }
 
     /**
      * Get the directory where Comune JSON files are stored.
-     *
-     * @return string
      */
     public function getJsonDirectory(): string
     {
@@ -214,9 +210,6 @@ class Comune extends BaseModel
 
     /**
      * Set the directory where Comune JSON files are stored.
-     *
-     * @param string $directory
-     * @return void
      */
     public function setJsonDirectory(string $directory): void
     {

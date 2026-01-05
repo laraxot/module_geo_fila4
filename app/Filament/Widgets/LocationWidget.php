@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Widgets;
 
-use Override;
 use Modules\Geo\Filament\Forms\LocationForm;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 
@@ -21,7 +20,7 @@ class LocationWidget extends XotBaseWidget
     /**
      * Ordine di visualizzazione del widget.
      */
-    protected static null|int $sort = 1;
+    protected static ?int $sort = 1;
 
     /**
      * Numero di colonne occupate dal widget.
@@ -31,7 +30,7 @@ class LocationWidget extends XotBaseWidget
     /**
      * Dati del widget.
      */
-    public null|array $data = [];
+    public ?array $data = [];
 
     /**
      * Titolo del widget.
@@ -63,8 +62,6 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Inizializza il widget.
-     *
-     * @return void
      */
     public function mount(): void
     {
@@ -76,7 +73,7 @@ class LocationWidget extends XotBaseWidget
      *
      * @return array<int, \Filament\Schemas\Components\Component>
      */
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return $this->locationForm->getSchema();
@@ -84,8 +81,6 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Gestisce l'invio del form.
-     *
-     * @return void
      */
     public function submit(): void
     {
@@ -102,8 +97,6 @@ class LocationWidget extends XotBaseWidget
 
     /**
      * Verifica se il widget può essere visualizzato.
-     *
-     * @return bool
      */
     public static function canView(): bool
     {

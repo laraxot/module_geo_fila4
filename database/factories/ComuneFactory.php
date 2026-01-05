@@ -146,8 +146,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a comune in Lombardia region.
-     *
-     * @return static
      */
     public function lombardia(): static
     {
@@ -175,8 +173,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a comune in Emilia-Romagna region.
-     *
-     * @return static
      */
     public function emiliaRomagna(): static
     {
@@ -209,8 +205,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a small comune (under 5000 inhabitants).
-     *
-     * @return static
      */
     public function small(): static
     {
@@ -222,8 +216,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a large comune (over 100000 inhabitants).
-     *
-     * @return static
      */
     public function large(): static
     {
@@ -235,8 +227,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a mountain comune.
-     *
-     * @return static
      */
     public function mountain(): static
     {
@@ -249,8 +239,6 @@ class ComuneFactory extends Factory
 
     /**
      * Create a coastal comune.
-     *
-     * @return static
      */
     public function coastal(): static
     {
@@ -263,14 +251,11 @@ class ComuneFactory extends Factory
 
     /**
      * Create a specific comune by name.
-     *
-     * @param string $name
-     * @return static
      */
     public function named(string $name): static
     {
         return $this->state(fn (array $attributes) => array_merge($attributes, [
-                'nome' => $name,
-            ]));
+            'nome' => $name,
+        ]));
     }
 }

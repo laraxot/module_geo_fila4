@@ -19,17 +19,18 @@ class FilterCoordinatesInRadius implements Rule
         private readonly float $centerLatitude,
         private readonly float $centerLongitude,
         private readonly int $radius,
-    ) {}
+    ) {
+    }
 
     /**
      * Determina se le coordinate passate sono all'interno del raggio specificato.
      *
      * @param string $_attribute Nome dell'attributo
-     * @param mixed  $value     Valore da validare
+     * @param mixed  $value      Valore da validare
      */
     public function passes($_attribute, $value): bool
     {
-        if (!is_array($value)) {
+        if (! is_array($value)) {
             $this->message = 'Il valore deve essere un array di coordinate';
 
             return false;
@@ -37,7 +38,7 @@ class FilterCoordinatesInRadius implements Rule
 
         /** @var array<array{latitude: string, longitude: string}> $coordinates */
         $coordinates = array_map(function ($coordinate): array {
-            if (!is_array($coordinate)) {
+            if (! is_array($coordinate)) {
                 return ['latitude' => '', 'longitude' => ''];
             }
 

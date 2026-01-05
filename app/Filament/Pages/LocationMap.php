@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Pages;
 
 // use Modules\Geo\Filament\Widgets\LocationMapWidget; // Widget disabilitato per compatibilità Filament v4
-use Modules\Geo\Filament\Widgets;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 class LocationMap extends XotBasePage

@@ -40,7 +40,7 @@ class GeoJsonResource extends ResCollection
         return [
             'type' => 'Feature',
             'properties' => [
-                'id' => $this->post_type . '-' . $this->post_id,
+                'id' => $this->post_type.'-'.$this->post_id,
                 // "index"=> 0,
                 'isActive' => true,
                 // "logo"=> "http://placehold.it/32x32",
@@ -56,7 +56,7 @@ class GeoJsonResource extends ResCollection
                 'stars' => $this->ratings_avg,
                 'phone' => $this->phone,
                 'address' => $this->full_address,
-                'about' => $this->subtitle . "\r\n",
+                'about' => $this->subtitle."\r\n",
                 'tags' => [
                     $this->post_type,
                     // "Restaurant",

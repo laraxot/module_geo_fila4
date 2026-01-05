@@ -15,8 +15,8 @@ class FilterCoordinatesInRadius
 
         foreach ($coordinateArray as $coordinate) {
             Assert::isArray($coordinate);
-            Assert::string($lat = $coordinate['latitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
-            Assert::string($lon = $coordinate['longitude'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
+            Assert::string($lat = $coordinate['latitude'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
+            Assert::string($lon = $coordinate['longitude'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
 
             $distanza = $this->calcolaDistanzaGeografica($latPartenza, $lonPartenza, $lat, $lon);
 

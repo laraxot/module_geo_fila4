@@ -4,18 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources;
 
-use Override;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Utilities\Set;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Forms\Components\Toggle;
-use Filament\Forms;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Form;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Modules\Geo\Filament\Resources\AddressResource\Pages;
-use Modules\Geo\Filament\Resources\AddressResource\RelationManagers;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Modules\Geo\Models\Address;
 use Modules\Geo\Models\Locality;
 use Modules\Geo\Models\Province;
@@ -35,21 +28,21 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
  */
 class AddressResource extends XotBaseResource
 {
-    protected static null|string $model = Address::class;
+    protected static ?string $model = Address::class;
 
     // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
 
-    protected static null|int $navigationSort = 3;
+    protected static ?int $navigationSort = 3;
 
     /**
      * @return array<string, \Filament\Schemas\Components\Component>
      */
-    #[Override]
+    #[\Override]
     public static function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name')->maxLength(255),
-            'country' => TextInput::make('country') //Nazione
+            'country' => TextInput::make('country') // Nazione
                 ->maxLength(255)
                 ->default('Italia')
                 ->visible(false)
@@ -75,14 +68,14 @@ class AddressResource extends XotBaseResource
                     $set('postal_code', null);
                     $set('locality', null);
                 })
-                ->disabled(fn(Get $get) => !$get('administrative_area_level_1'))
+                ->disabled(fn (Get $get) => ! $get('administrative_area_level_1'))
                 ->placeholder(__('filament-forms::components.select.placeholder')),
             'locality' => Select::make('locality')
                 ->options(Locality::getOptions(...))
                 ->searchable()
                 ->required()
                 ->live()
-                ->disabled(fn(Get $get) => !$get('administrative_area_level_1') || !$get('administrative_area_level_2'))
+                ->disabled(fn (Get $get) => ! $get('administrative_area_level_1') || ! $get('administrative_area_level_2'))
                 ->extraAttributes(['class' => 'h-8 flex items-center'])
                 ->afterStateUpdated(function (Set $set) {
                     $set('postal_code', null);
@@ -93,7 +86,7 @@ class AddressResource extends XotBaseResource
                 ->searchable()
                 ->required()
                 ->live()
-                ->disabled(fn(Get $get) => !$get('administrative_area_level_1') || !$get('administrative_area_level_2'))
+                ->disabled(fn (Get $get) => ! $get('administrative_area_level_1') || ! $get('administrative_area_level_2'))
                 ->placeholder(__('filament-forms::components.select.placeholder')),
             'route' => TextInput::make('route')->required()->maxLength(255),
             'street_number' => TextInput::make('street_number')->maxLength(20),
@@ -125,17 +118,17 @@ class AddressResource extends XotBaseResource
                     $set('postal_code', null);
                     $set('locality', null);
                 })
-                ->disabled(fn(Get $get) => !$get('region'))
+                ->disabled(fn (Get $get) => ! $get('region'))
                 ->placeholder(__('filament-forms::components.select.placeholder')),
-            //->extraAttributes([
-            //'class' => 'h-9'
-            //])
+            // ->extraAttributes([
+            // 'class' => 'h-9'
+            // ])
             'locality' => Select::make('locality')
                 ->options(Locality::getOptions(...))
                 ->searchable()
                 ->required()
                 ->live()
-                ->disabled(fn(Get $get) => !$get('region') || !$get('province'))
+                ->disabled(fn (Get $get) => ! $get('region') || ! $get('province'))
                 ->placeholder(__('filament-forms::components.select.placeholder'))
                 ->afterStateUpdated(function (Set $set) {
                     $set('postal_code', null);
@@ -145,7 +138,7 @@ class AddressResource extends XotBaseResource
                 ->searchable()
                 ->required()
                 ->live()
-                ->disabled(fn(Get $get) => !$get('region') || !$get('province'))
+                ->disabled(fn (Get $get) => ! $get('region') || ! $get('province'))
                 ->placeholder(__('filament-forms::components.select.placeholder')),
         ];
     }

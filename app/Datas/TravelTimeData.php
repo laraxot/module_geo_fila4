@@ -21,7 +21,8 @@ class TravelTimeData extends Data
         public readonly string $formatted_duration,
         public readonly string $formatted_distance,
         public readonly string $status = 'OK',
-    ) {}
+    ) {
+    }
 
     /**
      * Crea un'istanza di errore.
@@ -64,7 +65,7 @@ class TravelTimeData extends Data
         }
 
         $element = $response['rows'][0]['elements'][0] ?? null;
-        if (!$element || 'OK' !== ($element['status'] ?? null)) {
+        if (! $element || 'OK' !== ($element['status'] ?? null)) {
             return self::error($element['status'] ?? 'INVALID_RESPONSE');
         }
 

@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Forms\Components;
 
+use Filament\Forms;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Utilities\Get;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Filament\Forms;
-use Filament\Forms\Set;
+use Filament\Schemas\Components\Utilities\Get;
 use Modules\Geo\Filament\Resources\AddressResource;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 use function Safe\preg_match;
 
@@ -33,7 +32,7 @@ use function Safe\preg_match;
  */
 class AddressesField extends Repeater
 {
-    //protected string $view = 'geo::filament.forms.components.addresses-field';
+    // protected string $view = 'geo::filament.forms.components.addresses-field';
 
     protected function setUp(): void
     {
@@ -49,7 +48,7 @@ class AddressesField extends Repeater
     /**
      * Schema form personalizzato per gli indirizzi con logica condizionale per i campi name e is_primary.
      *
-     * @return array<string, \Filament\Schemas\Components\Component>
+     * @return array<string, Component>
      */
     protected function getAddressFormSchema(): array
     {
@@ -60,7 +59,8 @@ class AddressesField extends Repeater
             ->maxLength(255)
             ->visible(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
-                /** @phpstan-ignore argument.type */
+
+                /* @phpstan-ignore argument.type */
                 return count($addresses) > 1;
             })
             ->live();
@@ -69,18 +69,20 @@ class AddressesField extends Repeater
         $baseSchema['is_primary'] = Toggle::make('is_primary')
             ->visible(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
-                /** @phpstan-ignore argument.type */
+
+                /* @phpstan-ignore argument.type */
                 return count($addresses) > 1;
             })
             ->default(function (Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
+
                 // Se è il primo elemento o c'è un solo elemento, default true
-                /** @phpstan-ignore argument.type */
+                /* @phpstan-ignore argument.type */
                 return count($addresses) <= 1;
             })
             ->afterStateUpdated(function ($state, $set, Get $get, Component $component): void {
                 // Se questo diventa primary, disattiva tutti gli altri
-                if ($state === true) {
+                if (true === $state) {
                     $addresses = $get('../../addresses') ?? [];
 
                     // Estrae l'indice dal path del componente (es. "addresses.0.is_primary")
@@ -88,15 +90,15 @@ class AddressesField extends Repeater
                     preg_match('/addresses\.(\d+)\.is_primary/', $path ?? '', $matches);
                     $currentIndex = $matches[1] ?? null;
 
-                    if ($currentIndex !== null) {
+                    if (null !== $currentIndex) {
                         // Disattiva is_primary negli altri elementi
-                        /** @phpstan-ignore foreach.nonIterable */
+                        /* @phpstan-ignore foreach.nonIterable */
                         foreach ($addresses as $index => $address) {
                             $indexStr = app(SafeStringCastAction::class)->execute($index);
                             $currentIndexStr = app(SafeStringCastAction::class)
                                 ->execute($currentIndex);
                             if ($indexStr !== $currentIndexStr) {
-                                $set('../../addresses.' . $indexStr . '.is_primary', false);
+                                $set('../../addresses.'.$indexStr.'.is_primary', false);
                             }
                         }
                     }
@@ -106,10 +108,11 @@ class AddressesField extends Repeater
             ->dehydrateStateUsing(function ($state, Get $get): bool {
                 $addresses = $get('../../addresses') ?? [];
                 // Se c'è un solo elemento, forza sempre true
-                /** @phpstan-ignore argument.type */
+                /* @phpstan-ignore argument.type */
                 if (count($addresses) <= 1) {
                     return true;
                 }
+
                 return (bool) $state;
             });
 

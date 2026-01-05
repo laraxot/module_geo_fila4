@@ -6,14 +6,15 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Xot\Contracts\ProfileContract;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static Builder<static>|PlaceType newModelQuery()
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
+ *
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ *
  * @mixin IdeHelperPlaceType
  * @mixin \Eloquent
  */

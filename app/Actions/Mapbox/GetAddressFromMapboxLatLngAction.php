@@ -46,7 +46,7 @@ class GetAddressFromMapboxLatLngAction
     {
         $apiKey = config('services.mapbox.api_key');
 
-        if (empty($apiKey) || !is_string($apiKey)) {
+        if (empty($apiKey) || ! is_string($apiKey)) {
             throw InvalidLocationException::invalidData('API key di Mapbox non configurata');
         }
 
@@ -55,20 +55,20 @@ class GetAddressFromMapboxLatLngAction
 
     private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
     {
-        $response = Http::get(self::BASE_URL . "/{$longitude},{$latitude}.json", [
+        $response = Http::get(self::BASE_URL."/{$longitude},{$latitude}.json", [
             'access_token' => $apiKey,
             'types' => 'address',
             'limit' => 1,
             'language' => 'it',
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw InvalidLocationException::invalidData('Richiesta a Mapbox fallita');
         }
 
         $data = $response->json();
 
-        if (!is_array($data)) {
+        if (! is_array($data)) {
             throw InvalidLocationException::invalidData('Risposta di Mapbox non valida');
         }
 
@@ -98,7 +98,7 @@ class GetAddressFromMapboxLatLngAction
             // Determina il tipo di contesto dal prefisso dell'ID
             $type = explode('.', $id)[0] ?? '';
 
-            if (!empty($type)) {
+            if (! empty($type)) {
                 $context[$type] = [
                     'text' => $text,
                     'short_code' => $shortCode,
@@ -110,7 +110,7 @@ class GetAddressFromMapboxLatLngAction
         $center = $location['center'] ?? [0.0, 0.0];
 
         // Validazione del tipo e dell'array center
-        if (!is_array($center) || count($center) < 2) {
+        if (! is_array($center) || count($center) < 2) {
             $center = [0.0, 0.0];
         }
 

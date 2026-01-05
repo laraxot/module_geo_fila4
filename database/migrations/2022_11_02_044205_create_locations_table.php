@@ -7,7 +7,7 @@ use Modules\Geo\Models\Location;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 return new class extends XotBaseMigration {
-    protected null|string $model_class = Location::class;
+    protected ?string $model_class = Location::class;
 
     public function up(): void
     {

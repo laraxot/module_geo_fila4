@@ -13,8 +13,9 @@ use Modules\Geo\Datas\LocationData;
 readonly class GetCoordinatesFromOpenStreetMapAction
 {
     public function __construct(
-        private  FetchCoordinatesAction $fetchCoordinatesAction,
-    ) {}
+        private FetchCoordinatesAction $fetchCoordinatesAction,
+    ) {
+    }
 
     /**
      * Ottiene le coordinate geografiche da un indirizzo usando OpenStreetMap.
@@ -23,7 +24,7 @@ readonly class GetCoordinatesFromOpenStreetMapAction
      *
      * @return LocationData|null Dati della posizione o null se non trovata
      */
-    public function execute(string $address): null|LocationData
+    public function execute(string $address): ?LocationData
     {
         if (empty($address)) {
             return null;

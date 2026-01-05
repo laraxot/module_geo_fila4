@@ -33,8 +33,9 @@ class GetAddressFromBingMapsAction
     /**
      * Get the Bing Maps API key from configuration.
      *
-     * @return non-empty-string
      * @throws InvalidLocationException
+     *
+     * @return non-empty-string
      */
     private function getApiKey(): string
     {
@@ -46,18 +47,18 @@ class GetAddressFromBingMapsAction
         }
 
         // We've already checked that $apiKey is not empty
-        /** @var non-empty-string $apiKey */
+        /* @var non-empty-string $apiKey */
         return $apiKey;
     }
 
     /**
      * Make an API request to Bing Maps.
      *
-     * @param float $latitude
-     * @param float $longitude
      * @param non-empty-string $apiKey
-     * @return array<string, mixed>
+     *
      * @throws InvalidLocationException
+     *
+     * @return array<string, mixed>
      */
     private function makeApiRequest(float $latitude, float $longitude, string $apiKey): array
     {
@@ -68,12 +69,13 @@ class GetAddressFromBingMapsAction
             'maxResults' => 1,
         ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw InvalidLocationException::invalidData('Richiesta a Bing Maps fallita');
         }
 
         /** @var array<string, mixed> $jsonResponse */
         $jsonResponse = $response->json();
+
         return $jsonResponse;
     }
 

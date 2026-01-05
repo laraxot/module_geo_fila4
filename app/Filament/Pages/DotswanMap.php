@@ -25,7 +25,7 @@ class DotswanMap extends XotBasePage
         /** @var Collection<int, Place> $places */
         $places = Place::query()->whereNotNull(['latitude', 'longitude'])->get();
 
-        return $places->map(fn(Place $place): array => [
+        return $places->map(fn (Place $place): array => [
             'lat' => (float) $place->latitude,
             'lng' => (float) $place->longitude,
             'title' => (string) ($place->getAttribute('name') ?? 'Unnamed Place'),

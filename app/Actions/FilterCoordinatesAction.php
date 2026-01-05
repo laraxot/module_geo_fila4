@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use InvalidArgumentException;
 use Modules\Geo\Traits\HandlesCoordinates;
 use Webmozart\Assert\Assert;
 
@@ -18,13 +17,14 @@ class FilterCoordinatesAction
     /**
      * Filtra le coordinate che si trovano entro un certo raggio da un punto.
      *
-     * @param  array<array{latitude: float|string, longitude: float|string}>  $coordinates  Lista delle coordinate da filtrare
-     * @param  float  $centerLat  Latitudine del punto centrale
-     * @param  float  $centerLng  Longitudine del punto centrale
-     * @param  float  $radiusKm  Raggio in chilometri
-     * @return array<array{latitude: float, longitude: float, distance: float}> Coordinate filtrate con distanza
+     * @param array<array{latitude: float|string, longitude: float|string}> $coordinates Lista delle coordinate da filtrare
+     * @param float                                                         $centerLat   Latitudine del punto centrale
+     * @param float                                                         $centerLng   Longitudine del punto centrale
+     * @param float                                                         $radiusKm    Raggio in chilometri
      *
-     * @throws InvalidArgumentException Se le coordinate non sono valide
+     * @throws \InvalidArgumentException Se le coordinate non sono valide
+     *
+     * @return array<array{latitude: float, longitude: float, distance: float}> Coordinate filtrate con distanza
      */
     public function execute(array $coordinates, float $centerLat, float $centerLng, float $radiusKm): array
     {
@@ -44,7 +44,7 @@ class FilterCoordinatesAction
                     'distance' => $this->calculateDistance($centerLat, $centerLng, $lat, $lng),
                 ];
             })
-            ->filter(fn(array $coord): bool => $coord['distance'] <= $radiusKm)
+            ->filter(fn (array $coord): bool => $coord['distance'] <= $radiusKm)
             ->sortBy('distance')
             ->values()
             ->all();
@@ -53,7 +53,7 @@ class FilterCoordinatesAction
     /**
      * Valida i dati di input.
      *
-     * @throws InvalidArgumentException Se i dati non sono validi
+     * @throws \InvalidArgumentException Se i dati non sono validi
      */
     private function validateInput(float $latitude, float $longitude, float $radius): void
     {

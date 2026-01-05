@@ -65,19 +65,19 @@ class GeoDataValidator
      * Valida i dati geografici.
      *
      * @param array $data Dati da validare
-     * @return bool
      */
     public function validate(array $data): bool
     {
         $validator = Validator::make($data, self::VALIDATION_RULES, self::CUSTOM_MESSAGES);
 
-        return !$validator->fails();
+        return ! $validator->fails();
     }
 
     /**
      * Ottiene gli errori di validazione.
      *
      * @param array $data Dati da validare
+     *
      * @return array<string, string>
      */
     public function getErrors(array $data): array
@@ -91,11 +91,10 @@ class GeoDataValidator
      * Verifica l'integrità dei dati.
      *
      * @param array $data Dati da verificare
-     * @return bool
      */
     public function checkIntegrity(array $data): bool
     {
-        if (!$this->validate($data)) {
+        if (! $this->validate($data)) {
             return false;
         }
 

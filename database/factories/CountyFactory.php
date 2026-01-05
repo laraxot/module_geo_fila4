@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Geo\Models\County;
 
 /**
- * County Factory
+ * County Factory.
  *
  * @extends Factory<County>
  */
@@ -42,7 +42,7 @@ class CountyFactory extends Factory
 
     public function lombardia(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'county' => $this->faker->randomElement([
                 'Provincia di Milano',
                 'Provincia di Brescia',

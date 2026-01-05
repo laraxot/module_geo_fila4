@@ -54,7 +54,7 @@ class FormSearchAddressCategories extends Component
         // $this->attributes = $attributes;
         // $this->slot = $slot;
         $this->form_data[$this->name] = json_encode((object) [], JSON_THROW_ON_ERROR);
-        $this->form_data[$this->name . '_value'] = null;
+        $this->form_data[$this->name.'_value'] = null;
     }
 
     /**
@@ -82,13 +82,13 @@ class FormSearchAddressCategories extends Component
         $this->warningCivicNumber = false;
         $this->showActivityTypes = false;
 
-        if (!isset($this->form_data['latlng'])) {
+        if (! isset($this->form_data['latlng'])) {
             $this->warningSuggestedAddresses = true;
 
             return;
         }
 
-        if (!isset($this->form_data['street_number'])) {
+        if (! isset($this->form_data['street_number'])) {
             $this->warningCivicNumber = true;
 
             return;
@@ -119,7 +119,7 @@ class FormSearchAddressCategories extends Component
     {
         $data = (object) $this->form_data;
 
-        if (!isset($data->street_number)) {
+        if (! isset($data->street_number)) {
             $data->street_number = '';
             $this->warningCivicNumber = true;
         }
@@ -142,16 +142,16 @@ class FormSearchAddressCategories extends Component
         $this->showActivityTypes = false;
 
         $data = json_decode($val0, true, 512, JSON_THROW_ON_ERROR);
-        if (!\is_array($data)) {
+        if (! \is_array($data)) {
             $data = [];
         }
         $this->form_data = array_merge($this->form_data, $data);
         $this->form_data[$this->name] = $val0;
-        $this->form_data[$this->name . '_value'] = $val1;
+        $this->form_data[$this->name.'_value'] = $val1;
 
         if (\strlen($val1) < 4) {
             $val2 = $this->formatAddress();
-            $this->form_data[$this->name . '_value'] = $val2;
+            $this->form_data[$this->name.'_value'] = $val2;
         }
     }
 

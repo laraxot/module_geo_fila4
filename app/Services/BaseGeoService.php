@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-use RuntimeException;
-use Throwable;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -24,7 +22,7 @@ abstract class BaseGeoService
     /**
      * Ottiene la chiave API dal file di configurazione.
      *
-     * @throws RuntimeException Se la chiave API non è configurata
+     * @throws \RuntimeException Se la chiave API non è configurata
      */
     protected function getApiKey(): string
     {
@@ -32,7 +30,7 @@ abstract class BaseGeoService
         $apiKey = config("geo.api_keys.{$this->getServiceName()}");
 
         if (empty($apiKey)) {
-            throw new RuntimeException("API key non configurata per {$this->getServiceName()}");
+            throw new \RuntimeException("API key non configurata per {$this->getServiceName()}");
         }
 
         return $apiKey;
@@ -46,7 +44,7 @@ abstract class BaseGeoService
      * @param array<string, mixed> $params   Parametri della richiesta
      * @param bool                 $useCache Se utilizzare la cache
      *
-     * @throws RuntimeException Se la richiesta fallisce
+     * @throws \RuntimeException Se la richiesta fallisce
      *
      * @return array<string, mixed>
      */
@@ -70,15 +68,15 @@ abstract class BaseGeoService
         try {
             $response = $this->buildHttpClient()->{strtolower($method)}($url, $params);
 
-            if (!$response->successful()) {
-                throw new RuntimeException("Richiesta fallita a {$this->getServiceName()}: " . $response->status());
+            if (! $response->successful()) {
+                throw new \RuntimeException("Richiesta fallita a {$this->getServiceName()}: ".$response->status());
             }
 
             $data = $response->json();
 
             // Validazione tipo di ritorno per PHPStan level 9 compliance
-            if (!is_array($data)) {
-                throw new RuntimeException('Risposta API non valida: atteso array, ricevuto ' . gettype($data));
+            if (! is_array($data)) {
+                throw new \RuntimeException('Risposta API non valida: atteso array, ricevuto '.gettype($data));
             }
 
             // Assicura che sia array<string, mixed> come richiesto dalla signature
@@ -92,12 +90,8 @@ abstract class BaseGeoService
             }
 
             return $validatedData;
-        } catch (Throwable $e) {
-            throw new RuntimeException(
-                "Errore durante la richiesta a {$this->getServiceName()}: " . $e->getMessage(),
-                0,
-                $e,
-            );
+        } catch (\Throwable $e) {
+            throw new \RuntimeException("Errore durante la richiesta a {$this->getServiceName()}: ".$e->getMessage(), 0, $e);
         }
     }
 
@@ -137,7 +131,7 @@ abstract class BaseGeoService
     {
         /** @var string $prefix */
         $prefix = config('geo.cache.prefix', 'geo_');
-        $hash = md5($method . $url . serialize($params));
+        $hash = md5($method.$url.serialize($params));
 
         return "{$prefix}{$this->getServiceName()}_{$hash}";
     }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Services;
 
-use RuntimeException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -63,7 +62,7 @@ class GeoDataService
         $result = Cache::remember(
             self::CACHE_KEY_REGIONS,
             self::CACHE_TTL,
-            fn(): Collection => $this->loadData()->pluck('name', 'code'),
+            fn (): Collection => $this->loadData()->pluck('name', 'code'),
         );
 
         return $result;
@@ -73,6 +72,7 @@ class GeoDataService
      * Ottiene le province di una regione.
      *
      * @param string $regionCode Codice della regione
+     *
      * @return Collection<int, array{name: string, code: string}>
      */
     public function getProvinces(string $regionCode): Collection
@@ -84,15 +84,15 @@ class GeoDataService
             /** @var array<string, mixed>|null $region */
             $region = $this->loadData()->firstWhere('code', $regionCode);
 
-            if (!$region || !is_array($region) || !isset($region['provinces']) || !is_array($region['provinces'])) {
-                /** @var Collection<int, array{name: string, code: string}> */
+            if (! $region || ! is_array($region) || ! isset($region['provinces']) || ! is_array($region['provinces'])) {
+                /* @var Collection<int, array{name: string, code: string}> */
                 return new Collection();
             }
 
             /** @var array<int, array<string, mixed>> $provinces */
             $provinces = $region['provinces'];
 
-            /** @var Collection<int, array{name: string, code: string}> */
+            /* @var Collection<int, array{name: string, code: string}> */
             return new Collection($provinces)->pluck('name', 'code');
         });
 
@@ -103,6 +103,7 @@ class GeoDataService
      * Ottiene le città di una provincia.
      *
      * @param string $provinceCode Codice della provincia
+     *
      * @return Collection<int, array{name: string, code: string}>
      */
     public function getCities(string $provinceCode): Collection
@@ -112,19 +113,19 @@ class GeoDataService
         /** @var Collection<int, array{name: string, code: string}> $result */
         $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($provinceCode): Collection {
             /** @var array<string, mixed>|null $province */
-            $province = $this->loadData()->flatMap(fn(array $region): array => is_array($region['provinces'] ?? null)
+            $province = $this->loadData()->flatMap(fn (array $region): array => is_array($region['provinces'] ?? null)
                 ? $region['provinces']
                 : [])->firstWhere('code', $provinceCode);
 
-            if (!$province || !is_array($province) || !isset($province['cities']) || !is_array($province['cities'])) {
-                /** @var Collection<int, array{name: string, code: string}> */
+            if (! $province || ! is_array($province) || ! isset($province['cities']) || ! is_array($province['cities'])) {
+                /* @var Collection<int, array{name: string, code: string}> */
                 return new Collection();
             }
 
             /** @var array<int, array<string, mixed>> $cities */
             $cities = $province['cities'];
 
-            /** @var Collection<int, array{name: string, code: string}> */
+            /* @var Collection<int, array{name: string, code: string}> */
             return new Collection($cities)->pluck('name', 'code');
         });
 
@@ -135,21 +136,20 @@ class GeoDataService
      * Ottiene il CAP di una città.
      *
      * @param string $provinceCode Codice della provincia
-     * @param string $cityCode Codice della città
-     * @return string|null
+     * @param string $cityCode     Codice della città
      */
-    public function getCap(string $provinceCode, string $cityCode): null|string
+    public function getCap(string $provinceCode, string $cityCode): ?string
     {
         $cacheKey = sprintf(self::CACHE_KEY_CAP, $provinceCode, $cityCode);
 
         /** @var string|null $result */
         $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($provinceCode, $cityCode): null|string {
             /** @var array<string, mixed>|null $province */
-            $province = $this->loadData()->flatMap(fn(array $region): array => is_array($region['provinces'] ?? null)
+            $province = $this->loadData()->flatMap(fn (array $region): array => is_array($region['provinces'] ?? null)
                 ? $region['provinces']
                 : [])->firstWhere('code', $provinceCode);
 
-            if (!$province || !is_array($province) || !isset($province['cities']) || !is_array($province['cities'])) {
+            if (! $province || ! is_array($province) || ! isset($province['cities']) || ! is_array($province['cities'])) {
                 return null;
             }
 
@@ -171,20 +171,21 @@ class GeoDataService
     /**
      * Carica i dati dal file JSON.
      *
+     * @throws \RuntimeException Se il file non esiste o non è valido
+     *
      * @return Collection<int, array>
-     * @throws RuntimeException Se il file non esiste o non è valido
      */
     private function loadData(): Collection
     {
-        if (!File::exists(base_path(self::JSON_PATH))) {
-            throw new RuntimeException('Il file JSON dei comuni non esiste');
+        if (! File::exists(base_path(self::JSON_PATH))) {
+            throw new \RuntimeException('Il file JSON dei comuni non esiste');
         }
 
         /** @var array $data */
         $data = json_decode(File::get(base_path(self::JSON_PATH)), true);
 
-        if (!$this->validator->checkIntegrity($data)) {
-            throw new RuntimeException('Il file JSON dei comuni non è valido');
+        if (! $this->validator->checkIntegrity($data)) {
+            throw new \RuntimeException('Il file JSON dei comuni non è valido');
         }
 
         /** @var Collection<int, array> $result */
@@ -195,8 +196,6 @@ class GeoDataService
 
     /**
      * Pulisce la cache.
-     *
-     * @return void
      */
     public function clearCache(): void
     {

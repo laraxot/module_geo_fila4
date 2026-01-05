@@ -47,7 +47,7 @@ return new class extends XotBaseMigration {
         });
         // -- UPDATE --
         $this->tableUpdate(function (Blueprint $blueprint): void {
-            if (!$this->hasColumn('post_type')) {
+            if (! $this->hasColumn('post_type')) {
                 $blueprint->string('post_type', 50)->index()->nullable();
             }
             /*
@@ -55,12 +55,12 @@ return new class extends XotBaseMigration {
              * $table->text('address')->nullable();
              * }
              */
-            if (!$this->hasColumn('latitude')) {
+            if (! $this->hasColumn('latitude')) {
                 $blueprint->decimal('latitude', 15, 10)->nullable();
                 $blueprint->decimal('longitude', 15, 10)->nullable();
             }
 
-            if (!$this->hasColumn('model_id')) {
+            if (! $this->hasColumn('model_id')) {
                 $blueprint->nullableMorphs('model');
             }
         });

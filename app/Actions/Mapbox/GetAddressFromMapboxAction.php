@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Mapbox;
 
-use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
-use Webmozart\Assert\Assert;
 
 use function Safe\json_decode;
 use function Safe\preg_match;
+
+use Webmozart\Assert\Assert;
 
 /**
  * Action per ottenere l'indirizzo e le coordinate tramite Mapbox.
@@ -25,15 +25,16 @@ readonly class GetAddressFromMapboxAction
     private const API_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
 
     public function __construct(
-        private  Client $client,
-    ) {}
+        private Client $client,
+    ) {
+    }
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.
      *
-     * @throws RuntimeException Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
-    public function execute(string $address): null|AddressData
+    public function execute(string $address): ?AddressData
     {
         $this->validateInput($address);
 
@@ -54,7 +55,7 @@ readonly class GetAddressFromMapboxAction
     /**
      * Valida i dati di input.
      *
-     * @throws RuntimeException Se la chiave API non è configurata
+     * @throws \RuntimeException Se la chiave API non è configurata
      */
     private function validateInput(string $address): void
     {
@@ -90,9 +91,9 @@ readonly class GetAddressFromMapboxAction
     /**
      * Elabora la risposta dell'API.
      *
-     * @throws RuntimeException Se la risposta non è valida
+     * @throws \RuntimeException Se la risposta non è valida
      */
-    private function parseResponse(string $response): null|AddressData
+    private function parseResponse(string $response): ?AddressData
     {
         /** @var array{
          *     features: array<array{

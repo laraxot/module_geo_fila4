@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Weather;
 
-use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -13,7 +12,7 @@ class GetOpenWeatherDataAction
 {
     private const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather';
 
-    public function execute(float $latitude, float $longitude): null|array
+    public function execute(float $latitude, float $longitude): ?array
     {
         try {
             $response = Http::get(self::ENDPOINT, [
@@ -24,13 +23,13 @@ class GetOpenWeatherDataAction
                 'lang' => 'it',
             ]);
 
-            if (!$response->successful()) {
+            if (! $response->successful()) {
                 return null;
             }
 
             $data = $response->json();
 
-            if (!is_array($data)) {
+            if (! is_array($data)) {
                 return null;
             }
 
@@ -51,8 +50,8 @@ class GetOpenWeatherDataAction
                 'clouds' => Arr::get($data, 'clouds.all'),
                 'timestamp' => Arr::get($data, 'dt'),
             ];
-        } catch (Exception $e) {
-            Log::error('OpenWeather API error: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            Log::error('OpenWeather API error: '.$e->getMessage());
 
             return null;
         }

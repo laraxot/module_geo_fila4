@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Modules\Geo\Models\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Tenant\Models\Traits\SushiToJson;
+use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Comune;
+use Modules\Tenant\Models\Traits\SushiToJson;
 
 describe('Comune Business Logic', function () {
     test('comune extends base model', function () {

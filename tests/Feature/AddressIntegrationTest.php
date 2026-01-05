@@ -54,7 +54,7 @@ function formatFullAddress(object $a): string
             $a->postal_code ?? null,
             $a->country ?? null,
         ],
-        fn($v) => ((string) $v) !== '',
+        fn ($v) => ((string) $v) !== '',
     );
 
     return implode(', ', $parts);
@@ -157,7 +157,7 @@ describe('Address Integration', function () {
 
         $primary = null;
         foreach ($patientAddresses as $addr) {
-            if ($addr->is_primary === true) {
+            if (true === $addr->is_primary) {
                 $primary = $addr;
                 break;
             }

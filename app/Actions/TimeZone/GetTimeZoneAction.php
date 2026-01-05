@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\TimeZone;
 
-use RuntimeException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\TimeZoneData;
@@ -20,9 +19,9 @@ class GetTimeZoneAction
 
     private Client $client;
 
-    private null|string $apiKey;
+    private ?string $apiKey;
 
-    public function __construct(null|string $apiKey = null)
+    public function __construct(?string $apiKey = null)
     {
         $this->client = new Client();
         $this->apiKey = $apiKey;
@@ -35,7 +34,7 @@ class GetTimeZoneAction
     {
         $response = $this->client->get(self::API_URL, [
             'query' => [
-                'location' => $latitude . ',' . $longitude,
+                'location' => $latitude.','.$longitude,
                 'timestamp' => time(),
                 'key' => $this->apiKey,
             ],
@@ -45,7 +44,7 @@ class GetTimeZoneAction
         $data = json_decode($response->getBody()->getContents(), true);
 
         if ('OK' !== $data['status']) {
-            throw new RuntimeException('Failed to get timezone: ' . ($data['errorMessage'] ?? $data['status']));
+            throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
 
         return new TimeZoneData(
