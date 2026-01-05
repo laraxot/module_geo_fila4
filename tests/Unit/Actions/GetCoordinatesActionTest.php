@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Actions;
 
-use RuntimeException;
-use Mockery;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\GetCoordinatesAction;
@@ -72,7 +70,7 @@ class GetCoordinatesActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($address))
-            ->toThrow(RuntimeException::class, 'Google Maps API key not found');
+            ->toThrow(\RuntimeException::class, 'Google Maps API key not found');
     }
 
     /** @test */
@@ -88,7 +86,7 @@ class GetCoordinatesActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($address))
-            ->toThrow(RuntimeException::class, 'Failed to get coordinates from Google Maps API');
+            ->toThrow(\RuntimeException::class, 'Failed to get coordinates from Google Maps API');
     }
 
     /** @test */
@@ -389,7 +387,7 @@ class GetCoordinatesActionTest extends TestCase
 
         // Act & Assert
         expect(fn () => $this->action->execute($address))
-            ->toThrow(RuntimeException::class, 'Failed to get coordinates from Google Maps API');
+            ->toThrow(\RuntimeException::class, 'Failed to get coordinates from Google Maps API');
     }
 
     /** @test */
@@ -404,12 +402,12 @@ class GetCoordinatesActionTest extends TestCase
         ]);
 
         // Act & Assert
-        expect(fn () => $this->action->execute($address))->toThrow(RuntimeException::class);
+        expect(fn () => $this->action->execute($address))->toThrow(\RuntimeException::class);
     }
 
     protected function tearDown(): void
     {
-        Mockery::close();
+        \Mockery::close();
         parent::tearDown();
     }
 }

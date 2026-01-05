@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Enums;
 
-use Closure;
 use Filament\Forms\Components\TextInput;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
@@ -189,7 +188,7 @@ enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
     /**
      * Internal map of standard address column definitions.
      *
-     * @return array<string, Closure(Blueprint):void>
+     * @return array<string, \Closure(Blueprint):void>
      */
     private static function getColumnDefinitions(): array
     {

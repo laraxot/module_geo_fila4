@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
-use Override;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
@@ -126,7 +125,7 @@ class Locality extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
-use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
@@ -127,7 +126,7 @@ class UpdateCoordinatesFromAddressAction
             ]);
 
             return true;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             // Log dell'errore per debugging
             Log::error('Errore aggiornamento coordinate', [
                 'model' => $model::class,

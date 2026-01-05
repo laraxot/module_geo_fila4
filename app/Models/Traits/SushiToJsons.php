@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models\Traits;
 
-use Exception;
-use RuntimeException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Sushi\Sushi;
@@ -42,7 +40,7 @@ trait SushiToJsons
             Cache::forget($this->getCacheKey());
 
             return true;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             report($e);
 
             return false;
@@ -65,7 +63,7 @@ trait SushiToJsons
             return $this->newInstance($attributes);
         }
 
-        throw new RuntimeException('Impossibile salvare il record');
+        throw new \RuntimeException('Impossibile salvare il record');
     }
 
     /**
@@ -117,7 +115,7 @@ trait SushiToJsons
         $data = json_decode(File::get($path), true);
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            throw new RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
+            throw new \RuntimeException('Errore nel parsing del file JSON: '.json_last_error_msg());
         }
 
         return $data;

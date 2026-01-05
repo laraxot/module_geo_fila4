@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Weather;
 
-use Exception;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Arr;
@@ -59,7 +58,7 @@ class GetOpenWeatherDataAction
                 'clouds' => Arr::get($data, 'clouds.all'),
                 'timestamp' => Arr::get($data, 'dt'),
             ];
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             Log::error('OpenWeather API error: '.$e->getMessage());
 
             return null;

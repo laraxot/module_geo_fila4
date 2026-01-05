@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Actions;
 
-use Throwable;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Modules\Geo\Actions\UpdateCoordinatesAction;
@@ -77,7 +76,7 @@ class UpdateCoordinatesBulkAction extends XotBaseBulkAction
             try {
                 $action->execute($record);
                 ++$successCount;
-            } catch (Throwable $e) {
+            } catch (\Throwable $e) {
                 $errors->push(sprintf('Place #%s: %s', (string) $record->getKey(), $e->getMessage()));
             }
         }

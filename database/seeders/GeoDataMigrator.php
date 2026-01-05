@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Database\Seeders;
 
-use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -37,7 +36,7 @@ class GeoDataMigrator extends Seeder
 
             DB::commit();
             $this->command->info('Successfully migrated all geographical data to Geo module.');
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Failed to migrate geographical data: '.$e->getMessage());
             $this->command->error('Failed to migrate geographical data: '.$e->getMessage());
