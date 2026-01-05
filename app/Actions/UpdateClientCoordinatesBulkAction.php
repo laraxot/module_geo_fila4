@@ -41,8 +41,14 @@ class UpdateClientCoordinatesBulkAction
 
                 if (null !== $addressData) {
                     $toArray = $addressData->toArray();
+<<<<<<< HEAD
                     $up = Arr::only($toArray, ['latitude', 'longitude']);
                     /* @var array<string, mixed> $up */
+=======
+                    /** @var array<string, mixed> $up */
+                    $up = Arr::only($toArray, ['latitude', 'longitude']);
+                    /** @var array<string, mixed> $up */
+>>>>>>> 4bc1ba8 (.)
                     $address->update($up);
                     ++$successCount;
 
