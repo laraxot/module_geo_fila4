@@ -1,8 +1,12 @@
+<<<<<<< HEAD:docs/archive/testing-error-resolution-guide.md
 # Testing Error Resolution Guide - <nome progetto> Project
 
 ## Overview
 
 This guide documents critical testing patterns and error resolution strategies identified during the <nome modulo> module testing improvements. These patterns apply across all modules in the <nome progetto> project.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/testing-error-resolution-guide.md
 
 ## Critical Testing Errors and Solutions
 
@@ -25,7 +29,11 @@ $this->faker->optional(0.6)->regexify('[A-Z]{2}')   // 60% chance of regex value
 $this->faker->optional(0.9)->dateTimeBetween('-2 years', '-1 month')  // 90% chance of date
 ```
 
+<<<<<<< HEAD:docs/archive/testing-error-resolution-guide.md
 **Global Impact**: This error was found in `Modules/<nome progetto>/database/factories/PatientFactory.php` and potentially affects all factories across modules.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/testing-error-resolution-guide.md
 
 ### 2. Database Connection in Feature Tests
 
@@ -94,6 +102,7 @@ expect($appointment->type->getDuration())->toBe(20);  // Non-translation method
 
 ## Module-Specific Implementations
 
+<<<<<<< HEAD:docs/archive/testing-error-resolution-guide.md
 ### <nome modulo> Module Results
 - **Before**: 14 failing tests due to factory and database errors
 - **After**: 44 passing tests (100% success rate)
@@ -166,6 +175,9 @@ it('exposes casts as array', function () { });
 ## Cross-Module Benefits
 
 These patterns provide benefits across all <nome progetto> modules:
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/testing-error-resolution-guide.md
 
 1. **Reliability**: Tests don't fail due to external dependencies
 2. **Speed**: Pure tests execute 10-100x faster than database tests
@@ -192,9 +204,13 @@ These patterns provide benefits across all <nome progetto> modules:
 
 ## Links to Module Documentation
 
+<<<<<<< HEAD:docs/archive/testing-error-resolution-guide.md
 - [<nome modulo> Testing Lessons Learned](../laravel/Modules/<nome modulo>/docs/testing-lessons-learned.md)
 - [<nome modulo> Test Error Resolution](../laravel/Modules/<nome modulo>/docs/test-errors-resolution.md)
 - [<nome modulo> Testing Guide](../laravel/Modules/<nome modulo>/docs/testing.md)
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/archive/testing-error-resolution-guide.md
 
 ## Windsurf Rules Integration
 
@@ -205,5 +221,9 @@ These patterns provide benefits across all <nome progetto> modules:
 
 **Last Updated**: 2025-01-06  
 **Status**: Active Implementation  
+<<<<<<< HEAD:docs/archive/testing-error-resolution-guide.md
 **Success Rate**: 100% (<nome modulo>: 44/44 tests passing)  
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/archive/testing-error-resolution-guide.md
 **Philosophy**: Simple, Fast, Reliable Testing

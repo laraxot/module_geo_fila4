@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/business-logic-consolidated.md
 # 🏥 Business Logic Consolidata - Progetto <nome progetto>
 
 ## 📋 Panoramica del Sistema
@@ -8,6 +9,9 @@
 ## 📋 Panoramica del Sistema
 
 <nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel 12, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-consolidated.md
 
 ## 🏗️ Architettura Modulare
 
@@ -19,6 +23,7 @@
 - **Funzionalità**: Autenticazione, autorizzazione, migrazioni, componenti Filament base
 - **Posizione**: `Modules/Xot/`
 
+<<<<<<< HEAD:docs/business-logic-consolidated.md
 #### 2. **<nome progetto>** - Modulo Core Sanitario
 - **Scopo**: Gestione completa del sistema sanitario
 - **Modelli Principali**: User, Doctor, Patient, Admin, Studio, Appointment, Service
@@ -29,6 +34,9 @@
 - **Modelli Principali**: User, Doctor, Patient, Admin, Studio, Appointment, Service
 - **Funzionalità**: Gestione utenti sanitari, appuntamenti, servizi medici
 - **Posizione**: `Modules/<nome progetto>/`
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-consolidated.md
 
 #### 3. **User** - Gestione Utenti e Autenticazione
 - **Scopo**: Gestione completa degli utenti e autenticazione
@@ -238,8 +246,12 @@ User (base)
 ## 🔗 Collegamenti Documentazione
 
 ### Documentazione Moduli
+<<<<<<< HEAD:docs/business-logic-consolidated.md
 - [<nome progetto>](../Modules/<nome progetto>/docs/README.md)
 - [<nome progetto>](../Modules/<nome progetto>/docs/README.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-consolidated.md
 - [User](../Modules/User/docs/README.md)
 - [Geo](../Modules/Geo/docs/README.md)
 - [Media](../Modules/Media/docs/README.md)

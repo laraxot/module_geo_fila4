@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/testing-best-practices.md
 # Best Practices Testing Globali - <nome progetto>
 
 ## Panoramica
@@ -8,6 +9,9 @@ Questo documento descrive le best practices globali per il testing del progetto 
 ## Panoramica
 
 Questo documento descrive le best practices globali per il testing del progetto <nome progetto>, basate sull'esperienza reale e sulla risoluzione sistematica di errori. Queste pratiche garantiscono test affidabili, veloci e manutenibili.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-best-practices.md
 
 ## Principi Fondamentali
 
@@ -596,8 +600,12 @@ describe('Edge Cases', function () {
 
 - [Architettura Testing Principale](testing-architecture-overview.md)
 - [Guida Risoluzione Conflitti](git-conflicts-resolution-guide.md)
+<<<<<<< HEAD:docs/testing-best-practices.md
 - [Best Practices Modulo <nome modulo>](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
 - [Best Practices Modulo <nome progetto>](../../laravel/Modules/<nome progetto>/docs/testing-best-practices.md)
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-best-practices.md
 - [Testing Modulo Geo](../../laravel/Modules/Geo/docs/testing.md)
 
 ---

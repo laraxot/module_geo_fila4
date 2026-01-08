@@ -128,8 +128,12 @@ test('patient sees their appointments in calendar', function () {
 - [ ] Fallisce solo quando il comportamento cambia?
 - [ ] È leggibile senza conoscere l'implementazione?
 
+<<<<<<< HEAD:docs/testing-principles.md
 ## Architettura Testing per <nome progetto>
 ## Architettura Testing per <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-principles.md
 
 ### Separazione Test per Architettura
 - **LoginTest.php**: Testa pagina `/it/auth/login` (routing, layout, middleware)
@@ -144,8 +148,12 @@ test('user can have different types', function () {
     expect($user->isType('generic'))->toBeTrue();
 });
 
+<<<<<<< HEAD:docs/testing-principles.md
 // <nome progetto>/tests (modulo specifico): Test dominio
 // <nome progetto>/tests (modulo specifico): Test dominio
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-principles.md
 test('patient inherits user functionality', function () {
     $patient = Patient::factory()->create();
     expect($patient)->toBeInstanceOf(User::class);

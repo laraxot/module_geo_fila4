@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/factory-best-practices.md
 # Factory Best Practices - Laraxot <nome progetto>
 
 ## 🎯 **Obiettivo**
@@ -6,6 +7,9 @@ Definire best practices per la creazione e manutenzione dei factory Laravel, bas
 
 ## 🎯 **Obiettivo**
 Definire best practices per la creazione e manutenzione dei factory Laravel, basate sui problemi identificati e risolti nel progetto <nome progetto>.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/factory-best-practices.md
 
 ## 🚨 **Problemi Comuni Identificati**
 
@@ -476,8 +480,12 @@ Al completamento di tutte le best practices:
 - [PHPStan Analysis Business Logic](../phpstan-analysis-business-logic.md)
 - [Business Logic Factory & Seeder Audit](../business-logic-factory-seeder-audit.md)
 - [Testing Business Behavior Supreme Rule](../testing-business-behavior-supreme-rule.md)
+<<<<<<< HEAD:docs/factory-best-practices.md
 - [<nome progetto> Factory Issues Analysis](../laravel/Modules/<nome progetto>/docs/factory-issues-analysis.md)
 - [<nome progetto> Factory Issues Analysis](../laravel/Modules/<nome progetto>/docs/factory-issues-analysis.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/factory-best-practices.md
 
 ---
 

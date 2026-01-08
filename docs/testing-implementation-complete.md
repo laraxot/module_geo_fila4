@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 # Implementazione Completa Test Pest per Moduli <nome progetto>
 
 ## Panoramica
@@ -8,6 +9,9 @@
 ## Panoramica
 
 È stata completata l'implementazione di una suite di test Pest completa per tutti i moduli del progetto <nome progetto>, seguendo rigorosamente le best practice architetturali e i pattern di testing definiti nel progetto.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 ## Struttura Implementata
 
@@ -19,6 +23,7 @@
   - `tests/Feature/Modules/User/Feature/Filament/Widgets/LoginWidgetTest.php` - Test widget di login
 
 #### Moduli Business
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 - **<nome progetto> Module**:
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
@@ -27,6 +32,9 @@
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
   - `tests/Feature/Modules/<nome progetto>/Feature/Filament/Widgets/DoctorCalendarWidgetTest.php` - Test widget calendario
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 #### Moduli Utility
 - **Geo Module**:
@@ -50,8 +58,12 @@ Seguendo il pattern già implementato nei test di autenticazione:
 - **Integration Tests**: Testano integrazioni tra moduli e servizi esterni
 - **Browser Tests**: Testano flussi utente completi end-to-end
 
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 ### 2. Pattern Specifici per <nome progetto>
 ### 2. Pattern Specifici per <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 #### Test Models con Single Table Inheritance (STI)
 ```php
@@ -116,6 +128,7 @@ test('appointment states have complete translations in all languages', function 
         foreach ($languages as $lang) {
             app()->setLocale($lang);
             
+<<<<<<< HEAD:docs/testing-implementation-complete.md
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
             
@@ -171,6 +184,9 @@ Classe helper completa con utilities per:
 - `--core`: Test moduli core (User, Xot, UI)
 - `--business`: Test moduli business (<nome progetto>, <nome modulo>)
 - `--business`: Test moduli business (<nome progetto>, <nome progetto>)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - `--utility`: Test moduli utility (Cms, Media, Geo, etc.)
 - `--all`: Test tutti i moduli
 - `--performance`: Test di performance
@@ -196,8 +212,12 @@ php artisan migrate:fresh --env=testing --seed
 ./vendor/bin/pest tests/Feature/Modules/User --verbose
 
 # Test specifico
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 ./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
 ./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 # Test con coverage
 ./vendor/bin/pest --coverage --coverage-html=storage/app/coverage
@@ -231,8 +251,12 @@ php artisan migrate:fresh --env=testing --seed
 - ✅ Relazioni teams e tenants
 - ✅ Validazione e sicurezza
 
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 ### Modulo <nome progetto>
 ### Modulo <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - ✅ Modelli Appointment con stati e traduzioni
 - ✅ Modelli pivot DoctorStudio cross-database
 - ✅ Widget calendario per dottori con multi-tenancy
@@ -300,8 +324,12 @@ jobs:
 
 - [Strategia di Testing Moduli](testing-strategy-modules.md) - Strategia completa
 - [Test Autenticazione](../tests/Feature/Auth/) - Pattern di riferimento esistenti
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 - [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
 - [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - [Documentazione User](../Modules/User/docs/README.md) - Modulo core
 
 ## Stato Implementazione
@@ -310,8 +338,12 @@ jobs:
 - [x] Analisi struttura moduli esistenti
 - [x] Creazione strategia di testing completa
 - [x] Implementazione test per moduli core (User, Xot, UI)
+<<<<<<< HEAD:docs/testing-implementation-complete.md
 - [x] Implementazione test per moduli business (<nome progetto>, <nome modulo>)
 - [x] Implementazione test per moduli business (<nome progetto>, <nome progetto>)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - [x] Implementazione test per moduli utility (Cms, Media, Geo, etc.)
 - [x] Creazione helper e utilities per testing
 - [x] Script automatizzato per esecuzione test

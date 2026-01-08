@@ -2,7 +2,11 @@
 
 ## Executive Summary
 
+<<<<<<< HEAD:docs/archive/translation-audit.md
 Comprehensive translation audit conducted on <nome progetto> project, focusing on the User module's LoginWidget component. Identified and resolved missing translation files that were causing potential runtime errors.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/translation-audit-2025-01-06.md
 
 ## Key Findings
 

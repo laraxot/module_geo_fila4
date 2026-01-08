@@ -3,8 +3,12 @@
 ## Summary Status by Module
 
 ### ✅ Excellent Coverage (90-100%)
+<<<<<<< HEAD:docs/modules-factory-seeder-analysis.md
 - **<nome progetto>** (16/16 business models) - Core healthcare business
 - **<nome progetto>** (16/16 business models) - Core healthcare business
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules-factory-seeder-analysis.md
 - **User** (33/33 business models) - User management  
 - **Notify** (10/10 business models) - Notifications
 - **Media** (3/3 business models) - File management
@@ -23,8 +27,12 @@
 
 ## Detailed Analysis by Module
 
+<<<<<<< HEAD:docs/modules-factory-seeder-analysis.md
 ### <nome progetto> ⭐ (Core Healthcare Business)
 ### <nome progetto> ⭐ (Core Healthcare Business)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules-factory-seeder-analysis.md
 **Models**: 25 | **Factories**: 16 | **Seeders**: 14
 - ✅ All business models have factories
 - ✅ Comprehensive seeder suite

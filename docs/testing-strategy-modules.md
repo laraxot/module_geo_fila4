@@ -1,8 +1,12 @@
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 # Strategia di Testing per i Moduli <nome progetto>
 
 ## Introduzione
 
 Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto <nome progetto>, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ## Principi Fondamentali
 
@@ -20,8 +24,12 @@ Seguendo il pattern implementato nei test di autenticazione esistenti:
 - **UI**: Componenti UI condivisi, temi, layout
 
 #### Moduli Business (Dominio)
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 - **<nome progetto>**: Gestione pazienti, appuntamenti, stati
 - **<nome modulo>**: Gestione pazienti specifici per Modena
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 #### Moduli Utility (Supporto)
 - **Cms**: Gestione contenuti
@@ -100,7 +108,11 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Moduli Business
 
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 #### Modulo <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 **Focus**: Gestione pazienti, appuntamenti, stati, calendario
 - **Unit Tests**: 
   - Models: Patient, Doctor, Appointment, Studio
@@ -120,11 +132,15 @@ tests/Feature/Modules/{ModuleName}/
   - Doctor availability management
   - Patient dashboard navigation
 
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 #### Modulo <nome modulo>
 **Focus**: Estensioni specifiche per Modena
 - **Unit Tests**: Modelli specifici, business logic locale
 - **Feature Tests**: Funzionalità specifiche di Modena
 - **Integration Tests**: Integrazione con <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ### Moduli Utility
 
@@ -150,7 +166,11 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Pattern 1: Test Models con Relazioni Cross-Database
 ```php
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 // Per DoctorStudio (<nome progetto>)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 test('doctor studio pivot model manages cross-database relations', function () {
     $doctor = Doctor::factory()->create();
     $studio = Studio::factory()->create();
@@ -169,7 +189,11 @@ test('doctor studio pivot model manages cross-database relations', function () {
 
 ### Pattern 2: Test Widget Filament con Multi-Tenancy
 ```php
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 // Per DoctorCalendarWidget (<nome progetto>)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 test('doctor calendar widget shows only tenant appointments', function () {
     $studio1 = Studio::factory()->create();
     $studio2 = Studio::factory()->create();
@@ -219,6 +243,7 @@ test('appointment states have complete translations in all languages', function 
         foreach ($languages as $lang) {
             app()->setLocale($lang);
             
+<<<<<<< HEAD:docs/testing-strategy-modules.md
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
             
@@ -334,6 +359,9 @@ class DatabaseHelper
 ### Fase 2: Moduli Business (Settimana 2)
 1. <nome progetto> - Gestione completa pazienti/appuntamenti
 2. <nome modulo> - Estensioni specifiche Modena
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ### Fase 3: Moduli Utility (Settimana 3)
 1. Cms, Media, Geo - Gestione contenuti e localizzazione
@@ -362,7 +390,11 @@ class DatabaseHelper
 ## Collegamenti
 
 - [Test Autenticazione Esistenti](../tests/Feature/Auth/) - Pattern di riferimento
+<<<<<<< HEAD:docs/testing-strategy-modules.md
 - [Documentazione Modulo <nome progetto>](../Modules/<nome progetto>/docs/README.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 - [Documentazione Modulo User](../Modules/User/docs/README.md)
 - [Configurazione Pest](../tests/Pest.php)
 

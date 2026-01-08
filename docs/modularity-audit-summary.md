@@ -2,8 +2,12 @@
 
 ## Contesto e Motivazione
 
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 Durante l'audit del sistema <nome progetto>, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome modulo>") in moduli che devono essere riutilizzabili in progetti diversi.
 Durante l'audit del sistema <nome progetto>, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome progetto>") in moduli che devono essere riutilizzabili in progetti diversi.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 
 Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e compromette la riutilizzabilità del sistema.
 
@@ -32,8 +36,12 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 #### 3. Modulo Xot (8+ violazioni)
 **Stato**: Documentazione creata, ottimizzazioni pianificate
 **File contaminati**:
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 - `PathHelper.php`: Path hardcoded per <nome progetto>
 - `PathHelper.php`: Path hardcoded per <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 - `TestCase.php`: Dipendenze hardcoded
 - `DayOfWeek.php`: Traduzioni hardcoded
 - `InformationSchemaTableFactory.php`: Dati hardcoded
@@ -41,6 +49,7 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 
 ### Tipi di Violazioni Identificate
 
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 1. **Nomi di progetto hardcoded**: "<nome progetto>", "<nome progetto>"
 2. **Email hardcoded**: "admin@<nome progetto>.com", "developer@<nome progetto>.com"
 3. **URL hardcoded**: "https://api.<nome progetto>.com/webhooks"
@@ -57,6 +66,9 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 6. **Repository hardcoded**: "https://github.com/<nome progetto>/themes"
 7. **Import hardcoded**: `use Modules\<nome progetto>\Models\User`
 8. **Traduzioni hardcoded**: `__('<nome progetto>::widgets.title')`
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 
 ## Soluzioni Implementate
 
@@ -128,10 +140,14 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 - **Media**: Gestione media per qualsiasi progetto
 
 ### Moduli Specifici del Progetto
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome modulo>**: Solo per progetto <nome modulo>
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome progetto>**: Solo per progetto <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 - **Patient**: Solo per progetti sanitari specifici
 
 ### Pattern di Configurazione
@@ -162,6 +178,7 @@ Questo errore viola i principi fondamentali dell'architettura modulare Laraxot e
 ### Variabili d'Ambiente Standard
 ```env
 # Configurazione Company
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 COMPANY_NAME=<nome progetto>
 COMPANY_TEAM=Team <nome progetto>
 WEBHOOK_BASE_URL=https://api.<nome progetto>.com
@@ -202,6 +219,9 @@ XOT_APPOINTMENT_MODEL=Modules\<nome progetto>\Models\Appointment
 # Configurazione Traduzioni
 UI_TRANSLATION_NAMESPACE=<nome progetto>
 XOT_TRANSLATION_NAMESPACE=<nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 ```
 
 ## Test di Conformità
@@ -209,6 +229,7 @@ XOT_TRANSLATION_NAMESPACE=<nome progetto>
 ### Comandi di Verifica
 ```bash
 # Verifica completa per tutti i moduli generici
+<<<<<<< HEAD:docs/modularity-audit-summary.md
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/Notify/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/User/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/UI/ --include="*.php"
@@ -231,6 +252,9 @@ grep -r "Modules\\<nome progetto>" laravel/Modules/Xot/ --include="*.php"
 
 # Verifica path hardcoded
 grep -r "/var/www/html/<nome progetto>" laravel/Modules/Xot/ --include="*.php"
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-audit-summary.md
 ```
 
 ### Risultato Atteso

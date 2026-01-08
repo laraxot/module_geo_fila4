@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/boy-scout-rule.md
 # Regola del Boy Scout nel Progetto <nome progetto>
 
 ## Introduzione
@@ -6,6 +7,9 @@ Questo documento documenta l'implementazione e l'applicazione della **Regola del
 
 ## Introduzione
 Questo documento documenta l'implementazione e l'applicazione della **Regola del Boy Scout** nel progetto <nome progetto> come principio fondamentale di sviluppo.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/boy-scout-rule.md
 
 ## Definizione Ufficiale
 > **"Lascia sempre il campeggio più pulito di come l'hai trovato"**
@@ -26,10 +30,14 @@ Questo documento documenta l'implementazione e l'applicazione della **Regola del
 - ✅ Implementato pattern observer pulito
 - ✅ Aggiornata documentazione con esempi pratici
 
+<<<<<<< HEAD:docs/boy-scout-rule.md
 ### Factory <nome progetto> (In Progress)
 **Files**: `Modules/<nome progetto>/database/factories/`
 ### Factory <nome progetto> (In Progress)
 **Files**: `Modules/<nome progetto>/database/factories/`
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/boy-scout-rule.md
 **Obiettivo**: Migliorare i factory per creare 100 pazienti e 100 dottori con dati realistici
 
 ## Checklist Generale
@@ -75,8 +83,12 @@ Ogni intervento deve seguire questa checklist:
 - Logging pattern appropriato
 
 ## Prossimi Obiettivi
+<<<<<<< HEAD:docs/boy-scout-rule.md
 1. Applicare Boy Scout Rule ai factory <nome progetto>
 1. Applicare Boy Scout Rule ai factory <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/boy-scout-rule.md
 2. Migliorare documentazione factory e seeder
 3. Creare esempi pratici per sviluppatori
 4. Standardizzare pattern across tutti i moduli
@@ -89,8 +101,12 @@ Ogni intervento deve seguire questa checklist:
 
 ### Implementazioni
 - [Modules/Tenant/docs/traits/sushi-to-jsons.md](../Modules/Tenant/docs/traits/sushi-to-jsons.md)
+<<<<<<< HEAD:docs/boy-scout-rule.md
 - [Modules/<nome progetto>/docs/](../Modules/<nome progetto>/docs/) (in progress)
 - [Modules/<nome progetto>/docs/](../Modules/<nome progetto>/docs/) (in progress)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/boy-scout-rule.md
 
 ### Root Documentation
 - [README.md](./README.md)

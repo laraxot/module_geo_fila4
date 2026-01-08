@@ -44,8 +44,12 @@
 **Azione**: Solo path generalization + README optimization  
 **Tempo**: 1 ora | **Impatto**: Mantenimento eccellenza
 
+<<<<<<< HEAD:docs/modules-optimization-index.md
 #### [Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/optimization_recommendations.md)
 #### [Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/optimization_recommendations.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_optimization_index.md
 **Stato**: Funzionalmente completo e robusto  
 **Azione**: Documentation update + performance optimization  
 **Tempo**: 4 ore | **Impatto**: Migliora manutenibilità
@@ -55,6 +59,7 @@
 **Azione**: Generalizzazione docs + Google API caching  
 **Tempo**: 3 ore | **Impatto**: Modulo geo riutilizzabile
 
+<<<<<<< HEAD:docs/modules-optimization-index.md
 #### [Modulo <nome modulo>](../laravel/Modules/<nome modulo>/docs/optimization_recommendations.md)
 #### [Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/optimization_recommendations.md)
 **Stato**: Buona specializzazione mobile  
@@ -86,6 +91,9 @@
 - [ ] **<nome progetto>**: Caching dashboard e calendar
 - [ ] **Geo**: Google API optimization
 - [ ] **<nome progetto>**: Mobile performance testing
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_optimization_index.md
 - [ ] **Metriche**: Validazione target performance
 
 ## 🎯 BENEFICI ATTESI
@@ -145,8 +153,12 @@ cp -r laravel/Modules/*/docs laravel/Modules-docs-backup-$(date +%Y%m%d)
 
 ### Preservazione Eccellenze
 - **UI Module**: Mantenere qualità PHPStan Level 9
+<<<<<<< HEAD:docs/modules-optimization-index.md
 - **<nome progetto>**: Preservare business logic completa
 - **<nome progetto>**: Preservare business logic completa
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_optimization_index.md
 - **Testing**: Mantenere coverage elevato
 
 ### Focus su Impatto

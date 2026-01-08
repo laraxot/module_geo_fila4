@@ -1,15 +1,27 @@
+<<<<<<< HEAD:docs/archive/factory-email-rule.md
 # Regola Critica: Email nelle Factory - Progetto <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/factory-email-rule.md
 
 ## ⚠️ REGOLA ASSOLUTAMENTE VIETATA ⚠️
 **MAI utilizzare email fittizie come "@example.com" nelle factory**
 
 ## Significato e Importanza
+<<<<<<< HEAD:docs/archive/factory-email-rule.md
 Questa regola è **SACRA** e **IMMUTABILE** nel progetto <nome progetto>. Ogni factory deve utilizzare sempre i faker appropriati per generare email realistiche e uniche. L'uso di email fittizie come "@example.com" è assolutamente vietato.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/factory-email-rule.md
 
 ## Applicazione Globale
 
 ### In Tutti i Moduli
+<<<<<<< HEAD:docs/archive/factory-email-rule.md
 - **<nome progetto>**: Factory Patient, Doctor e tutte le altre
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/factory-email-rule.md
 - **User**: Factory per utenti e autenticazione
 - **UI**: Factory per componenti e widget
 - **Xot**: Factory per funzionalità base
@@ -158,7 +170,11 @@ public function definition(): array
 ## Collegamenti
 
 - [Regola Cursor](../../.cursor/rules/factory-email-rule.mdc)
+<<<<<<< HEAD:docs/archive/factory-email-rule.md
 - [Regola <nome progetto>](../laravel/Modules/<nome progetto>/docs/factory-email-rule.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/factory-email-rule.md
 - [Regola Windsurf](../../.windsurf/rules/factory-email-rule.mdc)
 - [Best Practices](best-practices.md)
 - [Factory Guidelines](factory-guidelines.md)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/database-population-guide.md
 # Guida al Popolamento Database - Laraxot <nome progetto>
 
 ## Panoramica
@@ -8,6 +9,9 @@ Questa guida descrive come popolare il database del progetto Laraxot <nome proge
 ## Panoramica
 
 Questa guida descrive come popolare il database del progetto Laraxot <nome progetto> utilizzando le factories e i seeders disponibili nei vari moduli. Il popolamento è essenziale per:
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 - Testing e sviluppo
 - Popolamento dati iniziali
 - Generazione di dataset per performance testing
@@ -33,12 +37,16 @@ Questa guida descrive come popolare il database del progetto Laraxot <nome proge
 - `PermissionsSeeder` - Permessi base
 - `UserMassSeeder` - Dataset massivo
 
+<<<<<<< HEAD:docs/database-population-guide.md
 ### 2. Modulo <nome progetto>
 **Path**: `Modules/<nome progetto>/database/`
 **Documentazione**: [<nome progetto> Database Population](../laravel/Modules/<nome progetto>/docs/database-population.md)
 ### 2. Modulo <nome progetto>
 **Path**: `Modules/<nome progetto>/database/`
 **Documentazione**: [<nome progetto> Database Population](../laravel/Modules/<nome progetto>/docs/database-population.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 
 **Factories Disponibili**:
 - `UserFactory` - Utenti sanitari
@@ -88,6 +96,7 @@ php artisan tinker
 ```bash
 # 5. Popolamento studi medici
 php artisan tinker
+<<<<<<< HEAD:docs/database-population-guide.md
 >>> \Modules\<nome progetto>\Models\Studio::factory()->count(10)->create();
 
 # 6. Popolamento dottori
@@ -102,6 +111,9 @@ php artisan tinker
 
 # 7. Popolamento pazienti
 >>> \Modules\<nome progetto>\Models\Patient::factory()->count(100)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 ```
 
 ### Fase 4: Relazioni e Dati Complessi
@@ -110,6 +122,7 @@ php artisan tinker
 >>> // Script per creare relazioni
 
 # 9. Creazione appuntamenti
+<<<<<<< HEAD:docs/database-population-guide.md
 >>> \Modules\<nome progetto>\Models\Appointment::factory()->count(200)->create();
 
 # 10. Creazione report
@@ -118,6 +131,9 @@ php artisan tinker
 
 # 10. Creazione report
 >>> \Modules\<nome progetto>\Models\Report::factory()->count(150)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 ```
 
 ## Script di Popolamento Completo
@@ -153,20 +169,32 @@ echo "   ✅ Utenti base creati\n\n";
 
 // 4. STUDI MEDICI
 echo "4. Creazione studi medici...\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 $studios = \Modules\<nome progetto>\Models\Studio::factory()->count(10)->create();
 $studios = \Modules\<nome progetto>\Models\Studio::factory()->count(10)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 echo "   ✅ {$studios->count()} studi creati\n\n";
 
 // 5. DOTTORI
 echo "5. Creazione dottori...\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 $doctors = \Modules\<nome progetto>\Models\Doctor::factory()->count(25)->create();
 $doctors = \Modules\<nome progetto>\Models\Doctor::factory()->count(25)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 echo "   ✅ {$doctors->count()} dottori creati\n\n";
 
 // 6. PAZIENTI
 echo "6. Creazione pazienti...\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 $patients = \Modules\<nome progetto>\Models\Patient::factory()->count(100)->create();
 $patients = \Modules\<nome progetto>\Models\Patient::factory()->count(100)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 echo "   ✅ {$patients->count()} pazienti creati\n\n";
 
 // 7. RELAZIONI DOTTORE-STUDIO
@@ -174,8 +202,12 @@ echo "7. Creazione relazioni dottore-studio...\n";
 foreach ($studios as $studio) {
     $studioDoctors = $doctors->random(rand(2, 5));
     foreach ($studioDoctors as $doctor) {
+<<<<<<< HEAD:docs/database-population-guide.md
         \Modules\<nome progetto>\Models\DoctorStudio::factory()->create([
         \Modules\<nome progetto>\Models\DoctorStudio::factory()->create([
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
             'doctor_id' => $doctor->id,
             'studio_id' => $studio->id
         ]);
@@ -188,8 +220,12 @@ echo "8. Creazione relazioni paziente-studio...\n";
 foreach ($studios as $studio) {
     $studioPatients = $patients->random(rand(10, 30));
     foreach ($studioPatients as $patient) {
+<<<<<<< HEAD:docs/database-population-guide.md
         \Modules\<nome progetto>\Models\PatientStudio::factory()->create([
         \Modules\<nome progetto>\Models\PatientStudio::factory()->create([
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
             'patient_id' => $patient->id,
             'studio_id' => $studio->id
         ]);
@@ -199,14 +235,22 @@ echo "   ✅ Relazioni paziente-studio create\n\n";
 
 // 9. APPUNTAMENTI
 echo "9. Creazione appuntamenti...\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 $appointments = \Modules\<nome progetto>\Models\Appointment::factory()->count(200)->create();
 $appointments = \Modules\<nome progetto>\Models\Appointment::factory()->count(200)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 echo "   ✅ {$appointments->count()} appuntamenti creati\n\n";
 
 // 10. REPORT
 echo "10. Creazione report...\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 $reports = \Modules\<nome progetto>\Models\Report::factory()->count(150)->create();
 $reports = \Modules\<nome progetto>\Models\Report::factory()->count(150)->create();
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 echo "   ✅ {$reports->count()} report creati\n\n";
 
 // VERIFICA FINALE
@@ -214,6 +258,7 @@ echo "=== VERIFICA FINALE ===\n";
 echo "Tenant: " . \Modules\Tenant\Models\Tenant::count() . "\n";
 echo "Domini: " . \Modules\Tenant\Models\Domain::count() . "\n";
 echo "Utenti: " . \Modules\User\Models\User::count() . "\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 echo "Studi: " . \Modules\<nome progetto>\Models\Studio::count() . "\n";
 echo "Dottori: " . \Modules\<nome progetto>\Models\Doctor::count() . "\n";
 echo "Pazienti: " . \Modules\<nome progetto>\Models\Patient::count() . "\n";
@@ -224,6 +269,9 @@ echo "Dottori: " . \Modules\<nome progetto>\Models\Doctor::count() . "\n";
 echo "Pazienti: " . \Modules\<nome progetto>\Models\Patient::count() . "\n";
 echo "Appuntamenti: " . \Modules\<nome progetto>\Models\Appointment::count() . "\n";
 echo "Report: " . \Modules\<nome progetto>\Models\Report::count() . "\n";
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 
 echo "\n🎉 POPOLAMENTO COMPLETATO CON SUCCESSO!\n";
 ```
@@ -290,8 +338,12 @@ php artisan tinker
 # SOLUZIONE: Verificare ordine di creazione
 php artisan tinker
 >>> \Modules\Tenant\Models\Tenant::count(); // Deve essere > 0
+<<<<<<< HEAD:docs/database-population-guide.md
 >>> \Modules\<nome progetto>\Models\Studio::count(); // Deve essere > 0
 >>> \Modules\<nome progetto>\Models\Studio::count(); // Deve essere > 0
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 ```
 
 #### 3. Memoria Insufficiente
@@ -311,21 +363,29 @@ php artisan tinker
 # Controllo conteggi
 php artisan tinker
 >>> echo "Users: " . \Modules\User\Models\User::count() . "\n";
+<<<<<<< HEAD:docs/database-population-guide.md
 >>> echo "Studi: " . \Modules\<nome progetto>\Models\Studio::count() . "\n";
 >>> echo "Dottori: " . \Modules\<nome progetto>\Models\Doctor::count() . "\n";
 >>> echo "Studi: " . \Modules\<nome progetto>\Models\Studio::count() . "\n";
 >>> echo "Dottori: " . \Modules\<nome progetto>\Models\Doctor::count() . "\n";
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 ```
 
 ## Collegamenti
 
 - [User Module Database Population](../laravel/Modules/User/docs/database-population.md)
+<<<<<<< HEAD:docs/database-population-guide.md
 - [<nome progetto> Module Database Population](../laravel/Modules/<nome progetto>/docs/database-population.md)
 - [Tenant Module Database Population](../laravel/Modules/Tenant/docs/database-population.md)
 - [Factory Best Practices](../laravel/Modules/<nome progetto>/docs/factory-best-practices.md)
 - [<nome progetto> Module Database Population](../laravel/Modules/<nome progetto>/docs/database-population.md)
 - [Tenant Module Database Population](../laravel/Modules/Tenant/docs/database-population.md)
 - [Factory Best Practices](../laravel/Modules/<nome progetto>/docs/factory-best-practices.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-population-guide.md
 - [Testing Guidelines](../laravel/Modules/User/docs/testing.md)
 
 ---

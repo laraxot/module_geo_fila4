@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
+=======
+>>>>>>> 078f9da (.)
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 
@@ -22,7 +25,11 @@ use Illuminate\Support\Facades\Cache;
  * @see docs/geo-json-model.md Documentazione tecnica del modello base
  */
 /**
+<<<<<<< HEAD
  * @mixin Builder
+=======
+ * @mixin \Illuminate\Database\Eloquent\Builder
+>>>>>>> 078f9da (.)
  */
 class ComuneJson extends GeoJsonModel
 {

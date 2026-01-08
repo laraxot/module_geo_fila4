@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Support\Collection;
+=======
+>>>>>>> 078f9da (.)
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
 use Spatie\QueueableAction\QueueableAction;
@@ -38,7 +41,11 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Collection per memorizzare eventuali errori durante l'esecuzione.
      */
+<<<<<<< HEAD
     private Collection $errors;
+=======
+    private \Illuminate\Support\Collection $errors;
+>>>>>>> 078f9da (.)
 
     public function __construct(
         private readonly GetAddressDataFromFullAddressAction $getAddressDataAction,
@@ -143,9 +150,15 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Restituisce la collezione degli errori verificatisi durante l'esecuzione.
      *
+<<<<<<< HEAD
      * @return Collection<int, string>
      */
     public function getErrors(): Collection
+=======
+     * @return \Illuminate\Support\Collection<int, string>
+     */
+    public function getErrors(): \Illuminate\Support\Collection
+>>>>>>> 078f9da (.)
     {
         return $this->errors;
     }

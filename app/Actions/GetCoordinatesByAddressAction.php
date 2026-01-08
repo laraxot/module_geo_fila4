@@ -21,6 +21,29 @@ class GetCoordinatesByAddressAction
             ?? $this->getFromOpenApi($address);
 
         if (! $coordinates) {
+<<<<<<< HEAD
+=======
+            // Prova con Bing Maps
+            $coordinates = $this->getFromBing($address);
+        }
+
+        if (! $coordinates) {
+            // Prova con OpenCage
+            $coordinates = $this->getFromOpenCage($address);
+        }
+
+        if (! $coordinates) {
+            // Prova con OpenStreetMap Nominatim
+            $coordinates = $this->getFromNominatim($address);
+        }
+
+        if (! $coordinates) {
+            // Prova con OpenAPI Geocoding
+            $coordinates = $this->getFromOpenApi($address);
+        }
+
+        if (! $coordinates) {
+>>>>>>> 078f9da (.)
             Notification::make()
                 ->title('Error')
                 ->body('Failed to fetch coordinates from all providers.')

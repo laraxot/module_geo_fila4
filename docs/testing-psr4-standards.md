@@ -1,4 +1,8 @@
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 # Standard PSR-4 per i Test in Laraxot <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 ## Panoramica
 
@@ -31,11 +35,15 @@ Ogni modulo deve avere la seguente configurazione nel `composer.json`:
 }
 ```
 
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 #### Modulo <nome modulo>
 ```json
 "autoload-dev": {
     "psr-4": {
         "Modules\\<nome modulo>\\Tests\\": "tests/"
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
     }
 }
 ```
@@ -83,9 +91,13 @@ class TestClassName extends BaseClass
 
 declare(strict_types=1);
 
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit;
 
 use Modules\<nome modulo>\Models\BaseModel;
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 /**
  * Concrete implementation of BaseModel for testing purposes.
@@ -172,7 +184,11 @@ class TestHelper extends Model
 <?php
 declare(strict_types=1);
 
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit;
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 /**
  * Helper class for testing.
@@ -192,7 +208,11 @@ namespace App\Tests\Unit; // Wrong namespace!
 
 ✅ **SOLUZIONE**:
 ```php
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit; // Correct module namespace
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 ```
 
 ## Verifica della Conformità
@@ -208,7 +228,11 @@ composer dump-autoload
 ./vendor/bin/phpstan analyze Modules/*/tests/ --level=9
 
 # Test specifico per modulo
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 ./vendor/bin/phpstan analyze Modules/<nome modulo>/tests/ --level=9
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 ```
 
 ### Messaggi di Errore Tipici
@@ -259,7 +283,11 @@ Prima di committare file di test:
 ## Collegamenti ai Moduli
 
 - [Testing PSR-4 Compliance - Modulo Xot](../Modules/Xot/docs/testing-psr4-compliance.md)
+<<<<<<< HEAD:docs/testing-psr4-standards.md
 - [Testing Guide - Modulo <nome modulo>](../Modules/<nome modulo>/docs/testing.md)
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 ---
 

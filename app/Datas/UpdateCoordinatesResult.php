@@ -71,6 +71,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getErrorMessages(): array
     {
+<<<<<<< HEAD
         /** @var array<int, string> $errorMessages */
         $errorMessages = $this->errors
             ->map(fn (array $error): string => "{$error['model']}: {$error['error']}")
@@ -78,6 +79,15 @@ class UpdateCoordinatesResult extends Data
             ->toArray();
 
         return $errorMessages;
+=======
+        /** @var array<int, string> $messages */
+        $messages = $this->errors
+            ->map(static fn (array $error): string => "{$error['model']}: {$error['error']}")
+            ->values()
+            ->all();
+
+        return $messages;
+>>>>>>> 078f9da (.)
     }
 
     /**

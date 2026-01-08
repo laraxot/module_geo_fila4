@@ -3,6 +3,7 @@
 ## VIOLAZIONE IDENTIFICATA
 
 **File**: `Modules/User/app/Filament/Widgets/UserTypeRegistrationsChartWidget.php`
+<<<<<<< HEAD:docs/architectural-violation-fix-plan.md
 **Problema**: Modulo BASE (User) dipende da modulo SPECIFICO (<nome progetto>)
 **Linea**: `use Modules\<nome progetto>\Models\Patient;`
 
@@ -15,11 +16,15 @@
 ## 🏗️ PRINCIPIO VIOLATO
 
 **Il modulo User è un modulo BASE che NON può dipendere da <nome progetto>!**
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/architectural-violation-fix-plan.md
 
 ## 📋 PIANO DI CORREZIONE
 
 ### 1. SPOSTARE IL WIDGET
 - **Da**: `Modules/User/app/Filament/Widgets/UserTypeRegistrationsChartWidget.php`
+<<<<<<< HEAD:docs/architectural-violation-fix-plan.md
 - **A**: `Modules/<nome progetto>/app/Filament/Widgets/UserTypeRegistrationsChartWidget.php`
 
 ### 2. AGGIORNARE NAMESPACE
@@ -30,6 +35,9 @@
 ### 2. AGGIORNARE NAMESPACE
 - **Da**: `namespace Modules\User\Filament\Widgets;`
 - **A**: `namespace Modules\<nome progetto>\Filament\Widgets;`
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/architectural-violation-fix-plan.md
 
 ### 3. VERIFICARE UTILIZZI
 - Cercare tutti i riferimenti al widget
@@ -43,12 +51,16 @@
 ## 🎯 MOTIVAZIONE ARCHITETTUALE
 
 ### Perché Spostare?
+<<<<<<< HEAD:docs/architectural-violation-fix-plan.md
 1. **Widget specifico per <nome progetto>**: Usa modelli specifici del dominio medico
 2. **Logica business specifica**: Non è un widget generico di User
 3. **Dipendenze corrette**: <nome progetto> può dipendere da User, non viceversa
 1. **Widget specifico per <nome progetto>**: Usa modelli specifici del dominio medico
 2. **Logica business specifica**: Non è un widget generico di User
 3. **Dipendenze corrette**: <nome progetto> può dipendere da User, non viceversa
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/architectural-violation-fix-plan.md
 4. **Riusabilità**: Il modulo User rimane riutilizzabile in altri progetti
 
 ### Benefici della Correzione
@@ -62,6 +74,7 @@
 ### Comandi di Controllo
 ```bash
 # Deve restituire NIENTE dopo la correzione
+<<<<<<< HEAD:docs/architectural-violation-fix-plan.md
 grep -r "<nome progetto>" Modules/User/ --include="*.php"
 grep -r "Patient" Modules/User/ --include="*.php"
 
@@ -86,6 +99,9 @@ ls -la Modules/<nome progetto>/app/Filament/Widgets/UserTypeRegistrationsChartWi
 - [ ] Namespace aggiornato correttamente
 - [ ] File originale rimosso dal modulo User
 - [ ] Nessuna dipendenza da <nome progetto> nel modulo User
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/architectural-violation-fix-plan.md
 - [ ] Widget funziona correttamente nella nuova posizione
 - [ ] Documentazione aggiornata
 

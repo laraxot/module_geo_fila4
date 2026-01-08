@@ -69,7 +69,11 @@ $table->unsignedBigInteger('causer_id')->nullable();
 // Activity con Admin (Integer)
 [
     'causer_id' => '123', // Integer convertito in string
+<<<<<<< HEAD:docs/archive/laraxot-migration-principles-uuid-polymorphism.md
     'causer_type' => 'Modules\<nome progetto>\Models\Admin'
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/principi_migrazioni_laraxot_uuid_polimorfismo.md
 ]
 ```
 
@@ -229,7 +233,11 @@ $table->index(['morphable_id', 'morphable_type']); // Performance
 ### **Esempi Pratici**
 - [Activity Migration](../laravel/Modules/Activity/database/migrations/2024_01_15_103351_create_activity_table.php)
 - [User UUID Model](../laravel/Modules/User/app/Models/User.php)
+<<<<<<< HEAD:docs/archive/laraxot-migration-principles-uuid-polymorphism.md
 - [Admin Integer Model](../laravel/Modules/<nome progetto>/app/Models/Admin.php)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/principi_migrazioni_laraxot_uuid_polimorfismo.md
 
 ### **Tools e Validazione**
 - **PHPStan**: Validazione tipi polimorfici

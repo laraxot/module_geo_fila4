@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/database-seeding.md
 # Database Seeding - Moduli <nome modulo> e <nome progetto>
 
 ## Panoramica
@@ -8,6 +9,9 @@ Questa documentazione descrive il processo di popolamento del database per i mod
 ## Panoramica
 
 Questa documentazione descrive il processo di popolamento del database per i moduli <nome progetto> e <nome progetto>, utilizzando i seeder e factory esistenti tramite script organizzati nella cartella `bashscripts`.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
 
 ## Struttura Script
 
@@ -16,6 +20,7 @@ Gli script di seeding sono organizzati nella seguente struttura:
 ```bashscripts/
 └── database/
     └── seeding/
+<<<<<<< HEAD:docs/database-seeding.md
         ├── <nome progetto>-1000-records.php        # Popolamento esatto 1000 record per modello
         ├── <nome progetto>-20-studios-66010.php    # 🎯 NUOVO: 20 studi con postal_code 66010 + dottori
         ├── <nome progetto>-mass-seeding.php         # Popolamento massivo <nome progetto>
@@ -24,6 +29,9 @@ Gli script di seeding sono organizzati nella seguente struttura:
         ├── <nome progetto>-20-studios-66010.php    # 🎯 NUOVO: 20 studi con postal_code 66010 + dottori
         ├── <nome progetto>-mass-seeding.php         # Popolamento massivo <nome progetto>
         ├── <nome progetto>-database-seeding.php      # Popolamento <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
         ├── tinker-commands.php                # Comandi diretti per Tinker
         ├── tinker-1000-records.php            # Script Tinker per 1000 record
         └── tinker-20-studios-66010.php       # 🆕 Script Tinker per 20 studi + dottori
@@ -31,6 +39,7 @@ Gli script di seeding sono organizzati nella seguente struttura:
 
 ## Script Principale: 1000 Record per Modello
 
+<<<<<<< HEAD:docs/database-seeding.md
 ### `<nome progetto>-1000-records.php`
 ### `<nome progetto>-1000-records.php`
 
@@ -77,10 +86,14 @@ Script specifico per creare esattamente **20 studi medici** tutti con `postal_co
 
 ### <nome progetto>
 ### <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
 - **UserFactory**: Generazione utenti (Patient, Doctor, Admin)
 - **StudioFactory**: Generazione studi medici
 - **AppointmentFactory**: Generazione appuntamenti
 
+<<<<<<< HEAD:docs/database-seeding.md
 ### <nome modulo>
 ### <nome progetto>
 - **UserFactory**: Generazione utenti base
@@ -178,6 +191,9 @@ php bashscripts/database/seeding/<nome progetto>-1000-records.php
 
 # Output atteso:
 # 🚀 Inizializzazione seeding massivo <nome progetto> - 1000 record per modello...
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
 # 📊 RISULTATO FINALE:
 #   - Studi creati: 1000
 #   - Dottori totali: 1000
@@ -188,8 +204,12 @@ php bashscripts/database/seeding/<nome progetto>-1000-records.php
 ## Troubleshooting
 
 ### Errori Comuni
+<<<<<<< HEAD:docs/database-seeding.md
 1. **Modulo non trovato**: Verificare installazione modulo <nome progetto>
 1. **Modulo non trovato**: Verificare installazione modulo <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
 2. **Factory non trovato**: Controllare esistenza factory nel modulo
 3. **Errore database**: Verificare migrazioni e configurazione
 4. **Memoria insufficiente**: Utilizzare script in batch più piccoli
@@ -224,14 +244,22 @@ php bashscripts/database/seeding/<nome progetto>-1000-records.php
 
 - [README BashScripts](../bashscripts/README.md)
 - [Quick Start Seeding](../bashscripts/database/seeding/QUICK_START.md)
+<<<<<<< HEAD:docs/database-seeding.md
 - [Documentazione Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/)
 - [Documentazione Modulo <nome modulo>](../laravel/Modules/<nome modulo>/docs/)
 - [Documentazione Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/)
 - [Documentazione Modulo <nome progetto>](../laravel/Modules/<nome progetto>/docs/)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md
 
 ---
 
 **Ultimo aggiornamento**: Gennaio 2025
 **Versione**: 2.0
+<<<<<<< HEAD:docs/database-seeding.md
 **Compatibilità**: Laravel 10+, Moduli <nome progetto>/<nome modulo>
 **Compatibilità**: Laravel 10+, Moduli <nome progetto>/<nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/database-seeding.md

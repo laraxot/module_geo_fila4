@@ -7,6 +7,7 @@ Analisi completa degli errori PHPStan per identificare e risolvere problemi di b
 
 **Totale Errori**: 3408 file analizzati
 **Errori Critici**: 15+ errori di business logic
+<<<<<<< HEAD:docs/phpstan-analysis-business-logic.md
 **Moduli Principali Affetti**: <nome progetto>, User, Cms, Xot, UI, Geo, Tenant, Notify, Media, Lang, Job, Gdpr, Activity
 
 ## 🚨 **Errori Critici per Business Logic**
@@ -17,6 +18,9 @@ Analisi completa degli errori PHPStan per identificare e risolvere problemi di b
 ## 🚨 **Errori Critici per Business Logic**
 
 ### 1. **Modulo <nome progetto> - Factory Type Safety**
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-analysis-business-logic.md
 
 #### DoctorFactory.php
 - **Linea 70, 86**: `json_encode` non sicuro (thecodingmachine/safe)
@@ -201,6 +205,7 @@ use function Safe\json_encode;
 ## 📋 **Checklist Implementazione**
 
 ### **Fase 1: Factory Type Safety**
+<<<<<<< HEAD:docs/phpstan-analysis-business-logic.md
 - [x] <nome progetto> - DoctorFactory.php
 - [x] <nome progetto> - PatientFactory.php
 - [x] <nome progetto> - AppointmentFactory.php
@@ -209,6 +214,9 @@ use function Safe\json_encode;
 - [x] <nome progetto> - PatientFactory.php
 - [x] <nome progetto> - AppointmentFactory.php
 - [x] <nome progetto> - ReportFactory.php
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-analysis-business-logic.md
 - [ ] User - UserFactory.php
 - [ ] Geo - AddressFactory.php
 - [ ] Notify - SendEmailAction.php
@@ -237,8 +245,12 @@ use function Safe\json_encode;
 ## 🎯 **Priorità di Implementazione**
 
 ### **ALTA PRIORITÀ (Business Critical)**
+<<<<<<< HEAD:docs/phpstan-analysis-business-logic.md
 1. **<nome progetto> Factory** - Dati sanitari a rischio
 1. **<nome progetto> Factory** - Dati sanitari a rischio
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-analysis-business-logic.md
 2. **User Factory** - Sistema di accesso critico
 3. **Geo Factory** - Dati geografici essenziali
 
@@ -278,8 +290,12 @@ use function Safe\json_encode;
 ## 🔍 **Prossimi Passi**
 
 ### **Immediato (Oggi)**
+<<<<<<< HEAD:docs/phpstan-analysis-business-logic.md
 1. Completare <nome progetto> Factory fixes
 1. Completare <nome progetto> Factory fixes
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-analysis-business-logic.md
 2. Implementare User Factory fixes
 3. Testare factory con Tinker
 
@@ -313,7 +329,11 @@ Al completamento di questo audit e delle correzioni:
 ---
 
 **Stato**: Analisi completata, implementazione in corso
+<<<<<<< HEAD:docs/phpstan-analysis-business-logic.md
 **Priorità**: <nome progetto> Factory (CRITICO)
 **Priorità**: <nome progetto> Factory (CRITICO)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-analysis-business-logic.md
 **Responsabile**: AI Assistant
 **Ultimo Aggiornamento**: 2025-01-06

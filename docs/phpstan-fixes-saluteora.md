@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/phpstan-fixes-saluteora.md
 # Correzioni PHPStan <nome progetto> - Uso Azioni Cast Xot
 
 ## Descrizione
@@ -6,6 +7,9 @@ Questo documento documenta le correzioni PHPStan per il modulo <nome progetto> u
 
 ## Descrizione
 Questo documento documenta le correzioni PHPStan per il modulo <nome progetto> utilizzando le azioni di casting pre-esistenti in `laravel/Modules/Xot/app/Actions/Cast`.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-fixes-saluteora.md
 
 ## Principio Fondamentale
 **SEMPRE** utilizzare le azioni di casting Xot invece di cast manuali per risolvere errori PHPStan e garantire type safety.
@@ -76,14 +80,22 @@ $startTime->addMinutes($duration);
 ```php
 // Prima (ERRATO)
 /**
+<<<<<<< HEAD:docs/phpstan-fixes-saluteora.md
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Doctor>
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Doctor>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-fixes-saluteora.md
  */
 
 // Dopo (CORRETTO)
 /**
+<<<<<<< HEAD:docs/phpstan-fixes-saluteora.md
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Doctor>
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Doctor>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-fixes-saluteora.md
  */
 ```
 
@@ -97,14 +109,22 @@ $startTime->addMinutes($duration);
 ```php
 // Prima (ERRATO)
 /**
+<<<<<<< HEAD:docs/phpstan-fixes-saluteora.md
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Patient>
  * @extends \Modules\<nome progetto>\Database\Factories\UserFactory<\Modules\<nome progetto>\Models\Patient>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-fixes-saluteora.md
  */
 
 // Dopo (CORRETTO)
 /**
+<<<<<<< HEAD:docs/phpstan-fixes-saluteora.md
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Patient>
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\<nome progetto>\Models\Patient>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/phpstan-fixes-saluteora.md
  */
 ```
 

@@ -2,8 +2,12 @@
 
 ## 📊 Panoramica Generale
 
+<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
 Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🏗️ Gerarchia Architetturale
 
@@ -24,10 +28,14 @@ Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i
 - **Tenant**: Multi-tenancy
 
 ### Moduli Specifici (Livello 3)
+<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 - **<nome progetto>**: Modulo principale sanitario
 - **<nome modulo>**: Funzionalità mobile
 - **<nome progetto>**: Modulo principale sanitario
 - **<nome progetto>**: Funzionalità mobile
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🎯 Pattern Comuni Identificati
 
@@ -241,10 +249,14 @@ class ModuleMetricsService
 - [Tenant - Multi-Tenancy](../laravel/Modules/Tenant/docs/ottimizzazioni-e-miglioramenti.md)
 
 ### Moduli Specifici
+<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 - [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome modulo> - Mobile Features](../laravel/Modules/<nome modulo>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome progetto> - Mobile Features](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🎯 Conclusioni
 

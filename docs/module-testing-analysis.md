@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/module-testing-analysis.md
 # Analisi Completa Testing e Factory Moduli - <nome progetto>
 
 ## 📊 Panoramica Generale
@@ -8,6 +9,9 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 ## 📊 Panoramica Generale
 
 Questo documento fornisce un'analisi completa dello stato attuale di factory, seeder e test per tutti i moduli del progetto <nome progetto>, con focus sulla business logic e copertura test.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/module-testing-analysis.md
 
 ## 🎯 Obiettivi
 
@@ -20,13 +24,18 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ### ✅ Moduli Completati (Test Business Logic)
 
+<<<<<<< HEAD:docs/module-testing-analysis.md
 #### 1. **<nome progetto>** - 100% Copertura ✅
 #### 1. **<nome progetto>** - 100% Copertura ✅
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/module-testing-analysis.md
 - **Factory**: 100% (tutti i modelli)
 - **Seeder**: 100% (tutti i modelli)
 - **Test**: 100% (business logic completa)
 - **Stato**: Eccellente - Modulo di riferimento
 
+<<<<<<< HEAD:docs/module-testing-analysis.md
 #### 2. **<nome modulo>** - 100% Copertura ✅
 #### 2. **<nome progetto>** - 100% Copertura ✅
 - **Factory**: 100% (tutti i modelli)
@@ -127,6 +136,9 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 2. **<nome modulo>** - 100% (modulo di riferimento)
 1. **<nome progetto>** - 100% (modulo di riferimento)
 2. **<nome progetto>** - 100% (modulo di riferimento)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/module-testing-analysis.md
 3. **Media** - 85% (test core completati)
 4. **Lang** - 85% (test core completati)
 5. **Gdpr** - 85% (test core completati)
@@ -144,8 +156,12 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 
 ## 🧪 Test Implementati per Modulo
 
+<<<<<<< HEAD:docs/module-testing-analysis.md
 ### <nome progetto> & <nome modulo> (Moduli di Riferimento)
 ### <nome progetto> & <nome progetto> (Moduli di Riferimento)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/module-testing-analysis.md
 - ✅ **Patient Tests**: Gestione pazienti completa
 - ✅ **Doctor Tests**: Gestione dottori completa
 - ✅ **Appointment Tests**: Gestione appuntamenti completa
@@ -352,10 +368,14 @@ Questo documento fornisce un'analisi completa dello stato attuale di factory, se
 ## 📚 Documentazione e Riferimenti
 
 ### File di Analisi Moduli
+<<<<<<< HEAD:docs/module-testing-analysis.md
 - [<nome progetto>](../laravel/Modules/<nome progetto>/docs/module-analysis-complete.md)
 - [<nome modulo>](../laravel/Modules/<nome modulo>/docs/module-analysis-complete.md)
 - [<nome progetto>](../laravel/Modules/<nome progetto>/docs/module-analysis-complete.md)
 - [<nome progetto>](../laravel/Modules/<nome progetto>/docs/module-analysis-complete.md)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/module-testing-analysis.md
 - [Media](../laravel/Modules/Media/docs/module-analysis-complete.md)
 - [Lang](../laravel/Modules/Lang/docs/module-analysis-complete.md)
 - [Gdpr](../laravel/Modules/Gdpr/docs/module-analysis-complete.md)

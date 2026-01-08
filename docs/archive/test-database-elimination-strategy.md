@@ -1,8 +1,12 @@
+<<<<<<< HEAD:docs/archive/test-database-elimination-strategy.md
 # Strategia di Eliminazione Database dai Test - <nome progetto>
 
 ## PROBLEMA IDENTIFICATO
 
 La maggior parte dei test <nome progetto> sta ancora usando database e factory, contraddicendo la regola fondamentale **NO DATABASE NEI TEST**.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/test-database-elimination-strategy.md
 
 ## ERRORI PRINCIPALI
 
@@ -35,9 +39,13 @@ La maggior parte dei test <nome progetto> sta ancora usando database e factory, 
 
 ### Fase 1: Identificare tutti i test con database
 ```bash
+<<<<<<< HEAD:docs/archive/test-database-elimination-strategy.md
 grep -r "::factory" Modules/<nome progetto>/tests/ --include="*.php"
 grep -r "RefreshDatabase" Modules/<nome progetto>/tests/ --include="*.php" 
 grep -r "uses(TestCase" Modules/<nome progetto>/tests/ --include="*.php"
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/test-database-elimination-strategy.md
 ```
 
 ### Fase 2: Convertire sistematicamente ogni test

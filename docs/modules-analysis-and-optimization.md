@@ -1,5 +1,9 @@
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 # Analisi e Ottimizzazioni Moduli Laraxot - <nome progetto>
 # Analisi e Ottimizzazioni Moduli Laraxot - <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 
 ## Panoramica Generale
 
@@ -24,16 +28,21 @@ Dopo l'analisi approfondita della struttura documentale e del codice, ho identif
 
 ### 🏥 Moduli Project-Specific
 **Possono contenere logica specifica del progetto sanitario**
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **<nome progetto>** - Logica sanitaria principale
 - **<nome modulo>** - Variante regionale mobile
 - **<nome progetto>** - Logica sanitaria principale
 - **<nome progetto>** - Variante regionale mobile
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 
 ## Analisi Dettagliata per Modulo
 
 ### 1. 📧 Modulo Notify
 
 #### 🎯 Stato Attuale
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **Riusabilità**: ❌ CRITICO - 336+ occorrenze hardcoded "<nome progetto>"
 - **Riusabilità**: ❌ CRITICO - 336+ occorrenze hardcoded "<nome progetto>"
 - **Documentazione**: ⚠️ Frammentata in 150+ file
@@ -51,6 +60,9 @@ use Modules\<nome progetto>\Models\User
 'content' => 'Benvenuto su <nome progetto>!'
 'created_by' => 'admin@<nome progetto>.com'
 use Modules\<nome progetto>\Models\User
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 
 // ✅ SOLUZIONI IMPLEMENTATE  
 'content' => 'Benvenuto su ' . config('app.name') . '!'
@@ -111,8 +123,12 @@ User/docs/
 ```
 
 ##### Riusabilità
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **Rimuovere** tutti i riferimenti hardcoded a <nome progetto>
 - **Rimuovere** tutti i riferimenti hardcoded a <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 - **Utilizzare** XotData per classi dinamiche
 - **Generalizzare** esempi e documentazione
 
@@ -127,6 +143,7 @@ User/docs/
 #### 🔧 Ottimizzazioni Richieste
 
 ##### Riusabilità
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **Rimuovere** path hardcoded tipo `/var/www/html/<nome progetto>/`
 - **Rimuovere** path hardcoded tipo `/var/www/html/<nome progetto>/`
 - **Generalizzare** esempi di configurazione
@@ -166,6 +183,9 @@ public static function getProjectBasePath(): string
 
 ### 5. 🏥 Modulo <nome progetto>
 ### 5. 🏥 Modulo <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 
 #### 🎯 Stato Attuale
 - **Funzionalità**: ✅ Completa per dominio sanitario
@@ -185,6 +205,7 @@ public static function getProjectBasePath(): string
 - **Implementare** caching per dashboard
 - **Migliorare** performance seeder
 
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 ### 6. 📱 Modulo <nome modulo>
 
 #### 🎯 Stato Attuale
@@ -193,14 +214,21 @@ public static function getProjectBasePath(): string
 
 #### 🎯 Stato Attuale
 - **Funzionalità**: ✅ Estensione mobile di <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 - **Testing**: ✅ Business logic completa
 - **Documentazione**: ⚠️ Da consolidare
 
 #### 🔧 Ottimizzazioni Richieste
 
 ##### Documentazione
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **Chiarire** relazione con <nome progetto>
 - **Chiarire** relazione con <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 - **Documentare** funzionalità specifiche mobile
 - **Consolidare** guide testing
 
@@ -215,8 +243,12 @@ public static function getProjectBasePath(): string
 
 ##### Riusabilità
 - **Generalizzare** esempi di utilizzo
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 - **Rimuovere** riferimenti specifici a <nome progetto>
 - **Rimuovere** riferimenti specifici a <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 - **Utilizzare** pattern dinamici
 
 ### 8. 📄 Modulo Cms
@@ -271,8 +303,12 @@ public static function getProjectBasePath(): string
 **Tempo stimato**: 1-2 giorni
 
 #### Azioni
+<<<<<<< HEAD:docs/modules-analysis-and-optimization.md
 1. **<nome progetto>**: Ottimizzazione query calendar widget
 1. **<nome progetto>**: Ottimizzazione query calendar widget
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modules_analysis_and_optimization.md
 2. **Notify**: Caching template email
 3. **UI**: Bundle optimization componenti
 4. **Geo**: Caching Google Places API

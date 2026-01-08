@@ -1,6 +1,7 @@
 # BaseModel Testing - Lessons Learned (Gennaio 2025)
 
 ## Context
+<<<<<<< HEAD:docs/archive/basemodel-testing-lessons-learned.md
 Durante la risoluzione del test fallito `BaseModelTest` nel modulo <nome modulo>, sono stati identificati e risolti pattern problematici comuni nei test di modelli complessi che utilizzano molti trait.
 
 ## Problema Identificato
@@ -104,6 +105,9 @@ Tests: 54 passed (114 assertions)
 Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 - <nome modulo> ✅ (Fixed)
 - <nome progetto> (Potential)
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/archive/basemodel-testing-lessons-learned.md
 - Geo (Potential)
 - Altri moduli con trait complessi
 
@@ -131,4 +135,8 @@ Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 **Data**: 25 Gennaio 2025
 **Responsabile**: Claude Code Testing Resolution
 **Status**: Completato e Documentato
+<<<<<<< HEAD:docs/archive/basemodel-testing-lessons-learned.md
 **Moduli Testati**: <nome modulo> (54/54 tests passing)
+=======
+{nome-modulo}
+>>>>>>> 078f9da (.):docs_project/archive/basemodel-testing-lessons-learned.md

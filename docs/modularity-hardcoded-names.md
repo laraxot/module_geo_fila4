@@ -2,6 +2,7 @@
 
 ## Problema Identificato
 
+<<<<<<< HEAD:docs/modularity-hardcoded-names.md
 Durante l'audit del modulo `Notify`, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome modulo>") in un modulo che deve essere riutilizzabile in progetti diversi.
 Durante l'audit del modulo `Notify`, è stato identificato un **errore critico di architettura**: l'utilizzo di stringhe hardcoded con nomi di progetto specifici (es. "<nome progetto>", "<nome progetto>") in un modulo che deve essere riutilizzabile in progetti diversi.
 
@@ -28,6 +29,9 @@ Durante l'audit del modulo `Notify`, è stato identificato un **errore critico d
 'webhook' => 'https://api.<nome progetto>.com/webhooks',
 'author' => 'Team <nome progetto>',
 'path' => '/var/www/html/<nome progetto>/public_html/images/',
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-hardcoded-names.md
 ```
 
 ## Soluzioni Implementate
@@ -82,10 +86,14 @@ $notificationData = [
 - **Media**: Gestione media per qualsiasi progetto
 
 ### Moduli Specifici del Progetto
+<<<<<<< HEAD:docs/modularity-hardcoded-names.md
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome modulo>**: Solo per progetto <nome modulo>
 - **<nome progetto>**: Solo per progetto <nome progetto>
 - **<nome progetto>**: Solo per progetto <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-hardcoded-names.md
 - **Patient**: Solo per progetti sanitari specifici
 
 ## Checklist Pre-Commit
@@ -104,6 +112,7 @@ Prima di ogni commit, verificare:
 Eseguire regolarmente:
 ```bash
 # Cerca stringhe hardcoded nei moduli generici
+<<<<<<< HEAD:docs/modularity-hardcoded-names.md
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/Notify/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/User/ --include="*.php"
 grep -r "<nome progetto>\|<nome modulo>" laravel/Modules/UI/ --include="*.php"
@@ -128,6 +137,9 @@ COMPANY_TEAM=Team <nome progetto>
 WEBHOOK_BASE_URL=https://api.<nome progetto>.com
 CLINIC_NAME=Studio Dentistico <nome progetto>
 REPOSITORY_URL=https://github.com/<nome progetto>/notify
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/modularity-hardcoded-names.md
 ```
 
 ### Override per Progetti Specifici

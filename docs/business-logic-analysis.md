@@ -1,3 +1,4 @@
+<<<<<<< HEAD:docs/business-logic-analysis.md
 # 🏥 Business Logic Analysis - Progetto <nome progetto>
 
 ## 📋 Panoramica del Sistema
@@ -8,6 +9,9 @@
 ## 📋 Panoramica del Sistema
 
 <nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 ## 🏗️ Architettura Modulare
 
@@ -18,8 +22,12 @@
 - **Componenti**: 50+ classi base, 20+ service provider, 15+ trait
 - **Funzionalità**: Autenticazione, autorizzazione, migrazioni, componenti Filament base
 
+<<<<<<< HEAD:docs/business-logic-analysis.md
 #### 2. **<nome progetto>** - Modulo Core Sanitario
 #### 2. **<nome progetto>** - Modulo Core Sanitario
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 - **Scopo**: Gestione completa del sistema sanitario
 - **Modelli**: User, Doctor, Patient, Admin, Studio, Appointment, Report
 - **Funzionalità**: Gestione pazienti, appuntamenti, referti medici, stati appuntamenti
@@ -170,16 +178,24 @@ graph TD
 
 1. **Xot** ← Base per tutti gli altri moduli
 2. **User** ← Dipende da Xot per classi base
+<<<<<<< HEAD:docs/business-logic-analysis.md
 3. **<nome progetto>** ← Dipende da User, Geo, Media
 3. **<nome progetto>** ← Dipende da User, Geo, Media
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 4. **Geo** ← Dipende da Xot per modelli base
 5. **Media** ← Dipende da Xot per gestione file
 6. **UI** ← Dipende da Xot per componenti base
 
 ## 📊 Modelli e Entità
 
+<<<<<<< HEAD:docs/business-logic-analysis.md
 ### Modelli Core <nome progetto>
 ### Modelli Core <nome progetto>
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 #### User (Utente Base)
 - **Responsabilità**: Gestione autenticazione e profilo base
@@ -381,8 +397,12 @@ Il modulo implementa una strategia di testing ad alte prestazioni:
 
 ```bash
 # Esecuzione test con performance target
+<<<<<<< HEAD:docs/business-logic-analysis.md
 ./vendor/bin/pest Modules/<nome progetto> --coverage
 ./vendor/bin/pest Modules/<nome progetto> --coverage
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 # Test specifici per business logic
 php artisan test --filter=AppointmentStateTest
@@ -395,8 +415,12 @@ php artisan test --filter=UserTypeValidationTest
 
 ```env
 # Configurazione base
+<<<<<<< HEAD:docs/business-logic-analysis.md
 APP_NAME="<nome progetto>"
 APP_NAME="<nome progetto>"
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 APP_ENV=production
 APP_DEBUG=false
 
@@ -404,6 +428,7 @@ APP_DEBUG=false
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
+<<<<<<< HEAD:docs/business-logic-analysis.md
 DB_DATABASE=<nome progetto>
 DB_USERNAME=<nome progetto>_user
 DB_DATABASE=<nome progetto>
@@ -455,6 +480,9 @@ La documentazione deve essere mantenuta aggiornata in:
 
 1. **Modulo specifico**: `Modules/<nome progetto>/docs/`
 1. **Modulo specifico**: `Modules/<nome progetto>/docs/`
+=======
+{nome-progetto}
+>>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 2. **Documentazione root**: `laravel/docs/`
 3. **Regole Cursor**: `.cursor/rules/`
 4. **Regole Windsurf**: `.windsurf/rules/`
