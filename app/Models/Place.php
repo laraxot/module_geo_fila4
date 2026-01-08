@@ -16,7 +16,8 @@ use Modules\Xot\Contracts\ProfileContract;
 use function Safe\json_encode;
 
 /**
-<<<<<<< HEAD
+ * <<<<<<< HEAD.
+ *
  * @property Address|null         $address
  * @property ProfileContract|null $creator
  * @property string               $formatted_address
@@ -25,22 +26,23 @@ use function Safe\json_encode;
  * @property Model|\Eloquent      $linked
  * @property PlaceType|null       $placeType
  * @property ProfileContract|null $updater
-=======
- * @property Address|null                                $address
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property string                                      $formatted_address
- * @property float|null                                  $latitude
- * @property float|null                                  $longitude
- * @property Model|\Eloquent                             $linked
- * @property PlaceType|null                              $placeType
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
->>>>>>> 078f9da (.)
+ *                                                   =======
+ * @property Address|null         $address
+ * @property ProfileContract|null $creator
+ * @property string               $formatted_address
+ * @property float|null           $latitude
+ * @property float|null           $longitude
+ * @property Model|\Eloquent      $linked
+ * @property PlaceType|null       $placeType
+ * @property ProfileContract|null $updater
+ *                                                   >>>>>>> 078f9da (.)
  *
  * @method static Builder<static>|Place newModelQuery()
  * @method static Builder<static>|Place newQuery()
  * @method static Builder<static>|Place query()
  *
-<<<<<<< HEAD
+ * <<<<<<< HEAD
+ *
  * @property int                  $id
  * @property string|null          $model_type
  * @property int|null             $model_id
@@ -124,46 +126,47 @@ use function Safe\json_encode;
  * @method static Builder<static>|Place whereStreetNumberShort($value)
  * @method static Builder<static>|Place whereUpdatedAt($value)
  * @method static Builder<static>|Place whereUpdatedBy($value)
-=======
- * @property int                                         $id
- * @property string|null                                 $model_type
- * @property int|null                                    $model_id
- * @property string|null                                 $premise
- * @property string|null                                 $premise_short
- * @property string|null                                 $locality
- * @property string|null                                 $locality_short
- * @property string|null                                 $postal_town
- * @property string|null                                 $postal_town_short
- * @property string|null                                 $administrative_area_level_3
- * @property string|null                                 $administrative_area_level_3_short
- * @property string|null                                 $administrative_area_level_2
- * @property string|null                                 $administrative_area_level_2_short
- * @property string|null                                 $administrative_area_level_1
- * @property string|null                                 $administrative_area_level_1_short
- * @property string|null                                 $country
- * @property string|null                                 $country_short
- * @property string|null                                 $street_number
- * @property string|null                                 $street_number_short
- * @property string|null                                 $route
- * @property string|null                                 $route_short
- * @property string|null                                 $postal_code
- * @property string|null                                 $postal_code_short
- * @property string|null                                 $googleplace_url
- * @property string|null                                 $googleplace_url_short
- * @property string|null                                 $point_of_interest
- * @property string|null                                 $point_of_interest_short
- * @property string|null                                 $political
- * @property string|null                                 $political_short
- * @property string|null                                 $campground
- * @property string|null                                 $campground_short
- * @property string|null                                 $nearest_street
- * @property string|null                                 $created_by
- * @property string|null                                 $updated_by
- * @property string|null                                 $deleted_by
- * @property \Illuminate\Support\Carbon|null             $created_at
- * @property \Illuminate\Support\Carbon|null             $updated_at
- * @property string|null                                 $post_type
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
+ *                                                                                 =======
+ *
+ * @property int                  $id
+ * @property string|null          $model_type
+ * @property int|null             $model_id
+ * @property string|null          $premise
+ * @property string|null          $premise_short
+ * @property string|null          $locality
+ * @property string|null          $locality_short
+ * @property string|null          $postal_town
+ * @property string|null          $postal_town_short
+ * @property string|null          $administrative_area_level_3
+ * @property string|null          $administrative_area_level_3_short
+ * @property string|null          $administrative_area_level_2
+ * @property string|null          $administrative_area_level_2_short
+ * @property string|null          $administrative_area_level_1
+ * @property string|null          $administrative_area_level_1_short
+ * @property string|null          $country
+ * @property string|null          $country_short
+ * @property string|null          $street_number
+ * @property string|null          $street_number_short
+ * @property string|null          $route
+ * @property string|null          $route_short
+ * @property string|null          $postal_code
+ * @property string|null          $postal_code_short
+ * @property string|null          $googleplace_url
+ * @property string|null          $googleplace_url_short
+ * @property string|null          $point_of_interest
+ * @property string|null          $point_of_interest_short
+ * @property string|null          $political
+ * @property string|null          $political_short
+ * @property string|null          $campground
+ * @property string|null          $campground_short
+ * @property string|null          $nearest_street
+ * @property string|null          $created_by
+ * @property string|null          $updated_by
+ * @property string|null          $deleted_by
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $post_type
+ * @property ProfileContract|null $deleter
  *
  * @method static \Modules\Geo\Database\Factories\PlaceFactory factory($count = null, $state = [])
  * @method static Builder<static>|Place                        whereAddress($value)
@@ -208,7 +211,7 @@ use function Safe\json_encode;
  * @method static Builder<static>|Place                        whereStreetNumberShort($value)
  * @method static Builder<static>|Place                        whereUpdatedAt($value)
  * @method static Builder<static>|Place                        whereUpdatedBy($value)
->>>>>>> 078f9da (.)
+ *                                                                                                        >>>>>>> 078f9da (.)
  *
  * @mixin \Eloquent
  */
