@@ -84,7 +84,7 @@ class GeoDataValidator
     {
         $validator = Validator::make($data, self::VALIDATION_RULES, self::CUSTOM_MESSAGES);
 
-        /** @var array<string, array<int, string>> $errors */
+        /* @var array<string, array<int, string>> $errors */
         return $validator->errors()->toArray();
     }
 

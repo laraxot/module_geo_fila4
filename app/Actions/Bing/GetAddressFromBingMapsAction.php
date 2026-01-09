@@ -50,7 +50,7 @@ class GetAddressFromBingMapsAction
         }
 
         // We've already checked that $apiKey is not empty
-        /** @var non-empty-string $apiKey */
+        /* @var non-empty-string $apiKey */
         return $apiKey;
     }
 
@@ -76,7 +76,7 @@ class GetAddressFromBingMapsAction
             throw InvalidLocationException::invalidData('Richiesta a Bing Maps fallita');
         }
 
-        /** @var array<string, mixed> $jsonResponse */
+        /* @var array<string, mixed> $jsonResponse */
         return $response->json();
     }
 
@@ -176,7 +176,7 @@ class GetAddressFromBingMapsAction
             throw InvalidLocationException::invalidData('Indirizzo mancante nella risposta');
         }
 
-        /** @var array<string, mixed> $validatedLocation */
+        /* @var array<string, mixed> $validatedLocation */
         return $location;
     }
 

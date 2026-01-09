@@ -41,7 +41,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteSuccess(): bool
     {
-        return $this->failureCount === 0 && $this->successCount > 0;
+        return 0 === $this->failureCount && $this->successCount > 0;
     }
 
     /**
@@ -49,7 +49,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteFailure(): bool
     {
-        return $this->successCount === 0 && $this->totalProcessed > 0;
+        return 0 === $this->successCount && $this->totalProcessed > 0;
     }
 
     /**
@@ -57,7 +57,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getSuccessRate(): float
     {
-        if ($this->totalProcessed === 0) {
+        if (0 === $this->totalProcessed) {
             return 0.0;
         }
 
@@ -71,7 +71,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getErrorMessages(): array
     {
-        /** @var array<int, string> $errorMessages */
+        /* @var array<int, string> $errorMessages */
         return $this->errors
             ->map(fn (array $error): string => "{$error['model']}: {$error['error']}")
             ->values()
