@@ -6,6 +6,7 @@ namespace Modules\Geo\Datas;
 
 use Illuminate\Support\Collection;
 use Spatie\LaravelData\Data;
+use Webmozart\Assert\Assert;
 
 /**
  * Result DTO for bulk coordinate update operations.
@@ -41,7 +42,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteSuccess(): bool
     {
-        return 0 === $this->failureCount && $this->successCount > 0;
+        return $this->failureCount === 0 && $this->successCount > 0;
     }
 
     /**
@@ -49,7 +50,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteFailure(): bool
     {
-        return 0 === $this->successCount && $this->totalProcessed > 0;
+        return $this->successCount === 0 && $this->totalProcessed > 0;
     }
 
     /**
@@ -57,7 +58,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getSuccessRate(): float
     {
-        if (0 === $this->totalProcessed) {
+        if ($this->totalProcessed === 0) {
             return 0.0;
         }
 
@@ -71,11 +72,14 @@ class UpdateCoordinatesResult extends Data
      */
     public function getErrorMessages(): array
     {
-        /* @var array<int, string> $errorMessages */
-        return $this->errors
+        $messages = $this->errors
             ->map(fn (array $error): string => "{$error['model']}: {$error['error']}")
             ->values()
             ->toArray();
+        
+        Assert::isArray($messages);
+        /** @var array<int, string> $messages */
+        return $messages;
     }
 
     /**
