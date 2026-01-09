@@ -1,7 +1,6 @@
 # Business Logic Factory & Seeder Audit Completo
 
 ## 🎯 **Obiettivo**
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza di factory e seeder per ogni modello business, e creare 100 records tramite Tinker per ogni tipo per validare la funzionalità.
 
 ## 📊 **Moduli da Analizzare**
@@ -12,9 +11,6 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 ## 📊 **Moduli da Analizzare**
 
 ### 1. **<nome progetto>** (Core Healthcare Business)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - **Focus**: Entità sanitarie principali (Patient, Doctor, Appointment, Report)
 - **Business Value**: CRITICO - Workflow sanitari core
 - **Priorità**: ALTA
@@ -81,16 +77,12 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 
 ## 🔍 **Analisi Completa Moduli**
 
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 ### **1. Modulo <nome progetto> - ANALISI COMPLETATA ✅**
 ### **1. Modulo <nome progetto> - ANALISI COMPLETATA ✅**
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 
 #### **Factory Esistenti e Funzionanti**
 - ✅ **UserFactory** - Crea 100 users con successo
-- ✅ **DoctorFactory** - Crea 100 doctors con successo  
+- ✅ **DoctorFactory** - Crea 100 doctors con successo
 - ✅ **PatientFactory** - Crea 100 patients con successo
 - ✅ **StudioFactory** - Crea 100 studios con successo
 - ✅ **AppointmentFactory** - Crea 100 appointments con successo (dopo correzioni)
@@ -102,12 +94,8 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 - ✅ **Risolto**: Rimossi campi non esistenti, aggiornati metodi per usare schema corretto
 
 #### **Seeder Esistenti**
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 - ✅ **<nome progetto>Seeder** - Seeder principale del modulo
 - ✅ **<nome progetto>Seeder** - Seeder principale del modulo
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - ✅ **UserSeeder** - Seeder per utenti
 - ✅ **DoctorSeeder** - Seeder per dottori
 - ✅ **PatientSeeder** - Seeder per pazienti
@@ -335,12 +323,8 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 ## 📊 **Metriche di Copertura**
 
 ### **Factory Coverage**
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 - **<nome progetto>**: 100% ✅ (6/6 factory funzionanti)
 - **<nome progetto>**: 100% ✅ (6/6 factory funzionanti)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - **User**: 100% ✅ (3/3 factory esistenti)
 - **Geo**: 100% ✅ (3/3 factory esistenti)
 - **Tenant**: 100% ✅ (2/2 factory esistenti)
@@ -352,12 +336,8 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 - **Activity**: 100% ✅ (2/2 factory esistenti)
 
 ### **Seeder Coverage**
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 - **<nome progetto>**: 100% ✅ (4/4 seeder esistenti)
 - **<nome progetto>**: 100% ✅ (4/4 seeder esistenti)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - **User**: 100% ✅ (2/2 seeder esistenti)
 - **Geo**: 100% ✅ (2/2 seeder esistenti)
 - **Tenant**: 100% ✅ (1/1 seeder esistente)
@@ -369,12 +349,8 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 - **Activity**: 100% ✅ (1/1 seeder esistente)
 
 ### **Test Tinker Coverage**
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 - **<nome progetto>**: 100% ✅ (6/6 factory testati)
 - **<nome progetto>**: 100% ✅ (6/6 factory testati)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - **User**: 0% 🔄 (0/3 factory testati)
 - **Geo**: 0% 🔄 (0/3 factory testati)
 - **Tenant**: 0% 🔄 (0/2 factory testati)
@@ -387,12 +363,8 @@ Analizzare tutti i moduli del progetto <nome progetto>, verificare l'esistenza d
 
 ## 🔧 **Prossimi Passi**
 
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 ### **Fase 1: Completamento Test <nome progetto> ✅**
 ### **Fase 1: Completamento Test <nome progetto> ✅**
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 - [x] Testare tutti i factory con Tinker
 - [x] Identificare e risolvere problemi di schema
 - [x] Aggiornare factory per compliance schema
@@ -440,12 +412,8 @@ Al completamento di questo audit:
 
 ---
 
-<<<<<<< HEAD:docs/business-logic-factory-seeder-audit.md
 **Stato**: <nome progetto> completato, altri moduli in corso
 **Stato**: <nome progetto> completato, altri moduli in corso
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-factory-seeder-audit.md
 **Priorità**: User e Geo Factory (ALTA)
 **Responsabile**: AI Assistant
 **Ultimo Aggiornamento**: 2025-01-06

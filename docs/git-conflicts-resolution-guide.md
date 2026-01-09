@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 # Guida alla Risoluzione Conflitti Git - <nome progetto>
 
 ## Panoramica
@@ -9,13 +8,6 @@ Questo documento descrive la risoluzione sistematica dei conflitti Git identific
 ## Panoramica
 
 Questo documento descrive la risoluzione sistematica dei conflitti Git identificati nel progetto <nome progetto> e fornisce best practices per prevenirli in futuro.
-=======
-# Guida alla Risoluzione Conflitti Git
-
-## Panoramica
-
-Questo documento descrive la risoluzione sistematica dei conflitti Git identificati nel progetto e fornisce best practices per prevenirli in futuro.
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 ## Conflitti Risolti
 
@@ -48,41 +40,27 @@ use Modules\Geo\Enums\AddressTypeEnum;
 **Decisione**: Mantenuto l'approccio in-memory con enum per type safety
 **Motivazione**: Coerenza architetturale e type safety garantita
 
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 ### 2. **AppointmentValidationTest.php - Modulo <nome modulo>**
 ### 2. **AppointmentValidationTest.php - Modulo <nome progetto>**
-=======
-### 2. **AppointmentValidationTest.php - Esempio Generico**
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 #### Conflitto Identificato
 - **Branch**: HEAD vs origin/staging
 - **Tipo**: Approccio unit test puro vs feature test con namespace
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 - **File**: `Modules/<nome modulo>/tests/Feature/AppointmentValidationTest.php`
 - **File**: `Modules/<nome progetto>/tests/Feature/AppointmentValidationTest.php`
-=======
-- **File**: `Modules/{NomeModulo}/tests/Feature/AppointmentValidationTest.php`
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 #### Risoluzione Applicata
 ```php
 // PRIMA (conflitto)
 // Pure unit: avoid Eloquent models and factories
 it('validates basic appointment creation', function (): void {
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 namespace Modules\<nome modulo>\Tests\Feature;
 use Modules\<nome modulo>\Tests\TestCase;
-=======
-namespace Modules\{NomeModulo}\Tests\Feature;
-use Modules\{NomeModulo}\Tests\TestCase;
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 uses(TestCase::class);
 
 // DOPO (risolto)
-namespace Modules\{NomeModulo}\Tests\Feature;
+namespace Modules\<nome modulo>\Tests\Feature;
 
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 use Modules\<nome modulo>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
 namespace Modules\<nome progetto>\Tests\Feature;
@@ -94,10 +72,6 @@ namespace Modules\<nome progetto>\Tests\Feature;
 
 use Modules\<nome progetto>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
-=======
-use Modules\{NomeModulo}\Tests\TestCase;
-use Modules\{NomeModulo}\Enums\UserTypeEnum;
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 uses(TestCase::class);
 ```
@@ -105,42 +79,29 @@ uses(TestCase::class);
 **Decisione**: Mantenuto namespace e TestCase con enum per type safety
 **Motivazione**: Coerenza con architettura modulare e type safety
 
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 ### 3. **DashboardBusinessLogicTest.php - Modulo <nome modulo>**
 ### 3. **DashboardBusinessLogicTest.php - Modulo <nome progetto>**
-=======
-### 3. **DashboardBusinessLogicTest.php - Esempio Generico**
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 #### Conflitto Identificato
 - **Branch**: HEAD vs origin/staging
 - **Tipo**: Approcci diversi per testing business logic
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 - **File**: `Modules/<nome modulo>/tests/Feature/DashboardBusinessLogicTest.php`
 - **File**: `Modules/<nome progetto>/tests/Feature/DashboardBusinessLogicTest.php`
-=======
-- **File**: `Modules/{NomeModulo}/tests/Feature/DashboardBusinessLogicTest.php`
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 #### Risoluzione Applicata
 ```php
 // PRIMA (conflitto)
 // Pure unit: avoid Eloquent models and factories
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 describe('<nome modulo> Dashboard Business Logic', function () {
-=======
-describe('{NomeModulo} Dashboard Business Logic', function () {
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
     beforeEach(function () {
         $this->admin = (object) ['id' => 1, 'type' => 'admin'];
-namespace Modules\{NomeModulo}\Tests\Feature;
-use Modules\{NomeModulo}\Tests\TestCase;
-use Modules\{NomeModulo}\Enums\UserTypeEnum;
+namespace Modules\<nome modulo>\Tests\Feature;
+use Modules\<nome modulo>\Tests\TestCase;
+use Modules\<nome progetto>\Enums\UserTypeEnum;
 
 // DOPO (risolto)
-namespace Modules\{NomeModulo}\Tests\Feature;
+namespace Modules\<nome modulo>\Tests\Feature;
 
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 use Modules\<nome modulo>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
 describe('<nome progetto> Dashboard Business Logic', function () {
@@ -155,10 +116,6 @@ namespace Modules\<nome progetto>\Tests\Feature;
 
 use Modules\<nome progetto>\Tests\TestCase;
 use Modules\<nome progetto>\Enums\UserTypeEnum;
-=======
-use Modules\{NomeModulo}\Tests\TestCase;
-use Modules\{NomeModulo}\Enums\UserTypeEnum;
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 uses(TestCase::class);
 ```
@@ -390,15 +347,11 @@ git log --oneline --grep="conflict" | head -20
 ## Collegamenti
 
 - [Architettura Testing Principale](testing-architecture-overview.md)
-<<<<<<< HEAD:docs/git-conflicts-resolution-guide.md
 - [Modulo Geo Testing](../../laravel/Modules/Geo/docs/testing.md)
 - [Modulo <nome modulo> Testing](../../laravel/Modules/<nome modulo>/docs/testing-architecture.md)
 - [Best Practices Testing](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
 - [Modulo <nome progetto> Testing](../../laravel/Modules/<nome progetto>/docs/testing-architecture.md)
 - [Best Practices Testing](../../laravel/Modules/<nome progetto>/docs/testing-best-practices.md)
-=======
-- [Modulo Geo Testing](../docs/testing.md)
->>>>>>> 078f9da (.):docs_project/git-conflicts-resolution-guide.md
 
 ---
 

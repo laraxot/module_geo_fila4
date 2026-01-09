@@ -5,11 +5,8 @@ declare(strict_types=1);
 namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-<<<<<<< HEAD
 use Modules\Geo\Database\Factories\PlaceTypeFactory;
 use Modules\Xot\Contracts\ProfileContract;
-=======
->>>>>>> 078f9da (.)
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -20,15 +17,9 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
  *
-<<<<<<< HEAD
  * @property ProfileContract|null $deleter
  *
  * @method static PlaceTypeFactory factory($count = null, $state = [])
-=======
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
- *
- * @method static \Modules\Geo\Database\Factories\PlaceTypeFactory factory($count = null, $state = [])
->>>>>>> 078f9da (.)
  *
  * @mixin \Eloquent
  */

@@ -10,7 +10,6 @@ I moduli condivisi tra progetti (Notify, User, Xot, UI, ecc.) devono essere **co
 ❌ **VIETATO utilizzare nomi di progetti hardcoded:**
 ```php
 // ERRORE: Riferimenti hardcoded
-<<<<<<< HEAD:docs/module-reusability-guidelines.md
 'content' => 'Benvenuto su <nome progetto>!',
 'database' => '<nome progetto>_test',
 use Modules\<nome progetto>\Models\User;
@@ -19,9 +18,6 @@ use Modules\<nome progetto>\Models\User;
 'database' => '<nome progetto>_test',
 use Modules\<nome progetto>\Models\User;
 'Modules\\<nome progetto>\\Models\\Patient',
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_guidelines.md
 ```
 
 ✅ **SEMPRE utilizzare pattern dinamici:**
@@ -96,16 +92,12 @@ protected function createTestPatient(): mixed
 - **Geo**: Gestione geografica
 
 ### Moduli Project-Specific (Possono Contenere Hardcoding)
-<<<<<<< HEAD:docs/module-reusability-guidelines.md
 - **<nome progetto>**: Specifico per progetti sanitari
 - **DentalPro**: Specifico per studi dentistici
 - **<nome modulo>**: Variante regionale
 - **<nome progetto>**: Specifico per progetti sanitari
 - **DentalPro**: Specifico per studi dentistici
 - **<nome progetto>**: Variante regionale
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_guidelines.md
 
 ## Checklist per Moduli Riutilizzabili
 
@@ -131,12 +123,12 @@ class NotificationService
     {
         return XotData::make()->getUserClass();
     }
-    
+
     protected function createNotificationForUser(int $userId): void
     {
         $userClass = $this->getUserClass();
         $user = $userClass::find($userId);
-        
+
         // Logica di notifica...
     }
 }
@@ -148,7 +140,7 @@ class NotificationService
 public function definition(): array
 {
     $projectNamespace = XotData::make()->getProjectNamespace();
-    
+
     return [
         'themeable_type' => $this->faker->randomElement([
             "{$projectNamespace}\\Models\\Patient",
@@ -169,11 +161,11 @@ describe('Notification Management', function () {
         // Utilizzo dinamico della classe User
         $userClass = XotData::make()->getUserClass();
         $user = $userClass::factory()->create();
-        
+
         $notification = Notification::factory()->create([
             'user_id' => $user->id,
         ]);
-        
+
         expect($notification->user)->toBeInstanceOf($userClass);
     });
 });
@@ -188,7 +180,6 @@ REUSABLE_MODULES=("Notify" "User" "Xot" "UI" "Cms" "Blog" "Geo")
 
 for module in "${REUSABLE_MODULES[@]}"; do
     echo "Controllo modulo $module..."
-<<<<<<< HEAD:docs/module-reusability-guidelines.md
     grep -r -i "<nome progetto>\|<nome modulo>\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
     grep -r -i "<nome progetto>\|<nome progetto>\|dentalpro" "Modules/$module/" --exclude-dir=vendor || echo "✅ $module è pulito"
 done
@@ -236,9 +227,6 @@ class <nome progetto>SpecificService
  * e può contenere riferimenti hardcoded al progetto.
  */
 class <nome progetto>SpecificService
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_guidelines.md
 {
     // Implementazione project-specific...
 }

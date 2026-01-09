@@ -16,17 +16,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|State newQuery()
  * @method static Builder<static>|State query()
  *
- * <<<<<<< HEAD
- *
  * @property ProfileContract|null $deleter
  *
  * @method static StateFactory factory($count = null, $state = [])
- *                                                                 =======
- *
- * @property ProfileContract|null $deleter
- *
- * @method static \Modules\Geo\Database\Factories\StateFactory factory($count = null, $state = [])
- *                                                                                                 >>>>>>> 078f9da (.)
  *
  * @mixin \Eloquent
  */

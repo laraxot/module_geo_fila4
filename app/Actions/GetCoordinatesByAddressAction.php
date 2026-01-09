@@ -21,29 +21,6 @@ class GetCoordinatesByAddressAction
             ?? $this->getFromOpenApi($address);
 
         if (! $coordinates) {
-<<<<<<< HEAD
-=======
-            // Prova con Bing Maps
-            $coordinates = $this->getFromBing($address);
-        }
-
-        if (! $coordinates) {
-            // Prova con OpenCage
-            $coordinates = $this->getFromOpenCage($address);
-        }
-
-        if (! $coordinates) {
-            // Prova con OpenStreetMap Nominatim
-            $coordinates = $this->getFromNominatim($address);
-        }
-
-        if (! $coordinates) {
-            // Prova con OpenAPI Geocoding
-            $coordinates = $this->getFromOpenApi($address);
-        }
-
-        if (! $coordinates) {
->>>>>>> 078f9da (.)
             Notification::make()
                 ->title('Error')
                 ->body('Failed to fetch coordinates from all providers.')
@@ -137,22 +114,20 @@ class GetCoordinatesByAddressAction
     private function makeHttpRequest(string $url, array $params): Response
     {
         /** @var Response $response */
-        $response = Http::get($url, $params);
-
-        return $response;
+        return Http::get($url, $params);
     }
 
     private function getFromBing(string $address): ?CoordinatesData
     {
         $apiKey = config('services.bing.maps_api_key');
-        if (! is_string($apiKey) || '' === $apiKey) {
+        if (! is_string($apiKey) || $apiKey === '') {
             return null;
         }
 
         $data = $this->getBingResponse($address, $apiKey);
 
         $coordinates = $this->extractBingCoordinates($data);
-        if (null === $coordinates) {
+        if ($coordinates === null) {
             return null;
         }
 
@@ -224,7 +199,7 @@ class GetCoordinatesByAddressAction
     private function getFromOpenCage(string $address): ?CoordinatesData
     {
         $apiKey = config('services.opencage.api_key');
-        if (! is_string($apiKey) || '' === $apiKey) {
+        if (! is_string($apiKey) || $apiKey === '') {
             return null;
         }
 

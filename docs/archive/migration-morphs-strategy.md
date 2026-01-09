@@ -1,18 +1,10 @@
-<<<<<<< HEAD:docs/archive/migration-morphs-strategy.md
 # Strategia Migrazioni e Morphs Polymorphic - <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/migration-morphs-strategy.md
 
 ## Principio Architetturale Fondamentale
 
 ### Una Tabella = Una Migrazione = Una Verità
 
-<<<<<<< HEAD:docs/archive/migration-morphs-strategy.md
 Il sistema <nome progetto> segue la **filosofia Laraxot** per le migrazioni database, dove ogni tabella ha una sola migrazione che evolve nel tempo attraverso il cambio di timestamp nel nome file.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/migration-morphs-strategy.md
 
 ## Regole Critiche per Morphs Polymorphic
 
@@ -28,11 +20,7 @@ $table->unsignedBigInteger('causer_id')->nullable()->change();
 
 ### Motivazione Architetturale
 
-<<<<<<< HEAD:docs/archive/migration-morphs-strategy.md
 Il sistema <nome progetto> è **multi-modulo** con diverse strategie ID:
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/migration-morphs-strategy.md
 
 - **User**: UUID `"550e8400-e29b-41d4-a716-446655440000"`
 - **Doctor**: UUID `"a1b2c3d4-e5f6-7890-abcd-ef1234567890"`
@@ -47,7 +35,7 @@ Il sistema <nome progetto> è **multi-modulo** con diverse strategie ID:
 2023_03_31_103351_create_activity_table.php  # Versione originale
 ↓
 2024_01_01_000001_create_activity_table.php  # Aggiunta nullable
-↓  
+↓
 2024_01_15_103351_create_activity_table.php  # Correzione tipo string
 ```
 
@@ -76,7 +64,7 @@ return new class extends XotBaseMigration
             $table->uuid('batch_uuid')->nullable();
             $table->string('event')->nullable();
         });
-        
+
         // Gestione DB esistenti
         $this->tableUpdate(function (Blueprint $table): void {
             if ($this->hasColumn('causer_id')) {
@@ -169,11 +157,7 @@ Schema::create('activity_log', function($table) { /* ... */ });
 Schema::table('activity_log', function($table) { /* stessa logica */ });
 ```
 
-<<<<<<< HEAD:docs/archive/migration-morphs-strategy.md
 ## Filosofia <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/migration-morphs-strategy.md
 
 > *"In un sistema sanitario, ogni azione deve essere tracciata universalmente. Come un medico deve curare pazienti di ogni nazionalità, il nostro sistema deve registrare attività di ogni modulo, indipendentemente dal formato del loro ID. L'universalità è salute, la rigidità è malattia."*
 
@@ -183,11 +167,6 @@ Schema::table('activity_log', function($table) { /* stessa logica */ });
 - [.cursor/rules/migration-morphs-polymorphic.md](../.cursor/rules/migration-morphs-polymorphic.md)
 - [.cursor/rules/migration-complete-rules.mdc](../.cursor/rules/migration-complete-rules.mdc)
 
-*Ultimo aggiornamento: 2025-01-06*  
-<<<<<<< HEAD:docs/archive/migration-morphs-strategy.md
-*Autore: Sistema di AI Learning <nome progetto>*  
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/migration-morphs-strategy.md
+*Ultimo aggiornamento: 2025-01-06*
+*Autore: Sistema di AI Learning <nome progetto>*
 *Motivazione: Comprensione profonda architettura morphs polymorphic*
-

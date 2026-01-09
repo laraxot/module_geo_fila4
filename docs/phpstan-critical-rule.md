@@ -86,14 +86,9 @@ Se PHPStan va in crash per memoria:
 php -d memory_limit=4G ./vendor/bin/phpstan analyse
 
 # ✅ Analizzare moduli singolarmente
-<<<<<<< HEAD:docs/phpstan-critical-rule.md
 ./vendor/bin/phpstan analyse Modules/User --level=10
 ./vendor/bin/phpstan analyse Modules/<nome progetto> --level=10
 ./vendor/bin/phpstan analyse Modules/<nome progetto> --level=10
-=======
-./vendor/bin/phpstan analyse Modules/User --level=9
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/phpstan-critical-rule.md
 ```
 
 ### 2. File Problematici
@@ -135,4 +130,3 @@ Questa regola è documentata anche in:
 **RICORDA**: Il file `phpstan.neon` è SACRO. Non si tocca MAI. Punto.
 
 *Ultimo aggiornamento: Gennaio 2025*
-

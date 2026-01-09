@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 # Implementazione Completa Test Pest per Moduli <nome progetto>
 
 ## Panoramica
@@ -9,9 +8,6 @@
 ## Panoramica
 
 È stata completata l'implementazione di una suite di test Pest completa per tutti i moduli del progetto <nome progetto>, seguendo rigorosamente le best practice architetturali e i pattern di testing definiti nel progetto.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 ## Struttura Implementata
 
@@ -23,7 +19,6 @@
   - `tests/Feature/Modules/User/Feature/Filament/Widgets/LoginWidgetTest.php` - Test widget di login
 
 #### Moduli Business
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 - **<nome progetto> Module**:
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
@@ -32,9 +27,6 @@
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php` - Test modello Appointment
   - `tests/Feature/Modules/<nome progetto>/Unit/Models/DoctorStudioPivotTest.php` - Test pivot cross-database
   - `tests/Feature/Modules/<nome progetto>/Feature/Filament/Widgets/DoctorCalendarWidgetTest.php` - Test widget calendario
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 #### Moduli Utility
 - **Geo Module**:
@@ -58,12 +50,8 @@ Seguendo il pattern già implementato nei test di autenticazione:
 - **Integration Tests**: Testano integrazioni tra moduli e servizi esterni
 - **Browser Tests**: Testano flussi utente completi end-to-end
 
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 ### 2. Pattern Specifici per <nome progetto>
 ### 2. Pattern Specifici per <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 #### Test Models con Single Table Inheritance (STI)
 ```php
@@ -71,11 +59,11 @@ test('user factory creates different user types correctly', function () {
     $patient = UserFactory::new()->patient()->create();
     $doctor = UserFactory::new()->doctor()->create();
     $admin = UserFactory::new()->admin()->create();
-    
+
     expect($patient->type)->toBe(UserTypeEnum::PATIENT);
     expect($doctor->type)->toBe(UserTypeEnum::DOCTOR);
     expect($admin->type)->toBe(UserTypeEnum::ADMIN);
-    
+
     expect($patient)->toBeInstanceOf(Patient::class);
     expect($doctor)->toBeInstanceOf(Doctor::class);
     expect($admin)->toBeInstanceOf(Admin::class);
@@ -87,7 +75,7 @@ test('user factory creates different user types correctly', function () {
 test('doctor studio manages cross-database connections', function () {
     $doctor = Doctor::factory()->create();
     $studio = Studio::factory()->create();
-    
+
     $doctorStudio = DoctorStudio::create([
         'doctor_id' => $doctor->id,
         'studio_id' => $studio->id,
@@ -104,15 +92,15 @@ test('doctor studio manages cross-database connections', function () {
 test('doctor calendar widget shows only tenant appointments', function () {
     $studio1 = Studio::factory()->create();
     $studio2 = Studio::factory()->create();
-    
+
     $appointment1 = Appointment::factory()->create(['studio_id' => $studio1->id]);
     $appointment2 = Appointment::factory()->create(['studio_id' => $studio2->id]);
-    
+
     Filament::setTenant($studio1);
-    
+
     $widget = new DoctorCalendarWidget();
     $events = $widget->fetchEvents(['start' => now()->startOfMonth(), 'end' => now()->endOfMonth()]);
-    
+
     expect($events)->toHaveCount(1);
     expect($events[0]['id'])->toBe($appointment1->id);
 });
@@ -123,20 +111,19 @@ test('doctor calendar widget shows only tenant appointments', function () {
 test('appointment states have complete translations in all languages', function () {
     $states = AppointmentStatusEnum::cases();
     $languages = ['it', 'en', 'de'];
-    
+
     foreach ($states as $state) {
         foreach ($languages as $lang) {
             app()->setLocale($lang);
-            
-<<<<<<< HEAD:docs/testing-implementation-complete.md
+
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
-            
+
             expect($label)->not->toContain('<nome progetto>::');
             expect($description)->not->toContain('<nome progetto>::');
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
-            
+
             expect($label)->not->toContain('<nome progetto>::');
             expect($description)->not->toContain('<nome progetto>::');
         }
@@ -184,9 +171,6 @@ Classe helper completa con utilities per:
 - `--core`: Test moduli core (User, Xot, UI)
 - `--business`: Test moduli business (<nome progetto>, <nome modulo>)
 - `--business`: Test moduli business (<nome progetto>, <nome progetto>)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - `--utility`: Test moduli utility (Cms, Media, Geo, etc.)
 - `--all`: Test tutti i moduli
 - `--performance`: Test di performance
@@ -212,12 +196,8 @@ php artisan migrate:fresh --env=testing --seed
 ./vendor/bin/pest tests/Feature/Modules/User --verbose
 
 # Test specifico
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 ./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
 ./vendor/bin/pest tests/Feature/Modules/<nome progetto>/Unit/Models/AppointmentTest.php
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 
 # Test con coverage
 ./vendor/bin/pest --coverage --coverage-html=storage/app/coverage
@@ -251,12 +231,8 @@ php artisan migrate:fresh --env=testing --seed
 - ✅ Relazioni teams e tenants
 - ✅ Validazione e sicurezza
 
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 ### Modulo <nome progetto>
 ### Modulo <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - ✅ Modelli Appointment con stati e traduzioni
 - ✅ Modelli pivot DoctorStudio cross-database
 - ✅ Widget calendario per dottori con multi-tenancy
@@ -279,24 +255,24 @@ on: [push, pull_request]
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
         extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite
-        
+
     - name: Install dependencies
       run: composer install --no-progress --prefer-dist --optimize-autoloader
-      
+
     - name: Setup test database
       run: |
         php artisan migrate:fresh --env=testing
         php artisan db:seed --env=testing
-        
+
     - name: Run tests
       run: ./scripts/run-module-tests.sh --all --coverage
 ```
@@ -324,12 +300,8 @@ jobs:
 
 - [Strategia di Testing Moduli](testing-strategy-modules.md) - Strategia completa
 - [Test Autenticazione](../tests/Feature/Auth/) - Pattern di riferimento esistenti
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 - [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
 - [Documentazione <nome progetto>](../Modules/<nome progetto>/docs/README.md) - Funzionalità business
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - [Documentazione User](../Modules/User/docs/README.md) - Modulo core
 
 ## Stato Implementazione
@@ -338,12 +310,8 @@ jobs:
 - [x] Analisi struttura moduli esistenti
 - [x] Creazione strategia di testing completa
 - [x] Implementazione test per moduli core (User, Xot, UI)
-<<<<<<< HEAD:docs/testing-implementation-complete.md
 - [x] Implementazione test per moduli business (<nome progetto>, <nome modulo>)
 - [x] Implementazione test per moduli business (<nome progetto>, <nome progetto>)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-implementation-complete.md
 - [x] Implementazione test per moduli utility (Cms, Media, Geo, etc.)
 - [x] Creazione helper e utilities per testing
 - [x] Script automatizzato per esecuzione test
@@ -357,20 +325,7 @@ jobs:
 
 ---
 
-**Ultimo aggiornamento**: 28 Gennaio 2025  
-**Stato**: ✅ Implementazione Completa  
-**Responsabile**: Team Development  
+**Ultimo aggiornamento**: 28 Gennaio 2025
+**Stato**: ✅ Implementazione Completa
+**Responsabile**: Team Development
 **Review**: Richiesta per validazione e deployment
-
-
-
-
-
-
-
-
-
-
-
-
-

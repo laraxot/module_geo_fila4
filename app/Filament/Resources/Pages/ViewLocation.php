@@ -14,12 +14,9 @@ class ViewLocation extends XotBaseViewRecord
 {
     protected static string $resource = LocationResource::class;
 
-<<<<<<< HEAD
     /**
      * @return array<string, Component>
      */
-=======
->>>>>>> 078f9da (.)
     #[\Override]
     protected function getInfolistSchema(): array
     {

@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/business-logic-analysis.md
 # 🏥 Business Logic Analysis - Progetto <nome progetto>
 
 ## 📋 Panoramica del Sistema
@@ -9,9 +8,6 @@
 ## 📋 Panoramica del Sistema
 
 <nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 ## 🏗️ Architettura Modulare
 
@@ -22,12 +18,8 @@
 - **Componenti**: 50+ classi base, 20+ service provider, 15+ trait
 - **Funzionalità**: Autenticazione, autorizzazione, migrazioni, componenti Filament base
 
-<<<<<<< HEAD:docs/business-logic-analysis.md
 #### 2. **<nome progetto>** - Modulo Core Sanitario
 #### 2. **<nome progetto>** - Modulo Core Sanitario
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 - **Scopo**: Gestione completa del sistema sanitario
 - **Modelli**: User, Doctor, Patient, Admin, Studio, Appointment, Report
 - **Funzionalità**: Gestione pazienti, appuntamenti, referti medici, stati appuntamenti
@@ -68,7 +60,7 @@ enum UserType: string
 class User extends BaseUser
 {
     use HasParent;
-    
+
     protected $casts = [
         'type' => UserType::class,
         'email_verified_at' => 'datetime',
@@ -129,13 +121,13 @@ class Studio extends Model
         'name', 'description', 'address', 'phone', 'email',
         'business_hours', 'specializations', 'settings'
     ];
-    
+
     // Relazioni con utenti e appuntamenti
     public function doctors(): BelongsToMany
     {
         return $this->belongsToMany(Doctor::class);
     }
-    
+
     public function appointments(): HasMany
     {
         return $this->hasMany(Appointment::class);
@@ -158,18 +150,18 @@ graph TD
     A[User] --> B[Doctor]
     A --> C[Patient]
     A --> D[Admin]
-    
+
     B --> E[Studio]
     C --> F[Appointment]
     B --> F
-    
+
     F --> G[Report]
     F --> H[Address]
-    
+
     E --> H
     B --> H
     C --> H
-    
+
     I[Team] --> A
     J[Tenant] --> A
 ```
@@ -178,24 +170,16 @@ graph TD
 
 1. **Xot** ← Base per tutti gli altri moduli
 2. **User** ← Dipende da Xot per classi base
-<<<<<<< HEAD:docs/business-logic-analysis.md
 3. **<nome progetto>** ← Dipende da User, Geo, Media
 3. **<nome progetto>** ← Dipende da User, Geo, Media
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 4. **Geo** ← Dipende da Xot per modelli base
 5. **Media** ← Dipende da Xot per gestione file
 6. **UI** ← Dipende da Xot per componenti base
 
 ## 📊 Modelli e Entità
 
-<<<<<<< HEAD:docs/business-logic-analysis.md
 ### Modelli Core <nome progetto>
 ### Modelli Core <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 #### User (Utente Base)
 - **Responsabilità**: Gestione autenticazione e profilo base
@@ -309,12 +293,12 @@ class AppointmentPolicy
         if ($user->type === UserType::DOCTOR) {
             return $user->patients->contains($appointment->patient_id);
         }
-        
+
         // Pazienti possono vedere solo i propri appuntamenti
         if ($user->type === UserType::PATIENT) {
             return $user->id === $appointment->patient_id;
         }
-        
+
         return false;
     }
 }
@@ -397,12 +381,8 @@ Il modulo implementa una strategia di testing ad alte prestazioni:
 
 ```bash
 # Esecuzione test con performance target
-<<<<<<< HEAD:docs/business-logic-analysis.md
 ./vendor/bin/pest Modules/<nome progetto> --coverage
 ./vendor/bin/pest Modules/<nome progetto> --coverage
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 
 # Test specifici per business logic
 php artisan test --filter=AppointmentStateTest
@@ -415,12 +395,8 @@ php artisan test --filter=UserTypeValidationTest
 
 ```env
 # Configurazione base
-<<<<<<< HEAD:docs/business-logic-analysis.md
 APP_NAME="<nome progetto>"
 APP_NAME="<nome progetto>"
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 APP_ENV=production
 APP_DEBUG=false
 
@@ -428,7 +404,6 @@ APP_DEBUG=false
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-<<<<<<< HEAD:docs/business-logic-analysis.md
 DB_DATABASE=<nome progetto>
 DB_USERNAME=<nome progetto>_user
 DB_DATABASE=<nome progetto>
@@ -480,9 +455,6 @@ La documentazione deve essere mantenuta aggiornata in:
 
 1. **Modulo specifico**: `Modules/<nome progetto>/docs/`
 1. **Modulo specifico**: `Modules/<nome progetto>/docs/`
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/business-logic-analysis.md
 2. **Documentazione root**: `laravel/docs/`
 3. **Regole Cursor**: `.cursor/rules/`
 4. **Regole Windsurf**: `.windsurf/rules/`
@@ -515,8 +487,8 @@ La documentazione deve essere mantenuta aggiornata in:
 
 ---
 
-**Ultimo aggiornamento**: Dicembre 2024  
-**Versione**: 1.0.0  
-**Status**: Production Ready  
-**Business Logic**: Completa e documentata  
+**Ultimo aggiornamento**: Dicembre 2024
+**Versione**: 1.0.0
+**Status**: Production Ready
+**Business Logic**: Completa e documentata
 **Architettura**: Modulare e scalabile

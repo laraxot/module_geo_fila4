@@ -4,11 +4,7 @@
 
 **IL TESTING DEVE VERIFICARE IL COMPORTAMENTO BUSINESS, NON L'IMPLEMENTAZIONE!**
 
-<<<<<<< HEAD:docs/testing-supreme-index.md
 Questa è la regola fondamentale che ha precedenza ASSOLUTA su qualsiasi altra considerazione di testing in tutto il progetto <nome progetto>.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-supreme-index.md
 
 ## MANTRA UNIVERSALE
 
@@ -27,11 +23,7 @@ Questa è la regola fondamentale che ha precedenza ASSOLUTA su qualsiasi altra c
 - **[Laravel AI Guidelines - Testing Priority](../laravel/.ai/guidelines/testing-priority-rule.md)**
 
 ### 📁 Regole per Modulo
-<<<<<<< HEAD:docs/testing-supreme-index.md
 - **[<nome progetto> Testing Guidelines](../laravel/Modules/<nome progetto>/docs/testing-guidelines.md)**
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-supreme-index.md
 
 ### ⚙️ Regole Sistema
 - **[Windsurf Rules - Testing Business Behavior](../.windsurf/rules/testing-business-behavior-supreme.mdc)**
@@ -113,12 +105,8 @@ Queste regole si applicano a:
 
 ---
 
-<<<<<<< HEAD:docs/testing-supreme-index.md
 **Questa è la REGOLA SUPREMA del progetto <nome progetto> e ha precedenza su qualsiasi altra considerazione di testing.**
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-supreme-index.md
 
-**Ultimo aggiornamento**: Gennaio 2025  
-**Status**: REGOLA SUPREMA E NON NEGOZIABILE  
+**Ultimo aggiornamento**: Gennaio 2025
+**Status**: REGOLA SUPREMA E NON NEGOZIABILE
 **Applicabilità**: UNIVERSALE - tutto il progetto

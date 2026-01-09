@@ -2,18 +2,14 @@
 
 ## 📊 Panoramica Generale
 
-<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
 Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i principi **DRY**, **KISS**, **SOLID** e **robustezza** secondo le convenzioni Laraxot.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🏗️ Gerarchia Architetturale
 
 ### Moduli Base (Livello 1)
 - **Xot**: Core framework - tutte le classi base
-- **User**: Autenticazione e gestione utenti  
+- **User**: Autenticazione e gestione utenti
 - **Geo**: Dati geografici italiani
 - **UI**: Componenti condivisi
 
@@ -28,14 +24,10 @@ Analisi sistematica di tutti i 14 moduli del progetto <nome progetto> seguendo i
 - **Tenant**: Multi-tenancy
 
 ### Moduli Specifici (Livello 3)
-<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 - **<nome progetto>**: Modulo principale sanitario
 - **<nome modulo>**: Funzionalità mobile
 - **<nome progetto>**: Modulo principale sanitario
 - **<nome progetto>**: Funzionalità mobile
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🎯 Pattern Comuni Identificati
 
@@ -158,7 +150,7 @@ try {
         'operation' => 'operationName',
         'error' => $e->getMessage(),
     ]);
-    
+
     return null; // O throw custom exception
 }
 ```
@@ -249,14 +241,10 @@ class ModuleMetricsService
 - [Tenant - Multi-Tenancy](../laravel/Modules/Tenant/docs/ottimizzazioni-e-miglioramenti.md)
 
 ### Moduli Specifici
-<<<<<<< HEAD:docs/analisi-moduli-ottimizzazioni.md
 - [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome modulo> - Mobile Features](../laravel/Modules/<nome modulo>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome progetto> - Main Healthcare](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
 - [<nome progetto> - Mobile Features](../laravel/Modules/<nome progetto>/docs/ottimizzazioni-e-miglioramenti.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/analisi-moduli-ottimizzazioni.md
 
 ## 🎯 Conclusioni
 
@@ -272,7 +260,6 @@ La roadmap proposta è **incrementale** e **non disruptive**, permettendo miglio
 
 ---
 
-**Ultimo aggiornamento**: Dicembre 2024  
-**Versione**: 1.0  
+**Ultimo aggiornamento**: Dicembre 2024
+**Versione**: 1.0
 **Stato**: ✅ Analisi completa di tutti i 14 moduli
-

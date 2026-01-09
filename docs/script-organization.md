@@ -10,15 +10,10 @@
 bashscripts/
 ├── database/
 │   ├── seeding/          # Script per popolamento database
-<<<<<<< HEAD:docs/script-organization.md
 │   │   ├── <nome progetto>-seeding.php
 │   │   ├── <nome modulo>-seeding.php
 │   │   ├── <nome progetto>-seeding.php
 │   │   ├── <nome progetto>-seeding.php
-=======
-│   │   ├── {nome-progetto}-seeding.php
-│   │   ├── {nome-modulo}-seeding.php
->>>>>>> 078f9da (.):docs_project/script-organization.md
 │   │   └── mass-seeding.php
 │   ├── migration/        # Script per gestione migrazioni
 │   └── backup/          # Script per backup database
@@ -72,15 +67,10 @@ bashscripts/
 
 ### Script di Seeding
 ```
-<<<<<<< HEAD:docs/script-organization.md
 <nome progetto>-mass-seeding.php          # Popolamento massivo <nome progetto>
 <nome modulo>-database-seeding.php       # Popolamento <nome modulo>
 <nome progetto>-mass-seeding.php          # Popolamento massivo <nome progetto>
 <nome progetto>-database-seeding.php       # Popolamento <nome progetto>
-=======
-{nome-progetto}-mass-seeding.php          # Popolamento massivo progetto
-{nome-modulo}-database-seeding.php       # Popolamento modulo
->>>>>>> 078f9da (.):docs_project/script-organization.md
 user-role-seeding.php               # Popolamento ruoli utente
 ```
 
@@ -97,12 +87,8 @@ clear-cache-all.php                 # Pulizia cache completa
 ```bash
 # Dalla root del progetto
 cd ..
-<<<<<<< HEAD:docs/script-organization.md
 php bashscripts/database/seeding/<nome progetto>-mass-seeding.php
 php bashscripts/database/seeding/<nome progetto>-mass-seeding.php
-=======
-php bashscripts/database/seeding/{nome-progetto}-mass-seeding.php
->>>>>>> 078f9da (.):docs_project/script-organization.md
 ```
 
 ### Esecuzione via Tinker
@@ -112,12 +98,8 @@ cd laravel
 php artisan tinker
 
 # Incolla il contenuto dello script
-<<<<<<< HEAD:docs/script-organization.md
 include_once('../bashscripts/database/seeding/<nome progetto>-mass-seeding.php');
 include_once('../bashscripts/database/seeding/<nome progetto>-mass-seeding.php');
-=======
-include_once('../bashscripts/database/seeding/{nome-progetto}-mass-seeding.php');
->>>>>>> 078f9da (.):docs_project/script-organization.md
 ```
 
 ## Documentazione Obbligatoria

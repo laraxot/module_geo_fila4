@@ -1,20 +1,12 @@
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 # Riepilogo Analisi Ottimizzazione - Tutti i Moduli <nome progetto>
 # Riepilogo Analisi Ottimizzazione - Tutti i Moduli <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 
 ## 🎯 Principi Applicati: DRY + KISS + SOLID + ROBUST + Laraxot
 
 ### 📊 Panoramica Generale
 
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 Analisi completa di **14 moduli** del sistema <nome progetto> con identificazione di problemi critici e roadmap di ottimizzazione seguendo i principi fondamentali del framework Laraxot.
 Analisi completa di **14 moduli** del sistema <nome progetto> con identificazione di problemi critici e roadmap di ottimizzazione seguendo i principi fondamentali del framework Laraxot.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 
 ---
 
@@ -47,12 +39,8 @@ Analisi completa di **14 moduli** del sistema <nome progetto> con identificazion
 
 | Modulo | Stato | Priorità | Problemi Principali |
 |--------|-------|----------|-------------------|
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 | **<nome progetto>** | 🔴 Critico | **ALTA** | Codice commentato, violazioni DRY, complessità eccessiva |
 | **<nome progetto>** | 🔴 Critico | **ALTA** | Codice commentato, violazioni DRY, complessità eccessiva |
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 | **Tenant** | 🔴 Critico | **ALTA** | File duplicati, ServiceProvider troppo complesso |
 | **Xot** | 🟠 Medio | **MEDIA** | Duplicazione BaseModel/XotBaseModel, XotData complesso |
 | **User** | 🟡 Basso | **MEDIA** | UserContract troppo pesante, enum non allineato |
@@ -69,12 +57,8 @@ Analisi completa di **14 moduli** del sistema <nome progetto> con identificazion
 
 ### **🚨 FASE 1: INTERVENTI CRITICI (Settimana 1-2)**
 
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 #### <nome progetto> Module - PRIORITÀ ASSOLUTA
 #### <nome progetto> Module - PRIORITÀ ASSOLUTA
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 - [ ] **Rimuovere tutto il codice commentato** in User.php
 - [ ] **Implementare metodi casts()** mancanti in BaseModel.php
 - [ ] **Separare PatientResource** in trait specifici
@@ -166,24 +150,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
-          
+
       - name: Install Dependencies
         run: composer install
-        
+
       - name: PHPStan Analysis
         run: ./vendor/bin/phpstan analyse --level=9
-        
+
       - name: Code Style Check
         run: ./vendor/bin/pint --test
-        
+
       - name: Run Tests
         run: php artisan test
-        
+
       - name: Check Documentation
         run: php artisan docs:validate
 ```
@@ -211,12 +195,8 @@ php artisan docs:validate
 ## 🔗 Collegamenti Documentazione
 
 ### Moduli Principali
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 - [<nome progetto> - Core Business](../Modules/<nome progetto>/docs/optimization-analysis.md)
 - [<nome progetto> - Core Business](../Modules/<nome progetto>/docs/optimization-analysis.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 - [User - Authentication](../Modules/User/docs/optimization-analysis.md)
 - [Xot - Framework Base](../Modules/Xot/docs/optimization-analysis.md)
 - [UI - Interface Components](../Modules/UI/docs/optimization-analysis.md)
@@ -240,12 +220,8 @@ php artisan docs:validate
 
 ## 🎖️ Conclusioni
 
-<<<<<<< HEAD:docs/modules-optimization-summary.md
 Il sistema <nome progetto> presenta una **architettura solida** con il framework Laraxot, ma necessita di **refactoring significativo** per eliminare violazioni DRY, SOLID e KISS identificate.
 Il sistema <nome progetto> presenta una **architettura solida** con il framework Laraxot, ma necessita di **refactoring significativo** per eliminare violazioni DRY, SOLID e KISS identificate.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-optimization-summary.md
 
 ### Benefici Attesi Post-Ottimizzazione
 - **🚀 Performance**: +50% velocità, -30% memoria
@@ -262,8 +238,7 @@ Il sistema <nome progetto> presenta una **architettura solida** con il framework
 
 ---
 
-*Documento creato: Gennaio 2025*  
-*Analisi: 14 moduli, 50+ problemi identificati*  
-*Principi: DRY + KISS + SOLID + ROBUST + Laraxot*  
+*Documento creato: Gennaio 2025*
+*Analisi: 14 moduli, 50+ problemi identificati*
+*Principi: DRY + KISS + SOLID + ROBUST + Laraxot*
 *Stato: 📋 Roadmap Completa per Ottimizzazione Sistemica*
-

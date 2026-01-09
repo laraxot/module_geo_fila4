@@ -1,11 +1,7 @@
 # Architettura Homepage - Panoramica Sistema
 
 ## Panoramica
-<<<<<<< HEAD:docs/archive/homepage-architecture-overview.md
 Il sistema <nome progetto> implementa un'architettura moderna per la gestione della homepage basata su Filament Blocks, Laravel Folio e Livewire Volt, con separazione chiara delle responsabilità tra moduli.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/homepage-architecture-overview.md
 
 ## Architettura Generale
 
@@ -17,11 +13,7 @@ Il sistema <nome progetto> implementa un'architettura moderna per la gestione de
 - **JSON Storage**: Contenuti dinamici
 
 ### Moduli Coinvolti
-<<<<<<< HEAD:docs/archive/homepage-architecture-overview.md
 1. **<nome progetto>**: Modulo principale, logica business
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/homepage-architecture-overview.md
 2. **CMS**: Gestione contenuti e blocchi
 3. **UI**: Componenti blocchi riutilizzabili
 4. **User**: Autenticazione e gestione utenti
@@ -38,7 +30,6 @@ Il sistema <nome progetto> implementa un'architettura moderna per la gestione de
 - Routing Folio per rotta `/`
 
 ### Contenuto JSON
-<<<<<<< HEAD:docs/archive/homepage-architecture-overview.md
 **Percorso**: `/laravel/config/local/<nome progetto>/database/content/pages/home.json`
 
 **Struttura**:
@@ -93,9 +84,6 @@ GET / → Folio → index.blade.php
 
 ### Modulo <nome progetto>
 - **Business Logic**: Regole specifiche <slogan>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/homepage-architecture-overview.md
 - **Frontend Integration**: Coordinamento componenti
 - **Performance**: Ottimizzazioni frontend
 - **SEO**: Meta tags e struttura semantica
@@ -114,11 +102,7 @@ GET / → Folio → index.blade.php
 
 ## Testing Strategy
 
-<<<<<<< HEAD:docs/archive/homepage-architecture-overview.md
 ### Test <nome progetto> (Frontend)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/homepage-architecture-overview.md
 - Rendering homepage
 - Integrazione componenti
 - Business logic
@@ -177,16 +161,9 @@ GET / → Folio → index.blade.php
 - Monitoring performance
 
 ## Collegamenti
-<<<<<<< HEAD:docs/archive/homepage-architecture-overview.md
 - [Modulo <nome progetto>](laravel/Modules/<nome progetto>/docs/homepage-architecture.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/homepage-architecture-overview.md
 - [Modulo CMS](laravel/Modules/Cms/docs/filament-blocks-system.md)
 - [Modulo UI](laravel/Modules/UI/docs/blocks-system.md)
 - [Tema One](laravel/Themes/One/docs/homepage-structure.md)
 
 *Ultimo aggiornamento: Dicembre 2024*
-
-
-

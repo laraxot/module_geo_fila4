@@ -1,27 +1,15 @@
-<<<<<<< HEAD:docs/archive/boy-scout-rule.md
 # Regola del Buon Boy Scout - Progetto <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/boy-scout-rule.md
 
 ## Principio Fondamentale
 **"Lascia il campo più pulito di come l'hai trovato"**
 
 ## Significato e Importanza
-<<<<<<< HEAD:docs/archive/boy-scout-rule.md
 Questa regola è **SACRA** e **IMMUTABILE** nel progetto <nome progetto>. Ogni modifica al codice deve migliorare la codebase, non peggiorarla. La qualità del codice è responsabilità di ogni sviluppatore.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/boy-scout-rule.md
 
 ## Applicazione Globale
 
 ### In Tutti i Moduli
-<<<<<<< HEAD:docs/archive/boy-scout-rule.md
 - **<nome progetto>**: Factory, seeder, modelli e documentazione
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/boy-scout-rule.md
 - **User**: Autenticazione, autorizzazione e gestione utenti
 - **UI**: Componenti, widget e interfacce
 - **Xot**: Funzionalità base e convenzioni
@@ -39,7 +27,7 @@ Questa regola è **SACRA** e **IMMUTABILE** nel progetto <nome progetto>. Ogni m
 // PRIMA: Errori e colonne non esistenti
 'birth_date' => now()->subYears(random_int(18, 80)), // ❌ Colonna inesistente
 
-// DOPO: Factory corretta e tipizzata  
+// DOPO: Factory corretta e tipizzata
 'date_of_birth' => now()->subYears(random_int(18, 80)), // ✅ Colonna corretta
 ```
 
@@ -105,16 +93,10 @@ Questa regola è **SACRA** e **IMMUTABILE** nel progetto <nome progetto>. Ogni m
 ## Collegamenti
 
 - [Regola Cursor](../../.cursor/rules/boy-scout-rule.mdc)
-<<<<<<< HEAD:docs/archive/boy-scout-rule.md
 - [Regola <nome progetto>](../laravel/Modules/<nome progetto>/docs/boy-scout-rule.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/boy-scout-rule.md
 - [Convenzioni Laraxot](laraxot-conventions.md)
 - [Best Practices](best-practices.md)
 
 ---
 
 **⚠️ RICORDA SEMPRE: Questa regola è SACRA e non può essere violata. Ogni modifica deve migliorare la codebase.**
-
-

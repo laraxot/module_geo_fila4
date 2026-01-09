@@ -1,12 +1,8 @@
-<<<<<<< HEAD:docs/archive/test-database-elimination-strategy.md
 # Strategia di Eliminazione Database dai Test - <nome progetto>
 
 ## PROBLEMA IDENTIFICATO
 
 La maggior parte dei test <nome progetto> sta ancora usando database e factory, contraddicendo la regola fondamentale **NO DATABASE NEI TEST**.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/test-database-elimination-strategy.md
 
 ## ERRORI PRINCIPALI
 
@@ -15,7 +11,7 @@ La maggior parte dei test <nome progetto> sta ancora usando database e factory, 
 - **Test coinvolti**: AppointmentBusinessLogicTest, ReportPendingStateTest, AppointmentStateTransitionTest
 - **Soluzione**: Sostituire tutte le factory calls con oggetti plain PHP
 
-### 2. BindingResolutionException: "Target class [config] does not exist" 
+### 2. BindingResolutionException: "Target class [config] does not exist"
 - **Causa**: Test Unit che tentano di usare container Laravel
 - **Test coinvolti**: FetchCalendarEventsActionTest
 - **Soluzione**: Rimuovere dipendenze da container
@@ -39,18 +35,14 @@ La maggior parte dei test <nome progetto> sta ancora usando database e factory, 
 
 ### Fase 1: Identificare tutti i test con database
 ```bash
-<<<<<<< HEAD:docs/archive/test-database-elimination-strategy.md
 grep -r "::factory" Modules/<nome progetto>/tests/ --include="*.php"
-grep -r "RefreshDatabase" Modules/<nome progetto>/tests/ --include="*.php" 
+grep -r "RefreshDatabase" Modules/<nome progetto>/tests/ --include="*.php"
 grep -r "uses(TestCase" Modules/<nome progetto>/tests/ --include="*.php"
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/test-database-elimination-strategy.md
 ```
 
 ### Fase 2: Convertire sistematicamente ogni test
 1. **AppointmentBusinessLogicTest**: Sostituire factory con oggetti plain
-2. **ReportPendingStateTest**: Eliminare database dependencies 
+2. **ReportPendingStateTest**: Eliminare database dependencies
 3. **AppointmentStateTransitionTest**: Convertire in logic pura
 4. **FetchCalendarEventsActionTest**: Rimuovere config dependencies
 5. **HomepageRequirementsTest**: Mockare HTML response
@@ -109,7 +101,7 @@ $appointment = (object) [
 ## DELIVERABLES
 
 1. **Tutti i test passanti** senza alcuna dipendenza database
-2. **Documentazione aggiornata** con pattern sostitutivi 
+2. **Documentazione aggiornata** con pattern sostitutivi
 3. **Regole permanenti** per prevenire regressioni future
 4. **Memoria collettiva** per non ripetere errori
 

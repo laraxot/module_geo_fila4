@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/factory-seeder-consolidated.md
 # 🏭 Factory e Seeder Consolidati - Progetto <nome progetto>
 
 ## 📋 Panoramica
@@ -17,13 +16,10 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 ## 🔍 Analisi per Modulo
 
 ### 1. **Modulo <nome progetto>** - Core Sanitario
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/factory-seeder-consolidated.md
 
 #### Modelli con Factory Funzionanti ✅
 - **User**: Factory completa e funzionante
-- **Doctor**: Factory completa e funzionante  
+- **Doctor**: Factory completa e funzionante
 - **Patient**: Factory completa e funzionante
 - **Admin**: Factory completa e funzionante
 - **Studio**: Factory completa e funzionante
@@ -34,12 +30,8 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 - **Totale Factory**: 7
 - **Funzionanti**: 7 (100%)
 - **Problemi**: Nessuno
-<<<<<<< HEAD:docs/factory-seeder-consolidated.md
 - **Namespace**: `Modules\<nome progetto>\Models`
 - **Namespace**: `Modules\<nome progetto>\Models`
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/factory-seeder-consolidated.md
 
 #### Caratteristiche
 - Estendono `BaseUser` o `BaseModel` del modulo
@@ -154,12 +146,8 @@ Questo documento fornisce un'analisi completa dello stato delle factory e seeder
 
 ### Distribuzione per Modulo
 ```
-<<<<<<< HEAD:docs/factory-seeder-consolidated.md
 <nome progetto>: 7 factory (29.2%)
 <nome progetto>: 7 factory (29.2%)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/factory-seeder-consolidated.md
 User:       6 factory (25.0%)
 Geo:        6 factory (25.0%)
 Media:      3 factory (12.5%)
@@ -255,7 +243,7 @@ class ModelNameSeeder extends Seeder
     {
         // Creazione record di base
         ModelName::factory()->count(10)->create();
-        
+
         // Creazione record con stati specifici
         ModelName::factory()->count(5)->active()->create();
         ModelName::factory()->count(3)->inactive()->create();
@@ -270,7 +258,7 @@ public function run(): void
     // Prima crea le entità base
     $studios = Studio::factory()->count(5)->create();
     $doctors = Doctor::factory()->count(10)->create();
-    
+
     // Poi crea le relazioni
     foreach ($studios as $studio) {
         $studio->doctors()->attach(
@@ -323,12 +311,8 @@ Ho creato uno script intelligente (`smart_populate_models.php`) che:
 ## 🔗 Collegamenti Documentazione
 
 ### Documentazione Moduli
-<<<<<<< HEAD:docs/factory-seeder-consolidated.md
 - [<nome progetto> Factory](../Modules/<nome progetto>/docs/factory-issues-analysis.md)
 - [<nome progetto> Factory](../Modules/<nome progetto>/docs/factory-issues-analysis.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/factory-seeder-consolidated.md
 - [User Factory](../Modules/User/docs/factory-audit-lessons-learned.md)
 - [Geo Factory](../Modules/Geo/docs/factory-creation-geo-module.md)
 - [Media Factory](../Modules/Media/docs/README.md)

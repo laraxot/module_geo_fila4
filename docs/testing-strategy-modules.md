@@ -1,12 +1,8 @@
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 # Strategia di Testing per i Moduli <nome progetto>
 
 ## Introduzione
 
 Questo documento definisce la strategia completa per la creazione di test Pest per tutti i moduli del progetto <nome progetto>, seguendo le regole architetturali specifiche del progetto e le best practice di testing.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ## Principi Fondamentali
 
@@ -24,12 +20,8 @@ Seguendo il pattern implementato nei test di autenticazione esistenti:
 - **UI**: Componenti UI condivisi, temi, layout
 
 #### Moduli Business (Dominio)
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 - **<nome progetto>**: Gestione pazienti, appuntamenti, stati
 - **<nome modulo>**: Gestione pazienti specifici per Modena
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 #### Moduli Utility (Supporto)
 - **Cms**: Gestione contenuti
@@ -108,13 +100,9 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Moduli Business
 
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 #### Modulo <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 **Focus**: Gestione pazienti, appuntamenti, stati, calendario
-- **Unit Tests**: 
+- **Unit Tests**:
   - Models: Patient, Doctor, Appointment, Studio
   - Enums: AppointmentStatus, UserType
   - Actions: CreateAppointment, UpdateAppointmentStatus
@@ -132,15 +120,11 @@ tests/Feature/Modules/{ModuleName}/
   - Doctor availability management
   - Patient dashboard navigation
 
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 #### Modulo <nome modulo>
 **Focus**: Estensioni specifiche per Modena
 - **Unit Tests**: Modelli specifici, business logic locale
 - **Feature Tests**: Funzionalità specifiche di Modena
 - **Integration Tests**: Integrazione con <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ### Moduli Utility
 
@@ -166,21 +150,17 @@ tests/Feature/Modules/{ModuleName}/
 
 ### Pattern 1: Test Models con Relazioni Cross-Database
 ```php
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 // Per DoctorStudio (<nome progetto>)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 test('doctor studio pivot model manages cross-database relations', function () {
     $doctor = Doctor::factory()->create();
     $studio = Studio::factory()->create();
-    
+
     $doctorStudio = DoctorStudio::create([
         'doctor_id' => $doctor->id,
         'studio_id' => $studio->id,
         'opening_hours' => ['monday' => '09:00-17:00']
     ]);
-    
+
     expect($doctorStudio->doctor)->toBeInstanceOf(Doctor::class);
     expect($doctorStudio->studio)->toBeInstanceOf(Studio::class);
     expect($doctorStudio->opening_hours)->toBeArray();
@@ -189,26 +169,22 @@ test('doctor studio pivot model manages cross-database relations', function () {
 
 ### Pattern 2: Test Widget Filament con Multi-Tenancy
 ```php
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 // Per DoctorCalendarWidget (<nome progetto>)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 test('doctor calendar widget shows only tenant appointments', function () {
     $studio1 = Studio::factory()->create();
     $studio2 = Studio::factory()->create();
     $doctor = Doctor::factory()->create();
-    
+
     // Appointments in different studios
     $appointment1 = Appointment::factory()->create(['studio_id' => $studio1->id]);
     $appointment2 = Appointment::factory()->create(['studio_id' => $studio2->id]);
-    
+
     // Set current tenant
     Filament::setTenant($studio1);
-    
+
     $widget = new DoctorCalendarWidget();
     $events = $widget->fetchEvents(['start' => now()->startOfMonth(), 'end' => now()->endOfMonth()]);
-    
+
     expect($events)->toHaveCount(1);
     expect($events[0]['id'])->toBe($appointment1->id);
 });
@@ -221,11 +197,11 @@ test('user factory creates different user types correctly', function () {
     $patient = UserFactory::new()->patient()->create();
     $doctor = UserFactory::new()->doctor()->create();
     $admin = UserFactory::new()->admin()->create();
-    
+
     expect($patient->type)->toBe(UserTypeEnum::PATIENT);
     expect($doctor->type)->toBe(UserTypeEnum::DOCTOR);
     expect($admin->type)->toBe(UserTypeEnum::ADMIN);
-    
+
     expect($patient)->toBeInstanceOf(Patient::class);
     expect($doctor)->toBeInstanceOf(Doctor::class);
     expect($admin)->toBeInstanceOf(Admin::class);
@@ -238,15 +214,14 @@ test('user factory creates different user types correctly', function () {
 test('appointment states have complete translations in all languages', function () {
     $states = AppointmentStatusEnum::cases();
     $languages = ['it', 'en', 'de'];
-    
+
     foreach ($states as $state) {
         foreach ($languages as $lang) {
             app()->setLocale($lang);
-            
-<<<<<<< HEAD:docs/testing-strategy-modules.md
+
             $label = __("<nome progetto>::states.{$state->value}.label");
             $description = __("<nome progetto>::states.{$state->value}.description");
-            
+
             expect($label)->not->toContain('<nome progetto>::');
             expect($description)->not->toContain('<nome progetto>::');
         }
@@ -282,18 +257,18 @@ function skipIfModuleDisabled(string $module): void {
 abstract class ModuleTestCase extends TestCase
 {
     protected string $moduleName;
-    
+
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         if (!moduleEnabled($this->moduleName)) {
             $this->markTestSkipped("Module {$this->moduleName} is disabled");
         }
-        
+
         $this->setupModuleEnvironment();
     }
-    
+
     abstract protected function setupModuleEnvironment(): void;
 }
 ```
@@ -359,9 +334,6 @@ class DatabaseHelper
 ### Fase 2: Moduli Business (Settimana 2)
 1. <nome progetto> - Gestione completa pazienti/appuntamenti
 2. <nome modulo> - Estensioni specifiche Modena
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 
 ### Fase 3: Moduli Utility (Settimana 3)
 1. Cms, Media, Geo - Gestione contenuti e localizzazione
@@ -390,17 +362,12 @@ class DatabaseHelper
 ## Collegamenti
 
 - [Test Autenticazione Esistenti](../tests/Feature/Auth/) - Pattern di riferimento
-<<<<<<< HEAD:docs/testing-strategy-modules.md
 - [Documentazione Modulo <nome progetto>](../Modules/<nome progetto>/docs/README.md)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-strategy-modules.md
 - [Documentazione Modulo User](../Modules/User/docs/README.md)
 - [Configurazione Pest](../tests/Pest.php)
 
 ---
 
-**Ultimo aggiornamento**: 28 Gennaio 2025  
-**Stato**: 🚧 In implementazione  
+**Ultimo aggiornamento**: 28 Gennaio 2025
+**Stato**: 🚧 In implementazione
 **Responsabile**: Team Development
-

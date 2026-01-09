@@ -7,7 +7,6 @@ namespace Modules\Geo\Models;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
-<<<<<<< HEAD
 use Modules\Geo\Database\Factories\LocalityFactory;
 use Modules\Xot\Contracts\ProfileContract;
 use Sushi\Sushi;
@@ -20,18 +19,6 @@ use Sushi\Sushi;
  * @property array<array-key, mixed>|null $postal_code
  * @property ProfileContract|null         $creator
  * @property ProfileContract|null         $updater
-=======
-use Sushi\Sushi;
-
-/**
- * @property int|null                                    $region_id
- * @property int|null                                    $province_id
- * @property string|null                                 $name
- * @property int                                         $id
- * @property array<array-key, mixed>|null                $postal_code
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
->>>>>>> 078f9da (.)
  *
  * @method static Builder<static>|Locality newModelQuery()
  * @method static Builder<static>|Locality newQuery()
@@ -42,15 +29,9 @@ use Sushi\Sushi;
  * @method static Builder<static>|Locality whereProvinceId($value)
  * @method static Builder<static>|Locality whereRegionId($value)
  *
-<<<<<<< HEAD
  * @property ProfileContract|null $deleter
  *
  * @method static LocalityFactory factory($count = null, $state = [])
-=======
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
- *
- * @method static \Modules\Geo\Database\Factories\LocalityFactory factory($count = null, $state = [])
->>>>>>> 078f9da (.)
  *
  * @mixin \Eloquent
  */
@@ -116,7 +97,7 @@ class Locality extends BaseModel
         $city = $get('locality');
         $res = self::where('region_id', $region)
             ->where('province_id', $province)
-            ->when(null !== $city, static fn ($query) => $query->where('id', $city))
+            ->when($city !== null, static fn ($query) => $query->where('id', $city))
             ->select('postal_code')
             ->distinct()
             ->orderBy('postal_code')
@@ -131,9 +112,7 @@ class Locality extends BaseModel
             /** @var array<int, string> $postalCodes */
             $postalCodes = array_values((array) $item['postal_code']);
             /** @var array<string, string> $result */
-            $result = array_combine($postalCodes, $postalCodes);
-
-            return $result;
+            return array_combine($postalCodes, $postalCodes);
         });
 
         return $arr ?? [];

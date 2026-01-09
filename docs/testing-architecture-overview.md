@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/testing-architecture-overview.md
 # Architettura di Testing - <nome progetto>
 
 ## Panoramica
@@ -9,9 +8,6 @@ Questo documento descrive l'architettura di testing del progetto <nome progetto>
 ## Panoramica
 
 Questo documento descrive l'architettura di testing del progetto <nome progetto>, basata su Pest PHP e organizzata in moduli Laravel indipendenti.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-architecture-overview.md
 
 ## Principi Fondamentali
 
@@ -40,7 +36,6 @@ Modules/Geo/tests/Feature/AddressIntegrationTest.php
 - **Approccio**: In-memory con oggetti plain PHP
 - **Focus**: Relazioni polimorfiche, geolocalizzazione, Google Places API
 
-<<<<<<< HEAD:docs/testing-architecture-overview.md
 ### Modulo <nome modulo>
 ```
 Modules/<nome modulo>/tests/Feature/AppointmentValidationTest.php
@@ -115,9 +110,6 @@ expect($calculatedDuration)->toBe($appointment->duration);
 - **user**: Connessione specifica per modulo User
 - **<slogan progetto>**: Connessione per modulo <nome progetto>
 - **<slogan progetto>**: Connessione per modulo <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-architecture-overview.md
 - **geo**: Connessione per modulo Geo
 
 ### Migrazioni
@@ -154,12 +146,8 @@ php artisan test
 
 # Test specifici per modulo
 php artisan test --filter=Geo
-<<<<<<< HEAD:docs/testing-architecture-overview.md
 php artisan test --filter=<nome modulo>
 php artisan test --filter=<nome progetto>
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-architecture-overview.md
 
 # Test specifici per file
 php artisan test tests/Feature/AddressIntegrationTest.php
@@ -192,16 +180,12 @@ php artisan test --filter="validates user types"
 ## Collegamenti
 
 - [Modulo Geo Testing](../../laravel/Modules/Geo/docs/testing.md)
-<<<<<<< HEAD:docs/testing-architecture-overview.md
 - [Modulo <nome modulo> Testing](../../laravel/Modules/<nome modulo>/docs/testing.md)
 - [Best Practices Testing](../../laravel/Modules/<nome modulo>/docs/testing-best-practices.md)
 - [Common Testing Errors](../../laravel/Modules/<nome modulo>/docs/common-testing-errors.md)
 - [Modulo <nome progetto> Testing](../../laravel/Modules/<nome progetto>/docs/testing.md)
 - [Best Practices Testing](../../laravel/Modules/<nome progetto>/docs/testing-best-practices.md)
 - [Common Testing Errors](../../laravel/Modules/<nome progetto>/docs/common-testing-errors.md)
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-architecture-overview.md
 
 ---
 

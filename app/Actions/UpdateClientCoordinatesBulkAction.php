@@ -39,34 +39,25 @@ class UpdateClientCoordinatesBulkAction
                 $fullAddress = is_string($address->full_address) ? $address->full_address : '';
                 $addressData = $this->getAddressDataFromFullAddressAction->execute($fullAddress);
 
-                if (null !== $addressData) {
+                if ($addressData !== null) {
                     $toArray = $addressData->toArray();
-<<<<<<< HEAD
                     /** @var array<string, mixed> $up */
-=======
->>>>>>> 078f9da (.)
                     $up = Arr::only($toArray, ['latitude', 'longitude']);
-                    /* @var array<string, mixed> $up */
+                    /** @var array<string, mixed> $up */
                     $address->update($up);
                     ++$successCount;
 
                     continue;
                 }
 
-<<<<<<< HEAD
                 // PHPStan L10: $address->name è già string|null, non serve is_string()
                 $addressName = $address->name ?? 'Unknown';
                 $errors = $this->getAddressDataFromFullAddressAction->getErrors();
                 // PHPStan L10: Collection::implode() restituisce string, non serve ?:
                 $errorMsg = $errors->implode(', ');
-                if ('' === $errorMsg) {
+                if ($errorMsg === '') {
                     $errorMsg = 'Errore sconosciuto';
                 }
-=======
-                $addressName = is_string($address->name) ? $address->name : 'Unknown';
-                $errors = $this->getAddressDataFromFullAddressAction->getErrors();
-                $errorMsg = $errors->implode(', ') ?: 'Errore sconosciuto';
->>>>>>> 078f9da (.)
                 $errorMessages[] = "Errore per {$addressName}: {$errorMsg}";
             }
         });

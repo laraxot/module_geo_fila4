@@ -1,8 +1,4 @@
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 # Standard PSR-4 per i Test in Laraxot <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 ## Panoramica
 
@@ -35,15 +31,11 @@ Ogni modulo deve avere la seguente configurazione nel `composer.json`:
 }
 ```
 
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 #### Modulo <nome modulo>
 ```json
 "autoload-dev": {
     "psr-4": {
         "Modules\\<nome modulo>\\Tests\\": "tests/"
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
     }
 }
 ```
@@ -91,13 +83,9 @@ class TestClassName extends BaseClass
 
 declare(strict_types=1);
 
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit;
 
 use Modules\<nome modulo>\Models\BaseModel;
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 /**
  * Concrete implementation of BaseModel for testing purposes.
@@ -105,7 +93,7 @@ use Modules\<nome modulo>\Models\BaseModel;
 class TestableBaseModel extends BaseModel
 {
     protected $table = 'test_models';
-    
+
     /** @var list<string> */
     protected $fillable = ['name', 'description'];
 }
@@ -132,13 +120,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Helper class for testing HasExtraTrait functionality.
  */
-class TestExtra extends Model implements ExtraContract 
+class TestExtra extends Model implements ExtraContract
 {
     protected $table = 'test_extras';
-    
+
     /** @var list<string> */
     protected $fillable = ['model_id', 'model_type', 'extra_attributes'];
-    
+
     /**
      * Get the attributes that should be cast.
      *
@@ -150,7 +138,7 @@ class TestExtra extends Model implements ExtraContract
             'extra_attributes' => 'collection',
         ];
     }
-    
+
     /**
      * Get the parent model.
      *
@@ -173,7 +161,7 @@ class TestExtra extends Model implements ExtraContract
 declare(strict_types=1);
 // Missing namespace!
 
-class TestHelper extends Model 
+class TestHelper extends Model
 {
     // ...
 }
@@ -184,16 +172,12 @@ class TestHelper extends Model
 <?php
 declare(strict_types=1);
 
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit;
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 /**
  * Helper class for testing.
  */
-class TestHelper extends Model 
+class TestHelper extends Model
 {
     // ...
 }
@@ -208,11 +192,7 @@ namespace App\Tests\Unit; // Wrong namespace!
 
 ✅ **SOLUZIONE**:
 ```php
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 namespace Modules\<nome modulo>\Tests\Unit; // Correct module namespace
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 ```
 
 ## Verifica della Conformità
@@ -228,11 +208,7 @@ composer dump-autoload
 ./vendor/bin/phpstan analyze Modules/*/tests/ --level=9
 
 # Test specifico per modulo
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 ./vendor/bin/phpstan analyze Modules/<nome modulo>/tests/ --level=9
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 ```
 
 ### Messaggi di Errore Tipici
@@ -240,8 +216,8 @@ composer dump-autoload
 Quando PSR-4 non è rispettato, si vedono errori come:
 
 ```
-Class TestExtra located in ./Modules/Xot/tests/Unit/HasExtraTraitTest.php 
-does not comply with psr-4 autoloading standard 
+Class TestExtra located in ./Modules/Xot/tests/Unit/HasExtraTraitTest.php
+does not comply with psr-4 autoloading standard
 (rule: Modules\Xot\Tests\ => ./Modules/Xot/tests). Skipping.
 ```
 
@@ -283,14 +259,9 @@ Prima di committare file di test:
 ## Collegamenti ai Moduli
 
 - [Testing PSR-4 Compliance - Modulo Xot](../Modules/Xot/docs/testing-psr4-compliance.md)
-<<<<<<< HEAD:docs/testing-psr4-standards.md
 - [Testing Guide - Modulo <nome modulo>](../Modules/<nome modulo>/docs/testing.md)
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/testing-psr4-standards.md
 
 ---
 
 *Ultimo aggiornamento: 2025-01-06*
 *Standard: PSR-4, PHPStan livello 9+, Laraxot conventions*
-

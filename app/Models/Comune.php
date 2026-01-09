@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Modules\Geo\Database\Factories\ComuneFactory;
 use Modules\Tenant\Models\Traits\SushiToJson;
-<<<<<<< HEAD
 use Modules\Xot\Contracts\ProfileContract;
-=======
->>>>>>> 078f9da (.)
 
 /**
  * Modello per i comuni italiani con Sushi.
@@ -20,7 +17,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * regioni, province, città, CAP, codici ISTAT, ecc.
  * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
  *
-<<<<<<< HEAD
  * @property string|null                  $nome
  * @property float|null                   $codice
  * @property array<array-key, mixed>|null $zona
@@ -40,27 +36,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
  * @property ProfileContract|null         $updater
-=======
- * @property string|null                                 $nome
- * @property float|null                                  $codice
- * @property array<array-key, mixed>|null                $zona
- * @property array<array-key, mixed>|null                $regione
- * @property array<array-key, mixed>|null                $provincia
- * @property string|null                                 $sigla
- * @property string|null                                 $codiceCatastale
- * @property array<array-key, mixed>|null                $cap
- * @property int|null                                    $popolazione
- * @property int|null                                    $id
- * @property string|null                                 $title
- * @property string|null                                 $slug
- * @property string|null                                 $content
- * @property string|null                                 $created_at
- * @property string|null                                 $updated_at
- * @property string|null                                 $created_by
- * @property string|null                                 $updated_by
- * @property \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property \Modules\Xot\Contracts\ProfileContract|null $updater
->>>>>>> 078f9da (.)
  *
  * @method static Builder<static>|Comune newModelQuery()
  * @method static Builder<static>|Comune newQuery()
@@ -83,15 +58,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Comune whereUpdatedBy($value)
  * @method static Builder<static>|Comune whereZona($value)
  *
-<<<<<<< HEAD
  * @property ProfileContract|null $deleter
  *
  * @method static ComuneFactory factory($count = null, $state = [])
-=======
- * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
- *
- * @method static \Modules\Geo\Database\Factories\ComuneFactory factory($count = null, $state = [])
->>>>>>> 078f9da (.)
  *
  * @mixin \Eloquent
  */

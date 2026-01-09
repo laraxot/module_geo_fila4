@@ -9,25 +9,17 @@ Lo script di verifica ha identificato **15 moduli** con problemi di riusabilità
 I file di traduzione nei moduli riutilizzabili contengono placeholder e testi hardcoded:
 
 **File da correggere:**
-<<<<<<< HEAD:docs/module-reusability-implementation-plan.md
 - `Modules/Notify/lang/en/test_smtp.php` - "<nome progetto>" in placeholder
-- `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder  
+- `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder
 - `Modules/Notify/lang/en/test_smtp.php` - "<nome progetto>" in placeholder
-- `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder  
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_implementation_plan.md
+- `Modules/Notify/lang/de/test_smtp.php` - "<nome progetto>" in placeholder
 - Altri file di traduzione con hardcoding
 
 **Pattern di correzione:**
 ```php
 // ❌ PRIMA
-<<<<<<< HEAD:docs/module-reusability-implementation-plan.md
 'placeholder' => 'Test configurazione SMTP - <nome progetto>',
 'placeholder' => 'Test configurazione SMTP - <nome progetto>',
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_implementation_plan.md
 
 // ✅ DOPO
 'placeholder' => 'Test configurazione SMTP - {{app_name}}',
@@ -42,11 +34,10 @@ I file di traduzione nei moduli riutilizzabili contengono placeholder e testi ha
 **Correzioni richieste:**
 ```php
 // ❌ PRIMA
-<<<<<<< HEAD:docs/module-reusability-implementation-plan.md
 public static string $projectBasePath = '/var/www/html/<nome progetto>';
 public static string $projectBasePath = '/var/www/html/<nome progetto>';
 
-// ✅ DOPO  
+// ✅ DOPO
 public static function getProjectBasePath(): string
 {
     return config('app.project_path', '/var/www/html/project');
@@ -61,9 +52,6 @@ Aggiornare tutti i file di documentazione per rimuovere riferimenti specifici al
 <!-- ❌ PRIMA -->
 # Implementazione Pagina Servizi - <nome progetto>
 # Implementazione Pagina Servizi - <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_implementation_plan.md
 
 <!-- ✅ DOPO -->
 # Implementazione Pagina Servizi - Progetto Laraxot
@@ -75,13 +63,9 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 ## Azioni Implementate
 
 ### ✅ Completate
-<<<<<<< HEAD:docs/module-reusability-implementation-plan.md
 1. **NotificationManagementBusinessLogicTest.php** - Rimosso hardcoding "<nome progetto>"
 1. **NotificationManagementBusinessLogicTest.php** - Rimosso hardcoding "<nome progetto>"
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_implementation_plan.md
-2. **NotifyThemeableFactory.php** - Implementato `getProjectNamespace()` 
+2. **NotifyThemeableFactory.php** - Implementato `getProjectNamespace()`
 3. **Documentazione base** - Creata `docs/module_reusability_guidelines.md`
 4. **Regole Cursor/Windsurf** - Aggiornate con nuove regole critiche
 5. **Script di controllo** - Creato `bashscripts/check_module_reusability.sh`
@@ -93,7 +77,7 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 
 ### ⏳ Da Fare
 1. **Modulo User** - 141 occorrenze da correggere
-2. **Modulo UI** - 115 occorrenze da correggere  
+2. **Modulo UI** - 115 occorrenze da correggere
 3. **Modulo Cms** - 194 occorrenze da correggere
 4. **Modulo Geo** - 86 occorrenze da correggere
 
@@ -104,7 +88,7 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 - Aggiornare file di traduzione con placeholder dinamici
 - Correggere configurazioni database hardcoded
 
-### Fase 2: Documentazione (Prossima settimana)  
+### Fase 2: Documentazione (Prossima settimana)
 - Aggiornamento sistematico di tutti i file .md
 - Rimozione riferimenti specifici ai progetti
 - Aggiornamento link e path
@@ -121,14 +105,10 @@ Aggiornare i test per utilizzare pattern dinamici con XotData.
 #!/bin/bash
 # Correzione automatica per file di traduzione
 
-<<<<<<< HEAD:docs/module-reusability-implementation-plan.md
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>/{{app_name}}/g' {} \;
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>\.com/{{app_domain}}/g' {} \;
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>/{{app_name}}/g' {} \;
 find Modules/*/lang/ -name "*.php" -exec sed -i 's/<nome progetto>\.com/{{app_domain}}/g' {} \;
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module_reusability_implementation_plan.md
 ```
 
 ### Validazione Continua

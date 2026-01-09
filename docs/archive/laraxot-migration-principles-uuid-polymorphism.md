@@ -41,7 +41,7 @@ class User extends BaseModel {
     protected $primaryKey = 'id'; // UUID string
 }
 
-// Admin Model (Integer)  
+// Admin Model (Integer)
 class Admin extends BaseModel {
     public $keyType = 'int';
     public $incrementing = true;
@@ -69,11 +69,7 @@ $table->unsignedBigInteger('causer_id')->nullable();
 // Activity con Admin (Integer)
 [
     'causer_id' => '123', // Integer convertito in string
-<<<<<<< HEAD:docs/archive/laraxot-migration-principles-uuid-polymorphism.md
     'causer_type' => 'Modules\<nome progetto>\Models\Admin'
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/principi_migrazioni_laraxot_uuid_polimorfismo.md
 ]
 ```
 
@@ -118,11 +114,11 @@ return new class extends XotBaseMigration {
             // Per sistemi con UUID + integer, sempre string per morphs
             $table->string('morphable_id')->nullable();
             $table->string('morphable_type')->nullable();
-            
+
             // O usando il helper (che crea string se configurato)
             $table->nullableMorphs('morphable');
         });
-        
+
         $this->tableUpdate(function (Blueprint $table) {
             // Aggiornamenti sicuri con controlli
             if ($this->hasColumn('morphable_id')) {
@@ -233,11 +229,7 @@ $table->index(['morphable_id', 'morphable_type']); // Performance
 ### **Esempi Pratici**
 - [Activity Migration](../laravel/Modules/Activity/database/migrations/2024_01_15_103351_create_activity_table.php)
 - [User UUID Model](../laravel/Modules/User/app/Models/User.php)
-<<<<<<< HEAD:docs/archive/laraxot-migration-principles-uuid-polymorphism.md
 - [Admin Integer Model](../laravel/Modules/<nome progetto>/app/Models/Admin.php)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/principi_migrazioni_laraxot_uuid_polimorfismo.md
 
 ### **Tools e Validazione**
 - **PHPStan**: Validazione tipi polimorfici

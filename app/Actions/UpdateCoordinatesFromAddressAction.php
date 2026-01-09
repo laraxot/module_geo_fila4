@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use Illuminate\Support\Collection;
-=======
->>>>>>> 078f9da (.)
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\AddressData;
 use Spatie\QueueableAction\QueueableAction;
@@ -41,11 +38,7 @@ class UpdateCoordinatesFromAddressAction
     /**
      * Collection per memorizzare eventuali errori durante l'esecuzione.
      */
-<<<<<<< HEAD
     private Collection $errors;
-=======
-    private \Illuminate\Support\Collection $errors;
->>>>>>> 078f9da (.)
 
     public function __construct(
         private readonly GetAddressDataFromFullAddressAction $getAddressDataAction,
@@ -77,7 +70,7 @@ class UpdateCoordinatesFromAddressAction
         // Esegui geocoding per ottenere i dati dell'indirizzo
         $addressData = $this->getAddressDataAction->execute($fullAddress);
 
-        if (null === $addressData) {
+        if ($addressData === null) {
             // Raccogli errori dal servizio di geocoding
             $geocodingErrors = $this->getAddressDataAction->getErrors();
             if ($geocodingErrors->isNotEmpty()) {
@@ -91,6 +84,16 @@ class UpdateCoordinatesFromAddressAction
 
         // Aggiorna il modello con le coordinate ottenute
         return $this->updateModelCoordinates($model, $addressData);
+    }
+
+    /**
+     * Restituisce la collezione degli errori verificatisi durante l'esecuzione.
+     *
+     * @return Collection<int, string>
+     */
+    public function getErrors(): Collection
+    {
+        return $this->errors;
     }
 
     /**
@@ -145,21 +148,5 @@ class UpdateCoordinatesFromAddressAction
 
             return false;
         }
-    }
-
-    /**
-     * Restituisce la collezione degli errori verificatisi durante l'esecuzione.
-     *
-<<<<<<< HEAD
-     * @return Collection<int, string>
-     */
-    public function getErrors(): Collection
-=======
-     * @return \Illuminate\Support\Collection<int, string>
-     */
-    public function getErrors(): \Illuminate\Support\Collection
->>>>>>> 078f9da (.)
-    {
-        return $this->errors;
     }
 }

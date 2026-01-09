@@ -9,12 +9,8 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 ### Current State
 - **Total Modules**: 14 modules identified
 - **Reusable Modules**: Activity, Cms, Gdpr, Geo, Job, Lang, Media, Notify, Tenant, UI, User, Xot (12 modules)
-<<<<<<< HEAD:docs/module-analysis-and-optimization-plan.md
 - **Project-Specific Modules**: <nome modulo>, <nome progetto> (2 modules)
 - **Project-Specific Modules**: <nome progetto>, <nome progetto> (2 modules)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module-analysis-and-optimization-plan.md
 
 ### Documentation Quality Assessment
 
@@ -170,12 +166,8 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 - Multi-channel delivery support
 
 #### Critical Issues Found
-<<<<<<< HEAD:docs/module-analysis-and-optimization-plan.md
 - **HARDCODED PROJECT NAMES**: Contains "<nome progetto>" references in reusable module
 - **HARDCODED PROJECT NAMES**: Contains "<nome progetto>" references in reusable module
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/module-analysis-and-optimization-plan.md
 - **Testing**: Mixed PHPUnit/Pest approaches
 - **Configuration**: Project-specific database names in docs
 
@@ -186,12 +178,8 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 4. **Documentation**: Generic examples only
 
 #### Corrections Required
-<<<<<<< HEAD:docs/module-analysis-and-optimization-plan.md
 - Replace '<nome progetto>' with config('app.name') or generic terms
 - Replace '<nome progetto>' with config('app.name') or generic terms
-=======
-- Replace '{nome-progetto}' with config('app.name') or generic terms
->>>>>>> 078f9da (.):docs_project/module-analysis-and-optimization-plan.md
 - Create ConfigHelper for test data management
 - Update all documentation to use placeholders
 - Implement proper template variable handling
@@ -273,7 +261,7 @@ This document provides a comprehensive analysis of all modules in the Laraxot pr
 ### 1. Hardcoded Project Names in Reusable Modules
 **Priority**: CRITICAL
 **Affected Modules**: Notify, potentially others
-**Action Required**: 
+**Action Required**:
 - Scan ALL reusable modules for hardcoded project names
 - Replace with config() values or generic placeholders
 - Update all documentation and tests

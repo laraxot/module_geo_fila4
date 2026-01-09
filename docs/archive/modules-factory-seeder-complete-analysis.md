@@ -1,8 +1,4 @@
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 # Analisi Completa Modelli, Factory e Seeder - Sistema <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 
 ## Riepilogo Generale
 
@@ -15,12 +11,8 @@
 6. ✅ **Lang** - Sistema multilingua
 7. ✅ **Media** - Gestione media files
 8. ✅ **Notify** - Sistema notifiche
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 9. ✅ **<nome modulo>** - Modulo specifico (analisi da completare)
 10. ✅ **<nome progetto>** - Modulo principale sanitario
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 11. ✅ **Tenant** - Multi-tenancy
 12. ✅ **UI** - Componenti interfaccia
 13. ⏳ **User** - Sistema utenti (da completare)
@@ -36,20 +28,12 @@
 
 ### Seeder Coverage
 - **Moduli con seeder**: 14/14 (100%)
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 - **Seeder specializzati**: 25+ (inclusi seeder specifici <nome progetto>)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 
 ## Modelli per Criticità Business Logic
 
 ### CRITICI (Essenziali per funzionamento)
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 - **<nome progetto>**: Patient, Doctor, Appointment, Studio, User
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 - **GDPR**: Consent, Treatment, Event, Profile
 - **Activity**: Activity, StoredEvent, Snapshot
 - **Geo**: Address, Location, ComuneJson, Province, Region
@@ -72,11 +56,7 @@
 ### DA RIVEDERE (Potenzialmente inutilizzati)
 - **CMS**: Module (verificare utilizzo)
 - **Geo**: County, State (non italiani)
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 - **<nome progetto>**: Modelli .old (da rimuovere)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 
 ## Problemi Identificati
 
@@ -87,14 +67,10 @@
 ### Modelli Inutilizzati Candidati
 1. **CMS Module** - Verificare se utilizzato
 2. **Geo County/State** - Per contesto non italiano
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 3. **<nome progetto> .old files** - Rimuovere completamente
 
 ### Raccomandazioni Pulizia
 1. **Rimuovere tutti i file .old** da <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 2. **Valutare rimozione County/State** se non utilizzati
 3. **Verificare utilizzo CMS Module**
 
@@ -107,11 +83,7 @@
 4. **Lang** - Tutte factory, tutti modelli utilizzati
 5. **Media** - Tutte factory, tutti modelli utilizzati
 6. **Notify** - Tutte factory, tutti modelli utilizzati
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 7. **<nome progetto>** - Tutte factory, tutti modelli attivi critici
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 
 ### ✅ Moduli Buoni (copertura completa con qualche nota)
 1. **CMS** - Tutte factory, un modello da verificare
@@ -146,11 +118,7 @@
 
 ### Immediate (Priorità Alta)
 1. **Completare analisi User e Xot** - Moduli fondamentali
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 2. **Rimuovere file .old** da <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 3. **Verificare utilizzo CMS Module**
 
 ### A Medio Termine (Priorità Media)
@@ -165,11 +133,7 @@
 
 ## Stato Complessivo: 🟢 ECCELLENTE
 
-<<<<<<< HEAD:docs/archive/modules-factory-seeder-complete-analysis.md
 Il sistema <nome progetto> ha una **copertura factory del 100%** per tutti i modelli attivamente utilizzati. La struttura è ben organizzata, modulare e tutti i modelli critici per il sistema sanitario sono completamente supportati.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/modules-factory-seeder-complete-analysis.md
 
 ### Punti di Forza
 - ✅ Factory coverage completa
@@ -187,4 +151,3 @@ Il sistema <nome progetto> ha una **copertura factory del 100%** per tutti i mod
 *Ultimo aggiornamento: 2025-01-06*
 *Analisi completa sistema: 12/14 moduli (86% completato)*
 *Analizzato da: Sistema di analisi automatica moduli*
-

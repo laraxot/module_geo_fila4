@@ -2,7 +2,6 @@
 
 ## Executive Summary
 
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 Intervento di refactoring per rimuovere tutti i riferimenti specifici al progetto <nome progetto> dalla cartella `bashscripts/database/seeding`, mantenendo solo script generici riutilizzabili in qualsiasi progetto Laravel con moduli.
 
 ## Problema Identificato
@@ -20,29 +19,22 @@ La cartella `bashscripts/database/seeding` conteneva file specifici del progetto
 
 ### Script Generatori Specifici
 - `bashscripts/<nome progetto>/generate_<nome progetto>_factories_and_seeders.sh` - Generatore specifico <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 ## Soluzione Implementata
 
 ### 1. Spostamento File Specifici
 
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 #### Script <nome progetto>
-**Da**: `bashscripts/database/seeding/<nome progetto>-*.php`  
+**Da**: `bashscripts/database/seeding/<nome progetto>-*.php`
 **A**: `laravel/Modules/<nome progetto>/scripts/seeding/`
 
 #### Script <nome modulo>
-**Da**: `bashscripts/database/seeding/<nome modulo>-*.php`  
+**Da**: `bashscripts/database/seeding/<nome modulo>-*.php`
 **A**: `laravel/Modules/<nome modulo>/scripts/seeding/`
 
 #### Script Generatori
-**Da**: `bashscripts/<nome progetto>/generate_<nome progetto>_factories_and_seeders.sh`  
+**Da**: `bashscripts/<nome progetto>/generate_<nome progetto>_factories_and_seeders.sh`
 **A**: `laravel/Modules/<nome progetto>/scripts/generators/`
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 ### 2. Creazione Script Generici
 
@@ -59,11 +51,7 @@ La cartella `bashscripts/database/seeding` conteneva file specifici del progetto
 **Utilizzo**:
 ```bash
 # Seeding specifico
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 SEEDING_MODULE=<nome progetto> SEEDING_MODEL=Patient SEEDING_COUNT=500 php generic-module-seeding.php
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 # Auto-discovery
 SEEDING_MODULE=User php generic-module-seeding.php
@@ -78,27 +66,19 @@ SEEDING_MODULE=User php generic-module-seeding.php
 - Riferimenti ai nuovi percorsi
 
 #### README per Nuove Cartelle
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 - `Modules/<nome progetto>/scripts/seeding/README.md` - Documentazione script seeding
 - `Modules/<nome modulo>/scripts/seeding/README.md` - Documentazione <nome modulo>
 - `Modules/<nome progetto>/scripts/generators/README.md` - Documentazione generatori
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 ### 4. Pulizia Strutturale
 
 #### Cartelle Rimosse
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 - `bashscripts/<nome progetto>/` - Completamente rimossa (era vuota dopo lo spostamento)
 
 #### Cartelle Create
 - `laravel/Modules/<nome progetto>/scripts/seeding/`
 - `laravel/Modules/<nome progetto>/scripts/generators/`
 - `laravel/Modules/<nome modulo>/scripts/seeding/`
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 ## Regole Implementate
 
@@ -109,7 +89,6 @@ SEEDING_MODULE=User php generic-module-seeding.php
 4. **Funzioni helper** senza riferimenti specifici
 
 ### ❌ Cosa NON deve essere in bashscripts/database/seeding/
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 1. **Nomi specifici progetto** (es. `<nome progetto>-*`, `<nome modulo>-*`)
 2. **Riferimenti hardcoded** a moduli specifici
 3. **Logica business specifica** del dominio sanitario
@@ -140,7 +119,7 @@ $recordCount = env('RECORD_COUNT', 100);
 // Generic logic that works with any module
 function genericFunction($module, $count) {
     $modelClass = "\\Modules\\{$module}\\Models\\User";
-    
+
     if (class_exists($modelClass)) {
         $modelClass::factory()->count($count)->create();
     }
@@ -202,9 +181,6 @@ find bashscripts/ -name "*<nome progetto>*" -o -name "*<nome modulo>*"
 ls -la laravel/Modules/<nome progetto>/scripts/seeding/
 ls -la laravel/Modules/<nome progetto>/scripts/generators/
 ls -la laravel/Modules/<nome modulo>/scripts/seeding/
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 ```
 
 ### Test Script Generico
@@ -229,11 +205,7 @@ SEEDING_MODULE=User SEEDING_COUNT=10 php bashscripts/database/seeding/generic-mo
 
 ## Conclusioni
 
-<<<<<<< HEAD:docs/archive/refactoring-bashscripts-database-seeding.md
 L'intervento di refactoring ha raggiunto completamente l'obiettivo di rimuovere tutti i riferimenti specifici al progetto <nome progetto> dalla cartella `bashscripts/database/seeding`, mantenendo la piena funzionalità e migliorando l'organizzazione del codice.
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/refactoring_bashscripts_database_seeding.md
 
 La cartella bashscripts è ora veramente condivisibile tra progetti diversi, rispettando il principio di riusabilità e portabilità richiesto.
 
@@ -247,6 +219,6 @@ La cartella bashscripts è ora veramente condivisibile tra progetti diversi, ris
 - **Tempo intervento**: ~2 ore
 - **Impatti negativi**: 0
 
-*Intervento completato: Gennaio 2025*  
-*Validato: PHPStan livello 9, documentazione completa*  
+*Intervento completato: Gennaio 2025*
+*Validato: PHPStan livello 9, documentazione completa*
 *Status: ✅ Produzione ready*

@@ -17,12 +17,12 @@
 // CORRETTO: Testa il comportamento business
 test('user can login with valid credentials', function () {
     $user = User::factory()->create(['password' => Hash::make('password')]);
-    
+
     $response = $this->post('/it/auth/login', [
         'email' => $user->email,
         'password' => 'password',
     ]);
-    
+
     // Verifica il RISULTATO per l'utente
     $response->assertRedirect('/dashboard');
     $this->assertAuthenticatedAs($user);
@@ -36,7 +36,7 @@ test('user can login with valid credentials', function () {
 test('doctor can create appointment for patient', function () {
     $doctor = User::factory()->doctor()->create();
     $patient = User::factory()->patient()->create();
-    
+
     $this->actingAs($doctor)
         ->post('/appointments', [
             'patient_id' => $patient->id,
@@ -44,14 +44,14 @@ test('doctor can create appointment for patient', function () {
             'time' => '10:00',
             'type' => 'consultation',
         ]);
-    
+
     // Verifica gli EFFETTI business
     $this->assertDatabaseHas('appointments', [
         'doctor_id' => $doctor->id,
         'patient_id' => $patient->id,
         'status' => 'scheduled',
     ]);
-    
+
     expect($patient->fresh()->appointments()->count())->toBe(1);
     Mail::assertSent(AppointmentConfirmation::class);
 });
@@ -65,7 +65,7 @@ test('doctor can create appointment for patient', function () {
 test('login calls authentication service', function () {
     $authService = Mockery::mock(AuthService::class);
     $authService->shouldReceive('authenticate')->once();
-    
+
     // Questo test è fragile e non utile per l'utente
 });
 
@@ -73,7 +73,7 @@ test('login calls authentication service', function () {
 test('widget sets internal properties correctly', function () {
     $widget = new PatientCalendarWidget();
     $widget->mount();
-    
+
     expect($widget->appointments)->toBeArray();
     expect($widget->currentMonth)->toBe(now()->month);
 });
@@ -93,7 +93,7 @@ test('widget sets internal properties correctly', function () {
 test('widget loads data correctly', function () {
     $widget = new PatientCalendarWidget();
     $widget->loadAppointments();
-    
+
     expect($widget->appointments)->toHaveCount(5);
 });
 
@@ -102,9 +102,9 @@ test('patient sees their appointments in calendar', function () {
     $patient = User::factory()->patient()->create();
     Appointment::factory()->count(5)->create(['patient_id' => $patient->id]);
     Appointment::factory()->count(3)->create(); // Altri pazienti
-    
+
     $this->actingAs($patient);
-    
+
     Livewire::test(PatientCalendarWidget::class)
         ->assertViewHas('appointments', function ($appointments) {
             return $appointments->count() === 5;
@@ -128,12 +128,8 @@ test('patient sees their appointments in calendar', function () {
 - [ ] Fallisce solo quando il comportamento cambia?
 - [ ] È leggibile senza conoscere l'implementazione?
 
-<<<<<<< HEAD:docs/testing-principles.md
 ## Architettura Testing per <nome progetto>
 ## Architettura Testing per <nome progetto>
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-principles.md
 
 ### Separazione Test per Architettura
 - **LoginTest.php**: Testa pagina `/it/auth/login` (routing, layout, middleware)
@@ -148,12 +144,8 @@ test('user can have different types', function () {
     expect($user->isType('generic'))->toBeTrue();
 });
 
-<<<<<<< HEAD:docs/testing-principles.md
 // <nome progetto>/tests (modulo specifico): Test dominio
 // <nome progetto>/tests (modulo specifico): Test dominio
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-principles.md
 test('patient inherits user functionality', function () {
     $patient = Patient::factory()->create();
     expect($patient)->toBeInstanceOf(User::class);
@@ -167,6 +159,6 @@ test('patient inherits user functionality', function () {
 - [Testing Guidelines](../laravel/.ai/guidelines/testing-guidelines.md)
 
 ---
-**Ultima modifica**: 2025-01-06  
-**Priorità**: CRITICA  
+**Ultima modifica**: 2025-01-06
+**Priorità**: CRITICA
 **Applicazione**: SEMPRE, TUTTI I TEST

@@ -3,13 +3,9 @@
 ## Summary Status by Module
 
 ### ✅ Excellent Coverage (90-100%)
-<<<<<<< HEAD:docs/modules-factory-seeder-analysis.md
 - **<nome progetto>** (16/16 business models) - Core healthcare business
 - **<nome progetto>** (16/16 business models) - Core healthcare business
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-factory-seeder-analysis.md
-- **User** (33/33 business models) - User management  
+- **User** (33/33 business models) - User management
 - **Notify** (10/10 business models) - Notifications
 - **Media** (3/3 business models) - File management
 - **Activity** (3/3 business models) - Audit & event sourcing
@@ -27,12 +23,8 @@
 
 ## Detailed Analysis by Module
 
-<<<<<<< HEAD:docs/modules-factory-seeder-analysis.md
 ### <nome progetto> ⭐ (Core Healthcare Business)
 ### <nome progetto> ⭐ (Core Healthcare Business)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/modules-factory-seeder-analysis.md
 **Models**: 25 | **Factories**: 16 | **Seeders**: 14
 - ✅ All business models have factories
 - ✅ Comprehensive seeder suite
@@ -143,13 +135,13 @@
 
 ### 🟡 Support Systems (Should Have Factories)
 - Audit: Activity logging
-- Background processing: Jobs, queues  
+- Background processing: Jobs, queues
 - Internationalization: Translations
 - File management: Media processing
 
 ### 🔴 Infrastructure (No Factories Needed)
 - Abstract base classes
-- Policy classes  
+- Policy classes
 - Configuration classes
 - System utilities
 

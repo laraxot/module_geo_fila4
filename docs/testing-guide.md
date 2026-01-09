@@ -1,9 +1,5 @@
-<<<<<<< HEAD:docs/testing-guide.md
 # <nome progetto> Testing Guide
 # <nome progetto> Testing Guide
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-guide.md
 
 ## Overview
 
@@ -24,14 +20,10 @@ laravel/
 │   │   ├── Feature/
 │   │   ├── Pest.php
 │   │   └── TestCase.php
-<<<<<<< HEAD:docs/testing-guide.md
 │   ├── <nome progetto>/tests/
 │   ├── <nome modulo>/tests/
 │   ├── <nome progetto>/tests/
 │   ├── <nome progetto>/tests/
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-guide.md
 │   ├── User/tests/
 │   └── Geo/tests/
 └── scripts/run-tests.sh            # Script per esecuzione test
@@ -44,17 +36,12 @@ laravel/
 - **Feature Tests**: ChartFactoryTest.php, ChartIntegrationTest.php
 - **Coverage**: Modello Chart, Factory, Accessors, Metodi business logic
 
-<<<<<<< HEAD:docs/testing-guide.md
 #### ✅ <nome progetto> Module (Core)
 #### ✅ <nome progetto> Module (Core)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-guide.md
 - **Unit Tests**: PatientModelTest.php, AppointmentModelTest.php
 - **Feature Tests**: AppointmentIntegrationTest.php
 - **Coverage**: Modelli core, Relazioni, Enums, State management
 
-<<<<<<< HEAD:docs/testing-guide.md
 #### ✅ <nome modulo> Module
 #### ✅ <nome progetto> Module
 - **Unit Tests**: BaseModelTest.php
@@ -126,9 +113,6 @@ makeChart($attributes = [])      // Crea Chart in memoria
 
 ### <nome progetto> Module
 ### <nome progetto> Module
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-guide.md
 ```php
 createAppointment($attributes = [])
 createPatient($attributes = [])
@@ -184,15 +168,15 @@ Il workflow `.github/workflows/tests.yml` esegue:
 describe('Model Name', function () {
     it('can be created with factory', function () {
         $model = createModel();
-        
+
         expect($model)->toBeInstanceOf(Model::class)
             ->and($model->exists)->toBeTrue();
     });
-    
+
     describe('Relationships', function () {
         // Test delle relazioni
     });
-    
+
     describe('Business Logic', function () {
         // Test della logica di business
     });
@@ -229,14 +213,10 @@ vendor/bin/pest --filter="test_name" --verbose
 
 ### Moduli Completati
 - ✅ Chart: Unit + Feature tests
-<<<<<<< HEAD:docs/testing-guide.md
 - ✅ <nome progetto>: Core models + Integration
 - ✅ <nome modulo>: Base functionality
 - ✅ <nome progetto>: Core models + Integration
 - ✅ <nome progetto>: Base functionality
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/testing-guide.md
 - ✅ User: Authentication + Authorization
 - ✅ Geo: Address + Geolocation
 
@@ -269,6 +249,6 @@ vendor/bin/pest --filter="test_name" --verbose
 
 ---
 
-**Ultimo aggiornamento**: 18 Agosto 2025  
-**Versione Pest**: 3.8  
+**Ultimo aggiornamento**: 18 Agosto 2025
+**Versione Pest**: 3.8
 **Versione PHPUnit**: 11.x

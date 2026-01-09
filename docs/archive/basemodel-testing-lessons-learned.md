@@ -1,7 +1,6 @@
 # BaseModel Testing - Lessons Learned (Gennaio 2025)
 
 ## Context
-<<<<<<< HEAD:docs/archive/basemodel-testing-lessons-learned.md
 Durante la risoluzione del test fallito `BaseModelTest` nel modulo <nome modulo>, sono stati identificati e risolti pattern problematici comuni nei test di modelli complessi che utilizzano molti trait.
 
 ## Problema Identificato
@@ -28,11 +27,11 @@ Questi richiedono il container Laravel completamente configurato durante l'istan
 it('exposes casts as array', function () {
     $reflection = new \ReflectionClass(TestBaseModel::class);
     expect($reflection->hasMethod('casts'))->toBeTrue();
-    
+
     $instance = $reflection->newInstanceWithoutConstructor();
     $method = $reflection->getMethod('casts');
     $method->setAccessible(true);
-    
+
     expect($method->invoke($instance))->toBeArray();
 });
 ```
@@ -92,7 +91,7 @@ FAILED  Modules\<nome modulo>\tests\Unit\BaseModelTest
 ```
 PASS  Modules\<nome modulo>\tests\Unit\BaseModelTest
 ✓ it has correct trait usage
-✓ it supports media methods presence  
+✓ it supports media methods presence
 ✓ it implements HasMedia interface
 ✓ it exposes casts as array
 
@@ -105,9 +104,6 @@ Tests: 54 passed (114 assertions)
 Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 - <nome modulo> ✅ (Fixed)
 - <nome progetto> (Potential)
-=======
-{nome-progetto}
->>>>>>> 078f9da (.):docs_project/archive/basemodel-testing-lessons-learned.md
 - Geo (Potential)
 - Altri moduli con trait complessi
 
@@ -126,7 +122,7 @@ Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 
 ### Compatibility
 - Laravel 12+ ✅
-- PHPUnit 10+ ✅  
+- PHPUnit 10+ ✅
 - Pest 3+ ✅
 - Spatie Media Library ✅
 - Laraxot Traits ✅
@@ -135,8 +131,4 @@ Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 **Data**: 25 Gennaio 2025
 **Responsabile**: Claude Code Testing Resolution
 **Status**: Completato e Documentato
-<<<<<<< HEAD:docs/archive/basemodel-testing-lessons-learned.md
 **Moduli Testati**: <nome modulo> (54/54 tests passing)
-=======
-{nome-modulo}
->>>>>>> 078f9da (.):docs_project/archive/basemodel-testing-lessons-learned.md
