@@ -6,7 +6,6 @@ namespace Modules\Geo\Datas;
 
 use Illuminate\Support\Collection;
 use Spatie\LaravelData\Data;
-use Webmozart\Assert\Assert;
 
 /**
  * Result DTO for bulk coordinate update operations.
@@ -16,17 +15,18 @@ use Webmozart\Assert\Assert;
 class UpdateCoordinatesResult extends Data
 {
     /**
-     * @param  int  $totalProcessed  Total number of records processed
-     * @param  int  $successCount  Number of successfully updated records
-     * @param  int  $failureCount  Number of failed updates
-     * @param  Collection<int, array{model: string, error: string}>  $errors  Collection of error details
+     * @param int                                                  $totalProcessed Total number of records processed
+     * @param int                                                  $successCount   Number of successfully updated records
+     * @param int                                                  $failureCount   Number of failed updates
+     * @param Collection<int, array{model: string, error: string}> $errors         Collection of error details
      */
     public function __construct(
         public readonly int $totalProcessed,
         public readonly int $successCount,
         public readonly int $failureCount,
         public readonly Collection $errors,
-    ) {}
+    ) {
+    }
 
     /**
      * Check if there were any errors during processing.
@@ -41,7 +41,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteSuccess(): bool
     {
-        return $this->failureCount === 0 && $this->successCount > 0;
+        return 0 === $this->failureCount && $this->successCount > 0;
     }
 
     /**
@@ -49,7 +49,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function isCompleteFailure(): bool
     {
-        return $this->successCount === 0 && $this->totalProcessed > 0;
+        return 0 === $this->successCount && $this->totalProcessed > 0;
     }
 
     /**
@@ -57,7 +57,7 @@ class UpdateCoordinatesResult extends Data
      */
     public function getSuccessRate(): float
     {
-        if ($this->totalProcessed === 0) {
+        if (0 === $this->totalProcessed) {
             return 0.0;
         }
 
