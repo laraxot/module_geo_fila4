@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Geo\Services;
 
 use Illuminate\Support\Facades\Validator;
-use Webmozart\Assert\Assert;
 
 /**
  * Validatore per i dati geografici.
@@ -65,7 +64,7 @@ class GeoDataValidator
     /**
      * Valida i dati geografici.
      *
-     * @param array $data Dati da validare
+     * @param  array  $data  Dati da validare
      */
     public function validate(array $data): bool
     {
@@ -77,25 +76,23 @@ class GeoDataValidator
     /**
      * Ottiene gli errori di validazione.
      *
-     * @param array $data Dati da validare
-     *
+     * @param  array  $data  Dati da validare
      * @return array<string, array<int, string>>
      */
     public function getErrors(array $data): array
     {
         $validator = Validator::make($data, self::VALIDATION_RULES, self::CUSTOM_MESSAGES);
 
+        /** @var array<string, array<int, string>> $errors */
         $errors = $validator->errors()->toArray();
-        Assert::isArray($errors);
 
-        /* @var array<string, array<int, string>> $errors */
         return $errors;
     }
 
     /**
      * Verifica l'integrità dei dati.
      *
-     * @param array $data Dati da verificare
+     * @param  array  $data  Dati da verificare
      */
     public function checkIntegrity(array $data): bool
     {
