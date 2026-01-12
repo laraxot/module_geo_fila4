@@ -88,15 +88,12 @@ class ComuneJson extends GeoJsonModel
          *     codiceCatastale: string,
          *     popolazione: int
          * }> $result */
-        $result = Cache::remember($cacheKey, self::CACHE_TTL, static function () use ($regionCode) {
+        $result = Cache::remember($cacheKey, self::CACHE_TTL, static function () use ($regionCode): Collection {
             return static::all()
                 ->where('regione.codice', $regionCode)
                 ->sortBy('nome')
                 ->values();
         });
-
-        // Type narrowing for PHPStan Level Max
-        Assert::isInstanceOf($result, Collection::class);
 
         return $result;
     }
