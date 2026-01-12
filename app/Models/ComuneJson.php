@@ -7,7 +7,6 @@ namespace Modules\Geo\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use Webmozart\Assert\Assert;
 
 /**
  * Modello unico readonly per i comuni italiani (Facade pattern).
