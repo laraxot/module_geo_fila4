@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\GetCoordinatesAction;
 use Modules\Geo\Datas\LocationData;
+use Modules\Geo\Tests\TestCase;
+
+uses(TestCase::class);
 
 beforeEach(function () {
     $this->action = new GetCoordinatesAction();
@@ -365,5 +368,10 @@ it('handles invalid json response', function (): void {
     ]);
 
     // Act & Assert
+<<<<<<< Updated upstream
     expect(fn () => $this->action->execute($address))->toThrow(RuntimeException::class);
 });
+=======
+    expect(fn () => $this->action->execute($address))->toThrow(\Safe\Exceptions\JsonException::class);
+});
+>>>>>>> Stashed changes

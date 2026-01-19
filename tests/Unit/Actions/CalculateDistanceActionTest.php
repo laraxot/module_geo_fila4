@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+uses(\Modules\Geo\Tests\TestCase::class);
+
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\CalculateDistanceAction;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;

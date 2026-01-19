@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+
 namespace Modules\Geo\Tests\Unit\Traits;
 
 use Modules\Geo\Models\BaseModel;
