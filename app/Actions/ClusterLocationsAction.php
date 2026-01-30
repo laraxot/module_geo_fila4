@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions;
 
+use Modules\Geo\Contracts\CalculateDistanceActionContract;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\InvalidLocationException;
 
 readonly class ClusterLocationsAction
 {
     public function __construct(
-        private CalculateDistanceAction $distanceCalculator,
+        private CalculateDistanceActionContract $distanceCalculator,
     ) {
     }
 
